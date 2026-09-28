@@ -80,8 +80,7 @@
   ol.courses li .ext{font-size:10px;color:var(--accent-2);margin-left:4px;letter-spacing:.05em;
     text-transform:uppercase;font-family:'JetBrains Mono',monospace}
   @media(min-width:800px){
-    ol.courses{column-count:2;column-gap:40px}
-    ol.courses li{break-inside:avoid}
+    .courses-cols{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
   }
   @media(max-width:640px){
     .mast-title{font-size:40px}
@@ -148,16 +147,20 @@
       <span class="roman">Part I</span>
       <h2>Foundation Level</h2>
     </div>
+    <div class="courses-cols">
     <ol class="courses">
       <li><span class="num">01</span><span class="code">MA1001</span><span class="name"><a href="courses/ma1001.html">Mathematics for Data Science I</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">02</span><span class="code">MA1002</span><span class="name"><a href="courses/ma1002.html">Statistics for Data Science I</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">03</span><span class="code">CS1001</span><span class="name"><a href="courses/cs1001.html">Computational Thinking</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">04</span><span class="code">HS1001</span><span class="name"><a href="courses/hs1001.html">English I</a></span><span class="credits">4 cr</span></li>
+    </ol>
+    <ol class="courses">
       <li><span class="num">05</span><span class="code">MA1003</span><span class="name"><a href="courses/ma1003.html">Mathematics for Data Science II</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">06</span><span class="code">MA1004</span><span class="name"><a href="courses/ma1004.html">Statistics for Data Science II</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">07</span><span class="code">CS1002</span><span class="name"><a href="courses/cs1002.html">Programming in Python</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">08</span><span class="code">HS1002</span><span class="name"><a href="courses/hs1002.html">English II</a></span><span class="credits">4 cr</span></li>
     </ol>
+    </div>
   </section>
 
   <!-- ============ DIPLOMA IN PROGRAMMING ============ -->
@@ -166,16 +169,20 @@
       <span class="roman">Part II · a</span>
       <h2>Diploma in Programming</h2>
     </div>
+    <div class="courses-cols">
     <ol class="courses">
       <li><span class="num">09</span><span class="code">CS2001</span><span class="name"><a href="courses/cs2001.html">Database Management Systems</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">10</span><span class="code">CS2002</span><span class="name"><a href="courses/cs2002.html">Programming, Data Structures &amp; Algorithms using Python</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">11</span><span class="code">CS2003</span><span class="name"><a href="courses/cs2003.html">Modern Application Development I</a></span><span class="credits">4 cr</span></li>
       <li class="project"><span class="num"></span><span class="code">CS2003P</span><span class="name"><a href="courses/cs2003p.html">MAD I — Project</a></span><span class="credits">2 cr</span></li>
+    </ol>
+    <ol class="courses">
       <li><span class="num">12</span><span class="code">CS2005</span><span class="name"><a href="courses/cs2005.html">Programming Concepts using Java</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">13</span><span class="code">CS2006</span><span class="name"><a href="courses/cs2006.html">Modern Application Development II</a></span><span class="credits">4 cr</span></li>
       <li class="project"><span class="num"></span><span class="code">CS2006P</span><span class="name"><a href="courses/cs2006p.html">MAD II — Project</a></span><span class="credits">2 cr</span></li>
       <li><span class="num">14</span><span class="code">SE2001</span><span class="name"><a href="courses/se2001.html">System Commands</a></span><span class="credits">3 cr</span></li>
     </ol>
+    </div>
   </section>
 
   <!-- ============ DIPLOMA IN DATA SCIENCE ============ -->
@@ -186,22 +193,30 @@
     </div>
 
     <div class="level-subhead">Mandatory — 21 credits</div>
+    <div class="courses-cols">
     <ol class="courses">
       <li><span class="num">15</span><span class="code">CS2004</span><span class="name"><a href="courses/cs2004.html">Machine Learning Foundations</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">16</span><span class="code">MS2001</span><span class="name"><a href="courses/ms2001.html">Business Data Management</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">17</span><span class="code">CS2007</span><span class="name"><a href="courses/cs2007.html">Machine Learning Techniques</a></span><span class="credits">4 cr</span></li>
+    </ol>
+    <ol class="courses">
       <li><span class="num">18</span><span class="code">CS2008</span><span class="name"><a href="courses/cs2008.html">Machine Learning Practice</a></span><span class="credits">4 cr</span></li>
       <li class="project"><span class="num"></span><span class="code">CS2008P</span><span class="name"><a href="courses/cs2008p.html">ML Practice — Project</a></span><span class="credits">2 cr</span></li>
       <li><span class="num">19</span><span class="code">SE2002</span><span class="name"><a href="courses/se2002.html">Tools in Data Science</a></span><span class="credits">3 cr</span></li>
     </ol>
+    </div>
 
     <div class="level-subhead">Track selection — pick one · 6 credits</div>
+    <div class="courses-cols">
     <ol class="courses">
-      <li><span class="num">A</span><span class="code">MS2001P</span><span class="name"><a href="courses/ms2001p.html">Business Data Management — Project</a></span><span class="credits">2 cr</span></li>
-      <li><span class="num">B</span><span class="code">MS2002</span><span class="name"><a href="courses/ms2002.html">Business Analytics</a></span><span class="credits">4 cr</span></li>
-      <li><span class="num">C</span><span class="code">DA2001</span><span class="name"><a href="courses/da2001.html">Introduction to Deep Learning and Generative AI</a></span><span class="credits">4 cr</span></li>
+      <li><span class="num">A</span><span class="code">MS2002</span><span class="name"><a href="courses/ms2002.html">Business Analytics</a></span><span class="credits">4 cr</span></li>
+      <li class="project"><span class="num"></span><span class="code">MS2001P</span><span class="name"><a href="courses/ms2001p.html">Business Data Management — Project</a></span><span class="credits">2 cr</span></li>
+    </ol>
+    <ol class="courses">
+      <li><span class="num">B</span><span class="code">DA2001</span><span class="name"><a href="courses/da2001.html">Introduction to Deep Learning and Generative AI</a></span><span class="credits">4 cr</span></li>
       <li class="project"><span class="num"></span><span class="code">DA2001P</span><span class="name"><a href="courses/da2001p.html">Deep Learning &amp; GenAI — Project</a></span><span class="credits">2 cr</span></li>
     </ol>
+    </div>
   </section>
 
   <!-- ============ BSC ============ -->
@@ -212,13 +227,17 @@
     </div>
 
     <div class="level-subhead">Mandatory core — 20 credits</div>
+    <div class="courses-cols">
     <ol class="courses">
       <li><span class="num">20</span><span class="code">CS3001</span><span class="name"><a href="courses/cs3001.html">Software Engineering</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">21</span><span class="code">CS3002</span><span class="name"><a href="courses/cs3002.html">Software Testing</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">22</span><span class="code">CS3003</span><span class="name"><a href="courses/cs3003.html">AI: Search Methods for Problem Solving</a></span><span class="credits">4 cr</span></li>
+    </ol>
+    <ol class="courses">
       <li><span class="num">23</span><span class="code">CS3004</span><span class="name"><a href="courses/cs3004.html">Deep Learning</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">24</span><span class="code">GN3001</span><span class="name"><a href="courses/gn3001.html">Strategies for Professional Growth</a></span><span class="credits">4 cr</span></li>
     </ol>
+    </div>
   </section>
 
   <!-- ============ BS + ELECTIVES ============ -->
@@ -227,6 +246,7 @@
       <span class="roman">Part III · b</span>
       <h2>BS Degree · Electives</h2>
     </div>
+    <div class="courses-cols">
     <ol class="courses">
       <li><span class="num">E1</span><span class="code">BT4001</span><span class="name"><a href="courses/bt4001.html">Algorithmic Thinking in Bioinformatics</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">E2</span><span class="code">BT4002</span><span class="name"><a href="courses/bt4002.html">Big Data &amp; Biological Networks</a></span><span class="credits">4 cr</span></li>
@@ -246,6 +266,8 @@
       <li><span class="num">E16</span><span class="code">MA2001</span><span class="name"><a href="courses/ma2001.html">Mathematical Thinking</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">E17</span><span class="code">DA5004</span><span class="name"><a href="courses/da5004.html">Large Language Models</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">E18</span><span class="code">DA5005</span><span class="name"><a href="courses/da5005.html">Introduction to Natural Language Processing (i-NLP)</a></span><span class="credits">4 cr</span></li>
+    </ol>
+    <ol class="courses">
       <li><span class="num">E19</span><span class="code">DA5006</span><span class="name"><a href="courses/da5006.html">Deep Learning for Computer Vision</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">E20</span><span class="code">MS3033</span><span class="name"><a href="courses/ms3033.html">Managerial Economics</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">E21</span><span class="code">MS4023</span><span class="name"><a href="courses/ms4023.html">Game Theory and Strategy</a></span><span class="credits">4 cr</span></li>
@@ -264,6 +286,7 @@
       <li><span class="num">E34</span><span class="code">MA3001</span><span class="name"><a href="courses/ma3001.html">Discrete Mathematics</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">E35</span><span class="code">DA6004</span><span class="name"><a href="courses/da6004.html">Sequential Decision Making</a></span><span class="credits">4 cr</span></li>
     </ol>
+    </div>
   </section>
 
   <!-- ============ PG DIPLOMA ============ -->
@@ -281,6 +304,7 @@
     </ol>
 
     <div class="level-subhead">Electives — pick 2 · 8 credits</div>
+    <div class="courses-cols">
     <ol class="courses">
       <li><span class="num">Pe</span><span class="code">DA5004</span><span class="name"><a href="courses/da5004.html">Large Language Models</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">Pe</span><span class="code">DA5005</span><span class="name"><a href="courses/da5005.html">Introduction to Natural Language Processing</a></span><span class="credits">4 cr</span></li>
@@ -288,12 +312,15 @@
       <li><span class="num">Pe</span><span class="code">DA5007</span><span class="name"><a href="courses/da5007.html">Reinforcement Learning</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">Pe</span><span class="code">DA6001</span><span class="name"><a href="courses/da6001.html">Responsible AI</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">Pe</span><span class="code">DA6002</span><span class="name"><a href="courses/da6002.html">Statistical Learning Theory</a></span><span class="credits">4 cr</span></li>
+    </ol>
+    <ol class="courses">
       <li><span class="num">Pe</span><span class="code">DA6003</span><span class="name"><a href="courses/da6003.html">Deployability Aspects of AI</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">Pe</span><span class="code">DA6004</span><span class="name"><a href="courses/da6004.html">Sequential Decision Making</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">Pe</span><span class="code">DA6005</span><span class="name"><a href="courses/da6005.html">Information Theory and Learning</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">Pe</span><span class="code">EE5001</span><span class="name"><a href="courses/ee5001.html">Speech Technology</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">Pe</span><span class="code">DA6006</span><span class="name"><a href="courses/da6006.html">Research Project</a></span><span class="credits">4 cr</span></li>
     </ol>
+    </div>
   </section>
 
   <!-- ============ MTECH ============ -->
