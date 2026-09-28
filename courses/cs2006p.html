@@ -146,7 +146,7 @@
       <li><a href="#syllabus">Syllabus</a><span class="p">§ 1</span></li>
       <li><a href="#calendar">Calendar</a><span class="p">§ 2</span></li>
       <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
-      <li><a href="#lectures">Weekly Lectures</a><span class="p">§ 4</span></li>
+      <li><a href="#sessions">Project Sessions</a><span class="p">§ 4</span></li>
     </ol>
   </div>
 
@@ -182,11 +182,20 @@
     </table>
   </section>
 
-  <section class="chapter" id="lectures">
-    <h2><span class="num">§ 4</span>Weekly Lectures</h2>
-    <p class="subhead">each week below holds slides, notes and transcript</p>
-  <div style="background:var(--paper-2);border:1px solid var(--rule);padding:22px;text-align:center;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-2);margin-bottom:22px">No official playlist is available yet for this course.</div>
-  <div id="weeks-list"></div>
+  <section class="chapter" id="sessions">
+    <h2><span class="num">§ 4</span>Project Sessions</h2>
+    <p class="subhead">live project-support sessions run each term, recorded and playlisted</p>
+    <table class="papers">
+      <thead><tr><th>Term</th><th>Session playlist</th></tr></thead>
+      <tbody>
+        <tr><td>24T1</td><td><a href="https://youtube.com/playlist?list=PLZVf4uJM87Nqc4R7fYwNZH7ngfQHrAHi3&si=_OV7x8XJn5Y250IY" target="_blank" rel="noopener">MAD II — Jan 2024 — Project</a></td></tr>
+        <tr><td>24T2</td><td><a href="https://youtube.com/playlist?list=PLZVf4uJM87NpJsK7BaSBPNbvAaRmiWN4v&si=ybaTctA0Y-_CHpJI" target="_blank" rel="noopener">MAD II — Project Live Sessions — May 2024</a></td></tr>
+        <tr><td>24T3</td><td><a href="https://youtube.com/playlist?list=PLZVf4uJM87NrbT9Fr2g5_oiXbgOShgHXU&si=6j4MrwN5f2VN53n2" target="_blank" rel="noopener">MAD II — Project Sessions — Sept 2024</a></td></tr>
+        <tr><td>25T1</td><td><a href="https://youtube.com/playlist?list=PLZVf4uJM87Nr1mpdESa4du9uRWO5etYj9&si=MFDmfzyhN6tcGN8W" target="_blank" rel="noopener">MAD 2 Project Sessions — Jan 2025</a></td></tr>
+        <tr><td>25T2</td><td><a href="https://youtube.com/playlist?list=PLZVf4uJM87NpFy8ih8uZbTMEl6AmVedP5&si=Q1Rvk9B1rEqHmDVP" target="_blank" rel="noopener">MAD 2 Project Sessions — May 2025</a></td></tr>
+        <tr><td>25T3</td><td><a href="https://youtube.com/playlist?list=PLZVf4uJM87NpoEVQtoSuwipenoKZVN1b_&si=2VZ1jJsYRaR6EMhf" target="_blank" rel="noopener">MAD 2 Project Sessions — Sep 2025</a></td></tr>
+      </tbody>
+    </table>
   </section>
 </div>
 
@@ -197,37 +206,6 @@
   </div>
 </footer>
 
-<script>
-    const WEEKS = Array.from({length:12},(_,i)=> `Week ${i+1}`);
 
-  const weekHTML = (i, t) => `
-    <details class="week" ${i===0?'open':''}>
-      <summary>
-        <span class="wnum">Week ${String(i+1).padStart(2,'0')}</span>
-        <span class="wtitle">${t}</span>
-        <span class="wicon">+</span>
-      </summary>
-      <div class="body">
-        <div class="tabs">
-          <button class="active" data-tab="s">Slides</button>
-          <button data-tab="n">Notes</button>
-          <button data-tab="t">Transcript</button>
-        </div>
-        <div class="tab-panel active" data-tab="s"><p class="placeholder">Slides not linked yet.</p></div>
-        <div class="tab-panel" data-tab="n"><p class="placeholder">Notes not linked yet.</p></div>
-        <div class="tab-panel" data-tab="t"><p class="placeholder">Transcripts not linked yet.</p></div>
-      </div>
-    </details>`;
-
-  const list = document.getElementById('weeks-list');
-  WEEKS.forEach((t,i) => list.insertAdjacentHTML('beforeend', weekHTML(i,t)));
-
-  document.addEventListener('click', e => {
-    const b = e.target.closest('.tabs button'); if (!b) return;
-    const scope = b.closest('.body');
-    scope.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('active', x===b));
-    scope.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tab===b.dataset.tab));
-  });
-</script>
 </body>
 </html>

@@ -146,7 +146,7 @@
       <li><a href="#syllabus">Syllabus</a><span class="p">§ 1</span></li>
       <li><a href="#calendar">Calendar</a><span class="p">§ 2</span></li>
       <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
-      <li><a href="#lectures">Weekly Lectures</a><span class="p">§ 4</span></li>
+      <li><a href="#sessions">Project Sessions</a><span class="p">§ 4</span></li>
     </ol>
   </div>
 
@@ -182,11 +182,15 @@
     </table>
   </section>
 
-  <section class="chapter" id="lectures">
-    <h2><span class="num">§ 4</span>Weekly Lectures</h2>
-    <p class="subhead">each week below holds slides, notes and transcript</p>
-  <div style="background:var(--paper-2);border:1px solid var(--rule);padding:22px;text-align:center;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-2);margin-bottom:22px">No official playlist is available yet for this course.</div>
-  <div id="weeks-list"></div>
+  <section class="chapter" id="sessions">
+    <h2><span class="num">§ 4</span>Project Sessions</h2>
+    <p class="subhead">live project-support sessions run each term, recorded and playlisted</p>
+    <table class="papers">
+      <thead><tr><th>Term</th><th>Session playlist</th></tr></thead>
+      <tbody>
+        <tr><td colspan="2" class="empty">No project-session playlists catalogued yet for this course.</td></tr>
+      </tbody>
+    </table>
   </section>
 </div>
 
@@ -197,37 +201,6 @@
   </div>
 </footer>
 
-<script>
-    const WEEKS = Array.from({length:12},(_,i)=> `Week ${i+1}`);
 
-  const weekHTML = (i, t) => `
-    <details class="week" ${i===0?'open':''}>
-      <summary>
-        <span class="wnum">Week ${String(i+1).padStart(2,'0')}</span>
-        <span class="wtitle">${t}</span>
-        <span class="wicon">+</span>
-      </summary>
-      <div class="body">
-        <div class="tabs">
-          <button class="active" data-tab="s">Slides</button>
-          <button data-tab="n">Notes</button>
-          <button data-tab="t">Transcript</button>
-        </div>
-        <div class="tab-panel active" data-tab="s"><p class="placeholder">Slides not linked yet.</p></div>
-        <div class="tab-panel" data-tab="n"><p class="placeholder">Notes not linked yet.</p></div>
-        <div class="tab-panel" data-tab="t"><p class="placeholder">Transcripts not linked yet.</p></div>
-      </div>
-    </details>`;
-
-  const list = document.getElementById('weeks-list');
-  WEEKS.forEach((t,i) => list.insertAdjacentHTML('beforeend', weekHTML(i,t)));
-
-  document.addEventListener('click', e => {
-    const b = e.target.closest('.tabs button'); if (!b) return;
-    const scope = b.closest('.body');
-    scope.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('active', x===b));
-    scope.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tab===b.dataset.tab));
-  });
-</script>
 </body>
 </html>
