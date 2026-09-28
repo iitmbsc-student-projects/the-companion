@@ -40,30 +40,6 @@
   nav.section-nav a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
   nav.section-nav .sep{color:var(--rule)}
 
-  /* Programme structure — exit points, as a table */
-  .structure{max-width:720px;margin:24px auto;padding:20px 24px;
-    background:var(--paper-2);border:1px solid var(--rule);
-    color:var(--ink)}
-  .structure-title{font-family:'JetBrains Mono',monospace;font-size:10px;
-    letter-spacing:.2em;text-transform:uppercase;
-    color:var(--ink-2);margin-bottom:14px;font-weight:500}
-  .structure-table{width:100%;border-collapse:collapse;font-family:'Fraunces',serif;font-size:15px}
-  .structure-table thead th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;
-    letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
-    padding:0 10px 8px 0;border-bottom:1px solid var(--ink);font-weight:500}
-  .structure-table thead th:last-child{text-align:right}
-  .structure-table td{padding:10px 10px 10px 0;border-bottom:1px dotted var(--rule);vertical-align:baseline}
-  .structure-table tbody tr:last-child td{border-bottom:none}
-  .structure-table td.part{font-family:'JetBrains Mono',monospace;font-size:11px;
-    color:var(--accent);white-space:nowrap;width:1%}
-  .structure-table td.exit a{color:var(--ink);border:none;font-weight:600}
-  .structure-table td.exit a:hover{color:var(--accent)}
-  .structure-table td.credits{font-family:'JetBrains Mono',monospace;font-size:12px;
-    color:var(--ink-2);text-align:right;white-space:nowrap}
-  @media(max-width:640px){
-    .structure{padding:16px 16px}
-    .structure-table{font-size:13px}
-  }
 
   .search{max-width:520px;margin:0 auto 24px;position:relative}
   .search input{width:100%;background:transparent;border:none;border-bottom:1px solid var(--ink);
@@ -81,8 +57,6 @@
     color:var(--accent);letter-spacing:.2em;text-transform:uppercase;font-weight:500}
   .level-head::after{content:"";flex:1;border-bottom:1px solid var(--rule);
     margin-bottom:8px;margin-left:6px}
-  .level-meta{font-family:'Fraunces',serif;font-style:italic;font-size:14px;
-    color:var(--ink-2);margin:0 0 14px}
   .level-subhead{font-family:'JetBrains Mono',monospace;font-size:10px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
     margin:18px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--rule)}
@@ -138,8 +112,6 @@
   .aside{background:var(--paper-2);border-left:3px solid var(--accent);
     padding:14px 18px;margin:22px 0;font-family:'Fraunces',serif;font-size:14px;
     font-style:italic;color:var(--ink-2);max-width:720px;margin-left:auto;margin-right:auto}
-  .track-note{font-family:'Fraunces',serif;font-style:italic;font-size:14px;
-    color:var(--ink-2);margin:10px 0 4px}
 </style>
 </head>
 <body>
@@ -167,31 +139,13 @@
 
 <div class="wrap">
 
-  <!-- Programme structure diagram -->
-  <div class="structure">
-    <div class="structure-title">Programme structure — exit points</div>
-    <table class="structure-table">
-      <thead>
-        <tr><th>Part</th><th>Exit point</th><th>Credits</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="part">I</td><td class="exit"><a href="#foundation">Foundation</a></td><td class="credits">32 cr</td></tr>
-        <tr><td class="part">II · A</td><td class="exit"><a href="#diploma-p">Diploma in Programming</a></td><td class="credits">27 cr</td></tr>
-        <tr><td class="part">II · B</td><td class="exit"><a href="#diploma-ds">Diploma in Data Science</a></td><td class="credits">27 cr</td></tr>
-        <tr><td class="part">III · A</td><td class="exit"><a href="#bsc">BSc Degree</a></td><td class="credits">114 cr total</td></tr>
-        <tr><td class="part">III · B</td><td class="exit"><a href="#bs">BS Degree</a></td><td class="credits">142 cr total</td></tr>
-        <tr><td class="part">IV</td><td class="exit"><a href="#pgd">PG Diploma in AI &amp; ML</a></td><td class="credits">20 cr</td></tr>
-        <tr><td class="part">V</td><td class="exit"><a href="#mtech">MTech Project</a></td><td class="credits">20 cr</td></tr>
-      </tbody>
-    </table>
-  </div>
-
   <div class="search">
     <input type="search" placeholder="Search a course — try “calculus”, “MLT”, “databases”, “NLP”…" oninput="__filter(this.value)">
   </div>
 
   <div class="aside">
-    Official course material lives on the IITM study portal. This companion <em>links</em> to it; nothing copyrighted is hosted here. Student-made notes are contributed under the contributor’s own name.
+    Official course material lives on the IITM study portal. This companion <em>links</em> to it; nothing copyrighted is hosted here. Student-made notes are contributed under the contributor’s own name.<br><br>
+    Course names, codes and credits shown here may be outdated or incorrect — always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.
   </div>
 
   <!-- ============ FOUNDATION ============ -->
@@ -200,7 +154,6 @@
       <span class="roman">Part I</span>
       <h2>Foundation Level</h2>
     </div>
-    <p class="level-meta">Eight courses · 32 credits · shared entry point for every track</p>
     <ol class="courses">
       <li><span class="num">01</span><span class="code">MA1001</span><span class="name"><a href="courses/ma1001.html">Mathematics for Data Science I</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">02</span><span class="code">MA1002</span><span class="name"><a href="courses/ma1002.html">Statistics for Data Science I</a></span><span class="credits">4 cr</span></li>
@@ -219,7 +172,6 @@
       <span class="roman">Part II · a</span>
       <h2>Diploma in Programming</h2>
     </div>
-    <p class="level-meta">Six courses + two projects · 27 credits</p>
     <ol class="courses">
       <li><span class="num">09</span><span class="code">CS2001</span><span class="name"><a href="courses/cs2001.html">Database Management Systems</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">10</span><span class="code">CS2002</span><span class="name"><a href="courses/cs2002.html">Programming, Data Structures &amp; Algorithms using Python</a></span><span class="credits">4 cr</span></li>
@@ -238,7 +190,6 @@
       <span class="roman">Part II · b</span>
       <h2>Diploma in Data Science</h2>
     </div>
-    <p class="level-meta">Six courses + two projects · 27 credits · pick one track for the last 6 credits</p>
 
     <div class="level-subhead">Mandatory — 21 credits</div>
     <ol class="courses">
@@ -257,7 +208,6 @@
       <li><span class="num">C</span><span class="code">DA2001</span><span class="name"><a href="courses/da2001.html">Introduction to Deep Learning and Generative AI</a></span><span class="credits">4 cr</span></li>
       <li class="project"><span class="num"></span><span class="code">DA2001P</span><span class="name"><a href="courses/da2001p.html">Deep Learning &amp; GenAI — Project</a></span><span class="credits">2 cr</span></li>
     </ol>
-    <p class="track-note">Tracks combine to reach 6 credits (e.g. Analytics track: MS2002 + MS2001P).</p>
   </section>
 
   <!-- ============ BSC ============ -->
@@ -266,7 +216,6 @@
       <span class="roman">Part III · a</span>
       <h2>BSc Degree Level</h2>
     </div>
-    <p class="level-meta">Five core courses + 8 credits of electives · 114 credits total programme-wide</p>
 
     <div class="level-subhead">Mandatory core — 20 credits</div>
     <ol class="courses">
@@ -276,7 +225,6 @@
       <li><span class="num">23</span><span class="code">CS3004</span><span class="name"><a href="courses/cs3004.html">Deep Learning</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">24</span><span class="code">GN3001</span><span class="name"><a href="courses/gn3001.html">Strategies for Professional Growth</a></span><span class="credits">4 cr</span></li>
     </ol>
-    <p class="track-note">Electives to reach 28 credits are picked from the BS elective list below.</p>
   </section>
 
   <!-- ============ BS + ELECTIVES ============ -->
@@ -285,7 +233,6 @@
       <span class="roman">Part III · b</span>
       <h2>BS Degree · Electives</h2>
     </div>
-    <p class="level-meta">40 electives · used by both BSc (28 cr) and BS (142 cr total)</p>
     <ol class="courses">
       <li><span class="num">E1</span><span class="code">BT4001</span><span class="name"><a href="courses/bt4001.html">Algorithmic Thinking in Bioinformatics</a></span><span class="credits">4 cr</span></li>
       <li><span class="num">E2</span><span class="code">BT4002</span><span class="name"><a href="courses/bt4002.html">Big Data &amp; Biological Networks</a></span><span class="credits">4 cr</span></li>
@@ -331,7 +278,6 @@
       <span class="roman">Part IV</span>
       <h2>PG Diploma in AI &amp; ML</h2>
     </div>
-    <p class="level-meta">3 core + 2 electives · 20 credits</p>
 
     <div class="level-subhead">Core — 12 credits</div>
     <ol class="courses">
@@ -362,7 +308,6 @@
       <span class="roman">Part V</span>
       <h2>MTech Level</h2>
     </div>
-    <p class="level-meta">Project-based · 20 credits</p>
     <ol class="courses">
       <li><span class="num">M1</span><span class="code">DA6901</span><span class="name"><a href="courses/da6901.html">MTech Project</a></span><span class="credits">20 cr</span></li>
     </ol>
