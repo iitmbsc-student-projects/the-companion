@@ -1,56 +1,60 @@
 # The Companion
 
-A static, no-build course hub for the IIT Madras BS in Data Science & Applications. One page per course — syllabus, calendar, previous-year questions, and week-by-week lecture links — plus an index that maps the whole programme (Foundation → Diploma → BSc/BS → PG Diploma → MTech). Built to publish straight to GitHub Pages.
+A static course hub for the IIT Madras BS in Data Science & Applications. It has one page per course (syllabus, calendar, previous-year questions, week-by-week lecture links) and an index page that maps the whole programme, from Foundation through Diploma, BSc/BS, PG Diploma, and MTech.
 
-## What's in the repo
+Live site: https://vikashrammahuri60.github.io/the-companion/
+
+## Repo layout
 
 ```
-index.html              catalog — programme structure table + every course, grouped by level, with a live search box
-courses/<code>.html     one page per course (e.g. courses/cs2001.html)
-assets/term-syllabus.js shared quiz/endterm calendar data for the current term, read by every course page
+index.html               the catalog: programme structure table, every course grouped by level, a live search box
+courses/<code>.html      one page per course, for example courses/cs2001.html
+assets/term-syllabus.js  shared calendar data (quiz 1, quiz 2, end-term dates) for the current term
 ```
 
-There's no separate stylesheet or script file — each page is self-contained (inline CSS/JS) apart from three CDN includes shared by every course page: Google Fonts (Fraunces / Inter / JetBrains Mono), Bootstrap 5.3.3 (for the accordion-style weekly lecture list), and the local `assets/term-syllabus.js`.
+There is no separate stylesheet or script file. Each page is self-contained: its CSS and JS are written inline in the HTML. The only outside dependencies are Google Fonts (Fraunces, Inter, JetBrains Mono), Bootstrap 5.3.3 loaded from a CDN (used for the accordion-style weekly lecture list), and the local `assets/term-syllabus.js` file.
 
 ## How a course page works
 
-Each `courses/<code>.html` page has two views toggled by JS:
+Each `courses/<code>.html` page has two views, switched with JavaScript:
 
-- **Dashboard** — course title, syllabus link, PYQ/resources links, and a calendar block (quiz 1 / quiz 2 / end-term dates and mode) that's filled in automatically at page-load from `assets/term-syllabus.js`, keyed by course code.
-- **Lecture view** — a fixed sidebar lists every week as a Bootstrap accordion item; expanding a week shows its lectures; clicking a lecture swaps the main panel to show its embedded YouTube video (or a Drive link, for the handful of lectures that are only Drive-hosted) plus its slide link. Anything not yet linked shows a plain "nothing here yet" note instead of a broken link.
+**Dashboard.** Shows the course title, links to the syllabus and past papers, and a calendar block for quiz 1, quiz 2, and the end-term. That calendar block is filled in automatically when the page loads, by reading `assets/term-syllabus.js` and looking up the course's own code.
 
-All of that data lives in a `WEEKS_DATA` array near the bottom of each course's HTML, and the course's own code in a `COURSE_CODE` constant (used to look up its calendar entry).
+**Lecture view.** A sidebar lists every week as a collapsible section. Opening a week shows its lectures. Clicking a lecture loads its video in the main panel (either a YouTube embed, or a plain link out to Drive for the few lectures that are only Drive-hosted) along with its slide link. If a lecture has nothing linked yet, the page just says so instead of showing a broken link.
 
-## Current build status
+All of this lives in two places inside each course's HTML: a `WEEKS_DATA` array holding the weeks and lectures, and a `COURSE_CODE` constant used to look up that course's calendar entry.
 
-Every course in the programme already has a page (73 in total), but they're not all at the same level of completion:
+## What's done and what's still a placeholder
 
-- **Fully built** — real syllabus links, PYQ, and every week's lectures transcribed with working video/slide links: `CS2001` (Database Management Systems), `CS2002` (Programming, Data Structures & Algorithms using Python), `CS2003` (Modern Application Development I), `CS2005` (Programming Concepts using Java).
-- **Placeholder** — the rest of the catalog has the page shell (title, breadcrumb, calendar wiring) in place, with the weekly lecture list still to be filled in from the actual course spreadsheets.
+Every course in the programme has a page already (73 in total), but they are not all filled in yet.
 
-`index.html` and the shared calendar data are otherwise complete for every course listed.
+Fully built, meaning real links and every week's lectures transcribed: `CS2001` (Database Management Systems), `CS2002` (Programming, Data Structures & Algorithms using Python), `CS2003` (Modern Application Development I), `CS2005` (Programming Concepts using Java).
+
+Everything else is a placeholder: the page exists, the title and calendar wiring are correct, but the weekly lecture list still needs to be filled in from the course's actual spreadsheet.
+
+`index.html` and the shared calendar data are complete for every course already.
 
 ## Filling in a placeholder course
 
-1. Open `courses/<code>.html` and find its `WEEKS_DATA` array.
-2. Add one object per week (`{ w: 'Week 1', items: [...] }`), and one item per lecture (`{ n, t, v, s }` — number, title, YouTube video ID, slide URL; use `dv` instead of `v` for a Drive-hosted-only video).
-3. Update the syllabus/PYQ links in the dashboard section if they're still placeholders.
-4. Open the page locally and click through a couple of weeks to check the links resolve before committing.
+1. Open `courses/<code>.html` and find its `WEEKS_DATA` array near the bottom of the file.
+2. Add one object per week, like `{ w: 'Week 1', items: [...] }`. Each item in `items` needs a lecture number, a title, a YouTube video ID, and a slide URL: `{ n, t, v, s }`. If a lecture only has a Drive video and no YouTube link, use `dv` instead of `v`.
+3. Update the syllabus and past-paper links near the top of the file if they are still placeholders.
+4. Open the page in a browser and click through a couple of weeks to check the links work before committing.
 
 ## Publishing to GitHub Pages
 
-1. Create a repo (e.g. `the-companion` or `iitm-bs-hub`).
-2. Push everything in this folder to `main` — **except** any scratch/working files that live alongside it locally (spreadsheets, sorting notes, screenshots) that aren't part of the site itself.
-3. Repo → Settings → Pages → Source: `main` branch, `/ (root)` → Save.
-4. Site goes live at `https://<user>.github.io/<repo>/`.
+1. Push this folder to a GitHub repo (already done for this one: `vikashrammahuri60/the-companion`).
+2. In the repo, go to Settings, then Pages, and set Source to the `main` branch, `/ (root)`. Save.
+3. The site goes live at `https://<your-username>.github.io/<repo-name>/`.
 
-## Notes on content & access
+Don't push the scratch files that live alongside this project locally, things like spreadsheets, sorting notes, or screenshots used while building the site. The `.gitignore` in this repo already excludes the ones that existed when it was set up; add new ones there if more show up.
 
-- **No official IITM material is hosted in this repo.** Every slide, video, and PYQ link points out to the student portal, YouTube, or a student-owned Drive folder — this keeps the repo itself free of copyrighted course material.
-- **GitHub Pages is public.** There's no real access control available on a plain Pages site. If restricting access to IITM students ever matters, a client-side password gate is a weak filter — real auth needs a different host (e.g. Cloudflare Pages + Access, or a small backend).
+## A note on content and access
+
+No official IITM material is hosted in this repo. Every slide, video, and past-paper link points out to the student portal, YouTube, or a student-owned Drive folder. That keeps the repo itself free of copyrighted material.
+
+GitHub Pages is public, and there is no real way to restrict a plain Pages site to IITM students only. A password check written in JavaScript is not real security, since anyone can read the page source. If access control ever becomes necessary, it needs a different kind of host, for example Cloudflare Pages with Access, or a small backend server.
 
 ## Performance
 
-- No frameworks to install, no build step — open any HTML file directly or serve the folder as-is.
-- Only Bootstrap's JS/CSS and Google Fonts are loaded from a CDN; everything else is inline.
-- YouTube embeds only load when a lecture is actually selected, not on page load.
+There is nothing to install and no build step. Any file here can be opened directly in a browser or served as-is. Bootstrap's CSS/JS and the Google Fonts are the only things loaded from a CDN; everything else is inline. YouTube videos are only loaded when a lecture is actually clicked, not when the page first loads.
