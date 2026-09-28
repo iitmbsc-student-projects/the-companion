@@ -173,6 +173,7 @@
     <div class="nav-section">
       <div class="nav-label">Main</div>
       <div class="nav-item active" id="nav-dashboard">Dashboard</div>
+      <div class="nav-item" id="nav-syllabus">Syllabus</div>
     </div>
 
     <div class="nav-section accordion accordion-flush" id="lecture-nav">
@@ -189,7 +190,7 @@
         <h1>System Commands</h1>
         <p class="standfirst">The Unix command line — shells, files, processes, pipes, and the small tools that compose into large ones.</p>
         <div class="meta-line">
-          <span><b>Instructor</b> to be listed</span>
+          <span><b>Instructor</b> Prof. Gandham Phanikumar</span>
           <span><b>Term</b> Every term</span>
           <span><b>Prereq</b> none</span>
         </div>
@@ -199,7 +200,7 @@
         <h2><span class="num">§ 1</span>Syllabus</h2>
         <p class="subhead">what the course promises to cover</p>
         <div class="syllabus-body">
-          <p class="tbd-note">Syllabus not yet transcribed. Contributions welcome.</p>
+          <p>This course introduces command-line usage and progresses to automating complex tasks in a Linux environment. With tools like WSL on Windows and bash on macOS, these concepts are widely applicable. Students learn to combine commands, use I/O redirection, and write shell scripts to solve complex problems efficiently - often without needing specialized programs or graphical interfaces. By the end, they will appreciate the power, brevity, and efficiency of the command line, while gaining deeper insight into how their systems work.</p>
           <p><a href="https://study.iitm.ac.in/ds/course_pages/BSSE2001.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
         </div>
       </section>
@@ -241,6 +242,50 @@
 
     </section>
 
+    <section class="panel" id="panel-syllabus">
+
+      <div class="course-head">
+        <div class="kicker">SE2001 · Diploma / Programming · 3 credits</div>
+        <h1>Syllabus</h1>
+        <p class="standfirst">The official course syllabus, transcribed from the IITM BS Data Science &amp; Applications course booklet.</p>
+      </div>
+
+      <section class="chapter" id="syllabus-description">
+        <h2><span class="num">§ 1</span>Course Description</h2>
+        <p class="subhead">what the course promises to cover</p>
+        <div class="syllabus-body">
+          <p>This course introduces command-line usage and progresses to automating complex tasks in a Linux environment. With tools like WSL on Windows and bash on macOS, these concepts are widely applicable. Students learn to combine commands, use I/O redirection, and write shell scripts to solve complex problems efficiently - often without needing specialized programs or graphical interfaces. By the end, they will appreciate the power, brevity, and efficiency of the command line, while gaining deeper insight into how their systems work.</p>
+          
+          <p><b>Lectures-Tutorials-Practicals-Credits:</b> 3-0-0-3</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="syllabus-faculty">
+        <h2><span class="num">§ 2</span>Faculty</h2>
+        <p class="subhead">who designed and teaches this course</p>
+        <ul class="link-list">
+          <li>Prof. Gandham Phanikumar, Department of Metallurgical and Materials Engineering, IIT Madras</li>
+        </ul>
+      </section>
+
+      <section class="chapter" id="syllabus-weeks">
+        <h2><span class="num">§ 3</span>Week-by-week</h2>
+        <p class="subhead">the official syllabus, week by week</p>
+        <div class="syllabus-body">
+          <p><b>Week 1:</b> Linux virtual machine setup; Command-line environment; Basic Linux commands.</p>
+          <p><b>Week 2:</b>  Linux commands (advanced); Shell variables; Process management.</p>
+          <p><b>Week 3:</b>  Combining commands and file handling; Input/output redirection; Software management.</p>
+          <p><b>Week 4:</b>  Redirection and pipes; Regex (egrep); File search (find); Editors; Bash scripting.</p>
+          <p><b>Week 5:</b>  Shell scripting - variables, arguments; Conditionals, loops, functions; Scheduled tasks.</p>
+          <p><b>Week 6:</b>  AWK - text processing, data analysis; Regular expressions in AWK; AWK as a programming language; Introduction to sed; Pattern matching and substitution using regex.</p>
+          <p><b>Week 7:</b>  Build tools (make); File compression; Networking (IP , ports, DNS); Diagnostics; Log analysis.</p>
+          <p><b>Week 8:</b>  RAID; Git - workflow, branches, pull requests; Collaboration and issue management.</p>
+        </div>
+      </section>
+
+    </section>
+
+
     <section class="panel" id="panel-lecture">
       <div class="video" id="video-box">
         <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
@@ -272,6 +317,8 @@
   const navDashboard = document.getElementById('nav-dashboard');
   const panelDashboard = document.getElementById('panel-dashboard');
   const panelLecture = document.getElementById('panel-lecture');
+  const navSyllabus = document.getElementById('nav-syllabus');
+  const panelSyllabus = document.getElementById('panel-syllabus');
   const frame = document.getElementById('video-frame');
   const emptyOverlay = document.getElementById('video-empty');
   const eyebrow = document.getElementById('current-eyebrow');
@@ -357,8 +404,20 @@
 
   function showDashboard(){
     navDashboard.classList.add('active');
+    navSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
     panelDashboard.classList.add('active');
+    panelSyllabus.classList.remove('active');
+    panelLecture.classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showSyllabus(){
+    navSyllabus.classList.add('active');
+    navDashboard.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelSyllabus.classList.add('active');
+    panelDashboard.classList.remove('active');
     panelLecture.classList.remove('active');
     window.scrollTo(0, 0);
   }
@@ -366,6 +425,8 @@
   function selectLecture(wi, ii){
     const item = WEEKS_DATA[wi].items[ii];
     navDashboard.classList.remove('active');
+    navSyllabus.classList.remove('active');
+    panelSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => {
       el.classList.toggle('active', +el.dataset.w === wi && +el.dataset.i === ii);
     });
@@ -393,6 +454,7 @@
   }
 
   navDashboard.addEventListener('click', showDashboard);
+  navSyllabus.addEventListener('click', showSyllabus);
   navSection.addEventListener('click', e => {
     // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
     // this only needs to react to an actual lecture row being picked.

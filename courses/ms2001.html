@@ -173,6 +173,7 @@
     <div class="nav-section">
       <div class="nav-label">Main</div>
       <div class="nav-item active" id="nav-dashboard">Dashboard</div>
+      <div class="nav-item" id="nav-syllabus">Syllabus</div>
     </div>
 
     <div class="nav-section accordion accordion-flush" id="lecture-nav">
@@ -189,7 +190,7 @@
         <h1>Business Data Management</h1>
         <p class="standfirst">How real companies organise, model and reason about their data — from operational systems to analytical warehouses.</p>
         <div class="meta-line">
-          <span><b>Instructor</b> to be listed</span>
+          <span><b>Instructor</b> Prof. G Venkatesh &amp; Dr. Milind Gandhe</span>
           <span><b>Term</b> Every term</span>
           <span><b>Prereq</b> CS2001</span>
         </div>
@@ -199,7 +200,7 @@
         <h2><span class="num">§ 1</span>Syllabus</h2>
         <p class="subhead">what the course promises to cover</p>
         <div class="syllabus-body">
-          <p class="tbd-note">Syllabus not yet transcribed. Contributions welcome.</p>
+          <p>A significant share of data and problem statements in data science arises from the business domain. This course provides a foundational understanding of how businesses are structured and operate from a data perspective.</p>
           <p><a href="https://study.iitm.ac.in/ds/course_pages/BSMS2001.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
         </div>
       </section>
@@ -241,6 +242,54 @@
 
     </section>
 
+    <section class="panel" id="panel-syllabus">
+
+      <div class="course-head">
+        <div class="kicker">MS2001 · Diploma / Data Science · 4 credits</div>
+        <h1>Syllabus</h1>
+        <p class="standfirst">The official course syllabus, transcribed from the IITM BS Data Science &amp; Applications course booklet.</p>
+      </div>
+
+      <section class="chapter" id="syllabus-description">
+        <h2><span class="num">§ 1</span>Course Description</h2>
+        <p class="subhead">what the course promises to cover</p>
+        <div class="syllabus-body">
+          <p>A significant share of data and problem statements in data science arises from the business domain. This course provides a foundational understanding of how businesses are structured and operate from a data perspective.</p>
+          
+          <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="syllabus-faculty">
+        <h2><span class="num">§ 2</span>Faculty</h2>
+        <p class="subhead">who designed and teaches this course</p>
+        <ul class="link-list">
+          <li>Prof. G Venkatesh, Director, School of Technology, Dhirubhai Ambani University</li><li>Dr. Milind Gandhe, Machine Intelligence and Robotics (MINRO) COE, IIIT Bangalore</li>
+        </ul>
+      </section>
+
+      <section class="chapter" id="syllabus-weeks">
+        <h2><span class="num">§ 3</span>Week-by-week</h2>
+        <p class="subhead">the official syllabus, week by week</p>
+        <div class="syllabus-body">
+          <p><b>Week 1:</b> Introduction to economics - economic flow, demand and supply; Spreadsheets; Spreadsheet functions; Economics applications using Excel.</p>
+          <p><b>Week 2:</b> External data sources and survey methods; Exploring demographic data; Analysing demographic data.</p>
+          <p><b>Week 3:</b> Market size estimation.</p>
+          <p><b>Week 4:</b> Pivot tables; Data visualisation; Market share and aspirational data analysis.</p>
+          <p><b>Week 5:</b> E-commerce - case study and data analysis; Key questions and data review; Pareto analysis (volume and revenue); Scatter plots; Trend analysis.</p>
+          <p><b>Week 6:</b> Sales and trend analysis; Inventory and ledger metrics; VLOOKUP and pivot tables; Key learnings.</p>
+          <p><b>Week 7:</b> Manufacturing case study - data (sales, production, inventory); Revenue and portfolio analysis; Regional planning.</p>
+          <p><b>Week 8:</b> Production and inventory analytics - scheduling, scrap, OEE; Profitability and margins; Safety stock and reordering.</p>
+          <p><b>Week 9:</b> HR and recruitment - sourcing, selection, ranking; Channel effectiveness; Diversity analysis; Onboarding.</p>
+          <p><b>Week 10:</b> Fintech and payments; Credit case study; Nudge economics; Data and segment analysis; Behavioral insights.</p>
+          <p><b>Week 11:</b> A/B testing; Credit risk analysis; Dataset exploration and review; Monthly trend analysis.</p>
+          <p><b>Week 12:</b> Business operations and management; Spreadsheet-based data processing.</p>
+        </div>
+      </section>
+
+    </section>
+
+
     <section class="panel" id="panel-lecture">
       <div class="video" id="video-box">
         <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
@@ -272,6 +321,8 @@
   const navDashboard = document.getElementById('nav-dashboard');
   const panelDashboard = document.getElementById('panel-dashboard');
   const panelLecture = document.getElementById('panel-lecture');
+  const navSyllabus = document.getElementById('nav-syllabus');
+  const panelSyllabus = document.getElementById('panel-syllabus');
   const frame = document.getElementById('video-frame');
   const emptyOverlay = document.getElementById('video-empty');
   const eyebrow = document.getElementById('current-eyebrow');
@@ -357,8 +408,20 @@
 
   function showDashboard(){
     navDashboard.classList.add('active');
+    navSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
     panelDashboard.classList.add('active');
+    panelSyllabus.classList.remove('active');
+    panelLecture.classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showSyllabus(){
+    navSyllabus.classList.add('active');
+    navDashboard.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelSyllabus.classList.add('active');
+    panelDashboard.classList.remove('active');
     panelLecture.classList.remove('active');
     window.scrollTo(0, 0);
   }
@@ -366,6 +429,8 @@
   function selectLecture(wi, ii){
     const item = WEEKS_DATA[wi].items[ii];
     navDashboard.classList.remove('active');
+    navSyllabus.classList.remove('active');
+    panelSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => {
       el.classList.toggle('active', +el.dataset.w === wi && +el.dataset.i === ii);
     });
@@ -400,6 +465,7 @@
   }
 
   navDashboard.addEventListener('click', showDashboard);
+  navSyllabus.addEventListener('click', showSyllabus);
   navSection.addEventListener('click', e => {
     // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
     // this only needs to react to an actual lecture row being picked.

@@ -173,6 +173,7 @@
     <div class="nav-section">
       <div class="nav-label">Main</div>
       <div class="nav-item active" id="nav-dashboard">Dashboard</div>
+      <div class="nav-item" id="nav-syllabus">Syllabus</div>
     </div>
 
     <div class="nav-section accordion accordion-flush" id="lecture-nav">
@@ -189,7 +190,7 @@
         <h1>Business Analytics</h1>
         <p class="standfirst">Descriptive, predictive and prescriptive analytics for business questions — with the case studies that motivate each.</p>
         <div class="meta-line">
-          <span><b>Instructor</b> to be listed</span>
+          <span><b>Instructor</b> Prof. Rahul R Marathe</span>
           <span><b>Term</b> Every term</span>
           <span><b>Prereq</b> MS2001</span>
         </div>
@@ -199,7 +200,7 @@
         <h2><span class="num">§ 1</span>Syllabus</h2>
         <p class="subhead">what the course promises to cover</p>
         <div class="syllabus-body">
-          <p class="tbd-note">Syllabus not yet transcribed. Contributions welcome.</p>
+          <p>This course introduces quantitative modelling as a key business skill, focusing on the application of statistical methods. Building on the first-year core course, it demonstrates how these techniques are applied to real business scenarios to derive insights and support optimal decisions.</p>
           <p><a href="https://study.iitm.ac.in/ds/course_pages/BSMS2002.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
         </div>
       </section>
@@ -241,6 +242,54 @@
 
     </section>
 
+    <section class="panel" id="panel-syllabus">
+
+      <div class="course-head">
+        <div class="kicker">MS2002 · Diploma / Data Science · 4 credits</div>
+        <h1>Syllabus</h1>
+        <p class="standfirst">The official course syllabus, transcribed from the IITM BS Data Science &amp; Applications course booklet.</p>
+      </div>
+
+      <section class="chapter" id="syllabus-description">
+        <h2><span class="num">§ 1</span>Course Description</h2>
+        <p class="subhead">what the course promises to cover</p>
+        <div class="syllabus-body">
+          <p>This course introduces quantitative modelling as a key business skill, focusing on the application of statistical methods. Building on the first-year core course, it demonstrates how these techniques are applied to real business scenarios to derive insights and support optimal decisions.</p>
+          
+          <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="syllabus-faculty">
+        <h2><span class="num">§ 2</span>Faculty</h2>
+        <p class="subhead">who designed and teaches this course</p>
+        <ul class="link-list">
+          <li>Prof. Rahul R Marathe, Department of Management Studies, IIT Madras</li>
+        </ul>
+      </section>
+
+      <section class="chapter" id="syllabus-weeks">
+        <h2><span class="num">§ 3</span>Week-by-week</h2>
+        <p class="subhead">the official syllabus, week by week</p>
+        <div class="syllabus-body">
+          <p><b>Week 1:</b> Data visualization and storytelling; Design principles; Misleading visuals; Dashboard creation (Excel).</p>
+          <p><b>Week 2:</b> Probability distributions; Fitting and goodness-of-fit tests; Distribution identification (visual + statistical, Python).</p>
+          <p><b>Week 3:</b> Categorical association; Bayes' rule; Chi-squared test (Python, spreadsheets).</p>
+          <p><b>Week 4:</b> Demand and pricing - elasticity, response curves; Linear regression modeling; Python implementation.</p>
+          <p><b>Week 5:</b> Demand modeling - constant elasticity, regression; Pricing optimization (revenue, profit); Linear programming; Implementation.</p>
+          <p><b>Week 6:</b> Multiple linear regression - interactions, multicollinearity (VIF); Excel and Python implementation.</p>
+          <p><b>Week 7:</b> Logistic regression - modeling, evaluation, interpretation; Excel and Python implementation; Application.</p>
+          <p><b>Week 8:</b> Efficiency analysis - graphical methods; Data Envelopment Analysis (DEA).</p>
+          <p><b>Week 9:</b> DEA - multi-input/output analysis; Efficiency improvement strategies.</p>
+          <p><b>Week 10:</b> DEA - efficiency analysis; Conjoint analysis - optimization, ideal point model.</p>
+          <p><b>Week 11:</b> Conjoint analysis - linear programming, regression; Excel-based optimization.</p>
+          <p><b>Week 12:</b> Business analytics outlook; Chi-square goodness-of-fit (uniform, Poisson).</p>
+        </div>
+      </section>
+
+    </section>
+
+
     <section class="panel" id="panel-lecture">
       <div class="video" id="video-box">
         <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
@@ -272,6 +321,8 @@
   const navDashboard = document.getElementById('nav-dashboard');
   const panelDashboard = document.getElementById('panel-dashboard');
   const panelLecture = document.getElementById('panel-lecture');
+  const navSyllabus = document.getElementById('nav-syllabus');
+  const panelSyllabus = document.getElementById('panel-syllabus');
   const frame = document.getElementById('video-frame');
   const emptyOverlay = document.getElementById('video-empty');
   const eyebrow = document.getElementById('current-eyebrow');
@@ -357,8 +408,20 @@
 
   function showDashboard(){
     navDashboard.classList.add('active');
+    navSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
     panelDashboard.classList.add('active');
+    panelSyllabus.classList.remove('active');
+    panelLecture.classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showSyllabus(){
+    navSyllabus.classList.add('active');
+    navDashboard.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelSyllabus.classList.add('active');
+    panelDashboard.classList.remove('active');
     panelLecture.classList.remove('active');
     window.scrollTo(0, 0);
   }
@@ -366,6 +429,8 @@
   function selectLecture(wi, ii){
     const item = WEEKS_DATA[wi].items[ii];
     navDashboard.classList.remove('active');
+    navSyllabus.classList.remove('active');
+    panelSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => {
       el.classList.toggle('active', +el.dataset.w === wi && +el.dataset.i === ii);
     });
@@ -400,6 +465,7 @@
   }
 
   navDashboard.addEventListener('click', showDashboard);
+  navSyllabus.addEventListener('click', showSyllabus);
   navSection.addEventListener('click', e => {
     // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
     // this only needs to react to an actual lecture row being picked.
