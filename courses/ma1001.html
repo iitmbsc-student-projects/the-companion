@@ -57,12 +57,10 @@
   /* Section headings */
   section.chapter{margin:44px 0}
   section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
-    letter-spacing:-0.01em;margin:0 0 4px;display:flex;align-items:baseline;gap:14px}
+    letter-spacing:-0.01em;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--rule);
+    display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
-  section.chapter .subhead{font-family:'Fraunces',serif;font-style:italic;
-    color:var(--ink-2);font-size:15px;margin:0 0 18px;padding-bottom:14px;
-    border-bottom:1px solid var(--rule)}
 
   /* Syllabus — prose paragraphs, not bullets */
   .syllabus-body{font-family:'Fraunces',serif;font-size:17px;line-height:1.7;max-width:62ch}
@@ -159,7 +157,6 @@
   <!-- SYLLABUS -->
   <section class="chapter" id="syllabus">
     <h2><span class="num">§ 1</span>Syllabus</h2>
-    <p class="subhead">what the course promises to cover</p>
     <div class="syllabus-body">
       <p>The course opens with the language of sets and functions, then walks through <em>linear equations in two variables</em> and the geometry of straight lines. Quadratic and polynomial functions follow, together with the algebra needed to reason about them.</p>
       <p>The middle third turns to <em>matrices and determinants</em> — enough linear algebra to see how systems of equations behave in general. Combinatorics arrives next: permutations, combinations, and the binomial theorem.</p>
@@ -171,7 +168,6 @@
   <!-- CALENDAR -->
   <section class="chapter" id="calendar">
     <h2><span class="num">§ 2</span>Calendar</h2>
-    <p class="subhead">how the term is paced</p>
     <ul class="dates">
       <li><span class="marker"></span><span class="what">Weekly graded assignments (GrPA + PPA)</span><span class="when">Weeks 1–12</span></li>
       <li><span class="marker"></span><span class="what">Discussion sessions</span><span class="when">Weekends</span></li>
@@ -184,7 +180,6 @@
   <!-- PYQ -->
   <section class="chapter" id="pyq">
     <h2><span class="num">§ 3</span>Previous Year Questions</h2>
-    <p class="subhead">papers and solutions from earlier terms</p>
     <table class="papers">
       <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
       <tbody>
@@ -199,7 +194,6 @@
   <!-- WEEKS -->
   <section class="chapter" id="lectures">
     <h2><span class="num">§ 4</span>Weekly Lectures</h2>
-    <p class="subhead">the playlist plays at the top; each week below holds slides, notes and transcript</p>
   <div style="margin-bottom:10px">
     <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px">Now showing — Live sessions — Feb 2026</div>
     <div style="position:relative;padding-top:56.25%;background:#111;overflow:hidden;border:1px solid var(--rule)">

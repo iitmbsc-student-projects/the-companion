@@ -54,12 +54,10 @@
 
   section.chapter{margin:44px 0}
   section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
-    letter-spacing:-0.01em;margin:0 0 4px;display:flex;align-items:baseline;gap:14px}
+    letter-spacing:-0.01em;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--rule);
+    display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
-  section.chapter .subhead{font-family:'Fraunces',serif;font-style:italic;
-    color:var(--ink-2);font-size:15px;margin:0 0 18px;padding-bottom:14px;
-    border-bottom:1px solid var(--rule)}
 
   .syllabus-body{font-family:'Fraunces',serif;font-size:17px;line-height:1.7;max-width:62ch}
   .syllabus-body p{margin:0 0 14px}
@@ -144,7 +142,7 @@
     <div class="toc-title">In this chapter</div>
     <ol>
       <li><a href="#syllabus">Syllabus</a><span class="p">§ 1</span></li>
-      <li><a href="#calendar">Calendar</a><span class="p">§ 2</span></li>
+      <li><a href="#milestones">Milestones</a><span class="p">§ 2</span></li>
       <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
       <li><a href="#sessions">Project Sessions</a><span class="p">§ 4</span></li>
     </ol>
@@ -152,7 +150,6 @@
 
   <section class="chapter" id="syllabus">
     <h2><span class="num">§ 1</span>Syllabus</h2>
-    <p class="subhead">what the course promises to cover</p>
     <div class="syllabus-body">
       <p>This project is an advanced course that builds on the foundations of "Modern Application Development - I," focusing on creating dynamic web applications using Vue.js. It covers key concepts such as token-based authentication, asynchronous task execution with Celery and Redis, caching techniques, and essential security practices including CORS, enabling students to develop scalable and secure applications. This Project provides hands-on experience in building end-to-end web applications using technologies such as HTML, CSS, JavaScript, Flask, APIs, and SQLite. It focuses on developing secure, efficient, and deployable applications while applying core web development concepts.</p>
       <p><b>Co-requisite:</b> BSCS2003:  Modern Application Development I</p>
@@ -169,21 +166,13 @@
     </div>
   </section>
 
-  <section class="chapter" id="calendar">
-    <h2><span class="num">§ 2</span>Calendar</h2>
-    <p class="subhead">how the term is paced</p>
-    <ul class="dates">
-      <li><span class="marker"></span><span class="what">Weekly graded assignments (GrPA + PPA)</span><span class="when">Weeks 1–12</span></li>
-      <li><span class="marker"></span><span class="what">Discussion sessions</span><span class="when">Weekends</span></li>
-      <li class="exam"><span class="marker"></span><span class="what">Quiz 1</span><span class="when">Week 5</span></li>
-      <li class="exam"><span class="marker"></span><span class="what">Quiz 2</span><span class="when">Week 8</span></li>
-      <li class="exam"><span class="marker"></span><span class="what">End-term examination</span><span class="when">Week 13</span></li>
-    </ul>
+  <section class="chapter" id="milestones">
+    <h2><span class="num">§ 2</span>Milestones</h2>
+    <p class="placeholder">Milestone dates and submission deadlines not yet added.</p>
   </section>
 
   <section class="chapter" id="pyq">
     <h2><span class="num">§ 3</span>Previous Year Questions</h2>
-    <p class="subhead">papers and solutions from earlier terms</p>
     <table class="papers">
       <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
       <tbody>
@@ -194,7 +183,6 @@
 
   <section class="chapter" id="sessions">
     <h2><span class="num">§ 4</span>Project Sessions</h2>
-    <p class="subhead">live project-support sessions run each term, recorded and playlisted</p>
     <table class="papers">
       <thead><tr><th>Term</th><th>Session playlist</th></tr></thead>
       <tbody>
