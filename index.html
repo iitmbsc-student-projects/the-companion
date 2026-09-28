@@ -22,8 +22,8 @@
   .wrap{max-width:920px;margin:0 auto;padding:0 28px}
 
   /* Masthead */
-  header.mast{border-bottom:3px double var(--ink);padding:22px 0 16px}
-  .mast-top{display:flex;justify-content:space-between;align-items:baseline;
+  header.mast{border-bottom:3px double var(--ink);padding:16px 0 12px}
+  .mast-top{display:flex;justify-content:center;align-items:baseline;
     font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2)}
   .mast-title{font-family:'Fraunces',serif;font-weight:700;font-size:56px;
@@ -34,14 +34,14 @@
   .mast-rule{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
     height:3px;margin-top:14px}
 
-  nav.section-nav{text-align:center;padding:12px 0;font-size:12px;
-    font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
-  nav.section-nav a{color:var(--ink);border:none;margin:0 5px}
+  nav.section-nav{text-align:center;padding:10px 0;font-size:12px;
+    font-family:'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase}
+  nav.section-nav a{color:var(--ink);border:none;margin:0 2px}
   nav.section-nav a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
   nav.section-nav .sep{color:var(--rule)}
 
 
-  .search{max-width:520px;margin:0 auto 24px;position:relative}
+  .search{max-width:520px;margin:0 auto 18px;position:relative}
   .search input{width:100%;background:transparent;border:none;border-bottom:1px solid var(--ink);
     padding:10px 4px 10px 26px;font:15px 'Inter',sans-serif;color:var(--ink);outline:none}
   .search input::placeholder{color:var(--ink-2);font-style:italic}
@@ -49,7 +49,7 @@
   .search::before{content:"⌕";position:absolute;left:0;top:8px;font-size:20px;color:var(--ink-2)}
 
   /* Section headers */
-  .level{margin:44px 0 8px}
+  .level{margin:30px 0 8px}
   .level-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
   .level-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
     margin:0;letter-spacing:-0.01em}
@@ -63,7 +63,7 @@
 
   /* Course list */
   ol.courses{list-style:none;margin:0;padding:0}
-  ol.courses li{padding:9px 0;border-bottom:1px dotted var(--rule);
+  ol.courses li{padding:6px 0;border-bottom:1px dotted var(--rule);
     display:grid;grid-template-columns:28px 96px 1fr auto;gap:14px;
     align-items:baseline;font-size:15px}
   ol.courses li .num{font-family:'JetBrains Mono',monospace;font-size:11px;
@@ -80,7 +80,7 @@
   ol.courses li .ext{font-size:10px;color:var(--accent-2);margin-left:4px;letter-spacing:.05em;
     text-transform:uppercase;font-family:'JetBrains Mono',monospace}
   @media(min-width:800px){
-    .courses-cols{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+    .courses-cols{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
   }
   @media(max-width:640px){
     .mast-title{font-size:40px}
@@ -88,7 +88,7 @@
     ol.courses li .credits{grid-column:2/-1;margin-top:-4px;padding-left:0}
   }
 
-  footer.colophon{margin-top:60px;padding:24px 0 40px;border-top:3px double var(--ink);
+  footer.colophon{margin-top:36px;padding:18px 0 28px;border-top:3px double var(--ink);
     font-size:13px;color:var(--ink-2);text-align:center;font-family:'Fraunces',serif;
     font-style:italic;line-height:1.7}
 
@@ -103,7 +103,7 @@
   @media(max-width:640px){ #back-to-top{bottom:18px;right:18px;width:42px;height:42px} }
 
   .aside{background:var(--paper-2);border-left:3px solid var(--accent);
-    padding:14px 18px;margin:22px 0;font-family:'Fraunces',serif;font-size:14px;
+    padding:12px 16px;margin:16px 0;font-family:'Fraunces',serif;font-size:14px;
     font-style:italic;color:var(--ink-2);max-width:720px;margin-left:auto;margin-right:auto}
 </style>
 </head>
@@ -112,7 +112,6 @@
 <header class="mast">
   <div class="wrap">
     <div class="mast-top">
-      <span>Vol. I · Est. 2026</span>
       <span>By students, for students</span>
     </div>
     <h1 class="mast-title">The Companion</h1>
