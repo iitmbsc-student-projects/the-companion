@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Managerial Economics — The Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4efe6; --paper-2:#ebe4d5;
+    --ink:#1c1a17; --ink-2:#4a453d; --rule:#c9c1b0;
+    --accent:#7a1e28; --accent-2:#b8642a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);
+    font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a:hover{border-bottom-color:var(--accent)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 28px}
+
+  header.top{border-bottom:1px solid var(--rule);padding:16px 0;font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2)}
+  header.top .row{display:flex;justify-content:space-between;align-items:center}
+  header.top a{color:var(--ink);border:none}
+  header.top a:hover{color:var(--accent)}
+
+  .course-head{padding:38px 0 24px;border-bottom:1px solid var(--rule)}
+  .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:40px;
+    line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
+    font-variation-settings:"opsz" 144}
+  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+    color:var(--ink-2);max-width:60ch;margin:0}
+  .meta-line{margin-top:18px;padding-top:14px;border-top:1px dotted var(--rule);
+    display:flex;flex-wrap:wrap;gap:22px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+  .meta-line b{color:var(--ink);font-weight:500}
+
+  .toc{margin:28px 0 40px;background:var(--paper-2);padding:18px 22px;
+    border:1px solid var(--rule)}
+  .toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+  .toc ol{list-style:none;padding:0;margin:0;column-count:2;column-gap:30px}
+  .toc li{padding:5px 0;font-family:'Fraunces',serif;font-size:15px;
+    display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px dotted var(--rule)}
+  .toc a{color:var(--ink);border:none}
+  .toc a:hover{color:var(--accent)}
+  .toc .p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  @media(max-width:640px){ .toc ol{column-count:1} .course-head h1{font-size:30px} }
+
+  section.chapter{margin:44px 0}
+  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
+    letter-spacing:-0.01em;margin:0 0 4px;display:flex;align-items:baseline;gap:14px}
+  section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:.2em;font-weight:500}
+  section.chapter .subhead{font-family:'Fraunces',serif;font-style:italic;
+    color:var(--ink-2);font-size:15px;margin:0 0 18px;padding-bottom:14px;
+    border-bottom:1px solid var(--rule)}
+
+  .syllabus-body{font-family:'Fraunces',serif;font-size:17px;line-height:1.7;max-width:62ch}
+  .syllabus-body p{margin:0 0 14px}
+
+  ul.dates{list-style:none;padding:0;margin:0}
+  ul.dates li{display:flex;align-items:baseline;padding:8px 0;
+    border-bottom:1px dotted var(--rule);font-size:15px}
+  ul.dates li .what{flex:1}
+  ul.dates li .when{font-family:'JetBrains Mono',monospace;font-size:12px;
+    color:var(--ink-2);letter-spacing:.05em}
+  ul.dates li .marker{width:8px;height:8px;border-radius:50%;background:var(--accent);
+    margin-right:12px;flex-shrink:0}
+  ul.dates li.exam .marker{background:var(--accent-2)}
+  ul.dates li.exam .what{font-weight:600}
+
+  table.papers{width:100%;border-collapse:collapse;font-size:14px}
+  table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
+    padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
+  table.papers td{padding:10px;border-bottom:1px dotted var(--rule);vertical-align:baseline}
+  table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
+    color:var(--ink);width:180px}
+  table.papers a{margin-right:14px}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+
+  .week{padding:18px 0;border-bottom:1px solid var(--rule)}
+  .week:last-child{border-bottom:none}
+  .week summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px}
+  .week summary::-webkit-details-marker{display:none}
+  .week .wnum{font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.15em;color:var(--accent);min-width:60px}
+  .week .wtitle{font-family:'Fraunces',serif;font-size:19px;font-weight:600;flex:1;
+    letter-spacing:-0.005em}
+  .week .wicon{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-2);
+    transition:transform .15s}
+  .week[open] .wicon{transform:rotate(45deg);color:var(--accent)}
+  .week .body{padding:16px 0 4px 76px}
+  @media(max-width:640px){ .week .body{padding-left:0} }
+
+  .tabs{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-bottom:16px}
+  .tabs button{background:none;border:none;padding:8px 14px 10px;cursor:pointer;
+    font:12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-2);border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tabs button.active{color:var(--accent);border-color:var(--accent)}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+  .video{position:relative;padding-top:56.25%;background:#111;overflow:hidden;
+    border:1px solid var(--rule)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .link-list{margin:0;padding:0;list-style:none}
+  .link-list li{padding:6px 0;font-size:15px}
+  .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
+  .placeholder{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+
+  footer.colophon{margin-top:70px;padding:24px 0 40px;border-top:3px double var(--ink);
+    text-align:center;font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap row">
+    <div><a href="../index.html">← The Companion</a></div>
+    <div>BS elective · MS3033</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="course-head">
+    <div class="kicker">MS3033 · BS elective · 4 credits</div>
+    <h1>Managerial Economics</h1>
+    <p class="standfirst">The economic reasoning a manager uses — demand, cost, competition, pricing, and strategic decisions.</p>
+    <div class="meta-line">
+      <span><b>Instructor</b> to be listed</span>
+      <span><b>Term</b> As offered</span>
+      <span><b>Prereq</b> none</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">In this chapter</div>
+    <ol>
+      <li><a href="#syllabus">Syllabus</a><span class="p">§ 1</span></li>
+      <li><a href="#calendar">Calendar</a><span class="p">§ 2</span></li>
+      <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
+      <li><a href="#lectures">Weekly Lectures</a><span class="p">§ 4</span></li>
+    </ol>
+  </div>
+
+  <section class="chapter" id="syllabus">
+    <h2><span class="num">§ 1</span>Syllabus</h2>
+    <p class="subhead">what the course promises to cover</p>
+    <div class="syllabus-body">
+      <p class="placeholder">Syllabus not yet transcribed. Contributions welcome.</p>
+      <p><a href="https://study.iitm.ac.in/ds/course_pages/BSMS3033.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
+    </div>
+  </section>
+
+  <section class="chapter" id="calendar">
+    <h2><span class="num">§ 2</span>Calendar</h2>
+    <p class="subhead">how the term is paced</p>
+    <ul class="dates">
+      <li><span class="marker"></span><span class="what">Weekly graded assignments (GrPA + PPA)</span><span class="when">Weeks 1–12</span></li>
+      <li><span class="marker"></span><span class="what">Discussion sessions</span><span class="when">Weekends</span></li>
+      <li class="exam"><span class="marker"></span><span class="what">Quiz 1</span><span class="when">Week 5</span></li>
+      <li class="exam"><span class="marker"></span><span class="what">Quiz 2</span><span class="when">Week 8</span></li>
+      <li class="exam"><span class="marker"></span><span class="what">End-term examination</span><span class="when">Week 13</span></li>
+    </ul>
+  </section>
+
+  <section class="chapter" id="pyq">
+    <h2><span class="num">§ 3</span>Previous Year Questions</h2>
+    <p class="subhead">papers and solutions from earlier terms</p>
+    <table class="papers">
+      <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td colspan="4" class="empty">No papers uploaded yet.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="chapter" id="lectures">
+    <h2><span class="num">§ 4</span>Weekly Lectures</h2>
+    <p class="subhead">the playlist plays at the top; each week below holds slides, notes and transcript</p>
+  <div style="margin-bottom:10px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px">Now showing — Course lectures — Jan 2024</div>
+    <div style="position:relative;padding-top:56.25%;background:#111;overflow:hidden;border:1px solid var(--rule)">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLZ2ps__7DhBaUpIodIKDFj_5JznWTxp1E" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+    </div>
+  </div>
+  <div id="weeks-list"></div>
+  </section>
+</div>
+
+<footer class="colophon">
+  <div class="wrap">
+    Chapter kept by contributors of The Companion.<br>
+    <a href="../index.html">Return to the table of contents</a>
+  </div>
+</footer>
+
+<script>
+    const WEEKS = Array.from({length:12},(_,i)=> `Week ${i+1}`);
+
+  const weekHTML = (i, t) => `
+    <details class="week" ${i===0?'open':''}>
+      <summary>
+        <span class="wnum">Week ${String(i+1).padStart(2,'0')}</span>
+        <span class="wtitle">${t}</span>
+        <span class="wicon">+</span>
+      </summary>
+      <div class="body">
+        <div class="tabs">
+          <button class="active" data-tab="s">Slides</button>
+          <button data-tab="n">Notes</button>
+          <button data-tab="t">Transcript</button>
+        </div>
+        <div class="tab-panel active" data-tab="s"><p class="placeholder">Slides not linked yet.</p></div>
+        <div class="tab-panel" data-tab="n"><p class="placeholder">Notes not linked yet.</p></div>
+        <div class="tab-panel" data-tab="t"><p class="placeholder">Transcripts not linked yet.</p></div>
+      </div>
+    </details>`;
+
+  const list = document.getElementById('weeks-list');
+  WEEKS.forEach((t,i) => list.insertAdjacentHTML('beforeend', weekHTML(i,t)));
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.tabs button'); if (!b) return;
+    const scope = b.closest('.body');
+    scope.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('active', x===b));
+    scope.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tab===b.dataset.tab));
+  });
+</script>
+</body>
+</html>

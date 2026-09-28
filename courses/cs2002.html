@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Programming, Data Structures &amp; Algorithms using Python — The Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4efe6; --paper-2:#ebe4d5;
+    --ink:#1c1a17; --ink-2:#4a453d; --rule:#c9c1b0;
+    --accent:#7a1e28; --accent-2:#b8642a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
+    font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
+     main content is simply offset by its width. This is decoupled on purpose so neither
+     column's length can create dead space next to the other.
+     (Note: this one stays plain CSS rather than Bootstrap's position/vh utilities, since
+     those ship as !important and would fight the mobile override in the media query below.) ---- */
+  .sidebar{position:fixed;top:0;left:0;width:300px;height:100vh;overflow-y:auto;
+    background:var(--paper-2);border-right:1px solid var(--rule);z-index:10}
+  .sidebar-brand{padding:18px 20px 16px;border-bottom:1px solid var(--rule)}
+  .sidebar-brand .back-link{display:block;color:var(--ink);border:none;font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .sidebar-brand .back-link:hover{color:var(--accent)}
+  .sidebar-brand .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:20px;
+    letter-spacing:-0.01em}
+  .sidebar-brand .brand-sub{font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.05em;color:var(--ink-2);margin-top:3px}
+
+  .nav-section{padding:14px 0}
+  .nav-section + .nav-section{border-top:1px solid var(--rule)}
+  .nav-label{padding:4px 20px 8px;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+  .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
+    font-weight:600;border-left:3px solid transparent}
+  .nav-item:hover{background:rgba(122,30,40,.07)}
+  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+
+  /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
+     data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
+     hand-rolled show/hide JS. These rules just strip Bootstrap's own accordion skin back down
+     to the paper theme so the look is unchanged. */
+  .accordion-item{background:transparent;border:none}
+  .week-group{border-top:1px solid var(--rule)}
+  .nav-section > .week-group:first-child{border-top:none}
+  .week-title{padding:9px 20px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
+    border-bottom:1px solid var(--rule);cursor:pointer;box-shadow:none;border-radius:0;
+    display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none}
+  .week-title:hover{color:var(--ink)}
+  .week-title:focus{box-shadow:none}
+  /* Bootstrap's own :not(.collapsed) active-state rule outranks a plain .week-title rule on
+     specificity alone, so this needs the compound selector to actually win. */
+  .week-title.accordion-button:not(.collapsed){background:var(--paper-2);color:var(--ink-2);box-shadow:none}
+  .week-title.accordion-button::after{display:none}
+  .week-title .chev{font-family:'JetBrains Mono',monospace;font-size:12px;
+    transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
+  .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
+  .accordion-body{padding:0}
+  .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
+    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    border-bottom:1px dotted var(--rule)}
+  .lecture-item:hover{background:rgba(122,30,40,.07)}
+  .lecture-item.active{background:var(--accent);color:#fff}
+  .lecture-item.active .lnum{color:#f0d3d6}
+  .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
+    flex-shrink:0;min-width:38px}
+
+  .main-content{margin-left:300px;padding:40px 56px 60px}
+  @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
+
+  .panel{display:none}
+  .panel.active{display:block}
+
+  .course-head{padding-bottom:24px;border-bottom:1px solid var(--rule);margin-bottom:32px}
+  .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
+    line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
+    font-variation-settings:"opsz" 144}
+  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+    color:var(--ink-2);max-width:70ch;margin:0}
+  .meta-line{margin-top:18px;padding-top:14px;border-top:1px dotted var(--rule);
+    display:flex;flex-wrap:wrap;gap:22px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+  .meta-line b{color:var(--ink);font-weight:500}
+
+  section.chapter{margin:40px 0}
+  section.chapter:first-of-type{margin-top:0}
+  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
+    letter-spacing:-0.01em;margin:0 0 4px;display:flex;align-items:baseline;gap:14px}
+  section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:.2em;font-weight:500}
+  section.chapter .subhead{font-family:'Fraunces',serif;font-style:italic;
+    color:var(--ink-2);font-size:15px;margin:0 0 18px;padding-bottom:14px;
+    border-bottom:1px solid var(--rule)}
+
+  .syllabus-body{font-family:'Fraunces',serif;font-size:17px;line-height:1.7;max-width:70ch}
+  .syllabus-body p{margin:0 0 14px}
+
+  ul.dates{list-style:none;padding:0;margin:0;max-width:640px}
+  ul.dates li{display:flex;align-items:baseline;padding:8px 0;
+    border-bottom:1px dotted var(--rule);font-size:15px}
+  ul.dates li .what{flex:1}
+  ul.dates li .when{font-family:'JetBrains Mono',monospace;font-size:12px;
+    color:var(--ink-2);letter-spacing:.05em}
+  ul.dates li .marker{width:8px;height:8px;border-radius:50%;background:var(--accent);
+    margin-right:12px;flex-shrink:0}
+  ul.dates li.exam .marker{background:var(--accent-2)}
+  ul.dates li.exam .what{font-weight:600}
+
+  table.papers{width:100%;max-width:900px;border-collapse:collapse;font-size:14px}
+  table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
+    padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
+  table.papers td{padding:10px;border-bottom:1px dotted var(--rule);vertical-align:baseline}
+  table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
+    color:var(--ink);width:180px}
+  table.papers a{margin-right:14px}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+
+  .video{position:relative;padding-top:56.25%;background:#111;overflow:hidden;
+    border:1px solid var(--rule);max-width:1000px}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .link-list{margin:0;padding:0;list-style:none}
+  .link-list li{padding:6px 0;font-size:15px}
+  .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
+  /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
+     loading-skeleton component (a solid gray bar) */
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+
+  .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    color:var(--ink-2);background:var(--paper-2)}
+  .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
+  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+    max-width:1000px}
+  .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
+  .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase}
+
+  footer.colophon{margin-top:32px;margin-left:300px;padding:16px 0 22px;border-top:3px double var(--ink);
+    text-align:center;font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--ink-2)}
+
+  @media(max-width:820px){
+    .sidebar{position:relative;width:100%;height:auto;max-height:320px;top:auto;left:auto}
+    .main-content{margin-left:0}
+    footer.colophon{margin-left:0}
+    .course-head h1{font-size:30px}
+  }
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <a class="back-link" href="../index.html">← The Companion</a>
+      <div class="brand-code">CS2002</div>
+      <div class="brand-sub">Diploma / Programming · 4 credits</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Main</div>
+      <div class="nav-item active" id="nav-dashboard">Dashboard</div>
+    </div>
+
+    <div class="nav-section accordion accordion-flush" id="lecture-nav">
+      <div class="nav-label">Weekly Lectures</div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <section class="panel active" id="panel-dashboard">
+
+      <div class="course-head">
+        <div class="kicker">CS2002 · Diploma / Programming · 4 credits</div>
+        <h1>Programming, Data Structures &amp; Algorithms using Python</h1>
+        <p class="standfirst">The classical data structures and algorithms, taught in Python — recursion, complexity, searching, sorting, stacks, queues, trees and graphs.</p>
+        <div class="meta-line">
+          <span><b>Instructor</b> to be listed</span>
+          <span><b>Term</b> Every term</span>
+          <span><b>Prereq</b> CS1002</span>
+        </div>
+      </div>
+
+      <section class="chapter" id="syllabus">
+        <h2><span class="num">§ 1</span>Syllabus</h2>
+        <p class="subhead">what the course promises to cover</p>
+        <div class="syllabus-body">
+          <p class="tbd-note">Syllabus not yet transcribed. Contributions welcome.</p>
+          <p><a href="https://study.iitm.ac.in/ds/course_pages/BSCS2002.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
+        </div>
+      </section>
+
+      <section class="chapter" id="calendar">
+        <h2><span class="num">§ 2</span>Calendar</h2>
+        <p class="subhead">how the term is paced</p>
+        <ul class="dates">
+          <li><span class="marker"></span><span class="what">Weekly graded assignments (GrPA + PPA)</span><span class="when">Weeks 1–12</span></li>
+          <li><span class="marker"></span><span class="what">Discussion sessions</span><span class="when">Weekends</span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when">—</span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when">—</span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when">—</span></li>
+        </ul>
+        <p class="tbd-note" id="calendar-term-note" style="margin-top:10px"></p>
+      </section>
+
+      <section class="chapter" id="pyq">
+        <h2><span class="num">§ 3</span>Previous Year Questions</h2>
+        <p class="subhead">papers and solutions from earlier terms</p>
+        <table class="papers">
+          <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td colspan="4" class="empty">No papers uploaded yet.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="chapter" id="resources">
+        <h2><span class="num">§ 4</span>Resources</h2>
+        <p class="subhead">everything for this course, off-site</p>
+        <ul class="link-list">
+          <li><a href="https://drive.google.com/drive/folders/1yTABUXOuHnhBszCCWHIe5cF_0eVqxERS?usp=share_link" target="_blank" rel="noopener">Supplementary content (Drive folder — IITM mail ID required for access)</a></li>
+          <li><a href="https://www.youtube.com/@pdsa19" target="_blank" rel="noopener">Course YouTube channel</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1s0Witp0_x2MByVIVFuQvlCG0Tq6w-rkG" target="_blank" rel="noopener">Week-sorted playlist (spreadsheet)</a></li>
+        </ul>
+      </section>
+
+    </section>
+
+    <section class="panel" id="panel-lecture">
+      <div class="video" id="video-box">
+        <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
+        <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet — try the slide link below.</div>
+      </div>
+      <div class="current-eyebrow" id="current-eyebrow"></div>
+      <h3 class="current-title" id="current-title"></h3>
+      <div class="current-actions" id="current-actions"></div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="colophon">
+  <div style="max-width:900px;margin:0 auto;padding:0 28px">
+    Chapter kept by contributors of The Companion.<br>
+    <a href="../index.html">Return to the table of contents</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/term-syllabus.js"></script>
+<script>
+  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
+  const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1.1","t":"Introduction to Jupyter Notebooks and Google Colab","v":"G-XixYjFNnA","s":"https://drive.google.com/file/d/1CT8qrvg_ZOHIn1td3OfLovcZ3YwDV-M2/view?usp=drive_link"},{"n":"1.2","t":"Implementation of Python Codes - Part 01","v":"PVwttQzr7nY","s":null},{"n":"1.3","t":"Python Recap - I","v":"2W3BKOSg958","s":"https://drive.google.com/file/d/1fQm2vh1Qy5JAi_Ff5H6N30YIt2sGsWOc/view?usp=drive_link"},{"n":"1.4","t":"Python Recap - II","v":"q9rS_GFCtQg","s":"https://drive.google.com/file/d/1MhcMjp0BvIaJ5XfBzC50E7T-jRQY2VaD/view?usp=drive_link"},{"n":"1.5","t":"Python Recap - III","v":"PBnhRTf00Z0","s":"https://drive.google.com/file/d/1wFNS4wy-hT-e0JU26RMZJmd4r_4pYwX_/view?usp=drive_link"},{"n":"1.6","t":"Exception Handling","v":"XkHIWFlryv8","s":"https://drive.google.com/file/d/13R6dSb8MNJfqJ3FLjGcJamzzVzfYGaKE/view?usp=drive_link"},{"n":"1.7","t":"Classes and Objects","v":"oHZNBBUlD-0","s":"https://drive.google.com/file/d/1EMFRWhkheB6Th0nA7A9RtxgA-hRy9PUq/view?usp=drive_link"},{"n":"1.8","t":"Implementation of Python Codes - Part 02","v":"xbLF2bckqok","s":null},{"n":"1.9","t":"Timing Our Code","v":"x5uLvXbpcMY","s":"https://drive.google.com/file/d/1BwLK5y1bZByKGu-mca2EIqRpwsmKkhzR/view?usp=drive_link"},{"n":"1.10","t":"Implementation of Python Codes - Part 03","v":"wz_oE0Z9kr8","s":null},{"n":"1.11","t":"Why Efficiency Matters","v":"0B3niErBMto","s":"https://drive.google.com/file/d/14CUA21Tdtp64dHbLXiAQDxoWtBCCqpI8/view?usp=drive_link"},{"n":"1.12","t":"Implementation of Python Codes - Part 04","v":"jixpXGLjpNQ","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Analysis of Algorithms","v":"l2O71OvX0kg","s":"https://drive.google.com/file/d/1Cwl4mhyc5zhqX9PLJdlVK-LLN7Y4YZyV/view?usp=drive_link"},{"n":"2.2","t":"Comparing Orders of Magnitude","v":"YviduWBizB0","s":"https://drive.google.com/file/d/1YJhxGgSlwo8_Ynlx8XfCYqgn1d39UzAL/view?usp=drive_link"},{"n":"2.3","t":"Calculating Complexity - Examples","v":"L1SPxZvjpoM","s":"https://drive.google.com/file/d/1TfQgL1EGKIF5EtH209FhqsDl8ppzN8xV/view?usp=drive_link"},{"n":"2.4","t":"Searching in a List","v":"nLHPNN_d85I","s":"https://drive.google.com/file/d/1Rf9rBZ4oB5w2W0zkYz73bpMafqAl9Fb4/view?usp=drive_link"},{"n":"2.5","t":"Selection Sort","v":"PzLW39b12Cc","s":"https://drive.google.com/file/d/10_JvGLRvTRy_LvO62hVMcqyC4Z502z_Y/view?usp=drive_link"},{"n":"2.6","t":"Insertion Sort","v":"NEWwLaeFols","s":"https://drive.google.com/file/d/17g_e-Onfcu6LEkkIESDWXjX3YORt5Ta7/view?usp=drive_link"},{"n":"2.7","t":"Merge Sort","v":"HBF0FNPJQeA","s":"https://drive.google.com/file/d/1D2W5IGIrHhANbopMBnVmKHrew8TK_G3S/view?usp=drive_link"},{"n":"2.8","t":"Analysis of Merge Sort","v":"YdjNwrRxOII","s":"https://drive.google.com/file/d/12hZwlK3Vjo9_19ZwKzDpVQQ5tfvNlpVd/view?usp=drive_link"},{"n":"2.9","t":"Implementation of Searching and Sorting Algorithms","v":"kl-RyxDJGM8","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Quicksort","v":"4w2N6ON79Y4","s":"https://drive.google.com/file/d/1b_Y3POe0mzA3_7PfsCgPBwLC_QRtmJaA/view?usp=drive_link"},{"n":"3.2","t":"Analysis of Quicksort","v":"Pf85r6Xzf4g","s":"https://drive.google.com/file/d/1uOHIJzdMtW4khxfK7Z47P94msbrj73g_/view?usp=drive_link"},{"n":"3.3","t":"Implementation of Quicksort Algorithm","v":"rqYRw5XAmGI","s":null},{"n":"3.4","t":"Concluding Remarks on Sorting Algorithms","v":"bWRLxhD44gw","s":"https://drive.google.com/file/d/1wf_UGVzEiaMzvcW1FOovG5OZ5pF9zWDy/view?usp=drive_link"},{"n":"3.5","t":"Difference Between Lists and Arrays (Theory)","v":"fbXzNtoEsVg","s":"https://drive.google.com/file/d/1kA-FROaWNR4s1jqfTyIRbzDoZXXf8Fmg/view?usp=drive_link"},{"n":"3.6","t":"Designing a Flexible List and Operations on the Same","v":"AsE30JMsM14","s":"https://drive.google.com/file/d/1JdnqkfaHDWUNLHKZOjsc1TrXemdqY1LF/view?usp=drive_link"},{"n":"3.7","t":"Implementation of Lists in Python","v":"QHKuZRaeKZE","s":"https://drive.google.com/file/d/1Xw6doUsmwxqpfDVOSkbaoREv9vprIZIm/view?usp=drive_link"},{"n":"3.8","t":"Implementation of Dictionaries in Python","v":"leiBMoWxmqI","s":"https://drive.google.com/file/d/1STs_buhEqjOpYnCf1iD_Bi6xXYiEpF-E/view?usp=drive_link"},{"n":"3.9","t":"Difference Between Lists and Arrays (Implementation)","v":"ZPjSeqQjpAQ","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Introduction to Graphs","v":"Z9akqu1KiXk","s":"https://drive.google.com/file/d/14zS8BOxkM-1yLd8qFLWiDs9ULr7_57ey/view?usp=drive_link"},{"n":"4.2","t":"Representing Graphs","v":"_5czfD3Bzlw","s":"https://drive.google.com/file/d/1UnZlsstGeM_N3p03HPki_31GDNKLP7xY/view?usp=drive_link"},{"n":"4.3","t":"Breadth First Search BFS","v":"ULrHm2nsV8A","s":"https://drive.google.com/file/d/1d2tenTHHNgpe70bv0PTSSxlxvpnhwmhX/view?usp=drive_link"},{"n":"4.4","t":"Depth First Search DFS","v":"A7TFa4u3Db8","s":"https://drive.google.com/file/d/16dAscD-T3EtwJBfbl6nz-Jz0z-cKZzkd/view?usp=drive_link"},{"n":"4.5","t":"Applications of BFS and DFS","v":"RDA1nGsEVLY","s":"https://drive.google.com/file/d/1is8BmqFZa-_UtmmcVvd1TdIQYhS787rG/view?usp=drive_link"},{"n":"4.6","t":"Introduction to Directed Acyclic Graph DAG","v":"om9baDPpWNE","s":"https://drive.google.com/file/d/1EoEiOYs7KPcctFstG2drjqcHVloTxHSU/view?usp=drive_link"},{"n":"4.7","t":"Topological Sorting","v":"xkNBIO4Qorg","s":"https://drive.google.com/file/d/16ngD3Z8YcK_R1niCzKcL5NyuAMFXAxnT/view?usp=drive_link"},{"n":"4.8","t":"Longest Path in DAGs","v":"CVcChPiBAgQ","s":"https://drive.google.com/file/d/1YfmFqaomvK46cXGJmrJSlyVqtpkel8BN/view?usp=drive_link"}]},{"w":"Week 5","items":[{"n":"5.1","t":"Shortest Paths in Weighted Graphs","v":"Kxun2wSsKLM","s":"https://drive.google.com/file/d/1B6rVf7VcCx9NA_cU7mLnD4zniXV1ZW4C/view?usp=drive_link"},{"n":"5.2","t":"Single Sourse Shortest Paths (Dijkstra's Algorithm)","v":"Qjf7krjTF5g","s":"https://drive.google.com/file/d/1zJJYoxLE9G4toX0cvk7IkgshNS6aBQco/view?usp=drive_link"},{"n":"5.3","t":"Single Sourse Shortest Paths with Negative Weights (Bellman-Ford Algorithm)","v":"SgULLcChnxQ","s":"https://drive.google.com/file/d/1bP42raS3XUTZJ4wvm6yJqT874ZPhBpxY/view?usp=drive_link"},{"n":"5.4","t":"All Pairs Shortest Paths (Floyd-Warshall Algorithm)","v":"9F8MM_KVJds","s":"https://drive.google.com/file/d/1bid9jTvtE8VeXa-hhMZrxOs4GBial2GP/view?usp=drive_link"},{"n":"5.5","t":"Minimum Cost Spanning Trees","v":"57DmQiDrkto","s":"https://drive.google.com/file/d/1aQLfRWCYhNEAatuKW8RDmCZeEmua3koU/view?usp=drive_link"},{"n":"5.6","t":"Minimum Cost Spanning Trees (Prim's Algorithm)","v":"ddT3JcFalsI","s":"https://drive.google.com/file/d/13TdcS5gQHRNyttSR-DBfOy-7MoZzuauE/view?usp=drive_link"},{"n":"5.7","t":"Minimum Cost Spanning Trees Kruskal's Algorithm","v":"c2LPB-Eqdj4","s":"https://drive.google.com/file/d/1ztVMW4ImeDFEhmYNX-nHHrocP_JPO0ic/view?usp=drive_link"}]},{"w":"Week 6","items":[{"n":"6.1","t":"Union Find Data Structure","v":"Zxlor3u7x7c","s":"https://drive.google.com/file/d/1OXWrvaRyo8w48S6s8iLK_ufSuex9PK-g/view?usp=drive_link"},{"n":"6.2","t":"Priority Queues","v":"DAmSQfaurGs","s":"https://drive.google.com/file/d/1h7GAuaiaH0soiPU_SjmQDQsEavUKLxPx/view?usp=drive_link"},{"n":"6.3","t":"Heaps","v":"-bBwSWTp-aE","s":"https://drive.google.com/file/d/1aYohqveeNMcftt7knrKAVP8wEa-bIzVB/view?usp=drive_link"},{"n":"6.4","t":"Using Heaps in Algorithms","v":"_TY8IesVyXA","s":"https://drive.google.com/file/d/1IM-oFiKgEoCtfL6YCuHGdr-5JIQ2JM_S/view?usp=drive_link"},{"n":"6.5","t":"Search Trees","v":"6BXwmWK0VvE","s":"https://drive.google.com/file/d/1quLGuJrJwkt4KajoMAWQVXBeJ8A8Isnb/view?usp=drive_link"}]},{"w":"Week 7","items":[{"n":"7.1","t":"Balanced Search Trees","v":"L9ah47pNf-E","s":"https://drive.google.com/file/d/1GU1BJ7GLoI0vMSV46Yc6-bMCddxRLKsP/view?usp=sharing"},{"n":"7.2","t":"Greedy Algorithms-Interval Scheduling","v":"JfLewiAaPQ0","s":"https://drive.google.com/file/d/1DeJOWyAVXy8hdDy4GFFYOWMVec9BiAZq/view?usp=drive_link"},{"n":"7.3","t":"Greedy Algorithms-Minimizing Lateness","v":"EBLpkKkQbTU","s":"https://drive.google.com/file/d/1OEQfU-7whRVj0qQ578o1c5op9QRSYZc3/view?usp=drive_link"},{"n":"7.4","t":"Greedy Algorithms-Huffman Coding","v":"N87FpkW8LnA","s":"https://drive.google.com/file/d/1fgiy-ntstCdHb39ZJohRwZxrxprtJep4/view?usp=drive_link"}]},{"w":"Week 8","items":[{"n":"8.1","t":"Divide and Conquer  Counting Inversions","v":"aEvoP-oOUv0","s":"https://drive.google.com/file/d/1_J_ES-zlts0Oq5QV2xFHB5u4j3oJ--_v/view?usp=drive_link"},{"n":"8.2","t":"Divide and Conquer  Closest Pair of Points","v":"vjjWGpy7DMk","s":"https://drive.google.com/file/d/1ctlq2bWx4VOYiDaNECr5UJEl1I30eqSF/view?usp=drive_link"},{"n":"8.3","t":"Divide and Conquer  Integer Multiplication","v":"Y-4ZRutInQU","s":"https://drive.google.com/file/d/1xpkVYSK9kNniLdLmwN7EXkHDw3fTBBI-/view?usp=drive_link"},{"n":"8.4","t":"Divide and Conquer  Recursion Trees","v":"sl68fd-HdTI","s":"https://drive.google.com/file/d/1T3igXzi4VUd59JfsmcTWHKxX_6yGIeTw/view?usp=drive_link"},{"n":"8.5","t":"Divide and Conquer  Quick Select","v":"f8dhP521DHI","s":"https://drive.google.com/file/d/1BxCdw1K4j04gaFVv26jACWCXqWwHlq0S/view?usp=drive_link"},{"n":"8.6","t":"Implementation of Quick Select and Fast Select Algorithms","v":"PQIuyAJ7D7k","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"Dynamic Programming","v":"BfjdGOeH1XQ","s":"https://drive.google.com/file/d/16HxLnDBsoHwiIs6bpgu4QVL3zxUAKKAH/view?usp=drive_link"},{"n":"9.2","t":"Memoization","v":"MK-LS5KdYFA","s":"https://drive.google.com/file/d/1NTNDdbdaXqsTauM72oWqnxOL0N04wzNA/view?usp=drive_link"},{"n":"9.3","t":"Grid Paths","v":"9U2CYxmE2kg","s":"https://drive.google.com/file/d/1-iaZF0POCkzyOLOnyIKQYX0evTT4w2DM/view?usp=drive_link"},{"n":"9.4","t":"Common Subwords and Subsequences","v":"nP21HMGTjjM","s":"https://drive.google.com/file/d/19lYnW3-JrZIfvaW3zzHzX7udruS1mzce/view?usp=drive_link"},{"n":"9.5","t":"Edit Distance","v":"q_YDH7eQEfw","s":"https://drive.google.com/file/d/1CUVBJ2kUxRURyl2d6Cz7K3EP8Upc78Ld/view?usp=drive_link"},{"n":"9.6","t":"Matrix Multiplication","v":"LDUx8Sf8urE","s":"https://drive.google.com/file/d/1dZRHnmqDGLULrGo8o5dTDEgEr0pN0RvL/view?usp=drive_link"}]},{"w":"Week 10","items":[{"n":"10.1","t":"String Matching","v":"sho1os7g7OE","s":"https://drive.google.com/file/d/1HZKOcElxRtRc8KAVcQ2rfOUkMc7ioadE/view?usp=drive_link"},{"n":"10.2","t":"String Matching: Boyer-Moore Algorithm","v":"8mlan8WbwV0","s":"https://drive.google.com/file/d/1J5GL5JLWbjueN-E1gmGD3wBHzhotIt9C/view?usp=drive_link"},{"n":"10.3","t":"String Matching: Rabin-Karp Algorithm","v":"HTf34RwxlTE","s":"https://drive.google.com/file/d/1rnmQZqJQVAb3Io7cs85V_jrHBsvK7Zhu/view?usp=drive_link"},{"n":"10.4","t":"String Matching Using Automata","v":"W517g5t9PKE","s":"https://drive.google.com/file/d/1itm1bOOkTPt4hg0QHdpS4cuaZ7XCFniD/view?usp=drive_link"},{"n":"10.5","t":"String Matching: Knuth-Morris-Pratt Algorithm","v":"IrVjHDGjmKk","s":"https://drive.google.com/file/d/10rEVyrsvAS0fNVD3AKCO0MByvvWmEO1l/view?usp=drive_link"},{"n":"10.6","t":"String Matching-Tries","v":"uNAJDkQQFE8","s":"https://drive.google.com/file/d/1J5crr7kFLugTnXuiJKgpiXNu0I2cyjAQ/view?usp=drive_link"},{"n":"10.7","t":"String Matching-Regular Expressions","v":"Tc6CJo8kFe8","s":"https://drive.google.com/file/d/1TiISy26HxfWCaVRoWPJwqmb7mK99NSRt/view?usp=drive_link"}]},{"w":"Week 11","items":[{"n":"11.1","t":"Linear Programming","v":"3YPqsJpYQJU","s":"https://drive.google.com/file/d/1kjtskc1cltzEW3M9ObBalphgW2uGjbie/view?usp=drive_link"},{"n":"11.2","t":"Linear Programming  Production Planning","v":"8cpSh48s5Bo","s":"https://drive.google.com/file/d/1rY3b_WEmbGe9AUgb3JwJ-anP5RHAd2A4/view?usp=drive_link"},{"n":"11.3","t":"Linear Programming  Bandwidth Allocation","v":"WrA2Cir5r8k","s":"https://drive.google.com/file/d/1ZhixQg5VQuUz-q4_zYOHyIqGO_W7jTqU/view?usp=drive_link"},{"n":"11.4","t":"Network Flows","v":"yC6ychEgaTc","s":"https://drive.google.com/file/d/1OkXemwNtANGjRrIKGK3Qh9S-zxwJ09JP/view?usp=drive_link"},{"n":"11.5","t":"Reductions","v":"yZt9FRXxgPQ","s":"https://drive.google.com/file/d/1yUbQQW7bNWZf0TQkBgviBDjHRCsNlSfb/view?usp=drive_link"},{"n":"11.6","t":"Intractability  Checking Algorithms","v":"ar0jgfcGLvw","s":"https://drive.google.com/file/d/1Kfbg9RfQ6Zot_O5a0Duj53ikY-CrNBaQ/view?usp=drive_link"},{"n":"11.7","t":"Intractability  P and NP","v":"IT7pcW-50YI","s":"https://drive.google.com/file/d/1Om5TBECxrf6maazbzbwcmakdyahVULfs/view?usp=drive_link"}]},{"w":"Week 12 (Summary)","items":[{"n":"12.1","t":"Summary of Weeks 1 to 3","v":"gq9UySG-1Jw","s":"https://drive.google.com/file/d/1kwU8sByLwb_DDCDgltnPicKGmNdsh2ph/view?usp=drive_link"},{"n":"12.2","t":"Summary of Weeks 4 to 6","v":"5EKdpXXZ8Uc","s":"https://drive.google.com/file/d/1ZXyfrRyzBwggSmzYyle8cEvl5x5_cJYR/view?usp=drive_link"},{"n":"12.3","t":"Summary of Weeks 7 to 9","v":"8Z07WpmjbIw","s":"https://drive.google.com/file/d/1Szrn4eGDikuyzheTuIGa1U8xin-sUbxe/view?usp=drive_link"},{"n":"12.4","t":"Summary of Weeks 10 to 11","v":"6rjPI_KNvTI","s":"https://drive.google.com/file/d/1L6hnuLZnn3vdl1lB8xr4sXaD_69mT8D4/view?usp=drive_link"}]}];
+
+  const navSection = document.getElementById('lecture-nav');
+  const navDashboard = document.getElementById('nav-dashboard');
+  const panelDashboard = document.getElementById('panel-dashboard');
+  const panelLecture = document.getElementById('panel-lecture');
+  const frame = document.getElementById('video-frame');
+  const emptyOverlay = document.getElementById('video-empty');
+  const eyebrow = document.getElementById('current-eyebrow');
+  const titleEl = document.getElementById('current-title');
+  const actions = document.getElementById('current-actions');
+
+  // Quiz/end-term coverage for the Calendar section is pulled live from the shared
+  // assets/term-syllabus.js file (single source of truth for every course page) —
+  // update the term data there and every course page picks it up automatically.
+  (function(){
+    const COURSE_CODE = 'CS2002';
+    const T = window.TERM_SYLLABUS;
+    const d = T && T.courses && T.courses[COURSE_CODE];
+    const noteEl = document.getElementById('calendar-term-note');
+    function fill(whatId, whenId, label, part){
+      const whatEl = document.getElementById(whatId), whenEl = document.getElementById(whenId);
+      if (!whatEl || !whenEl) return;
+      if (!part || !part.held){
+        whatEl.textContent = label;
+        whenEl.textContent = 'Not held this term';
+      } else {
+        whatEl.textContent = `${label} — covers ${part.weeks}`;
+        whenEl.textContent = part.mode;
+      }
+    }
+    if (d){
+      fill('cal-q1-what','cal-q1-when','Quiz 1', d.quiz1);
+      fill('cal-q2-what','cal-q2-when','Quiz 2', d.quiz2);
+      fill('cal-et-what','cal-et-when','End-term examination', d.endterm);
+      if (noteEl) noteEl.textContent = `Coverage per the ${T.term} term quiz-syllabus circular.`;
+    } else if (noteEl) {
+      noteEl.textContent = 'Quiz/end-term coverage not published yet for this course.';
+    }
+  })();
+
+  // Each week is a real Bootstrap accordion item: data-bs-toggle/data-bs-target/data-bs-parent
+  // drive the actual expand/collapse (with Bootstrap's own animation and ARIA state syncing),
+  // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
+  WEEKS_DATA.forEach((week, wi) => {
+    const collapseId = `week-collapse-${wi}`;
+    const isFirst = wi === 0;
+
+    const group = document.createElement('div');
+    group.className = 'week-group accordion-item';
+    group.dataset.w = wi;
+
+    const h = document.createElement('h2');
+    h.className = 'accordion-header';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'week-title accordion-button' + (isFirst ? '' : ' collapsed');
+    btn.setAttribute('data-bs-toggle', 'collapse');
+    btn.setAttribute('data-bs-target', `#${collapseId}`);
+    btn.setAttribute('aria-expanded', isFirst ? 'true' : 'false');
+    btn.setAttribute('aria-controls', collapseId);
+    btn.innerHTML = `<span>${week.w}</span><span class="chev">›</span>`;
+    h.appendChild(btn);
+    group.appendChild(h);
+
+    const collapseWrap = document.createElement('div');
+    collapseWrap.id = collapseId;
+    collapseWrap.className = 'accordion-collapse collapse' + (isFirst ? ' show' : '');
+    collapseWrap.setAttribute('data-bs-parent', '#lecture-nav');
+
+    const body = document.createElement('div');
+    body.className = 'accordion-body';
+    week.items.forEach((item, ii) => {
+      const row = document.createElement('div');
+      row.className = 'lecture-item';
+      row.dataset.w = wi; row.dataset.i = ii;
+      row.innerHTML = `<span class="lnum">${item.n}</span><span class="ltitle">${item.t}</span>`;
+      body.appendChild(row);
+    });
+    collapseWrap.appendChild(body);
+    group.appendChild(collapseWrap);
+    navSection.appendChild(group);
+  });
+
+  function openWeek(wi){
+    const el = document.getElementById(`week-collapse-${wi}`);
+    if (el) bootstrap.Collapse.getOrCreateInstance(el, { toggle: false }).show();
+  }
+
+  function showDashboard(){
+    navDashboard.classList.add('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelDashboard.classList.add('active');
+    panelLecture.classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+
+  function selectLecture(wi, ii){
+    const item = WEEKS_DATA[wi].items[ii];
+    navDashboard.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => {
+      el.classList.toggle('active', +el.dataset.w === wi && +el.dataset.i === ii);
+    });
+    openWeek(wi);
+    panelDashboard.classList.remove('active');
+    panelLecture.classList.add('active');
+    window.scrollTo(0, 0);
+
+    eyebrow.textContent = `${WEEKS_DATA[wi].w} · Lecture ${item.n}`;
+    titleEl.textContent = item.t;
+    if (item.v){
+      frame.src = `https://www.youtube.com/embed/${item.v}`;
+      frame.style.display = '';
+      emptyOverlay.style.display = 'none';
+    } else {
+      frame.src = '';
+      frame.style.display = 'none';
+      emptyOverlay.style.display = '';
+    }
+    let html = '';
+    if (item.v) html += `<a href="https://www.youtube.com/watch?v=${item.v}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`;
+    if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">View slide ↗</a>`;
+    if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
+    actions.innerHTML = html;
+  }
+
+  navDashboard.addEventListener('click', showDashboard);
+  navSection.addEventListener('click', e => {
+    // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
+    // this only needs to react to an actual lecture row being picked.
+    const row = e.target.closest('.lecture-item'); if (!row) return;
+    selectLecture(+row.dataset.w, +row.dataset.i);
+  });
+
+  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
+  // set via the "show" class when it was built above).
+  showDashboard();
+</script>
+</body>
+</html>
