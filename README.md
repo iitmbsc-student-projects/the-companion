@@ -28,7 +28,7 @@ All of this lives in two places inside each course's HTML: a `WEEKS_DATA` array 
 
 Every course in the programme has a page already (73 in total), but they are not all filled in yet.
 
-Fully built, meaning real links and every week's lectures transcribed: `CS2001` (Database Management Systems), `CS2002` (Programming, Data Structures & Algorithms using Python), `CS2003` (Modern Application Development I), `CS2005` (Programming Concepts using Java).
+Fully built, meaning real links and every week's lectures transcribed: `CS2001` (Database Management Systems), `CS2002` (Programming, Data Structures & Algorithms using Python), `CS2003` (Modern Application Development I), `CS2004` (Machine Learning Foundations), `CS2005` (Programming Concepts using Java), `CS2006` (Modern Application Development II), `SE2001` (System Commands).
 
 Everything else is a placeholder: the page exists, the title and calendar wiring are correct, but the weekly lecture list still needs to be filled in from the course's actual spreadsheet.
 
