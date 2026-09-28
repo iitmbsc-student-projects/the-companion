@@ -2,7 +2,7 @@
 
 A static course hub for the IIT Madras BS in Data Science & Applications. It has one page per course (syllabus, calendar, previous-year questions, week-by-week lecture links) and an index page that maps the whole programme, from Foundation through Diploma, BSc/BS, PG Diploma, and MTech.
 
-Live site: https://vikashrammahuri60.github.io/the-companion/
+Live site: https://bsc-iitm.github.io/the-companion/
 
 ## Repo layout
 
@@ -43,7 +43,7 @@ Everything else is a placeholder: the page exists, the title and calendar wiring
 
 ## Publishing to GitHub Pages
 
-1. Push this folder to a GitHub repo (already done for this one: `vikashrammahuri60/the-companion`).
+1. Push this folder to a GitHub repo (already done for this one: `bsc-iitm/the-companion`).
 2. In the repo, go to Settings, then Pages, and set Source to the `main` branch, `/ (root)`. Save.
 3. The site goes live at `https://<your-username>.github.io/<repo-name>/`.
 
