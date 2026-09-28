@@ -79,18 +79,14 @@
   ol.courses li.project .name::before{content:"↳  ";color:var(--rule);font-style:normal}
   ol.courses li .ext{font-size:10px;color:var(--accent-2);margin-left:4px;letter-spacing:.05em;
     text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+  @media(min-width:800px){
+    ol.courses{column-count:2;column-gap:40px}
+    ol.courses li{break-inside:avoid}
+  }
   @media(max-width:640px){
     .mast-title{font-size:40px}
     ol.courses li{grid-template-columns:24px 80px 1fr;font-size:14px}
     ol.courses li .credits{grid-column:2/-1;margin-top:-4px;padding-left:0}
-  }
-
-  /* Electives: two column grid */
-  .electives-grid ol.courses li{grid-template-columns:28px 96px 1fr auto}
-  @media(min-width:800px){
-    .electives-grid ol.courses{
-      column-count:1;
-    }
   }
 
   footer.colophon{margin-top:60px;padding:24px 0 40px;border-top:3px double var(--ink);
