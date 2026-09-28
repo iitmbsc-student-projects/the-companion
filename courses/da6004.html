@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
     --paper:#f4efe6; --paper-2:#ebe4d5;
@@ -14,55 +15,97 @@
     --accent:#7a1e28; --accent-2:#b8642a;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--paper);color:var(--ink);
+  html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
   a:hover{border-bottom-color:var(--accent)}
-  .wrap{max-width:820px;margin:0 auto;padding:0 28px}
 
-  header.top{border-bottom:1px solid var(--rule);padding:16px 0;font-family:'JetBrains Mono',monospace;
-    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2)}
-  header.top .row{display:flex;justify-content:space-between;align-items:center}
-  header.top a{color:var(--ink);border:none}
-  header.top a:hover{color:var(--accent)}
+  /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
+     main content is simply offset by its width. This is decoupled on purpose so neither
+     column's length can create dead space next to the other.
+     (Note: this one stays plain CSS rather than Bootstrap's position/vh utilities, since
+     those ship as !important and would fight the mobile override in the media query below.) ---- */
+  .sidebar{position:fixed;top:0;left:0;width:300px;height:100vh;overflow-y:auto;
+    background:var(--paper-2);border-right:1px solid var(--rule);z-index:10}
+  .sidebar-brand{padding:18px 20px 16px;border-bottom:1px solid var(--rule)}
+  .sidebar-brand .back-link{display:block;color:var(--ink);border:none;font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .sidebar-brand .back-link:hover{color:var(--accent)}
+  .sidebar-brand .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:20px;
+    letter-spacing:-0.01em}
+  .sidebar-brand .brand-sub{font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.05em;color:var(--ink-2);margin-top:3px}
 
-  .course-head{padding:38px 0 24px;border-bottom:1px solid var(--rule)}
+  .nav-section{padding:14px 0}
+  .nav-section + .nav-section{border-top:1px solid var(--rule)}
+  .nav-label{padding:4px 20px 8px;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+  .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
+    font-weight:600;border-left:3px solid transparent}
+  .nav-item:hover{background:rgba(122,30,40,.07)}
+  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+
+  /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
+     data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
+     hand-rolled show/hide JS. These rules just strip Bootstrap's own accordion skin back down
+     to the paper theme so the look is unchanged. */
+  .accordion-item{background:transparent;border:none}
+  .week-group{border-top:1px solid var(--rule)}
+  .nav-section > .week-group:first-child{border-top:none}
+  .week-title{padding:9px 20px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
+    border-bottom:1px solid var(--rule);cursor:pointer;box-shadow:none;border-radius:0;
+    display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none}
+  .week-title:hover{color:var(--ink)}
+  .week-title:focus{box-shadow:none}
+  /* Bootstrap's own :not(.collapsed) active-state rule outranks a plain .week-title rule on
+     specificity alone, so this needs the compound selector to actually win. */
+  .week-title.accordion-button:not(.collapsed){background:var(--paper-2);color:var(--ink-2);box-shadow:none}
+  .week-title.accordion-button::after{display:none}
+  .week-title .chev{font-family:'JetBrains Mono',monospace;font-size:12px;
+    transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
+  .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
+  .accordion-body{padding:0}
+  .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
+    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    border-bottom:1px dotted var(--rule)}
+  .lecture-item:hover{background:rgba(122,30,40,.07)}
+  .lecture-item.active{background:var(--accent);color:#fff}
+  .lecture-item.active .lnum{color:#f0d3d6}
+  .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
+    flex-shrink:0;min-width:38px}
+
+  .main-content{margin-left:300px;padding:40px 56px 60px}
+  @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
+
+  .panel{display:none}
+  .panel.active{display:block}
+
+  .course-head{padding-bottom:24px;border-bottom:1px solid var(--rule);margin-bottom:32px}
   .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:40px;
+  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
     font-variation-settings:"opsz" 144}
   .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
-    color:var(--ink-2);max-width:60ch;margin:0}
+    color:var(--ink-2);max-width:70ch;margin:0}
   .meta-line{margin-top:18px;padding-top:14px;border-top:1px dotted var(--rule);
     display:flex;flex-wrap:wrap;gap:22px;font-family:'JetBrains Mono',monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .meta-line b{color:var(--ink);font-weight:500}
 
-  .toc{margin:28px 0 40px;background:var(--paper-2);padding:18px 22px;
-    border:1px solid var(--rule)}
-  .toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
-  .toc ol{list-style:none;padding:0;margin:0;column-count:2;column-gap:30px}
-  .toc li{padding:5px 0;font-family:'Fraunces',serif;font-size:15px;
-    display:flex;justify-content:space-between;align-items:baseline;
-    border-bottom:1px dotted var(--rule)}
-  .toc a{color:var(--ink);border:none}
-  .toc a:hover{color:var(--accent)}
-  .toc .p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
-  @media(max-width:640px){ .toc ol{column-count:1} .course-head h1{font-size:30px} }
-
-  section.chapter{margin:44px 0}
+  section.chapter{margin:40px 0}
+  section.chapter:first-of-type{margin-top:0}
   section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:17px;line-height:1.7;max-width:62ch}
+  .syllabus-body{font-family:'Fraunces',serif;font-size:17px;line-height:1.7;max-width:70ch}
   .syllabus-body p{margin:0 0 14px}
 
-  ul.dates{list-style:none;padding:0;margin:0}
+  ul.dates{list-style:none;padding:0;margin:0;max-width:640px}
   ul.dates li{display:flex;align-items:baseline;padding:8px 0;
     border-bottom:1px dotted var(--rule);font-size:15px}
   ul.dates li .what{flex:1}
@@ -73,7 +116,7 @@
   ul.dates li.exam .marker{background:var(--accent-2)}
   ul.dates li.exam .what{font-weight:600}
 
-  table.papers{width:100%;border-collapse:collapse;font-size:14px}
+  table.papers{width:100%;max-width:900px;border-collapse:collapse;font-size:14px}
   table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
     font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
     padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
@@ -83,148 +126,307 @@
   table.papers a{margin-right:14px}
   table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
 
-  .week{padding:18px 0;border-bottom:1px solid var(--rule)}
-  .week:last-child{border-bottom:none}
-  .week summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px}
-  .week summary::-webkit-details-marker{display:none}
-  .week .wnum{font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:.15em;color:var(--accent);min-width:60px}
-  .week .wtitle{font-family:'Fraunces',serif;font-size:19px;font-weight:600;flex:1;
-    letter-spacing:-0.005em}
-  .week .wicon{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-2);
-    transition:transform .15s}
-  .week[open] .wicon{transform:rotate(45deg);color:var(--accent)}
-  .week .body{padding:16px 0 4px 76px}
-  @media(max-width:640px){ .week .body{padding-left:0} }
-
-  .tabs{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-bottom:16px}
-  .tabs button{background:none;border:none;padding:8px 14px 10px;cursor:pointer;
-    font:12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--ink-2);border-bottom:2px solid transparent;margin-bottom:-1px}
-  .tabs button.active{color:var(--accent);border-color:var(--accent)}
-  .tab-panel{display:none}
-  .tab-panel.active{display:block}
   .video{position:relative;padding-top:56.25%;background:#111;overflow:hidden;
-    border:1px solid var(--rule)}
+    border:1px solid var(--rule);max-width:1000px}
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .link-list{margin:0;padding:0;list-style:none}
   .link-list li{padding:6px 0;font-size:15px}
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
-  .placeholder{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
+     loading-skeleton component (a solid gray bar) */
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
 
-  footer.colophon{margin-top:70px;padding:24px 0 40px;border-top:3px double var(--ink);
+  .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    color:var(--ink-2);background:var(--paper-2)}
+  .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
+  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+    max-width:1000px}
+  .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
+  .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase}
+
+  footer.colophon{margin-top:32px;margin-left:300px;padding:16px 0 22px;border-top:3px double var(--ink);
     text-align:center;font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--ink-2)}
+
+  @media(max-width:820px){
+    .sidebar{position:relative;width:100%;height:auto;max-height:320px;top:auto;left:auto}
+    .main-content{margin-left:0}
+    footer.colophon{margin-left:0}
+    .course-head h1{font-size:30px}
+  }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap row">
-    <div><a href="../index.html">← The Companion</a></div>
-    <div>BS elective · DA6004</div>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <div class="course-head">
-    <div class="kicker">DA6004 · BS elective · 4 credits</div>
-    <h1>Sequential Decision Making</h1>
-    <p class="standfirst">Bandits, MDPs and the theory behind decisions taken one after another under uncertainty.</p>
-    <div class="meta-line">
-      <span><b>Instructor</b> to be announced</span>
-      <span><b>Term</b> As offered</span>
-      <span><b>Prereq</b> DA5007</span>
+<div class="app-shell">
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <a class="back-link" href="../index.html">← The Companion</a>
+      <div class="brand-code">DA6004</div>
+      <div class="brand-sub">BS elective · 4 credits</div>
     </div>
-  </div>
 
-  <div class="toc">
-    <div class="toc-title">In this chapter</div>
-    <ol>
-      <li><a href="#syllabus">Syllabus</a><span class="p">§ 1</span></li>
-      <li><a href="#calendar">Calendar</a><span class="p">§ 2</span></li>
-      <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
-      <li><a href="#lectures">Weekly Lectures</a><span class="p">§ 4</span></li>
-    </ol>
-  </div>
-
-  <section class="chapter" id="syllabus">
-    <h2><span class="num">§ 1</span>Syllabus</h2>
-    <div class="syllabus-body">
-      <p>This course introduces the core concepts and algorithms for sequential decision-making, covering three learning paradigms based on feedback: online learning (full information), multi-armed bandits (partial information), and reinforcement learning (partial information with state changes). It also explores key algorithms and applications for each paradigm.</p>
-      <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
-      <p class="placeholder">This course has not yet been introduced. Faculty and a week-by-week syllabus are not yet available — check the official handbook for the latest status.</p>
-      <p><a href="https://study.iitm.ac.in/ds/course_pages/BSDA6004.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
+    <div class="nav-section">
+      <div class="nav-label">Main</div>
+      <div class="nav-item active" id="nav-dashboard">Dashboard</div>
+      <div class="nav-item" id="nav-syllabus">Syllabus</div>
     </div>
-  </section>
 
-  <section class="chapter" id="calendar">
-    <h2><span class="num">§ 2</span>Calendar</h2>
-    <ul class="dates">
-      <li><span class="marker"></span><span class="what">Weekly graded assignments (GrPA + PPA)</span><span class="when">Weeks 1–12</span></li>
-      <li><span class="marker"></span><span class="what">Discussion sessions</span><span class="when">Weekends</span></li>
-      <li class="exam"><span class="marker"></span><span class="what">Quiz 1</span><span class="when">Week 5</span></li>
-      <li class="exam"><span class="marker"></span><span class="what">Quiz 2</span><span class="when">Week 8</span></li>
-      <li class="exam"><span class="marker"></span><span class="what">End-term examination</span><span class="when">Week 13</span></li>
-    </ul>
-  </section>
+    <div class="nav-section accordion accordion-flush" id="lecture-nav">
+      <div class="nav-label">Weekly Lectures</div>
+    </div>
+  </nav>
 
-  <section class="chapter" id="pyq">
-    <h2><span class="num">§ 3</span>Previous Year Questions</h2>
-    <table class="papers">
-      <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td colspan="4" class="empty">No papers uploaded yet.</td></tr>
-      </tbody>
-    </table>
-  </section>
+  <main class="main-content">
 
-  <section class="chapter" id="lectures">
-    <h2><span class="num">§ 4</span>Weekly Lectures</h2>
-  <div style="background:var(--paper-2);border:1px solid var(--rule);padding:22px;text-align:center;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-2);margin-bottom:22px">No official playlist is available yet for this course.</div>
-  <div id="weeks-list"></div>
-  </section>
+    <section class="panel active" id="panel-dashboard">
+
+      <div class="course-head">
+        <div class="kicker">DA6004 · BS elective · 4 credits</div>
+        <h1>Sequential Decision Making</h1>
+        <p class="standfirst">Bandits, MDPs and the theory behind decisions taken one after another under uncertainty.</p>
+        <div class="meta-line">
+          <span><b>Instructor</b> to be announced</span>
+          <span><b>Term</b> As offered</span>
+          <span><b>Prereq</b> DA5007</span>
+        </div>
+      </div>
+
+      <section class="chapter" id="calendar">
+        <h2><span class="num">§ 1</span>Calendar</h2>
+        <ul class="dates">
+          <li><span class="marker"></span><span class="what">Weekly graded assignments (GrPA + PPA)</span><span class="when">Weeks 1–12</span></li>
+          <li><span class="marker"></span><span class="what">Discussion sessions</span><span class="when">Weekends</span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when">—</span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when">—</span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when">—</span></li>
+        </ul>
+        <p class="tbd-note" id="calendar-term-note" style="margin-top:10px"></p>
+      </section>
+
+      <section class="chapter" id="pyq">
+        <h2><span class="num">§ 2</span>Previous Year Questions</h2>
+        <table class="papers">
+          <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td colspan="4" class="empty">No papers uploaded yet.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="chapter" id="resources">
+        <h2><span class="num">§ 3</span>Resources</h2>
+        <p class="tbd-note">No resources located yet for this course.</p>
+      </section>
+
+    </section>
+
+    <section class="panel" id="panel-syllabus">
+
+      <div class="course-head">
+        <div class="kicker">DA6004 · BS elective · 4 credits</div>
+        <h1>Syllabus</h1>
+        <p class="standfirst">The official course syllabus, transcribed from the IITM BS Data Science &amp; Applications course booklet.</p>
+      </div>
+
+      <section class="chapter" id="syllabus-description">
+        <h2><span class="num">§ 1</span>Course Description</h2>
+        <div class="syllabus-body">
+          <p>This course introduces the core concepts and algorithms for sequential decision-making, covering three learning paradigms based on feedback: online learning (full information), multi-armed bandits (partial information), and reinforcement learning (partial information with state changes). It also explores key algorithms and applications for each paradigm.</p>
+          <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="syllabus-faculty">
+        <h2><span class="num">§ 2</span>Faculty &amp; week-by-week</h2>
+        <p class="tbd-note">This course has not yet been introduced. Faculty and a week-by-week syllabus are not yet available — check the official handbook for the latest status.</p>
+      </section>
+
+    </section>
+
+
+    <section class="panel" id="panel-lecture">
+      <div class="video" id="video-box">
+        <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
+        <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet — try the slide link below.</div>
+      </div>
+      <div class="current-eyebrow" id="current-eyebrow"></div>
+      <h3 class="current-title" id="current-title"></h3>
+      <div class="current-actions" id="current-actions"></div>
+    </section>
+
+  </main>
 </div>
 
 <footer class="colophon">
-  <div class="wrap">
+  <div style="max-width:900px;margin:0 auto;padding:0 28px">
     Kept by students who took this course, in the hope that the next batch has an easier time of it.<br>
     Course details here may be outdated or incorrect — always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.<br>
     <a href="../index.html">Return to the table of contents</a>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/term-syllabus.js"></script>
 <script>
-    const WEEKS = Array.from({length:12},(_,i)=> `Week ${i+1}`);
+  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
+    const WEEKS_DATA = [];
 
-  const weekHTML = (i, t) => `
-    <details class="week" ${i===0?'open':''}>
-      <summary>
-        <span class="wnum">Week ${String(i+1).padStart(2,'0')}</span>
-        <span class="wtitle">${t}</span>
-        <span class="wicon">+</span>
-      </summary>
-      <div class="body">
-        <div class="tabs">
-          <button class="active" data-tab="s">Slides</button>
-          <button data-tab="n">Notes</button>
-          <button data-tab="t">Transcript</button>
-        </div>
-        <div class="tab-panel active" data-tab="s"><p class="placeholder">Slides not linked yet.</p></div>
-        <div class="tab-panel" data-tab="n"><p class="placeholder">Notes not linked yet.</p></div>
-        <div class="tab-panel" data-tab="t"><p class="placeholder">Transcripts not linked yet.</p></div>
-      </div>
-    </details>`;
+  const navSection = document.getElementById('lecture-nav');
+  const navDashboard = document.getElementById('nav-dashboard');
+  const panelDashboard = document.getElementById('panel-dashboard');
+  const panelLecture = document.getElementById('panel-lecture');
+  const navSyllabus = document.getElementById('nav-syllabus');
+  const panelSyllabus = document.getElementById('panel-syllabus');
+  const frame = document.getElementById('video-frame');
+  const emptyOverlay = document.getElementById('video-empty');
+  const eyebrow = document.getElementById('current-eyebrow');
+  const titleEl = document.getElementById('current-title');
+  const actions = document.getElementById('current-actions');
 
-  const list = document.getElementById('weeks-list');
-  WEEKS.forEach((t,i) => list.insertAdjacentHTML('beforeend', weekHTML(i,t)));
+  // Quiz/end-term coverage for the Calendar section is pulled live from the shared
+  // assets/term-syllabus.js file (single source of truth for every course page) —
+  // update the term data there and every course page picks it up automatically.
+  (function(){
+    const COURSE_CODE = 'DA6004';
+    const T = window.TERM_SYLLABUS;
+    const d = T && T.courses && T.courses[COURSE_CODE];
+    const noteEl = document.getElementById('calendar-term-note');
+    function fill(whatId, whenId, label, part){
+      const whatEl = document.getElementById(whatId), whenEl = document.getElementById(whenId);
+      if (!whatEl || !whenEl) return;
+      if (!part || !part.held){
+        whatEl.textContent = label;
+        whenEl.textContent = 'Not held this term';
+      } else {
+        whatEl.textContent = `${label} — covers ${part.weeks}`;
+        whenEl.textContent = part.mode;
+      }
+    }
+    if (d){
+      fill('cal-q1-what','cal-q1-when','Quiz 1', d.quiz1);
+      fill('cal-q2-what','cal-q2-when','Quiz 2', d.quiz2);
+      fill('cal-et-what','cal-et-when','End-term examination', d.endterm);
+      if (noteEl) noteEl.textContent = `Coverage per the ${T.term} term quiz-syllabus circular.`;
+    } else if (noteEl) {
+      noteEl.textContent = 'Quiz/end-term coverage not published yet for this course.';
+    }
+  })();
 
-  document.addEventListener('click', e => {
-    const b = e.target.closest('.tabs button'); if (!b) return;
-    const scope = b.closest('.body');
-    scope.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('active', x===b));
-    scope.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tab===b.dataset.tab));
+  // Each week is a real Bootstrap accordion item: data-bs-toggle/data-bs-target/data-bs-parent
+  // drive the actual expand/collapse (with Bootstrap's own animation and ARIA state syncing),
+  // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
+  WEEKS_DATA.forEach((week, wi) => {
+    const collapseId = `week-collapse-${wi}`;
+    const isFirst = wi === 0;
+
+    const group = document.createElement('div');
+    group.className = 'week-group accordion-item';
+    group.dataset.w = wi;
+
+    const h = document.createElement('h2');
+    h.className = 'accordion-header';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'week-title accordion-button' + (isFirst ? '' : ' collapsed');
+    btn.setAttribute('data-bs-toggle', 'collapse');
+    btn.setAttribute('data-bs-target', `#${collapseId}`);
+    btn.setAttribute('aria-expanded', isFirst ? 'true' : 'false');
+    btn.setAttribute('aria-controls', collapseId);
+    btn.innerHTML = `<span>${week.w}</span><span class="chev">›</span>`;
+    h.appendChild(btn);
+    group.appendChild(h);
+
+    const collapseWrap = document.createElement('div');
+    collapseWrap.id = collapseId;
+    collapseWrap.className = 'accordion-collapse collapse' + (isFirst ? ' show' : '');
+    collapseWrap.setAttribute('data-bs-parent', '#lecture-nav');
+
+    const body = document.createElement('div');
+    body.className = 'accordion-body';
+    week.items.forEach((item, ii) => {
+      const row = document.createElement('div');
+      row.className = 'lecture-item';
+      row.dataset.w = wi; row.dataset.i = ii;
+      row.innerHTML = `<span class="lnum">${item.n}</span><span class="ltitle">${item.t}</span>`;
+      body.appendChild(row);
+    });
+    collapseWrap.appendChild(body);
+    group.appendChild(collapseWrap);
+    navSection.appendChild(group);
   });
+
+  function openWeek(wi){
+    const el = document.getElementById(`week-collapse-${wi}`);
+    if (el) bootstrap.Collapse.getOrCreateInstance(el, { toggle: false }).show();
+  }
+
+  function showDashboard(){
+    navDashboard.classList.add('active');
+    navSyllabus.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelDashboard.classList.add('active');
+    panelSyllabus.classList.remove('active');
+    panelLecture.classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showSyllabus(){
+    navSyllabus.classList.add('active');
+    navDashboard.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelSyllabus.classList.add('active');
+    panelDashboard.classList.remove('active');
+    panelLecture.classList.remove('active');
+    window.scrollTo(0, 0);
+  }
+
+  function selectLecture(wi, ii){
+    const item = WEEKS_DATA[wi].items[ii];
+    navDashboard.classList.remove('active');
+    navSyllabus.classList.remove('active');
+    panelSyllabus.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => {
+      el.classList.toggle('active', +el.dataset.w === wi && +el.dataset.i === ii);
+    });
+    openWeek(wi);
+    panelDashboard.classList.remove('active');
+    panelLecture.classList.add('active');
+    window.scrollTo(0, 0);
+
+    eyebrow.textContent = `${WEEKS_DATA[wi].w} · Lecture ${item.n}`;
+    titleEl.textContent = item.t;
+    if (item.v){
+      frame.src = `https://www.youtube.com/embed/${item.v}`;
+      frame.style.display = '';
+      emptyOverlay.style.display = 'none';
+    } else {
+      frame.src = '';
+      frame.style.display = 'none';
+      emptyOverlay.style.display = '';
+    }
+    let html = '';
+    if (item.v) html += `<a href="https://www.youtube.com/watch?v=${item.v}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`;
+    if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">View slide ↗</a>`;
+    if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
+    actions.innerHTML = html;
+  }
+
+  navDashboard.addEventListener('click', showDashboard);
+  navSyllabus.addEventListener('click', showSyllabus);
+  navSection.addEventListener('click', e => {
+    // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
+    // this only needs to react to an actual lecture row being picked.
+    const row = e.target.closest('.lecture-item'); if (!row) return;
+    selectLecture(+row.dataset.w, +row.dataset.i);
+  });
+
+  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
+  // set via the "show" class when it was built above).
+  showDashboard();
 </script>
 </body>
 </html>
