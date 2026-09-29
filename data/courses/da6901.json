@@ -1,0 +1,16 @@
+{
+ "stem": "da6901",
+ "code": "DA6901",
+ "kind": "project",
+ "title": "MTech Project",
+ "program": "MTech",
+ "credits": 20,
+ "standfirst": "A year-long research or engineering project taken end-to-end, supervised, and defended in a viva.",
+ "instructor": "to be announced",
+ "term": "As offered",
+ "prereq": "MTech admission",
+ "syllabus_body_html": "<p>A project in the broad area of machine learning and AI, completed after finishing the PG Diploma core courses.</p>\n      <p><b>Credits:</b> 20</p>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n        <li>The project will be in the broad area of machine learning and AI.</li><li>It could be done in a company or a research lab.</li><li>It will be executed and evaluated similarly to web MTech programs.</li><li>Students can start the project after completing the core courses of the PG Diploma.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA6901.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
+ "pyq": [],
+ "sessions": []
+}

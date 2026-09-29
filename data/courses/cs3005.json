@@ -1,0 +1,195 @@
+{
+ "stem": "cs3005",
+ "code": "CS3005",
+ "kind": "lecture",
+ "title": "Programming in C",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Systems programming in C — pointers, memory, and the language every OS still speaks.",
+ "instructor": "Prof. Nitin Chandrachoodan",
+ "term": "As offered",
+ "prereq": "CS1002",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course provides a practical introduction to C programming, with an emphasis on writing and debugging programs. By the end of the course, students will be able to write, compile, and run C programs, use debugging tools to identify and fix errors, apply language constructs and the standard library to implement basic data structures and algorithms, and understand the role of the operating system and program interaction with it.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Nitin Chandrachoodan, Department of Electrical Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Computer architecture basics; Memory and computation models; Split memory architecture; Loops, conditions, and branches; Memory-I/O communication; Introduction to programming and C."
+   },
+   {
+    "label": "Week 2",
+    "text": "Number representation; Negative numbers and hexadecimal; Floating-point representation; Character encoding; Instruction encoding; Compilation process; Role of operating systems."
+   },
+   {
+    "label": "Week 3",
+    "text": "Writing first C program; Structure of C programs; Variables; Operators."
+   },
+   {
+    "label": "Week 4",
+    "text": "Structured programming; Control flow in C; Control flow examples; Loops in C."
+   },
+   {
+    "label": "Week 5",
+    "text": "Functions and modular programming; Runtime concepts; Recursion; Scope in C."
+   },
+   {
+    "label": "Week 6",
+    "text": "Pointers and memory concepts; Endianness; Alignment; Pointer-variable relationships; Compiler optimizations."
+   },
+   {
+    "label": "Week 7",
+    "text": "Arrays; Pointer arithmetic; Strings in C; String functions."
+   },
+   {
+    "label": "Week 8",
+    "text": "Structures in C; Struct examples; Typedef; Unions; Enums."
+   },
+   {
+    "label": "Week 9",
+    "text": "Memory management; Heap and stack; Dynamic memory allocation; Multidimensional arrays."
+   },
+   {
+    "label": "Week 10",
+    "text": "File handling in C; Text and binary modes; Bit manipulation."
+   },
+   {
+    "label": "Week 11",
+    "text": "Macros in C; Macro examples; Header files; Multifile projects; Compilation process."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "stem": "ma3012",
+ "code": "MA3012",
+ "kind": "lecture",
+ "title": "Linear Statistical Models",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "The theory of linear regression — assumptions, diagnostics, inference and extensions.",
+ "instructor": "Prof. Siva Athreya (International Centre for Theoretical Sciences - TIFR",
+ "term": "As offered",
+ "prereq": "MA1004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "To introduce linear statistical models and their applications in estimation and testing. The course will illustrate concepts with specific examples, data sets and numerical exercises using statistical package R.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Siva Athreya (International Centre for Theoretical Sciences - TIFR, and Indian Statistical Institute, Bangalore Centre)"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Basic statistics; Introduction to R; Data visualization using ggplot2 and geoms."
+   },
+   {
+    "label": "Week 2",
+    "text": "Introduction to linear models; Residual analysis; Working with datasets in R."
+   },
+   {
+    "label": "Week 3",
+    "text": "Fundamentals of linear models; Parameter estimation problem; Theory of linear regression."
+   },
+   {
+    "label": "Week 4",
+    "text": "Classification of linear models; Least squares estimation; Normal equations; Matrix fundamentals."
+   },
+   {
+    "label": "Week 5",
+    "text": "Estimation of regression coefficients; Hypothesis testing and confidence intervals; Model evaluation (RSE, R²); Implementation in R."
+   },
+   {
+    "label": "Week 6",
+    "text": "Gauss-Markov theorem; BLUE (best linear unbiased estimator); Variance analysis; Normality assumptions."
+   },
+   {
+    "label": "Week 7",
+    "text": "Applications of Gauss-Markov theorem; Multiple regression visualization; Real data analysis and simulations in R."
+   },
+   {
+    "label": "Week 8",
+    "text": "Hypothesis testing in regression; Testing linear hypotheses; ANOVA concepts; Least squares theory extensions."
+   },
+   {
+    "label": "Week 9",
+    "text": "One-way and two-way classification models; ANOVA testing; Model evaluation in general cases."
+   },
+   {
+    "label": "Week 10",
+    "text": "Statistical testing in R; t-tests for simple and multiple regression; One-way ANOVA implementation."
+   },
+   {
+    "label": "Week 11",
+    "text": "Random effects models; One-way and two-way random effects; Mixed effects models; ANOVA using R."
+   },
+   {
+    "label": "Week 12",
+    "text": "Fixed vs random effects models; Implementation in R; Model comparison and interpretation."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

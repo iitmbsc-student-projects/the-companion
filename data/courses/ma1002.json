@@ -1,0 +1,210 @@
+{
+ "stem": "ma1002",
+ "code": "MA1002",
+ "kind": "lecture",
+ "title": "Statistics for Data Science I",
+ "program": "Foundation",
+ "credits": 4,
+ "standfirst": "Descriptive statistics, probability, distributions and the first principles of statistical reasoning.",
+ "instructor": "Prof. Usha Mohan",
+ "term": "Every term",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "Students will be introduced to large datasets and the insights that can be derived from them. The course shall also cover fundamental concepts of probability leading to a discussion on random variables.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Usha Mohan, Department of Management Studies, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to data types; Descriptive and inferential statistics; Scales of measurement."
+   },
+   {
+    "label": "Week 2",
+    "text": "Categorical data - description, frequency distributions, best practices for graphing; Mode and median."
+   },
+   {
+    "label": "Week 3",
+    "text": "Numerical data - frequency tables; Measures of central tendency - Mean, median and mode; Quartiles and percentiles; Measures of dispersion - range, variance, standard deviation and IQR; Five-number summary."
+   },
+   {
+    "label": "Week 4",
+    "text": "Association between variables - categorical (contingency tables, relative frequencies) numerical (scatterplot, covariance, Pearson correlation, point-biserial correlation)."
+   },
+   {
+    "label": "Week 5",
+    "text": "Basic principles of counting and factorial concepts - addition and multiplication rules; Factorials."
+   },
+   {
+    "label": "Week 6",
+    "text": "Permutations and combinations."
+   },
+   {
+    "label": "Week 7",
+    "text": "Probability - basic definitions, events, properties."
+   },
+   {
+    "label": "Week 8",
+    "text": "Conditional probability - multiplication rule, independence, law of total probability, Bayes' theorem."
+   },
+   {
+    "label": "Week 9",
+    "text": "Random Variables - random experiment, sample space, discrete and continuous random variable; Probability mass function; Cumulative distribution function."
+   },
+   {
+    "label": "Week 10",
+    "text": "Expectation and variance - expectation, variance, and standard deviation of discrete random variables."
+   },
+   {
+    "label": "Week 11",
+    "text": "Discrete Distributions - Bernoulli trials (i.i.d), binomial (expectation and variance), Poisson, geometric, and negative binomial distributions."
+   },
+   {
+    "label": "Week 12",
+    "text": "Continuous random variables - area under the curve; Properties of probability density functions; Uniform, exponential, and Normal distributions."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

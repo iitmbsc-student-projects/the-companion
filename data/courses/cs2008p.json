@@ -1,0 +1,16 @@
+{
+ "stem": "cs2008p",
+ "code": "CS2008P",
+ "kind": "project",
+ "title": "ML Practice — Project",
+ "program": "Diploma / Data Science",
+ "credits": 2,
+ "standfirst": "A machine-learning project taken from problem statement to deployable notebook, defended in a review session.",
+ "instructor": "Prof. Ashish Tendulkar",
+ "term": "Every term",
+ "prereq": "CS2008",
+ "syllabus_body_html": "<p>The purpose of a machine learning project is to apply learned ML models to real-world data, develop effective predictive models, uncover patterns, and generate insights to answer business questions, analyse trends, and solve problems.</p>\n      <p><b>Co-requisite:</b> BSCS2008:  Machine Learning Practice</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Ashish Tendulkar, Google Research (Visiting Asst. Professor, Department of Computer Science and Engineering, IIT Madras)</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The MLP project is conducted on the Kaggle platform.</li><li>Classical machine learning project (regression or classification); Implementation on Kaggle notebooks; Structured workflow including EDA, feature engineering, model training, evaluation, and testing.</li><li>The project runs for 12-15  weeks and is structured into multiple milestones that break the ML lifecycle into manageable steps, ensuring steady and consistent progress.</li><li>The viva voce is conducted after acceptance of the final submission and consists of two rounds, L1 and L2. The L2 round is conducted by an industry expert and contributes to the final project grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2008P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
+ "pyq": [],
+ "sessions": []
+}

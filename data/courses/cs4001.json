@@ -1,0 +1,181 @@
+{
+ "stem": "cs4001",
+ "code": "CS4001",
+ "kind": "lecture",
+ "title": "Data Visualization Design",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "The principles behind an effective chart, and the craft of building one that a reader can actually use.",
+ "instructor": "Prof. Venkat R",
+ "term": "As offered",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course provides the foundations for understanding and advancing data visualisation, covering key techniques and theory such as data models, graphical perception, and visual encoding and interaction. It also develops skills in data storytelling using charts, maps, and diagrams, and offers practical experience in building and evaluating visualisations.",
+   "<b>In-course project:</b> The in-course project is integrated into the course and not offered separately. Students work in teams to design and evaluate data visualisations, applying concepts such as data modeling, graphical perception, and visual encoding to create effective visual stories using charts, maps, and diagrams.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Venkat R, Industrial Design Centre, IIT Bombay"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to data visualisation (foundations and concepts)."
+   },
+   {
+    "label": "Week 2",
+    "text": "Visualization typology."
+   },
+   {
+    "label": "Week 3",
+    "text": "Geospatial data visualization and mapping techniques."
+   },
+   {
+    "label": "Week 4",
+    "text": "Data fundamentals for visualisation."
+   },
+   {
+    "label": "Week 5",
+    "text": "Visualisation design."
+   },
+   {
+    "label": "Week 6",
+    "text": "Data analysis and insight generation."
+   },
+   {
+    "label": "Week 7",
+    "text": "Visual encoding of data."
+   },
+   {
+    "label": "Week 8",
+    "text": "Design principles and heuristics for effective visualization."
+   },
+   {
+    "label": "Week 9",
+    "text": "Data Stories"
+   },
+   {
+    "label": "Week 10",
+    "text": "Project presentations, Wrap up and course summary"
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

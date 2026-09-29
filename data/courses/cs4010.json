@@ -1,0 +1,210 @@
+{
+ "stem": "cs4010",
+ "code": "CS4010",
+ "kind": "lecture",
+ "title": "App Dev Lab",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "A lab course building complete applications end-to-end, defended in a project review.",
+ "instructor": "Mr. Atul Pratap Singh",
+ "term": "As offered",
+ "prereq": "CS2006",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course is designed to equip students with the essential skills required for web application development roles. By the end of the course, students will be proficient in both frontend and backend technologies, understand version control best practices, and be capable of building real-time web applications. The curriculum focuses on hands-on learning, industry-relevant tools, and best coding practices to make students job-ready.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Mr. Atul Pratap Singh, Academic Instructor, BS Program, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "DSA foundations; Complexity analysis; Core data structures (arrays, linked lists, stacks, queues, trees, graphs, hash tables); Algorithmic techniques (recursion, greedy, DP)."
+   },
+   {
+    "label": "Week 2",
+    "text": "JavaScript fundamentals; ES6+ features; Functions, objects, arrays; Asynchronous programming (callbacks, promises, async/await)."
+   },
+   {
+    "label": "Week 3",
+    "text": "Developer workflows; Web fundamentals (HTTP , APIs); Git and version control; npm and project setup."
+   },
+   {
+    "label": "Week 4",
+    "text": "Backend basics with Node.js and TypeScript; Event-driven architecture; TypeScript setup; Modules and simple HTTP server."
+   },
+   {
+    "label": "Week 5",
+    "text": "REST API development with Express.js; Routing and middleware; Error handling; Building CRUD APIs."
+   },
+   {
+    "label": "Week 6",
+    "text": "SQL and relational databases; PostgreSQL basics; Queries, joins, filtering, and pagination."
+   },
+   {
+    "label": "Week 7",
+    "text": "Backend-database integration; ORMs (Prisma/TypeORM); Schema design; Full CRUD with persistence."
+   },
+   {
+    "label": "Week 8",
+    "text": "Authentication and security; Password hashing (bcrypt); JWT-based authentication; Securing routes and sessions."
+   },
+   {
+    "label": "Week 9",
+    "text": "React fundamentals; Components and JSX; Virtual DOM; Building basic UI components."
+   },
+   {
+    "label": "Week 10",
+    "text": "State and event handling in React; Hooks (useState, useEffect); Conditional rendering and lists."
+   },
+   {
+    "label": "Week 11",
+    "text": "Routing and API integration in React; React Router; Fetch/Axios; Handling API responses and errors."
+   },
+   {
+    "label": "Week 12",
+    "text": "Full-stack development; Integrating frontend, backend, and database; End-to-end CRUD; Deployment considerations."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

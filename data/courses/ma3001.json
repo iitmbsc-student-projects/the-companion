@@ -1,0 +1,170 @@
+{
+ "stem": "ma3001",
+ "code": "MA3001",
+ "kind": "lecture",
+ "title": "Discrete Mathematics",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Logic, sets, combinatorics, graphs and the discrete structures every computer scientist reasons about.",
+ "instructor": "Prof. Meenakshi D'Souza",
+ "term": "As offered",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the mathematical foundations of Computer Science and Data Science, including sets, functions, sequences, logic, proofs, induction, recursion, combinatorics, relations, graph theory, and algebraic structures. This course shall develop the ability to model computational problems, reason rigorously, analyze discrete structures, and apply mathematical techniques to algorithms, data analysis, and real-world computing challenges.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Meenakshi D'Souza, Department of Computer Science and Engineering, IIIT Bangalore"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Foundations of discrete mathematics; sets, set operations, functions, recursive functions, sequences, and summation techniques."
+   },
+   {
+    "label": "Week 12",
+    "text": "Graph theory and algebraic structures; graphs, trees, semigroups, monoids, groups, homomorphisms, normal subgroups, and congruence relations."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

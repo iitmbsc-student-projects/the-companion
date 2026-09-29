@@ -1,0 +1,195 @@
+{
+ "stem": "ma1003",
+ "code": "MA1003",
+ "kind": "lecture",
+ "title": "Mathematics for Data Science II",
+ "program": "Foundation",
+ "credits": 4,
+ "standfirst": "Vectors, matrices and multivariable calculus, building on the toolkit from MFDS I.",
+ "instructor": "Prof. Sarang S Sane",
+ "term": "Every term",
+ "prereq": "MA1001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the fundamental concepts of linear algebra, calculus, and optimization with an emphasis on their applications in machine learning and data science.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Sarang S Sane, Department of Mathematics, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Vectors and matrices; Systems of linear equations; Determinants (Part 1 and 2)."
+   },
+   {
+    "label": "Week 2",
+    "text": "Solving linear equations - determinants (Part 3), Cramer's rule, invertible coefficient matrices; Echelon form, row reduction, Gaussian elimination."
+   },
+   {
+    "label": "Week 3",
+    "text": "Vector spaces - introduction, properties; Linear dependence and independence."
+   },
+   {
+    "label": "Week 4",
+    "text": "Basis and dimension - definition, computation of bases; Rank and dimension via Gaussian elimination."
+   },
+   {
+    "label": "Week 5",
+    "text": "Rank and nullity of a matrix; Linear transformations - null space (basis and nullity); Linear mappings and transformations."
+   },
+   {
+    "label": "Week 6",
+    "text": "Linear transformation - matrix representations with ordered bases; Image and kernel; Computation of bases for image and kernel."
+   },
+   {
+    "label": "Week 7",
+    "text": "Equivalent and similar matrices; Affine subspaces and mappings; Inner products, norms, lengths, and angles."
+   },
+   {
+    "label": "Week 8",
+    "text": "Orthogonality and orthonormality; Projections; Gram-Schmidt method; Orthogonal transformations and rotations."
+   },
+   {
+    "label": "Week 9",
+    "text": "Multivariate functions - visualisation; Partial and directorial derivatives; Limits and continuity; Gradient interpretation."
+   },
+   {
+    "label": "Week 10",
+    "text": "Optimization concepts - steepest ascent/descent: Tangent lines and tangent hyperplanes; Critical points."
+   },
+   {
+    "label": "Week 11",
+    "text": "Higher-order partial derivatives; Hessian Matrix; Local extrema in two and three variables; Differentiability of multivariable functions; Review of 'Mathematics for Data Science II'."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

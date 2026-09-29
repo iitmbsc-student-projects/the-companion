@@ -1,0 +1,210 @@
+{
+ "stem": "cs3003",
+ "code": "CS3003",
+ "kind": "lecture",
+ "title": "AI: Search Methods for Problem Solving",
+ "program": "BSc / BS",
+ "credits": 4,
+ "standfirst": "The classical AI toolkit — state-space search, heuristics, adversarial games, and constraint satisfaction.",
+ "instructor": "Prof. Deepak Khemani",
+ "term": "Every term",
+ "prereq": "CS2004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the historical and philosophical foundations of artificial intelligence, along with general problem-solving frameworks and key search algorithms, including domain-independent, stochastic, local, and population-based methods. It also covers problem decomposition, rule-based approaches, game-playing algorithms, and the links between search, planning, constraints, and logical reasoning.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Deepak Khemani, Department of Computer Science and Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction; Machine learning evolution; Cognitive architecture; History and philosophy; Minds and machines; Problem solving."
+   },
+   {
+    "label": "Week 2",
+    "text": "State space search; Search algorithms; Planning problems; Blind search; DFS, BFS, and iterative deepening."
+   },
+   {
+    "label": "Week 3",
+    "text": "Heuristic search; Hill climbing; Local search methods; Solution space search."
+   },
+   {
+    "label": "Week 4",
+    "text": "Hill climbing variants; Stochastic search; Genetic algorithms; TSP with GAs; Ant colony optimization."
+   },
+   {
+    "label": "Week 5",
+    "text": "TSP optimization; Branch and bound; A* search; Admissibility of A*."
+   },
+   {
+    "label": "Week 6",
+    "text": "A* variants; IDA* and RBFS; Monotone condition; Sequence alignment; Pruning in A*."
+   },
+   {
+    "label": "Week 7",
+    "text": "Game theory; Game types and trees; Evaluation functions; Minimax and Alpha-Beta; SSS* algorithm; Game demos."
+   },
+   {
+    "label": "Week 8",
+    "text": "Automated planning; Blocks world; State space planning; Goal stack planning; Partial order planning."
+   },
+   {
+    "label": "Week 9",
+    "text": "Robot planning; Means-ends analysis; Graphplan; Problem decomposition; AO* and goal trees."
+   },
+   {
+    "label": "Week 10",
+    "text": "Expert systems; Match, resolve, and execute; Rete algorithm and networks."
+   },
+   {
+    "label": "Week 11",
+    "text": "CSPs; Constraint solving; Model-based diagnosis; Arc consistency; Constraint propagation."
+   },
+   {
+    "label": "Week 12",
+    "text": "Lookahead search; Course summary."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

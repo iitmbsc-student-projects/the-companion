@@ -1,0 +1,26 @@
+{
+ "stem": "da6003",
+ "code": "DA6003",
+ "kind": "lecture",
+ "title": "Deployability Aspects of AI",
+ "program": "PG Diploma",
+ "credits": 4,
+ "standfirst": "What it takes to put an AI system into production — latency, cost, robustness, monitoring and rollback.",
+ "instructor": "to be announced",
+ "term": "As offered",
+ "prereq": "DA5014",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "The success of machine learning and deep learning models in laboratory settings often does not translate to real-world deployment. This course introduces the key challenges involved in deploying ML systems, including explainability, fairness, privacy, and security, with a focus on understanding these issues from an algorithmic and statistical perspective.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [],
+  "faculty_note": "This course has not yet been introduced. Faculty and a week-by-week syllabus are not yet available — check the official handbook for the latest status.",
+  "weeks_text": [],
+  "weeks_note": ""
+ },
+ "weeks_data": []
+}

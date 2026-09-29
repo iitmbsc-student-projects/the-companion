@@ -1,0 +1,211 @@
+{
+ "stem": "ma2001",
+ "code": "MA2001",
+ "kind": "lecture",
+ "title": "Mathematical Thinking",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Proof, abstraction, and mathematical writing — the habits of mind behind the rest of the mathematics curriculum.",
+ "instructor": "Prof. Amritanshu Prasad &amp; Prof. Sankaran Viswanath",
+ "term": "As offered",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the fundamentals of mathematical proof and problem-solving, facilitating the transition from basic methods to more advanced mathematical concepts and reasoning.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Amritanshu Prasad, The Institute of Mathematical Science",
+   "Prof. Sankaran Viswanath, The Institute of Mathematical Science"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Foundations of mathematics; Sequences and summations (sigma notation); Set theory; Cardinality and bijections; Natural numbers and integers."
+   },
+   {
+    "label": "Week 2",
+    "text": "Infinite sets and real numbers; Cantor's diagonalization; Ordered fields and completeness; Least upper bound property; Mathematical logic."
+   },
+   {
+    "label": "Week 3",
+    "text": "Number theory basics; Divisibility and GCD; Euclidean algorithm and its proof."
+   },
+   {
+    "label": "Week 4",
+    "text": "Prime numbers and modular arithmetic; Fermat's Little Theorem; Fundamental Theorem of Arithmetic; Inclusion-exclusion principle."
+   },
+   {
+    "label": "Week 5",
+    "text": "Combinatorial principles; Pigeonhole principle; Sieve of Eratosthenes; Distribution and gaps of primes."
+   },
+   {
+    "label": "Week 6",
+    "text": "Combinatorics fundamentals; Binomial coefficients and theorem; Permutations; Lattice paths; Random sampling."
+   },
+   {
+    "label": "Week 7",
+    "text": "Graph theory basics; Connectivity and distance; Trees and adjacency matrices; Graph coloring; Sperner's lemma."
+   },
+   {
+    "label": "Week 8",
+    "text": "Limits and continuity; Properties of limits; Sequential continuity; Intermediate Value Theorem."
+   },
+   {
+    "label": "Week 9",
+    "text": "Advanced limits; Fibonacci sequence behavior; Sandwich and shifting lemmas."
+   },
+   {
+    "label": "Week 10",
+    "text": "Differential calculus; Derivatives; Higher-order derivatives (Faà di Bruno's formula)."
+   },
+   {
+    "label": "Week 11",
+    "text": "Integral calculus; Riemann integrals; Mean Value Theorem."
+   },
+   {
+    "label": "Week 12",
+    "text": "Uniform continuity; Fundamental Theorem of Calculus."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

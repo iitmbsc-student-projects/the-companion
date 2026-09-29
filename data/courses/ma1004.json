@@ -1,0 +1,210 @@
+{
+ "stem": "ma1004",
+ "code": "MA1004",
+ "kind": "lecture",
+ "title": "Statistics for Data Science II",
+ "program": "Foundation",
+ "credits": 4,
+ "standfirst": "Sampling, estimation, hypothesis testing and the beginnings of statistical inference.",
+ "instructor": "Prof. Andrew Thangaraj",
+ "term": "Every term",
+ "prereq": "MA1002, MA1001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This second course builds on the introductory statistics course, further exploring key statistical problems and their solution methods.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Andrew Thangaraj, Department of Electrical Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Multiple random variables - joint, marginal, conditional PMFs; Conditioning and examples."
+   },
+   {
+    "label": "Week 2",
+    "text": "Independence of random variables; Functions and visualisation (one and two variables); Sum, minimum and maximum; Examples."
+   },
+   {
+    "label": "Week 3",
+    "text": "Expectation (properties, simulation); Variance and standard deviation; Covariance and correlation; Probability bounds."
+   },
+   {
+    "label": "Week 4",
+    "text": "Continuous random variables - CDF, PDF; Discrete vs continuous; Approximation; Common distributions; Colab illustrations."
+   },
+   {
+    "label": "Week 5",
+    "text": "Continuous random variables - functions and expectations; Joint distributions (discrete and continuous); Motivation."
+   },
+   {
+    "label": "Week 6",
+    "text": "Jointly continuous random variables; Marginal and conditional densities; Independence; From data to distributions; 1D/2D histograms (Colab)."
+   },
+   {
+    "label": "Week 7",
+    "text": "Statistics from i.i.d. samples; Empirical distribution and descriptive statistics; Sum of independent random variables; Data illustrations."
+   },
+   {
+    "label": "Week 8",
+    "text": "Moment generating functions; Central Limit Theorem; Distributions and properties; Descriptive statistics of normal samples."
+   },
+   {
+    "label": "Week 9",
+    "text": "Parameter estimation; Error, bias, variance and risk; Method of moments and maximum likelihood estimation; Evaluation of ML estimators; Real-life statistical problems."
+   },
+   {
+    "label": "Week 10",
+    "text": "Bayesian estimation; Choice of priors; Estimation problems; Model estimation."
+   },
+   {
+    "label": "Week 11",
+    "text": "Hypothesis testing - introduction and types; Size and power of tests; z-test and p-value; Problem solving and data-based inference."
+   },
+   {
+    "label": "Week 12",
+    "text": "t-test (mean, unknown variance); Chi-squared test (variance); Two-sample tests (z/F); Tests for normal samples; Problem solving."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

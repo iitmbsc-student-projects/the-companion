@@ -238,7 +238,6 @@
         <h2><span class="num">§ 1</span>Course Description</h2>
         <div class="syllabus-body">
           <p>This course uses Java to develop an understanding of core concepts such as object-oriented programming, exception handling, event-driven programming, concurrent programming, and functional programming.</p>
-          
           <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
         </div>
       </section>
@@ -431,17 +430,11 @@
       frame.src = '';
       frame.style.display = 'none';
       emptyOverlay.style.display = '';
-      // A few lectures in this course are only hosted as a Drive file (no YouTube
-      // upload), so the overlay explains that instead of implying nothing exists.
-      emptyOverlay.textContent = item.dv
-        ? 'This lecture is a Drive-hosted video — use the link below.'
-        : 'No video linked for this one yet — try the slide link below.';
     }
     let html = '';
     if (item.v) html += `<a href="https://www.youtube.com/watch?v=${item.v}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`;
-    else if (item.dv) html += `<a href="${item.dv}" target="_blank" rel="noopener">Watch on Drive ↗</a>`;
     if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">View slide ↗</a>`;
-    if (!item.v && !item.dv && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
+    if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
     actions.innerHTML = html;
   }
 

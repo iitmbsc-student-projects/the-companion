@@ -1,0 +1,211 @@
+{
+ "stem": "da4001",
+ "code": "DA4001",
+ "kind": "lecture",
+ "title": "Data Science & AI Lab",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "A lab course applying data-science and AI methods to open-ended problems, culminating in a graded project.",
+ "instructor": "Mr. Karthik Thiagrajan",
+ "term": "As offered",
+ "prereq": "CS2008",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This hands-on course bridges the gap between academic knowledge and industry needs in data science and AI. It revisits core concepts, incorporates modern AI technologies, and uses weekly end-to-end assignments to simulate real-world workflows.",
+   "<b>Pre-requisite:</b> BSCS3004 : Deep Learning",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Mr. Karthik Thiagrajan, Academic Instructor, BS Program, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Data science and Python stack refresher (NumPy, Pandas, Matplotlib, Seaborn); Jupyter workflows; Version control with Git."
+   },
+   {
+    "label": "Week 2",
+    "text": "Machine learning with Scikit-learn; Core models (regression, classification, clustering); Pipelines, hyperparameter tuning, evaluation metrics."
+   },
+   {
+    "label": "Week 3",
+    "text": "Deep learning with PyTorch and TensorFlow; Building and training neural networks; Model saving/loading; GPU training."
+   },
+   {
+    "label": "Week 4",
+    "text": "Computer vision fundamentals; Image processing with OpenCV and PIL; Transfer learning with CNNs (ResNet, MobileNet)."
+   },
+   {
+    "label": "Week 5",
+    "text": "NLP and LLMs with Hugging Face; Transformer models (BERT, RoBERTa); Tokenization, fine-tuning, and inference."
+   },
+   {
+    "label": "Week 6",
+    "text": "Prompt engineering; LangChain fundamentals (templates, memory); LLM APIs (OpenAI, Gemini, Ollama)."
+   },
+   {
+    "label": "Week 7",
+    "text": "Retrieval-Augmented Generation (RAG); Embeddings and semantic search; Vector databases (FAISS, Pinecone, ChromaDB)."
+   },
+   {
+    "label": "Week 8",
+    "text": "AI agents and autonomous systems; Tool use and planning; Building agents with LangChain and LangGraph."
+   },
+   {
+    "label": "Week 9",
+    "text": "Data visualization and dashboards; Tools (PowerBI, Tableau, Streamlit, Plotly); Storytelling with data."
+   },
+   {
+    "label": "Week 10",
+    "text": "Time series analysis and forecasting; Models (Prophet, DeepAR); Trend, seasonality, anomaly detection."
+   },
+   {
+    "label": "Week 11",
+    "text": "Big data and cloud platforms (GCP); Data pipelines (BigQuery, Vertex AI); Concepts of Spark, Hadoop, Airflow, deployment."
+   },
+   {
+    "label": "Week 12",
+    "text": "Model explainability (SHAP , LIME); Ethics in AI (privacy, fairness); Mini-project."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "stem": "da5007",
+ "code": "DA5007",
+ "kind": "lecture",
+ "title": "Reinforcement Learning",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Learning by trial and error — MDPs, value and policy methods, and modern deep RL.",
+ "instructor": "Prof. Balaraman Ravindran",
+ "term": "As offered",
+ "prereq": "CS3004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course enables students to understand the reinforcement learning paradigm, identify suitable problem settings for RL, and implement and evaluate core RL algorithms. This course is also offered as an elective for PG-diploma students.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Balaraman Ravindran, Wadhwani School of Data Science, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to reinforcement learning; Bandits and exploration-exploitation; TD learning (Tic-tac-toe); Regret and PAC frameworks; UCB and contextual bandits."
+   },
+   {
+    "label": "Week 2",
+    "text": "Full RL problem formulation; Markov Decision Processes (MDPs); Returns and value functions; Illustrative MDP examples."
+   },
+   {
+    "label": "Week 3",
+    "text": "Bellman equations; Optimality equations; Dynamic programming (policy evaluation and improvement)."
+   },
+   {
+    "label": "Week 4",
+    "text": "Value iteration; Dynamic programming extensions; Monte Carlo methods; DP vs MC vs TD comparison."
+   },
+   {
+    "label": "Week 5",
+    "text": "Temporal Difference (TD) learning; SARSA and Q-learning; On-policy vs off-policy learning."
+   },
+   {
+    "label": "Week 6",
+    "text": "N-step methods and TD(λ); Double Q-learning."
+   },
+   {
+    "label": "Week 7",
+    "text": "Function approximation; State and action representations; Deep Q-Networks (DQN); Advanced value-based methods."
+   },
+   {
+    "label": "Week 8",
+    "text": "Policy gradient methods; REINFORCE algorithm; Policy gradient theorem."
+   },
+   {
+    "label": "Week 9",
+    "text": "Policy Gradients: Introduction, Motivation, REINFORCE, PG theorem, Introduction to AC methods"
+   },
+   {
+    "label": "Week 10",
+    "text": "Monte Carlo policy gradients; Actor-critic methods; Deterministic policy gradients (DPG, DDPG)."
+   },
+   {
+    "label": "Week 11",
+    "text": "Hierarchical reinforcement learning; Options framework; Semi-Markov decision processes; Learning with temporally extended actions."
+   },
+   {
+    "label": "Week 12",
+    "text": "Monte Carlo Tree Search (MCTS)."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

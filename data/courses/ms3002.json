@@ -1,0 +1,210 @@
+{
+ "stem": "ms3002",
+ "code": "MS3002",
+ "kind": "lecture",
+ "title": "Market Research",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "The methods and analytics of understanding a market — survey design, sampling, segmentation, and insight.",
+ "instructor": "Mr. Ashok Sankethi",
+ "term": "As offered",
+ "prereq": "MS2001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course provides a foundational understanding of research methodology and its application across business domains, with a focus on marketing research. It covers the role, scope, process, cost, and value of research, aligns techniques with business problems, and develops skills in data analysis and translating insights into actionable outcomes through hands-on projects.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Mr. Ashok Sankethi, CEO, Kaybase Research"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to market research; Industry overview; Research process; Sampling methods and sample size determination."
+   },
+   {
+    "label": "Week 2",
+    "text": "Basic statistics for market research; Key terms and concepts."
+   },
+   {
+    "label": "Week 3",
+    "text": "Questionnaire design; Survey structuring and best practices."
+   },
+   {
+    "label": "Week 4",
+    "text": "Qualitative research methods; Interviews and discussion guides; Data collection techniques."
+   },
+   {
+    "label": "Week 5",
+    "text": "Applied market research; Brand health assessment; Customer satisfaction measurement."
+   },
+   {
+    "label": "Week 6",
+    "text": "Advertising research; Ad pre-testing; Questionnaire design for campaigns."
+   },
+   {
+    "label": "Week 7",
+    "text": "Employee satisfaction studies; Concept testing methods."
+   },
+   {
+    "label": "Week 8",
+    "text": "Product testing; Channel satisfaction analysis."
+   },
+   {
+    "label": "Week 9",
+    "text": "Brand research applications; Corporate and celebrity brand evaluation."
+   },
+   {
+    "label": "Week 10",
+    "text": "Consumer profiling and segmentation; Consumer decision journey (CDJ)."
+   },
+   {
+    "label": "Week 11",
+    "text": "CDJ case studies; Market intelligence sources (India context)."
+   },
+   {
+    "label": "Week 12",
+    "text": "Data analysis in market research; Interpretation and reporting."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

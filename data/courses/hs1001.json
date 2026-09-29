@@ -1,0 +1,213 @@
+{
+ "stem": "hs1001",
+ "code": "HS1001",
+ "kind": "lecture",
+ "title": "English I",
+ "program": "Foundation",
+ "credits": 4,
+ "standfirst": "Written and spoken English for a technical audience: comprehension, composition, presentation.",
+ "instructor": "Prof. Rajesh Kumar, Prof. Shreesh Chaudhary, Prof. Om Prakash &amp; Ms. Karthika Sathyanathan",
+ "term": "Every term",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course aims to develop fluency and confidence in both spoken and written English, drawing on insights from learning theories and established language-teaching methods.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Rajesh Kumar, Department of Humanities and Social Sciences, IIT Madras",
+   "Prof. Shreesh Chaudhary, Department of Humanities and Social Sciences, IIT Madras",
+   "Prof. Om Prakash, Department of Humanities and Social Sciences, Gautham Buddha University, Noida",
+   "Ms. Karthika Sathyanathan, Department of Humanities and Social Sciences, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Sounds and words; Vowel and consonant sounds articulation; Diphthongs, semi-vowels, consonant clusters."
+   },
+   {
+    "label": "Week 2",
+    "text": "Parts of speech - nouns, pronouns, verbs, adjectives, adverbs; Prepositions, conjunctions, interjections; Articles."
+   },
+   {
+    "label": "Week 3",
+    "text": "Vocabulary; Phrasal verbs; Modal verbs; Phrases and idioms."
+   },
+   {
+    "label": "Week 4",
+    "text": "Spoken English basics; Speaking pace and pauses; Structuring speech; Presentations; Telephone English."
+   },
+   {
+    "label": "Week 5",
+    "text": "Tenses (past, present, and future); Subject-verb agreement and practice."
+   },
+   {
+    "label": "Week 6",
+    "text": "Reading skills - skimming, scanning, SQ3R, PQRST; Short and long texts; Critical reading; Test preparation."
+   },
+   {
+    "label": "Week 7",
+    "text": "Listening skills - active vs passive, barriers; Technical talks; Practice and test preparation."
+   },
+   {
+    "label": "Week 8",
+    "text": "Aspiration, word stress, syllables and syllabification; Plurality."
+   },
+   {
+    "label": "Week 9",
+    "text": "Speaking skills - presentations and slides; Group discussions (rules); Storytelling; Speaking test preparation."
+   },
+   {
+    "label": "Week 10",
+    "text": "Grammar and common errors; Writing basics - describing visuals; Public writing."
+   },
+   {
+    "label": "Week 11",
+    "text": "Writing - notes, business writing, instructions; Data interpretation; Essays; Clarity and simplicity."
+   },
+   {
+    "label": "Week 12",
+    "text": "Professional writing - paragraphs, formality and tone; Editing."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

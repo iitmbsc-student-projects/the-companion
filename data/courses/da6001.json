@@ -1,0 +1,26 @@
+{
+ "stem": "da6001",
+ "code": "DA6001",
+ "kind": "lecture",
+ "title": "Responsible AI",
+ "program": "PG Diploma",
+ "credits": 4,
+ "standfirst": "The ethical, legal and social questions raised by deploying AI at scale — with the technical mitigations available.",
+ "instructor": "to be announced",
+ "term": "As offered",
+ "prereq": "CS3004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "AI/ML systems are becoming increasingly pervasive in all facets of life. However, deploying large-scale AI without addressing ethical, legal, privacy, and societal concerns can lead to undesirable outcomes. This course introduces the fundamental principles of responsible AI deployment.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [],
+  "faculty_note": "This course has not yet been introduced. Faculty and a week-by-week syllabus are not yet available — check the official handbook for the latest status.",
+  "weeks_text": [],
+  "weeks_note": ""
+ },
+ "weeks_data": []
+}

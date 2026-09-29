@@ -1,0 +1,16 @@
+{
+ "stem": "ms2001p",
+ "code": "MS2001P",
+ "kind": "project",
+ "title": "Business Data Management — Project",
+ "program": "Diploma / Data Science",
+ "credits": 2,
+ "standfirst": "A capstone applying BDM ideas to a real dataset — modelling, dashboarding and a business recommendation.",
+ "instructor": "Prof. Ashwin J. Baliga, Dr. Aaditya Chandel, Prof. G Venkatesh &amp; Dr. Milind Gandhe",
+ "term": "Every term",
+ "prereq": "MS2001",
+ "syllabus_body_html": "<p>The BDM Capstone Project is an independent research project in which students engage with a business - either from organized sectors (e.g., manufacturing, IT, automobile) or unorganized sectors (e.g., small retail or vendors) - to identify real-world problems. Students collect and clean primary data, analyze it, and generate actionable insights to support decision-making.</p>\n      <p><b>Co-requisite:</b> BSMS2001:  Business Data Management</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Ashwin J. Baliga, IESEG School of Management</li><li>Dr. Aaditya Chandel, Research Scientist, IIT Madras</li><li>Prof. G Venkatesh, Director, School of Technology, Dhirubhai Ambani University</li><li>Dr. Milind Gandhe, Machine Intelligence and Robotics (MINRO) COE, IIIT Bangalore</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>In the proposal stage, students are expected to provide details about the organization and its background, clearly define the problem, outline its context, propose a justified problem-solving approach, specify timelines for completion, and describe the expected outcomes of the project.</li><li>In the midterm submission, students are required to include a short video interaction with the business owner or manager, supporting evidence such as photographs and field notes, details on metadata and descriptive statistics, and a preliminary analysis with interpretation of results and findings.</li><li>The final report is a comprehensive document that provides an in-depth account of the entire project, from initiation to completion.</li><li>The viva voce is conducted after acceptance of the final submission, for which the student must prepare a presentation of no more than 10 slides.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSMS2001P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
+ "pyq": [],
+ "sessions": []
+}

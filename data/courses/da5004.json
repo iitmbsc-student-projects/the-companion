@@ -1,0 +1,211 @@
+{
+ "stem": "da5004",
+ "code": "DA5004",
+ "kind": "lecture",
+ "title": "Large Language Models",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "How transformers scaled into today's LLMs — pre-training, fine-tuning, alignment, and the practical realities.",
+ "instructor": "Prof. Mitesh Khapra",
+ "term": "As offered",
+ "prereq": "CS3004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course covers the Transformer architecture, pretraining and fine-tuning of language models, and different tokenizer types such as BPE, WordPiece, and SentencePiece. It also examines LLM architectures, common datasets, and challenges in handling long-context attention, and various fine-tuning techniques for large language models. This course is also offered as an elective for PG-diploma students.",
+   "<b>Pre-requisite:</b> BSCS3004 : Deep Learning",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Mitesh Khapra, Wadhwani School of Data Science, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Transformer architecture foundations; Self-attention mechanisms; Multi-head attention."
+   },
+   {
+    "label": "Week 2",
+    "text": "Decoder mechanisms (teacher forcing, masked attention); Positional encoding (including sinusoidal); Normalisation techniques (batch and layer normalisation)."
+   },
+   {
+    "label": "Week 3",
+    "text": "Language modelling fundamentals; Transformers for language modelling; Causal language modelling; Generative pre-trained transformers (GPT); Pre-training and fine-tuning."
+   },
+   {
+    "label": "Week 4",
+    "text": "Decoding strategies (greedy, beam search, sampling-top-k, top-p); BERT and masked language modelling; Next sentence prediction; Pre-training and adaptation to downstream tasks."
+   },
+   {
+    "label": "Week 5",
+    "text": "Tokenization challenges; Subword tokenization methods; Byte Pair Encoding (BPE); WordPiece and SentencePiece tokenizers."
+   },
+   {
+    "label": "Week 6",
+    "text": "Coding Assignment."
+   },
+   {
+    "label": "Week 7",
+    "text": "Modern transformer models (BART, GPT-2); Prompting techniques; Model design choices and performance factors; Architectural and objective variations; Pre-training data scale; Fine-tuning strategies; Multi-task learning."
+   },
+   {
+    "label": "Week 8",
+    "text": "Scaling in language models; Data sourcing and cleaning; Preprocessing pipelines; Pre-training datasets and data considerations."
+   },
+   {
+    "label": "Week 9",
+    "text": "Coding Assignment."
+   },
+   {
+    "label": "Week 10",
+    "text": "Coding Assignment."
+   },
+   {
+    "label": "Week 11",
+    "text": "Efficient attention mechanisms; Time and space complexity of attention; Local and sparse attention; Low-rank approximations; Fast inference techniques."
+   },
+   {
+    "label": "Week 12",
+    "text": "Positional encoding techniques; Relative position encoding; Rotary embeddings (RoPE); ALiBi and alternative positional methods."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

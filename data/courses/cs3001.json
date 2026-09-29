@@ -1,0 +1,182 @@
+{
+ "stem": "cs3001",
+ "code": "CS3001",
+ "kind": "lecture",
+ "title": "Software Engineering",
+ "program": "BSc / BS",
+ "credits": 4,
+ "standfirst": "How real software is planned, built and maintained by teams — requirements, design, version control, testing, delivery.",
+ "instructor": "Prof. Sridhar Iyer &amp; Dr. Prajish Prasad",
+ "term": "Every term",
+ "prereq": "CS2003",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course develops essential software engineering skills by introducing fundamental concepts and practices, including requirements gathering, conceptual design, software comprehension, debugging, testing, and deployment.",
+   "<b>In-course project:</b> The in-course project is integrated into the course and not offered separately. Students work in teams that simulate real-world IT environments, addressing client requirements (typically set by a TA or instructor) and following industry-standard software development practices. The final product is presented before a panel that includes TAs and instructors. An example of a previous project : AI Agent for Academic Guidance",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Sridhar Iyer, Interdisciplinary Program in Educational Technology, IIT Bombay",
+   "Dr. Prajish Prasad, Department of Computer Science, FLAME University"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Software development lifecycle - requirements, design, testing; Models (Waterfall, Agile); Components; Project context."
+   },
+   {
+    "label": "Week 2",
+    "text": "Requirements engineering - gathering, SRS; Functional/non-functional requirements; User stories."
+   },
+   {
+    "label": "Week 3",
+    "text": "UI/UX design - interaction, usability; Prototyping; Heuristic evaluation."
+   },
+   {
+    "label": "Week 4",
+    "text": "Project management - estimation, scheduling, risk; Agile; Tools."
+   },
+   {
+    "label": "Week 5",
+    "text": "Software design - modularity, OOP; UML; Design tools."
+   },
+   {
+    "label": "Week 6",
+    "text": "Development practices - APIs, version control; Code quality (debugging, metrics, clean code); Collaboration."
+   },
+   {
+    "label": "Week 7",
+    "text": "Software architecture; SOLID principles; Design patterns (creational, structural)."
+   },
+   {
+    "label": "Week 8",
+    "text": "Software testing - unit, integration, system; Black-box/white-box; TDD."
+   },
+   {
+    "label": "Week 9",
+    "text": "Deployment environments and strategies; Hosting platforms (IaaS, PaaS); Continuous integration; Performance monitoring."
+   },
+   {
+    "label": "Week 10",
+    "text": "Software organizations; Collaboration and productivity; Software engineering skills."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

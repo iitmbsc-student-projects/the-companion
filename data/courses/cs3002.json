@@ -1,0 +1,210 @@
+{
+ "stem": "cs3002",
+ "code": "CS3002",
+ "kind": "lecture",
+ "title": "Software Testing",
+ "program": "BSc / BS",
+ "credits": 4,
+ "standfirst": "Unit, integration and system testing — plus the theory of what testing can and cannot guarantee.",
+ "instructor": "Prof. Meenakshi D'Souza",
+ "term": "Every term",
+ "prereq": "CS3001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course prepares students to understand requirement-based testing phases, formulate precise test requirements, design and execute test cases within a standard development environment, and apply specialized test design techniques for specific application domains.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Meenakshi D'Souza, Department of Computer Science and Engineering, IIIT Bangalore"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Software testing - Software development life-cycle, terminologies; Test automation."
+   },
+   {
+    "label": "Week 2",
+    "text": "Graphs and algorithms; Structural graph coverage criteria; Algorithms for coverage-based testing."
+   },
+   {
+    "label": "Week 3",
+    "text": "Graph and data flow testing; Coverage criteria; Unit testing."
+   },
+   {
+    "label": "Week 4",
+    "text": "Integration and specification testing; Graph coverage; Finite state machines; Code coverage."
+   },
+   {
+    "label": "Week 5",
+    "text": "Logic basics; Coverage criteria; Clause and predicate coverage; Logic-based testing."
+   },
+   {
+    "label": "Week 6",
+    "text": "Logic coverage examples; Coverage specification; FSM coverage; SMT solvers.."
+   },
+   {
+    "label": "Week 7",
+    "text": "Symbolic testing; Concolic execution; Symbolic execution examples."
+   },
+   {
+    "label": "Week 8",
+    "text": "Requirements; Functional testing; Input space partitioning; ISP examples."
+   },
+   {
+    "label": "Week 9",
+    "text": "Regular expressions and CFGs; Mutation testing; Mutation operators; Testing criteria comparison; Integration and tools."
+   },
+   {
+    "label": "Week 10",
+    "text": "OO integration concepts; Mutation operators; OO testing and faults; Coupling criteria."
+   },
+   {
+    "label": "Week 11",
+    "text": "Web applications; Client-side testing; Server-side testing."
+   },
+   {
+    "label": "Week 12",
+    "text": "Regression testing; Quality metrics; Non-functional testing; TDD; Summary."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

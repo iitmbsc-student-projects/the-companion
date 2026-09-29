@@ -1,0 +1,210 @@
+{
+ "stem": "cs3004",
+ "code": "CS3004",
+ "kind": "lecture",
+ "title": "Deep Learning",
+ "program": "BSc / BS",
+ "credits": 4,
+ "standfirst": "Modern deep networks — CNNs, RNNs, attention, training dynamics and the practical craft of making them work.",
+ "instructor": "Prof. Mitesh Khapra",
+ "term": "Every term",
+ "prereq": "CS2004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "To study the basics of Neural Networks and their various variants such as the Convolutional Neural Networks and Recurrent Neural Networks, to study the different ways in which they can be used to solve problems in various domains such as Computer Vision, Speech and NLP",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Mitesh Khapra, Wadhwani School of Data Science, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Deep learning history; McCulloch-Pitts neuron; Threshold logic; Perceptron learning and convergence."
+   },
+   {
+    "label": "Week 2",
+    "text": "Multilayer Perceptrons and their representation power; Sigmoid neurons; Gradient descent."
+   },
+   {
+    "label": "Week 3",
+    "text": "Feedforward Neural Networks - representation power, backpropagation."
+   },
+   {
+    "label": "Week 4",
+    "text": "Gradient descent recap; Contour plots; Momentum based and Nesterov accelerated GD; Adaptive optimization methods; Learning rate scheduling."
+   },
+   {
+    "label": "Week 5",
+    "text": "Adaptive gradient methods; Adam and variants; NAdam; Learning rate schemes."
+   },
+   {
+    "label": "Week 6",
+    "text": "Bias-variance; Training vs test error; Model complexity; Regularization; Noise injection; Early stopping; Ensembles; Dropout."
+   },
+   {
+    "label": "Week 7",
+    "text": "Deep learning revival; Pre-training; Optimization vs regularization; Activation functions; Maxout; GELU to SiLU."
+   },
+   {
+    "label": "Week 8",
+    "text": "CNNs; Convolution and architectures; ImageNet models; Visualisation techniques; Image generation; Deep Dream and style transfer; Adversarial examples."
+   },
+   {
+    "label": "Week 9",
+    "text": "Word representations; SVD embeddings; CBOW and Skip-Gram; Optimization techniques; GloVe; Evaluation and Word2Vec."
+   },
+   {
+    "label": "Week 10",
+    "text": "Sequence learning; Recurrent Neural Networks (RNN); Backpropagation Through Time (BPTT); Gradient issues; LSTM and GRU."
+   },
+   {
+    "label": "Week 11",
+    "text": "Encoder-decoder models; Attention Mechanism; Transformers."
+   },
+   {
+    "label": "Week 12",
+    "text": "Transformers; Self-attention; Multi-head attention; Decoder"
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

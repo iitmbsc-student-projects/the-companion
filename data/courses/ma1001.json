@@ -1,0 +1,212 @@
+{
+ "stem": "ma1001",
+ "code": "MA1001",
+ "kind": "lecture",
+ "title": "Mathematics for Data Science I",
+ "program": "Foundation",
+ "credits": 4,
+ "standfirst": "Sets, functions, straight lines, matrices, permutations, and a first taste of calculus — the mathematical vocabulary every later course will assume you already speak.",
+ "instructor": "Prof. Neelesh Upadhye, Prof. Madhavan Mukund &amp; Prof. Sarang S Sane",
+ "term": "Every term",
+ "prereq": "class XII maths",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces functions - including Linear, Quadratic, Polynomial, Exponential, and Logarithmic - along with Single-Variable Calculus and foundational Discrete Mathematics, including Graph Theory, through numerous examples. This course shall develop the ability to model real-world situations using abstract mathematical structures.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Neelesh Upadhye, Department of Mathematics, IIT Madras",
+   "Prof. Madhavan Mukund, Director, Chennai Mathematical Institute",
+   "Prof. Sarang S Sane, Department of Mathematics, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Set theory - number systems, sets and their operations; Relations &amp; functions and their types."
+   },
+   {
+    "label": "Week 2",
+    "text": "Rectangular coordinate system, straight lines - slope, parallel and perpendicular lines, representations, general equations, and straight-line fitting."
+   },
+   {
+    "label": "Week 3",
+    "text": "Quadratic functions - properties, minima, maxima, vertex, and slope; Quadratic Equations."
+   },
+   {
+    "label": "Week 4",
+    "text": "Polynomial algebra - basic arithmetic operations and algorithms; Polynomial graphs - x-intercepts, multiplicities, end behavior, and turning points; Graphing and polynomial construction."
+   },
+   {
+    "label": "Week 5",
+    "text": "Functions - horizontal and vertical line tests; Exponential, composite, and inverse functions."
+   },
+   {
+    "label": "Week 6",
+    "text": "Logarithmic functions - properties, graphs; Exponential and logarithmic equations."
+   },
+   {
+    "label": "Week 7",
+    "text": "Sequence and limits; Function of one variable - graphs and tangents; Limits for sequences and functions; Continuity."
+   },
+   {
+    "label": "Week 8",
+    "text": "Derivatives and critical points - differentiability; Computing derivatives and L'Hôpital's rule - tangents and linear approximation; Local maxima and minima."
+   },
+   {
+    "label": "Week 9",
+    "text": "Integrals of functions of one variable - computing areas (including area under a curve); Relationship between derivatives and integrals."
+   },
+   {
+    "label": "Week 10",
+    "text": "Graph theory - graph representation; Breadth-first search, Depth-first search and their applications; Directed acyclic graphs; Complexity analysis; Topological sorting."
+   },
+   {
+    "label": "Week 11",
+    "text": "Graph Algorithms - longest path, transitive closure, matrix multiplication; Shortest paths (single source and all-pairs); Dijkstra's, Bellman-Ford, and Floyd-Warshall algorithm; Minimum cost spanning trees; Prim's and Kruskal's algorithm"
+   },
+   {
+    "label": "Week 12",
+    "text": "Revision"
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

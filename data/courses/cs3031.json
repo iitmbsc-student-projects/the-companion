@@ -1,0 +1,211 @@
+{
+ "stem": "cs3031",
+ "code": "CS3031",
+ "kind": "lecture",
+ "title": "Computer Systems Design",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "How a computer really works — CPU, memory, storage and the layers of abstraction above them.",
+ "instructor": "Prof. Ayon Chakraborty",
+ "term": "As offered",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the internal organization of computers, with a focus on CPU architecture.",
+   "<b>Pre-requisite:</b> BSCS3005 : Programming in C",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Ayon Chakraborty, Department of Computer Science and Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Computer system overview; Representation of information; Digital logic fundamentals and basic building blocks."
+   },
+   {
+    "label": "Week 2",
+    "text": "Boolean algebra foundations; SOP forms and canonical representations; Logic formulation basics."
+   },
+   {
+    "label": "Week 3",
+    "text": "Logic gate transformations; POS forms; Universal gates and multilevel logic; Timing diagrams."
+   },
+   {
+    "label": "Week 4",
+    "text": "Combinational circuits; Comparators; Decoders, encoders, and multiplexers."
+   },
+   {
+    "label": "Week 5",
+    "text": "Adders and programmable logic arrays; Boolean simplification (K-maps); Introduction to system design."
+   },
+   {
+    "label": "Week 6",
+    "text": "Practical circuit design (CircuitVerse); Display systems (7-segment displays)."
+   },
+   {
+    "label": "Week 7",
+    "text": "Sequential logic fundamentals; Latches and flip-flops (SR, D, JK); Clocked circuits."
+   },
+   {
+    "label": "Week 8",
+    "text": "Advanced sequential circuits; Master-slave flip-flops; Circuit design using sequential elements."
+   },
+   {
+    "label": "Week 9",
+    "text": "Counters (ring, Johnson, BCD); Registers and state-based circuit design."
+   },
+   {
+    "label": "Week 10",
+    "text": "Processor design fundamentals; Instruction execution; Register transfer logic; Bus architecture; ISA basics."
+   },
+   {
+    "label": "Week 11",
+    "text": "ALU design and computer arithmetic; Control logic design; Timing and hardware control."
+   },
+   {
+    "label": "Week 12",
+    "text": "Software-based control; Processor implementation (Gajendra I); Instruction execution; Course summary."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

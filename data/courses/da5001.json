@@ -1,0 +1,195 @@
+{
+ "stem": "da5001",
+ "code": "DA5001",
+ "kind": "lecture",
+ "title": "Introduction to Big Data",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Distributed storage and computation — the ideas behind Hadoop, Spark and the modern data stack.",
+ "instructor": "Dr. Rangarajan Vasudevan",
+ "term": "As offered",
+ "prereq": "CS2001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the practical aspects of large-scale analytics (big data), beginning with foundational concepts in big data and cloud computing across hardware, systems, and software, and progressing to algorithm design and execution at scale.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Dr. Rangarajan Vasudevan, Co-Founder &amp; Chief Data Officer, Lentre.ai"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Big data fundamentals; Cloud and Spark; MapReduce concepts; Sorting and hashing."
+   },
+   {
+    "label": "Week 2",
+    "text": "Cloud fundamentals; Cloud-native architecture; Cloud services; Big data in cloud."
+   },
+   {
+    "label": "Week 3",
+    "text": "Data pipelines; Data formats; Relational vs non-relational data; Data lakes and warehouses; Data extraction."
+   },
+   {
+    "label": "Week 4",
+    "text": "Hadoop and Spark; Spark architecture; Spark SQL and streaming; Hands-on data processing."
+   },
+   {
+    "label": "Week 5",
+    "text": "ETL/ELT; Data processing patterns; Metadata and lifecycle; Scheduling."
+   },
+   {
+    "label": "Week 6",
+    "text": "SQL and relational algebra; Query planning and optimization; Join algorithms; Spark SQL optimization; NoSQL databases."
+   },
+   {
+    "label": "Week 7",
+    "text": "Streaming vs batch; Streaming fundamentals; Pub/Sub; Dataflow and Beam."
+   },
+   {
+    "label": "Week 8",
+    "text": "Kafka architecture; Message semantics; Exactly-once processing; Spark streaming; Windowing and real-time processing."
+   },
+   {
+    "label": "Week 9",
+    "text": "Big data ML; Distributed ML; Spark MLlib; MLOps; Best practices."
+   },
+   {
+    "label": "Week 10",
+    "text": "Deep learning on big data; Distributed training; Streaming inference; Course recap."
+   },
+   {
+    "label": "Week 11",
+    "text": "Prep week for final project; Summarizing key concepts."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

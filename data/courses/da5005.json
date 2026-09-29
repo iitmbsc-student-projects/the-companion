@@ -1,0 +1,211 @@
+{
+ "stem": "da5005",
+ "code": "DA5005",
+ "kind": "lecture",
+ "title": "Introduction to Natural Language Processing",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "The NLP pipeline from tokenisation to transformers, with the linguistics that motivates each step.",
+ "instructor": "Prof. Rahul Mishra &amp; Prof. Parameswari Krishnamurthy",
+ "term": "As offered",
+ "prereq": "CS3004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "Natural language is the primary mode of human communication, and the rapid growth of text data has led to the need for automated processing through NLP . This course covers the challenges of language processing, linguistic and statistical methods, and modern deep learning approaches, including transformers and large language models. It also develops the ability to understand research, apply NLP techniques to real-world problems, and build NLP-based applications. This course is also offered as an elective for PG-diploma students.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Rahul Mishra, Language Technologies Research Center, IIIT Hyderabad",
+   "Prof. Parameswari Krishnamurthy, Language Technologies Research Centre, IIIT Hyderabad"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to Natural Language (NL) Why is it hard to process a natural language? Levels of Language Processing, Linguistic Fundamentals for NLP"
+   },
+   {
+    "label": "Week 2",
+    "text": "Text preprocessing techniques; Tokenization and normalization; Stemming, lemmatization, and morphological analysis."
+   },
+   {
+    "label": "Week 3",
+    "text": "Part-of-speech tagging; Named entity recognition; Sequence models (HMM, MEMM, CRF); Classical classification methods."
+   },
+   {
+    "label": "Week 4",
+    "text": "Syntax and parsing (CFGs, constituency, dependency); Semantic analysis and representation; Semantic role labeling."
+   },
+   {
+    "label": "Week 5",
+    "text": "Distributional semantics (n-grams, Word2Vec, GloVe); Coreference resolution and discourse; Machine translation."
+   },
+   {
+    "label": "Week 6",
+    "text": "Recurrent neural networks (RNNs); LSTM architectures; NLP preprocessing pipelines; PyTorch basics."
+   },
+   {
+    "label": "Week 7",
+    "text": "Transformers and attention mechanisms; Large language models (LLMs); Transformer implementation."
+   },
+   {
+    "label": "Week 8",
+    "text": "Parameter-efficient fine-tuning (LoRA, QLoRA); Instruction tuning; Human alignment (RLHF, DPO); Hugging Face workflows."
+   },
+   {
+    "label": "Week 9",
+    "text": "Natural language generation (NLG); Decoding strategies (beam search, sampling); Fine-tuning LLMs."
+   },
+   {
+    "label": "Week 10",
+    "text": "Retrieval-augmented generation (RAG); Applications (question answering, summarization, code tasks)."
+   },
+   {
+    "label": "Week 11",
+    "text": "Model explainability; Attention and attribution methods; Interpretability techniques (integrated gradients, attention maps)."
+   },
+   {
+    "label": "Week 12",
+    "text": "Ethics in NLP; Bias in datasets and models; Evaluation metrics; Bias mitigation and responsible AI practices."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

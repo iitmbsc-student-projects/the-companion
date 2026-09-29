@@ -1,0 +1,210 @@
+{
+ "stem": "ms4003",
+ "code": "MS4003",
+ "kind": "lecture",
+ "title": "Financial Forensics",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Detecting fraud and financial misconduct through data — from Benford's law to modern anomaly detection.",
+ "instructor": "Prof. G Arun Kumar",
+ "term": "As offered",
+ "prereq": "MA1004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the fundamentals of finance and accounting, including the lifecycle of financial transactions and applications of AI/ML in the finance industry. It also covers model explainability in regulated environments and explores real-world problems such as credit card fraud, identity fraud, and anti-money laundering.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. G Arun Kumar, Department of Management Studies, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to finance and accounting; Fundamentals of financial accounting."
+   },
+   {
+    "label": "Week 2",
+    "text": "Financial statements; Balance sheet and income statement analysis."
+   },
+   {
+    "label": "Week 3",
+    "text": "Cash flow statement; Cash flow analysis and interpretation."
+   },
+   {
+    "label": "Week 4",
+    "text": "Integrated analysis of financial statements; Linking financial reports."
+   },
+   {
+    "label": "Week 5",
+    "text": "Financial ratios; Performance evaluation and analysis."
+   },
+   {
+    "label": "Week 6",
+    "text": "Corporate finance basics; Time value of money; Financial decision-making."
+   },
+   {
+    "label": "Week 7",
+    "text": "Advanced corporate finance concepts; Investment and financing decisions."
+   },
+   {
+    "label": "Week 8",
+    "text": "Transaction lifecycle; Credit risk fundamentals; Probability of default modeling; Credit risk optimization."
+   },
+   {
+    "label": "Week 9",
+    "text": "Financial fraud detection; Supervised and unsupervised learning approaches; Practical fraud analytics."
+   },
+   {
+    "label": "Week 10",
+    "text": "Time series analysis; Components and forecasting models; Hands-on modeling."
+   },
+   {
+    "label": "Week 11",
+    "text": "Text analytics for financial forensics; Text preprocessing; Entity resolution."
+   },
+   {
+    "label": "Week 12",
+    "text": "Explainable AI (XAI); SHAP-based interpretability; AI/ML applications in financial forensics."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

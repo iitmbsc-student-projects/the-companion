@@ -1,0 +1,213 @@
+{
+ "stem": "da5013",
+ "code": "DA5013",
+ "kind": "lecture",
+ "title": "Deep Learning Practice",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Applied deep learning — training tricks, debugging, transfer learning and shipping a model to production.",
+ "instructor": "Prof. Mitesh Khapra, Prof. S. Umesh &amp; Prof. Kaushik Mitra",
+ "term": "As offered",
+ "prereq": "CS3004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces modern NLP using transformers and the Hugging Face ecosystem, covering datasets, tokenization, and fine-tuning of pre-trained models for downstream tasks. It includes advanced topics such as continual pre-training, instruction tuning, and efficient training techniques. The course also extends to multimodal applications, including speech processing (speaker identification, speech-to-text, wake word detection) and computer vision tasks such as image classification, object detection, depth estimation, and image super-resolution, with hands-on experience on real-world datasets and challenges.",
+   "<b>Pre-requisite:</b> BSCS3004 : Deep Learning",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Mitesh Khapra, Wadhwani School of Data Science, IIT Madras",
+   "Prof. S. Umesh, Department of Electrical Engineering, IIT Madras",
+   "Prof. Kaushik Mitra, Department of Electrical Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Modern NLP with transformers; Hugging Face ecosystem (datasets, tokenizers, models, trainers); Dataset loading, processing, and streaming."
+   },
+   {
+    "label": "Week 2",
+    "text": "Tokenization techniques; Tokenizer pipeline (normalization, pre-tokenization, encoding/decoding); Training custom tokenizers."
+   },
+   {
+    "label": "Week 3",
+    "text": "Fine-tuning transformer models; Task-specific adaptation; Parameter-efficient vs full fine-tuning; Evaluation metrics."
+   },
+   {
+    "label": "Week 4",
+    "text": "Pre-training and instruction tuning; CLM/MLM objectives; Efficient training (mixed precision, checkpointing); PEFT methods (LoRA, QLoRA)."
+   },
+   {
+    "label": "Week 5",
+    "text": "Spoken language identification; Audio-based classification tasks."
+   },
+   {
+    "label": "Week 6",
+    "text": "Speaker diarization; Identifying speakers and segmentation in conversations."
+   },
+   {
+    "label": "Week 7",
+    "text": "Speech processing; Speech-to-text (ASR) and text-to-speech (TTS) systems."
+   },
+   {
+    "label": "Week 8",
+    "text": "Wake-word detection; Personalized keyword spotting systems."
+   },
+   {
+    "label": "Week 9",
+    "text": "Image classification; CNN architectures (AlexNet, VGG, ResNet, DenseNet, ViT); Dataset challenges (variation, imbalance)."
+   },
+   {
+    "label": "Week 10",
+    "text": "Object detection; Models (YOLO, R-CNN); Handling real-world datasets and class imbalance."
+   },
+   {
+    "label": "Week 11",
+    "text": "Depth estimation from images; Models (U-Net, Pix2Pix); Challenges like low-light conditions."
+   },
+   {
+    "label": "Week 12",
+    "text": "Image super-resolution; GAN-based methods (SRGAN); Applications to medical imaging."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

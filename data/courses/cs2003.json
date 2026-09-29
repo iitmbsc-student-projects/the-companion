@@ -1,0 +1,704 @@
+{
+ "stem": "cs2003",
+ "code": "CS2003",
+ "kind": "lecture",
+ "title": "Modern Application Development I",
+ "program": "Diploma / Programming",
+ "credits": 4,
+ "standfirst": "Building web applications from the ground up — HTML, CSS, Python, Flask, SQL and the mechanics of how the web actually works.",
+ "instructor": "Prof. Nitin Chandrachoodan &amp; Mr. Thejesh GN",
+ "term": "Every term",
+ "prereq": "CS1002",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1UzqQ5OaysL9hhKDS8IElRGW5eaNtc-bv?usp=sharing",
+   "label": "Supplementary content (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/@madi6496",
+   "label": "Course YouTube channel"
+  },
+  {
+   "url": "https://docs.google.com/spreadsheets/d/1nGJXD_E0LELdrj4wKprwpdYcHJZDsOdH",
+   "label": "Week-sorted playlist (spreadsheet)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "Building a modern application involves multiple components, including the front end, transaction handling, data storage, server communication, and API integration. The courses Modern Application Development I, and II address these aspects through a detailed, evolving case study, introducing relevant programming skills as the course progresses.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Nitin Chandrachoodan, Department of Electrical Engineering, IIT Madras",
+   "Mr. Thejesh GN, Independent Technologist, Multiple Affiliations"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Applications and architectures; Web fundamentals and protocols; Web servers and performance; Replit development."
+   },
+   {
+    "label": "Week 2",
+    "text": "Information representation; HTML and CSS (styling, selectors, responsive design); Bootstrap."
+   },
+   {
+    "label": "Week 3",
+    "text": "MVC and views; UI/UX design and usability; Tools and accessibility; Jinja2 and command-line usage."
+   },
+   {
+    "label": "Week 4",
+    "text": "Persistent storage and relational databases; ER diagrams; SQL; Flask."
+   },
+   {
+    "label": "Week 5",
+    "text": "Requests and responses; CRUD; Routes and controllers; Database integration (SQLite, SQLAlchemy); Flask structure."
+   },
+   {
+    "label": "Week 6",
+    "text": "API design and REST; OpenAPI and documentation; Flask-RESTful."
+   },
+   {
+    "label": "Week 7",
+    "text": "Memory hierarchy; Data and database search; SQL vs NoSQL; Scaling; Database security; Logging and debugging."
+   },
+   {
+    "label": "Week 8",
+    "text": "Frontend development; Asynchronous updates; Client-side operations and security; Indexing and full-text search."
+   },
+   {
+    "label": "Week 9",
+    "text": "Access control; Security mechanisms; Sessions; HTTPS; Logging; Introduction to JavaScript."
+   },
+   {
+    "label": "Week 10",
+    "text": "Application testing; Levels of testing; Test generation; Pytest; Flask-Security; Testing practices."
+   },
+   {
+    "label": "Week 11",
+    "text": "Advanced frontend - JavaScript, custom elements, frameworks; DB migration."
+   },
+   {
+    "label": "Week 12",
+    "text": "Application architecture; Services; Deployment and containers."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1.1",
+     "t": "What is an App?",
+     "v": "JIoQoBFqOI8",
+     "s": "https://drive.google.com/file/d/1tF4xXmpifRsXBd1YA4Ww5w3xDrvEMfNt/view?usp=drive_link"
+    },
+    {
+     "n": "1.2",
+     "t": "Components of an App",
+     "v": "FHr-Hiv8qhA",
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "Client-Server and Peer-to-Peer Architecture",
+     "v": "VoGpXVZZjKU",
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "Software Architectures",
+     "v": "sUTGFB7nhRE",
+     "s": null
+    },
+    {
+     "n": "1.5",
+     "t": "Introduction to the Web",
+     "v": "aHECVnSRl1M",
+     "s": null
+    },
+    {
+     "n": "1.6",
+     "t": "How does the Web work?",
+     "v": "4vUbNfsMlDg",
+     "s": null
+    },
+    {
+     "n": "1.7",
+     "t": "Simple Web Server",
+     "v": "XVqvp7ovWc0",
+     "s": null
+    },
+    {
+     "n": "1.8",
+     "t": "What is a Protocol?",
+     "v": "gPrRv4Fh04U",
+     "s": null
+    },
+    {
+     "n": "1.9",
+     "t": "Performance of a Website",
+     "v": "ApKLmlILKSM",
+     "s": null
+    },
+    {
+     "n": "Tutorial 1.1",
+     "t": "Application Development using Replit",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 1.1",
+     "t": "How to serve HTML files on LAN?",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2.1",
+     "t": "Information Representation in a machine",
+     "v": "LbA9fYPD6dQ",
+     "s": "https://drive.google.com/file/d/1gizNUMgDJWiA2vAWzvvrZ5QzcJGccfpy/view?usp=drive_link"
+    },
+    {
+     "n": "2.2",
+     "t": "Efficiency of Encoding",
+     "v": "xwdM1mASDi4",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "What is Markup?",
+     "v": "xxOH_fLlcLg",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "Introduction to HTML",
+     "v": "SDjObZyGA2U",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Introduction to Styling",
+     "v": "fDCQGSUN6vg",
+     "s": null
+    },
+    {
+     "n": "2.6",
+     "t": "Types of CSS styling and Responsive Websites",
+     "v": "S1h7gQ9IdIE",
+     "s": null
+    },
+    {
+     "n": "Screencast 2.1",
+     "t": "Introduction to Inline CSS",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 2.2",
+     "t": "Introduction to Internal and External CSS",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 2.3",
+     "t": "Introduction to CSS selectors",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 2.4",
+     "t": "Introduction to Bootstrap",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3.1",
+     "t": "Overview of MVC",
+     "v": "uvAa4LwNY-A",
+     "s": "https://drive.google.com/file/d/1iaNeykAbo8BUr_3Cm2t2dRLLLLtTtUPE/view?usp=drive_link"
+    },
+    {
+     "n": "3.2",
+     "t": "Views",
+     "v": "JRR8rtk4YRc",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "User Interface Design",
+     "v": "MpbCQUM5dss",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "Usability Heuristics",
+     "v": "bjQe1lmcgXw",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Tools - Part I",
+     "v": "2r8AcoqneFw",
+     "s": null
+    },
+    {
+     "n": "3.6",
+     "t": "Tools - Part II",
+     "v": "SbVDz1P4AMg",
+     "s": null
+    },
+    {
+     "n": "3.7",
+     "t": "Accessibility",
+     "v": "NyMuZbQ47ws",
+     "s": null
+    },
+    {
+     "n": "Screencast 3.1",
+     "t": "Command Line Arguments in Python",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 3.2",
+     "t": "Introduction to Jinja2 - I",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 3.3",
+     "t": "Introduction to Jinja2 - II",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 3.4",
+     "t": "Basics of Developer tools",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4.1",
+     "t": "Persistent Storage",
+     "v": "g7zpeaK4jEc",
+     "s": "https://drive.google.com/file/d/1NhXLANJXQ43-x0LvEn-R4kYHTLNIDQ_y/view?usp=drive_link"
+    },
+    {
+     "n": "4.2",
+     "t": "Mechanisms for Persistent Storage and Relational Databases",
+     "v": "ciReAG-1BQY",
+     "s": null
+    },
+    {
+     "n": "4.3",
+     "t": "Relations and ER Diagram",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "4.4",
+     "t": "SQL",
+     "v": "JCmvYAiI7oY",
+     "s": null
+    },
+    {
+     "n": "Screencast 4.1",
+     "t": "Introduction to Flask",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5.1",
+     "t": "MVC Origins",
+     "v": "hW0w6YqeDpU",
+     "s": "https://drive.google.com/file/d/1VREAD2VaeCu49f1SbLzUMhSUHLfMxu47/view?usp=drive_link"
+    },
+    {
+     "n": "5.2",
+     "t": "Requests and Responses",
+     "v": "K7IJ3n6lPsE",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "CRUD",
+     "v": "cHbdUv5nwyY",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Group Actions by Controller",
+     "v": "boQZMoN0TAQ",
+     "s": null
+    },
+    {
+     "n": "5.5",
+     "t": "Routes and Controllers",
+     "v": "co28E0Go_VA",
+     "s": null
+    },
+    {
+     "n": "Screencast 5.1",
+     "t": "How to create relational database using sqlite?",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 5.2",
+     "t": "How to query database using SQLAlchemy?",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 5.3",
+     "t": "Introduction to Flask-SQLAlchemy - I",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 5.4",
+     "t": "Introduction to Flask-SQLAlchemy - II",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 5.5",
+     "t": "Structure of a Flask App",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6.1",
+     "t": "API Design",
+     "v": "FE5tva_o7ew",
+     "s": "https://drive.google.com/file/d/1nYdxuEvlcp1Q6Je2jsXdMLnYQQwhZzoI/view?usp=drive_link"
+    },
+    {
+     "n": "6.2",
+     "t": "REST",
+     "v": "JG6K1y87EX8",
+     "s": null
+    },
+    {
+     "n": "6.3",
+     "t": "REST APIs - Examples-I",
+     "v": "hpEnzMVwnGo",
+     "s": null
+    },
+    {
+     "n": "6.4",
+     "t": "REST APIs - Examples-II",
+     "v": "B5zXlcvxeM8",
+     "s": null
+    },
+    {
+     "n": "6.5",
+     "t": "OpenAPI",
+     "v": "z9EdeJQH_DU",
+     "s": null
+    },
+    {
+     "n": "6.6",
+     "t": "Important Concepts of an API",
+     "v": "aICPHFOvuI0",
+     "s": null
+    },
+    {
+     "n": "Screencast 6.1",
+     "t": "Documenting Open API",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 6.2",
+     "t": "Introduction to Flask-RESTful - I",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 6.3",
+     "t": "Introduction to Flask-RESTful - II",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7.1",
+     "t": "Memory Hierarchy",
+     "v": "rVqtJhA6qLE",
+     "s": "https://drive.google.com/file/d/1kfuXIpX4G3Wp3kpip--U-7npcMRr1x_V/view?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "Data search",
+     "v": "aXmM6Yp_syw",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Database search",
+     "v": "MsZudfRTtNw",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "SQL vs. NoSQL",
+     "v": "UB1mx1rR9is",
+     "s": null
+    },
+    {
+     "n": "7.5",
+     "t": "Scaling",
+     "v": "kG0SSJTzd1s",
+     "s": null
+    },
+    {
+     "n": "7.6",
+     "t": "Security of Databases",
+     "v": "BKlb8ycc2t0",
+     "s": null
+    },
+    {
+     "n": "Screencast 7.1",
+     "t": "Logging",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 7.2",
+     "t": "Debugging",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8.1",
+     "t": "Appilcation frontends",
+     "v": "sLdemZFGJ9c",
+     "s": "https://drive.google.com/file/d/1I5xpl9rdMu7yA7h2OtnZTItdsfHvYAP5/view?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "Asynchronous Updates",
+     "v": "ssc5fxFpOdc",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Browser/Client operations",
+     "v": "kisIxQ7O_gA",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Client side computations and Security Implications",
+     "v": "drX5zQtoRZE",
+     "s": null
+    },
+    {
+     "n": "Screencast 8.1",
+     "t": "Introduction to Indexing",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 8.2",
+     "t": "Introduction to FTS (Full text search)",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "Access Control",
+     "v": "g5NVn0_rl_I",
+     "s": "https://drive.google.com/file/d/1T3CTvIDKKwTWjwjoEcofhQ-VBpLiaOFP/view?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "Security Mechanisms",
+     "v": "0hB9iqwJPhM",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Sessions",
+     "v": "KtJtD4vMwtQ",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "HTTPs",
+     "v": "LYK5AyjnMR0",
+     "s": null
+    },
+    {
+     "n": "9.5",
+     "t": "Logging",
+     "v": "AfMhImvi2uQ",
+     "s": null
+    },
+    {
+     "n": "Screencast 9.1",
+     "t": "Basics of JavaScript Usage",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Application testing",
+     "v": "fgWIn388NyQ",
+     "s": "https://drive.google.com/file/d/1UaSlc1OtCD4FX_n_HudJeLwfX937-CAI/view?usp=drive_link"
+    },
+    {
+     "n": "10.2",
+     "t": "Levels of Testing",
+     "v": "-JQb4J-3StQ",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Test generation",
+     "v": "um-fVTabNN8",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Pytest",
+     "v": "gXgMmPD2hGQ",
+     "s": null
+    },
+    {
+     "n": "Screencast 10.1",
+     "t": "Introduction to Flask-Security",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "Screencast 10.2",
+     "t": "Testing",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11.1",
+     "t": "Beyond HTML",
+     "v": "kjoFJuZ-QU4",
+     "s": "https://drive.google.com/file/d/1Fj31NF-VsRzkIC0Hv5lPXy6Ve84gPy92/view?usp=drive_link"
+    },
+    {
+     "n": "11.2",
+     "t": "JavaScript",
+     "v": "enTf8LqJ0DI",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Custom Elements",
+     "v": "MJtCoNSrygQ",
+     "s": null
+    },
+    {
+     "n": "11.4",
+     "t": "Frameworks",
+     "v": "DjBiu_k4pek",
+     "s": null
+    },
+    {
+     "n": "Screencast 11.1",
+     "t": "Db-migration",
+     "v": "V9uK_qRgeEE",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12.1",
+     "t": "Components of an App",
+     "v": "wOMVw5RSo4U",
+     "s": "https://drive.google.com/file/d/1GzU9qa7ZuVhHr9F9lsiOe58DHqOHhynb/view?usp=drive_link"
+    },
+    {
+     "n": "12.2",
+     "t": "Service Approach I",
+     "v": "0qVmZ6vCJVc",
+     "s": null
+    },
+    {
+     "n": "12.3",
+     "t": "Service Approach II",
+     "v": "bGZfcyYL_Ps",
+     "s": null
+    },
+    {
+     "n": "12.4",
+     "t": "Deployment",
+     "v": "qgJQOiayBdY",
+     "s": null
+    },
+    {
+     "n": "12.5",
+     "t": "Containers",
+     "v": "NYGEdH4Pvlc",
+     "s": null
+    }
+   ]
+  }
+ ]
+}

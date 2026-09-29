@@ -1,0 +1,212 @@
+{
+ "stem": "bt4002",
+ "code": "BT4002",
+ "kind": "lecture",
+ "title": "Big Data & Biological Networks",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Large-scale biological datasets — pathways, interaction networks, and the analytics that scale to them.",
+ "instructor": "Prof. Nirav Bhatt, Prof. Karthik Raman &amp; Prof. Himanshu Sinha",
+ "term": "As offered",
+ "prereq": "BT4001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course focuses on understanding, representing, and analyzing biological data from a network perspective, including network models, analytics techniques, and basic algorithm implementation in Python. It also introduces AI/ML formulations and their application to biological data analysis.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Nirav Bhatt, Department of Biotechnology, IIT Madras",
+   "Prof. Karthik Raman, Department of Biotechnology, IIT Madras",
+   "Prof. Himanshu Sinha, Department of Biotechnology, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Big data in biology; Molecular biology basics; DNA and RNA processes; OMICS and multiomics."
+   },
+   {
+    "label": "Week 2",
+    "text": "Genomics sequencing; GWAS; Genome projects; Transcriptomics."
+   },
+   {
+    "label": "Week 3",
+    "text": "Network fundamentals; Graph representation; Network properties; Centrality; NetworkX."
+   },
+   {
+    "label": "Week 4",
+    "text": "Network models; Model generation; Real-world vs random networks; Network biology applications."
+   },
+   {
+    "label": "Week 5",
+    "text": "Community detection; Network motifs and perturbations; Disease networks; Module identification; Tutorials."
+   },
+   {
+    "label": "Week 6",
+    "text": "Metabolic pathways and graph mining; Molecular graphs; Disease spread; Network reconstruction; Biological and microbial networks."
+   },
+   {
+    "label": "Week 7",
+    "text": "Genome assembly; Overlap and De Bruijn graphs; Sequence alignment; Manhattan tourist problem."
+   },
+   {
+    "label": "Week 8",
+    "text": "Sequence alignment; Eulerian paths; Graph representation learning; Graph embeddings."
+   },
+   {
+    "label": "Week 9",
+    "text": "Node embeddings; Encoder-decoder view; Factorization methods; Random walk methods."
+   },
+   {
+    "label": "Week 10",
+    "text": "Edge embeddings; Deep learning basics; Neural network training; Regularization; Embedding tutorials."
+   },
+   {
+    "label": "Week 11",
+    "text": "Graph neural networks; Spectral and spatial filters; Pooling; Spectral filtering tutorial."
+   },
+   {
+    "label": "Week 12",
+    "text": "GNN tasks; Graph classification; Drug discovery applications; Summary and tutorial."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

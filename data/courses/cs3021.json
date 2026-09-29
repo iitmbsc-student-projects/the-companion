@@ -1,0 +1,210 @@
+{
+ "stem": "cs3021",
+ "code": "CS3021",
+ "kind": "lecture",
+ "title": "Theory of Computation",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Automata, formal languages, computability and the mathematical limits of what a program can do.",
+ "instructor": "Prof. Partha Pratim Das",
+ "term": "As offered",
+ "prereq": "MA2001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the theory of computation, focusing on abstract models of computation to understand the capabilities and limitations of algorithms. It covers fundamental concepts such as formal languages, simulation, reductions, and nondeterminism, and examines what can be computed efficiently, along with trade-offs between resources like time and space.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Partha Pratim Das, Department of Computer Science and Engineering, IIT Kharagpur"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to theory of computation; Finite automata and formal models."
+   },
+   {
+    "label": "Week 2",
+    "text": "Regular languages; Regular expressions; Language representation."
+   },
+   {
+    "label": "Week 3",
+    "text": "DFA minimization; Pumping lemma; Properties of regular languages."
+   },
+   {
+    "label": "Week 4",
+    "text": "Context-free languages (CFLs); Grammars and parse trees."
+   },
+   {
+    "label": "Week 5",
+    "text": "Pushdown automata (PDA); Recognition of CFLs."
+   },
+   {
+    "label": "Week 6",
+    "text": "Non-context-free languages; Introduction to Turing machines."
+   },
+   {
+    "label": "Week 7",
+    "text": "Variants of Turing machines; Church-Turing thesis."
+   },
+   {
+    "label": "Week 8",
+    "text": "Decidability; Undecidable problems."
+   },
+   {
+    "label": "Week 9",
+    "text": "Reductions; Proving undecidability."
+   },
+   {
+    "label": "Week 10",
+    "text": "Time and space complexity; Complexity classes."
+   },
+   {
+    "label": "Week 11",
+    "text": "Polynomial-time reductions; Hard computational problems."
+   },
+   {
+    "label": "Week 12",
+    "text": "NP-completeness; Course summary and unifying concepts."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

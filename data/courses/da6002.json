@@ -1,0 +1,26 @@
+{
+ "stem": "da6002",
+ "code": "DA6002",
+ "kind": "lecture",
+ "title": "Statistical Learning Theory",
+ "program": "PG Diploma",
+ "credits": 4,
+ "standfirst": "The mathematical theory of generalisation — VC dimension, PAC learning, and modern extensions.",
+ "instructor": "to be announced",
+ "term": "As offered",
+ "prereq": "CS2004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces statistical learning theory, including models such as the PAC framework. It covers classical concepts like Vapnik's uniform convergence and modern ideas such as algorithmic stability, along with an introduction to unsupervised learning theory and a high-level overview of modern deep learning theory.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [],
+  "faculty_note": "This course has not yet been introduced. Faculty and a week-by-week syllabus are not yet available — check the official handbook for the latest status.",
+  "weeks_text": [],
+  "weeks_note": ""
+ },
+ "weeks_data": []
+}

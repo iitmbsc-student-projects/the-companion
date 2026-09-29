@@ -1,0 +1,210 @@
+{
+ "stem": "da5002",
+ "code": "DA5002",
+ "kind": "lecture",
+ "title": "Mathematical Foundations of Generative AI",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "The probability, information theory and optimisation ideas underneath modern generative models.",
+ "instructor": "Prof. Prathosh A P",
+ "term": "As offered",
+ "prereq": "CS3004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course explores deep generative models, covering their probabilistic foundations and learning algorithms. It includes models such as variational autoencoders, generative adversarial networks, autoregressive models, diffusion models, and large language models, along with their implementation using frameworks like PyTorch. Students gain both theoretical understanding and hands-on experience through lectures and assignments across diverse AI tasks. This course is also offered as an elective for Degree level students.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Prathosh A P , Department of Electrical Communication Engineering, IISC Bengaluru"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to deep generative models; Generative AI fundamentals; Variational divergence minimization; PyTorch basics (tensors, datasets, model building)."
+   },
+   {
+    "label": "Week 2",
+    "text": "Variational approaches to generative modeling; Introduction to GANs; GAN formulation and basic implementation."
+   },
+   {
+    "label": "Week 3",
+    "text": "Advanced GANs; DCGAN and conditional GANs; GANs as guided samplers; Practical implementations."
+   },
+   {
+    "label": "Week 4",
+    "text": "GAN training challenges; Wasserstein GANs; BiGANs and inversion techniques; Domain adversarial learning; Evaluation of generative models."
+   },
+   {
+    "label": "Week 5",
+    "text": "Latent variable models; ELBO; Gaussian Mixture Models and EM algorithm; Variational Autoencoders (VAEs)."
+   },
+   {
+    "label": "Week 6",
+    "text": "Training VAEs; Reparameterization trick; Inference; Variants (β-VAE, VQ-VAE); Implementations."
+   },
+   {
+    "label": "Week 7",
+    "text": "Diffusion models; Denoising Diffusion Probabilistic Models (DDPMs); U-Net architectures."
+   },
+   {
+    "label": "Week 8",
+    "text": "DDPM theory; ELBO derivation and optimization; Training and inference; Implementation and proofs."
+   },
+   {
+    "label": "Week 9",
+    "text": "Advanced diffusion models; Score-based interpretation; Guided diffusion; Latent diffusion; DDIMs and inference methods."
+   },
+   {
+    "label": "Week 10",
+    "text": "Autoregressive models; Attention mechanisms; Transformer architecture; Training and inference."
+   },
+   {
+    "label": "Week 11",
+    "text": "Reinforcement learning basics; Policy gradient methods; PPO and TRPO; RL for generative models."
+   },
+   {
+    "label": "Week 12",
+    "text": "Alignment and preference learning; Reward modeling; Direct Preference Optimization (DPO); State-space models."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

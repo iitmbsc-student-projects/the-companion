@@ -1,0 +1,659 @@
+{
+ "stem": "cs2007",
+ "code": "CS2007",
+ "kind": "lecture",
+ "title": "Machine Learning Techniques",
+ "program": "Diploma / Data Science",
+ "credits": 4,
+ "standfirst": "Supervised and unsupervised learning — regression, classification, trees, ensembles, clustering, dimensionality reduction.",
+ "instructor": "Prof. Arun Rajkumar",
+ "term": "Every term",
+ "prereq": "CS2004",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1cB-kYSkqvsN3ooC_dEFJk1qRkwz_utnq?usp=share_link",
+   "label": "Supplementary content (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/@MLT_CS2007",
+   "label": "Course YouTube channel"
+  },
+  {
+   "url": "https://docs.google.com/spreadsheets/d/1c1yC_BazeIdi957GgYH6R77oELgKqVr4",
+   "label": "Week-sorted playlist (spreadsheet)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the primary methods and models used in regression, classification, and clustering, and examines their properties to understand their suitability for different problem settings.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Arun Rajkumar, Wadhwani School of Data Science, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Machine Learning - learning paradigms; Representation learning; PCA."
+   },
+   {
+    "label": "Week 2",
+    "text": "Unsupervised Learning - PCA limitations and complexity; Feature transformation; Kernel methods."
+   },
+   {
+    "label": "Week 3",
+    "text": "Clustering - K-means algorithm; Convergence and cluster properties; Initialization methods (K-means++); Choosing number of clusters."
+   },
+   {
+    "label": "Week 4",
+    "text": "Estimation - MLE, Bayesian; GMM and likelihood; Convexity and Jensen's inequality; EM algorithm."
+   },
+   {
+    "label": "Week 5",
+    "text": "Supervised Learning - linear regression; Optimization (gradient descent); Kernel and probabilistic regression."
+   },
+   {
+    "label": "Week 6",
+    "text": "Linear regression - evaluation, cross-validation; Bayesian modeling; Regularisation (Ridge, Lasso)."
+   },
+   {
+    "label": "Week 7",
+    "text": "Classification - K-nearest neighbours, decision trees; Generative vs discriminative models."
+   },
+   {
+    "label": "Week 8",
+    "text": "Generative models - Naive Bayes (Gaussian, decision function); Limitations."
+   },
+   {
+    "label": "Week 9",
+    "text": "Discriminative Models - perceptron (update rule and convergence); Sigmoid function; Logistic regression."
+   },
+   {
+    "label": "Week 10",
+    "text": "Maximum margin methods - SVM, soft margin; Dual formulation; Constrained optimization."
+   },
+   {
+    "label": "Week 11",
+    "text": "Soft-margin SVM - dual formulation and complementary slackness; Overfitting and underfitting; Ensemble methods - bagging and boosting."
+   },
+   {
+    "label": "Week 12",
+    "text": "Loss functions - SVM, logistic, perceptron, boosting; Neural networks; Summary."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1.1",
+     "t": "Introduction to machine learning",
+     "v": "KMcUe7GQnf0",
+     "s": "https://drive.google.com/drive/folders/1cX40p8S055Lgb4gN17cZrbtECVw9luoW?usp=drive_link"
+    },
+    {
+     "n": "1.2",
+     "t": "Paradigms of machine learning",
+     "v": "ipjggYk7zXs",
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "Representation Learning: Part 1",
+     "v": "1V_M4JxygGk",
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "Representation Learning: Part 2",
+     "v": "mU6CzvuUM00",
+     "s": null
+    },
+    {
+     "n": "1.5",
+     "t": "Representation Learning: Part 3",
+     "v": "t0bA3rsZ6qM",
+     "s": null
+    },
+    {
+     "n": "1.6",
+     "t": "Principal component analysis: Part 1",
+     "v": "_GOADM-SdKU",
+     "s": null
+    },
+    {
+     "n": "1.7",
+     "t": "Principal component analysis: Part 2",
+     "v": "o__dWBLqPhQ",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 1",
+     "v": "BkesMPmhh_E",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2.1",
+     "t": "Issues with PCA",
+     "v": "sgU4zbO-W4M",
+     "s": "https://drive.google.com/drive/folders/1XN8dAwY5ecAUz1k4B7jK1tMID4OipEtq?usp=drive_link"
+    },
+    {
+     "n": "2.2",
+     "t": "Time-complexity issue with PCA",
+     "v": "pwpDf2_Pytk",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Feature Transformation",
+     "v": "zcxnCyVSh70",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "Kernel Functions",
+     "v": "G6rMGLhw3IQ",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Kernel PCA",
+     "v": "K46tdjqxM0w",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 2",
+     "v": "Qs8dVQzu43I",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3.1",
+     "t": "Introduction to Clustering",
+     "v": "A3UNtCuMm7Y",
+     "s": "https://drive.google.com/drive/folders/1waovre6_zqhNkNU9tDGRKRr2fGCX93vp?usp=drive_link"
+    },
+    {
+     "n": "3.2",
+     "t": "K-means Clustering (Lloyd's algorithm)",
+     "v": "QrXQ5cMzphA",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "Convergence of K-means algorithm",
+     "v": "5geXmawaImk",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "Nature of clusters produced by K-means",
+     "v": "EY03QHaaSBY",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Initialization of centroids, K-means++",
+     "v": "Cbrdtxq6bdk",
+     "s": null
+    },
+    {
+     "n": "3.6",
+     "t": "Choice of K",
+     "v": "4-ycWgdMXD4",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 3",
+     "v": "_4mnXtczNoc",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4.1",
+     "t": "Introduction to Estimation",
+     "v": "382yNz5LoX0",
+     "s": "https://drive.google.com/drive/folders/1z_j_pFN4O7e3ikBx-pVInepQ5RSB8TLJ?usp=drive_link"
+    },
+    {
+     "n": "4.2",
+     "t": "Maximum Likelihood Estimation",
+     "v": "9dQSEn0ooTc",
+     "s": null
+    },
+    {
+     "n": "4.3",
+     "t": "Bayesian estimation",
+     "v": "ZnkRbtZLPm4",
+     "s": null
+    },
+    {
+     "n": "4.4",
+     "t": "Gaussian Mixture Models",
+     "v": "dyRTVmtML-U",
+     "s": null
+    },
+    {
+     "n": "4.5",
+     "t": "Likelihood of GMM",
+     "v": "a-VVrP11ZIo",
+     "s": null
+    },
+    {
+     "n": "4.6",
+     "t": "Convex functions and Jensen's inequality",
+     "v": "4s0aNldT02Y",
+     "s": null
+    },
+    {
+     "n": "4.7",
+     "t": "Estimating the parameters",
+     "v": "idWmaE39OIk",
+     "s": null
+    },
+    {
+     "n": "4.8",
+     "t": "EM algorithm",
+     "v": "1jSonYih_sM",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 4",
+     "v": "iC215XRWABA",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5.1",
+     "t": "Supervised Learning",
+     "v": "AIKTk9KtPJ0",
+     "s": "https://drive.google.com/drive/folders/1lLEIjTr88usGj0kxdCP_bx7pNGIhwO9x?usp=drive_link"
+    },
+    {
+     "n": "5.2",
+     "t": "Linear Regression",
+     "v": "RkcCmmN0TY4",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "Optimizing the error function",
+     "v": "JQPLz5YhjaM",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Geometric interpretation of linear regression",
+     "v": "SGbelq087Qs",
+     "s": null
+    },
+    {
+     "n": "5.5",
+     "t": "Gradient descent",
+     "v": "vS1LK8xoM4g",
+     "s": null
+    },
+    {
+     "n": "5.6",
+     "t": "Kernel regression",
+     "v": "u9ir3yQynpE",
+     "s": null
+    },
+    {
+     "n": "5.7",
+     "t": "Probabilistic view of linear regression",
+     "v": "gLGQokSrtDI",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 5",
+     "v": "mZbr0r6V6JI",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6.1",
+     "t": "Goodness of Maximum Likelihood Estimator for linear regression",
+     "v": "_CNCiGfwdQs",
+     "s": "https://drive.google.com/drive/folders/13Ska_N6SsXd6W2la5LkjDQ54SdvnAfcj?usp=drive_link"
+    },
+    {
+     "n": "6.1",
+     "t": "Cross-validation for minimizing MSE",
+     "v": "_hmPiYKlRTQ",
+     "s": null
+    },
+    {
+     "n": "6.3",
+     "t": "Bayesian Modeling for linear regression",
+     "v": "DG7KvatwL2Q",
+     "s": null
+    },
+    {
+     "n": "6.4",
+     "t": "Ridge regression",
+     "v": "dMB1c5NADnE",
+     "s": null
+    },
+    {
+     "n": "6.5",
+     "t": "Relation between solution of linear regression and ridge regression",
+     "v": "rCfjaEYxaC8",
+     "s": null
+    },
+    {
+     "n": "6.6",
+     "t": "Relation between solution of linear regression and Lasso regression",
+     "v": "f9KWAixPUCc",
+     "s": null
+    },
+    {
+     "n": "6.7",
+     "t": "Characteristics of Lasso regression",
+     "v": "79eeNk7InHk",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 6",
+     "v": "YziPX5i9trQ",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7.1",
+     "t": "Introduction to Binary Classification",
+     "v": "_w9irUy_8Cs",
+     "s": "https://drive.google.com/drive/folders/1iLLM9VLvjvMZsHHm1LapURayLIAS74ux?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "K-Nearest Neighbours",
+     "v": "H-Y_A7HvBqk",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Introduction to Decision Trees",
+     "v": "gXbAJGd8fO0",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "Decision Tree Algorithm",
+     "v": "5rnu6Hvbt8I",
+     "s": null
+    },
+    {
+     "n": "7.5",
+     "t": "Generative and Discriminative Models",
+     "v": "gwa47ZzhYno",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 7",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1hh1Nxb5yw3xv4SV-k-yXrbv2NzHW9QrS/view?usp=sharing"
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8.1",
+     "t": "Generative model-based algorithm",
+     "v": "tna8wxoasss",
+     "s": "https://drive.google.com/drive/folders/1K7VfgPSTOa3NkbsF68EfTdeJ8sgbuupA?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "Alternate generative model-based algorithm",
+     "v": "GdYLuJqHZAc",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Naive Bayes algorithm",
+     "v": "VKqGflpKG_A",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Pitfalls of naive Bayes algorithm",
+     "v": "RuE8SQajgxY",
+     "s": null
+    },
+    {
+     "n": "8.5",
+     "t": "Decision function of naive Bayes",
+     "v": "ADXQaTI0Lpo",
+     "s": null
+    },
+    {
+     "n": "8.6",
+     "t": "Gaussian naive Bayes",
+     "v": "oTMYU7hC2bw",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 8",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1Fcn6t_mAxxIZN0Gfd6RVpfi2oY3bAaPf/view?usp=sharing"
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "Perceptron Learning Algorithm",
+     "v": "G7tYdl0Osf4",
+     "s": "https://drive.google.com/drive/folders/1zQdsNR3tEbCiOT1AFp1BVg0z1VfHuOGz?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "Understanding Perceptron Update Rule",
+     "v": "FMRpmR9HNtY",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Proof of convergence of Perceptron Algorithm",
+     "v": "fHDouTKwfXw",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "Sigmoid function for modeling class probabilities",
+     "v": "udFWtBLJUvA",
+     "s": null
+    },
+    {
+     "n": "9.5",
+     "t": "Logistic Regression",
+     "v": "bb4yn4RssLs",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 9",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1W59Ks5OadCvJTC7hxJyuMFyLsXLDXkGB/view?usp=sharing"
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Perceptrons and Margin",
+     "v": "-guLBqucS_I",
+     "s": "https://drive.google.com/drive/folders/1yyCgrBMzVKMOahPYaYyupoqSvBcd3y2S?usp=drive_link"
+    },
+    {
+     "n": "10.2",
+     "t": "Maximum margin: Formulation",
+     "v": "ZzWFdt_6KLA",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Constrained Optimization",
+     "v": "7Th2YgPMnk0",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Formulating the Dual Problem",
+     "v": "85BxDKkiK4c",
+     "s": null
+    },
+    {
+     "n": "10.5",
+     "t": "Support Vector Machine",
+     "v": "2LnQ2r7Q3-0",
+     "s": null
+    },
+    {
+     "n": "10.6",
+     "t": "Soft Margin SVM",
+     "v": "leolYGmaFLM",
+     "s": null
+    },
+    {
+     "n": "Tutorial",
+     "t": "Tutorial Session - Week 10",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1pOsR2-ZJMgPtMPGCe0aPkbmkkG9jIz_7/view?usp=sharing"
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11.1",
+     "t": "Dual formulation for Soft Margin SVM",
+     "v": "MZzp4OP8GgQ",
+     "s": "https://drive.google.com/drive/folders/1edYXB-V0Hx4CFaXyg4LlVduaZUb9R6SB?usp=drive_link"
+    },
+    {
+     "n": "11.2",
+     "t": "Complementary slackness conditions for soft-margin SVM",
+     "v": "jthjk2nboDM",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Summary for soft-margin SVM",
+     "v": "jbcaJ_kn3CQ",
+     "s": null
+    },
+    {
+     "n": "11.4",
+     "t": "Overfitting and underfitting",
+     "v": "VcrPtcJWvDE",
+     "s": null
+    },
+    {
+     "n": "11.5",
+     "t": "Bagging",
+     "v": "OXTu2vrsTjY",
+     "s": null
+    },
+    {
+     "n": "11.6",
+     "t": "Boosting",
+     "v": "-B534pLpnhk",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12.1",
+     "t": "Classification Loss functions",
+     "v": "1ok_K5EohoU",
+     "s": "https://drive.google.com/drive/folders/1wMRJXASoTwYMNSpaV3ySViWFl6nd3lea?usp=drive_link"
+    },
+    {
+     "n": "12.2",
+     "t": "SVM and Logistic Loss",
+     "v": "tXVelGBsIPI",
+     "s": null
+    },
+    {
+     "n": "12.3",
+     "t": "Perceptron and Boosting Loss",
+     "v": "ZAuZqOM-skQ",
+     "s": null
+    },
+    {
+     "n": "12.4",
+     "t": "Neural Networks",
+     "v": "Y6CNz0wRWpI",
+     "s": null
+    },
+    {
+     "n": "12.5",
+     "t": "Computing parameters of a neural network",
+     "v": "LctgFHD_RN4",
+     "s": null
+    },
+    {
+     "n": "12.6",
+     "t": "Summary of the course and future directions",
+     "v": "06PP-3xUCs0",
+     "s": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "stem": "da6004",
+ "code": "DA6004",
+ "kind": "lecture",
+ "title": "Sequential Decision Making",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Bandits, MDPs and the theory behind decisions taken one after another under uncertainty.",
+ "instructor": "to be announced",
+ "term": "As offered",
+ "prereq": "DA5007",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the core concepts and algorithms for sequential decision-making, covering three learning paradigms based on feedback: online learning (full information), multi-armed bandits (partial information), and reinforcement learning (partial information with state changes). It also explores key algorithms and applications for each paradigm.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [],
+  "faculty_note": "This course has not yet been introduced. Faculty and a week-by-week syllabus are not yet available — check the official handbook for the latest status.",
+  "weeks_text": [],
+  "weeks_note": ""
+ },
+ "weeks_data": []
+}

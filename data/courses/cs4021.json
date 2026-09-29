@@ -1,0 +1,210 @@
+{
+ "stem": "cs4021",
+ "code": "CS4021",
+ "kind": "lecture",
+ "title": "Advanced Algorithms",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Beyond the classics — approximation, randomised, online, and parameterised algorithms.",
+ "instructor": "Prof. Neeldhara Misra",
+ "term": "As offered",
+ "prereq": "CS2002",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "To introduce advanced ideas in design of algorithms; To study the performance guarantees of algorithms; To introduce methods for coping with NP-hard problems.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Neeldhara Misra, Department of Computer Science and Engineering, IIT Gandhinagar"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Greedy algorithms; Interval scheduling and file storage problems; Stable matching."
+   },
+   {
+    "label": "Week 2",
+    "text": "Matroids and greedy optimization; Matroid properties and examples; Scheduling with deadlines."
+   },
+   {
+    "label": "Week 3",
+    "text": "Dynamic programming; Classic problems (LIS, edit distance, subset sum, optimal BSTs)."
+   },
+   {
+    "label": "Week 4",
+    "text": "Maximum flow theory; Flows, cuts, max-flow min-cut; Augmenting paths; Bipartite matching."
+   },
+   {
+    "label": "Week 5",
+    "text": "Applications of flows; Scheduling, elimination problems, and project selection."
+   },
+   {
+    "label": "Week 6",
+    "text": "Computational complexity; P , NP , NP-completeness; Reductions; SAT and classic NP-hard problems."
+   },
+   {
+    "label": "Week 7",
+    "text": "Approximation algorithms; Vertex cover (matching and LP-based); TSP and set cover."
+   },
+   {
+    "label": "Week 8",
+    "text": "Randomized algorithms; Monte Carlo vs Las Vegas; Min-cut; Probabilistic methods; 2SAT and primality testing."
+   },
+   {
+    "label": "Week 9",
+    "text": "Exact algorithms; Branch and bound; Inclusion-exclusion; DP for TSP; Local search."
+   },
+   {
+    "label": "Week 10",
+    "text": "Parameterized algorithms; Fixed-parameter tractability; Closest string; k-path; Subset DP techniques."
+   },
+   {
+    "label": "Week 11",
+    "text": "Kernelization techniques; Vertex cover kernels; Structural reductions; Applications to classic problems."
+   },
+   {
+    "label": "Week 12",
+    "text": "Practical approaches to hardness; SAT solvers; LP solvers; Problem reductions and real-world optimization."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

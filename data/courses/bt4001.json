@@ -1,0 +1,210 @@
+{
+ "stem": "bt4001",
+ "code": "BT4001",
+ "kind": "lecture",
+ "title": "Algorithmic Thinking in Bioinformatics",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "How the algorithms of computer science were adapted to sequence, align and analyse biological data.",
+ "instructor": "Prof. Manikandan Narayanan",
+ "term": "As offered",
+ "prereq": "CS2002",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course develops algorithmic thinking to address key data science challenges in bioinformatics, introduces important problem formulations and algorithmic paradigms that have shaped modern biomedicine, and provides insights into core bioinformatics algorithms on strings, trees, and graphs, many of which extend to other domains.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Manikandan Narayanan, Department of Computer Science &amp; Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Bioinformatics introduction; Course overview; Molecular biology basics; Biology-CS connection."
+   },
+   {
+    "label": "Week 2",
+    "text": "Cellular sensing problem; Computational formulation; Logistic regression; Randomized graph algorithms; Yeast network application."
+   },
+   {
+    "label": "Week 3",
+    "text": "Genome assembly; String reconstruction; Eulerian paths and De Bruijn graphs; Read-pairs."
+   },
+   {
+    "label": "Week 4",
+    "text": "Sequence alignment; Dynamic programming; Global vs local alignment; Space-efficient methods; Multiple sequence alignment."
+   },
+   {
+    "label": "Week 5",
+    "text": "Evolutionary trees; Phylogeny methods; Additive and non-additive models; Neighbour-Joining; Parsimony approaches."
+   },
+   {
+    "label": "Week 6",
+    "text": "Mutation detection; Read mapping; Trie and suffix tree methods; BWT; Pattern matching with suffix arrays."
+   },
+   {
+    "label": "Week 7",
+    "text": "Clustering for disease subgroups; K-means (hard and soft); Probabilistic models; Mixture models and parameter learning."
+   },
+   {
+    "label": "Week 8",
+    "text": "Motif discovery; Median string problem; Profile-based methods; Randomized motif search."
+   },
+   {
+    "label": "Week 9",
+    "text": "EM algorithm; EM analysis; Mixture models; EM for motif finding.."
+   },
+   {
+    "label": "Week 10",
+    "text": "Deep learning for motif finding; DeepBind model; Training and evaluation; Model interpretation."
+   },
+   {
+    "label": "Week 11",
+    "text": "Protein sequencing; Cyclopeptide sequencing; Branch-and-bound methods; Noisy spectra; Spectral convolution; Open problems."
+   },
+   {
+    "label": "Week 12",
+    "text": "Genome rearrangements; Comparative genomics; Permutation sorting; Reversal and 2-break distance; Evolutionary applications."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

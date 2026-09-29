@@ -1,0 +1,535 @@
+{
+ "stem": "cs2006",
+ "code": "CS2006",
+ "kind": "lecture",
+ "title": "Modern Application Development II",
+ "program": "Diploma / Programming",
+ "credits": 4,
+ "standfirst": "Client-side web with Vue.js, APIs, authentication, and building a single-page application backed by a Python API.",
+ "instructor": "Prof. Nitin Chandrachoodan &amp; Mr. Thejesh GN",
+ "term": "Every term",
+ "prereq": "CS2003",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1uuFKrdV74jksAo9gJpMBkUqE-RQEGO5f?usp=sharing",
+   "label": "Supplementary content (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/@mad2768",
+   "label": "Course YouTube channel"
+  },
+  {
+   "url": "https://docs.google.com/spreadsheets/d/1J4MQDp3oihl5HtF_ORxa8OV6DrSHstSg",
+   "label": "Week-sorted playlist (spreadsheet)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "Building a modern application involves multiple components, including the front end, transaction handling, data storage, server communication, and API integration. The courses Modern Application Development I, and II address these aspects through a detailed, evolving case study, introducing relevant programming skills as the course progresses.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Nitin Chandrachoodan, Department of Electrical Engineering, IIT Madras",
+   "Mr. Thejesh GN, Independent Technologist, Multiple Affiliations"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "JavaScript fundamentals - syntax, variables, control flow and functions; DOM API."
+   },
+   {
+    "label": "Week 2",
+    "text": "JavaScript - collections, iteration, modularity; Prototypes and classes; Asynchrony; JSON and APIs."
+   },
+   {
+    "label": "Week 3",
+    "text": "Frontend implementation; Introduction to Vue.js."
+   },
+   {
+    "label": "Week 4",
+    "text": "Introduction to Vue.js and its components."
+   },
+   {
+    "label": "Week 5",
+    "text": "Using APIs; Vue.js lifecycle; Asynchronous JavaScript (async/await); Fetch API; API calls in Vue.js."
+   },
+   {
+    "label": "Week 6",
+    "text": "Persistent storage; Vue.js - validation, components, testing, routing."
+   },
+   {
+    "label": "Week 7",
+    "text": "Advanced state management; Vuex; Routing in Vue.js; Single-page applications (SPAs); Single-file components."
+   },
+   {
+    "label": "Week 8",
+    "text": "API design and GraphQL; JAM approach; Authentication; Vue-Flask integration."
+   },
+   {
+    "label": "Week 9",
+    "text": "Web servers; Message queues; Asynchronous tasks with Celery; Redis; Celery integration with Flask."
+   },
+   {
+    "label": "Week 10",
+    "text": "Messaging - webhooks, push to client; Server-sent events."
+   },
+   {
+    "label": "Week 11",
+    "text": "Performance measurement and caching."
+   },
+   {
+    "label": "Week 12",
+    "text": "Security - privacy, frontend, backend; CORS and cookies."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1.1",
+     "t": "Review of Modern Application Development - I and what next?",
+     "v": "Szn0FoMfx10",
+     "s": "https://drive.google.com/file/d/1C4ed3k_Y-nE24HrTG5PwqlZ-yVqAcOEZ/view?usp=drive_link"
+    },
+    {
+     "n": "1.2",
+     "t": "JavaScript Origins and Overview",
+     "v": "bSqRlNBzwfs",
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "JavaScipt - Identifiers, Expressions, and Variables",
+     "v": "A1UMI9rfZ8Q",
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "Basics of JavaScript",
+     "v": "SE-Vb1A-VY8",
+     "s": null
+    },
+    {
+     "n": "1.5",
+     "t": "JavaScript - Control Flow and Functions",
+     "v": "DOGOFom15JI",
+     "s": null
+    },
+    {
+     "n": "1.6",
+     "t": "JavaScript - DOM API",
+     "v": "bu564DhPTKw",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2.1",
+     "t": "Introduction to JavaScript Collections",
+     "v": "3fv1ejKqiUU",
+     "s": "https://drive.google.com/file/d/1LXoKyzRh4W4yNmnaEaLiK55nvMXtWhMP/view?usp=drive_link"
+    },
+    {
+     "n": "Screencast 2.1",
+     "t": "Javascript - Basic Calculator",
+     "v": "PyT03AgZYpU",
+     "s": null
+    },
+    {
+     "n": "2.2",
+     "t": "JavaScript Collections - Iterations and Destructuring",
+     "v": "WUehmp1bwaY",
+     "s": null
+    },
+    {
+     "n": "Screencast 2.2",
+     "t": "Javascript - GUI Calculator",
+     "v": "Iok6IAlAR6U",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "JavaScript - Modularity",
+     "v": "On0u6m2LXeE",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "JavaScript - Function methods, Prototypes & Classes",
+     "v": "fCyF0OK2FAw",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "JavaScript - Asynchrony",
+     "v": "DT1NE0pUfeQ",
+     "s": null
+    },
+    {
+     "n": "2.6",
+     "t": "JavaScript - JSON API",
+     "v": "1pSu5k1XxmI",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "Live Lecture",
+     "t": "Frontend Implementation",
+     "v": "ajdbhOTRlcI",
+     "s": "https://drive.google.com/file/d/1QsD1WOvWXyJx7d4oPIzFSWpxkH9XSdxs/view?usp=drive_link"
+    },
+    {
+     "n": "Screencast 3.1",
+     "t": "Introduction to VueJS",
+     "v": "Y9lvwnBAjws",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "Live Lecture",
+     "t": "Vue",
+     "v": "faRuwqZV--w",
+     "s": "https://drive.google.com/file/d/1b3LZQ4-Z4itkkVivS2RV6om71LzpKQTT/view?usp=drive_link"
+    },
+    {
+     "n": "Screencast 4.1",
+     "t": "Components in VueJS",
+     "v": "jtH0_hXp-co",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "Live Lecture",
+     "t": "Using APIs",
+     "v": "1AeOkI5CzSs",
+     "s": "https://drive.google.com/file/d/1_9qq6W5rppHNW2twTN1YXuUrtO9OQDjG/view?usp=drive_link"
+    },
+    {
+     "n": "Screencast 5.1",
+     "t": "VueJS Lifecycle",
+     "v": "gUj7x98-CqU",
+     "s": null
+    },
+    {
+     "n": "Screencast 5.2",
+     "t": "JavaScript - Async and Await",
+     "v": "omUKQbFX2qg",
+     "s": null
+    },
+    {
+     "n": "Screencast 5.3",
+     "t": "JavaScript - Fetch API",
+     "v": "rCwJhWeS_aQ",
+     "s": null
+    },
+    {
+     "n": "Screencast 5.4",
+     "t": "VueJS - API calls",
+     "v": "leAP_ISStTM",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6.1",
+     "t": "Persistent Storage",
+     "v": "yyh0kjqA5_Q",
+     "s": "https://drive.google.com/file/d/1C3zAqh_N9tsXfSIyZV5Dj1hpeTLlX2lK/view?usp=drive_link"
+    },
+    {
+     "n": "6.2",
+     "t": "Vue - Form Validation",
+     "v": "J_b2hmWUX44",
+     "s": null
+    },
+    {
+     "n": "6.3",
+     "t": "Vue - Managing Components",
+     "v": "zjGtbOZAS9A",
+     "s": null
+    },
+    {
+     "n": "6.4",
+     "t": "Vue - Testing",
+     "v": "D8snI7H0TZk",
+     "s": null
+    },
+    {
+     "n": "Screencast 6.1",
+     "t": "VueJS - Routing",
+     "v": "a7KAI9l2sn8",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7.1",
+     "t": "Advanced State Management",
+     "v": "MyJe5TNl-rY",
+     "s": "https://drive.google.com/file/d/1QmeqhdqjP8Wif93yJIfXFg7zUdujBTLe/view?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "Introduction to Vuex",
+     "v": "ml8gFCV7l8s",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Routing in VueJS",
+     "v": "7g5T_gKObIU",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "SPAs and More",
+     "v": "CYcSh23IFbk",
+     "s": null
+    },
+    {
+     "n": "Screencast 7.1",
+     "t": "Statement Management using Vuex",
+     "v": "Ww40LrcpYFA",
+     "s": null
+    },
+    {
+     "n": "Screencast 7.2",
+     "t": "Single File Components in Vue-CLI",
+     "v": "cOsi2wRmUFU",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8.1",
+     "t": "Designing APIs - I",
+     "v": "9IM2zpiWQ7A",
+     "s": "https://drive.google.com/file/d/1m8KcgmJ6pMuNDJSI2fSdI1-Lyk3XKKXR/view?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "Designing APIs - II",
+     "v": "VM-2WK2KG4I",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Introduction to GraphQL",
+     "v": "x4eZPjzM92Q",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Markup Alternatives",
+     "v": "Po4hmc3-vH4",
+     "s": null
+    },
+    {
+     "n": "8.5",
+     "t": "JAM Approach",
+     "v": "YrcQ_aD3rYg",
+     "s": null
+    },
+    {
+     "n": "Screencast 8.1",
+     "t": "Flask API - Token Based Authentication",
+     "v": "4NSW7IM8Sr4",
+     "s": null
+    },
+    {
+     "n": "Screencast 8.2",
+     "t": "How to integrate Vue with Flask? - Part I",
+     "v": "wTxKnJjpBuY",
+     "s": null
+    },
+    {
+     "n": "Screencast 8.3",
+     "t": "How to integrate Vue with Flask? - Part II",
+     "v": "GYQujhaNZ0U",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "Web Servers",
+     "v": "OxWnwAmoJiQ",
+     "s": "https://drive.google.com/file/d/1Q8M8OVoQLozgtO1CqjunUrqtpnV4rZsZ/view?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "Message Queues",
+     "v": "jBZPSY4GzLg",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Asynchronous Tasks with Celery",
+     "v": "xLbVR5_ygFk",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "How to use Celery in Replit?",
+     "v": "nSY3FRlwSIY",
+     "s": null
+    },
+    {
+     "n": "Screencast 9.1",
+     "t": "Introduction to Redis",
+     "v": "ygUDWhb0ZmQ",
+     "s": null
+    },
+    {
+     "n": "Screencast 9.2",
+     "t": "How to use Celery workers with Flask?",
+     "v": "oK_lUKTzDiI",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Inter-Sevice Messaging",
+     "v": "ffHIEp4smlQ",
+     "s": "https://drive.google.com/file/d/1hcFof_3RzPoEo5utxNTEYuNunzHDSmNu/view?usp=drive_link"
+    },
+    {
+     "n": "10.2",
+     "t": "Webhooks",
+     "v": "vVXiXZhn7hM",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "More about Webhooks",
+     "v": "pQVX4kn6AXU",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Push to Client",
+     "v": "Rn-gHqpDElI",
+     "s": null
+    },
+    {
+     "n": "Screencast 10.1",
+     "t": "Server Sent Events",
+     "v": "s9ShXWD1kK8",
+     "s": null
+    },
+    {
+     "n": "Screencast 10.2",
+     "t": "How to use Webhooks?",
+     "v": "LM-I_aCt3ac",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "Live Lecture",
+     "t": "Performance",
+     "v": "L5HXuj5zDYg",
+     "s": "https://drive.google.com/file/d/1cK5k9vn0zI1d_-UL7-Axu7yGQI_LD7ii/view?usp=drive_link"
+    },
+    {
+     "n": "Screencast 11.1",
+     "t": "Performance Measurement and Caching",
+     "v": "Ggn1nTH2Srg",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12.1",
+     "t": "Privacy VS Security",
+     "v": "NXy2rWEek-A",
+     "s": "https://drive.google.com/file/d/1mtLdDUwzltzTYMLQWI3gI0BgA10f000m/view?usp=drive_link"
+    },
+    {
+     "n": "12.2",
+     "t": "Frontend Security",
+     "v": "M2Cm_Q_i8PI",
+     "s": null
+    },
+    {
+     "n": "12.3",
+     "t": "Backend Security",
+     "v": "FryxNwEeZDs",
+     "s": null
+    },
+    {
+     "n": "Screencast 12.1",
+     "t": "CORS and Cookies",
+     "v": "RtcdLbcfMkY",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Extra Lectures",
+   "items": [
+    {
+     "n": "EXTRA_01",
+     "t": "How to send emails?",
+     "v": "nbRfc14gv2A",
+     "s": null
+    },
+    {
+     "n": "EXTRA_02",
+     "t": "How to generate PDF reports from HTML?",
+     "v": "FavUnkklDIE",
+     "s": null
+    },
+    {
+     "n": "EXTRA_03",
+     "t": "How to push messages using webhooks?",
+     "v": "vAXtauXb9Mo",
+     "s": null
+    }
+   ]
+  }
+ ]
+}

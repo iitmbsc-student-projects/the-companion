@@ -1,0 +1,569 @@
+{
+ "stem": "cs2005",
+ "code": "CS2005",
+ "kind": "lecture",
+ "title": "Programming Concepts using Java",
+ "program": "Diploma / Programming",
+ "credits": 4,
+ "standfirst": "Object-oriented programming from first principles, taught through Java — classes, memory, abstraction, and the JVM underneath it all.",
+ "instructor": "Prof. Madhavan Mukund",
+ "term": "Every term",
+ "prereq": "CS1002",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1KUq9MxHd5QBfyMN9a0ZybkWwYXi3nBP4?usp=sharing",
+   "label": "Supplementary content (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/@cs-ds7kh",
+   "label": "Course YouTube channel"
+  },
+  {
+   "url": "https://docs.google.com/spreadsheets/d/13L9jWorgJ7xQiB0deNfRGjp3eM16PXQD",
+   "label": "Week-sorted playlist (spreadsheet)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course uses Java to develop an understanding of core concepts such as object-oriented programming, exception handling, event-driven programming, concurrent programming, and functional programming.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Madhavan Mukund, Director, Chennai Mathematical Institute"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Orientation; Java basics - types, memory; OOP - abstraction, classes and objects."
+   },
+   {
+    "label": "Week 2",
+    "text": "Java basics; Data types; Control flow; Classes and objects; Input and output."
+   },
+   {
+    "label": "Week 3",
+    "text": "OOP - inheritance, polymorphism; Class hierarchy; Subtyping; Modifiers."
+   },
+   {
+    "label": "Week 4",
+    "text": "Abstract classes and interfaces; Encapsulation and controlled interaction; Private classes; Callbacks; Iterators."
+   },
+   {
+    "label": "Week 5",
+    "text": "Polymorphism; Generic programming; Generics and subtyping; Runtime behavior of generics."
+   },
+   {
+    "label": "Week 6",
+    "text": "Indirection and abstraction; Collections - abstraction, concrete collections, maps."
+   },
+   {
+    "label": "Week 7",
+    "text": "Error handling - exceptions, assertions; Packages; Logging."
+   },
+   {
+    "label": "Week 8",
+    "text": "Cloning; Type inference; Functional programming (higher-order functions, streams)."
+   },
+   {
+    "label": "Week 9",
+    "text": "Optional types; Stream processing and result collection; Input/output streams; Serialization."
+   },
+   {
+    "label": "Week 10",
+    "text": "Concurrency - threads, race conditions; Synchronisation (mutual exclusion, test-and-set, monitors)."
+   },
+   {
+    "label": "Week 11",
+    "text": "Concurrency in Java - threads and monitors; Concurrent programming examples; Thread-safe collections."
+   },
+   {
+    "label": "Week 12",
+    "text": "Graphical user interfaces; Event-driven programming; Swing toolkit; GUI examples."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1.1",
+     "t": "Introduction",
+     "v": "3a1FXBR6QXY",
+     "s": "https://drive.google.com/drive/folders/1mld_BrAAtSjLs92DFWKeqEbvba5Pkp7e?usp=drive_link"
+    },
+    {
+     "n": "1.2",
+     "t": "Types",
+     "v": "0Gl9ygUk4K8",
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "Memory Management",
+     "v": "b4nsGWXNm2c",
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "Abstraction and Modularity",
+     "v": "8ciDI5cUhSs",
+     "s": null
+    },
+    {
+     "n": "1.5",
+     "t": "Object Oriented Programming",
+     "v": "NmYcNMPUlzY",
+     "s": null
+    },
+    {
+     "n": "1.6",
+     "t": "Classes and Objects",
+     "v": "TJC0WhS6FNo",
+     "s": null
+    },
+    {
+     "n": "Extra 1.1",
+     "t": "How to execute java program",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1vFuRxEflGSfDB-yOQAYRqATYSTZP3npQ/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2.1",
+     "t": "A First Taste of Java",
+     "v": "ULpvhw2hmSg",
+     "s": "https://drive.google.com/drive/folders/1OG478sGvjSWmi1YFFOThqe3YM30fQVDH?usp=drive_link"
+    },
+    {
+     "n": "2.2",
+     "t": "Basic Datatypes in Java",
+     "v": "IwTdVsLxz04",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Control Flow in Java",
+     "v": "0RHDEourhdo",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "Defining Classes and Object in Java",
+     "v": "XB-PcJJpKXg",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Basic Input and Output in Java",
+     "v": "zvtvQcUhFxo",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough 1",
+     "t": "Code Walkthrough Week 2 - Part 1",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1rOm4zO6fLQa8fdDA_2V3UQjgvEAbpIp5/view?usp=drive_link"
+    },
+    {
+     "n": "Code Walkthrough 2",
+     "t": "Code Walkthrough Week 2 - Part 2",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1_beCa9rA4EAWJAF0whlusfZXUkz6EebB/view?usp=sharing"
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3.1",
+     "t": "The Philosophy of 00 Programming",
+     "v": "PF6bAB-d9hI",
+     "s": "https://drive.google.com/drive/folders/1bhXb-sXa4oGkk0rUroXzalA65nXwz105?usp=drive_link"
+    },
+    {
+     "n": "3.2",
+     "t": "Subclasses and inheritance",
+     "v": "6tDGUnETvv4",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "Dynamic dispatch and polymorphism",
+     "v": "2BRAgwZamIU",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "The Java class hierarchy",
+     "v": "WRN3QWICaag",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Subtyping vs inheritance",
+     "v": "CYY7IT-YHVA",
+     "s": null
+    },
+    {
+     "n": "3.6",
+     "t": "Java modifiers",
+     "v": "IO-K87_QXGs",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough",
+     "t": "Code Walkthrough Week 3",
+     "v": null,
+     "s": null,
+     "dv": "https://drive.google.com/file/d/1ffG5mdbS8oBv_IW3WRK1FF1OitUHN0yw/view?usp=sharing"
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4.1",
+     "t": "Abstract Classes and Interfaces",
+     "v": "RiGkT9NDof4",
+     "s": "https://drive.google.com/drive/folders/1YiXvWmc-yPxc84tcR8bTbmvZW-T-xD7m?usp=drive_link"
+    },
+    {
+     "n": "4.2",
+     "t": "Interfaces",
+     "v": "adkU2TMbJfk",
+     "s": null
+    },
+    {
+     "n": "4.3",
+     "t": "Private Classes",
+     "v": "6eZ9mNX-GQ8",
+     "s": null
+    },
+    {
+     "n": "4.4",
+     "t": "Controlled Interaction with Objects",
+     "v": "YefHD5_AGiw",
+     "s": null
+    },
+    {
+     "n": "4.5",
+     "t": "CallBacks",
+     "v": "CKjGnZCvlng",
+     "s": null
+    },
+    {
+     "n": "4.6",
+     "t": "Iterators",
+     "v": "BG_Btui0K1o",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough 1",
+     "t": "Code Walkthrough Week 4 - Part 1",
+     "v": "8YpplxemAjM",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough 2",
+     "t": "Code Walkthrough Week 4 - Part 2",
+     "v": "8YpplxemAjM",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5.1",
+     "t": "Polymorphism Revisited",
+     "v": "xvzxGV3pdMM",
+     "s": "https://drive.google.com/drive/folders/1onGJJfRAdthFqiv4QyfuCGHROMogq03m?usp=drive_link"
+    },
+    {
+     "n": "5.2",
+     "t": "Generic Programming in Java",
+     "v": "wqqOMQb0ft0",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "Java Generics and Subtyping",
+     "v": "Dd9rAJo5H9s",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Reflection",
+     "v": "bPpWwY6YLyg",
+     "s": null
+    },
+    {
+     "n": "5.5",
+     "t": "Java Generics at Run Time",
+     "v": "V7l0pVIIaEU",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough",
+     "t": "Code Walkthrough Week 5",
+     "v": "ejsIXEVNaTs",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6.1",
+     "t": "The Benefits of Indirection",
+     "v": "LY7TRCI3z24",
+     "s": "https://drive.google.com/drive/folders/1PikcR8KlMc2lP0vOGjJNvGxKIHWLX5h1?usp=drive_link"
+    },
+    {
+     "n": "6.2",
+     "t": "Collection",
+     "v": "-EwtNZTsOVw",
+     "s": null
+    },
+    {
+     "n": "6.3",
+     "t": "Concrete Collections",
+     "v": "XPzVy2DyO6E",
+     "s": null
+    },
+    {
+     "n": "6.4",
+     "t": "Maps",
+     "v": "fWXf5aI3Cr0",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough",
+     "t": "Code Walkthrough Week 6",
+     "v": "TQeLiDhOqno",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7.1",
+     "t": "Dealing With Errors",
+     "v": "5t0UPIdDYo4",
+     "s": "https://drive.google.com/drive/folders/1tunm3V_1D7wjUFr-8i2vTpGpT2YUOy5g?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "Exceptions in Java",
+     "v": "hsVEjkYKjpg",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Packages",
+     "v": "U_rxCLyJHgw",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "Assertions",
+     "v": "hKl3tCQdfTI",
+     "s": null
+    },
+    {
+     "n": "7.5",
+     "t": "Logging",
+     "v": "fkGfOzVC8zI",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough 1",
+     "t": "Code Walkthrough Week 7 - Part 1",
+     "v": "wzhbL_yNFsU",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough 2",
+     "t": "Code Walkthrough Week 7 - Part 2",
+     "v": "_oDj4W0mSiE",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8.1",
+     "t": "Cloning",
+     "v": "aJxPvy1poaU",
+     "s": "https://drive.google.com/drive/folders/1Q7rzlWwQbC3lm1le5RRkGtyVaqL1g1X0?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "Type Inference",
+     "v": "o1cQO3iB2Ok",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Higher Order Functions",
+     "v": "4nrbgx0e4RA",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Streams",
+     "v": "xs94mCRwqVQ",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough",
+     "t": "Code Walkthrough Week 8",
+     "v": "uQt0RrR08fw",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "Optional Types",
+     "v": "3Q7Rp6sxE_M",
+     "s": "https://drive.google.com/drive/folders/1zA3S7_OfuI3p5Ikonm50xI9AVCTwTGrr?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "Collecting Results From Streams",
+     "v": "v0fNOGui3Wg",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Input/Output Streams",
+     "v": "FFdDai4qf8w",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "Serialization",
+     "v": "oweQzNSHA5I",
+     "s": null
+    },
+    {
+     "n": "Code Walkthrough",
+     "t": "Code Walkthrough Week 9",
+     "v": "H7pNRuqe1bc",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Concurrency: Threads and Processes",
+     "v": "dR0_7AmJKKk",
+     "s": "https://drive.google.com/drive/folders/1ULFBwpwoSfayLE-xUI1OPw11I6xxpSOI?usp=drive_link"
+    },
+    {
+     "n": "10.2",
+     "t": "Race Conditions",
+     "v": "a9PZhjCKm9k",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Mutual Exclusion",
+     "v": "i6FNvH3ULMU",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Test and Set",
+     "v": "MbFbJy3mkqI",
+     "s": null
+    },
+    {
+     "n": "10.5",
+     "t": "Monitors",
+     "v": "sK1-Qkeh8mE",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11.1",
+     "t": "Monitors in Java",
+     "v": "Srz0mewFaEg",
+     "s": "https://drive.google.com/drive/folders/1t27eTF4fFdRQSkyU6GnGJ8F8FdmySo8K?usp=drive_link"
+    },
+    {
+     "n": "11.2",
+     "t": "Thread in Java",
+     "v": "htwvFDP5t5I",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Concurrent Programming: An Example",
+     "v": "yI_WSIaFbFQ",
+     "s": null
+    },
+    {
+     "n": "11.4",
+     "t": "Thread Safe Collection",
+     "v": "yDmnozJBKic",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12.1",
+     "t": "Graphical Interfaces and Event-Driven Programming",
+     "v": "A_BV43krS2I",
+     "s": "https://drive.google.com/drive/folders/1Ct91vaPNnLiC2YtkxyIadstnhf6zMTTD?usp=drive_link"
+    },
+    {
+     "n": "12.2",
+     "t": "The SwingToolKit",
+     "v": "sV4ItidrL8s",
+     "s": null
+    },
+    {
+     "n": "12.3",
+     "t": "More Swing Examples",
+     "v": "c6Z8BNSv9zY",
+     "s": null
+    }
+   ]
+  }
+ ]
+}

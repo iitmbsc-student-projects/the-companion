@@ -1,0 +1,26 @@
+{
+ "stem": "da6005",
+ "code": "DA6005",
+ "kind": "lecture",
+ "title": "Information Theory and Learning",
+ "program": "PG Diploma",
+ "credits": 4,
+ "standfirst": "Entropy, mutual information and coding — and how these tie back into modern learning theory.",
+ "instructor": "to be announced",
+ "term": "As offered",
+ "prereq": "MA1004",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces information theory as the study of the fundamental limits of information processing, covering key information measures, their properties and applications, and the limits of coding, hypothesis testing, and parameter estimation.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [],
+  "faculty_note": "This course has not yet been introduced. Faculty and a week-by-week syllabus are not yet available — check the official handbook for the latest status.",
+  "weeks_text": [],
+  "weeks_note": ""
+ },
+ "weeks_data": []
+}

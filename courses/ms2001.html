@@ -238,7 +238,6 @@
         <h2><span class="num">§ 1</span>Course Description</h2>
         <div class="syllabus-body">
           <p>A significant share of data and problem statements in data science arises from the business domain. This course provides a foundational understanding of how businesses are structured and operate from a data perspective.</p>
-          
           <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
         </div>
       </section>
@@ -246,7 +245,8 @@
       <section class="chapter" id="syllabus-faculty">
         <h2><span class="num">§ 2</span>Faculty</h2>
         <ul class="link-list">
-          <li>Prof. G Venkatesh, Director, School of Technology, Dhirubhai Ambani University</li><li>Dr. Milind Gandhe, Machine Intelligence and Robotics (MINRO) COE, IIIT Bangalore</li>
+          <li>Prof. G Venkatesh, Director, School of Technology, Dhirubhai Ambani University</li>
+          <li>Dr. Milind Gandhe, Machine Intelligence and Robotics (MINRO) COE, IIIT Bangalore</li>
         </ul>
       </section>
 
@@ -421,7 +421,7 @@
     panelLecture.classList.add('active');
     window.scrollTo(0, 0);
 
-    eyebrow.textContent = item.n ? `${WEEKS_DATA[wi].w} · Lecture ${item.n}` : WEEKS_DATA[wi].w;
+    eyebrow.textContent = `${WEEKS_DATA[wi].w} · Lecture ${item.n}`;
     titleEl.textContent = item.t;
     if (item.v){
       frame.src = `https://www.youtube.com/embed/${item.v}`;
@@ -431,18 +431,11 @@
       frame.src = '';
       frame.style.display = 'none';
       emptyOverlay.style.display = '';
-      // A few lectures in this course are only hosted as a Drive/other video link (no
-      // YouTube upload), so the overlay explains that instead of implying nothing exists.
-      emptyOverlay.textContent = item.dv
-        ? 'This lecture is hosted off YouTube — use the link below.'
-        : 'No video linked for this one yet — try the links below.';
     }
     let html = '';
     if (item.v) html += `<a href="https://www.youtube.com/watch?v=${item.v}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`;
-    else if (item.dv) html += `<a href="${item.dv}" target="_blank" rel="noopener">Watch video ↗</a>`;
     if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">View slide ↗</a>`;
-    if (item.c) html += `<a href="${item.c}" target="_blank" rel="noopener">Open in Colab ↗</a>`;
-    if (!item.v && !item.dv && !item.s && !item.c) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
+    if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
     actions.innerHTML = html;
   }
 

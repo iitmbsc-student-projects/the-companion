@@ -1,0 +1,210 @@
+{
+ "stem": "ms3033",
+ "code": "MS3033",
+ "kind": "lecture",
+ "title": "Managerial Economics",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "The economic reasoning a manager uses — demand, cost, competition, pricing, and strategic decisions.",
+ "instructor": "Prof. Vimal Kumar",
+ "term": "As offered",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course examines how markets function through demand and supply, consumer choice, production, costs, and profits. It explores different market structures, government regulation, and the business models of companies such as Amazon, Uber, Alibaba Group, and Apple Inc.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Vimal Kumar, Department of Economic Science, IIT Kanpur"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to economics; Economic models and decision-making; Buyer and seller perspectives."
+   },
+   {
+    "label": "Week 2",
+    "text": "Cost concepts (opportunity, sunk, fixed, variable); Firm behavior; Legal structures of firms; Marginal analysis."
+   },
+   {
+    "label": "Week 3",
+    "text": "Production and cost theory; Marginal rate of technical substitution; Cost minimization; Cost functions; Scale and supply."
+   },
+   {
+    "label": "Week 4",
+    "text": "Cost curves; Consumer behavior fundamentals; Budget sets and preferences."
+   },
+   {
+    "label": "Week 5",
+    "text": "Consumer choice theory; Utility functions; Demand function; Market equilibrium."
+   },
+   {
+    "label": "Week 6",
+    "text": "Elasticity; Government interventions (taxes, price controls); Trade policies (tariffs and quotas)."
+   },
+   {
+    "label": "Week 7",
+    "text": "Demand derivation; Monopoly markets; Pricing and output decisions under monopoly."
+   },
+   {
+    "label": "Week 8",
+    "text": "Price discrimination; Monopsony; Imperfect competition; Introduction to game theory."
+   },
+   {
+    "label": "Week 9",
+    "text": "Game theory applications; Oligopoly; Monopolistic competition."
+   },
+   {
+    "label": "Week 10",
+    "text": "Advertising; Decision-making under risk and uncertainty; Risk preferences; Insurance markets."
+   },
+   {
+    "label": "Week 11",
+    "text": "Asymmetric information; Market failures; Externalities."
+   },
+   {
+    "label": "Week 12",
+    "text": "Public goods; Platform economics and digital markets."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,323 @@
+{
+ "stem": "se2001",
+ "code": "SE2001",
+ "kind": "lecture",
+ "title": "System Commands",
+ "program": "Diploma / Programming",
+ "credits": 3,
+ "standfirst": "The Unix command line — shells, files, processes, pipes, and the small tools that compose into large ones.",
+ "instructor": "Prof. Gandham Phanikumar",
+ "term": "Every term",
+ "prereq": "none",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1RO-Qv6cBkthNOZ3RCJm7MvemiHJQpdKh?usp=share_link",
+   "label": "Supplementary content (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/@BSSE2001",
+   "label": "Course YouTube channel"
+  },
+  {
+   "url": "https://docs.google.com/spreadsheets/d/1zl4fyj1ct1HeNTeqHvjP1wwkSqwt0BW8",
+   "label": "Week-sorted playlist (spreadsheet)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces command-line usage and progresses to automating complex tasks in a Linux environment. With tools like WSL on Windows and bash on macOS, these concepts are widely applicable. Students learn to combine commands, use I/O redirection, and write shell scripts to solve complex problems efficiently - often without needing specialized programs or graphical interfaces. By the end, they will appreciate the power, brevity, and efficiency of the command line, while gaining deeper insight into how their systems work.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 3-0-0-3"
+  ],
+  "faculty": [
+   "Prof. Gandham Phanikumar, Department of Metallurgical and Materials Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Linux virtual machine setup; Command-line environment; Basic Linux commands."
+   },
+   {
+    "label": "Week 2",
+    "text": "Linux commands (advanced); Shell variables; Process management."
+   },
+   {
+    "label": "Week 3",
+    "text": "Combining commands and file handling; Input/output redirection; Software management."
+   },
+   {
+    "label": "Week 4",
+    "text": "Redirection and pipes; Regex (egrep); File search (find); Editors; Bash scripting."
+   },
+   {
+    "label": "Week 5",
+    "text": "Shell scripting - variables, arguments; Conditionals, loops, functions; Scheduled tasks."
+   },
+   {
+    "label": "Week 6",
+    "text": "AWK - text processing, data analysis; Regular expressions in AWK; AWK as a programming language; Introduction to sed; Pattern matching and substitution using regex."
+   },
+   {
+    "label": "Week 7",
+    "text": "Build tools (make); File compression; Networking (IP , ports, DNS); Diagnostics; Log analysis."
+   },
+   {
+    "label": "Week 8",
+    "text": "RAID; Git - workflow, branches, pull requests; Collaboration and issue management."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1.1",
+     "t": "Launching a Linux Virtual Machine",
+     "v": "PHrN7yp1AJw",
+     "s": null
+    },
+    {
+     "n": "1.2",
+     "t": "Command line environment",
+     "v": "qrAnlpcMyYc",
+     "s": "https://drive.google.com/file/d/1u9locwf_VPe8I3n3crp8eheXMQCmGDB_/view?usp=drive_link"
+    },
+    {
+     "n": "1.3",
+     "t": "Simple Commands in Linux - 1",
+     "v": "DIpBEmRDHnw",
+     "s": "https://drive.google.com/file/d/1_KablATadBTlkov5hcMq37Q1VJFp8gkP/view?usp=drive_link"
+    },
+    {
+     "n": "1.4",
+     "t": "Simple Commands in Linux - 2",
+     "v": "lpe6AKk5GIk",
+     "s": "https://drive.google.com/file/d/1ZJmYC4KjfVI7diZxBnv1TMPRBCP9BsEn/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2.1",
+     "t": "Command line editors - Part 01",
+     "v": "NIIZ1cgrO7g",
+     "s": "https://drive.google.com/file/d/1hx8qi-rl53cGXgGWUFZsxkKUFbMBUqsy/view?usp=drive_link"
+    },
+    {
+     "n": "2.2",
+     "t": "Command line editors - Part 02",
+     "v": "HLhza4vZTsI",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Command line editors - Part 03",
+     "v": "w25zlMXshHw",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "Networking Commands and SSH",
+     "v": "SxDIXtxR33c",
+     "s": "https://drive.google.com/file/d/12frBLi0NiPf-RQFgQW7mLnaFulDHln5u/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3.1",
+     "t": "Combining commands and files",
+     "v": "Lcx9UsS7y8Y",
+     "s": "https://drive.google.com/file/d/1jDM9nW6zatfhdNSmCfMn7UUStj3tW80G/view?usp=drive_link"
+    },
+    {
+     "n": "3.2",
+     "t": "Redirections",
+     "v": "BBh69kH_G_Y",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "Software Management - Part 01",
+     "v": "OAEVYgH1IMM",
+     "s": "https://drive.google.com/file/d/1HGRygWH429sjQNyhdVxFx1wAefw9Y-T_/view?usp=drive_link"
+    },
+    {
+     "n": "3.4",
+     "t": "Software Management - Part 02",
+     "v": "3saraSGT1i0",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Linux process management",
+     "v": "2aThmDRvSWU",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4.1",
+     "t": "Pattern Matching - Part 01",
+     "v": "1y85iTaqq8Y",
+     "s": "https://drive.google.com/file/d/1rA75D09gLSuanAmEOIFe9LIZGquDTJs9/view?usp=drive_link"
+    },
+    {
+     "n": "4.2",
+     "t": "Pattern Matching - Part 02",
+     "v": "XQUJPRc-7zA",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5.1",
+     "t": "Shell variables",
+     "v": "pPRge8Yxbso",
+     "s": "https://drive.google.com/file/d/1Am1MDCSFjWJa-qe2QFXNnzOWKBAaYaO0/view?usp=drive_link"
+    },
+    {
+     "n": "5.2",
+     "t": "Shell Variables - Part 1",
+     "v": "QX5XElFRpck",
+     "s": "https://drive.google.com/file/d/1ySmkR8gMdLKKMnvpqpio3vLA2vIAjvER/view?usp=drive_link"
+    },
+    {
+     "n": "5.3",
+     "t": "Shell Variables - Part 2",
+     "v": "R9vnc8AdVUo",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6.1",
+     "t": "Some Command line Utilities",
+     "v": "fNf74ycgD9w",
+     "s": "https://drive.google.com/file/d/1ywW8XgPj8wLvkbvLUhQsQJ9JlBg_Lva2/view?usp=drive_link"
+    },
+    {
+     "n": "6.2",
+     "t": "Overview of shell scripts",
+     "v": "YAddHeVpG7I",
+     "s": "https://drive.google.com/file/d/1_a2I6DKb0LzVYIYSf_zI9fMlEqfnnoiV/view?usp=drive_link"
+    },
+    {
+     "n": "6.3",
+     "t": "Bash Scripts - Part 01",
+     "v": "_WdPclVGNNc",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7.1",
+     "t": "Bash scripts - Part 2A",
+     "v": "8YmNovNo6NE",
+     "s": "https://drive.google.com/file/d/116VhtE_brQ2zDmDO1-lM4BLER3-AFsZ6/view?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "Bash scripts - Part 2B",
+     "v": "n56JIC15DBo",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Bash scripts - Part 2C",
+     "v": "kjMhi4gI0po",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8.1",
+     "t": "Automating Scripts",
+     "v": "kWid87j6qIE",
+     "s": "https://drive.google.com/file/d/1gtk6qxE3eex-9WEW4M7Qaytw_ZL2QfAc/view?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "Stream editor sed",
+     "v": "uCJjZ3cbaAw",
+     "s": "https://drive.google.com/file/d/17hMlKJnV4JePtFxE7-tpdwYy9fguQnb5/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "AWK Programming Part 1",
+     "v": "k3q-9ntZI4s",
+     "s": "https://drive.google.com/file/d/1DUTXQ7vRdnpWNA5-ApbPXKiNuG0B_fRa/view?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "AWK Programming Part 2",
+     "v": "g9_ij64u8eQ",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Version Control - Part 01",
+     "v": "tzYx6DKtvGw",
+     "s": null
+    },
+    {
+     "n": "10.2",
+     "t": "Version Control - Part 02",
+     "v": "B9XVOO9ERis",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Knowing your Hardware",
+     "v": "pbb5YQQhqXU",
+     "s": "https://drive.google.com/file/d/1g7qv5XCjRcp1ZiJ3SljteOjTWhQRnAus/view?usp=drive_link"
+    },
+    {
+     "n": "10.4",
+     "t": "Prompt String",
+     "v": "UBjENhxwpcU",
+     "s": "https://drive.google.com/file/d/1J9NHiH3g3A84pRvjVBLal3kBi2x5701w/view?usp=drive_link"
+    },
+    {
+     "n": "10.5",
+     "t": "Managing Storage",
+     "v": "BvAtNUX7da4",
+     "s": "https://drive.google.com/file/d/1wqdg6EpDCe9fPVuJtNdkhZES4qRHhxih/view?usp=drive_link"
+    }
+   ]
+  }
+ ]
+}

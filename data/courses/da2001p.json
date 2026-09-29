@@ -1,0 +1,16 @@
+{
+ "stem": "da2001p",
+ "code": "DA2001P",
+ "kind": "project",
+ "title": "Deep Learning & GenAI — Project",
+ "program": "Diploma / Data Science",
+ "credits": 2,
+ "standfirst": "A deep-learning or generative-AI project taken end-to-end, from dataset to model to short report.",
+ "instructor": "Prof. Balaji Srinivasan &amp; Prof. Ganapathy",
+ "term": "Every term",
+ "prereq": "DA2001",
+ "syllabus_body_html": "<p>This project provides hands-on experience in end-to-end deep learning and generative AI workflows, including data handling, model development, evaluation, and deployment. It focuses on applying deep learning techniques to real-world problems, building multiple models, and generating insights through systematic experimentation and analysis.</p>\n      <p><b>Pre-requisite:</b> BSCS2007:  Machine Learning Techniques</p>\n          <p><b>Co-requisite:</b> BSCS2008 :  Machine Learning Practice BSDA2001 :  Introduction to DL and GenA</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Balaji Srinivasan, Wadhwani School of Data Science, IIT Madras</li><li>Prof. Ganapathy, Wadhwani School of Data Science, IIT Madras</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The project is conducted using platforms such as Kaggle, GitHub, and Weights &amp; Biases, with optional deployment on Hugging Face.</li><li>End-to-end deep learning workflow including data exploration, feature extraction, model building (classical ML, neural networks, and transformer-based models), training, evaluation, and benchmarking.</li><li>The project runs for approximately 8 weeks and is structured into milestones covering dataset understanding, baseline models, neural networks, sequential models, and fine-tuning pre-trained transformers, ensuring steady progress.</li><li>Students are required to build multiple models (including one from scratch and one pre-trained), track experiments, and maintain reproducible code and reports.</li><li>Evaluation is based on Kaggle performance, code quality, report, milestones, and viva. The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA2001P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
+ "pyq": [],
+ "sessions": []
+}

@@ -1,0 +1,217 @@
+{
+ "stem": "gn3001",
+ "code": "GN3001",
+ "kind": "lecture",
+ "title": "Strategies for Professional Growth",
+ "program": "BSc / BS",
+ "credits": 4,
+ "standfirst": "Career skills for a technical professional — communication, interviewing, negotiation, and the shape of a working life.",
+ "instructor": "Prof. Sivakumar M S, Prof. Prathap Haridoss, Lt Col Jayakumar, Prasanna G, Kartic Vaidyanathan, Shiva Subramaniam &amp; Senthil A V",
+ "term": "Every term",
+ "prereq": "none",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course prepares students for corporate life and global citizenship by fostering overall personal and professional development. It develops skills in creative problem-solving, structured thinking, effective communication, teamwork, cultural awareness, and conflict resolution, while enhancing decision-making, emotional intelligence, and the ability to overcome challenges.",
+   "<b>In-course project:</b> The in-course project is integrated into the course and not offered separately. Students work in teams to analyze workplace challenges, address real-world problems in professional environments, and propose practical, well-reasoned solutions using concepts and frameworks covered in the course.t",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Sivakumar M S, Department of Applied Mechanics, IIT Madras",
+   "Prof. Prathap Haridoss, Department of Metallurgical and Materials Engineering, IIT Madras",
+   "Lt Col Jayakumar, Guest Faculty &amp; Consultant, IIT Madras",
+   "Prasanna G, Guest Faculty, IIT Madras",
+   "Kartic Vaidyanathan, Guest Faculty, IIT Madras",
+   "Shiva Subramaniam, Guest Faculty, IIT Madras",
+   "Senthil A V, Certified Financial Planner"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Teamwork fundamentals; Importance and challenges; 10 C's of teamwork; Continuous improvement; Team roles."
+   },
+   {
+    "label": "Week 2",
+    "text": "Communication types; Communication barriers; Effective communication; 10 C's of communication."
+   },
+   {
+    "label": "Week 3",
+    "text": "Professional communication; Presentations; Report writing."
+   },
+   {
+    "label": "Week 4",
+    "text": "Leadership fundamentals; Self-leadership; Leading others."
+   },
+   {
+    "label": "Week 5",
+    "text": "Emotional intelligence; 6R framework; Conflict management; EI in practice."
+   },
+   {
+    "label": "Week 6",
+    "text": "Culture and its elements; Cross-cultural understanding; Cultural dimensions."
+   },
+   {
+    "label": "Week 7",
+    "text": "Fiscal and economic basics; Personal finance; Cash flows and compounding; Taxation; Investing and asset allocation; Financial tools and returns."
+   },
+   {
+    "label": "Week 8",
+    "text": "Creativity basics; Creative process; Tools and attitudes for creativity."
+   },
+   {
+    "label": "Week 9",
+    "text": "Growth mindset; Fixed vs growth; Handling rejection; Positive mindset; 4R framework;"
+   },
+   {
+    "label": "Week 10",
+    "text": "Systems thinking basics; Systems perspective; Developing systems thinking; Best practices."
+   },
+   {
+    "label": "Week 11",
+    "text": "Engineering mindset; Management principles; Planning and collaboration; Problem solving and abstraction."
+   },
+   {
+    "label": "Week 12",
+    "text": "Summary"
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

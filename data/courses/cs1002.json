@@ -1,0 +1,210 @@
+{
+ "stem": "cs1002",
+ "code": "CS1002",
+ "kind": "lecture",
+ "title": "Programming in Python",
+ "program": "Foundation",
+ "credits": 4,
+ "standfirst": "Python from first principles — data types, control flow, functions, files, and the standard library.",
+ "instructor": "Prof. Sudarshan Iyengar",
+ "term": "Every term",
+ "prereq": "CS1001",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course serves as the first formal introduction to programming in the programme. It introduces Python - used throughout the curriculum - while developing foundational problem-solving and algorithmic skills.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Sudarshan Iyengar, Department of Computer Science and Engineering, IIT Ropar"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Programming basics - Replit, variables, data types, operators, strings; Common errors."
+   },
+   {
+    "label": "Week 2",
+    "text": "Variables and dynamic typing; Operators and expressions; Strings (methods, escape characters, applications); Conditional statements (if, else, elif); Importing libraries."
+   },
+   {
+    "label": "Week 3",
+    "text": "Iteration - while, for, nested loops; Range; Loop control (break, continue, pass); Formatted output; Applications."
+   },
+   {
+    "label": "Week 4",
+    "text": "Lists, sets and tuples; List comprehensions; Introduction to functions; Function types and arguments."
+   },
+   {
+    "label": "Week 5",
+    "text": "Dictionaries; Functions and scope; Iterators and generators; Functional tools; Applications (sorting, matrix multiplication)."
+   },
+   {
+    "label": "Week 6",
+    "text": "Practice Problems I"
+   },
+   {
+    "label": "Week 7",
+    "text": "Practice Problems II"
+   },
+   {
+    "label": "Week 8",
+    "text": "File handling - reading and writing; Handling large files; Applications (Caesar cipher, genetic sequences)."
+   },
+   {
+    "label": "Week 9",
+    "text": "Recursion - concepts and applications; Recursive problem solving (searching, sorting); Binary search (iterative and recursive)."
+   },
+   {
+    "label": "Week 10",
+    "text": "Exception handling; Introduction to object oriented programming; Classes and objects; Attributes and methods; Inheritance and method overriding."
+   },
+   {
+    "label": "Week 11",
+    "text": "Numerical and data libraries - NumPy, Pandas (Series, DataFrames); Data visualization with Matplotlib."
+   },
+   {
+    "label": "Week 12",
+    "text": "Course Summary"
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

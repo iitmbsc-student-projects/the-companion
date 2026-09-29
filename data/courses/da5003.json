@@ -1,0 +1,211 @@
+{
+ "stem": "da5003",
+ "code": "DA5003",
+ "kind": "lecture",
+ "title": "Algorithms for Data Science",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "The algorithmic ideas — sketching, streaming, sampling, spectral methods — behind large-scale data analysis.",
+ "instructor": "Prof. Arun Rajkumar",
+ "term": "As offered",
+ "prereq": "CS2002",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This second-level graduate course provides a broad overview and develops the tools and methods needed to address large-scale problems arising in data science applications. This course is also offered as an elective for Degree level students",
+   "<b>Pre-requisite:</b> BSCS2007 : Machine Learning Techniques",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Arun Rajkumar, Wadhwani School of Data Science, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Algorithms for data science; Concentration inequalities (Markov, Chebyshev, Hoeffding); Johnson-Lindenstrauss (JL) lemma foundations."
+   },
+   {
+    "label": "Week 2",
+    "text": "JL lemma (proof and bounds); Linear algebra interpretation; Dimensionality reduction guarantees."
+   },
+   {
+    "label": "Week 3",
+    "text": "Approximate nearest neighbors; Locality Sensitive Hashing (LSH); Hash design, collision analysis, TPR/FPR trade-offs."
+   },
+   {
+    "label": "Week 4",
+    "text": "Singular Value Decomposition (SVD); Fast and randomized SVD; Applications in large-scale data."
+   },
+   {
+    "label": "Week 5",
+    "text": "Clustering basics; Spectral clustering; Graph cuts and min-cut formulations."
+   },
+   {
+    "label": "Week 6",
+    "text": "Scalable spectral clustering; Spectral sparsification; Large-scale clustering techniques."
+   },
+   {
+    "label": "Week 7",
+    "text": "Statistical learning theory; Data distributions; Bayes classifier; Error decomposition."
+   },
+   {
+    "label": "Week 8",
+    "text": "Generalization theory; Sample complexity; Bounds on learning performance."
+   },
+   {
+    "label": "Week 9",
+    "text": "VC dimension; Hypothesis classes; Uniform convergence; Capacity of models."
+   },
+   {
+    "label": "Week 10",
+    "text": "Learning theory recap; Estimation vs approximation error; Empirical risk minimization (ERM) and structural risk minimization (SRM); Sample compression."
+   },
+   {
+    "label": "Week 11",
+    "text": "Data privacy fundamentals; Differential privacy."
+   },
+   {
+    "label": "Week 12",
+    "text": "Approximate differential privacy; Exponential mechanism."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "stem": "ms4002",
+ "code": "MS4002",
+ "kind": "lecture",
+ "title": "Design Thinking for Data-Driven App Development",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Design-thinking methods applied to building applications where the data itself is the product.",
+ "instructor": "Prof. Bala Ramadurai &amp; Prof. Prathap Haridoss",
+ "term": "As offered",
+ "prereq": "CS2003",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course enables students to apply agile methods in software development, design applications using design thinking principles, develop Android apps, collaborate using Git-based version control, and understand the basics of marketing and customer support through web platforms.",
+   "<b>In-course project:</b> The in-course project is integrated into the course and not offered separately. Students work in teams across iterative phases to identify real-world user problems, build empathy, analyze root causes, and develop innovative solutions using design thinking. Through continuous testing, feedback, and refinement - along with elements of UX design, website development, and digital marketing - students progress from problem discovery to launching a functional application, demonstrating an end-to-end product development approach.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Bala Ramadurai, Consultant and Guest Faculty, IIT Madras",
+   "Prof. Prathap Haridoss, Department of Metallurgical and Materials Engineering, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to design thinking; Human-centered design; Stages and principles of design thinking."
+   },
+   {
+    "label": "Week 2",
+    "text": "Persona creation; Empathy and user profiling; Customer journey mapping; Understanding user needs and design paradoxes."
+   },
+   {
+    "label": "Week 3",
+    "text": "Empathy techniques; Identifying meaningful problems; \"How Might We\" (HMW) framing."
+   },
+   {
+    "label": "Week 4",
+    "text": "Problem analysis; Root cause analysis (multi-why); Handling conflicts."
+   },
+   {
+    "label": "Week 5",
+    "text": "Ideation techniques; Brainstorming; TRIZ methodology; Converting ideas into concepts."
+   },
+   {
+    "label": "Week 6",
+    "text": "Prototyping and testing; Gathering user feedback; Iterative refinement; Digital marketing strategies."
+   },
+   {
+    "label": "Week 7",
+    "text": "Prototyping types; Website development basics; UX design fundamentals."
+   },
+   {
+    "label": "Week 8",
+    "text": "Iterative design cycles; Advanced empathy and analysis; Conflict resolution frameworks; Tools like Figma."
+   },
+   {
+    "label": "Week 9",
+    "text": "Solution development; Refining and implementing design ideas."
+   },
+   {
+    "label": "Week 10",
+    "text": "Testing and iteration; Product demos; Feedback-driven improvements."
+   },
+   {
+    "label": "Week 11",
+    "text": "Advanced analysis; Human factors in design; Usability considerations."
+   },
+   {
+    "label": "Week 12",
+    "text": "Product launch strategies; Intrapreneurship and innovation; Future opportunities in design and product development."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}

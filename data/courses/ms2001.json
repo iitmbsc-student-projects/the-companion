@@ -1,0 +1,524 @@
+{
+ "stem": "ms2001",
+ "code": "MS2001",
+ "kind": "lecture",
+ "title": "Business Data Management",
+ "program": "Diploma / Data Science",
+ "credits": 4,
+ "standfirst": "How real companies organise, model and reason about their data — from operational systems to analytical warehouses.",
+ "instructor": "Prof. G Venkatesh &amp; Dr. Milind Gandhe",
+ "term": "Every term",
+ "prereq": "CS2001",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1RjwHavjcK0T9QEIJ7KjIBgMZajUApe1r?usp=share_link",
+   "label": "Supplementary content (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/@bdmpod6038",
+   "label": "Course YouTube channel"
+  },
+  {
+   "url": "https://docs.google.com/spreadsheets/d/1rllvpXMd_uP-yjQCktx7eHn3ndmTwMaC",
+   "label": "Week-sorted playlist (spreadsheet)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "A significant share of data and problem statements in data science arises from the business domain. This course provides a foundational understanding of how businesses are structured and operate from a data perspective.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. G Venkatesh, Director, School of Technology, Dhirubhai Ambani University",
+   "Dr. Milind Gandhe, Machine Intelligence and Robotics (MINRO) COE, IIIT Bangalore"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to economics - economic flow, demand and supply; Spreadsheets; Spreadsheet functions; Economics applications using Excel."
+   },
+   {
+    "label": "Week 2",
+    "text": "External data sources and survey methods; Exploring demographic data; Analysing demographic data."
+   },
+   {
+    "label": "Week 3",
+    "text": "Market size estimation."
+   },
+   {
+    "label": "Week 4",
+    "text": "Pivot tables; Data visualisation; Market share and aspirational data analysis."
+   },
+   {
+    "label": "Week 5",
+    "text": "E-commerce - case study and data analysis; Key questions and data review; Pareto analysis (volume and revenue); Scatter plots; Trend analysis."
+   },
+   {
+    "label": "Week 6",
+    "text": "Sales and trend analysis; Inventory and ledger metrics; VLOOKUP and pivot tables; Key learnings."
+   },
+   {
+    "label": "Week 7",
+    "text": "Manufacturing case study - data (sales, production, inventory); Revenue and portfolio analysis; Regional planning."
+   },
+   {
+    "label": "Week 8",
+    "text": "Production and inventory analytics - scheduling, scrap, OEE; Profitability and margins; Safety stock and reordering."
+   },
+   {
+    "label": "Week 9",
+    "text": "HR and recruitment - sourcing, selection, ranking; Channel effectiveness; Diversity analysis; Onboarding."
+   },
+   {
+    "label": "Week 10",
+    "text": "Fintech and payments; Credit case study; Nudge economics; Data and segment analysis; Behavioral insights."
+   },
+   {
+    "label": "Week 11",
+    "text": "A/B testing; Credit risk analysis; Dataset exploration and review; Monthly trend analysis."
+   },
+   {
+    "label": "Week 12",
+    "text": "Business operations and management; Spreadsheet-based data processing."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1.1",
+     "t": "Economics Introduction",
+     "v": "5Il_o4ClsAM",
+     "s": null
+    },
+    {
+     "n": "1.2",
+     "t": "Economics ",
+     "v": "XnM-VbYz_rA",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2.1",
+     "t": "Overview",
+     "v": "q6U9Ujxs8_Q",
+     "s": null
+    },
+    {
+     "n": "2.2",
+     "t": "Basics of Demand and Supply",
+     "v": "xfKxwYrThho",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Demand Curve and Supply Curve",
+     "v": "v8GATmQMtw8",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "Demand Elasticity",
+     "v": "jp4g06JgQV0",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Supply Elasticity",
+     "v": "hd_AdMP3p-Q",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3.1",
+     "t": "Understanding Business Basics",
+     "v": "8FL5Szf6pYU",
+     "s": null
+    },
+    {
+     "n": "3.2",
+     "t": "B2C vs B2B Differences",
+     "v": "yJhigaPNrqM",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "Introduction to Services",
+     "v": "ICAjd3BDcaU",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "Organization Buying Behaviour",
+     "v": "ZzYegFgdoX8",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "B2B Buying Situations",
+     "v": "J9TLYa-e6EA",
+     "s": null
+    },
+    {
+     "n": "3.6",
+     "t": "Decision Making Unit (DMU)",
+     "v": "IzuQCIOnE6E",
+     "s": null
+    },
+    {
+     "n": "3.7",
+     "t": "Sales Techniques",
+     "v": "6hoVuzGUuF8",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4.1",
+     "t": "Week 4 Live Session",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5.1",
+     "t": "Introduction to the Finance and Accounts Module",
+     "v": "Jf5p9jMNOs8",
+     "s": null
+    },
+    {
+     "n": "5.2",
+     "t": "Overview of Accounting Function",
+     "v": "6Zpk2A5lvIY",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "Basic Concepts in Accounting",
+     "v": "D0lXASXAFEo",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Asset side of the Balance Sheet",
+     "v": "_NOi8jQyzpc",
+     "s": null
+    },
+    {
+     "n": "5.5",
+     "t": "Liability side of the Balance Sheet",
+     "v": "Ib5JhhVOk6A",
+     "s": null
+    },
+    {
+     "n": "5.6",
+     "t": "Capital and the Accounting Equation",
+     "v": "Z5Wkq1NLI2c",
+     "s": null
+    },
+    {
+     "n": "5.7",
+     "t": "Why is Accounting important for Data Analysis?",
+     "v": "wXhrYkq-yco",
+     "s": null
+    },
+    {
+     "n": "5.8",
+     "t": "Understanding the Income Statement",
+     "v": "ktpkJZgt0J4",
+     "s": null
+    },
+    {
+     "n": "5.9",
+     "t": "Advanced Timing concepts and Dividends",
+     "v": "yQIPggxeAqs",
+     "s": null
+    },
+    {
+     "n": "5.10",
+     "t": "Case Study on Balance Sheet and Income Statement",
+     "v": "RUP9-QRq_GA",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6.1",
+     "t": "Overview of Financial Statements",
+     "v": "0WfXCGrli9Q",
+     "s": null
+    },
+    {
+     "n": "6.2",
+     "t": "Types of Accounts",
+     "v": "1IdGCmkT924",
+     "s": null
+    },
+    {
+     "n": "6.3",
+     "t": "How to record Business Transactions?",
+     "v": "8zJCbLUWp1g",
+     "s": null
+    },
+    {
+     "n": "6.4",
+     "t": "Classification of Accounts : Balance Sheet ",
+     "v": "wguKDY0fJ0s",
+     "s": null
+    },
+    {
+     "n": "6.5",
+     "t": "Valuation of Inventory : Different methods",
+     "v": "jNvoO2FQkVA",
+     "s": null
+    },
+    {
+     "n": "6.6",
+     "t": "Computation of Depreciation : Different methods",
+     "v": "fq0LKKe6U90",
+     "s": null
+    },
+    {
+     "n": "6.7",
+     "t": "Financial Statements",
+     "v": "FFZMcWZM5p4",
+     "s": null
+    },
+    {
+     "n": "6.8",
+     "t": "Income Statement , Balance Sheet and Cash Flow Statement",
+     "v": "4bvCtX5cME0",
+     "s": null
+    },
+    {
+     "n": "6.9",
+     "t": "Impact of Business Transactions on Financial Statements",
+     "v": "yf1s1zott_E",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7.1",
+     "t": "Overview on Financial Statement Analysis",
+     "v": "gMrzy-6oyVI",
+     "s": null
+    },
+    {
+     "n": "7.2",
+     "t": "Introduction to Financial Ratio Analysis",
+     "v": "BGncdEj4xFA",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Liquidity and Solvency Ratios",
+     "v": "B4LUXdofDCE",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "Efficiency and Profitability Ratios",
+     "v": "DDa35ZFtdYc",
+     "s": null
+    },
+    {
+     "n": "7.5",
+     "t": "Market Valuation Ratios",
+     "v": "H28FCukcdmw",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8.1",
+     "t": "Case Study on Financial Statement Analysis",
+     "v": "19WXT7PKhto",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "Overview on Management Accounting",
+     "v": "E587C5dmZAE",
+     "s": null
+    },
+    {
+     "n": "9.2",
+     "t": "Application on Management Accounting - I",
+     "v": "Ki1xSqa2I9U",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Application on Management Accounting - II",
+     "v": "mU4Md6eDxMo",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "Classification of Costs and Profits",
+     "v": "4U3_viZUNIQ",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Nego Traps",
+     "v": "4U3_viZUNIQ",
+     "s": null
+    },
+    {
+     "n": "10.2",
+     "t": "Dashboard Ownership and KPI Control Challenges",
+     "v": "DcycmCVGmH4",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Dashboard Ownership and KPI Control Managing Conflict",
+     "v": "RGLg1HyJfxs",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Data Protection and Trust Conflicts",
+     "v": "Vkr6FFhy7m0",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11.1",
+     "t": "Prospecting ",
+     "v": "jpI5wZrCem0",
+     "s": null
+    },
+    {
+     "n": "11.2",
+     "t": "Approach",
+     "v": "tZrQaYTEUxo",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Needs Analysis",
+     "v": "_BPJKRiHoeI",
+     "s": null
+    },
+    {
+     "n": "11.4",
+     "t": "Offer(Pitch)",
+     "v": "YUodU3ldadI",
+     "s": null
+    },
+    {
+     "n": "11.5",
+     "t": "Objections Handling/Negotiation",
+     "v": "w6d2xgSBEzE",
+     "s": null
+    },
+    {
+     "n": "11.6",
+     "t": "Conclusion and After Sales",
+     "v": "vVBhBf0gCSk",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12.1",
+     "t": "Service Failure and Recovery - Part 1",
+     "v": "RkUtcXueFkQ",
+     "s": null
+    },
+    {
+     "n": "12.2",
+     "t": "Service Failure and Recovery - Part 2",
+     "v": "I5qgP7eqElM",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Extra Lectures",
+   "items": [
+    {
+     "n": "",
+     "t": "Week 1 Live Session",
+     "v": null,
+     "s": null,
+     "dv": "https://www.youtube.com/live/Jmr6d_spe8U"
+    },
+    {
+     "n": "",
+     "t": "Week 2 Session 3",
+     "v": "o7IIwjLjXhc",
+     "s": null
+    },
+    {
+     "n": "",
+     "t": "Week 2 Session 4",
+     "v": "PMv9kaVIrXo",
+     "s": null
+    },
+    {
+     "n": "",
+     "t": "Week 4 Excel Tools Session I",
+     "v": "TaqWSsvbXMo",
+     "s": null
+    },
+    {
+     "n": "",
+     "t": "Week 4 Excel Tools Session II",
+     "v": "xFV13X__c_o",
+     "s": null
+    }
+   ]
+  }
+ ]
+}

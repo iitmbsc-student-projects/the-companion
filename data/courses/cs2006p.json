@@ -1,0 +1,47 @@
+{
+ "stem": "cs2006p",
+ "code": "CS2006P",
+ "kind": "project",
+ "title": "MAD II — Project",
+ "program": "Diploma / Programming",
+ "credits": 2,
+ "standfirst": "A full front-end + back-end application built to a real specification, delivered as the MAD II capstone.",
+ "instructor": "Prof. Nitin Chandrachoodan &amp; Mr. Thejesh GN",
+ "term": "Every term",
+ "prereq": "CS2006",
+ "syllabus_body_html": "<p>This project is an advanced course that builds on the foundations of \"Modern Application Development - I,\" focusing on creating dynamic web applications using Vue.js. It covers key concepts such as token-based authentication, asynchronous task execution with Celery and Redis, caching techniques, and essential security practices including CORS, enabling students to develop scalable and secure applications. This Project provides hands-on experience in building end-to-end web applications using technologies such as HTML, CSS, JavaScript, Flask, APIs, and SQLite. It focuses on developing secure, efficient, and deployable applications while applying core web development concepts.</p>\n      <p><b>Co-requisite:</b> BSCS2003:  Modern Application Development I</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Nitin Chandrachoodan, Department of Electrical Engineering, IIT Madras</li><li>Mr. Thejesh GN, Independent Technologist, Multiple Affiliations</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The objective of this project is to provide hands-on experience in developing a web application using Vue.js and related technologies.</li><li>Students build a functional web application featuring interactive front-end components, state management with Vuex, token-based authentication, and asynchronous task execution using Celery and Redis.</li><li>The project reinforces concepts from \"Modern Application Development - I\" and introduces advanced web development techniques.</li><li>The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2006P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>\n    <ul class=\"link-list\" style=\"margin-top:14px\"><li><a href=\"https://thejeshgn.com/projects/modern-application-development-2/\" target=\"_blank\" rel=\"noopener\">Screencasts by Thejesh GN</a></li></ul>",
+ "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
+ "pyq": [],
+ "sessions": [
+  {
+   "term": "24T1",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87Nqc4R7fYwNZH7ngfQHrAHi3&si=_OV7x8XJn5Y250IY",
+   "label": "MAD II — Jan 2024 — Project"
+  },
+  {
+   "term": "24T2",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87NpJsK7BaSBPNbvAaRmiWN4v&si=ybaTctA0Y-_CHpJI",
+   "label": "MAD II — Project Live Sessions — May 2024"
+  },
+  {
+   "term": "24T3",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87NrbT9Fr2g5_oiXbgOShgHXU&si=6j4MrwN5f2VN53n2",
+   "label": "MAD II — Project Sessions — Sept 2024"
+  },
+  {
+   "term": "25T1",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87Nr1mpdESa4du9uRWO5etYj9&si=MFDmfzyhN6tcGN8W",
+   "label": "MAD 2 Project Sessions — Jan 2025"
+  },
+  {
+   "term": "25T2",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87NpFy8ih8uZbTMEl6AmVedP5&si=Q1Rvk9B1rEqHmDVP",
+   "label": "MAD 2 Project Sessions — May 2025"
+  },
+  {
+   "term": "25T3",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87NpoEVQtoSuwipenoKZVN1b_&si=2VZ1jJsYRaR6EMhf",
+   "label": "MAD 2 Project Sessions — Sep 2025"
+  }
+ ]
+}

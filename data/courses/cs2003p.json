@@ -1,0 +1,47 @@
+{
+ "stem": "cs2003p",
+ "code": "CS2003P",
+ "kind": "project",
+ "title": "MAD I — Project",
+ "program": "Diploma / Programming",
+ "credits": 2,
+ "standfirst": "A small end-to-end web application, submitted and defended, that puts the MAD I ideas into practice.",
+ "instructor": "Prof. Nitin Chandrachoodan &amp; Mr. Thejesh GN",
+ "term": "Every term",
+ "prereq": "CS2003",
+ "syllabus_body_html": "<p>This Project provides hands-on experience in building end-to-end web applications using technologies such as HTML, CSS, JavaScript, Flask, APIs, and SQLite. It focuses on developing secure, efficient, and deployable applications while applying core web development concepts.</p>\n      <p><b>Co-requisite:</b> BSCS2003:  Modern Application Development I</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Nitin Chandrachoodan, Department of Electrical Engineering, IIT Madras</li><li>Mr. Thejesh GN, Independent Technologist, Multiple Affiliations</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The objective of this project is to provide hands-on experience in developing a web application from scratch by integrating technologies covered in the course.</li><li>Students apply their knowledge to build a functional web application incorporating secure authentication, efficient data management, and API integration.</li><li>The project reinforces key concepts, enhances problem-solving skills, and improves proficiency in web application development.</li><li>The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2003P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>\n    <ul class=\"link-list\" style=\"margin-top:14px\"><li><a href=\"https://thejeshgn.com/projects/modern-application-development-1/\" target=\"_blank\" rel=\"noopener\">Screencasts by Thejesh GN</a></li></ul>",
+ "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
+ "pyq": [],
+ "sessions": [
+  {
+   "term": "24T1",
+   "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu1BzXUWL_Gtx4lYjhgoa5ed&si=Li7yVhLyfNSQ7Qii",
+   "label": "MAD I Jan 2024 Project Sessions"
+  },
+  {
+   "term": "24T2",
+   "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu0XMYIZBrN6frN13nv6T9_e&si=Nt2LZBie-vMMWuu9",
+   "label": "MAD I May 2024 Project Sessions"
+  },
+  {
+   "term": "24T3",
+   "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu3IiglzHctWjeLmSQCW3uKH&si=-CmB1ibxx3yS2CwC",
+   "label": "MAD I Sept 2024 Project"
+  },
+  {
+   "term": "25T1",
+   "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu33kq59hcGC8kqe3SyXTRc9&si=0NKLHHkPCQDcjW9S",
+   "label": "MAD I Jan 2025 Project Sessions"
+  },
+  {
+   "term": "25T2",
+   "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu3wmkYhsy3ECE-1Zi_AAnkH&si=uhgcfnqtzWkTXRUh",
+   "label": "MAD I May 2025 Project Sessions"
+  },
+  {
+   "term": "25T3",
+   "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu3mzNqBDtxctv1OlgqFGkaT&si=GmKtiSfVerYGVBOB",
+   "label": "MAD I Sept 2025 Project Sessions"
+  }
+ ]
+}

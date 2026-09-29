@@ -1,0 +1,698 @@
+{
+ "stem": "cs2004",
+ "code": "CS2004",
+ "kind": "lecture",
+ "title": "Machine Learning Foundations",
+ "program": "Diploma / Data Science",
+ "credits": 4,
+ "standfirst": "Linear algebra, probability and optimisation lenses on machine learning — the mathematical foundations before the algorithms.",
+ "instructor": "Prof. Harish G. Ramaswamy, Prof. Arun Rajkumar &amp; Prof. Prashanth LA",
+ "term": "Every term",
+ "prereq": "MFDS + Stats",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1CPbqMrs-gYovtLlH-JMIjvW3oscE6f8J?usp=share_link",
+   "label": "Supplementary content (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/@mlf-iitm",
+   "label": "Course YouTube channel"
+  },
+  {
+   "url": "https://docs.google.com/spreadsheets/d/1nibS_I0IxdmVT_koAbQkzBVlT_Zosdwb",
+   "label": "Week-sorted playlist (spreadsheet)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course lays the foundation for subsequent machine learning courses by covering essential concepts that, while not strictly part of machine learning, are crucial for a comprehensive understanding of the field",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Harish G. Ramaswamy, Wadhwani School of Data Science, IIT Madras",
+   "Prof. Arun Rajkumar, Wadhwani School of Data Science, IIT Madras",
+   "Prof. Prashanth LA, Wadhwani School of Data Science, IIT Madras"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Introduction to ML - data, models, tasks; Supervised (regression, classification); Unsupervised (dimensionality reduction, density estimation); Applications."
+   },
+   {
+    "label": "Week 2",
+    "text": "Sets and functions; Calculus - univariate (derivatives, applications), multivariate (lines, planes, approximations)."
+   },
+   {
+    "label": "Week 3",
+    "text": "Four fundamental subspaces; Orthogonality and orthogonal subspaces; Projections; Least squares and projections onto subspaces."
+   },
+   {
+    "label": "Week 4",
+    "text": "Linear and polynomial regression; Eigenvalues and eigenvectors; Matrix diagonalization; Orthogonal diagonalization."
+   },
+   {
+    "label": "Week 5",
+    "text": "Complex matrices; Hermitian and unitary matrices; Diagonalization."
+   },
+   {
+    "label": "Week 6",
+    "text": "SVD; Examples and applications; Positive definiteness; Geometric interpretation."
+   },
+   {
+    "label": "Week 7",
+    "text": "Principal Component Analysis - variance maximization; High-dimensional data; Applications."
+   },
+   {
+    "label": "Week 8",
+    "text": "Optimization - gradient descent; Taylor series; Multivariate methods; ML foundations."
+   },
+   {
+    "label": "Week 9",
+    "text": "Constrained Optimization and Lagrange multipliers. Projected gradient descent; Convexity - convex sets and functions; Properties of convex functions."
+   },
+   {
+    "label": "Week 10",
+    "text": "Convex optimization - properties, applications; Primal-dual problems; Karush-Kuhn-Tucker conditions; Linear programming."
+   },
+   {
+    "label": "Week 11",
+    "text": "Continuous random variables - conditional pdf, expectation; Multiple and independent variables; Transformations; Common distributions."
+   },
+   {
+    "label": "Week 12",
+    "text": "Multivariate distributions; MLE; GMM and EM; Laws of large numbers and CLT."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1.1",
+     "t": "What is Machine Learning?",
+     "v": "zuS1WZQGhAs",
+     "s": "https://drive.google.com/file/d/1HdPoRaA0LdJBZGxUa4JQDZKtcbVV4Dfo/view?usp=drive_link"
+    },
+    {
+     "n": "1.2",
+     "t": "Data, Models and ML Task",
+     "v": "zssr9nOZlVg",
+     "s": "https://drive.google.com/file/d/1qQkMvrz5MZOudGoZXOUCOordCR8R8NsJ/view?usp=drive_link"
+    },
+    {
+     "n": "1.3",
+     "t": "Supervised Learning: Regression",
+     "v": "iVcrCdEaJ7A",
+     "s": "https://drive.google.com/file/d/1GvfEaCrUKhNUbEyhj6V5OKyCoTnkdB6j/view?usp=drive_link"
+    },
+    {
+     "n": "1.4",
+     "t": "Supervised Learning: Classification",
+     "v": "QtOrjs0Fzzc",
+     "s": "https://drive.google.com/file/d/1u6lUck4BZaCn2vQWNFxI_103MMpqW7dm/view?usp=drive_link"
+    },
+    {
+     "n": "1.5",
+     "t": "Unsupervised Learning: Dimensionality Reduction",
+     "v": "EuNPsw9zA1k",
+     "s": "https://drive.google.com/file/d/10dvGcZA53hweTz8qym2Vft9n9Kg4uiDf/view?usp=drive_link"
+    },
+    {
+     "n": "1.6",
+     "t": "Unsupervised Learning: Density Estimation",
+     "v": "Gj6-61UDeMs",
+     "s": "https://drive.google.com/file/d/1o8oOBRuRhKinrT4inPC57PnH4XatM84g/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 1.1",
+     "t": "To ML or not to ML",
+     "v": "5G4klfCCoIs",
+     "s": null
+    },
+    {
+     "n": "Tutorial 1.2",
+     "t": "Illustration with a real world dataset",
+     "v": "T7vdFVC6DOo",
+     "s": null
+    },
+    {
+     "n": "Tutorial 1.3",
+     "t": "Dimensionality Reduction and Density Estimation with Applications",
+     "v": "JG5Z9np4Tbs",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2.1",
+     "t": "Sets and Functions",
+     "v": "Gi9nUcrZAJs",
+     "s": "https://drive.google.com/file/d/1dIuousxigsyCTtjyMGRMqFVOWlKIrHWd/view?usp=drive_link"
+    },
+    {
+     "n": "2.2",
+     "t": "Univariate Calculus: Continuity and Differentiability",
+     "v": "yvaPORg2w9c",
+     "s": "https://drive.google.com/file/d/1_wVOgrX9VrjjxB9Y33jKzUeF7iQqd1eR/view?usp=drive_link"
+    },
+    {
+     "n": "2.3",
+     "t": "Univariate Calculus: Derivatives and Linear Approximations",
+     "v": "AG2fQvxEpbE",
+     "s": "https://drive.google.com/file/d/1c0GcXiuyzgOYG820NyU9n1v5r5ZhvoK5/view?usp=drive_link"
+    },
+    {
+     "n": "2.4",
+     "t": "Univariate Calculus: applications and advanced rules",
+     "v": "En15LA59Fsw",
+     "s": "https://drive.google.com/file/d/1IDn0SSgPmK0qpmpcgTPZLOS1Qs5SCar-/view?usp=drive_link"
+    },
+    {
+     "n": "2.5",
+     "t": "Multivariate Calculus: Lines and planes in higher dimensional space",
+     "v": "O5jrvVi05wA",
+     "s": "https://drive.google.com/file/d/1A0KkK9NvVQKskitYlsrYXHQYTuHET95x/view?usp=drive_link"
+    },
+    {
+     "n": "2.6",
+     "t": "Multivariate Calculus: Linear approximation and applications",
+     "v": "dLLbl0vucCc",
+     "s": "https://drive.google.com/file/d/1YVgUQvXbe-z4Cn3OtkFIcM9EHHynoNOl/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 2.1",
+     "t": "Tutorial - Week 2",
+     "v": "YNJMUyNlqFQ",
+     "s": "https://drive.google.com/file/d/17gShgHsDjhKYDBnZ19Mcf8w2evyQL-cm/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3.1",
+     "t": "Four Fundamental Subspaces",
+     "v": "9Ynm5oJRjxY",
+     "s": "https://drive.google.com/file/d/1OA7PbKW1wkG3maKi3s3g6sob_gE0lhIJ/view?usp=drive_link"
+    },
+    {
+     "n": "3.2",
+     "t": "Orthogonal Vectors and Subspaces",
+     "v": "pDVywF7yLaM",
+     "s": "https://drive.google.com/file/d/1xMFer5WM9yakyHELZHLINGbz6evarmsL/view?usp=drive_link"
+    },
+    {
+     "n": "3.3",
+     "t": "Projections",
+     "v": "kVYR7II5KUA",
+     "s": "https://drive.google.com/file/d/1LaTAl1Ztyc0xE-1ahllSdzo5Tcxp5bou/view?usp=drive_link"
+    },
+    {
+     "n": "3.4",
+     "t": "Least Squares and Projections onto a Subspace",
+     "v": "_QRlIQBwIk8",
+     "s": "https://drive.google.com/file/d/1Y1EczbQQcAMI2oLbgCfnr0ZtiYa8Rejt/view?usp=drive_link"
+    },
+    {
+     "n": "3.5",
+     "t": "Example of Least Squares",
+     "v": "wZlwod57blE",
+     "s": "https://drive.google.com/file/d/1PBqocYnVNe-JLEFdGvrV1SA0DaV5DsCj/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 3.1",
+     "t": "Four fundamental vector subspaces",
+     "v": "rbBiDiFC584",
+     "s": "https://drive.google.com/file/d/1dkxYpctG4_fGoDBJtVpOBDDqbQjL7DVy/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 3.2",
+     "t": "Row space computation using reduced row echelon form and Solution to Ax = b",
+     "v": "kRJIiQXiOqU",
+     "s": "https://drive.google.com/file/d/1b0sjNSvT4JxqRIeI2CCquklEY2sbY3Ct/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 3.3",
+     "t": "Orthogonality, projections and least squares method",
+     "v": "Ijn-HGlVifU",
+     "s": "https://drive.google.com/file/d/155KHEYD1ByxLj0d-JaBwXTQiyKSnke3s/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4.1",
+     "t": "Linear and Polynomial Regression",
+     "v": "x7UJYkGHVJw",
+     "s": "https://drive.google.com/file/d/14D0GmV2EzbVb4HBQHtpX6-n5bTfoCTdK/view?usp=drive_link"
+    },
+    {
+     "n": "4.2",
+     "t": "Eigenvalues and Eigenvectors",
+     "v": "GA6m_T4d_d0",
+     "s": "https://drive.google.com/file/d/19vlj67zX0IwhBz9yHjbrrDxHcJJi7bGK/view?usp=drive_link"
+    },
+    {
+     "n": "4.3",
+     "t": "Diagonalization of a matrix",
+     "v": "WKZUxnrLmRk",
+     "s": "https://drive.google.com/file/d/163HyorE-cYX5_b5SEo8UfROkW8YGAv2-/view?usp=drive_link"
+    },
+    {
+     "n": "4.4",
+     "t": "Solving Fibonacci Sequence using diagonalization",
+     "v": "ISB87lDKOVE",
+     "s": "https://drive.google.com/file/d/1D6hFFKKBOpmrBBMzhetVU23i9R-HH9EK/view?usp=drive_link"
+    },
+    {
+     "n": "4.5",
+     "t": "Orthogonally diagonalizable matrices",
+     "v": "f0hVL9xhL94",
+     "s": "https://drive.google.com/file/d/1tqa_Zx31HJrg8kAEBOWma06Le75dbiXo/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 4.1",
+     "t": "Polynomial Regression",
+     "v": "EF85-fHy-m0",
+     "s": "https://drive.google.com/file/d/15Pyt_g5gUzDNGNa6pnDrd4uEiitV40Td/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 4.2",
+     "t": "Eigenvalues and Eigenvectors",
+     "v": "SPF2ovt7uYg",
+     "s": "https://drive.google.com/file/d/1Xqrth8MLK0T-K5SdANm3pKzuKzIGk4-M/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5.1",
+     "t": "Complex Matrices",
+     "v": "G6A3PDivChQ",
+     "s": "https://drive.google.com/file/d/14H-vhJxpS5TMYEMj_Md3SGXjkqzPO5r_/view?usp=drive_link"
+    },
+    {
+     "n": "5.2",
+     "t": "Hermitian Matrices",
+     "v": "aHykfDdjDiw",
+     "s": "https://drive.google.com/file/d/1ywOwYK0WlG_N8EzyX7_mZgC6VZtUBjwM/view?usp=drive_link"
+    },
+    {
+     "n": "5.3",
+     "t": "Unitary Matrices",
+     "v": "2DAG0I1NKiI",
+     "s": "https://drive.google.com/file/d/18s90eCmzCv0cLVzjUgton6aDCofBjhCw/view?usp=drive_link"
+    },
+    {
+     "n": "5.4",
+     "t": "Diagonalization of Hermitian Matrices (Part 1)",
+     "v": "qG1tlEa2Zn0",
+     "s": "https://drive.google.com/file/d/1oaLp_jSTM2cGg7Gb6sUDuuBXeheXK2cZ/view?usp=drive_link"
+    },
+    {
+     "n": "5.5",
+     "t": "Diagonalization of Hermitian Matrices (part 2)",
+     "v": "u9uFJNrCL0E",
+     "s": "https://drive.google.com/file/d/1RVxfH7Q6symPi2s9zwN3gD1ONvFenDrv/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 5.1",
+     "t": "Some Problems to think and solve",
+     "v": "__TUd8Sq-wU",
+     "s": "https://drive.google.com/file/d/1yS4ks7acZKRuNNVmj5RW8KI0pN2OHqBX/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6.1",
+     "t": "Singular Value Decomposition",
+     "v": "fTErMgNIKHQ",
+     "s": "https://drive.google.com/file/d/17qIJNLkYVhpGz5RkbHUwDae_fuIVzYLQ/view?usp=drive_link"
+    },
+    {
+     "n": "6.2",
+     "t": "Example of SVD",
+     "v": "lP1UKRK4h5k",
+     "s": "https://drive.google.com/file/d/1ZyIk3trTGVSIWJ1Ykw12S3ka_yHjDsMn/view?usp=drive_link"
+    },
+    {
+     "n": "6.3",
+     "t": "Positive Definiteness",
+     "v": "HspdIGCore0",
+     "s": "https://drive.google.com/file/d/1QtaXhjYafFey0JnnKgytAB3vIA1dIbpE/view?usp=drive_link"
+    },
+    {
+     "n": "6.4",
+     "t": "Positive Definite Matrices",
+     "v": "N-iBr_r9jic",
+     "s": "https://drive.google.com/file/d/1L6-pkpR7JvCCPyQkKuC7FRLFlx3jCVLP/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 6.1",
+     "t": "Real world Application of SVD",
+     "v": "SYFGwuf-v9k",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.2",
+     "t": "Geometric Interpretation of SVD",
+     "v": "BHIpHagNcgw",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.3",
+     "t": "Positive Definite Functions and Matrices",
+     "v": "0vb0c-0waik",
+     "s": "https://drive.google.com/file/d/1iEHikH6tU9F0bsZy1Am97vHMpzF3pqAu/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7.1",
+     "t": "Principal Component Analysis",
+     "v": "K5vOOARxVyU",
+     "s": "https://drive.google.com/file/d/17pIxretMr3qP7ddQZXGQ9E2t8tqto-QQ/view?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "Principal Component Analysis (Contd.)",
+     "v": "TDlSb1-QhhA",
+     "s": "https://drive.google.com/file/d/1_L2NFH_x8CvMkXAkbknZ4FL0za1JMgUh/view?usp=drive_link"
+    },
+    {
+     "n": "7.3",
+     "t": "PCA as maximizing variance",
+     "v": "BHovu_rftQA",
+     "s": "https://drive.google.com/file/d/1Pvd1dVItqvj_26wCFYwFU18lhhYNEVPT/view?usp=drive_link"
+    },
+    {
+     "n": "7.4",
+     "t": "PCA in higher dimensions",
+     "v": "d0Ch0S1hAs8",
+     "s": "https://drive.google.com/file/d/10UDnXvfJef05ROuvofon9uA9vfpISxLi/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8.1",
+     "t": "Pillars of machine learning",
+     "v": "LYZPWUppGGc",
+     "s": "https://drive.google.com/file/d/137ooKnDKcLqAGwYjNKnrjknsVxQ9p2jR/view?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "Introduction to Optimization",
+     "v": "-2bXHwSNwTc",
+     "s": "https://drive.google.com/file/d/1tQq6ZSVMoAkPGwk6t9wZ-JTl6rAv1rk1/view?usp=drive_link"
+    },
+    {
+     "n": "8.3",
+     "t": "Solving an unconstrained optimization problem (Part 1)",
+     "v": "CkxFp_ZPqAw",
+     "s": "https://drive.google.com/file/d/1yMGtJ_PeniNHXNww_HUkWm2trtTf9Rqe/view?usp=drive_link"
+    },
+    {
+     "n": "8.4",
+     "t": "Solving an unconstrained optimization problem (Part 2)",
+     "v": "-bXrog1dbrM",
+     "s": "https://drive.google.com/file/d/11EzaiMlSnlVLjHmZ4AZIvIZyJx7gd8Jo/view?usp=drive_link"
+    },
+    {
+     "n": "8.5",
+     "t": "Basic algorithm for unconstrained optimization: Gradient Descent",
+     "v": "3rxDd68TE3o",
+     "s": "https://drive.google.com/file/d/1i6t5PFNPnTfobNXR9HtTGudZUmQloeV2/view?usp=drive_link"
+    },
+    {
+     "n": "8.6",
+     "t": "Gradient Descent and Taylor Series",
+     "v": "X35txJMlYsc",
+     "s": "https://drive.google.com/file/d/12AzjUj_YYF8E9LqIUaPJwjxAp5vfH0xO/view?usp=drive_link"
+    },
+    {
+     "n": "8.7",
+     "t": "Gradient Descent for multivariate functions",
+     "v": "DLYQu-r7TKI",
+     "s": "https://drive.google.com/file/d/19sNV66jj48QIGlpp82ePKdkXauGhYb1Y/view?usp=drive_link"
+    },
+    {
+     "n": "8.8",
+     "t": "Taylor series in Higher dimensions",
+     "v": "ohQfHMpjTlQ",
+     "s": "https://drive.google.com/file/d/1nXptrJXnBqvs8TMrQQxChjECOSl_-imb/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 8.1",
+     "t": "Tutorial  ",
+     "v": "tywEGBtZTu0",
+     "s": "https://drive.google.com/file/d/1uA--RcBbQQIB4sy52fKvSZTVsFemrfdf/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "Constrained Optimization (Part -1)",
+     "v": "fFJHsQBo6NE",
+     "s": "https://drive.google.com/file/d/12iT6t2YRHTXyK6mhiCKiyLpLZDeFyQmU/view?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "Constrained Optimization (Part -2)",
+     "v": "q9JJc3Zj_js",
+     "s": "https://drive.google.com/file/d/1a6TM9xMpXM4Qzy2kC4gQXU7JT5C0Bt6L/view?usp=drive_link"
+    },
+    {
+     "n": "9.3",
+     "t": "Method of Lagrange Multiplier, Projected Gradient Descent",
+     "v": "PoAPXmDlk4U",
+     "s": "https://drive.google.com/file/d/1a6TM9xMpXM4Qzy2kC4gQXU7JT5C0Bt6L/view?usp=drive_link"
+    },
+    {
+     "n": "9.4",
+     "t": "Introduction to Convexity",
+     "v": "_qlBaMTiVXk",
+     "s": "https://drive.google.com/file/d/1TQxEv7x3_zx2moxuV9ZCixfuTgCpjygK/view?usp=drive_link"
+    },
+    {
+     "n": "9.5",
+     "t": "Properties of Convex Sets",
+     "v": "PfDvKJ2UTPg",
+     "s": "https://drive.google.com/file/d/1NE44eiVSST5AmqcBby0vmB5oXeUzgGhI/view?usp=drive_link"
+    },
+    {
+     "n": "9.6",
+     "t": "Convex Functions",
+     "v": "xExRalp3eY8",
+     "s": "https://drive.google.com/file/d/1N7GQDE0qae1KgQj7P6Mmtn6on26hqvAH/view?usp=drive_link"
+    },
+    {
+     "n": "9.7",
+     "t": "Properties of Convex Functions",
+     "v": "gqUwsig0geA",
+     "s": "https://drive.google.com/file/d/1Jt-lTtAoAKJLzXpbyR2pcnyHCfkScwdw/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 9.1",
+     "t": "Constrained Optimisation, Lagrange Multipliers, Convex Sets and Convex Functions",
+     "v": "TQc50S0alsA",
+     "s": "https://drive.google.com/file/d/12D3imetiKVwy8AG_R8Pro6U3VVAwIA0N/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Properties of Convex Functions",
+     "v": "c9LZ0Uw9wpE",
+     "s": "https://drive.google.com/file/d/1L1kuHZuEEsWl2ey-3Qhz9XLejPuzSWGv/view?usp=drive_link"
+    },
+    {
+     "n": "10.2",
+     "t": "Applications of Optimization in Machine Learning",
+     "v": "4jN8XhwGa48",
+     "s": "https://drive.google.com/file/d/13KttBLHkYHCJCQl7udu4ber0fgRKIhtB/view?usp=drive_link"
+    },
+    {
+     "n": "10.3",
+     "t": "Revisiting Constrained Optimization",
+     "v": "eM17jHQwrOY",
+     "s": "https://drive.google.com/file/d/1doqXBGOmWoDwDddNtYrCY851070nT8BG/view?usp=drive_link"
+    },
+    {
+     "n": "10.4",
+     "t": "Relation between Primal and Dual Problem, KKT Conditions",
+     "v": "JiHrrqdMWAM",
+     "s": "https://drive.google.com/file/d/1Ox6mnkOF5GdZyt5XwLvYw7btpL_ceLv_/view?usp=drive_link"
+    },
+    {
+     "n": "10.5",
+     "t": "KKT conditions continued",
+     "v": "SItUaM_X4C4",
+     "s": "https://drive.google.com/file/d/1NtbVqDwHJDx2D3dRexV1sYI2xZ7C3wS2/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 10.1",
+     "t": "Linear Programming, KKT Conditions, Relationship between primal and dual problem",
+     "v": "M2qvsHZxlI0",
+     "s": "https://drive.google.com/file/d/1SRBelsi8aAB1hUgZCesZw2olYJUiO-Nx/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11.1",
+     "t": "Continuous random variables",
+     "v": "K1-JKrms2SU",
+     "s": "https://drive.google.com/file/d/1BOlUyDtE6GxSOPL6hTYoP2u66gXXmus6/view?usp=drive_link"
+    },
+    {
+     "n": "11.2",
+     "t": "Conditional pdf",
+     "v": "cjCJIUOCwAs",
+     "s": "https://drive.google.com/file/d/1qHb-gk_mz1J_KwMq35_Nb9yi0RFHCcOh/view?usp=drive_link"
+    },
+    {
+     "n": "11.3",
+     "t": "Expectation",
+     "v": "XFYz9KyPU48",
+     "s": "https://drive.google.com/file/d/1A_JeIm64Tn6cgpQrHaw3X5dMWRL5vFxm/view?usp=drive_link"
+    },
+    {
+     "n": "11.4",
+     "t": "Multiple random variables",
+     "v": "KV5WOeqtbgs",
+     "s": "https://drive.google.com/file/d/1XgkTUV7ubvOsk8t6iS7MKteztwHvDQQr/view?usp=drive_link"
+    },
+    {
+     "n": "11.5",
+     "t": "Independent random variables",
+     "v": "734WLw-fb5Y",
+     "s": "https://drive.google.com/file/d/1shIGq4VITWRi8PM5Y124Hx5xoKDvpH2Y/view?usp=drive_link"
+    },
+    {
+     "n": "11.6",
+     "t": "Transformed random variables",
+     "v": "aWbs8AGk5zM",
+     "s": "https://drive.google.com/file/d/1QhgPsTk374LmgkIvYi4P7_sZ30eB5Sne/view?usp=drive_link"
+    },
+    {
+     "n": "11.7",
+     "t": "Uniform, Exponential, Normal",
+     "v": "vo3f56Gc1i8",
+     "s": "https://drive.google.com/file/d/12xmOc2eLxebbjZIPDFtSu7R8ze8gJmhJ/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 11.1",
+     "t": "Solved examples",
+     "v": "sBT-TWoCMj4",
+     "s": "https://drive.google.com/file/d/1ejckyuWA_07CSDpwujvmUu8nZUVYpw-o/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12.1",
+     "t": "Bivariate and multivariate normal",
+     "v": "yNPMeKXjISQ",
+     "s": "https://drive.google.com/file/d/1FoEoobPtvwrU_J4iFT5s2JYoQySvCyRv/view?usp=drive_link"
+    },
+    {
+     "n": "12.2",
+     "t": "Estimation of parameters using ML",
+     "v": "gbqYl44DdX0",
+     "s": "https://drive.google.com/file/d/11Ql0prmBY3eohH0QwprG1aN7uMLQpZYW/view?usp=drive_link"
+    },
+    {
+     "n": "12.3",
+     "t": "Gaussian Mixture Models and Expectation Maximisation",
+     "v": "6Zk77RKcI2Q",
+     "s": "https://drive.google.com/file/d/1aiyCzpQzqjFY9oGMbHbS-xkXl-PHBzjy/view?usp=drive_link"
+    },
+    {
+     "n": "12.4",
+     "t": "Laws of large numbers: Markov, Chebyshev, Hoeffding, Central limit",
+     "v": "iwidPQHOe_I",
+     "s": "https://drive.google.com/file/d/19yXz98bKWDBTZR1Q8ifWsjLU2pv0CyGV/view?usp=drive_link"
+    },
+    {
+     "n": "Tutorial 12.1",
+     "t": "Solved examples",
+     "v": "UExuNuc8IKo",
+     "s": "https://drive.google.com/file/d/1mMXp8GU-tSDdZTMm0wWNjhhmJLwqr7mJ/view?usp=drive_link"
+    }
+   ]
+  },
+  {
+   "w": "Extra Lectures",
+   "items": [
+    {
+     "n": "EXTRA_01",
+     "t": "Probability space",
+     "v": "DpYlIh_3ttY",
+     "s": "https://drive.google.com/file/d/1To8amjTM2yNmEuvZoYWxKL-1MVTcQqCG/view?usp=drive_link"
+    },
+    {
+     "n": "EXTRA_02",
+     "t": "Conditioning",
+     "v": "mDPni6P0uAQ",
+     "s": "https://drive.google.com/file/d/1D_1qEcvhnGXG_4-r9sJX561PimRSSVsc/view?usp=drive_link"
+    },
+    {
+     "n": "EXTRA_03",
+     "t": "Random variables",
+     "v": "nYC6DPjbuDM",
+     "s": "https://drive.google.com/file/d/1NbvEXw-0g1z_b_cI5W9fHh_0gPA_bGTt/view?usp=drive_link"
+    },
+    {
+     "n": "EXTRA_04",
+     "t": "Expectation:definition and properties",
+     "v": "J8X2DDu_ue0",
+     "s": "https://drive.google.com/file/d/1zSh_26pH8zMpY6CRVoEZZ-agraEOvfY8/view?usp=drive_link"
+    },
+    {
+     "n": "EXTRA_05",
+     "t": "Bernoulli, Binomial, Poisson and Geometric random variables",
+     "v": "n1rrbgWwY6I",
+     "s": "https://drive.google.com/file/d/1vu-4_yE0kmGDkEyVx1lMuk1ARZY7TKzB/view?usp=drive_link"
+    },
+    {
+     "n": "EXTRA_06",
+     "t": "Constrained Optimization, Lagrange Multpliers, Convex sets and Convex Functions",
+     "v": "TQc50S0alsA",
+     "s": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "stem": "cs4032",
+ "code": "CS4032",
+ "kind": "lecture",
+ "title": "Compiler Design",
+ "program": "BS elective",
+ "credits": 4,
+ "standfirst": "Lexing, parsing, semantic analysis and code generation — how a high-level language becomes machine code.",
+ "instructor": "Prof. Partha Pratim Das",
+ "term": "As offered",
+ "prereq": "CS3021",
+ "resources": [],
+ "resources_note": "",
+ "pyq": [],
+ "syllabus": {
+  "description_paragraphs": [
+   "This course introduces the principles and techniques of Compiler Design, including lexical analysis, syntax analysis, intermediate code generation, code optimization, and target code generation. Using formal language theory and tools such as Flex and Bison, students will implement a compiler for a subset of C while working with symbol tables, abstract syntax trees, and control flow graphs. This course shall develop the ability to design and implement language translators by combining theoretical foundations with practical compiler construction techniques.",
+   "<b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4"
+  ],
+  "faculty": [
+   "Prof. Partha Pratim Das, Department of Computer Science and Engineering, IIT Kharagpur"
+  ],
+  "faculty_note": "",
+  "weeks_text": [
+   {
+    "label": "Week 1",
+    "text": "Compiler basics; compiler phases, compilation environment, and Flex/Bison tools."
+   },
+   {
+    "label": "Week 2",
+    "text": "Lexical analysis; tokens, regular expressions, finite automata, and Flex-based scanners."
+   },
+   {
+    "label": "Week 3",
+    "text": "Basic parsing; CFGs, recursive descent, LL(1) parsing, and operator precedence."
+   },
+   {
+    "label": "Week 4",
+    "text": "LR parsing; shift-reduce, LR/SLR/LALR methods, parsing tables, and Bison."
+   },
+   {
+    "label": "Week 5",
+    "text": "Semantic analysis; syntax-directed translation, attribute grammars, type checking, and type inference."
+   },
+   {
+    "label": "Week 6",
+    "text": "Symbol tables and runtime memory; scope management, activation records, and parameter passing."
+   },
+   {
+    "label": "Week 7",
+    "text": "Intermediate code generation for expressions; ASTs, DAGs, TAC, arrays, and declarations."
+   },
+   {
+    "label": "Week 8",
+    "text": "Intermediate code generation for control flow; Boolean expressions, backpatching, loops, conditionals, and procedure calls."
+   },
+   {
+    "label": "Week 9",
+    "text": "Basic code optimization; CFGs, common subexpression elimination, copy propagation, dead code elimination, and peephole optimization."
+   },
+   {
+    "label": "Week 10",
+    "text": "Global o ptimization; data-flow analysis, liveness, loop optimizations, and interprocedural analysis."
+   },
+   {
+    "label": "Week 11",
+    "text": "Target cod e generation; instruction selection, register allocation, scheduling, and assembly generation."
+   },
+   {
+    "label": "Week 12",
+    "text": "Advanced topics; garbage collection, JIT compilation, parallelizing compilers, LLVM, and modern compiler trends."
+   }
+  ],
+  "weeks_note": ""
+ },
+ "weeks_data": [
+  {
+   "w": "Week 1",
+   "items": [
+    {
+     "n": "1",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
+    {
+     "n": "2",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
+    {
+     "n": "3",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
+    {
+     "n": "4",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
+    {
+     "n": "5",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
+    {
+     "n": "6",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
+    {
+     "n": "7",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
+    {
+     "n": "8",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12",
+     "t": "No lecture linked yet",
+     "v": null,
+     "s": null
+    }
+   ]
+  }
+ ]
+}
