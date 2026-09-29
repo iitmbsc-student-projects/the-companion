@@ -23,7 +23,7 @@
    "label": "Course YouTube channel"
   }
  ],
- "resources_note": "",
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [
@@ -93,43 +93,43 @@
     {
      "n": "1.1",
      "t": "Course Introduction",
-     "v": null,
+     "v": "3A8-4klTd0E",
      "s": null
     },
     {
      "n": "1.2",
      "t": "History (Optional)",
-     "v": null,
+     "v": "1u4eOUXSlx4",
      "s": null
     },
     {
      "n": "1.3",
      "t": "Image Formation (Optional)",
-     "v": null,
+     "v": "4pbPQwA1m0o",
      "s": null
     },
     {
      "n": "1.4",
      "t": "Image Representation",
-     "v": null,
+     "v": "PyoJdMrUMqI",
      "s": null
     },
     {
      "n": "1.5",
      "t": "Linear Filtering",
-     "v": null,
+     "v": "LiuMJvpSbOU",
      "s": null
     },
     {
      "n": "1.6",
      "t": "Image in Frequency Domain",
-     "v": null,
+     "v": "QdM-QariW30",
      "s": null
     },
     {
      "n": "1.7",
      "t": "Image Sampling",
-     "v": null,
+     "v": "nfEaPWZ_dRQ",
      "s": null
     }
    ]
