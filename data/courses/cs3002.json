@@ -9,7 +9,16 @@
  "instructor": "Prof. Meenakshi D'Souza",
  "term": "Every term",
  "prereq": "CS3001",
- "resources": [],
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1n1SnBCS08Zh8LRbcRf7FBiVvHulBvhRa?usp=drive_link",
+   "label": "Drive folder"
+  },
+  {
+   "url": "https://www.youtube.com/@softwaretestingcs3002",
+   "label": "Course YouTube channel"
+  }
+ ],
  "resources_note": "",
  "pyq": [],
  "syllabus": {
@@ -78,10 +87,34 @@
    "w": "Week 1",
    "items": [
     {
-     "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "1.1",
+     "t": "Software Testing: Motivation",
+     "v": "tTrVlQfP11M",
+     "s": "https://drive.google.com/file/d/15xOqbl_SyfwWlRcrApkfYvyxkjVtFeh3/view"
+    },
+    {
+     "n": "1.2",
+     "t": "Software Development Life Cycle",
+     "v": "79jPbpxndSw",
+     "s": "https://drive.google.com/file/d/1p21IFO7f6OpII1dQLPFSJAhZWAw-z-BQ/view?usp=drive_link"
+    },
+    {
+     "n": "1.3",
+     "t": "Software Testing: Terminologies",
+     "v": "FpApclVsLrw",
+     "s": "https://drive.google.com/file/d/1JS2FSNfwD3JMEUhwluuNPP-tPcHyNDzg/view?usp=drive_link"
+    },
+    {
+     "n": "1.4",
+     "t": "Software Testing: Terminologies and Processes",
+     "v": "eYkSXT89Gi8",
+     "s": "https://drive.google.com/file/d/1Mwm-2PSJUBNOVNh5VW1kKfI50GlGoCTj/view?usp=drive_link"
+    },
+    {
+     "n": "1.5",
+     "t": "Software Test Automation: JUnit as an example",
+     "v": "ZgZ0kpyED9k",
+     "s": "https://drive.google.com/file/d/1RAiyyN0wmYArZr2hUDGgsV2UOEev1ueW/view?usp=drive_link"
     }
    ]
   },
@@ -89,10 +122,34 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "2.1",
+     "t": "Basics of Graphs",
+     "v": "nL-086Wy4GA",
+     "s": "https://drive.google.com/file/d/1IcMXo43Kp85xStCqSotC6LxroF83jW7b/view?usp=drive_link"
+    },
+    {
+     "n": "2.2",
+     "t": "Fundamental Graph Algorithms",
+     "v": "ukbL29rIvGs",
+     "s": "https://drive.google.com/file/d/1sTQynbnURxVgkQqnLA-KQlKROIzbsg4A/view?usp=drive_link"
+    },
+    {
+     "n": "2.3",
+     "t": "Elementary Graph Algorithms",
+     "v": "mSOD0XURKWY",
+     "s": "https://drive.google.com/file/d/1vUHOb2zv4ioE-9vTL3l2b0u3THKG9Jgv/view?usp=drive_link"
+    },
+    {
+     "n": "2.4",
+     "t": "Structural Graph Coverage Criteria",
+     "v": "hAx7h7FqfKo",
+     "s": "https://drive.google.com/file/d/1pxchj9bXasl1vnkSU3fOG87aXrG5lgXX/view?usp=drive_link"
+    },
+    {
+     "n": "2.5",
+     "t": "Algorithms: Structural Graph Coverage Criteria",
+     "v": "VWDY1ohvtRI",
+     "s": "https://drive.google.com/file/d/1q_JeEDkHzkLU4KmWmWfcbgwkYasInhKn/view?usp=drive_link"
     }
    ]
   },
@@ -100,10 +157,34 @@
    "w": "Week 3",
    "items": [
     {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "3.1",
+     "t": "Graph Coverage Criteria: Applied to Test Code",
+     "v": "e12FAVqs-EA",
+     "s": "https://drive.google.com/file/d/1hHb78DYqO5bTJp3bfYRZzfaRnuWzktlp/view?usp=drive_link"
+    },
+    {
+     "n": "3.2",
+     "t": "Data Flow in Graphs",
+     "v": "5W2T0P1RNbM",
+     "s": "https://drive.google.com/file/d/1yqjeityBV5V1gT4_W7OurK2QFLQn0jYM/view?usp=drive_link"
+    },
+    {
+     "n": "3.3",
+     "t": "Data Flow Graph Coverage Criteria",
+     "v": "YgbzcSP8FpQ",
+     "s": "https://drive.google.com/file/d/1yXSl15cr04G-x4y2pxQKwu5NHzvlpe6z/view?usp=drive_link"
+    },
+    {
+     "n": "3.4",
+     "t": "Data Flow Testing Example",
+     "v": "FT7cS6nOz_g",
+     "s": "https://drive.google.com/file/d/1JZ3mMTyGDSJgG4g-tx-PMAV3x7ehDrwe/view?usp=drive_link"
+    },
+    {
+     "n": "3.5",
+     "t": "Unit Testing Based on Graphs: Summary",
+     "v": "rp4EIadkyQo",
+     "s": "https://drive.google.com/file/d/1obX4I_ytrAPkh1JfmiqzCzj-JrHTeKzb/view?usp=drive_link"
     }
    ]
   },
@@ -111,10 +192,34 @@
    "w": "Week 4",
    "items": [
     {
-     "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "4.1",
+     "t": "Software Design and Integration Testing",
+     "v": "rDqdQgTIpSE",
+     "s": "https://drive.google.com/file/d/11L7dk8u_Wj5tngj9MIaJ0xpUFfl94RBB/view?usp=drive_link"
+    },
+    {
+     "n": "4.2",
+     "t": "Design Integration Testing and Graph Coverage",
+     "v": "zOxxg-Lb2TE",
+     "s": "https://drive.google.com/file/d/15ByQjVy9LEzLXzRzZOtVnD6ERiY5mar0/view?usp=drive_link"
+    },
+    {
+     "n": "4.3",
+     "t": "Specification Testing and Graph Coverage",
+     "v": "32VO9DNqfvw",
+     "s": "https://drive.google.com/file/d/1baje9rw30b73edYfOCdUfoSluAmyIooe/view?usp=drive_link"
+    },
+    {
+     "n": "4.4",
+     "t": "Graph Coverage and Finite state machines",
+     "v": "dEk_lotIfAI",
+     "s": "https://drive.google.com/file/d/1AYR0cFXYkP_slYz-6yf9MBIZ8b-S5rly/view?usp=drive_link"
+    },
+    {
+     "n": "4.5",
+     "t": "Testing Source Code: Classical Coverage Criteria",
+     "v": "oR72f-9CM1E",
+     "s": "https://drive.google.com/file/d/1_Dmwh2rrZHA_EUQkybvuyiGapJ81akVN/view?usp=drive_link"
     }
    ]
   },
@@ -122,10 +227,34 @@
    "w": "Week 5",
    "items": [
     {
-     "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "5.1",
+     "t": "Logic: Basics needed for Software Testing",
+     "v": "VRbG5hpymCA",
+     "s": "https://drive.google.com/file/d/1UU70pFXpcyyKs37JTZRoPXaS-JXbq5Ye/view?usp=drive_link"
+    },
+    {
+     "n": "5.2",
+     "t": "Logic: Coverage Criteria Part-1",
+     "v": "whiScMBb9uU",
+     "s": "https://drive.google.com/file/d/1W30ZmKVmuRnlBKj2xGIehIf1j9DDttOV/view?usp=drive_link"
+    },
+    {
+     "n": "5.3",
+     "t": "Logic: Coverage Criteria Part-2",
+     "v": "uIe6pSepZ3Q",
+     "s": "https://drive.google.com/file/d/1W30ZmKVmuRnlBKj2xGIehIf1j9DDttOV/view?usp=drive_link"
+    },
+    {
+     "n": "5.4",
+     "t": "Logic Coverage Criteria: Making clauses determine predicate",
+     "v": "pmH_8-Nj57Q",
+     "s": "https://drive.google.com/file/d/1WRiuA33GwFDo-ISKhoP7AJBYVuKFa_vS/view?usp=drive_link"
+    },
+    {
+     "n": "5.5",
+     "t": "Logic Coverage Criteria: Applied to test code",
+     "v": "MfFtunDQzu0",
+     "s": "https://drive.google.com/file/d/1RGYYpZeyzR5XjttqvTVnLaD31lX1yWQv/view?usp=drive_link"
     }
    ]
   },
@@ -133,10 +262,34 @@
    "w": "Week 6",
    "items": [
     {
-     "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "6.1",
+     "t": "Logic: Coverage Example 2",
+     "v": "UprpvRdNJ78",
+     "s": "https://drive.google.com/file/d/1fGKIAk1M4XsI8WbsbGs1Bpe1z8Tg8M0w/view?usp=drive_link"
+    },
+    {
+     "n": "6.2",
+     "t": "Logic: Coverage Specification",
+     "v": "KG_iXF-nCEc",
+     "s": "https://drive.google.com/file/d/1XkZWXoOpNPq4GwD5siJdsfhnRUj1qwmo/view?usp=drive_link"
+    },
+    {
+     "n": "6.3",
+     "t": "Logic: Coverage FSM",
+     "v": "lyScDx0AWe4",
+     "s": "https://drive.google.com/file/d/1MLctWcEbrdXY1eEmqoquPucisn4xDn4x/view?usp=drive_link"
+    },
+    {
+     "n": "6.4",
+     "t": "Logic: Coverage Summary",
+     "v": "mlGjJbketZU",
+     "s": "https://drive.google.com/file/d/18yudMrL4WTFBdrqnTcH4PcFJenXlhMyZ/view?usp=drive_link"
+    },
+    {
+     "n": "6.5",
+     "t": "SMT - Solvers",
+     "v": "pHo6gx_tRtg",
+     "s": "https://drive.google.com/file/d/1_1288gfTacwsYn-8qz2Ry93fSSG7_3PJ/view?usp=drive_link"
     }
    ]
   },
@@ -144,10 +297,34 @@
    "w": "Week 7",
    "items": [
     {
-     "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "7.1",
+     "t": "Symbolic Testing Part 1",
+     "v": "TxGw7we_UrE",
+     "s": "https://drive.google.com/file/d/1tfhhplpmhATSFBjTCnj4yBAbAQGKXfV6/view?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "Symbolic Testing Part 2",
+     "v": "JvI7ApFCkcE",
+     "s": "https://drive.google.com/file/d/1tfhhplpmhATSFBjTCnj4yBAbAQGKXfV6/view?usp=drive_link"
+    },
+    {
+     "n": "7.3",
+     "t": "Concolic Execution Part 1",
+     "v": "AaaJv_jj7OM",
+     "s": "https://drive.google.com/file/d/1tfhhplpmhATSFBjTCnj4yBAbAQGKXfV6/view?usp=drive_link"
+    },
+    {
+     "n": "7.4",
+     "t": "Concolic Execution Part 2",
+     "v": "ZiK1g6_Mo4w",
+     "s": "https://drive.google.com/file/d/1K1AmyLxczOssAHu0tSBOTHRKIlb5NcTI/view?usp=drive_link"
+    },
+    {
+     "n": "7.5",
+     "t": "Example and Summary Symbolic Execution",
+     "v": "paaw9BpTTKY",
+     "s": "https://drive.google.com/file/d/1K1AmyLxczOssAHu0tSBOTHRKIlb5NcTI/view?usp=drive_link"
     }
    ]
   },
@@ -155,10 +332,34 @@
    "w": "Week 8",
    "items": [
     {
-     "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "8.1",
+     "t": "Requirements",
+     "v": "lW4NVbKpBf8",
+     "s": "https://drive.google.com/file/d/13lYhENfK7DQIozMzvpqcAgtUWNQpXhM1/view?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "Functional Testing",
+     "v": "Bb7braq_YSc",
+     "s": "https://drive.google.com/file/d/1pzuulH0IczSYs_motajYvpVdvM_9gBRD/view?usp=drive_link"
+    },
+    {
+     "n": "8.3",
+     "t": "ISP Part 1",
+     "v": "t2dr_HW1zPk",
+     "s": "https://drive.google.com/file/d/1gwYr-n2D-JKbSBaK7VoSnHuUOmpw86Cc/view?usp=drive_link"
+    },
+    {
+     "n": "8.4",
+     "t": "ISP Part 2",
+     "v": "k3DbWB-2Ltw",
+     "s": "https://drive.google.com/file/d/1gwYr-n2D-JKbSBaK7VoSnHuUOmpw86Cc/view?usp=drive_link"
+    },
+    {
+     "n": "8.5",
+     "t": "ISP Example",
+     "v": "0E5eXMa6A3I",
+     "s": "https://drive.google.com/file/d/1gwYr-n2D-JKbSBaK7VoSnHuUOmpw86Cc/view?usp=drive_link"
     }
    ]
   },
@@ -166,10 +367,34 @@
    "w": "Week 9",
    "items": [
     {
-     "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "9.1",
+     "t": "Reg Expns Cfgs",
+     "v": "e0zjmqfpA9o",
+     "s": "https://drive.google.com/file/d/1inLluT6HG8-eMcJzog9Vnf6ONQug_JRM/view?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "Mutation Testing",
+     "v": "q3Ykj3ho8ZI",
+     "s": "https://drive.google.com/file/d/1jBIX-bMXuSjk2yGc8SJhfC9obEie4NuH/view?usp=drive_link"
+    },
+    {
+     "n": "9.3",
+     "t": "Mutation Operators Source Code",
+     "v": "S9ddgh_mmqU",
+     "s": "https://drive.google.com/file/d/1x5dc8YD5X7lJE2tvh5moM-6sZ8SHHW7S/view?usp=drive_link"
+    },
+    {
+     "n": "9.4",
+     "t": "Mutation Testing Vs Other Criteria",
+     "v": "QmUbnfypQD4",
+     "s": "https://drive.google.com/file/d/1vCTUjrOuPOPOtx6AHnQVoNe1T0_I7C5e/view?usp=drive_link"
+    },
+    {
+     "n": "9.5",
+     "t": "Mutation Testing For Integration And Tools",
+     "v": "63ksgpPUJKQ",
+     "s": "https://drive.google.com/file/d/1n6wLjHRpiScyGgD_1SDNJf4fVWNQOyDi/view?usp=drive_link"
     }
    ]
   },
@@ -177,10 +402,34 @@
    "w": "Week 10",
    "items": [
     {
-     "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "10.1",
+     "t": "Basic OO Integration Concepts",
+     "v": "JXCbbF5oP9w",
+     "s": "https://drive.google.com/file/d/1adTquL3oIJVWcL6VWiTopnWCkqIH4OOC/view?usp=drive_link"
+    },
+    {
+     "n": "10.2",
+     "t": "Mutation Operators OO Integration",
+     "v": "z1DQxFOMKf0",
+     "s": "https://drive.google.com/file/d/1adTquL3oIJVWcL6VWiTopnWCkqIH4OOC/view?usp=drive_link"
+    },
+    {
+     "n": "10.3",
+     "t": "OO Integration Testing Part1",
+     "v": "fP4TkMXG6sM",
+     "s": "https://drive.google.com/file/d/1ZJWQ0neXhnIKiX7_5nBEAmvtn--7CD5Y/view?usp=drive_link"
+    },
+    {
+     "n": "10.4",
+     "t": "OO Faults",
+     "v": "N20qNwLYEr0",
+     "s": "https://drive.google.com/file/d/1ZJWQ0neXhnIKiX7_5nBEAmvtn--7CD5Y/view?usp=drive_link"
+    },
+    {
+     "n": "10.5",
+     "t": "Coupling Criteria",
+     "v": "e88ClDJ67rA",
+     "s": "https://drive.google.com/file/d/1ZJWQ0neXhnIKiX7_5nBEAmvtn--7CD5Y/view?usp=drive_link"
     }
    ]
   },
@@ -188,10 +437,28 @@
    "w": "Week 11",
    "items": [
     {
-     "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "11.1",
+     "t": "Web Apps Intro",
+     "v": "VA6NstufGlI",
+     "s": "https://drive.google.com/file/d/1elRresIg0s0aWCP6QH9kquoPwGOpdZUb/view?usp=drive_link"
+    },
+    {
+     "n": "11.2",
+     "t": "Client Side Testing Part1",
+     "v": "f13a36DL-bQ",
+     "s": "https://drive.google.com/file/d/1TsGXesXqX0mwXtUyDtjLN4W9jsUBU6ZC/view?usp=drive_link"
+    },
+    {
+     "n": "11.3",
+     "t": "Client Side Testing Part2",
+     "v": "F6FIHvIdms4",
+     "s": "https://drive.google.com/file/d/1TsGXesXqX0mwXtUyDtjLN4W9jsUBU6ZC/view?usp=drive_link"
+    },
+    {
+     "n": "11.4",
+     "t": "Server Side Testing",
+     "v": "AtggsmRL4B8",
+     "s": "https://drive.google.com/file/d/15lOfReHRCuh3KJFXnUHlS2bGUaruzxvO/view?usp=drive_link"
     }
    ]
   },
@@ -199,10 +466,34 @@
    "w": "Week 12",
    "items": [
     {
-     "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "12.1",
+     "t": "Regression Testing",
+     "v": "mfYQw_VzgpU",
+     "s": "https://drive.google.com/file/d/1QqSJdBhbQXJ_JD0z5x2xEMKggsm2C2wL/view?usp=drive_link"
+    },
+    {
+     "n": "12.2",
+     "t": "Software Quality Metrics",
+     "v": "MUZvl88PQQQ",
+     "s": "https://drive.google.com/file/d/1cNvQwopnaYhwwXJzaqUyeKxgSjmW4q9m/view?usp=drive_link"
+    },
+    {
+     "n": "12.3",
+     "t": "Non Functional Testing",
+     "v": "z09bgFMIeNM",
+     "s": "https://drive.google.com/file/d/1meTvAUi6vlTqsqkqOb2Yp8NQEUf-sVlM/view?usp=drive_link"
+    },
+    {
+     "n": "12.4",
+     "t": "TDD",
+     "v": "69aaHzGrmT4",
+     "s": "https://drive.google.com/file/d/1GUhpE-nNCV1LmWvMUtduFbnA6gK29wgI/view?usp=drive_link"
+    },
+    {
+     "n": "12.5",
+     "t": "Course Summary",
+     "v": "a0iFY6FjA-4",
+     "s": "https://drive.google.com/file/d/1hKmGdQBh45lVdihqZmpB3L0TQv2Sd_6Q/view?usp=drive_link"
     }
    ]
   }

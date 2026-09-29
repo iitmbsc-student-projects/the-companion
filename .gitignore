@@ -2,10 +2,13 @@
 Diploma - Course link/
 Diploma Resource.txt
 Diploma sorted playlist.txt
-Foundation course link/
+Foundation - Course link/
 Foundation Resource.txt
 Syllabus - May 2026.png
 iitm-bs-hub.zip
+Degree Level - Course Link/
+Degree Level - Course Link (sorted)/
+Degree Playlist List.txt
 
 # OS junk
 .DS_Store
@@ -16,6 +19,10 @@ desktop.ini
 .vscode/
 .idea/
 *.swp
+
+# Python
+__pycache__/
+*.pyc
 
 # Misc
 *.log

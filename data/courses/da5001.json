@@ -9,7 +9,12 @@
  "instructor": "Dr. Rangarajan Vasudevan",
  "term": "As offered",
  "prereq": "CS2001",
- "resources": [],
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/14OLekP2UFRB33NnF429qE2sI1UN-9V9K?usp=drive_link",
+   "label": "Drive folder"
+  }
+ ],
  "resources_note": "",
  "pyq": [],
  "syllabus": {
@@ -75,8 +80,38 @@
    "items": [
     {
      "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "1. Intro to Big Data",
+     "v": "4apoFosOauA",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "2. Big Data in the era of cloud",
+     "v": "AU8L9RUcg5g",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "3. Big Data - Key Concepts",
+     "v": "LK4FpfM3N2w",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "4. Big Data - Key Concepts (Contd) - MapReduce",
+     "v": "fu5Me0poe5w",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Spark",
+     "v": "AAboXf98EY8",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "6. Duality of Sorting & Hashing",
+     "v": "j06tyMIKrHw",
      "s": null
     }
    ]
@@ -85,9 +120,33 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "7",
+     "t": "7. Evolution of Tech",
+     "v": "ufXgkAInvo0",
+     "s": null
+    },
+    {
+     "n": "8",
+     "t": "8. Cloud Native",
+     "v": "IZpyQ97Hgbo",
+     "s": null
+    },
+    {
+     "n": "9",
+     "t": "9. Services in Public Cloud",
+     "v": "Sf52j2Y2pXw",
+     "s": null
+    },
+    {
+     "n": "10",
+     "t": "10. Types of Cloud Services",
+     "v": "YhBj-yxchNI",
+     "s": null
+    },
+    {
+     "n": "11",
+     "t": "11. Types of Cloud Services contd & Big Data in era of cloud",
+     "v": "k3lHYUBDFiA",
      "s": null
     }
    ]
@@ -96,9 +155,39 @@
    "w": "Week 3",
    "items": [
     {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "12",
+     "t": "12. Data Source Types",
+     "v": "xMlycruILB8",
+     "s": null
+    },
+    {
+     "n": "13",
+     "t": "13. Varieties of Data Formats (e.g. CSV)",
+     "v": "u28iCDtOWh4",
+     "s": null
+    },
+    {
+     "n": "14",
+     "t": "14. Processing Data Formats",
+     "v": "zh_VYjrkVcQ",
+     "s": null
+    },
+    {
+     "n": "15",
+     "t": "15. Software & Data",
+     "v": "_kxEsAlrMck",
+     "s": null
+    },
+    {
+     "n": "16",
+     "t": "16. Extracting Data from Sources",
+     "v": "Nshz_uKp6B8",
+     "s": null
+    },
+    {
+     "n": "17",
+     "t": "17. Data Lake: Definition",
+     "v": "xf01_KLkGHY",
      "s": null
     }
    ]
@@ -107,9 +196,57 @@
    "w": "Week 4",
    "items": [
     {
-     "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "18",
+     "t": "18. Hadoop Overview",
+     "v": "Y1LNNSD5_no",
+     "s": null
+    },
+    {
+     "n": "19",
+     "t": "19. Spark Overview",
+     "v": "pXP88KnLDJ4",
+     "s": null
+    },
+    {
+     "n": "20",
+     "t": "20. Architecture of Spark",
+     "v": "cwCVrkTqGKE",
+     "s": null
+    },
+    {
+     "n": "21",
+     "t": "21. Spark Internals",
+     "v": "x0hBHv3TsRk",
+     "s": null
+    },
+    {
+     "n": "22",
+     "t": "22. Spark SQL",
+     "v": "_KwvGJmFIl4",
+     "s": null
+    },
+    {
+     "n": "23",
+     "t": "23. Hands-On: Creating a Dataproc cluster",
+     "v": "ym8uaSoZX9w",
+     "s": null
+    },
+    {
+     "n": "24",
+     "t": "24. Hands-on: Working with real world data from Github",
+     "v": "MOf1bIoLhc4",
+     "s": null
+    },
+    {
+     "n": "25",
+     "t": "25. Hands-on: Data processing using Spark SQL",
+     "v": "Be_3AVniWlQ",
+     "s": null
+    },
+    {
+     "n": "26",
+     "t": "26. Hands-on: Data processing using dataframe operations",
+     "v": "IJeSfaRS-HM",
      "s": null
     }
    ]
@@ -118,9 +255,33 @@
    "w": "Week 5",
    "items": [
     {
-     "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "27",
+     "t": "27. ETL: Definition",
+     "v": "rqdCM7-XyC8",
+     "s": null
+    },
+    {
+     "n": "28",
+     "t": "28. ETL Patterns: Keys & Reference Data_1",
+     "v": "4add3RWFrho",
+     "s": null
+    },
+    {
+     "n": "29",
+     "t": "29. ETL Patterns for Operational Matters",
+     "v": "ucGy4-VmAcw",
+     "s": null
+    },
+    {
+     "n": "30",
+     "t": "30. Data Lifecycle Management Pattern",
+     "v": "aHWK7dNQeJA",
+     "s": null
+    },
+    {
+     "n": "31",
+     "t": "31. ELT & Scheduler",
+     "v": "glZc36iGhic",
      "s": null
     }
    ]
@@ -129,9 +290,39 @@
    "w": "Week 6",
    "items": [
     {
-     "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "32",
+     "t": "32. Introduction to SQL",
+     "v": "LgNPybD2RUQ",
+     "s": null
+    },
+    {
+     "n": "33",
+     "t": "33. SQL Planning & Execution",
+     "v": "4xMBEyixm8s",
+     "s": null
+    },
+    {
+     "n": "34",
+     "t": "34. Types of Joins and their big data variants",
+     "v": "6gqkeKCJlwk",
+     "s": null
+    },
+    {
+     "n": "35",
+     "t": "35. EXPLAIN, ANALYZE",
+     "v": "e7jdYdSTBsM",
+     "s": null
+    },
+    {
+     "n": "36",
+     "t": "36. Optimal Execution in SparkSQL",
+     "v": "ZgjxeuQxGQY",
+     "s": null
+    },
+    {
+     "n": "37",
+     "t": "37. Introduction to NoSQL",
+     "v": "SoMGtZCgI1w",
      "s": null
     }
    ]
@@ -140,9 +331,39 @@
    "w": "Week 7",
    "items": [
     {
-     "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "38",
+     "t": "38. Motivation for Streaming",
+     "v": "hDZfm8LjFcU",
+     "s": null
+    },
+    {
+     "n": "39",
+     "t": "39.Streaming Context_1",
+     "v": "F6yhtcjEfeI",
+     "s": null
+    },
+    {
+     "n": "40",
+     "t": "40. Streaming applications & their best practices",
+     "v": "RnnP_dkAtFQ",
+     "s": null
+    },
+    {
+     "n": "41",
+     "t": "41. Event Streaming, Google Pub/Sub_1",
+     "v": "6muqdrFQBx0",
+     "s": null
+    },
+    {
+     "n": "42",
+     "t": "42. Google Pub/Sub: Use cases & Key Properties",
+     "v": "ZjtaG54nB9M",
+     "s": null
+    },
+    {
+     "n": "43",
+     "t": "43. Google Dataflow & Apache Beam",
+     "v": "N3lqaQDMD-I",
      "s": null
     }
    ]
@@ -151,9 +372,45 @@
    "w": "Week 8",
    "items": [
     {
-     "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "44",
+     "t": "44. Introduction to Kafka",
+     "v": "a2WvelWHT2M",
+     "s": null
+    },
+    {
+     "n": "45",
+     "t": "45. Kafka Design Walkthrough",
+     "v": "8d1ISU7bHrg",
+     "s": null
+    },
+    {
+     "n": "46",
+     "t": "46. Message Semantics",
+     "v": "70Ea-G6_AXw",
+     "s": null
+    },
+    {
+     "n": "47",
+     "t": "47. Transactions for Exactly Once",
+     "v": "9K7ZPvxdOI0",
+     "s": null
+    },
+    {
+     "n": "48",
+     "t": "48. Introduction to Spark Streaming",
+     "v": "3QUt9cmhJ_I",
+     "s": null
+    },
+    {
+     "n": "49",
+     "t": "49. Time-based event processing",
+     "v": "QZafNCsIbPs",
+     "s": null
+    },
+    {
+     "n": "50",
+     "t": "50. Hands-on: Data processing using structured streaming",
+     "v": "D1b_N0x6B1g",
      "s": null
     }
    ]
@@ -162,9 +419,39 @@
    "w": "Week 9",
    "items": [
     {
-     "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "51",
+     "t": "51. Big Data ML on a single machine",
+     "v": "HnRfifL8WNI",
+     "s": null
+    },
+    {
+     "n": "52",
+     "t": "52. ML on a cluster",
+     "v": "rZ2BD2LmC_k",
+     "s": null
+    },
+    {
+     "n": "53",
+     "t": "53. Introduction to Spark MLlib",
+     "v": "nkcXR_KKY38",
+     "s": null
+    },
+    {
+     "n": "54",
+     "t": "54. Illustrative Examples of MLlib",
+     "v": "lvb7vZQEVgs",
+     "s": null
+    },
+    {
+     "n": "55",
+     "t": "55.Introduction to MLOps",
+     "v": "tiXAfoDGsrg",
+     "s": null
+    },
+    {
+     "n": "56",
+     "t": "56. Best practices in ML on Big Data",
+     "v": "v9WX4r7IEgs",
      "s": null
     }
    ]
@@ -173,20 +460,27 @@
    "w": "Week 10",
    "items": [
     {
-     "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "57",
+     "t": "57. Intro to Deep Learning on Big Data",
+     "v": "0TGGYjpCQbQ",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 11",
-   "items": [
+    },
     {
-     "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "58",
+     "t": "58. Distributed Deep Learning with Horovod",
+     "v": "zzkOcE0g29I",
+     "s": null
+    },
+    {
+     "n": "59",
+     "t": "59. DL Scoring & Streaming",
+     "v": "y5rCCnt0O_s",
+     "s": null
+    },
+    {
+     "n": "60",
+     "t": "60. Recap Video",
+     "v": "khQiJhx5wWg",
      "s": null
     }
    ]

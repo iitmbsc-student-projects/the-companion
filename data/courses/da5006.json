@@ -9,7 +9,20 @@
  "instructor": "Prof. Vineeth N B",
  "term": "As offered",
  "prereq": "CS3004",
- "resources": [],
+ "resources": [
+  {
+   "url": "https://github.com/DL4CV-NPTEL/Deep-Learning-For-Computer-Vision?tab=readme-ov-file",
+   "label": "Deep Learning For Computer Vision (GitHub)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1yOy11QGWC1YX3HT2NH8hKtHcMFupP8f7?usp=sharing",
+   "label": "Drive folder"
+  },
+  {
+   "url": "https://www.youtube.com/@DLCVCourseTeam",
+   "label": "Course YouTube channel"
+  }
+ ],
  "resources_note": "",
  "pyq": [],
  "syllabus": {
@@ -78,8 +91,44 @@
    "w": "Week 1",
    "items": [
     {
-     "n": "1",
-     "t": "No lecture linked yet",
+     "n": "1.1",
+     "t": "Course Introduction",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "1.2",
+     "t": "History (Optional)",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "Image Formation (Optional)",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "Image Representation",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "1.5",
+     "t": "Linear Filtering",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "1.6",
+     "t": "Image in Frequency Domain",
+     "v": null,
+     "s": null
+    },
+    {
+     "n": "1.7",
+     "t": "Image Sampling",
      "v": null,
      "s": null
     }
@@ -89,9 +138,45 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "2.1",
+     "t": "Edge Detection",
+     "v": "q26KIlMO-y4",
+     "s": null
+    },
+    {
+     "n": "2.2",
+     "t": "From Edges to Blobs and Corners",
+     "v": "h_OPnaLzgQQ",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Scale Space, Image Pyramids and Filter Banks",
+     "v": "oXMoUhkJ844",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "SIFT and Variants",
+     "v": "5D0aGDVvhIM",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Additional Content: Image Segmentation",
+     "v": "U7tgQtPqhc0",
+     "s": null
+    },
+    {
+     "n": "2.6",
+     "t": "Additional Content: Other Feature Spaces",
+     "v": "YcjwMNP6NO0",
+     "s": null
+    },
+    {
+     "n": "2.7",
+     "t": "Additional Content: Human Visual System",
+     "v": "yBo4EUuSiHc",
      "s": null
     }
    ]
@@ -100,9 +185,63 @@
    "w": "Week 3",
    "items": [
     {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "3.1",
+     "t": "Neural Networks: A Review Part 1",
+     "v": "HW2TL9Nzk-8",
+     "s": null
+    },
+    {
+     "n": "3.2",
+     "t": "Neural Networks: A Review Part 2",
+     "v": "ckinNqll2kg",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "Feedforward Neural Networks and Backpropagation Part 1",
+     "v": "ameZ7wnGHoA",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "Feedforward Neural Networks and Backpropagation Part 2",
+     "v": "Dqjm25B34ak",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Gradient Descent and Variants Part 1",
+     "v": "XaCxaG7Babg",
+     "s": null
+    },
+    {
+     "n": "3.6",
+     "t": "Gradient Descent and Variants Part 2",
+     "v": "KSwiMClJVIg",
+     "s": null
+    },
+    {
+     "n": "3.7",
+     "t": "Regularization in Neural Networks Part 1",
+     "v": "keI63RXNdWU",
+     "s": null
+    },
+    {
+     "n": "3.8",
+     "t": "Regularization in Neural Networks Part 2",
+     "v": "mKS6T2JjWBM",
+     "s": null
+    },
+    {
+     "n": "3.9",
+     "t": "Improving Training of Neural Networks Part 1",
+     "v": "EQdjL6BQ-PQ",
+     "s": null
+    },
+    {
+     "n": "3.10",
+     "t": "Improving Training of Neural Networks Part 2",
+     "v": "k9wUb2FzIGU",
      "s": null
     }
    ]
@@ -111,9 +250,27 @@
    "w": "Week 4",
    "items": [
     {
-     "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "4.1",
+     "t": "Convolutional Neural Networks: An Introduction Part 1",
+     "v": "nx_w5QT2jqg",
+     "s": null
+    },
+    {
+     "n": "4.2",
+     "t": "Convolutional Neural Networks: An Introduction Part 2",
+     "v": "evPN6kXiSO8",
+     "s": null
+    },
+    {
+     "n": "4.3",
+     "t": "Backpropagation in CNNs",
+     "v": "cYXIR0vZ7FA",
+     "s": null
+    },
+    {
+     "n": "4.4",
+     "t": "CNN Architectures for Image Classification: AlexNet, VGG",
+     "v": "K3B2qrOzSsk",
      "s": null
     }
    ]
@@ -122,9 +279,27 @@
    "w": "Week 5",
    "items": [
     {
-     "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "5.1",
+     "t": "Evolution of CNN Architectures: InceptionNet, ResNet",
+     "v": "dU8f25yi030",
+     "s": null
+    },
+    {
+     "n": "5.2",
+     "t": "Newer and Recent CNN Architectures",
+     "v": "1yZvlRKnF8c",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "Finetuning CNNs",
+     "v": "VbzvUbFYlEQ",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Visualizing CNNs",
+     "v": "-TfKM-6iVVA",
      "s": null
     }
    ]
@@ -133,9 +308,27 @@
    "w": "Week 6",
    "items": [
     {
-     "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "6.1",
+     "t": "CNNs for Object Detection: Pre-Deep Learning Era and Initial Steps",
+     "v": "shLCggFSs_k",
+     "s": null
+    },
+    {
+     "n": "6.2",
+     "t": "CNNs for Object Detection: Two-Stage Models",
+     "v": "UvPzKLKWGJc",
+     "s": null
+    },
+    {
+     "n": "6.3",
+     "t": "CNNs for Object Detection: Single-stage Models",
+     "v": "NToSvqHS3Dw",
+     "s": null
+    },
+    {
+     "n": "6.4",
+     "t": "CNNs for Segmentation",
+     "v": "QoB0M4VacHw",
      "s": null
     }
    ]
@@ -144,9 +337,27 @@
    "w": "Week 7",
    "items": [
     {
-     "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "7.1",
+     "t": "Recurrent Neural Networks: Introduction",
+     "v": "uGrYtB44WAU",
+     "s": null
+    },
+    {
+     "n": "7.2",
+     "t": "Backpropagation in RNNs",
+     "v": "FdxZ7AhHLRQ",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "LSTMs and GRUs",
+     "v": "pbmim1IBysY",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "Video Understanding using CNNs and RNNs",
+     "v": "VpHkE3sjxRg",
      "s": null
     }
    ]
@@ -155,9 +366,27 @@
    "w": "Week 8",
    "items": [
     {
-     "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "8.1",
+     "t": "Attention in Vision Models: An Introduction",
+     "v": "oFKn7SSxz3Y",
+     "s": null
+    },
+    {
+     "n": "8.2",
+     "t": "Soft and Hard Attention: Image Captioning",
+     "v": "pLjGtMhf9yM",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Additional Content: Beyond Captioning: Visual QA and Dialog",
+     "v": "9SOzNfgDoCc",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Self-Attention and Transformers",
+     "v": "vevGIRfiHDg",
      "s": null
     }
    ]
@@ -166,9 +395,21 @@
    "w": "Week 9",
    "items": [
     {
-     "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "9.1",
+     "t": "From Transformers to Vision Transformers",
+     "v": "i-rRTcGlVDY",
+     "s": null
+    },
+    {
+     "n": "9.2",
+     "t": "Transformers for Detection",
+     "v": "1d2Mq_u_qpk",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Transformers for Segmentation",
+     "v": "nfhTZypbbLU",
      "s": null
     }
    ]
@@ -177,9 +418,39 @@
    "w": "Week 10",
    "items": [
     {
-     "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "10.1",
+     "t": "Deep Generative Models: An Introduction",
+     "v": "xg0O1pfeNw0",
+     "s": null
+    },
+    {
+     "n": "10.2",
+     "t": "Generative Adversarial Networks - Part 1",
+     "v": "YZ_d1_BwVmA",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Generative Adversarial Networks - Part 2",
+     "v": "ofu8TLX9ZL8",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "GAN Hacks and Improvements",
+     "v": "nQYhw4xnXoc",
+     "s": null
+    },
+    {
+     "n": "10.5",
+     "t": "Variational Autoencoders",
+     "v": "UBxLPOAE4-4",
+     "s": null
+    },
+    {
+     "n": "10.6",
+     "t": "VAEs and Disentanglement",
+     "v": "d33Fa5KqlO8",
      "s": null
     }
    ]
@@ -188,9 +459,21 @@
    "w": "Week 11",
    "items": [
     {
-     "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "11.1",
+     "t": "Introduction to Diffusion Models and DDPMs - Part 1",
+     "v": "M4dzXcxowaU",
+     "s": null
+    },
+    {
+     "n": "11.2",
+     "t": "Introduction to Diffusion Models and DDPMs - Part 2",
+     "v": "mytYU_EcKpM",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Classifier and Classifier-Free Diffusion Guidance",
+     "v": "otWXHpthOEM",
      "s": null
     }
    ]
@@ -199,9 +482,51 @@
    "w": "Week 12",
    "items": [
     {
-     "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "12.1",
+     "t": "Contrastive Learning and History in Face Understanding - Part 1",
+     "v": "UctZ_0_DM2g",
+     "s": null
+    },
+    {
+     "n": "12.2",
+     "t": "Contrastive Learning and History in Face Understanding - Part 2",
+     "v": "kV38gnaLa28",
+     "s": null
+    },
+    {
+     "n": "12.3",
+     "t": "Self-Supervised Learning: SimCLR",
+     "v": "nDmZaNQD1mU",
+     "s": null
+    },
+    {
+     "n": "12.4",
+     "t": "Vision Language Models: Introduction and History",
+     "v": "8XDdM3k-8HQ",
+     "s": null
+    },
+    {
+     "n": "12.5",
+     "t": "CLIP: The Anchoring Inflection Point",
+     "v": "nZreS_0tnc8",
+     "s": null
+    },
+    {
+     "n": "12.6",
+     "t": "Beyond CLIP: BLIP, BLIP-2 and CoCA",
+     "v": "ep5P-yY4uSg",
+     "s": null
+    },
+    {
+     "n": "12.7",
+     "t": "From VLMs to Multimodal LLMs",
+     "v": "ymUyuTz1qEs",
+     "s": null
+    },
+    {
+     "n": "12.8",
+     "t": "Course Conclusion",
+     "v": "j1oRj_FeXIw",
      "s": null
     }
    ]
