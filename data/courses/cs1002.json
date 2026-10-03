@@ -75,12 +75,101 @@
  },
  "weeks_data": [
   {
+   "w": "Week 0",
+   "items": [
+    {
+     "n": "0.1",
+     "t": "Live Python Tutor Demo",
+     "v": "jr9wuxm9kfg",
+     "s": null
+    },
+    {
+     "n": "0.2",
+     "t": "Introduction to Google Colab",
+     "v": "yuSSsgeR_tE",
+     "s": null
+    }
+   ]
+  },
+  {
    "w": "Week 1",
    "items": [
     {
-     "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "1.1",
+     "t": "Introduction",
+     "v": "8ndsDXohLMQ",
+     "s": null
+    },
+    {
+     "n": "1.2",
+     "t": "Introduction to Replit",
+     "v": "NgZZ0HIUqbs",
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "More on Replit, print and Common Mistakes",
+     "v": "As7_aq6XGfI",
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "A Quick Introduction to Variables",
+     "v": "Yg6xzi2ie5s",
+     "s": null
+    },
+    {
+     "n": "1.5",
+     "t": "Variables and Input Statement",
+     "v": "ruQb8jzkGyQ",
+     "s": null
+    },
+    {
+     "n": "1.6",
+     "t": "Variables and Literals",
+     "v": "tDaXdoKfX0k",
+     "s": null
+    },
+    {
+     "n": "1.7",
+     "t": "Data Types 1",
+     "v": "8n4MBjuDBu4",
+     "s": null
+    },
+    {
+     "n": "1.8",
+     "t": "Data Types 2",
+     "v": "xQXxufhEJHw",
+     "s": null
+    },
+    {
+     "n": "1.9",
+     "t": "Operators and Expressions 1",
+     "v": "8pu73HKzNOE",
+     "s": null
+    },
+    {
+     "n": "1.1",
+     "t": "Operators and Expressions 2",
+     "v": "Y53K9FFu97Q",
+     "s": null
+    },
+    {
+     "n": "1.11",
+     "t": "Introduction to Strings",
+     "v": "sS89tiDuqoM",
+     "s": null
+    },
+    {
+     "n": "1.12",
+     "t": "More on Strings",
+     "v": "e45MVXwya7A",
+     "s": null
+    },
+    {
+     "n": "1.13",
+     "t": "Conclusion: FAQs",
+     "v": "_Ccezy5hlc8",
      "s": null
     }
    ]
@@ -89,9 +178,75 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "2.1",
+     "t": "Introduction",
+     "v": "aEPFZSzZ6VQ",
+     "s": null
+    },
+    {
+     "n": "2.2",
+     "t": "Variables: A Programmer's Perspective",
+     "v": "XZSnqseRbZY",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Variables Revisited: Dynamic Typing",
+     "v": "2OFZY77eOjw",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "More on Variables, Operators and Expressions",
+     "v": "-f833WH_cVo",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Escape characters and types of quotes",
+     "v": "4vWM2oTGEio",
+     "s": null
+    },
+    {
+     "n": "2.6",
+     "t": "String Methods",
+     "v": "bRAo6TJJjCU",
+     "s": null
+    },
+    {
+     "n": "2.7",
+     "t": "An Interesting Cipher: More on Strings",
+     "v": "oxFYdHVNpg8",
+     "s": null
+    },
+    {
+     "n": "2.8",
+     "t": "Introduction to the if statement",
+     "v": "FTX5wF_3J9Q",
+     "s": null
+    },
+    {
+     "n": "2.9",
+     "t": "Tutorial on if, else and else-if (elif) conditions",
+     "v": "-dBqiRCHbNw",
+     "s": null
+    },
+    {
+     "n": "2.1",
+     "t": "Introduction to \"import library\"",
+     "v": "OdjXL5U95eI",
+     "s": null
+    },
+    {
+     "n": "2.11",
+     "t": "Different ways to import a library",
+     "v": "eW58_ky7oc8",
+     "s": null
+    },
+    {
+     "n": "2.12",
+     "t": "Conclusion",
+     "v": "DK16M8EvOLE",
      "s": null
     }
    ]
@@ -100,9 +255,87 @@
    "w": "Week 3",
    "items": [
     {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "3.1",
+     "t": "Introduction",
+     "v": "xiEzc_m2izc",
+     "s": null
+    },
+    {
+     "n": "3.2",
+     "t": "Introduction to while loop",
+     "v": "KTvVNN7ia8o",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "While to Compute Factorial",
+     "v": "-ZMw8D-Xapk",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "Tutorial on while loop",
+     "v": "SqMeT9caxpE",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Introduction to for loop",
+     "v": "lvXuQ_x7EsI",
+     "s": null
+    },
+    {
+     "n": "3.6",
+     "t": "for loop to add the first n numbers",
+     "v": "lrbqrxIZcaQ",
+     "s": null
+    },
+    {
+     "n": "3.7",
+     "t": "for loop for multiplication tables",
+     "v": "SMASd0rbt0g",
+     "s": null
+    },
+    {
+     "n": "3.8",
+     "t": "More on range and for loop without range",
+     "v": "ihL3Eac9tFc",
+     "s": null
+    },
+    {
+     "n": "3.9",
+     "t": "Formatted Printing",
+     "v": "DR0BhSzGnPo",
+     "s": null
+    },
+    {
+     "n": "3.1",
+     "t": "Tutorial on for loop and difference between while loop and for loop",
+     "v": "7D2SFKSiiLg",
+     "s": null
+    },
+    {
+     "n": "3.11",
+     "t": "Nested for loops",
+     "v": "-4MRaWABCuo",
+     "s": null
+    },
+    {
+     "n": "3.12",
+     "t": "Tutorial on nested loops",
+     "v": "590mjTALkj0",
+     "s": null
+    },
+    {
+     "n": "3.13",
+     "t": "break, continue & pass",
+     "v": "SVAVQHfJbE0",
+     "s": null
+    },
+    {
+     "n": "3.14",
+     "t": "Conclusion",
+     "v": "DhjvmkGgw8U",
      "s": null
     }
    ]
@@ -111,9 +344,69 @@
    "w": "Week 4",
    "items": [
     {
-     "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "4.1",
+     "t": "Warmup with Lists",
+     "v": "toMhJJHSIYk",
+     "s": null
+    },
+    {
+     "n": "4.2",
+     "t": "Lists and Sets",
+     "v": "WQNxG2B85rc",
+     "s": null
+    },
+    {
+     "n": "4.3",
+     "t": "Tuples",
+     "v": "z-n9yQaWr7o",
+     "s": null
+    },
+    {
+     "n": "4.4",
+     "t": "More on lists",
+     "v": "aaaENpVGS5U",
+     "s": null
+    },
+    {
+     "n": "4.5",
+     "t": "More on sets",
+     "v": "qoV4tdDD8zE",
+     "s": null
+    },
+    {
+     "n": "4.6",
+     "t": "More on tuples",
+     "v": "V7r6DB3a6_o",
+     "s": null
+    },
+    {
+     "n": "4.7",
+     "t": "List Comprehensions",
+     "v": "MNe03MfOLto",
+     "s": null
+    },
+    {
+     "n": "4.8",
+     "t": "Introduction to Functions",
+     "v": "zDZRfWWetg0",
+     "s": null
+    },
+    {
+     "n": "4.9",
+     "t": "More Examples of Functions",
+     "v": "TBFTFusLIco",
+     "s": null
+    },
+    {
+     "n": "4.1",
+     "t": "Types of Function Arguments",
+     "v": "NqjnCY2qQWU",
+     "s": null
+    },
+    {
+     "n": "4.11",
+     "t": "Types of Functions",
+     "v": "F9xeVMToUJ8",
      "s": null
     }
    ]
@@ -122,9 +415,63 @@
    "w": "Week 5",
    "items": [
     {
-     "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "5.1",
+     "t": "Dictionaries",
+     "v": "X8Nj5cxaP9E",
+     "s": null
+    },
+    {
+     "n": "5.2",
+     "t": "More on Dictionaries",
+     "v": "gTpPI3SMnAA",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "Sorting using Functions",
+     "v": "8MQBieBCRFA",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Matrix multiplication - 1",
+     "v": "seYP1F6Ct2g",
+     "s": null
+    },
+    {
+     "n": "5.5",
+     "t": "Matrix multiplication - 2",
+     "v": "mtRRS_ssl3s",
+     "s": null
+    },
+    {
+     "n": "5.6",
+     "t": "Matrix Multiplication using Functions",
+     "v": "HJetH-CCOGY",
+     "s": null
+    },
+    {
+     "n": "5.7",
+     "t": "Scope of variables",
+     "v": "4q5rGHfR-ic",
+     "s": null
+    },
+    {
+     "n": "5.8",
+     "t": "Tutorial on functions",
+     "v": "mkAbfQM2OJY",
+     "s": null
+    },
+    {
+     "n": "5.9",
+     "t": "Iterators and generators",
+     "v": "29A7HhnzxPU",
+     "s": null
+    },
+    {
+     "n": "5.1",
+     "t": "lambda functions, enumerate, zip and map filter",
+     "v": "ueIignqReDY",
      "s": null
     }
    ]
@@ -155,9 +502,39 @@
    "w": "Week 8",
    "items": [
     {
-     "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "8.1",
+     "t": "Introduction to File Handling",
+     "v": "o5MBF0yo6lA",
+     "s": null
+    },
+    {
+     "n": "8.2",
+     "t": "Reading and Writing to a File",
+     "v": "rYLJaAdgLhI",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Big text file handling",
+     "v": "9eOxi7smTKg",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Very big files - a tip",
+     "v": "NwFpo_KGvOA",
+     "s": null
+    },
+    {
+     "n": "8.5",
+     "t": "Caesar Cipher",
+     "v": "MkqFvnC2naE",
+     "s": null
+    },
+    {
+     "n": "8.60000000000001",
+     "t": "File handling, Genetic Sequences",
+     "v": "df8FxNd27Dg",
      "s": null
     }
    ]
@@ -166,9 +543,63 @@
    "w": "Week 9",
    "items": [
     {
-     "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "9.1",
+     "t": "Introduction to the week and introduction to recursion",
+     "v": "SGCy1yBLbsg",
+     "s": null
+    },
+    {
+     "n": "9.2",
+     "t": "Theoretical Introduction to Recursion",
+     "v": "htu4ZCW7hzA",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Recursion - An Illustration",
+     "v": "PAUlGa9wAxA",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "Recursion: a simple question",
+     "v": "wkglgM6uUmI",
+     "s": null
+    },
+    {
+     "n": "9.5",
+     "t": "Recursion: find 0 in a list",
+     "v": "eNARY_uyLqo",
+     "s": null
+    },
+    {
+     "n": "9.60000000000001",
+     "t": "Sorting Recursively",
+     "v": "vRajQuHdlBE",
+     "s": null
+    },
+    {
+     "n": "9.70000000000001",
+     "t": "Introduction to Binary Search",
+     "v": "WEJt1L7YTpM",
+     "s": null
+    },
+    {
+     "n": "9.80000000000001",
+     "t": "Warm up for Binary Search",
+     "v": "Bb7oymEgX_I",
+     "s": null
+    },
+    {
+     "n": "9.90000000000001",
+     "t": "Binary Search Implementation",
+     "v": "1l83L1ZKF5k",
+     "s": null
+    },
+    {
+     "n": "9.1",
+     "t": "Binary Search Recursion Way",
+     "v": "v_WYTBhHONo",
      "s": null
     }
    ]
@@ -177,9 +608,33 @@
    "w": "Week 10",
    "items": [
     {
-     "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "10.1",
+     "t": "Exception handling",
+     "v": "me3_XR7Iz60",
+     "s": null
+    },
+    {
+     "n": "10.2",
+     "t": "Introduction to Object Oriented Programming",
+     "v": "X1mOrCwZUgQ",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Classes and Objects",
+     "v": "ZPtRsQrZLcE",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Attributes and Methods",
+     "v": "n_jPQlWhGhM",
+     "s": null
+    },
+    {
+     "n": "10.5",
+     "t": "Inheritance and Method Overriding",
+     "v": "RrFvcDjJptY",
      "s": null
     }
    ]
@@ -188,9 +643,27 @@
    "w": "Week 11",
    "items": [
     {
-     "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "11.1",
+     "t": "Introduction to Numpy library",
+     "v": "O0IrNk1qoUE",
+     "s": null
+    },
+    {
+     "n": "11.2",
+     "t": "Why pandas",
+     "v": "HCxhHo8tV4U",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Pandas Series, DataFrame and more",
+     "v": "aPjiMs7CR7s",
+     "s": null
+    },
+    {
+     "n": "11.4",
+     "t": "Introduction to Matplotlib library",
+     "v": "hk6NsCfvftY",
      "s": null
     }
    ]
@@ -199,9 +672,9 @@
    "w": "Week 12",
    "items": [
     {
-     "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "12.1",
+     "t": "Course Summary",
+     "v": "XYDiGqzVKyo",
      "s": null
     }
    ]

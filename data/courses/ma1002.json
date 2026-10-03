@@ -75,12 +75,71 @@
  },
  "weeks_data": [
   {
+   "w": "Week 0",
+   "items": [
+    {
+     "n": "0.1",
+     "t": "Statistics for Data Science 1 - Introduction",
+     "v": "V5fqShLVpoI",
+     "s": null
+    },
+    {
+     "n": "0.2",
+     "t": "Course Overview",
+     "v": "8p9ZcNwqG58",
+     "s": null
+    }
+   ]
+  },
+  {
    "w": "Week 1",
    "items": [
     {
-     "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "1.1",
+     "t": "Introduction and types of Data - Basic definitions",
+     "v": "0w2rKt-G6ws",
+     "s": null
+    },
+    {
+     "n": "1.2",
+     "t": "Introduction and types of Data - Understanding data",
+     "v": "PXYtFNTVeVY",
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "Introduction and types of Data - Classification of data",
+     "v": "6w71IUzKz2o",
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "Introduction and types of Data - Scales of measurement",
+     "v": "EVGVlzMuhIo",
+     "s": null
+    },
+    {
+     "n": "Tutorial 1.1",
+     "t": "Google Spreadhsheet Introduction",
+     "v": "d8s_xA2Cg3w",
+     "s": null
+    },
+    {
+     "n": "Tutorial 1.2",
+     "t": "Formatting Google Spreadsheets",
+     "v": "wQYU9f1OvPw",
+     "s": null
+    },
+    {
+     "n": "Tutorial 1.3",
+     "t": "Spreadsheet Formulae",
+     "v": "MQ5DgZo97Pg",
+     "s": null
+    },
+    {
+     "n": "Tutorial 1.4",
+     "t": "Downloading and Uploading Spreadsheets",
+     "v": "shwymxnbcqM",
      "s": null
     }
    ]
@@ -89,9 +148,57 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "2.1",
+     "t": "Describing Categorical Data - Frequency distributions",
+     "v": "0-PO41B6zL0",
+     "s": null
+    },
+    {
+     "n": "2.2",
+     "t": "Describing Categorical Data - Charts of categorical data",
+     "v": "OFDJTgEKLbE",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Describing Categorical Data - Best practices while graphing data 1",
+     "v": "Peh-G_M6Two",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "Describing Categorical Data - Best practices while graphing data 2",
+     "v": "4MwZ2_iTkoo",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Describing Categorical Data - Mode and Median",
+     "v": "5Z8mhCgGkcE",
+     "s": null
+    },
+    {
+     "n": "Tutorial 2.1",
+     "t": "Week 2 Tutorial 1 - Problems Charts and Tables",
+     "v": "2-o31mFX8ps",
+     "s": null
+    },
+    {
+     "n": "Tutorial 2.2",
+     "t": "Week 2 Tutorial 2 - Problems Misleading Graphs",
+     "v": "mQf9-ZBy2Fw",
+     "s": null
+    },
+    {
+     "n": "Tutorial 2.3",
+     "t": "Week 2 Tutorial 3 - SUMIF in Google Sheets",
+     "v": "e2b9YpsHu_I",
+     "s": null
+    },
+    {
+     "n": "Tutorial 2.4",
+     "t": "Week 2 Tutorial 4 - VLOOKUP in Google Sheets",
+     "v": "_oiLk-rXZuY",
      "s": null
     }
    ]
@@ -100,9 +207,93 @@
    "w": "Week 3",
    "items": [
     {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "3.1",
+     "t": "Describing Numerical Data - Frequency Tables for numerical data",
+     "v": "wifCmIPaBqQ",
+     "s": null
+    },
+    {
+     "n": "3.2",
+     "t": "Describing Numerical Data - Mean",
+     "v": "mT8jZkG9HjM",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "Describing Numerical Data - Median and Mode",
+     "v": "2qTdQjFGA94",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "Describing Numerical Data - Measures of dispersion- Range, variance and standard deviation",
+     "v": "Ju8cRGDTxsQ",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Describing Numerical Data - Percentiles, Quartiles, and Interquartile range",
+     "v": "3pjSpNbas14",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.1",
+     "t": "Week 3 Tutorial 1",
+     "v": "PkKWQOOzLms",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.2",
+     "t": "Week 3 Tutorial 2",
+     "v": "9fG6iTtoyLU",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.3",
+     "t": "Week 3 Tutorial 3",
+     "v": "Ip5CueTv2tw",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.4",
+     "t": "Week 3 Tutorial 4",
+     "v": "QMei8SUVSAY",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.5",
+     "t": "Week 3 Tutorial 5",
+     "v": "DHzlNhbt1bY",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.6",
+     "t": "Week 3 Tutorial 6",
+     "v": "JZFDkZ5d4p4",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.7",
+     "t": "Week 3 Tutorial 7",
+     "v": "fxkZW_yWE1I",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.8",
+     "t": "Week 3 Outliers Tutorial",
+     "v": "jh7Mkw3XD5I",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.9",
+     "t": "Box Plot Tutorial",
+     "v": "-zYnDBac0UY",
+     "s": null
+    },
+    {
+     "n": "Tutorial 3.10",
+     "t": "Week 3 Percentiles and Quartiles Tutorial",
+     "v": "NZ3nQtc9gQo",
      "s": null
     }
    ]
@@ -111,8 +302,86 @@
    "w": "Week 4",
    "items": [
     {
-     "n": "4",
-     "t": "No lecture linked yet",
+     "n": "4.1",
+     "t": "Association between two variables - Review of course",
+     "v": "XNPfcrDA75Y",
+     "s": null
+    },
+    {
+     "n": "4.2",
+     "t": "Association between two categorical variables - Introduction",
+     "v": "iG9ATr_t_ZE",
+     "s": null
+    },
+    {
+     "n": "4.3",
+     "t": "Association between two categorical variables - Relative frequencies",
+     "v": "hVC1JYKyusw",
+     "s": null
+    },
+    {
+     "n": "4.4",
+     "t": "Association between two numerical variables - Scatterplot",
+     "v": "38019YAFyN8",
+     "s": null
+    },
+    {
+     "n": "4.5",
+     "t": "Association between two numerical variables - Describing association",
+     "v": "mueMrzFnM2Y",
+     "s": null
+    },
+    {
+     "n": "4.6",
+     "t": "Association between two numerical variables - Covariance",
+     "v": "0UcFJnqx6S0",
+     "s": null
+    },
+    {
+     "n": "4.7",
+     "t": "Association between two numerical variables - Correlation",
+     "v": "v0CaodTv8zw",
+     "s": null
+    },
+    {
+     "n": "4.8",
+     "t": "Association between two numerical variables - Fitting a line",
+     "v": "1-9_vRZV-ck",
+     "s": null
+    },
+    {
+     "n": "4.9",
+     "t": "Association between categorical and numerical variables",
+     "v": "0q40C-Qu5TE",
+     "s": null
+    },
+    {
+     "n": "Tutorial 4.1",
+     "t": "Week 4 Tutorial 1",
+     "v": "xvV7gJtel2Y",
+     "s": null
+    },
+    {
+     "n": "Tutorial 4.2",
+     "t": "Week 4 Tutorial 2",
+     "v": "DMMlyOqGoIE",
+     "s": null
+    },
+    {
+     "n": "Tutorial 4.3",
+     "t": "Week 4 Tutorial 3",
+     "v": "_WqOOAjHgGI",
+     "s": null
+    },
+    {
+     "n": "Tutorial 4.4",
+     "t": "Week 4 Tutorial 4",
+     "v": "3emHGA7-YMk",
+     "s": null
+    },
+    {
+     "n": "Tutorial 4.5",
+     "t": "Instructions related to Bonus Practice Assignment",
      "v": null,
      "s": null
     }
@@ -122,9 +391,75 @@
    "w": "Week 5",
    "items": [
     {
-     "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "5.1",
+     "t": "Permutations and Combinations - Basic Principles of counting",
+     "v": "TeARzjZMra0",
+     "s": null
+    },
+    {
+     "n": "5.2",
+     "t": "Permutations and Combinations - Factorials",
+     "v": "kV1nGXR7c0I",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "Permutations and Combinations - Permutations: Distinct objects",
+     "v": "7qSuq3jUxwY",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Permutations and Combinations - Permutations : Objects not distinct and Circular Permutations",
+     "v": "Zrhz44TVc14",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.1",
+     "t": "Week 5 Tutorial 1",
+     "v": "gMU9ml4l_pg",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.2",
+     "t": "Week 5 Tutorial 2",
+     "v": "2JV3S-UVOZQ",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.3",
+     "t": "Week 5 Tutorial 3",
+     "v": "DOqj8hN2P2s",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.4",
+     "t": "Week 5 Tutorial 4",
+     "v": "TEteUivKcxs",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.5",
+     "t": "Week 5 Tutorial 5",
+     "v": "Mx6jYJqmylE",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.6",
+     "t": "Week 5 Tutorial 6",
+     "v": "UTGrJyjpBkE",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.7",
+     "t": "Week 5 Tutorial 7",
+     "v": "x2vaL8lFxXc",
+     "s": null
+    },
+    {
+     "n": "Tutorial 5.8",
+     "t": "Week 5 Tutorial 8",
+     "v": "HOcNHrQAA_4",
      "s": null
     }
    ]
@@ -133,9 +468,57 @@
    "w": "Week 6",
    "items": [
     {
-     "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "6.1",
+     "t": "Permutations and Combinations - Combinations",
+     "v": "s-cKQV5UwTU",
+     "s": null
+    },
+    {
+     "n": "6.2",
+     "t": "Permutations and Combinations - Applications",
+     "v": "aE9yBQ9BWhQ",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.1",
+     "t": "Week 6 Tutorial 1",
+     "v": "SAYBziO5vUQ",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.2",
+     "t": "Week 6 Tutorial 2",
+     "v": "dXcnl4GpnQA",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.3",
+     "t": "Week 6 Tutorial 3",
+     "v": "qLsXs2aApbw",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.4",
+     "t": "Week 6 Tutorial 4",
+     "v": "SKn3mX5itEQ",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.5",
+     "t": "Week 6 Tutorial 5",
+     "v": "SKfadfhtacY",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.6",
+     "t": "Week 6 Tutorial 6",
+     "v": "q33eLiebIdk",
+     "s": null
+    },
+    {
+     "n": "Tutorial 6.7",
+     "t": "Week 6 Tutorial 7",
+     "v": "o6K-NL6yLZo",
      "s": null
     }
    ]
@@ -144,9 +527,81 @@
    "w": "Week 7",
    "items": [
     {
-     "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "7.1",
+     "t": "Probability - Basic Definitions",
+     "v": "M7Hm0WZc_rg",
+     "s": null
+    },
+    {
+     "n": "7.2",
+     "t": "Probability - Events",
+     "v": "0HVKA4sC8RY",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Probability - Venn diagrams",
+     "v": "D5V65RPShGs",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "Probability - Properties of probability",
+     "v": "icyqTwNB_lg",
+     "s": null
+    },
+    {
+     "n": "7.5",
+     "t": "Probability - Applications",
+     "v": "SEBOhkhLMEk",
+     "s": null
+    },
+    {
+     "n": "7.6",
+     "t": "Probability - Equally likely outcomes",
+     "v": "FqHXTluwFMg",
+     "s": null
+    },
+    {
+     "n": "Tutorial 7.1",
+     "t": "Week 7 Tutorial 1",
+     "v": "obAzL_J3qDI",
+     "s": null
+    },
+    {
+     "n": "Tutorial 7.2",
+     "t": "Week 7 Tutorial 2",
+     "v": "QyFvfAo0aic",
+     "s": null
+    },
+    {
+     "n": "Tutorial 7.3",
+     "t": "Week 7 Tutorial 3",
+     "v": "gqrgpS0vdDE",
+     "s": null
+    },
+    {
+     "n": "Tutorial 7.4",
+     "t": "Week 7 Tutorial 4",
+     "v": "90Spk_ZgECM",
+     "s": null
+    },
+    {
+     "n": "Tutorial 7.5",
+     "t": "Week 7 Tutorial 5",
+     "v": "9qeYN7pgpi0",
+     "s": null
+    },
+    {
+     "n": "Tutorial 7.6",
+     "t": "Week 7 Tutorial 6",
+     "v": "gITH5sTR0E8",
+     "s": null
+    },
+    {
+     "n": "Tutorial 7.7",
+     "t": "Week 7 Tutorial 7",
+     "v": "JFBjNqOUXTo",
      "s": null
     }
    ]
@@ -155,9 +610,81 @@
    "w": "Week 8",
    "items": [
     {
-     "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "8.1",
+     "t": "Conditional Probability - Contingency tables",
+     "v": "JTX1FFKhjVQ",
+     "s": null
+    },
+    {
+     "n": "8.2",
+     "t": "Conditional Probability - Conditional probability formula",
+     "v": "cuA7R64v7MI",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Conditional Probability - Multiplication rule",
+     "v": "0T-tLoKevQE",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Conditional Probability - Independent events",
+     "v": "PO7Jam90Wmc",
+     "s": null
+    },
+    {
+     "n": "8.5",
+     "t": "Conditional Probability - Independent events: examples",
+     "v": "dom7Zzn58pU",
+     "s": null
+    },
+    {
+     "n": "8.60000000000001",
+     "t": "Conditional Probability - Independent events: properties",
+     "v": "f0V1eq6Sycw",
+     "s": null
+    },
+    {
+     "n": "8.70000000000001",
+     "t": "Conditional Probability - Bayes' rule",
+     "v": "lCD3TLBvq5k",
+     "s": null
+    },
+    {
+     "n": "Tutorial 8.1",
+     "t": "Week 8 Tutorial 1",
+     "v": "jyAVltNg3kk",
+     "s": null
+    },
+    {
+     "n": "Tutorial 8.2",
+     "t": "Week 8 Tutorial 2",
+     "v": "VmqYMFz4-BI",
+     "s": null
+    },
+    {
+     "n": "Tutorial 8.3",
+     "t": "Week 8 Tutorial 3",
+     "v": "v0ziVxBIfmo",
+     "s": null
+    },
+    {
+     "n": "Tutorial 8.4",
+     "t": "Week 8 Tutorial 4",
+     "v": "KsUPsW7lCos",
+     "s": null
+    },
+    {
+     "n": "Tutorial 8.5",
+     "t": "Week 8 Tutorial 5",
+     "v": "z5pOT7rGr5E",
+     "s": null
+    },
+    {
+     "n": "Tutorial 8.6",
+     "t": "Week 8 Tutorial 6",
+     "v": "tqOcaS7Wd2c",
      "s": null
     }
    ]
@@ -166,9 +693,81 @@
    "w": "Week 9",
    "items": [
     {
-     "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "9.1",
+     "t": "Random variables - Introduction",
+     "v": "a-eiVwv_zfo",
+     "s": null
+    },
+    {
+     "n": "9.2",
+     "t": "Random variables - Application",
+     "v": "zRTHJBoag8E",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Random variables - Discrete and continuous random variable",
+     "v": "6EPAFA3orpA",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "Discrete random variables - Probability mass function - properties",
+     "v": "MGCD1KTWW3w",
+     "s": null
+    },
+    {
+     "n": "9.5",
+     "t": "Discrete random variables - Graph of probability mass function",
+     "v": "_4YQEV02Xek",
+     "s": null
+    },
+    {
+     "n": "9.60000000000001",
+     "t": "Discrete random variables - Cumulative distribution function",
+     "v": "59sIZrAH5OQ",
+     "s": null
+    },
+    {
+     "n": "9.7",
+     "t": "Week 9 - Infinite Series Tutorial",
+     "v": "uI7w3qdmXhw",
+     "s": null
+    },
+    {
+     "n": "Tutorial 9.1",
+     "t": "Week 9 Tutorial 1",
+     "v": "5sZQHXIteX8",
+     "s": null
+    },
+    {
+     "n": "Tutorial 9.2",
+     "t": "Week 9 Tutorial 2",
+     "v": "wUkb9XYwnus",
+     "s": null
+    },
+    {
+     "n": "Tutorial 9.3",
+     "t": "Week 9 Tutorial 3",
+     "v": "BOW661jj5gg",
+     "s": null
+    },
+    {
+     "n": "Tutorial 9.4",
+     "t": "Week 9 Tutorial 4",
+     "v": "ahz8CobJNbs",
+     "s": null
+    },
+    {
+     "n": "Tutorial 9.5",
+     "t": "Week 9 Tutorial 5",
+     "v": "TXYOrXO_zl8",
+     "s": null
+    },
+    {
+     "n": "Tutorial 9.6",
+     "t": "Week 9 Tutorial 6",
+     "v": "GljWfd-_Yeg",
      "s": null
     }
    ]
@@ -177,9 +776,39 @@
    "w": "Week 10",
    "items": [
     {
-     "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "10.1",
+     "t": "Discrete random variable - Application",
+     "v": "sI5-vTADoEI",
+     "s": null
+    },
+    {
+     "n": "10.2",
+     "t": "Expectation of a random variable",
+     "v": "NEgNVzox418",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Expectation of a random variable - Properties of expectation",
+     "v": "aMp4Xd69V4Y",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Variance of a random variable",
+     "v": "KOBa-Y9pKD8",
+     "s": null
+    },
+    {
+     "n": "10.5",
+     "t": "Variance of a random variable - Properties of variance",
+     "v": "Enn_PXCXvPU",
+     "s": null
+    },
+    {
+     "n": "10.6",
+     "t": "Standard deviation of a random variable",
+     "v": "RGQX-9W3a-M",
      "s": null
     }
    ]
@@ -188,9 +817,87 @@
    "w": "Week 11",
    "items": [
     {
-     "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "11.1",
+     "t": "Binomial distribution - Bernoulli distribution",
+     "v": "HRQHVuQkKGE",
+     "s": null
+    },
+    {
+     "n": "11.2",
+     "t": "Binomial distribution - IID Bernoulli trials",
+     "v": "NbcbU0TNSXA",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Binomial distribution - Distribution of Binomial random variable",
+     "v": "BjepdIsKBNI",
+     "s": null
+    },
+    {
+     "n": "11.4",
+     "t": "Binomial distribution - Modeling situations as Binomial distribution",
+     "v": "GZnEJACn1qE",
+     "s": null
+    },
+    {
+     "n": "11.5",
+     "t": "Binomial distribution - Expectation and variance of Binomial random variable",
+     "v": "C5NmXX3nL3I",
+     "s": null
+    },
+    {
+     "n": "11.6",
+     "t": "Hypergeometric Distribution - Distribution of Hypergeometric random variable",
+     "v": "UGTo0FnpWJ4",
+     "s": null
+    },
+    {
+     "n": "11.7",
+     "t": "Hypergeometric Distribution - Expectation and variance of Hypergeometric random variable",
+     "v": "rlVeqdA2uuU",
+     "s": null
+    },
+    {
+     "n": "11.8",
+     "t": "Poisson Distribution - Distribution of Poisson random variable",
+     "v": "7h3oadAkMfM",
+     "s": null
+    },
+    {
+     "n": "11.9",
+     "t": "Poisson Distribution - Expectation and variance of Poisson random variable",
+     "v": "KDJApSbh60A",
+     "s": null
+    },
+    {
+     "n": "Tutorial 11.1",
+     "t": "Week 11 Tutorial 1",
+     "v": "gYJzbSviGrM",
+     "s": null
+    },
+    {
+     "n": "Tutorial 11.2",
+     "t": "Week 11 Tutorial 2",
+     "v": "A3SqkmSF7Sk",
+     "s": null
+    },
+    {
+     "n": "Tutorial 11.3",
+     "t": "Week 11 Tutorial 3",
+     "v": "jD_Jasc-E04",
+     "s": null
+    },
+    {
+     "n": "Tutorial 11.4",
+     "t": "Week 11 Tutorial 4",
+     "v": "Dpmp-q3ObqU",
+     "s": null
+    },
+    {
+     "n": "Tutorial 11.5",
+     "t": "Week 11 Tutorial 5",
+     "v": "aEvKgWhAJaU",
      "s": null
     }
    ]
@@ -199,9 +906,57 @@
    "w": "Week 12",
    "items": [
     {
-     "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "12.1",
+     "t": "Continuous random variable - Introduction",
+     "v": "N35qLEQmJ8E",
+     "s": null
+    },
+    {
+     "n": "12.1A",
+     "t": "Continuous random variable - Uniform distribution",
+     "v": "kU_SOfgoIJw",
+     "s": null
+    },
+    {
+     "n": "12.2",
+     "t": "Continuous random variable - Uniform distribution: applications",
+     "v": "tjfwTCJd8qI",
+     "s": null
+    },
+    {
+     "n": "12.3",
+     "t": "Continuous random variable - Non uniform and triangular distribution",
+     "v": "PB1OZmo2_p4",
+     "s": null
+    },
+    {
+     "n": "12.4",
+     "t": "Continuous random variable - Exponential distribution",
+     "v": "TTVToWdBpYY",
+     "s": null
+    },
+    {
+     "n": "12.5",
+     "t": "Normal Distribution",
+     "v": "hcpkttOzJcY",
+     "s": null
+    },
+    {
+     "n": "12.6",
+     "t": "Standard Normal Distribution",
+     "v": "McVpplUs9po",
+     "s": null
+    },
+    {
+     "n": "12.7",
+     "t": "Standardizing a normal random variable",
+     "v": "bTl41LFAV28",
+     "s": null
+    },
+    {
+     "n": "Additional Lecture",
+     "t": "Additive Property and percentiles",
+     "v": "Z-puz21XKAA",
      "s": null
     }
    ]
