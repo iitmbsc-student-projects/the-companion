@@ -141,8 +141,12 @@
   table.papers a{margin-right:14px}
   table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
 
-  .video{position:relative;padding-top:56.25%;background:#111;overflow:hidden;
-    border:1px solid var(--rule);max-width:1000px}
+  /* 16:9 box that never grows taller than the screen: width is capped by the content width,
+     by 1000px, and by what fits in the viewport height with the title and links below it.
+     (The old padding-top trick took its % from the container, not the video, so it went too
+     tall once the content area was wider than 1000px, e.g. with the sidebar collapsed.) */
+  .video{position:relative;width:min(100%,1000px,calc((100vh - 230px)*16/9));min-width:min(100%,360px);
+    aspect-ratio:16/9;background:#111;overflow:hidden;border:1px solid var(--rule)}
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .link-list{margin:0;padding:0;list-style:none}
   .link-list li{padding:6px 0;font-size:15px}
