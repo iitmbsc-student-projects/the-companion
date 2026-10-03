@@ -142,11 +142,62 @@ def write_index(html):
     open(INDEX_PATH, "w", encoding="utf-8").write(html)
 
 
+# ---------------------------------------------------------------------------
+# Important links tab on index.html. Content lives in data/links.json; the HTML
+# between the LINKS markers in index.html is rebuilt from it.
+
+LINKS_PATH = os.path.join(os.path.dirname(DATA_DIR), "links.json")
+
+
+def _esc(t):
+    return (str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace('"', "&quot;"))
+
+
+def render_links(data):
+    out = []
+    if data.get("intro"):
+        out.append(f'      <p class="links-intro">{_esc(data["intro"])}</p>')
+    for g in data["groups"]:
+        out.append(f'      <div class="link-group" id="links-{_esc(g["id"])}">')
+        out.append(f'        <div class="level-subhead">{_esc(g["title"])}</div>')
+        out.append('        <ul class="links-list">')
+        for it in g["items"]:
+            anchors = ", ".join(
+                f'<a href="{_esc(l["url"])}" target="_blank" rel="noopener">{_esc(l["label"])}</a>'
+                for l in it["links"])
+            first = it["links"][0]
+            if len(it["links"]) == 1:
+                title = f'<a href="{_esc(first["url"])}" target="_blank" rel="noopener">{_esc(it["title"])}</a>'
+                right = ""
+            else:
+                title = _esc(it["title"])
+                right = f'<span class="lk-more">{anchors}</span>'
+            out.append(f'          <li><span class="lk-title">{title}</span>'
+                       f'<span class="lk-desc">{_esc(it["desc"])}</span>{right}</li>')
+        out.append('        </ul>')
+        out.append('      </div>')
+    return "\n".join(out)
+
+
+def generate_links():
+    data = json.load(open(LINKS_PATH, encoding="utf-8"))
+    html = read_index()
+    pat = re.compile(r'<!-- LINKS:START -->.*?<!-- LINKS:END -->', re.S)
+    if not pat.search(html):
+        raise ValueError("LINKS markers not found in index.html")
+    block = "<!-- LINKS:START -->\n" + render_links(data) + "\n      <!-- LINKS:END -->"
+    html = pat.sub(lambda m: block, html, count=1)
+    write_index(html)
+    return INDEX_PATH
+
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_course(stem))
+            print(generate_links() if stem == "links" else generate_course(stem))
     else:
         paths = generate_all()
         print(f"generated {len(paths)} pages into {COURSES_DIR}")
+        generate_links()

@@ -1,0 +1,511 @@
+{
+ "intro": "The links students come back to most, collected from the community's resource thread. If one has stopped working or something important is missing, tell us on the Discourse thread or open an issue on GitHub.",
+ "groups": [
+  {
+   "id": "official",
+   "title": "Official, start here",
+   "items": [
+    {
+     "title": "Official BS website",
+     "desc": "The degree's main website on the IITM study portal.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://study.iitm.ac.in/ds/"
+      }
+     ]
+    },
+    {
+     "title": "Student handbook",
+     "desc": "Everything about the degree in detail. Read it once fully.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://tiny.cc/IITM-SH"
+      }
+     ]
+    },
+    {
+     "title": "Grading document",
+     "desc": "How grades are calculated, who is eligible, and the rules for every course.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://tiny.cc/IITM-GD"
+      }
+     ]
+    },
+    {
+     "title": "Academic calendar",
+     "desc": "Quiz, end term and OPPE dates for the current term.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://study.iitm.ac.in/ds/academic_calendar.html"
+      }
+     ]
+    },
+    {
+     "title": "Scheduled online exam links",
+     "desc": "Links for the online proctored programming exams (OPPE).",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://study.iitm.ac.in/ds/exam.html"
+      }
+     ]
+    },
+    {
+     "title": "Student dashboard",
+     "desc": "Official dashboard with your courses, documents and updates.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://ds.study.iitm.ac.in/auth/login"
+      }
+     ]
+    },
+    {
+     "title": "Support tickets",
+     "desc": "Raise a query or concern with student support.",
+     "links": [
+      {
+       "label": "Support desk",
+       "url": "https://study-supportdesk.freshdesk.com/"
+      },
+      {
+       "label": "How to raise a ticket",
+       "url": "https://docs.google.com/document/d/e/2PACX-1vS7Vl-jl7usTsyXDES33uwCa57mD3fV031wb0KUVOkl3LxeNIcnGxRp_KSI09WLHtqD2zT1pnxEMYrZ/pub"
+      }
+     ]
+    },
+    {
+     "title": "Data Studio",
+     "desc": "Your class rank, credits earned and other live details.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://datastudio.google.com/s/k3kRC9kDo54"
+      }
+     ]
+    },
+    {
+     "title": "Document archive",
+     "desc": "Official documents such as medium of instruction and fee structure.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://study.iitm.ac.in/ds/archive.html"
+      }
+     ]
+    },
+    {
+     "title": "Official documents",
+     "desc": "How to apply for a bonafide certificate, NOC, transcript, WES report and similar documents.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/u/1/d/e/2PACX-1vQnn2cFan5BqTTAByCoqtue-0XSmFXQPT91bADDL_i33tHMh8C0ZJepvFBwze4E5zJbGiBMdQa59VeT/pub"
+      }
+     ]
+    },
+    {
+     "title": "Discourse forum",
+     "desc": "The official place to post academic queries.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/"
+      }
+     ]
+    },
+    {
+     "title": "Official WhatsApp bot",
+     "desc": "Important updates from IITM BS on WhatsApp.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://wa.me/message/IVROM2UN7XIJL1"
+      }
+     ]
+    },
+    {
+     "title": "Student activities portal",
+     "desc": "Official portal for student activities.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://iitmbs.org/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rules",
+   "title": "Rules and malpractice",
+   "items": [
+    {
+     "title": "Academic malpractices",
+     "desc": "What counts as academic malpractice. Must read.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/d/e/2PACX-1vTt6ndMAI1-Y7Okm3HXmv0OFhFliUJPzkrUkQuX4InovMYewy_CWmFzmE4mUOAl_TjWlSrZNYWUOnG7/pub"
+      }
+     ]
+    },
+    {
+     "title": "Non-academic malpractices",
+     "desc": "What counts as non-academic malpractice. Must read.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/d/e/2PACX-1vS3kG688sVzBil9uEFa9mXrnpuMAqE0LU1FpH1-TMDCHZF0XjC1265GmhVePdYvrc0_5qyq8OXwIZUb/pub"
+      }
+     ]
+    },
+    {
+     "title": "Measuring conceptual clarity and understanding",
+     "desc": "A widely recommended Discourse post on how to learn and check your understanding.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/measuring-conceptual-clarity-and-understanding/85980/16"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "courses",
+   "title": "Courses and credits",
+   "items": [
+    {
+     "title": "Course syllabus",
+     "desc": "Week-wise syllabus for every course in the degree.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/u/1/d/e/2PACX-1vSWW4TMd2ujKYOeSay5iCIyTGLtJgM1KWC-Ernu_JdhugLtB0dXV9i966Z-ZaPZ9qAAI1_QtWa3o3br/pub#h.64f8davxbp1d"
+      }
+     ]
+    },
+    {
+     "title": "Course calendars",
+     "desc": "Add each course's calendar to stay on top of the term.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/course-tip-stay-on-top-of-your-term-with-calendar/44947"
+      }
+     ]
+    },
+    {
+     "title": "Course YouTube channels",
+     "desc": "Each course's channel, with recordings of past live sessions.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/course-yt-channel-list-data-science-and-applications/115619"
+      }
+     ]
+    },
+    {
+     "title": "Course playlists",
+     "desc": "Lecture playlists for all courses.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/iitm-bs-course-playlist-youtube/101319"
+      }
+     ]
+    },
+    {
+     "title": "Apprenticeship programme",
+     "desc": "Apprenticeship can count for up to 12 credits at the degree level.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/u/1/d/e/2PACX-1vQ_ZCTw1_PzVDBJ7u-wX18KUgl-IK1POIYRvyjAYsj_A-tS99K7ARRuNVKk0tp34B1woqclNxvY_0Lc/pub"
+      }
+     ]
+    },
+    {
+     "title": "NPTEL credit transfer: electives",
+     "desc": "Eligible NPTEL courses for department and free electives at the BSc level.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSJXV0JECyoQvgWvBlVxO13G0KRm5a1qNCRBa7rAw8GDY4e0cfm1KiVCwIgs_ed80ObtzQ1rfx_JWIR/pubhtml?gid=399341609&single=true"
+      }
+     ]
+    },
+    {
+     "title": "NPTEL credit transfer: HS / MG",
+     "desc": "Eligible NPTEL courses for the HS/MG category, up to 4 credits at the BS level.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSJXV0JECyoQvgWvBlVxO13G0KRm5a1qNCRBa7rAw8GDY4e0cfm1KiVCwIgs_ed80ObtzQ1rfx_JWIR/pubhtml?gid=1418834182&single=true"
+      }
+     ]
+    },
+    {
+     "title": "MTech upgrade",
+     "desc": "Policy for upgrading the BS degree to the MTech in AI and ML, and the PG Diploma exit option.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/u/1/d/e/2PACX-1vRrtiiHlurfHtFnJnDwtNZ0NHAci8PQ7pHsiX3V3SZKmbSmALDk4whCO5La6efs4MSmBLVTH2ZfGJNL/pub"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "student-made",
+   "title": "Made by students",
+   "items": [
+    {
+     "title": "IITM BS notes",
+     "desc": "Notes made by seniors and batch-mates.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://theopennotes.in/course/63fd9e3c553314fb9fc19524"
+      }
+     ]
+    },
+    {
+     "title": "AceGrade",
+     "desc": "Lectures, notes and past papers, plus a quiz evaluator that scores you against the answer key.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://acegrade.in/"
+      }
+     ]
+    },
+    {
+     "title": "QuizPractice",
+     "desc": "Attempt previous year papers in an exam-like format.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://quizpractice.space/"
+      }
+     ]
+    },
+    {
+     "title": "OPPE practice",
+     "desc": "Practise real OPPE questions and retry until they pass.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://oppe.rangalabs.cloud"
+      }
+     ]
+    },
+    {
+     "title": "Degree level PYQs",
+     "desc": "Previous year papers for degree level courses.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://ggl.link/getpyqs"
+      }
+     ]
+    },
+    {
+     "title": "Degree level revision sessions",
+     "desc": "Revision videos for several degree level courses.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://www.youtube.com/channel/UCw8-ZEkw9gVXEBw5P96kDjw"
+      }
+     ]
+    },
+    {
+     "title": "IITM BS Resource Hub",
+     "desc": "Community platform to share and find alternative learning resources.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://iitm-resources.vercel.app/"
+      }
+     ]
+    },
+    {
+     "title": "Foundation level notes",
+     "desc": "Notes for foundation courses with worked answers.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://notesbyshivam.blogspot.com/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "higher-studies",
+   "title": "Higher studies",
+   "items": [
+    {
+     "title": "GATE DA question bank",
+     "desc": "Practice questions for the GATE DA paper, made by IITM BS instructors.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://iitmbsc-student-projects.github.io/gate-da"
+      }
+     ]
+    },
+    {
+     "title": "GATE 2027",
+     "desc": "Official GATE 2027 website.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://gate2027.iitm.ac.in/"
+      }
+     ]
+    },
+    {
+     "title": "Eligibility for Master's",
+     "desc": "Which IITs accept the BS degree for Master's and PhD admission.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/update-list-of-top-iits-who-allow-not-allow-bs-4-year-as-eligibility-to-admission-in-masters-direct-phd/128569"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "placements",
+   "title": "Placements and internships",
+   "items": [
+    {
+     "title": "IITM BS placements portal",
+     "desc": "Placements and internships portal.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://placements.study.iitm.ac.in/"
+      }
+     ]
+    },
+    {
+     "title": "Placement policy",
+     "desc": "Official policy document for internships and placements.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/d/e/2PACX-1vRGX3FY8zu6F1QxjwBQjdFrb9DvxXWedfv1PHHAhgyXqkZ9D-EbGB4VuNSSv_NHpA/pub"
+      }
+     ]
+    },
+    {
+     "title": "Student guide",
+     "desc": "Official student guide to internships and placements.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/u/6/d/e/2PACX-1vRDVdDmrDy4To6HUQfpvDOP90wtl_7oD1tLf9HYaKE-plZ7K8-il-ribk51WaI1sWXGTlUvs3IjV150/pub"
+      }
+     ]
+    },
+    {
+     "title": "Activity points",
+     "desc": "Activities to complete to be eligible for placement support.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://docs.google.com/document/d/1wzhKEFjsz4m9b7Slhgfc-vDz4GszH3RplDxJpJ37Kqg"
+      }
+     ]
+    },
+    {
+     "title": "Resume templates",
+     "desc": "Resume templates from the placement cell.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://drive.google.com/drive/folders/1DOYyu4qJJM8OXR2pOv9WuXMVjYAkoHid?usp=drive_link"
+      }
+     ]
+    },
+    {
+     "title": "Fake internship providers",
+     "desc": "Check this list before applying anywhere.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/beware-of-fake-internship-providers/161512"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "community",
+   "title": "Community and perks",
+   "items": [
+    {
+     "title": "Student Discord (unofficial)",
+     "desc": "Student-run server for academic and general queries.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discord.gg/iitm-bs-students-762774569827565569"
+      }
+     ]
+    },
+    {
+     "title": "IITM BS societies",
+     "desc": "List of societies in the degree, with links.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://linktr.ee/iitmbs_societies"
+      }
+     ]
+    },
+    {
+     "title": "IITM BS GitHub organisation",
+     "desc": "The official GitHub organisation of IITM BS.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://github.com/bsc-iitm"
+      }
+     ]
+    },
+    {
+     "title": "GitHub Student Developer Pack",
+     "desc": "How to activate free GitHub Pro, Copilot and other student offers.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/github-student-and-github-copilot-for-students/103753"
+      }
+     ]
+    },
+    {
+     "title": "Student benefits list",
+     "desc": "Offers available with your student email.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/offers-based-on-student-email-id-master-list/159154"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
