@@ -78,6 +78,21 @@
   .main-content{margin-left:300px;padding:40px 56px 60px}
   @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
 
+  /* ---- collapsible sidebar: body.sidebar-collapsed slides the sidebar off-screen and lets the
+     content take the full width. The toggle button is fixed so it is always reachable. ---- */
+  .sidebar{transition:transform .22s ease}
+  .main-content,footer.colophon{transition:margin-left .22s ease}
+  .sidebar-toggle{position:fixed;top:12px;left:252px;z-index:20;width:36px;height:36px;
+    display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
+    background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
+    font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
+  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
+  body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
+  body.sidebar-collapsed .sidebar-toggle{left:12px}
+  body.sidebar-collapsed .main-content{padding-top:64px}
+
   .panel{display:none}
   .panel.active{display:block}
 
@@ -135,6 +150,9 @@
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
+  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
@@ -155,13 +173,21 @@
     .main-content{margin-left:0}
     footer.colophon{margin-left:0}
     .course-head h1{font-size:30px}
+    .sidebar-toggle{left:auto;right:12px}
+    body.sidebar-collapsed .sidebar{display:none}
+    body.sidebar-collapsed .sidebar-toggle{left:12px;right:auto}
   }
 </style>
 </head>
 <body>
+<script>
+  // Restore the sidebar state before first paint so the page doesn't flash open then shut.
+  try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
+</script>
+<button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="true" aria-label="Hide sidebar" title="Hide sidebar">&#8249;</button>
 
 <div class="app-shell">
-  <nav class="sidebar">
+  <nav class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <a class="back-link" href="../index.html">← The Companion</a>
       <div class="brand-code">DA5004</div>
@@ -269,7 +295,6 @@
 
     </section>
 
-
     <section class="panel" id="panel-lecture">
       <div class="video" id="video-box">
         <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
@@ -304,6 +329,12 @@
   const panelLecture = document.getElementById('panel-lecture');
   const navSyllabus = document.getElementById('nav-syllabus');
   const panelSyllabus = document.getElementById('panel-syllabus');
+  const extraNavs = Array.from(document.querySelectorAll('[data-extra]'));
+  const extraPanels = Array.from(document.querySelectorAll('.extra-panel'));
+  function clearExtras(){
+    extraNavs.forEach(el => el.classList.remove('active'));
+    extraPanels.forEach(el => el.classList.remove('active'));
+  }
   const frame = document.getElementById('video-frame');
   const emptyOverlay = document.getElementById('video-empty');
   const eyebrow = document.getElementById('current-eyebrow');
@@ -388,6 +419,7 @@
   }
 
   function showDashboard(){
+    clearExtras();
     navDashboard.classList.add('active');
     navSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
@@ -398,6 +430,7 @@
   }
 
   function showSyllabus(){
+    clearExtras();
     navSyllabus.classList.add('active');
     navDashboard.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
@@ -407,8 +440,27 @@
     window.scrollTo(0, 0);
   }
 
+  function showExtra(id){
+    clearExtras();
+    navDashboard.classList.remove('active');
+    navSyllabus.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelDashboard.classList.remove('active');
+    panelSyllabus.classList.remove('active');
+    panelLecture.classList.remove('active');
+    extraNavs.forEach(el => el.classList.toggle('active', el.dataset.extra === id));
+    const panel = document.getElementById('panel-x-' + id);
+    if (panel){
+      panel.classList.add('active');
+      // embedded sites load only when their tab is first opened
+      panel.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; f.removeAttribute('data-src'); });
+    }
+    window.scrollTo(0, 0);
+  }
+
   function selectLecture(wi, ii){
     const item = WEEKS_DATA[wi].items[ii];
+    clearExtras();
     navDashboard.classList.remove('active');
     navSyllabus.classList.remove('active');
     panelSyllabus.classList.remove('active');
@@ -438,8 +490,25 @@
     actions.innerHTML = html;
   }
 
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  function syncSidebarToggle(){
+    const collapsed = document.body.classList.contains('sidebar-collapsed');
+    sidebarToggle.innerHTML = collapsed ? '&#9776;' : '&#8249;';
+    sidebarToggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    const label = collapsed ? 'Show sidebar' : 'Hide sidebar';
+    sidebarToggle.setAttribute('aria-label', label);
+    sidebarToggle.title = label;
+  }
+  sidebarToggle.addEventListener('click', () => {
+    const collapsed = document.body.classList.toggle('sidebar-collapsed');
+    try { localStorage.setItem('companion-sidebar', collapsed ? 'collapsed' : 'open'); } catch (e) {}
+    syncSidebarToggle();
+  });
+  syncSidebarToggle();
+
   navDashboard.addEventListener('click', showDashboard);
   navSyllabus.addEventListener('click', showSyllabus);
+  extraNavs.forEach(el => el.addEventListener('click', () => showExtra(el.dataset.extra)));
   navSection.addEventListener('click', e => {
     // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
     // this only needs to react to an actual lecture row being picked.
