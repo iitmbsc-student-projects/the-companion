@@ -1,5 +1,5 @@
 {
- "intro": "The links students come back to most, collected from the community's resource thread. If one has stopped working or something important is missing, tell us on the Discourse thread or open an issue on GitHub.",
+ "intro": "Broken or missing link? Tell us on the Discourse thread or open a GitHub issue.",
  "groups": [
   {
    "id": "official",
@@ -23,7 +23,11 @@
        "label": "Open",
        "url": "https://tiny.cc/IITM-SH"
       }
-     ]
+     ],
+     "pin": {
+      "title": "Student handbook",
+      "tag": "Rules and policies"
+     }
     },
     {
      "title": "Grading document, Sep 2026",
@@ -33,7 +37,11 @@
        "label": "Open",
        "url": "https://tiny.cc/IITM-GD"
       }
-     ]
+     ],
+     "pin": {
+      "title": "Grading document",
+      "tag": "Sep 2026"
+     }
     },
     {
      "title": "Academic calendar",
@@ -43,7 +51,11 @@
        "label": "Open",
        "url": "https://study.iitm.ac.in/ds/academic_calendar.html"
       }
-     ]
+     ],
+     "pin": {
+      "title": "Academic calendar",
+      "tag": "Quiz and exam dates"
+     }
     },
     {
      "title": "Scheduled online exam links",
@@ -64,7 +76,11 @@
        "url": "https://ds.study.iitm.ac.in/auth/login"
       }
      ],
-     "auth": "iitm"
+     "auth": "iitm",
+     "pin": {
+      "title": "Student dashboard",
+      "tag": "Courses and updates"
+     }
     },
     {
      "title": "Score checker",
@@ -75,7 +91,11 @@
        "label": "Open",
        "url": "https://study.iitm.ac.in/score-checker"
       }
-     ]
+     ],
+     "pin": {
+      "title": "Score checker",
+      "tag": "Check your marks"
+     }
     },
     {
      "title": "Support tickets",

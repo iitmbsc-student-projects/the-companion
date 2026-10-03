@@ -4,7 +4,7 @@ A small local CRUD admin for the course site: add/edit/delete a course, edit
 its syllabus/faculty/week-by-week, its PYQ table, and its lecture playlist
 (paste an ordered list, or a YouTube playlist URL — no API key needed).
 Every save writes data/courses/<code>.json, regenerates that course's HTML
-page, and keeps index.html's listing in sync.
+page, and keeps courses.html's listing in sync.
 
 Run it from the site's own tools/dashboard folder:
     pip install -r requirements.txt
@@ -226,7 +226,7 @@ def _course_fields_form(data, is_new=False):
       </div>
       <label>Title</label><input type="text" name="title" value="{data.get('title','')}" required>
       <div class="row3">
-        <div><label>Program (section on index.html)</label><select name="program">{program_options}</select></div>
+        <div><label>Program (section on courses.html)</label><select name="program">{program_options}</select></div>
         <div><label>Credits</label><input type="number" name="credits" value="{data.get('credits',4)}"></div>
         <div><label>Term</label><input type="text" name="term" value="{data.get('term','')}"></div>
       </div>
