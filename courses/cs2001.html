@@ -78,6 +78,21 @@
   .main-content{margin-left:300px;padding:40px 56px 60px}
   @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
 
+  /* ---- collapsible sidebar: body.sidebar-collapsed slides the sidebar off-screen and lets the
+     content take the full width. The toggle button is fixed so it is always reachable. ---- */
+  .sidebar{transition:transform .22s ease}
+  .main-content,footer.colophon{transition:margin-left .22s ease}
+  .sidebar-toggle{position:fixed;top:12px;left:252px;z-index:20;width:36px;height:36px;
+    display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
+    background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
+    font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
+  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
+  body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
+  body.sidebar-collapsed .sidebar-toggle{left:12px}
+  body.sidebar-collapsed .main-content{padding-top:64px}
+
   .panel{display:none}
   .panel.active{display:block}
 
@@ -158,13 +173,21 @@
     .main-content{margin-left:0}
     footer.colophon{margin-left:0}
     .course-head h1{font-size:30px}
+    .sidebar-toggle{left:auto;right:12px}
+    body.sidebar-collapsed .sidebar{display:none}
+    body.sidebar-collapsed .sidebar-toggle{left:12px;right:auto}
   }
 </style>
 </head>
 <body>
+<script>
+  // Restore the sidebar state before first paint so the page doesn't flash open then shut.
+  try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
+</script>
+<button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="true" aria-label="Hide sidebar" title="Hide sidebar">&#8249;</button>
 
 <div class="app-shell">
-  <nav class="sidebar">
+  <nav class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <a class="back-link" href="../index.html">← The Companion</a>
       <div class="brand-code">CS2001</div>
@@ -483,6 +506,22 @@
     if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
     actions.innerHTML = html;
   }
+
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  function syncSidebarToggle(){
+    const collapsed = document.body.classList.contains('sidebar-collapsed');
+    sidebarToggle.innerHTML = collapsed ? '&#9776;' : '&#8249;';
+    sidebarToggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    const label = collapsed ? 'Show sidebar' : 'Hide sidebar';
+    sidebarToggle.setAttribute('aria-label', label);
+    sidebarToggle.title = label;
+  }
+  sidebarToggle.addEventListener('click', () => {
+    const collapsed = document.body.classList.toggle('sidebar-collapsed');
+    try { localStorage.setItem('companion-sidebar', collapsed ? 'collapsed' : 'open'); } catch (e) {}
+    syncSidebarToggle();
+  });
+  syncSidebarToggle();
 
   navDashboard.addEventListener('click', showDashboard);
   navSyllabus.addEventListener('click', showSyllabus);
