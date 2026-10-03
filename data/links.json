@@ -63,7 +63,8 @@
        "label": "Open",
        "url": "https://ds.study.iitm.ac.in/auth/login"
       }
-     ]
+     ],
+     "auth": "iitm"
     },
     {
      "title": "Support tickets",
@@ -87,7 +88,8 @@
        "label": "Open",
        "url": "https://datastudio.google.com/s/k3kRC9kDo54"
       }
-     ]
+     ],
+     "auth": "iitm"
     },
     {
      "title": "Document archive",
@@ -116,16 +118,6 @@
       {
        "label": "Open",
        "url": "https://discourse.onlinedegree.iitm.ac.in/"
-      }
-     ]
-    },
-    {
-     "title": "Official WhatsApp bot",
-     "desc": "Important updates from IITM BS on WhatsApp.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://wa.me/message/IVROM2UN7XIJL1"
       }
      ]
     },
@@ -162,16 +154,6 @@
       {
        "label": "Open",
        "url": "https://docs.google.com/document/d/e/2PACX-1vS3kG688sVzBil9uEFa9mXrnpuMAqE0LU1FpH1-TMDCHZF0XjC1265GmhVePdYvrc0_5qyq8OXwIZUb/pub"
-      }
-     ]
-    },
-    {
-     "title": "Measuring conceptual clarity and understanding",
-     "desc": "A widely recommended Discourse post on how to learn and check your understanding.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://discourse.onlinedegree.iitm.ac.in/t/measuring-conceptual-clarity-and-understanding/85980/16"
       }
      ]
     }
@@ -232,26 +214,6 @@
      ]
     },
     {
-     "title": "NPTEL credit transfer: electives",
-     "desc": "Eligible NPTEL courses for department and free electives at the BSc level.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSJXV0JECyoQvgWvBlVxO13G0KRm5a1qNCRBa7rAw8GDY4e0cfm1KiVCwIgs_ed80ObtzQ1rfx_JWIR/pubhtml?gid=399341609&single=true"
-      }
-     ]
-    },
-    {
-     "title": "NPTEL credit transfer: HS / MG",
-     "desc": "Eligible NPTEL courses for the HS/MG category, up to 4 credits at the BS level.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSJXV0JECyoQvgWvBlVxO13G0KRm5a1qNCRBa7rAw8GDY4e0cfm1KiVCwIgs_ed80ObtzQ1rfx_JWIR/pubhtml?gid=1418834182&single=true"
-      }
-     ]
-    },
-    {
      "title": "MTech upgrade",
      "desc": "Policy for upgrading the BS degree to the MTech in AI and ML, and the PG Diploma exit option.",
      "links": [
@@ -269,13 +231,14 @@
    "items": [
     {
      "title": "IITM BS notes",
-     "desc": "Notes made by seniors and batch-mates.",
+     "desc": "Notes made by seniors and batch-mates. Full access needs a login on that site, and its course pages are being phased out.",
      "links": [
       {
        "label": "Open",
        "url": "https://theopennotes.in/course/63fd9e3c553314fb9fc19524"
       }
-     ]
+     ],
+     "auth": "site"
     },
     {
      "title": "AceGrade",
@@ -308,18 +271,8 @@
      ]
     },
     {
-     "title": "Degree level PYQs",
-     "desc": "Previous year papers for degree level courses.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://ggl.link/getpyqs"
-      }
-     ]
-    },
-    {
      "title": "Degree level revision sessions",
-     "desc": "Revision videos for several degree level courses.",
+     "desc": "Revision videos for several degree level courses, on Lalit Kumar's YouTube channel.",
      "links": [
       {
        "label": "Open",
@@ -372,16 +325,6 @@
        "url": "https://gate2027.iitm.ac.in/"
       }
      ]
-    },
-    {
-     "title": "Eligibility for Master's",
-     "desc": "Which IITs accept the BS degree for Master's and PhD admission.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://discourse.onlinedegree.iitm.ac.in/t/update-list-of-top-iits-who-allow-not-allow-bs-4-year-as-eligibility-to-admission-in-masters-direct-phd/128569"
-      }
-     ]
     }
    ]
   },
@@ -397,7 +340,8 @@
        "label": "Open",
        "url": "https://placements.study.iitm.ac.in/"
       }
-     ]
+     ],
+     "auth": "iitm"
     },
     {
      "title": "Placement policy",
@@ -427,7 +371,8 @@
        "label": "Open",
        "url": "https://docs.google.com/document/d/1wzhKEFjsz4m9b7Slhgfc-vDz4GszH3RplDxJpJ37Kqg"
       }
-     ]
+     ],
+     "auth": "iitm"
     },
     {
      "title": "Resume templates",

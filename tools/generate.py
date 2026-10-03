@@ -154,27 +154,52 @@ def _esc(t):
             .replace('"', "&quot;"))
 
 
+AUTH_BADGES = {
+    "discourse": "Discourse login required",
+    "iitm": "IITM login required",
+    "site": "Login needed for full access",
+}
+
+
+def _auth_of(item):
+    """Explicit item["auth"] wins; otherwise any Discourse link implies a Discourse login."""
+    if item.get("auth"):
+        return item["auth"]
+    if any("discourse.onlinedegree.iitm.ac.in" in l["url"] for l in item["links"]):
+        return "discourse"
+    return ""
+
+
 def render_links(data):
     out = []
     if data.get("intro"):
         out.append(f'      <p class="links-intro">{_esc(data["intro"])}</p>')
+    out.append('      <nav class="links-jump" aria-label="Jump to a group">')
+    for g in data["groups"]:
+        out.append(f'        <a href="#links-{_esc(g["id"])}">{_esc(g["title"])}</a>')
+    out.append('      </nav>')
     for g in data["groups"]:
         out.append(f'      <div class="link-group" id="links-{_esc(g["id"])}">')
-        out.append(f'        <div class="level-subhead">{_esc(g["title"])}</div>')
-        out.append('        <ul class="links-list">')
+        out.append(f'        <div class="group-head"><h3>{_esc(g["title"])}</h3>'
+                   f'<span class="group-count">{len(g["items"])}</span></div>')
+        out.append('        <ul class="links-grid">')
         for it in g["items"]:
-            anchors = ", ".join(
-                f'<a href="{_esc(l["url"])}" target="_blank" rel="noopener">{_esc(l["label"])}</a>'
-                for l in it["links"])
-            first = it["links"][0]
+            auth = _auth_of(it)
+            badge = (f'<span class="lk-badge {auth}">{_esc(AUTH_BADGES[auth])}</span>'
+                     if auth in AUTH_BADGES else "")
             if len(it["links"]) == 1:
-                title = f'<a href="{_esc(first["url"])}" target="_blank" rel="noopener">{_esc(it["title"])}</a>'
-                right = ""
+                url = _esc(it["links"][0]["url"])
+                title = f'<a class="lk-main" href="{url}" target="_blank" rel="noopener">{_esc(it["title"])}</a>'
+                more = ""
             else:
                 title = _esc(it["title"])
-                right = f'<span class="lk-more">{anchors}</span>'
-            out.append(f'          <li><span class="lk-title">{title}</span>'
-                       f'<span class="lk-desc">{_esc(it["desc"])}</span>{right}</li>')
+                anchors = "".join(
+                    f'<a href="{_esc(l["url"])}" target="_blank" rel="noopener">{_esc(l["label"])}</a>'
+                    for l in it["links"])
+                more = f'<div class="lk-more">{anchors}</div>'
+            foot = f'<div class="lk-foot">{badge}</div>' if badge else ""
+            out.append(f'          <li class="lk-card"><h4 class="lk-title">{title}</h4>'
+                       f'<p class="lk-desc">{_esc(it["desc"])}</p>{more}{foot}</li>')
         out.append('        </ul>')
         out.append('      </div>')
     return "\n".join(out)
