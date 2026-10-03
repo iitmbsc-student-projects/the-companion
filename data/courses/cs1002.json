@@ -23,11 +23,6 @@
    "label": "IITM Python textbook"
   },
   {
-   "url": "https://nirban-a.github.io/python-oppe-solutions/",
-   "label": "Python OPPE solutions and question bank",
-   "by": "Anirban Mandal"
-  },
-  {
    "url": "https://drive.google.com/drive/folders/1xjgelPNfh5QGKjnBxtjVYJwICG0Pkix_",
    "label": "Lecture slides (Drive folder)"
   },
@@ -722,6 +717,21 @@
      "t": "Course Summary",
      "v": "XYDiGqzVKyo",
      "s": null
+    }
+   ]
+  }
+ ],
+ "extra_tabs": [
+  {
+   "id": "oppe",
+   "label": "OPPE",
+   "standfirst": "Solved questions for the Programming in Python online proctored programming exams (OPPE 1 and OPPE 2).",
+   "links_heading": "Practice and solutions",
+   "links": [
+    {
+     "url": "https://nirban-a.github.io/python-oppe-solutions/",
+     "label": "Python OPPE solutions and question bank",
+     "by": "Anirban Mandal"
     }
    ]
   }

@@ -220,9 +220,16 @@
    ]
   }
  ],
- "embed": {
-  "title": "Course website",
-  "url": "https://iitmbsmlops.github.io/",
-  "note": "The MLOps course website, shown here so you can read it without leaving the page."
- }
+ "extra_tabs": [
+  {
+   "id": "website",
+   "label": "Course website",
+   "standfirst": "The MLOps course website, shown here so you can read it without leaving the page.",
+   "embed": {
+    "title": "IITM BS MLOps",
+    "url": "https://iitmbsmlops.github.io/"
+   }
+  }
+ ],
+ "hide_lectures": true
 }

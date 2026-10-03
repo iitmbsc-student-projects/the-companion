@@ -175,9 +175,12 @@
       <div class="nav-label">Main</div>
       <div class="nav-item active" id="nav-dashboard">Dashboard</div>
       <div class="nav-item" id="nav-syllabus">Syllabus</div>
+{%- for t in extra_tabs or [] %}
+      <div class="nav-item" id="nav-x-{{ t.id }}" data-extra="{{ t.id }}">{{ t.label }}</div>
+{%- endfor %}
     </div>
 
-    <div class="nav-section accordion accordion-flush" id="lecture-nav">
+    <div class="nav-section accordion accordion-flush" id="lecture-nav"{% if hide_lectures %} style="display:none"{% endif %}>
       <div class="nav-label">Weekly Lectures</div>
     </div>
   </nav>
@@ -243,19 +246,6 @@
 {%- endif %}
       </section>
 
-{%- if embed and embed.url %}
-      <section class="chapter" id="embedded-site">
-        <h2><span class="num">§ 4</span>{{ embed.title or "Course website" }}</h2>
-        {%- if embed.note %}
-        <p class="tbd-note" style="margin-bottom:10px">{{ embed.note|safe }}</p>
-        {%- endif %}
-        <div class="embed-wrap">
-          <iframe class="embed-frame" src="{{ embed.url }}" title="{{ embed.title or 'Course website' }}" loading="lazy" referrerpolicy="no-referrer"></iframe>
-        </div>
-        <p class="tbd-note" style="margin-top:10px">Not loading? <a href="{{ embed.url }}" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
-      </section>
-{%- endif %}
-
     </section>
 
     <section class="panel" id="panel-syllabus">
@@ -304,6 +294,47 @@
     </section>
 
 
+{%- for t in extra_tabs or [] %}
+    <section class="panel extra-panel" id="panel-x-{{ t.id }}">
+
+      <div class="course-head">
+        <div class="kicker">{{ code }} · {{ program }} · {{ credits }} credits</div>
+        <h1>{{ t.label }}</h1>
+        {%- if t.standfirst %}
+        <p class="standfirst">{{ t.standfirst }}</p>
+        {%- endif %}
+      </div>
+      {%- if t.links %}
+
+      <section class="chapter">
+        <h2><span class="num">§ 1</span>{{ t.links_heading or "Links" }}</h2>
+        <ul class="link-list">
+{%- for r in t.links %}
+          <li><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a>{% if r.by %} <span class="res-by">by {% if r.by_url %}<a href="{{ r.by_url }}" target="_blank" rel="noopener">{{ r.by }}</a>{% else %}{{ r.by }}{% endif %}</span>{% endif %}</li>
+{%- endfor %}
+        </ul>
+        {%- if t.note %}
+        <p class="tbd-note" style="margin-top:10px">{{ t.note|safe }}</p>
+        {%- endif %}
+      </section>
+      {%- endif %}
+      {%- if t.embed and t.embed.url %}
+
+      <section class="chapter">
+        <h2><span class="num">§ {{ 2 if t.links else 1 }}</span>{{ t.embed.title or t.label }}</h2>
+        {%- if t.embed.note %}
+        <p class="tbd-note" style="margin-bottom:10px">{{ t.embed.note|safe }}</p>
+        {%- endif %}
+        <div class="embed-wrap">
+          <iframe class="embed-frame" data-src="{{ t.embed.url }}" title="{{ t.embed.title or t.label }}" referrerpolicy="no-referrer"></iframe>
+        </div>
+        <p class="tbd-note" style="margin-top:10px">Not loading? <a href="{{ t.embed.url }}" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+      </section>
+      {%- endif %}
+
+    </section>
+{%- endfor %}
+
     <section class="panel" id="panel-lecture">
       <div class="video" id="video-box">
         <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
@@ -338,6 +369,12 @@
   const panelLecture = document.getElementById('panel-lecture');
   const navSyllabus = document.getElementById('nav-syllabus');
   const panelSyllabus = document.getElementById('panel-syllabus');
+  const extraNavs = Array.from(document.querySelectorAll('[data-extra]'));
+  const extraPanels = Array.from(document.querySelectorAll('.extra-panel'));
+  function clearExtras(){
+    extraNavs.forEach(el => el.classList.remove('active'));
+    extraPanels.forEach(el => el.classList.remove('active'));
+  }
   const frame = document.getElementById('video-frame');
   const emptyOverlay = document.getElementById('video-empty');
   const eyebrow = document.getElementById('current-eyebrow');
@@ -422,6 +459,7 @@
   }
 
   function showDashboard(){
+    clearExtras();
     navDashboard.classList.add('active');
     navSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
@@ -432,6 +470,7 @@
   }
 
   function showSyllabus(){
+    clearExtras();
     navSyllabus.classList.add('active');
     navDashboard.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
@@ -441,8 +480,27 @@
     window.scrollTo(0, 0);
   }
 
+  function showExtra(id){
+    clearExtras();
+    navDashboard.classList.remove('active');
+    navSyllabus.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelDashboard.classList.remove('active');
+    panelSyllabus.classList.remove('active');
+    panelLecture.classList.remove('active');
+    extraNavs.forEach(el => el.classList.toggle('active', el.dataset.extra === id));
+    const panel = document.getElementById('panel-x-' + id);
+    if (panel){
+      panel.classList.add('active');
+      // embedded sites load only when their tab is first opened
+      panel.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; f.removeAttribute('data-src'); });
+    }
+    window.scrollTo(0, 0);
+  }
+
   function selectLecture(wi, ii){
     const item = WEEKS_DATA[wi].items[ii];
+    clearExtras();
     navDashboard.classList.remove('active');
     navSyllabus.classList.remove('active');
     panelSyllabus.classList.remove('active');
@@ -474,6 +532,7 @@
 
   navDashboard.addEventListener('click', showDashboard);
   navSyllabus.addEventListener('click', showSyllabus);
+  extraNavs.forEach(el => el.addEventListener('click', () => showExtra(el.dataset.extra)));
   navSection.addEventListener('click', e => {
     // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
     // this only needs to react to an actual lecture row being picked.

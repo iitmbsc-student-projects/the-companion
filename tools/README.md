@@ -65,6 +65,27 @@ starts a new week (its text is the week's label); a line with `|` is one
 lecture — `number | title | video id or URL | slide URL` (leave either blank
 if there's nothing to link yet).
 
+## Extra sidebar tabs (OPPE, NPPE, Project, course website)
+
+A course can have extra tabs under Syllabus in the sidebar. They live in the
+course JSON as an optional `extra_tabs` list, one object per tab:
+
+```
+"extra_tabs": [
+  {
+    "id": "oppe",                      # short, unique per course
+    "label": "OPPE",                   # text shown in the sidebar
+    "standfirst": "One line about the tab.",
+    "links_heading": "Practice and solutions",
+    "links": [{"url": "...", "label": "...", "by": "Author", "by_url": "..."}],
+    "embed": {"title": "...", "url": "..."}   # optional: shows a site inside the tab
+  }
+]
+```
+
+Set `"hide_lectures": true` on a course to hide the Weekly Lectures list from the sidebar (used for MLOps, whose own website has the lectures). `links`, `by`, `by_url` and `embed` are all optional. Embedded sites only load
+when the tab is first opened. Regenerate with `python generate.py <code>`.
+
 ## What each file is
 
 ```
