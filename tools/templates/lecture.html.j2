@@ -135,6 +135,9 @@
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
+  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
@@ -226,7 +229,7 @@
         <ul class="link-list">
 {%- for r in resources %}
 {%- if r.url %}
-          <li><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a></li>
+          <li><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a>{% if r.by %} <span class="res-by">by {% if r.by_url %}<a href="{{ r.by_url }}" target="_blank" rel="noopener">{{ r.by }}</a>{% else %}{{ r.by }}{% endif %}</span>{% endif %}</li>
 {%- else %}
           <li>{{ r.raw|safe }}</li>
 {%- endif %}
@@ -239,6 +242,19 @@
         <p class="tbd-note" style="margin-top:10px">{{ resources_note|safe }}</p>
 {%- endif %}
       </section>
+
+{%- if embed and embed.url %}
+      <section class="chapter" id="embedded-site">
+        <h2><span class="num">§ 4</span>{{ embed.title or "Course website" }}</h2>
+        {%- if embed.note %}
+        <p class="tbd-note" style="margin-bottom:10px">{{ embed.note|safe }}</p>
+        {%- endif %}
+        <div class="embed-wrap">
+          <iframe class="embed-frame" src="{{ embed.url }}" title="{{ embed.title or 'Course website' }}" loading="lazy" referrerpolicy="no-referrer"></iframe>
+        </div>
+        <p class="tbd-note" style="margin-top:10px">Not loading? <a href="{{ embed.url }}" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+      </section>
+{%- endif %}
 
     </section>
 
