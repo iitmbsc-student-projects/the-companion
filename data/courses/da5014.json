@@ -219,5 +219,10 @@
     }
    ]
   }
- ]
+ ],
+ "embed": {
+  "title": "Course website",
+  "url": "https://iitmbsmlops.github.io/",
+  "note": "The MLOps course website, shown here so you can read it without leaving the page."
+ }
 }
