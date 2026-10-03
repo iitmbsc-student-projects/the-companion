@@ -9,8 +9,13 @@
  "instructor": "Prof. Vimal Kumar",
  "term": "As offered",
  "prereq": "none",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1PjcSAYZcMcMVH9EAEAd7MGlglC4H2uxU?usp=sharing",
+   "label": "Drive folder"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [
@@ -78,10 +83,28 @@
    "w": "Week 1",
    "items": [
     {
-     "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "1.1",
+     "t": "W1_L1: Introduction",
+     "v": "riPX7RQRaio",
+     "s": "https://drive.google.com/file/d/1yAdvAr0QxExnJ0vRPBCP_xQOYK6Ci_02/view?usp=drive_link"
+    },
+    {
+     "n": "1.2",
+     "t": "W1_L2: Economic models & decision making",
+     "v": "bMNLyCgMwfo",
+     "s": "https://drive.google.com/file/d/1LH4lhalZWirDOKRGsvIROnnKW8ovvK60/view?usp=drive_link"
+    },
+    {
+     "n": "1.3",
+     "t": "W1_L3: Problem solving & decision making buyers perspective",
+     "v": "NAhY4R7_Ii8",
+     "s": "https://drive.google.com/file/d/1o-8zoO03blK6vyP7AgMzuKq4YFNnVUGh/view?usp=drive_link"
+    },
+    {
+     "n": "1.4",
+     "t": "W1_L4: Problem solving & decision making sellers perspective",
+     "v": "CHhKiWD6BgQ",
+     "s": "https://drive.google.com/file/d/1C4iQpM1BGMxhjaNms7NosgUyPh2tR6dt/view?usp=drive_link"
     }
    ]
   },
@@ -89,10 +112,40 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "2.1",
+     "t": "W2_L1: Costs opportunity cost & sunk cost",
+     "v": "kO_0C0W87Fk",
+     "s": "https://drive.google.com/file/d/1o-kvxznfVYezC6tajDQQiQ46V01XEGcR/view?usp=drive_link"
+    },
+    {
+     "n": "2.2",
+     "t": "W2_L2: Costs fixed cost & variable cost",
+     "v": "YDNWNM-P6Fg",
+     "s": "https://drive.google.com/file/d/15k5F_ZgvORfvPr-4FoGqDmnGExEIADXf/view?usp=drive_link"
+    },
+    {
+     "n": "2.3",
+     "t": "W2_L3: Firm a simplified view",
+     "v": "xbKSNx75bb8",
+     "s": "https://drive.google.com/file/d/1F6qiFj7_Crp-2B1PTzo5CQJ_5m29U5NK/view?usp=drive_link"
+    },
+    {
+     "n": "2.4",
+     "t": "W2_L4: Legal organization of firms in india",
+     "v": "Vr4B37UAABg",
+     "s": "https://drive.google.com/file/d/1e-fVFOsHj3iykDFIylYHo24t9tVh8QaS/view?usp=drive_link"
+    },
+    {
+     "n": "2.5",
+     "t": "W2_L5: Marginal analysis through examples | part 1",
+     "v": "VDqzxIWuP54",
+     "s": "https://drive.google.com/file/d/16A16cxvW3VIYTPd-O2KHe9vJy9WCAkxI/view?usp=drive_link"
+    },
+    {
+     "n": "2.6",
+     "t": "W2_L6: Marginal analysis through examples | part 2",
+     "v": "5lZudIHIuQg",
+     "s": "https://drive.google.com/file/d/1FypERSNw2nF2vrAK1e-jDjBj3TNLq5co/view?usp=drive_link"
     }
    ]
   },
@@ -100,10 +153,40 @@
    "w": "Week 3",
    "items": [
     {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "3.1",
+     "t": "W3_L1: Marginal rate of technical substitution",
+     "v": "DBbAUeDdgRU",
+     "s": "https://drive.google.com/file/d/1-0t6dCDI47HgMUS0NjlRM30RIxzu1ASh/view?usp=drive_link"
+    },
+    {
+     "n": "3.2",
+     "t": "W3_L2: Cost minimization | part 1",
+     "v": "wsTNNJ7-Y4A",
+     "s": "https://drive.google.com/file/d/1z41EpNVydTGHRKCwX52o0feABROj_G3D/view?usp=drive_link"
+    },
+    {
+     "n": "3.3",
+     "t": "W3_L3: Cost minimization | part 2",
+     "v": "bTRvBCFXf3M",
+     "s": "https://drive.google.com/file/d/1GlOlwHUpbRw8gwe6Ba78fLNmSxIwlXP2/view?usp=drive_link"
+    },
+    {
+     "n": "3.4",
+     "t": "W3_L4: Cost function",
+     "v": "I17UFua8C28",
+     "s": "https://drive.google.com/file/d/1AEYBExGNrlrIDIE9Jnm0rQyRvVFkTpxI/view?usp=drive_link"
+    },
+    {
+     "n": "3.5",
+     "t": "W3_L5: Scale",
+     "v": "LGHoSxTA-yI",
+     "s": "https://drive.google.com/file/d/1OrpmJBboXKySGoRevNdpZ3PxmaFprfJo/view?usp=drive_link"
+    },
+    {
+     "n": "3.6",
+     "t": "W3_L6: From cost curves to supply function",
+     "v": "4bTJnYEpNAE",
+     "s": "https://drive.google.com/file/d/1EIfCS3xxEJhodcMNETSgeE8aenYx_2gX/view?usp=drive_link"
     }
    ]
   },
@@ -111,10 +194,34 @@
    "w": "Week 4",
    "items": [
     {
-     "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "4.1",
+     "t": "W4_L1: Cost curve iii",
+     "v": "OOQdKLz5vMs",
+     "s": "https://drive.google.com/file/d/1KCVRWl7Eem7EVTiA5ETa1ApMmyDCGyEl/view?usp=drive_link"
+    },
+    {
+     "n": "4.2",
+     "t": "W4_L2: Consumer behavior building blocks & budget set",
+     "v": "gbJoo5zU40c",
+     "s": "https://drive.google.com/file/d/1OOjWdaHZ4Ca4UhvzHAbtOHdgt2jIe85W/view?usp=drive_link"
+    },
+    {
+     "n": "4.3",
+     "t": "W4_L3: More on budget sets",
+     "v": "pTl_LXxJm9w",
+     "s": "https://drive.google.com/file/d/1duZgVx6mhQXTcAngr4mGzSL5_MfFTLsW/view?usp=drive_link"
+    },
+    {
+     "n": "4.4",
+     "t": "W4_L4: Preferences I",
+     "v": "MMZPYKj-AKs",
+     "s": "https://drive.google.com/file/d/1RT6lQnJ0EfN3-cyJ7zh0_QqadHoVuoPv/view?usp=drive_link"
+    },
+    {
+     "n": "4.5",
+     "t": "W4_L5: Preferences II",
+     "v": "w73H79TDRdQ",
+     "s": "https://drive.google.com/file/d/1qNq3PB-1xjUZ4-mCV35LT8gi0Aun-B3U/view?usp=drive_link"
     }
    ]
   },
@@ -122,10 +229,28 @@
    "w": "Week 5",
    "items": [
     {
-     "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "5.1",
+     "t": "W5_L1: The consumer's problem",
+     "v": "-x3--jR-nAQ",
+     "s": "https://drive.google.com/file/d/16nPnC1WOJtOcXXirxVkR_Nv77isFqg_T/view?usp=drive_link"
+    },
+    {
+     "n": "5.2",
+     "t": "W5_L2: Preferences & utility functions",
+     "v": "9HrzJ5YZwCk",
+     "s": "https://drive.google.com/file/d/1TUvqai8fofacVpyns75UbmfM33y4vQ8e/view?usp=drive_link"
+    },
+    {
+     "n": "5.3",
+     "t": "W5_L3: Demand function",
+     "v": "bycB5APWdn4",
+     "s": "https://drive.google.com/file/d/1rtKancCCw_icbdnmi4FbPV7IwSwf7cqu/view?usp=drive_link"
+    },
+    {
+     "n": "5.4",
+     "t": "W5_L4: Demand supply & market equilibrium",
+     "v": "k5zuo_HxU_Q",
+     "s": "https://drive.google.com/file/d/1s6CsvJzTV1tqyLhfMULt4aSji7L3xP2i/view?usp=drive_link"
     }
    ]
   },
@@ -133,10 +258,28 @@
    "w": "Week 6",
    "items": [
     {
-     "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "6.1",
+     "t": "W6_L1: Elasticity",
+     "v": "HSWRiMGrI88",
+     "s": "https://drive.google.com/file/d/1hx4XLMQO6iPfqCnnx5wVdbpijDaQdBUZ/view?usp=drive_link"
+    },
+    {
+     "n": "6.2",
+     "t": "W6_L2: Market intervention taxes",
+     "v": "sTuQalvMnIU",
+     "s": "https://drive.google.com/file/d/11p6ej6QRLMredM0egAa5x2lD4BAjdcQ6/view?usp=drive_link"
+    },
+    {
+     "n": "6.3",
+     "t": "W6_L3: Market interventions to raise a price",
+     "v": "K6lPS3dVDSI",
+     "s": "https://drive.google.com/file/d/1eBtcaj4toPYp4osmFVmAhfWcSaLzvcbp/view?usp=drive_link"
+    },
+    {
+     "n": "6.4",
+     "t": "W6_L4: Import tariffs & quotas",
+     "v": "tbE4SAvmBvM",
+     "s": "https://drive.google.com/file/d/1IdBMP8JPFSHHUoURY16Uz01T08MsaFAd/view?usp=drive_link"
     }
    ]
   },
@@ -144,9 +287,27 @@
    "w": "Week 7",
    "items": [
     {
-     "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "7.1",
+     "t": "W7_L1: Obtaining the demand function",
+     "v": "Y8JWatr89W4",
+     "s": "https://drive.google.com/drive/folders/1SXy1h9ozuyO9-cHtIKhyf90JGH0ehcuO?usp=drive_link"
+    },
+    {
+     "n": "7.2",
+     "t": "W7_L2: Monopoly I",
+     "v": "LB1FMcNm1Z8",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "W7_L3: Monopoly II",
+     "v": "LQmLjigIkkA",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "W7_L3: Monopoly II",
+     "v": "LQmLjigIkkA",
      "s": null
     }
    ]
@@ -155,10 +316,28 @@
    "w": "Week 8",
    "items": [
     {
-     "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "8.1",
+     "t": "W8_L1: Price discrimination",
+     "v": "kiA8a-HlQRo",
+     "s": "https://drive.google.com/file/d/1-9aAC3WEK7btkma0xmymZQT_Ud2EMZQ8/view?usp=drive_link"
+    },
+    {
+     "n": "8.2",
+     "t": "W8_L2: Monopsony",
+     "v": "l9EV9uhpWQs",
+     "s": "https://drive.google.com/file/d/1SiphF-Dh2PFLObMaSfeww7D-lAN3bJ8v/view?usp=drive_link"
+    },
+    {
+     "n": "8.3",
+     "t": "W8_L3: Imperfect competition",
+     "v": "xydyPTIcM48",
+     "s": "https://drive.google.com/file/d/13voezon_Vn5kXdgy6_S27PY7UvL22EmM/view?usp=drive_link"
+    },
+    {
+     "n": "8.4",
+     "t": "W8_L4: Game theory I",
+     "v": "Es-P6W5xxEc",
+     "s": "https://drive.google.com/file/d/1bC5RoBBW3K_Ekhr1NVF7YAQPbC1v36Uv/view?usp=drive_link"
     }
    ]
   },
@@ -166,10 +345,22 @@
    "w": "Week 9",
    "items": [
     {
-     "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "9.1",
+     "t": "W9_L1: Game theory II",
+     "v": "8jc7i09X0JA",
+     "s": "https://drive.google.com/file/d/1TN2F_uL1KsrIzfkCqryfgP1Zagrej9kX/view?usp=drive_link"
+    },
+    {
+     "n": "9.2",
+     "t": "W9_L2: Oligopoly",
+     "v": "9VY7ZA_zvxw",
+     "s": "https://drive.google.com/file/d/1n7OTtUA5_F_0euCLcAKha4y6pQpKRu8E/view?usp=drive_link"
+    },
+    {
+     "n": "9.3",
+     "t": "W9_L3: Monopolistic competition",
+     "v": "4AMLrIHJPA0",
+     "s": "https://drive.google.com/file/d/1rR5DFYZ0-D8cOFQN86m6J2lH46ZRpmfa/view?usp=drive_link"
     }
    ]
   },
@@ -177,10 +368,46 @@
    "w": "Week 10",
    "items": [
     {
-     "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "10.1",
+     "t": "W10_L1: Advertisement",
+     "v": "9QhGix7K5JE",
+     "s": "https://drive.google.com/file/d/1DStR7SHN-rWzICUaxjrtmGAnPaFmSXAg/view?usp=drive_link"
+    },
+    {
+     "n": "10.2",
+     "t": "W10_L2: Decisions under risk & uncertainty | part 1",
+     "v": "xFctL0jMzws",
+     "s": "https://drive.google.com/file/d/13laQu9uh9I7RcplLYtQHffucUpq1nTM1/view?usp=drive_link"
+    },
+    {
+     "n": "10.3",
+     "t": "W10_L3: Decisions under risk & uncertainty | part 2",
+     "v": "myZVE90ZYao",
+     "s": "https://drive.google.com/file/d/1yqCiLliVDL_MQ0fqsYur2j7AtLsq9Igg/view?usp=drive_link"
+    },
+    {
+     "n": "10.4",
+     "t": "W10_L4: Risk aversion risk loving risk neutrality",
+     "v": "9eQ8KUKNEBo",
+     "s": "https://drive.google.com/file/d/10Iv7zg5RaUcpsURl8iqlYIycb9URpu_h/view?usp=drive_link"
+    },
+    {
+     "n": "10.5",
+     "t": "W10_L5: Risk aversion & insurance",
+     "v": "lXPME3GdP1g",
+     "s": "https://drive.google.com/file/d/1Y131BdomPjM3MHmkd4YI5hzehFDvORYR/view?usp=drive_link"
+    },
+    {
+     "n": "10.6",
+     "t": "W10_L6: The market for insurance",
+     "v": "gYA6m7zg_Io",
+     "s": "https://drive.google.com/file/d/1G_dJTBY9KN2k2978zpw1PH4DC33a61DD/view?usp=drive_link"
+    },
+    {
+     "n": "10.7",
+     "t": "W10_L7: Decisions under uncertainty",
+     "v": "_pKL4M1DjKs",
+     "s": "https://drive.google.com/file/d/1KgAIELbE9n7tBAFpjntg3VPQpozJA-dd/view?usp=drive_link"
     }
    ]
   },
@@ -188,10 +415,28 @@
    "w": "Week 11",
    "items": [
     {
-     "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "11.1",
+     "t": "W11_L1: Asymmetric information | part 1",
+     "v": "MilgG6hmKPc",
+     "s": "https://drive.google.com/file/d/1x7EzOyHncsnfOMPaR8znk3Tc1KT0khcW/view?usp=drive_link"
+    },
+    {
+     "n": "11.2",
+     "t": "W11_L2: Asymmetric information | part 2",
+     "v": "IeFobSbWoQQ",
+     "s": "https://drive.google.com/file/d/1hQnqK4EUaaAfaQHULIKlGDNP4jvMEy6l/view?usp=drive_link"
+    },
+    {
+     "n": "11.3",
+     "t": "W11_L3: Asymmetric information | part 3",
+     "v": "ne7yKK9N5Nk",
+     "s": "https://drive.google.com/file/d/1zgsBSrJgMvc4ueFU9r_Fla3Lrk5ipUUZ/view?usp=drive_link"
+    },
+    {
+     "n": "11.4",
+     "t": "W11_L4: Externalities",
+     "v": "bbffehslBpI",
+     "s": "https://drive.google.com/file/d/1bnB3gW9QVCLhoj55Ffu3YIsikODL61PT/view?usp=drive_link"
     }
    ]
   },
@@ -199,10 +444,22 @@
    "w": "Week 12",
    "items": [
     {
-     "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
+     "n": "12.1",
+     "t": "W12_L1: Public goods",
+     "v": "9mSAESPgkVA",
+     "s": "https://drive.google.com/file/d/1cv6lgY09YRCKo3JcSWmxG3FsBHN1cBMT/view?usp=drive_link"
+    },
+    {
+     "n": "12.2",
+     "t": "W12_L2: Platform economics | part 1",
+     "v": "ixJrJ9irHpo",
+     "s": "https://drive.google.com/file/d/1Mbuf_ADzZl3Tk3LQMlb2UIYpCJoUiIuv/view?usp=drive_link"
+    },
+    {
+     "n": "12.3",
+     "t": "W12_L3: Platform economics | part 2",
+     "v": "wdqOynhQG1c",
+     "s": "https://drive.google.com/file/d/1VD6wEO0bfhtf8G1JbdXOj0kEyVCDGv39/view?usp=drive_link"
     }
    ]
   }

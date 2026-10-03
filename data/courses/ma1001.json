@@ -9,8 +9,45 @@
  "instructor": "Prof. Neelesh Upadhye, Prof. Madhavan Mukund &amp; Prof. Sarang S Sane",
  "term": "Every term",
  "prereq": "class XII maths",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://study.iitm.ac.in/ds/course_pages/BSMA1001.html",
+   "label": "Official course page"
+  },
+  {
+   "url": "https://drive.google.com/file/d/1AD4uMcFz05d7KmoSHkTzxBIj8EdzHSRf/view",
+   "label": "Book 1: Sets & Functions (Vol 1)"
+  },
+  {
+   "url": "https://drive.google.com/file/d/1tixOUADAr_1jScZEOCLtkOHshehCzmcE/view",
+   "label": "Book 2: Calculus (Vol 2)"
+  },
+  {
+   "url": "https://drive.google.com/file/d/1qNYkCA4KMxyB7YGuO8o_2uAW357uI0BX/view",
+   "label": "Book 3: Graph Theory (Vol 3)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1uonMKFawIl37PLtvuhMIuY_aZTZ8uPgB",
+   "label": "Lecture slides (Drive folder)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1OI4YNDu-l8z0k9j02R3ME5GL8SNm6tFW",
+   "label": "Lecture transcripts (Drive folder)"
+  },
+  {
+   "url": "https://www.youtube.com/playlist?list=PL3j1ntBPCU_qo9jU6XqmqzQnxivebIWkE",
+   "label": "NancyPi YouTube playlist: Limits"
+  },
+  {
+   "url": "https://www.youtube.com/playlist?list=PL3j1ntBPCU_om5O1RBi5-vDRwVTvDwyeV",
+   "label": "NancyPi YouTube playlist: Derivatives"
+  },
+  {
+   "url": "https://www.youtube.com/playlist?list=PL3j1ntBPCU_oXcHmmyCsSI3HcyKFj8y4E",
+   "label": "NancyPi YouTube playlist: Integrals"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

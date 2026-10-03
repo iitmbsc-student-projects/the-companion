@@ -9,8 +9,17 @@
  "instructor": "Prof. Neeldhara Misra",
  "term": "As offered",
  "prereq": "CS2002",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1VOCoUeQkwd5MWDDJIBQgamyi-4YBNJKU?usp=drive_link",
+   "label": "Drive folder"
+  },
+  {
+   "url": "https://www.youtube.com/@AdvancedAlgorithms-gy3hd",
+   "label": "Course YouTube channel"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

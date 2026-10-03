@@ -9,8 +9,25 @@
  "instructor": "Prof. Rajesh Kumar, Prof. Shreesh Chaudhary, Prof. Om Prakash &amp; Ms. Karthika Sathyanathan",
  "term": "Every term",
  "prereq": "HS1001",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://study.iitm.ac.in/ds/course_pages/BSHS1002.html",
+   "label": "Official course page"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1rnznNt_yPqw3dA5cbAi3ikUZa30qRHo7",
+   "label": "Lecture slides (Drive folder)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/18qfkUKvNh81JVOW1AqV71-iWQnAZ0LQs",
+   "label": "Lecture transcripts (Drive folder)"
+  },
+  {
+   "url": "https://drive.google.com/file/d/1iI-OW6GIpoXGOlFx9MtlHTBcqCbPB886/view",
+   "label": "ALS for English - 2"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

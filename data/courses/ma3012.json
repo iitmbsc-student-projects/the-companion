@@ -9,8 +9,13 @@
  "instructor": "Prof. Siva Athreya (International Centre for Theoretical Sciences - TIFR",
  "term": "As offered",
  "prereq": "MA1004",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1mwkso7tMEIsNgZo9nUp7QHhDriYvj-E8?usp=drive_link",
+   "label": "Drive folder"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

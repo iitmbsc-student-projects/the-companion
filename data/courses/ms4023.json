@@ -9,8 +9,13 @@
  "instructor": "Prof. Bikramaditya Datta &amp; Prof. Vimal Kumar",
  "term": "As offered",
  "prereq": "none",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1i29874j58gYu3iyiuAOllZWpgdhu8po7?usp=sharing",
+   "label": "Drive folder"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

@@ -9,8 +9,17 @@
  "instructor": "Prof. G Arun Kumar",
  "term": "As offered",
  "prereq": "MA1004",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1vkXPRhAI-ZRQJwwi90UZxlN3JVic8_wI?usp=drive_link",
+   "label": "Drive folder"
+  },
+  {
+   "url": "https://www.youtube.com/@financialforensics8886",
+   "label": "Course YouTube channel"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

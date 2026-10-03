@@ -9,8 +9,21 @@
  "instructor": "Prof. Madhavan Mukund &amp; Prof. G Venkatesh",
  "term": "Every term",
  "prereq": "none",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://study.iitm.ac.in/ds/course_pages/BSCS1001.html",
+   "label": "Official course page"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1WrajCvVwT3mqM0NRBFXCTfKy6etdqW1b",
+   "label": "Lecture slides (Drive folder)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1eCC9y8dyNqRCZUQjoxHVV60xryjZed3X",
+   "label": "Lecture transcripts (Drive folder)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [
