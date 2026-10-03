@@ -9,8 +9,49 @@
  "instructor": "Prof. Sudarshan Iyengar",
  "term": "Every term",
  "prereq": "CS1001",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://study.iitm.ac.in/ds/course_pages/BSCS1002.html",
+   "label": "Official course page"
+  },
+  {
+   "url": "https://www.youtube.com/@introtopython",
+   "label": "Live session channel"
+  },
+  {
+   "url": "https://bsc-iitm.github.io/python-textbook/",
+   "label": "IITM Python textbook"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1xjgelPNfh5QGKjnBxtjVYJwICG0Pkix_",
+   "label": "Lecture slides (Drive folder)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1Sgia-K95Bc8FLdNBuDR5xQwehoWXabCI",
+   "label": "Lecture transcripts (Drive folder)"
+  },
+  {
+   "url": "http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf",
+   "label": "Python for Everybody (free book)"
+  },
+  {
+   "url": "https://youtube.com/playlist?list=PLZd_9NahuB3Hkm4OoLbZGoXvdslgTSGeG&si=wez_u5147Qd_u-NB",
+   "label": "MyCampus YouTube playlist"
+  },
+  {
+   "url": "https://www.w3schools.com/python/",
+   "label": "W3Schools Python tutorial"
+  },
+  {
+   "url": "https://zerotomastery.io/cheatsheets/python-cheat-sheet/",
+   "label": "Python cheat sheet (zerotomastery.io)"
+  },
+  {
+   "url": "https://docs.google.com/document/d/e/2PACX-1vTkdWzlMnt4qnZBelQGfd1K9RGGotM9bHabcqnoOq_VXWVlzhKSekh3Uu6SZIATPtJ-yr9qleASYhHO/pub",
+   "label": "Python cheat sheet (quick reference)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

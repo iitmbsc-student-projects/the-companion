@@ -9,8 +9,13 @@
  "instructor": "Prof. Rahul Mishra &amp; Prof. Parameswari Krishnamurthy",
  "term": "As offered",
  "prereq": "CS3004",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1bRawqSEj7b5D5N8C8e7zJDqeOs7ATz65?usp=sharing",
+   "label": "Drive folder"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

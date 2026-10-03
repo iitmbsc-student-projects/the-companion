@@ -9,8 +9,13 @@
  "instructor": "Prof. Ayon Chakraborty",
  "term": "As offered",
  "prereq": "CS3031",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1V2eXorxEKyvLN3c-FYLYWK0ewkKt7Wg2?usp=sharing",
+   "label": "Drive folder"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

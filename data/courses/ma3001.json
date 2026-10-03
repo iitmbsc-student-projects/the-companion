@@ -9,8 +9,17 @@
  "instructor": "Prof. Meenakshi D'Souza",
  "term": "As offered",
  "prereq": "none",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1tfag4fteJjYyGUL3m44xLSoQ7TD1uEId?usp=sharing",
+   "label": "Drive folder"
+  },
+  {
+   "url": "https://www.youtube.com/@MA3001DiscreteMathematics",
+   "label": "Course YouTube channel"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

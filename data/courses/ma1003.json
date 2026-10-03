@@ -9,8 +9,45 @@
  "instructor": "Prof. Sarang S Sane",
  "term": "Every term",
  "prereq": "MA1001",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://study.iitm.ac.in/ds/course_pages/BSMA1003.html",
+   "label": "Official course page"
+  },
+  {
+   "url": "https://www.youtube.com/@maths-2",
+   "label": "Live session channel"
+  },
+  {
+   "url": "https://drive.google.com/file/d/1nMGSpQfLObffDsaojI-56kkl_tuo94hJ/view",
+   "label": "Linear Algebra book"
+  },
+  {
+   "url": "https://mml-book.com/",
+   "label": "Mathematics for Machine Learning (free book)"
+  },
+  {
+   "url": "https://www.mecmath.net/",
+   "label": "Vector Calculus by Michael Corral (free book)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1EPt5z4GLPbmJciNx8vsoDmCSis2l0Fgg",
+   "label": "Lecture slides (Drive folder)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1vZav5pceqRv4yybdQ69By5Y2V4154pO0",
+   "label": "Lecture transcripts (Drive folder)"
+  },
+  {
+   "url": "https://www.khanacademy.org/math/linear-algebra",
+   "label": "Khan Academy: Linear Algebra"
+  },
+  {
+   "url": "https://youtube.com/playlist?list=PLZd_9NahuB3EztpCeK9O81agMhePG0hfk&si=Hsjb_pb77b1svH3Y",
+   "label": "MyCampus YouTube playlist"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

@@ -9,8 +9,17 @@
  "instructor": "Prof. Chester Rebeiro",
  "term": "As offered",
  "prereq": "CS3031",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1ABrjbcwqPNGO_OaUxoJnslhwMmx0gym6?usp=sharing",
+   "label": "Drive folder"
+  },
+  {
+   "url": "https://www.youtube.com/@OperatingSystem-co4hz",
+   "label": "Course YouTube channel"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

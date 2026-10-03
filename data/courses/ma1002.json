@@ -9,8 +9,33 @@
  "instructor": "Prof. Usha Mohan",
  "term": "Every term",
  "prereq": "none",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://study.iitm.ac.in/ds/course_pages/BSMA1002.html",
+   "label": "Official course page"
+  },
+  {
+   "url": "https://drive.google.com/file/d/1PE1jWEJpoJ-9s5zyvj9eOTzckAyWjBGZ/view",
+   "label": "Book 1: Descriptive Statistics"
+  },
+  {
+   "url": "https://drive.google.com/file/d/1CcWiuU3pNYIU2J3W4Zpeabp8PAJJmjFb/view",
+   "label": "Book 2: Probability and Probability Distributions"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1nxmW_1VVOnBwpIVLOq8OJO8ICz-xPK5H",
+   "label": "Lecture slides (Drive folder)"
+  },
+  {
+   "url": "https://drive.google.com/drive/folders/1D_4XqiQFyox41WeclW5a4fIkBzXDA4zg",
+   "label": "Lecture transcripts (Drive folder)"
+  },
+  {
+   "url": "https://www.statlect.com/",
+   "label": "Statlect (free online textbook)"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [

@@ -9,8 +9,13 @@
  "instructor": "Mr. Atul Pratap Singh",
  "term": "As offered",
  "prereq": "CS2006",
- "resources": [],
- "resources_note": "",
+ "resources": [
+  {
+   "url": "https://drive.google.com/drive/folders/1HJ2qny42mzuO5QrdTZTOe21PMYDPA5Wi?usp=sharing",
+   "label": "Drive folder"
+  }
+ ],
+ "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
  "pyq": [],
  "syllabus": {
   "description_paragraphs": [
