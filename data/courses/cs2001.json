@@ -15,12 +15,6 @@
    "label": "Supplementary content (Drive folder)"
   },
   {
-   "url": "https://oppe.dev/",
-   "label": "DBMS OPPE practice",
-   "by": "Ishan Das Sharma",
-   "by_url": "https://ishan.page/"
-  },
-  {
    "url": "https://www.youtube.com/@dbms-iitmadrasbsdegree1439",
    "label": "Course YouTube channel"
   },
@@ -558,6 +552,22 @@
      "t": "Widely Used DBMSs and Course Summarization",
      "v": "lgiN8paqhjw",
      "s": "https://drive.google.com/file/d/1vSOuyLmNl6W9QqJufM1XrN4QI6ftlUvB/view?usp=drive_link"
+    }
+   ]
+  }
+ ],
+ "extra_tabs": [
+  {
+   "id": "oppe",
+   "label": "OPPE",
+   "standfirst": "Practice material for the Database Management Systems online proctored programming exam.",
+   "links_heading": "Practice and solutions",
+   "links": [
+    {
+     "url": "https://oppe.dev/",
+     "label": "oppe.dev, curated DBMS OPPE problems with a coding environment",
+     "by": "Ishan Das Sharma",
+     "by_url": "https://ishan.page/"
     }
    ]
   }

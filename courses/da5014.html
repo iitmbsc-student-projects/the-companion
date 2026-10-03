@@ -175,9 +175,10 @@
       <div class="nav-label">Main</div>
       <div class="nav-item active" id="nav-dashboard">Dashboard</div>
       <div class="nav-item" id="nav-syllabus">Syllabus</div>
+      <div class="nav-item" id="nav-x-website" data-extra="website">Course website</div>
     </div>
 
-    <div class="nav-section accordion accordion-flush" id="lecture-nav">
+    <div class="nav-section accordion accordion-flush" id="lecture-nav" style="display:none">
       <div class="nav-label">Weekly Lectures</div>
     </div>
   </nav>
@@ -226,14 +227,6 @@
         </ul>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
-      <section class="chapter" id="embedded-site">
-        <h2><span class="num">§ 4</span>Course website</h2>
-        <p class="tbd-note" style="margin-bottom:10px">The MLOps course website, shown here so you can read it without leaving the page.</p>
-        <div class="embed-wrap">
-          <iframe class="embed-frame" src="https://iitmbsmlops.github.io/" title="Course website" loading="lazy" referrerpolicy="no-referrer"></iframe>
-        </div>
-        <p class="tbd-note" style="margin-top:10px">Not loading? <a href="https://iitmbsmlops.github.io/" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
-      </section>
 
     </section>
 
@@ -279,7 +272,23 @@
       </section>
 
     </section>
+    <section class="panel extra-panel" id="panel-x-website">
 
+      <div class="course-head">
+        <div class="kicker">DA5014 · BS elective · 4 credits</div>
+        <h1>Course website</h1>
+        <p class="standfirst">The MLOps course website, shown here so you can read it without leaving the page.</p>
+      </div>
+
+      <section class="chapter">
+        <h2><span class="num">§ 1</span>IITM BS MLOps</h2>
+        <div class="embed-wrap">
+          <iframe class="embed-frame" data-src="https://iitmbsmlops.github.io/" title="IITM BS MLOps" referrerpolicy="no-referrer"></iframe>
+        </div>
+        <p class="tbd-note" style="margin-top:10px">Not loading? <a href="https://iitmbsmlops.github.io/" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+      </section>
+
+    </section>
 
     <section class="panel" id="panel-lecture">
       <div class="video" id="video-box">
@@ -315,6 +324,12 @@
   const panelLecture = document.getElementById('panel-lecture');
   const navSyllabus = document.getElementById('nav-syllabus');
   const panelSyllabus = document.getElementById('panel-syllabus');
+  const extraNavs = Array.from(document.querySelectorAll('[data-extra]'));
+  const extraPanels = Array.from(document.querySelectorAll('.extra-panel'));
+  function clearExtras(){
+    extraNavs.forEach(el => el.classList.remove('active'));
+    extraPanels.forEach(el => el.classList.remove('active'));
+  }
   const frame = document.getElementById('video-frame');
   const emptyOverlay = document.getElementById('video-empty');
   const eyebrow = document.getElementById('current-eyebrow');
@@ -399,6 +414,7 @@
   }
 
   function showDashboard(){
+    clearExtras();
     navDashboard.classList.add('active');
     navSyllabus.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
@@ -409,6 +425,7 @@
   }
 
   function showSyllabus(){
+    clearExtras();
     navSyllabus.classList.add('active');
     navDashboard.classList.remove('active');
     navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
@@ -418,8 +435,27 @@
     window.scrollTo(0, 0);
   }
 
+  function showExtra(id){
+    clearExtras();
+    navDashboard.classList.remove('active');
+    navSyllabus.classList.remove('active');
+    navSection.querySelectorAll('.lecture-item').forEach(el => el.classList.remove('active'));
+    panelDashboard.classList.remove('active');
+    panelSyllabus.classList.remove('active');
+    panelLecture.classList.remove('active');
+    extraNavs.forEach(el => el.classList.toggle('active', el.dataset.extra === id));
+    const panel = document.getElementById('panel-x-' + id);
+    if (panel){
+      panel.classList.add('active');
+      // embedded sites load only when their tab is first opened
+      panel.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; f.removeAttribute('data-src'); });
+    }
+    window.scrollTo(0, 0);
+  }
+
   function selectLecture(wi, ii){
     const item = WEEKS_DATA[wi].items[ii];
+    clearExtras();
     navDashboard.classList.remove('active');
     navSyllabus.classList.remove('active');
     panelSyllabus.classList.remove('active');
@@ -451,6 +487,7 @@
 
   navDashboard.addEventListener('click', showDashboard);
   navSyllabus.addEventListener('click', showSyllabus);
+  extraNavs.forEach(el => el.addEventListener('click', () => showExtra(el.dataset.extra)));
   navSection.addEventListener('click', e => {
     // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
     // this only needs to react to an actual lecture row being picked.
