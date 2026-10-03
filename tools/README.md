@@ -1,7 +1,7 @@
 # tools/ — the dashboard and page generator
 
 This folder is how course pages get built and edited from here on. `courses/*.html`
-and `index.html`'s listing are **generated** — don't hand-edit them, edits get
+and `courses.html`'s listing are **generated** — don't hand-edit them, edits get
 overwritten the next time a course is regenerated. The real content lives in
 `data/courses/<code>.json`, one file per course.
 
@@ -16,18 +16,18 @@ python app.py
 Then open `http://localhost:5000`. This is separate from whatever you use to
 preview the site itself (e.g. `python -m http.server 8000` from the site root) —
 run both at once, they don't conflict. The dashboard writes straight into
-`data/courses/`, `courses/`, and `index.html` in this repo; refresh your
+`data/courses/`, `courses/`, and `courses.html` in this repo; refresh your
 localhost:8000 tab to see a change.
 
 From the dashboard you can:
 
 - **Add a course** — fills in the basics, drops it into the right section of
-  `index.html` automatically (by the Program field), and scaffolds an empty
+  `courses.html` automatically (by the Program field), and scaffolds an empty
   syllabus/playlist ready to fill in.
 - **Edit a course** — syllabus (description, faculty, week-by-week), previous
   year questions, resources, and its lecture playlist, all as plain-text
   fields (see the format notes below).
-- **Delete a course** — removes its page, its data file, and its `index.html`
+- **Delete a course** — removes its page, its data file, and its `courses.html`
   row.
 - **Import a lecture playlist** — paste an ordered list of videos (one per
   line, `<url or id> | <title>`), or paste a YouTube playlist URL directly
@@ -44,7 +44,7 @@ python generate.py            # regenerate every page
 python generate.py cs2001     # regenerate just one
 ```
 
-Hand-editing `index.html`'s listing directly still works too, but won't
+Hand-editing `courses.html`'s listing directly still works too, but won't
 survive the next time that course is added or edited through the dashboard
 (which resyncs its own row, not the rest of the file).
 
@@ -90,7 +90,7 @@ when the tab is first opened. Regenerate with `python generate.py <code>`.
 
 ```
 tools/generate.py            Turns data/courses/<code>.json into courses/<code>.html,
-                              and keeps index.html's listing in sync (add/remove a row).
+                              and keeps courses.html's listing in sync (add/remove a row).
                               Run directly to regenerate every page: python generate.py
 tools/migrate.py              The one-off script that produced the original data/courses/
                               JSON files from the hand-built HTML pages that came before
