@@ -78,12 +78,53 @@
  },
  "weeks_data": [
   {
+   "w": "Week 0",
+   "items": [
+    {
+     "n": "0.1",
+     "t": "Introduction - English Course | Building Fluency, Accuracy & Confidence in Communication",
+     "v": "EPa6ATqMI9g",
+     "s": null
+    }
+   ]
+  },
+  {
    "w": "Week 1",
    "items": [
     {
-     "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "1.1",
+     "t": "Learning Language",
+     "v": "DgKYu1pi3qg",
+     "s": null
+    },
+    {
+     "n": "1.2",
+     "t": "Sounds & Writing Symbols in English",
+     "v": "xcc0U_U4xhg",
+     "s": null
+    },
+    {
+     "n": "1.3",
+     "t": "Speech Sounds in English",
+     "v": "MMBrfQC0V9A",
+     "s": null
+    },
+    {
+     "n": "1.4",
+     "t": "Articulation of Vowel & Consonant Sounds in English",
+     "v": "fC-UbX3MsGs",
+     "s": null
+    },
+    {
+     "n": "1.5",
+     "t": "Diphthongs & Semi-Vowels",
+     "v": "WqiKRiJTqnc",
+     "s": null
+    },
+    {
+     "n": "1.6",
+     "t": "Consonant Clusters in English Words",
+     "v": "Pj1iWVqBuyg",
      "s": null
     }
    ]
@@ -92,9 +133,39 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "2.1",
+     "t": "Parts of Speech (Verb, Noun & Pronoun)",
+     "v": "RvcNFUfeqHI",
+     "s": null
+    },
+    {
+     "n": "2.2",
+     "t": "Parts of Speech (Adjectives & Adverbs)",
+     "v": "1xo6TWVjYbE",
+     "s": null
+    },
+    {
+     "n": "2.3",
+     "t": "Parts of Speech (Prepositions)",
+     "v": "ajGNF1CO_Vs",
+     "s": null
+    },
+    {
+     "n": "2.4",
+     "t": "Conjunctions & Interjections",
+     "v": "uxCVjgMfW34",
+     "s": null
+    },
+    {
+     "n": "2.5",
+     "t": "Articles - Part 1",
+     "v": "KXWalyM03b8",
+     "s": null
+    },
+    {
+     "n": "2.6",
+     "t": "Articles - Part 2",
+     "v": "V-1ZDPS6EC0",
      "s": null
     }
    ]
@@ -103,9 +174,45 @@
    "w": "Week 3",
    "items": [
     {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "3.1",
+     "t": "What is Good Vocabulary - Part 1",
+     "v": "A2eI-Ttmd7I",
+     "s": null
+    },
+    {
+     "n": "3.2",
+     "t": "What is Good Vocabulary - Part 2",
+     "v": "pHkc23_0ULI",
+     "s": null
+    },
+    {
+     "n": "3.3",
+     "t": "What is Good Vocabulary - Part 3",
+     "v": "b8Wq_9P7uqI",
+     "s": null
+    },
+    {
+     "n": "3.4",
+     "t": "Phrasal Verbs",
+     "v": "lnWNuXh4NEs",
+     "s": null
+    },
+    {
+     "n": "3.5",
+     "t": "Modal Verbs - A Quick Review",
+     "v": "XFPZfdWCom4",
+     "s": null
+    },
+    {
+     "n": "3.6",
+     "t": "Phrases and Idioms - Part 1",
+     "v": "-aTwRZVfo64",
+     "s": null
+    },
+    {
+     "n": "3.7",
+     "t": "Phrases & Idioms - Part 2",
+     "v": "r5wn7XuDCV8",
      "s": null
     }
    ]
@@ -114,9 +221,39 @@
    "w": "Week 4",
    "items": [
     {
-     "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "4.1",
+     "t": "Spoken English Preliminaries",
+     "v": "_mD9iGMD73g",
+     "s": null
+    },
+    {
+     "n": "4.2",
+     "t": "Speak Slowly",
+     "v": "d2iAbGoxazg",
+     "s": null
+    },
+    {
+     "n": "4.3",
+     "t": "Phrasal Pause",
+     "v": "tGch4v-bKsU",
+     "s": null
+    },
+    {
+     "n": "4.4",
+     "t": "Do You Have Something To Say?",
+     "v": "XfbkqslFsTA",
+     "s": null
+    },
+    {
+     "n": "4.5",
+     "t": "Effective Presentations",
+     "v": "M0jkrPkUbTg",
+     "s": null
+    },
+    {
+     "n": "4.6",
+     "t": "Telephone English",
+     "v": "VSwUcHGAMcE",
      "s": null
     }
    ]
@@ -125,9 +262,33 @@
    "w": "Week 5",
    "items": [
     {
-     "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "5.1",
+     "t": "Past Tense",
+     "v": "6Ktk0Gio9wo",
+     "s": null
+    },
+    {
+     "n": "5.2",
+     "t": "Present Tense",
+     "v": "9lzN9jZiWiw",
+     "s": null
+    },
+    {
+     "n": "5.3",
+     "t": "Future Tense",
+     "v": "qTJ9gMjcb1c",
+     "s": null
+    },
+    {
+     "n": "5.4",
+     "t": "Agreement in English Sentences (Subject & Verb in Sentences)",
+     "v": "pv-eV3nVceE",
+     "s": null
+    },
+    {
+     "n": "5.5",
+     "t": "Practise Subject Verb Agreement in English",
+     "v": "ALjHStRxE7M",
      "s": null
     }
    ]
@@ -136,9 +297,39 @@
    "w": "Week 6",
    "items": [
     {
-     "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "6.1",
+     "t": "Tips for Reading Comprehension",
+     "v": "zRJUr8r79IQ",
+     "s": null
+    },
+    {
+     "n": "6.2",
+     "t": "Reading - Skimming & Scanning",
+     "v": "qby48_n3H_w",
+     "s": null
+    },
+    {
+     "n": "6.3",
+     "t": "SQ3R and PQRST Method",
+     "v": "NXnGE0Fu3HA",
+     "s": null
+    },
+    {
+     "n": "6.4",
+     "t": "Reading Shorter & Longer Texts",
+     "v": "jNBOYe26nsc",
+     "s": null
+    },
+    {
+     "n": "6.5",
+     "t": "Critical Reading",
+     "v": "CYCgkNYtokc",
+     "s": null
+    },
+    {
+     "n": "6.6",
+     "t": "How to prepare for reading test",
+     "v": "8IFuytVl6ZQ",
      "s": null
     }
    ]
@@ -147,9 +338,33 @@
    "w": "Week 7",
    "items": [
     {
-     "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "7.1",
+     "t": "Active and Passive Listening",
+     "v": "KfE9W6SrP4w",
+     "s": null
+    },
+    {
+     "n": "7.2",
+     "t": "Barriers to Listening",
+     "v": "MBS0XyzG5Zw",
+     "s": null
+    },
+    {
+     "n": "7.3",
+     "t": "Listening to Longer Technical Talks",
+     "v": "7NHotGqBQlM",
+     "s": null
+    },
+    {
+     "n": "7.4",
+     "t": "Effective listening - Sample practice",
+     "v": "ORdGTV-988I",
+     "s": null
+    },
+    {
+     "n": "7.5",
+     "t": "How to ace listening tests",
+     "v": "38w3ysMtrVw",
      "s": null
     }
    ]
@@ -158,9 +373,33 @@
    "w": "Week 8",
    "items": [
     {
-     "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "8.1",
+     "t": "Stress in Words",
+     "v": "8gud9XJsL6k",
+     "s": null
+    },
+    {
+     "n": "8.2",
+     "t": "Plurality in English",
+     "v": "42hufxqiOAk",
+     "s": null
+    },
+    {
+     "n": "8.3",
+     "t": "Aspiration in English Words",
+     "v": "IoprN0REcgs",
+     "s": null
+    },
+    {
+     "n": "8.4",
+     "t": "Syllables & Stress in Words",
+     "v": "6SrSSSEHWxk",
+     "s": null
+    },
+    {
+     "n": "8.5",
+     "t": "Aspiration, Stress & Syllabification",
+     "v": "LdteKj-oE5I",
      "s": null
     }
    ]
@@ -169,9 +408,39 @@
    "w": "Week 9",
    "items": [
     {
-     "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "9.1",
+     "t": "Presenting Effectively",
+     "v": "TB6j5RhbMQc",
+     "s": null
+    },
+    {
+     "n": "9.2",
+     "t": "The Slides",
+     "v": "TL4zOwev7hQ",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Group Discussion",
+     "v": "Cp2oIV0iQoI",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "Rules in GD",
+     "v": "p4iFKPK1e14",
+     "s": null
+    },
+    {
+     "n": "9.5",
+     "t": "Art of Storytelling",
+     "v": "gfxzKSLf87Q",
+     "s": null
+    },
+    {
+     "n": "9.60000000000001",
+     "t": "How to ace listening tests",
+     "v": "38w3ysMtrVw",
      "s": null
     }
    ]
@@ -180,9 +449,45 @@
    "w": "Week 10",
    "items": [
     {
-     "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "10.1",
+     "t": "Common Errors in English - Part 1",
+     "v": "LNczGDRKX6Y",
+     "s": null
+    },
+    {
+     "n": "10.2",
+     "t": "Common Errors in English - Part 2",
+     "v": "Z8L7vIbAVK0",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Common Errors in English - Part 3",
+     "v": "-qs5zfmD9M8",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Basics of Writing",
+     "v": "EJN3-yzAhqU",
+     "s": null
+    },
+    {
+     "n": "10.5",
+     "t": "How to Write Bio-Notes?",
+     "v": "5JkSz17l1Ao",
+     "s": null
+    },
+    {
+     "n": "10.6",
+     "t": "Describe a Photo",
+     "v": "WMjTEHW6YsU",
+     "s": null
+    },
+    {
+     "n": "10.7",
+     "t": "Writing for Public Purpose",
+     "v": "AF8akyH8Duo",
      "s": null
     }
    ]
@@ -191,9 +496,51 @@
    "w": "Week 11",
    "items": [
     {
-     "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "11.1",
+     "t": "Note-Writing",
+     "v": "dObw3Ikv1FE",
+     "s": null
+    },
+    {
+     "n": "11.2",
+     "t": "Business Writing",
+     "v": "tm2Ou96Kajs",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Writing Instructions",
+     "v": "eZYAswxzk7w",
+     "s": null
+    },
+    {
+     "n": "11.4",
+     "t": "Business Writing - Sample",
+     "v": "IDpOwgM3aZo",
+     "s": null
+    },
+    {
+     "n": "11.5",
+     "t": "Data Interpretation (Visual to Verbal)",
+     "v": "9kiv6xUsQsQ",
+     "s": null
+    },
+    {
+     "n": "11.6",
+     "t": "Data interpretation Sample - A Household Survey",
+     "v": "Lldu_p3qVcI",
+     "s": null
+    },
+    {
+     "n": "11.7",
+     "t": "Writing Essay",
+     "v": "-qpN5ilfDy8",
+     "s": null
+    },
+    {
+     "n": "11.8",
+     "t": "Power of Simplicity - Words & Sentences",
+     "v": "9nsKHDgllW0",
      "s": null
     }
    ]
@@ -202,9 +549,33 @@
    "w": "Week 12",
    "items": [
     {
-     "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "n": "12.1",
+     "t": "Professional Writing - Introduction",
+     "v": "mzIYctZ7HGg",
+     "s": null
+    },
+    {
+     "n": "12.2",
+     "t": "Development & Organization of Paragraphs",
+     "v": "IXbFjs4HHXI",
+     "s": null
+    },
+    {
+     "n": "12.3",
+     "t": "Professional Writing (Language & style: Aspects of formality, Tone in formal writing)",
+     "v": "ex0qeyRwv-g",
+     "s": null
+    },
+    {
+     "n": "12.4",
+     "t": "Professional Writing: Editing & Proofreading",
+     "v": "po55EcHnXbY",
+     "s": null
+    },
+    {
+     "n": "12.5",
+     "t": "Improve your writing skills",
+     "v": "SP97dPNQmLM",
      "s": null
     }
    ]
