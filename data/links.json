@@ -26,8 +26,8 @@
      ]
     },
     {
-     "title": "Grading document",
-     "desc": "How grades are calculated, who is eligible, and the rules for every course.",
+     "title": "Grading document, Sep 2026",
+     "desc": "How grades are calculated, who is eligible, and the rules for every course this term.",
      "links": [
       {
        "label": "Open",
@@ -65,6 +65,17 @@
       }
      ],
      "auth": "iitm"
+    },
+    {
+     "title": "Score checker",
+     "desc": "Check your scores on the IITM study portal.",
+     "auth": "iitm",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://study.iitm.ac.in/score-checker"
+      }
+     ]
     },
     {
      "title": "Support tickets",
@@ -134,6 +145,62 @@
    ]
   },
   {
+   "id": "collections",
+   "title": "Resource collections",
+   "items": [
+    {
+     "title": "Degree level course resources",
+     "desc": "Playlists, slides, books and extra material, listed course by course for the degree level.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/important-resource-for-degree-level-courses/85946"
+      }
+     ]
+    },
+    {
+     "title": "Diploma level course resources",
+     "desc": "The same course-by-course list of playlists, slides and books for the diploma level.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/important-resources-for-diploma-level/75823"
+      }
+     ]
+    },
+    {
+     "title": "Foundation level course resources",
+     "desc": "Playlists, slides and supporting material for the foundation courses.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/foundation-level-resource/154274"
+      }
+     ]
+    },
+    {
+     "title": "Student link library",
+     "desc": "A long, community-kept list of useful links. This tab is a shortlist drawn from it.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/links-to-almost-all-resources-at-one-place/88809"
+      }
+     ]
+    },
+    {
+     "title": "Share and find past papers",
+     "desc": "A community drive to collect previous year question papers. Add the ones you have.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://discourse.onlinedegree.iitm.ac.in/t/question-paper-repository-we-need-your-help/202463"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "rules",
    "title": "Rules and malpractice",
    "items": [
@@ -163,6 +230,17 @@
    "id": "courses",
    "title": "Courses and credits",
    "items": [
+    {
+     "title": "Course planner",
+     "desc": "Plan which courses to take in the coming terms.",
+     "auth": "iitm",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://course-planner-140256174016.asia-south1.run.app/login"
+      }
+     ]
+    },
     {
      "title": "Course syllabus",
      "desc": "Week-wise syllabus for every course in the degree.",
@@ -230,17 +308,6 @@
    "title": "Made by students",
    "items": [
     {
-     "title": "IITM BS notes",
-     "desc": "Notes made by seniors and batch-mates. Full access needs a login on that site, and its course pages are being phased out.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://theopennotes.in/course/63fd9e3c553314fb9fc19524"
-      }
-     ],
-     "auth": "site"
-    },
-    {
      "title": "AceGrade",
      "desc": "Lectures, notes and past papers, plus a quiz evaluator that scores you against the answer key.",
      "links": [
@@ -277,26 +344,6 @@
       {
        "label": "Open",
        "url": "https://www.youtube.com/channel/UCw8-ZEkw9gVXEBw5P96kDjw"
-      }
-     ]
-    },
-    {
-     "title": "IITM BS Resource Hub",
-     "desc": "Community platform to share and find alternative learning resources.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://iitm-resources.vercel.app/"
-      }
-     ]
-    },
-    {
-     "title": "Foundation level notes",
-     "desc": "Notes for foundation courses with worked answers.",
-     "links": [
-      {
-       "label": "Open",
-       "url": "https://notesbyshivam.blogspot.com/"
       }
      ]
     }

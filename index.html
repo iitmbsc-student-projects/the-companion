@@ -34,12 +34,43 @@
   .mast-rule{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
     height:3px;margin-top:14px}
 
-  nav.section-nav{text-align:center;padding:10px 0;font-size:12px;
-    font-family:'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase}
-  nav.section-nav a{color:var(--ink);border:none;margin:0 2px}
-  nav.section-nav a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
-  nav.section-nav .sep{color:var(--rule)}
-
+  /* Top bar: sticky quick links to everything */
+  .topbar{position:sticky;top:0;z-index:40;background:rgba(244,239,230,.94);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);
+    box-shadow:0 2px 10px rgba(28,26,23,.05)}
+  .topbar-in{max-width:1100px;display:flex;align-items:center;gap:14px;height:56px}
+  .tb-brand{font-family:'Fraunces',serif;font-weight:700;font-size:19px;letter-spacing:-0.01em;
+    color:var(--ink);border:none;white-space:nowrap}
+  .tb-brand:hover{color:var(--accent)}
+  .tb-nav{display:flex;align-items:center;gap:2px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;
+    padding:2px 0}
+  .tb-nav::-webkit-scrollbar{display:none}
+  .tb-link{flex:none;padding:7px 12px;border-radius:999px;border:none;color:var(--ink);white-space:nowrap;
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+    transition:background .15s ease,color .15s ease}
+  .tb-link:hover{background:rgba(122,30,40,.09);color:var(--accent)}
+  .tb-link.active{background:var(--ink);color:var(--paper)}
+  .tb-primary{color:var(--accent);font-weight:500}
+  .tb-primary.active{background:var(--accent);color:#fff}
+  .tb-sep{flex:none;width:1px;height:18px;background:var(--rule);margin:0 8px}
+  .tb-cta{flex:none;margin-left:auto;padding:8px 16px;border-radius:999px;border:none;background:var(--accent);
+    color:#fff;white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:11.5px;
+    letter-spacing:.06em;text-transform:uppercase;transition:background .15s ease,transform .15s ease}
+  .tb-cta:hover{background:#5d1620;transform:translateY(-1px)}
+  .tb-cta::after{content:" \2197"}
+  @media(max-width:900px){ .tb-brand{display:none} }
+  .tb-cta-m{display:none}
+  @media(max-width:640px){
+    .topbar-in{height:52px;gap:8px}
+    .tb-link{padding:6px 10px;font-size:11px}
+    .tb-cta{display:none}
+    .tb-cta-m{display:inline-block;background:var(--accent);color:#fff;margin-left:6px}
+    .tb-cta-m:hover{background:#5d1620;color:#fff}
+    .tb-nav{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent);
+      mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent);padding-right:22px}
+  }
+  .level{scroll-margin-top:72px}
+  .link-group{scroll-margin-top:72px}
 
   .search{max-width:520px;margin:0 auto 18px;position:relative}
   .search input{width:100%;background:transparent;border:none;border-bottom:1px solid var(--ink);
@@ -117,7 +148,7 @@
     font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
     transition:background .15s ease,color .15s ease,border-color .15s ease}
   .links-jump a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .link-group{margin-top:34px;scroll-margin-top:16px}
+  .link-group{margin-top:34px}
   .group-head{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:6px;
     border-bottom:1px solid var(--rule)}
   .group-head h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:0;letter-spacing:-0.01em}
@@ -164,18 +195,27 @@
     <h1 class="mast-title">The Companion</h1>
     <p class="mast-sub">a study companion for the IIT Madras BS in Data Science &amp; Applications</p>
     <div class="mast-rule"></div>
-    <nav class="section-nav">
-      <a href="#links">Important links</a><span class="sep"> · </span>
-      <a href="#foundation">Foundation</a><span class="sep"> · </span>
-      <a href="#diploma-p">Diploma / Programming</a><span class="sep"> · </span>
-      <a href="#diploma-ds">Diploma / Data Science</a><span class="sep"> · </span>
-      <a href="#bsc">BSc</a><span class="sep"> · </span>
-      <a href="#bs">BS</a><span class="sep"> · </span>
-      <a href="#pgd">PG Diploma</a><span class="sep"> · </span>
-      <a href="https://github.com/">Contribute</a>
-    </nav>
   </div>
 </header>
+
+<nav class="topbar" aria-label="Site sections">
+  <div class="wrap topbar-in">
+    <a class="tb-brand" href="#links" title="The Companion">The Companion</a>
+    <div class="tb-nav">
+      <a class="tb-link tb-primary" href="#links" data-nav="links">Important links</a>
+      <span class="tb-sep" aria-hidden="true"></span>
+      <a class="tb-link" href="#foundation" data-nav="foundation">Foundation</a>
+      <a class="tb-link" href="#diploma-p" data-nav="diploma-p">Diploma (Prog)</a>
+      <a class="tb-link" href="#diploma-ds" data-nav="diploma-ds">Diploma (DS)</a>
+      <a class="tb-link" href="#bsc" data-nav="bsc">BSc</a>
+      <a class="tb-link" href="#bs" data-nav="bs">BS</a>
+      <a class="tb-link" href="#pgd" data-nav="pgd">PG Diploma</a>
+      <a class="tb-link" href="#mtech" data-nav="mtech">MTech</a>
+      <a class="tb-link tb-cta-m" href="https://github.com/iitmbsc-student-projects/the-companion" target="_blank" rel="noopener">Contribute &#8599;</a>
+    </div>
+    <a class="tb-cta" href="https://github.com/iitmbsc-student-projects/the-companion" target="_blank" rel="noopener">Contribute</a>
+  </div>
+</nav>
 
 <div class="wrap">
 
@@ -204,6 +244,7 @@
       <p class="links-intro">The links students come back to most, collected from the community's resource thread. If one has stopped working or something important is missing, tell us on the Discourse thread or open an issue on GitHub.</p>
       <nav class="links-jump" aria-label="Jump to a group">
         <a href="#links-official">Official, start here</a>
+        <a href="#links-collections">Resource collections</a>
         <a href="#links-rules">Rules and malpractice</a>
         <a href="#links-courses">Courses and credits</a>
         <a href="#links-student-made">Made by students</a>
@@ -212,20 +253,31 @@
         <a href="#links-community">Community and perks</a>
       </nav>
       <div class="link-group" id="links-official">
-        <div class="group-head"><h3>Official, start here</h3><span class="group-count">12</span></div>
+        <div class="group-head"><h3>Official, start here</h3><span class="group-count">13</span></div>
         <ul class="links-grid">
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/" target="_blank" rel="noopener">Official BS website</a></h4><p class="lk-desc">The degree's main website on the IITM study portal.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://tiny.cc/IITM-SH" target="_blank" rel="noopener">Student handbook</a></h4><p class="lk-desc">Everything about the degree in detail. Read it once fully.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://tiny.cc/IITM-GD" target="_blank" rel="noopener">Grading document</a></h4><p class="lk-desc">How grades are calculated, who is eligible, and the rules for every course.</p></li>
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://tiny.cc/IITM-GD" target="_blank" rel="noopener">Grading document, Sep 2026</a></h4><p class="lk-desc">How grades are calculated, who is eligible, and the rules for every course this term.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/academic_calendar.html" target="_blank" rel="noopener">Academic calendar</a></h4><p class="lk-desc">Quiz, end term and OPPE dates for the current term.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/exam.html" target="_blank" rel="noopener">Scheduled online exam links</a></h4><p class="lk-desc">Links for the online proctored programming exams (OPPE).</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://ds.study.iitm.ac.in/auth/login" target="_blank" rel="noopener">Student dashboard</a></h4><p class="lk-desc">Official dashboard with your courses, documents and updates.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/score-checker" target="_blank" rel="noopener">Score checker</a></h4><p class="lk-desc">Check your scores on the IITM study portal.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
           <li class="lk-card"><h4 class="lk-title">Support tickets</h4><p class="lk-desc">Raise a query or concern with student support.</p><div class="lk-more"><a href="https://study-supportdesk.freshdesk.com/" target="_blank" rel="noopener">Support desk</a><a href="https://docs.google.com/document/d/e/2PACX-1vS7Vl-jl7usTsyXDES33uwCa57mD3fV031wb0KUVOkl3LxeNIcnGxRp_KSI09WLHtqD2zT1pnxEMYrZ/pub" target="_blank" rel="noopener">How to raise a ticket</a></div></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://datastudio.google.com/s/k3kRC9kDo54" target="_blank" rel="noopener">Data Studio</a></h4><p class="lk-desc">Your class rank, credits earned and other live details.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/archive.html" target="_blank" rel="noopener">Document archive</a></h4><p class="lk-desc">Official documents such as medium of instruction and fee structure.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vQnn2cFan5BqTTAByCoqtue-0XSmFXQPT91bADDL_i33tHMh8C0ZJepvFBwze4E5zJbGiBMdQa59VeT/pub" target="_blank" rel="noopener">Official documents</a></h4><p class="lk-desc">How to apply for a bonafide certificate, NOC, transcript, WES report and similar documents.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/" target="_blank" rel="noopener">Discourse forum</a></h4><p class="lk-desc">The official place to post academic queries.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://iitmbs.org/" target="_blank" rel="noopener">Student activities portal</a></h4><p class="lk-desc">Official portal for student activities.</p></li>
+        </ul>
+      </div>
+      <div class="link-group" id="links-collections">
+        <div class="group-head"><h3>Resource collections</h3><span class="group-count">5</span></div>
+        <ul class="links-grid">
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/important-resource-for-degree-level-courses/85946" target="_blank" rel="noopener">Degree level course resources</a></h4><p class="lk-desc">Playlists, slides, books and extra material, listed course by course for the degree level.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/important-resources-for-diploma-level/75823" target="_blank" rel="noopener">Diploma level course resources</a></h4><p class="lk-desc">The same course-by-course list of playlists, slides and books for the diploma level.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/foundation-level-resource/154274" target="_blank" rel="noopener">Foundation level course resources</a></h4><p class="lk-desc">Playlists, slides and supporting material for the foundation courses.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/links-to-almost-all-resources-at-one-place/88809" target="_blank" rel="noopener">Student link library</a></h4><p class="lk-desc">A long, community-kept list of useful links. This tab is a shortlist drawn from it.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/question-paper-repository-we-need-your-help/202463" target="_blank" rel="noopener">Share and find past papers</a></h4><p class="lk-desc">A community drive to collect previous year question papers. Add the ones you have.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
         </ul>
       </div>
       <div class="link-group" id="links-rules">
@@ -236,8 +288,9 @@
         </ul>
       </div>
       <div class="link-group" id="links-courses">
-        <div class="group-head"><h3>Courses and credits</h3><span class="group-count">6</span></div>
+        <div class="group-head"><h3>Courses and credits</h3><span class="group-count">7</span></div>
         <ul class="links-grid">
+          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://course-planner-140256174016.asia-south1.run.app/login" target="_blank" rel="noopener">Course planner</a></h4><p class="lk-desc">Plan which courses to take in the coming terms.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vSWW4TMd2ujKYOeSay5iCIyTGLtJgM1KWC-Ernu_JdhugLtB0dXV9i966Z-ZaPZ9qAAI1_QtWa3o3br/pub#h.64f8davxbp1d" target="_blank" rel="noopener">Course syllabus</a></h4><p class="lk-desc">Week-wise syllabus for every course in the degree.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/course-tip-stay-on-top-of-your-term-with-calendar/44947" target="_blank" rel="noopener">Course calendars</a></h4><p class="lk-desc">Add each course's calendar to stay on top of the term.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/course-yt-channel-list-data-science-and-applications/115619" target="_blank" rel="noopener">Course YouTube channels</a></h4><p class="lk-desc">Each course's channel, with recordings of past live sessions.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
@@ -247,15 +300,12 @@
         </ul>
       </div>
       <div class="link-group" id="links-student-made">
-        <div class="group-head"><h3>Made by students</h3><span class="group-count">7</span></div>
+        <div class="group-head"><h3>Made by students</h3><span class="group-count">4</span></div>
         <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://theopennotes.in/course/63fd9e3c553314fb9fc19524" target="_blank" rel="noopener">IITM BS notes</a></h4><p class="lk-desc">Notes made by seniors and batch-mates. Full access needs a login on that site, and its course pages are being phased out.</p><div class="lk-foot"><span class="lk-badge site">Login needed for full access</span></div></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://acegrade.in/" target="_blank" rel="noopener">AceGrade</a></h4><p class="lk-desc">Lectures, notes and past papers, plus a quiz evaluator that scores you against the answer key.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://quizpractice.space/" target="_blank" rel="noopener">QuizPractice</a></h4><p class="lk-desc">Attempt previous year papers in an exam-like format.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://oppe.rangalabs.cloud" target="_blank" rel="noopener">OPPE practice</a></h4><p class="lk-desc">Practise real OPPE questions and retry until they pass.</p></li>
           <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://www.youtube.com/channel/UCw8-ZEkw9gVXEBw5P96kDjw" target="_blank" rel="noopener">Degree level revision sessions</a></h4><p class="lk-desc">Revision videos for several degree level courses, on Lalit Kumar's YouTube channel.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://iitm-resources.vercel.app/" target="_blank" rel="noopener">IITM BS Resource Hub</a></h4><p class="lk-desc">Community platform to share and find alternative learning resources.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://notesbyshivam.blogspot.com/" target="_blank" rel="noopener">Foundation level notes</a></h4><p class="lk-desc">Notes for foundation courses with worked answers.</p></li>
         </ul>
       </div>
       <div class="link-group" id="links-higher-studies">
@@ -529,6 +579,7 @@
     searchBox.placeholder = placeholders[name];
     searchBox.value = '';
     __filter('');
+    if (typeof updateActive === 'function') updateActive();
   }
   tabBtns.forEach(b => b.addEventListener('click', () => {
     showTab(b.dataset.tab);
@@ -542,8 +593,26 @@
     showTab(inLinks ? 'links' : 'courses');
     if (target) target.scrollIntoView();
   }
+  // Top bar: highlight the link for where you are (Important links, or the course level in view)
+  const navLinks = document.querySelectorAll('.tb-link');
+  function updateActive(){
+    let active = null;
+    if (!document.getElementById('tab-links').hidden) {
+      active = 'links';
+    } else {
+      document.querySelectorAll('#tab-courses section.level').forEach(s => {
+        if (s.offsetParent !== null && s.getBoundingClientRect().top <= 120) active = s.id;
+      });
+    }
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.nav === active));
+    const on = document.querySelector('.tb-link.active');
+    if (on) { const box = on.parentElement; box.scrollLeft = Math.max(0, on.offsetLeft - 40); }
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('hashchange', () => setTimeout(updateActive, 60));
   window.addEventListener('hashchange', routeFromHash);
   routeFromHash();
+  updateActive();
 
   const backToTop = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
