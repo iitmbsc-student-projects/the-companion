@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Theory of Computation — The Companion</title>
-<link rel="stylesheet" href="../assets/theme.css?v=319f8eaa">
+<link rel="stylesheet" href="../assets/theme.css?v=225b80af">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,14 +30,21 @@
      those ship as !important and would fight the mobile override in the media query below.) ---- */
   .sidebar{position:fixed;top:0;left:0;width:300px;height:100vh;overflow-y:auto;
     background:var(--paper-2);border-right:1px solid var(--rule);z-index:10}
-  .sidebar-brand{padding:18px 20px 16px;border-bottom:1px solid var(--rule)}
-  .sidebar-brand .back-link{display:block;color:var(--ink);border:none;font-family:'JetBrains Mono',monospace;
-    font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
-  .sidebar-brand .back-link:hover{color:var(--accent)}
-  .sidebar-brand .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:20px;
-    letter-spacing:-0.01em}
-  .sidebar-brand .brand-sub{font-family:'JetBrains Mono',monospace;font-size:10.5px;
-    letter-spacing:.05em;color:var(--ink-2);margin-top:3px}
+  .sidebar-brand{padding:16px 20px 20px;border-bottom:1px solid var(--rule)}
+  .sidebar-brand .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);
+    border:1px solid var(--rule);border-radius:999px;padding:6px 13px 6px 10px;margin-bottom:22px;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    line-height:1;transition:color .15s,border-color .15s,background .15s}
+  .sidebar-brand .back-link svg{width:13px;height:13px;transition:transform .15s}
+  .sidebar-brand .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
+  .sidebar-brand .back-link:hover svg{transform:translateX(-3px)}
+  .sidebar-brand .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:30px;
+    letter-spacing:-0.02em;line-height:1}
+  .sidebar-brand .brand-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .sidebar-brand .chip{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;
+    padding:4px 8px;line-height:1}
+  .sidebar-brand .chip.credits{color:var(--accent);border-color:var(--accent)}
 
   .nav-section{padding:14px 0}
   .nav-section + .nav-section{border-top:1px solid var(--rule)}
@@ -74,7 +81,7 @@
     transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
   .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
   .accordion-body{padding:0}
-  .sidebar-theme{margin-top:12px}
+  .sidebar-theme{margin-top:18px}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
@@ -92,15 +99,17 @@
      content take the full width. The toggle button is fixed so it is always reachable. ---- */
   .sidebar{transition:transform .22s ease}
   .main-content,footer.colophon{transition:margin-left .22s ease}
-  .sidebar-toggle{position:fixed;top:12px;left:252px;z-index:20;width:36px;height:36px;
+  .sidebar-toggle{position:fixed;top:14px;left:254px;z-index:20;width:32px;height:32px;
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
-    background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
-    font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
+    background:var(--paper-2);color:var(--ink-2);border:1px solid var(--rule);border-radius:50%;
+    transition:left .22s ease,background .15s ease,color .15s,border-color .15s,transform .15s}
+  .sidebar-toggle svg{width:16px;height:16px}
   .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+  .sidebar-toggle:active{transform:scale(.92)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
-  body.sidebar-collapsed .sidebar-toggle{left:12px}
+  body.sidebar-collapsed .sidebar-toggle{left:14px;background:var(--paper)}
   body.sidebar-collapsed .main-content{padding-top:64px}
 
   .panel{display:none}
@@ -233,9 +242,9 @@
     .main-content{margin-left:0}
     footer.colophon{margin-left:0}
     .course-head h1{font-size:30px}
-    .sidebar-toggle{left:auto;right:12px}
+    .sidebar-toggle{left:auto;right:14px}
     body.sidebar-collapsed .sidebar{display:none}
-    body.sidebar-collapsed .sidebar-toggle{left:12px;right:auto}
+    body.sidebar-collapsed .sidebar-toggle{left:14px;right:auto}
   }
 </style>
 </head>
@@ -244,14 +253,14 @@
   // Restore the sidebar state before first paint so the page doesn't flash open then shut.
   try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
 </script>
-<button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="true" aria-label="Hide sidebar" title="Hide sidebar">&#8249;</button>
+<button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="true" aria-label="Hide sidebar" title="Hide sidebar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
 
 <div class="app-shell">
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-brand">
-      <a class="back-link" href="../courses.html">← All courses</a>
+      <a class="back-link" href="../courses.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>All courses</a>
       <div class="brand-code">CS3021</div>
-      <div class="brand-sub">BS elective · 4 credits</div>
+      <div class="brand-meta"><span class="chip">BS elective</span><span class="chip credits">4 credits</span></div>
       <div id="theme-slot" class="sidebar-theme" data-collapsible="sidebar"></div>
     </div>
 
@@ -561,7 +570,7 @@
   const sidebarToggle = document.getElementById('sidebar-toggle');
   function syncSidebarToggle(){
     const collapsed = document.body.classList.contains('sidebar-collapsed');
-    sidebarToggle.innerHTML = collapsed ? '&#9776;' : '&#8249;';
+    sidebarToggle.innerHTML = collapsed ? '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg>' : '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>';
     sidebarToggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
     const label = collapsed ? 'Show sidebar' : 'Hide sidebar';
     sidebarToggle.setAttribute('aria-label', label);
@@ -587,6 +596,6 @@
   // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
-<script src="../assets/theme.js?v=45df1e79"></script>
+<script src="../assets/theme.js?v=94147434"></script>
 </body>
 </html>

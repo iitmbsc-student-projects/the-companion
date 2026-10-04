@@ -22,6 +22,7 @@
       try { localStorage.setItem(KEY, k); } catch (e) {}
       apply(k);
     });
+    b.innerHTML = '<i class="sw"></i><span class="lb">' + NAMES[k] + '</span>';
     box.appendChild(b);
   });
   // Where the switcher lives:
