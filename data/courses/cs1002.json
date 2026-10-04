@@ -75,6 +75,22 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "Python notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-course-intro-to-programming-in-python-7ecf37e6ebc9",
+   "group": "Notes",
+   "desc": "Written notes for Intro to Programming in Python.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Foundation previous term papers",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-courses-previous-term-question-papers-with-answer-key-f5fe7b909b04",
+   "group": "Previous year questions",
+   "desc": "Past quizzes and end term papers with answer keys, for all foundation courses.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",

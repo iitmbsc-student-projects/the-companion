@@ -62,6 +62,22 @@
    "by": "IITM BS Students' Corner",
    "by_url": "https://www.iitmbsdegree.in/",
    "group": "Notes"
+  },
+  {
+   "label": "Maths 2 notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-course-mathematics-for-data-science-2-8376cb5dc8b0",
+   "group": "Notes",
+   "desc": "Written notes for Mathematics for Data Science 2.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Foundation previous term papers",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-courses-previous-term-question-papers-with-answer-key-f5fe7b909b04",
+   "group": "Previous year questions",
+   "desc": "Past quizzes and end term papers with answer keys, for all foundation courses.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",
