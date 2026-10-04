@@ -114,9 +114,11 @@
  ],
  "missing": {
   "title": "If I missed your name, I am sorry",
-  "text": "So many people helped that I could not keep track of everyone, and every bit of help mattered. If you were left out, please tell me on Discourse and I will add your name right away.",
+  "text": "So many people helped that I could not keep track of everyone, and every bit of help mattered. If you were left out, please tell me on Discourse or open a GitHub issue, and I will add your name right away.",
   "label": "Message on Discourse",
-  "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/"
+  "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/",
+  "url2": "https://github.com/iitmbsc-student-projects/the-companion/issues",
+  "label2": "Open a GitHub issue"
  },
  "contribute": {
   "id": "contribute",
