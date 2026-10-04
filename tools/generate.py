@@ -386,8 +386,9 @@ def generate_contributors():
                            % (c["id"], esc(c["title"]), esc(c["intro"]), "\n          ".join(cc)))
     m = d.get("missing")
     miss = ('\n      <div class="missing-note"><div><strong>%s</strong><p>%s</p></div>'
-            '<a class="cta-btn ghost" href="%s" target="_blank" rel="noopener">%s &#8599;</a></div>'
-            % (esc(m["title"]), esc(m["text"]), esc(m["url"], quote=True), esc(m["label"]))) if m else ""
+            '<div class="cta-row"><a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>%s</div></div>'
+            % (esc(m["title"]), esc(m["text"]), esc(m["url"], quote=True), esc(m["label"]),
+               ('<a class="cta-btn ghost" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(m["url2"], quote=True), esc(m["label2"]))) if m.get("url2") else "")) if m else ""
     page = CONTRIB_TEMPLATE.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])) \
         .replace("{{JUMP}}", "".join(jump)).replace("{{GROUPS}}", "\n".join(groups_html) + miss) \
         .replace("{{FOOTNAV}}", _footer_nav("contributors"))
