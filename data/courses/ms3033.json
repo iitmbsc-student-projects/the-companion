@@ -12,7 +12,16 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1PjcSAYZcMcMVH9EAEAd7MGlglC4H2uxU?usp=sharing",
-   "label": "Drive folder"
+   "label": "Drive folder",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/managerial-economics",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

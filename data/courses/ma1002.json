@@ -12,27 +12,49 @@
  "resources": [
   {
    "url": "https://study.iitm.ac.in/ds/course_pages/BSMA1002.html",
-   "label": "Official course page"
+   "label": "Official course page",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/file/d/1PE1jWEJpoJ-9s5zyvj9eOTzckAyWjBGZ/view",
-   "label": "Book 1: Descriptive Statistics"
+   "label": "Book 1: Descriptive Statistics",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/file/d/1CcWiuU3pNYIU2J3W4Zpeabp8PAJJmjFb/view",
-   "label": "Book 2: Probability and Probability Distributions"
+   "label": "Book 2: Probability and Probability Distributions",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1nxmW_1VVOnBwpIVLOq8OJO8ICz-xPK5H",
-   "label": "Lecture slides (Drive folder)"
+   "label": "Lecture slides (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1D_4XqiQFyox41WeclW5a4fIkBzXDA4zg",
-   "label": "Lecture transcripts (Drive folder)"
+   "label": "Lecture transcripts (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://www.statlect.com/",
-   "label": "Statlect (free online textbook)"
+   "label": "Statlect (free online textbook)",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/stats-1",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/stats1",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

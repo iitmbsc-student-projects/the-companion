@@ -12,7 +12,24 @@
  "resources": [
   {
    "url": "https://www.youtube.com/@se-lr5ff",
-   "label": "Course YouTube channel"
+   "label": "Course YouTube channel",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/tds",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/toolsds",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "",

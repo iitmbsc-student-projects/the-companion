@@ -12,15 +12,34 @@
  "resources": [
   {
    "url": "https://study.iitm.ac.in/ds/course_pages/BSCS1001.html",
-   "label": "Official course page"
+   "label": "Official course page",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1WrajCvVwT3mqM0NRBFXCTfKy6etdqW1b",
-   "label": "Lecture slides (Drive folder)"
+   "label": "Lecture slides (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1eCC9y8dyNqRCZUQjoxHVV60xryjZed3X",
-   "label": "Lecture transcripts (Drive folder)"
+   "label": "Lecture transcripts (Drive folder)",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/computational-thinking",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/ct",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

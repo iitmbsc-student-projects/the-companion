@@ -12,11 +12,21 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1UhvR4z6DJgL2V22T9MXGhGFVYWCTS4i2?usp=drive_link",
-   "label": "Drive folder"
+   "label": "Drive folder",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@CS-jp3kd",
-   "label": "Course YouTube channel"
+   "label": "Course YouTube channel",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/software-engineering",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

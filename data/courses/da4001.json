@@ -9,7 +9,16 @@
  "instructor": "Mr. Karthik Thiagrajan",
  "term": "As offered",
  "prereq": "CS2008",
- "resources": [],
+ "resources": [
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/dsailab",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
+  }
+ ],
  "resources_note": "",
  "pyq": [],
  "syllabus": {

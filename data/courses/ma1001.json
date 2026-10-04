@@ -12,39 +12,64 @@
  "resources": [
   {
    "url": "https://study.iitm.ac.in/ds/course_pages/BSMA1001.html",
-   "label": "Official course page"
+   "label": "Official course page",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/file/d/1AD4uMcFz05d7KmoSHkTzxBIj8EdzHSRf/view",
-   "label": "Book 1: Sets & Functions (Vol 1)"
+   "label": "Book 1: Sets & Functions (Vol 1)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/file/d/1tixOUADAr_1jScZEOCLtkOHshehCzmcE/view",
-   "label": "Book 2: Calculus (Vol 2)"
+   "label": "Book 2: Calculus (Vol 2)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/file/d/1qNYkCA4KMxyB7YGuO8o_2uAW357uI0BX/view",
-   "label": "Book 3: Graph Theory (Vol 3)"
+   "label": "Book 3: Graph Theory (Vol 3)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1uonMKFawIl37PLtvuhMIuY_aZTZ8uPgB",
-   "label": "Lecture slides (Drive folder)"
+   "label": "Lecture slides (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1OI4YNDu-l8z0k9j02R3ME5GL8SNm6tFW",
-   "label": "Lecture transcripts (Drive folder)"
+   "label": "Lecture transcripts (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/playlist?list=PL3j1ntBPCU_qo9jU6XqmqzQnxivebIWkE",
-   "label": "NancyPi YouTube playlist: Limits"
+   "label": "NancyPi YouTube playlist: Limits",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/playlist?list=PL3j1ntBPCU_om5O1RBi5-vDRwVTvDwyeV",
-   "label": "NancyPi YouTube playlist: Derivatives"
+   "label": "NancyPi YouTube playlist: Derivatives",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/playlist?list=PL3j1ntBPCU_oXcHmmyCsSI3HcyKFj8y4E",
-   "label": "NancyPi YouTube playlist: Integrals"
+   "label": "NancyPi YouTube playlist: Integrals",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/maths-1",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/maths1",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

@@ -11,13 +11,112 @@
  "prereq": "MFDS + Stats",
  "resources": [
   {
+   "label": "Supplementary content",
    "url": "https://drive.google.com/drive/folders/1CPbqMrs-gYovtLlH-JMIjvW3oscE6f8J?usp=share_link",
-   "label": "Supplementary content (Drive folder)",
+   "group": "Course material",
+   "desc": "Extra material shared on Google Drive.",
    "auth": "iitm"
   },
   {
+   "label": "Course YouTube channel",
    "url": "https://www.youtube.com/@mlf-iitm",
-   "label": "Course YouTube channel"
+   "group": "Course material",
+   "desc": "All lecture videos."
+  },
+  {
+   "label": "MLF weekwise notes",
+   "url": "https://giri-subrahmanya.github.io/MLF-Notes/",
+   "group": "Notes",
+   "desc": "Week-by-week notes for the whole course.",
+   "by": "B R Giri Subrahmanya"
+  },
+  {
+   "label": "MLF weekwise summary",
+   "url": "https://22f3001517.github.io/mlf-ta-notes/index.html",
+   "group": "Notes",
+   "desc": "Short weekly summaries written by a TA.",
+   "by": "Anant Kumar"
+  },
+  {
+   "label": "MLF notes (Karthik's site)",
+   "url": "http://notes.karthikthiagu.com/mlf/",
+   "group": "Notes",
+   "desc": "Full course notes.",
+   "by": "Karthik Thiagarajan"
+  },
+  {
+   "label": "MLF notes (course site)",
+   "url": "https://bsc-iitm.github.io/machine-learning-foundations/site/",
+   "group": "Notes",
+   "desc": "A second set of full course notes.",
+   "by": "Karthik Thiagarajan"
+  },
+  {
+   "label": "MLF notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-data-science-machine-learning-foundation-mlf-notes-0310493445fe",
+   "group": "Notes",
+   "desc": "Written notes for the Diploma MLF course.",
+   "by": "prathambhalla7",
+   "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MLF weekwise and quizwise papers",
+   "url": "https://23f3004032.github.io/MLF/",
+   "group": "Previous year questions",
+   "desc": "Past papers sorted by week and by quiz, May 2022 to Sep 2025.",
+   "by": "Ankit Kumar"
+  },
+  {
+   "label": "MLF textbook",
+   "url": "https://drive.google.com/file/d/1ivId77gPC20gYi22wAqTcyCn5SiOyVWd/view",
+   "group": "Books",
+   "desc": "The course textbook as a PDF.",
+   "by": "B R Giri Subrahmanya",
+   "auth": "iitm"
+  },
+  {
+   "label": "Books folder",
+   "url": "https://drive.google.com/drive/folders/1oMuPSEqbwgmI-u0ALZ5dTtcpw4jP_dFw?usp=drive_link",
+   "group": "Books",
+   "desc": "Reference books for the course.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Activity questions",
+   "url": "https://drive.google.com/drive/folders/15TxHlHTaCFxm_uP3MiboVGsbnCGyBhB0?usp=drive_link",
+   "group": "TA resources",
+   "desc": "Activity questions shared by the MLF TA team.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Maths 2 Linear Algebra recap",
+   "url": "https://drive.google.com/file/d/1sllWUyiNDuibZRkcsQxmyG-ebF7oCUgc/view?usp=drivesdk",
+   "group": "TA resources",
+   "desc": "Quick revision of the linear algebra needed for MLF.",
+   "auth": "iitm"
+  },
+  {
+   "label": "TA session recordings (Jan 2026 term)",
+   "url": "https://docs.google.com/spreadsheets/d/1wFkDZZJYgUQzj1SV6cqQtBdvkkQFJETeo2vro3mgjw0/edit?usp=sharing",
+   "group": "TA resources",
+   "desc": "Sheet of TA sessions with dates, topics and recordings.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/mlf",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/mlfoundations",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
