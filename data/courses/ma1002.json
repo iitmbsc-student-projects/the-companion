@@ -55,6 +55,22 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "Stats 1 notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-course-statistics-for-data-science-1-6e6b3db49fd3",
+   "group": "Notes",
+   "desc": "Written notes for Statistics for Data Science 1.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Foundation previous term papers",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-courses-previous-term-question-papers-with-answer-key-f5fe7b909b04",
+   "group": "Previous year questions",
+   "desc": "Past quizzes and end term papers with answer keys, for all foundation courses.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",

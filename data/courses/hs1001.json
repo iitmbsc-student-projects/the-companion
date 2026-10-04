@@ -45,6 +45,22 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "English 1 notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-course-english-1-9f1dcc7ebfd8",
+   "group": "Notes",
+   "desc": "Written notes for English for Data Science 1.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Foundation previous term papers",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-courses-previous-term-question-papers-with-answer-key-f5fe7b909b04",
+   "group": "Previous year questions",
+   "desc": "Past quizzes and end term papers with answer keys, for all foundation courses.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",
