@@ -33,7 +33,6 @@
       <a class="tb-link current" href="contributors.html">Contributors</a>
     </div>
     <span id="theme-slot" data-float-narrow></span>
-    <a class="tb-cta" href="https://github.com/iitmbsc-student-projects/the-companion" target="_blank" rel="noopener">Contribute</a>
   </div>
 </nav>
 
