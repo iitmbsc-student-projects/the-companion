@@ -113,8 +113,8 @@
   }
  ],
  "missing": {
-  "title": "Helped out but not on the list?",
-  "text": "With so many people involved, some names are bound to be missed, and it is never on purpose. Message me on Discourse and I will add you.",
+  "title": "If I missed your name, I am sorry",
+  "text": "So many people helped that I could not keep track of everyone, and every bit of help mattered. If you were left out, please tell me on Discourse and I will add your name right away.",
   "label": "Message on Discourse",
   "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/"
  },
