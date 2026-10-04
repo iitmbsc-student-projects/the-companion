@@ -384,11 +384,19 @@ def generate_contributors():
         groups_html.append('      <div class="link-group" id="%s">\n        <div class="group-head"><h3>%s</h3></div>\n        <p class="group-intro">%s</p>\n'
                            '        <ul class="links-grid cta-grid">\n          %s\n        </ul>\n      </div>'
                            % (c["id"], esc(c["title"]), esc(c["intro"]), "\n          ".join(cc)))
+        ct = c.get("contact")
+        if ct:
+            links = " or ".join('<a href="%s"%s>%s</a>' % (esc(x["url"], quote=True), "" if x["url"].startswith("mailto:") else ' target="_blank" rel="noopener"', esc(x["label"])) for x in ct["links"])
+            groups_html[-1] = groups_html[-1].replace("\n      </div>", '\n        <p class="contact-line">%s %s.</p>\n      </div>' % (esc(ct["text"]), links))
     m = d.get("missing")
-    miss = ('\n      <div class="missing-note"><div><strong>%s</strong><p>%s</p></div>'
-            '<div class="cta-row"><a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>%s</div></div>'
-            % (esc(m["title"]), esc(m["text"]), esc(m["url"], quote=True), esc(m["label"]),
-               ('<a class="cta-btn ghost" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(m["url2"], quote=True), esc(m["label2"]))) if m.get("url2") else "")) if m else ""
+    miss = ""
+    if m:
+        btns = "".join('<a class="cta-btn%s" href="%s"%s>%s%s</a>' % (
+            "" if i == 0 else " ghost", esc(x["url"], quote=True),
+            "" if x["url"].startswith("mailto:") else ' target="_blank" rel="noopener"',
+            esc(x["label"]), "" if x["url"].startswith("mailto:") else " &#8599;") for i, x in enumerate(m["actions"]))
+        miss = ('\n      <div class="missing-note"><div><strong>%s</strong><p>%s</p></div><div class="cta-row">%s</div></div>'
+                % (esc(m["title"]), esc(m["text"]), btns))
     page = CONTRIB_TEMPLATE.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])) \
         .replace("{{JUMP}}", "".join(jump)).replace("{{GROUPS}}", "\n".join(groups_html) + miss) \
         .replace("{{FOOTNAV}}", _footer_nav("contributors"))

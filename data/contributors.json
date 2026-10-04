@@ -114,11 +114,25 @@
  ],
  "missing": {
   "title": "If I missed your name, I am sorry",
-  "text": "So many people helped that I could not keep track of everyone, and every bit of help mattered. If you were left out, please tell me on Discourse or open a GitHub issue, and I will add your name right away.",
-  "label": "Message on Discourse",
-  "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/",
-  "url2": "https://github.com/iitmbsc-student-projects/the-companion/issues",
-  "label2": "Open a GitHub issue"
+  "text": "So many people helped that I could not keep track of everyone, and every bit of help mattered. If you were left out, please tell me and I will add your name right away.",
+  "actions": [
+   {
+    "label": "Message on Discourse",
+    "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/"
+   },
+   {
+    "label": "Open a GitHub issue",
+    "url": "https://github.com/iitmbsc-student-projects/the-companion/issues"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/vikash-ram-mahuri"
+   },
+   {
+    "label": "Email",
+    "url": "mailto:vikash.iitmbs@gmail.com"
+   }
+  ]
  },
  "contribute": {
   "id": "contribute",
@@ -145,6 +159,19 @@
     "label": "View on GitHub",
     "url": "https://github.com/iitmbsc-student-projects/the-companion"
    }
-  ]
+  ],
+  "contact": {
+   "text": "Prefer another way? You can also reach me on",
+   "links": [
+    {
+     "label": "LinkedIn",
+     "url": "https://www.linkedin.com/in/vikash-ram-mahuri"
+    },
+    {
+     "label": "vikash.iitmbs@gmail.com",
+     "url": "mailto:vikash.iitmbs@gmail.com"
+    }
+   ]
+  }
  }
 }

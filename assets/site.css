@@ -274,3 +274,5 @@ li.pp-card.plain{padding:11px 14px}
 .missing-note p{margin:4px 0 0;max-width:52ch}
 .missing-note .cta-btn{flex-shrink:0}
 #c-thanks .group-count{display:none}
+.contact-line{margin:14px 0 0;color:var(--ink-2);font-size:14.5px}
+.missing-note .cta-row{margin-top:0}
