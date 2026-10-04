@@ -143,7 +143,9 @@
     "title": "Share a resource",
     "text": "Notes, previous year papers, playlists or any link that helped you. Send the link with the course name and how you want to be credited.",
     "label": "Message on Discourse",
-    "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/"
+    "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/",
+    "label2": "Email me",
+    "url2": "mailto:vikash.iitmbs@gmail.com"
    },
    {
     "title": "Report a broken link or a mistake",

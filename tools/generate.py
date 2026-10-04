@@ -377,7 +377,8 @@ def generate_contributors():
         for cd in c["cards"]:
             acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
             if cd.get("url2"):
-                acts += '<a class="cta-btn ghost" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url2"], quote=True), esc(cd["label2"]))
+                mail = cd["url2"].startswith("mailto:")
+                acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else " &#8599;")
             cc.append('<li class="lk-card cta-card"><h4 class="lk-title">%s</h4><p class="lk-desc">%s</p><div class="cta-row">%s</div></li>'
                       % (esc(cd["title"]), esc(cd["text"]), acts))
         jump.append('<a href="#%s">%s</a>' % (c["id"], esc(c["title"])))
