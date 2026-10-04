@@ -88,10 +88,15 @@ def layout(title, body):
 # --- line-based field encode/decode helpers -------------------------------
 
 def resources_to_text(resources):
+    """One line per resource: Label | URL | Group | Description | By | By URL | Auth (trailing parts optional)."""
     lines = []
     for r in resources or []:
         if "url" in r:
-            lines.append(f'{r.get("label","")} | {r["url"]}')
+            parts = [r.get("label", ""), r["url"], r.get("group", ""), r.get("desc", ""),
+                     r.get("by", ""), r.get("by_url", ""), r.get("auth", "")]
+            while len(parts) > 2 and not parts[-1]:
+                parts.pop()
+            lines.append(" | ".join(parts))
         else:
             lines.append(r.get("raw", ""))
     return "\n".join(lines)
@@ -102,8 +107,12 @@ def text_to_resources(text):
         line = line.strip()
         if not line: continue
         if "|" in line:
-            label, url = line.split("|", 1)
-            out.append({"label": label.strip(), "url": url.strip()})
+            parts = [p.strip() for p in line.split("|", 6)]
+            r = {"label": parts[0], "url": parts[1] if len(parts) > 1 else ""}
+            for key, i in (("group", 2), ("desc", 3), ("by", 4), ("by_url", 5), ("auth", 6)):
+                if len(parts) > i and parts[i]:
+                    r[key] = parts[i]
+            out.append(r)
         else:
             out.append({"raw": line})
     return out
@@ -266,8 +275,8 @@ def _course_fields_form(data, is_new=False):
         syl = data.get("syllabus", {})
         weeks_data = data.get("weeks_data", [])
         kind_block = f"""
-        <fieldset><legend>Resources — one per line: Label | URL</legend>
-          <textarea name="resources_text" rows="3">{resources_to_text(res)}</textarea>
+        <fieldset><legend>Resources — one per line: Label | URL | Group | Description | By | By URL | Auth (iitm or site)</legend>
+          <textarea name="resources_text" rows="6">{resources_to_text(res)}</textarea>
           <label>Resources note (optional, e.g. access restrictions)</label>
           <input type="text" name="resources_note" value="{data.get('resources_note','')}">
         </fieldset>

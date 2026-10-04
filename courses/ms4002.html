@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Design Thinking for Data-Driven App Development — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,10 +295,19 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1lCEyQnfHsTUJKp9Stt4-VsunnGctW_U1?usp=drive_link" target="_blank" rel="noopener">Drive folder</a></li>
-          <li><a href="https://www.youtube.com/@dtddadiitmbsdegree" target="_blank" rel="noopener">Course YouTube channel</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1lCEyQnfHsTUJKp9Stt4-VsunnGctW_U1?usp=drive_link" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@dtddadiitmbsdegree" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -324,7 +382,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1.1","t":"W1_L1: Building blocks of DTD-DAD 1","v":"W-XMvGV6yUM","s":null},{"n":"1.2","t":"W1_L2: Introduction to design from everyday life","v":"IzZPSd5hGWs","s":null},{"n":"1.3","t":"W1_L3: Introduction to design thinking - part 1","v":"W55-h4_0ELM","s":null},{"n":"1.4","t":"W1_L3.1: Introduction to design thinking - part 2 - ancient wisdom \u0026 design","v":"UTkfWv00Rnk","s":null},{"n":"1.5","t":"W1_L3.2: Why take up design thinking before you build","v":"vq0cZ8DaLoE","s":null},{"n":"1.6","t":"W1_L3.3: Stages \u0026 objectives of design thinking","v":"VERo5gNQyyk","s":null},{"n":"1.7","t":"W1_L3.4: Human-centered design with EAST method","v":"JwnskvHT_Bk","s":null},{"n":"1.8","t":"W1_L3.5: Design and Design Thinking","v":null,"s":null},{"n":"1.9","t":"W1_L4: Introduction to Project Management","v":null,"s":null},{"n":"1.10","t":"W1_L4.1: Project and Project Management","v":null,"s":null},{"n":"1.11","t":"W1_L4.2: Project Life Cycle","v":null,"s":null},{"n":"1.12","t":"W1_L4.3: Agile and Design Thinking","v":null,"s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"W2_L1: Persona creation 1 - why name, age \u0026 location matter","v":"uT5T15xeb-c","s":null},{"n":"2.2","t":"W2_L1.1: Persona creation 2 - empathy \u0026 detail in user profiles","v":"LHLIfxR8ApA","s":null},{"n":"2.3","t":"W2_L2: Empathize \u0026 customer journey map","v":"ANOLZ2AKzXE","s":null},{"n":"2.4","t":"W2_L3: A story about empathy \u0026 impactful problem solving","v":"NXk2ynQQpYA","s":null},{"n":"2.5","t":"W2_L4: Design paradox - why simplicity gets complicated","v":"06FANMbKcmI","s":null},{"n":"2.6","t":"W2_L6: Guest interaction Dr. R Raman part 1","v":"eqyI4TnWKBQ","s":null},{"n":"2.7","t":"W2_L6.1: Guest interaction Dr. R Raman part 2 - visualizing data \u0026 identifying probability patterns","v":"IZ3-UqiV5AA","s":null},{"n":"2.8","t":"W2_L6.2: Guest interaction Dr. R Raman part 3 - vision for the future of education","v":"WP1Qd-yYllQ","s":null},{"n":"2.9","t":"W2_L6.3: Guest interaction Dr. R Raman part 4 - technology integration \u0026 vision for academia","v":"PNjcI3QhlD4","s":null},{"n":"2.10","t":"W2_L6.4: Guest interaction Dr. R Raman part 5 - guest perspectives on academia \u0026 education","v":"7QMtOKRHtpA","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"W3_L1: Empathize tips to improve customer insights","v":"yMl-Ddx50YU","s":null},{"n":"3.2","t":"W3_L2: Empathize problems that matter","v":"ll5LTzUPSTM","s":null},{"n":"3.3","t":"W3_L3: Empathize - How Might We (HMWs)","v":"23jHvEMCVtE","s":null},{"n":"3.4","t":"W3_L5: Guest Interaction - Automobile Sector - Ravi Mathai","v":null,"s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"W4_L1: Introduction to analyze phase","v":"QPWvDhDrGCY","s":null},{"n":"4.2","t":"W4_L2: Multi-why analysis - find the real problem","v":"Zdd6gFLnDII","s":null},{"n":"4.3","t":"W4_L3: Application of Multi-Why","v":null,"s":null},{"n":"4.4","t":"W4_L4: Conflict of interest in analyze phase","v":"E2m0bXH5_SA","s":null},{"n":"4.5","t":"W4_L5: Puzzle - ID Card - Conflict of Interest","v":null,"s":null},{"n":"4.6","t":"W4_L6: Puzzle - Monkey Gate","v":null,"s":null},{"n":"4.7","t":"W4_L7: Puzzle - Analyze Conflict of Interest - Cattle Grid","v":null,"s":null},{"n":"4.8","t":"W4_L8: Tips for analyze phase - unlocking root causes","v":"vrozyu3Uk9I","s":null},{"n":"4.9","t":"Guest Interaction - Construction and Marketing Sector - Mr Shyam Raghunandan","v":null,"s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"W5_L1: Silent brainstorming - unlock creative thinking","v":"edJOqYov2FA","s":null},{"n":"5.2","t":"W5_L2: Introduction to Theory of Inventive Problem Solving (TRIZ) \u0026 its applications","v":"ANQzKqwbbPo","s":null},{"n":"5.3","t":"W5_L3: Merge ideas into a concept with TRIZ \u0026 brainstorming","v":"PR06lZ9ssmQ","s":null},{"n":"5.4","t":"W5_L4: Puzzle - ID Card Solution","v":null,"s":null},{"n":"5.5","t":"W5_L5: Puzzle - Analyze Conflict of Interest - Cattle Grid Solution","v":null,"s":null},{"n":"5.6","t":"W5_L6: Puzzle - How to Get a Steady Camera","v":null,"s":null},{"n":"5.7","t":"W5_L7: Puzzle 5 - Jogging","v":null,"s":null},{"n":"5.8","t":"W5_L9: Understanding TRIZ through popular movies","v":"8q9HTB0qy3k","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"W6_L1: Testing the prototype for real feedback","v":"TRNHGj9jPIo","s":null},{"n":"6.2","t":"W6_L2: Solution to the Puzzle 4 - How to Keep the Camera Steady?","v":null,"s":null},{"n":"6.3","t":"W6_L3: Story of inventions","v":"8rg7A1cxG4o","s":null},{"n":"6.4","t":"W6_L4: Assumptions in the test phase","v":"r7sbLMYWVpI","s":null},{"n":"6.5","t":"W6_L5: Features that matter in the test phase","v":"5hVD26ruiVk","s":null},{"n":"6.6","t":"W6_L6: Modified customer journey map","v":"-mEtnJmOR8M","s":null},{"n":"6.7","t":"W6_L7: Introduction to digital marketing strategy","v":"l1iiMJ5LfmE","s":null},{"n":"6.8","t":"W6_L7.1: Digital marketing strategies part 1","v":"qJg1Jwvjw_0","s":null},{"n":"6.9","t":"W6_L7.2: Digital marketing strategies part 2","v":"Z47ZX1lOBG0","s":null},{"n":"6.10","t":"W6_L7.3: Digital marketing strategies part 3","v":"xUpklh9G268","s":null},{"n":"6.11","t":"W6_L8: Solution to the Puzzle 5 - Jogging","v":null,"s":null},{"n":"6.12","t":"W6_L9: IF THEN BUT - Building an ENV Model","v":null,"s":null},{"n":"6.13","t":"W6_L10: Building an ENV Model - Cases","v":null,"s":null},{"n":"6.14","t":"Introduction to the Figma Mini Bootcamp","v":"kTM6yNIIGP0","s":null},{"n":"6.15","t":"Getting Started with Figma: Creating Your Account","v":"6dXDMePfyzY","s":null},{"n":"6.16","t":"Getting Started with Figma: Exploring the Interface","v":"MiumSU7zJGk","s":null},{"n":"6.17","t":"Understanding Low-Fidelity and High-Fidelity Wireframes","v":"xiULZGOR52Q","s":null},{"n":"6.18","t":"Understanding Figma Frames","v":"6uj_oHC0seA","s":null},{"n":"6.19","t":"Starting a Project in Figma: Problem Framing and Grids","v":"gWIUDJh7g3c","s":null},{"n":"6.20","t":"Organizing Your Figma Project","v":"UT2WQg3Luh4","s":null},{"n":"6.21","t":"Creating a Moodboard","v":"gqU3YLtPp3o","s":null},{"n":"6.22","t":"Building Your First Wireframe - Part 1","v":"zhK5z8sccSU","s":null},{"n":"6.23","t":"Building Your First Wireframe - Part 2","v":"03f7HhcL7lw","s":null},{"n":"6.24","t":"Building Your First Wireframe - Part 3","v":"SfnaQAzNIHs","s":null},{"n":"6.25","t":"Creating Your First Prototype","v":"xdix15LGJ3o","s":null},{"n":"6.26","t":"Alternatives to Figma","v":"o4DpucsSFAM","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"W7_L1: Introduction to website development","v":"8akzbhrBkpI","s":null},{"n":"7.2","t":"W7_L2: Introduction to user experience design explained","v":"p6MJifBzf5U","s":null},{"n":"7.3","t":"W7_L3: Types of prototypes","v":"U3Q9VP4I7mk","s":null},{"n":"7.4","t":"W7_L3: Types of prototypes","v":"dAJt6Exe4RM","s":null},{"n":"7.5","t":"Practical Web Design","v":"Jp3Hmd6TQ6E","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"W8_L1: Empathize phase 2","v":"IpWmMbO7O7I","s":null},{"n":"8.2","t":"W8_L2: Analyze phase 2 feedback","v":"u3yJmDHy-Do","s":null},{"n":"8.3","t":"W8_L3: Reintroducing conflicts - using the ENV framework","v":"BoemtFSAFGI","s":null},{"n":"8.4","t":"W8_L4: Guest Interaction - Investments - Bharath Visweswariah","v":null,"s":null},{"n":"8.5","t":"W8_L5: Figma overview","v":"2LKyX0SVVWk","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"W9_L1: Solve phase 2","v":"LG_2LJ6pJ0c","s":null},{"n":"9.2","t":"Guest Interaction - App Development for Human Centric Problems with Mr Edmond Pruteanu","v":null,"s":null},{"n":"9.3","t":"Design Thinking Approach of Mentors Without Borders featuring Mr. Edmond Pruteanu","v":null,"s":null},{"n":"9.4","t":"App Demo and Iterations with Mr. Edmond Pruteanu","v":null,"s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"W10_L1: Test phase 2 \u0026 empathize phase 3","v":"KxDc035PKD4","s":null},{"n":"10.2","t":"Guest Interaction - Finance and App Development, Promotion and Ideation with Mr. Venkatakrishnan Janakiraman","v":null,"s":null},{"n":"10.3","t":"W10_L3: QuarkCube app demo by Mr. Gunasekaran Kandasamy","v":"30zvkbZo3Ds","s":null},{"n":"10.4","t":"Effective communication - Part 1","v":"SMUa1Mt8fYA","s":null},{"n":"10.5","t":"Effective communication - Part 2","v":"U-epBYIGHFM","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"W11_L1: Analyze phase 3","v":"SPot6NNgAX8","s":null},{"n":"11.2","t":"Interaction - Entrepreneurship and Venture Capital with Mr. Gopi Rangan","v":null,"s":null},{"n":"11.3","t":"Puzzle - Speeding Vehicles","v":null,"s":null},{"n":"11.4","t":"Puzzle - Open Air Gyms","v":null,"s":null},{"n":"11.5","t":"W11_L5: Human factors in design","v":"gLJHZ5uwl2I","s":null},{"n":"11.6","t":"Protect Your Vision","v":"SezrwSflb0s","s":null},{"n":"11.7","t":"Protect Your Vision - 02","v":"QjqnyQhlh08","s":null},{"n":"11.8","t":"Protect Your Vision - 03","v":"vx2GLnj-j2Y","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"W12_L1: Launching your apps right","v":"tPS94-LVgnk","s":null},{"n":"12.2","t":"Puzzle - Speeding Vehicles - Solution","v":null,"s":null},{"n":"12.3","t":"Puzzle - Open Air Gyms - Solution","v":null,"s":null},{"n":"12.4","t":"W12_L2: Intrapreneurship for business innovation","v":"zAY2Kob9M14","s":null},{"n":"12.5","t":"W12_L4: Future prospects and opportunities","v":"GkReX9s5RTc","s":null},{"n":"12.6","t":"W12_L6: BIIG Leap","v":"0tcUHA_SnEw","s":null}]}];
 
@@ -380,7 +438,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -521,9 +579,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

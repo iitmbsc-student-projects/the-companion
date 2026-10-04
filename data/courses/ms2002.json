@@ -12,15 +12,12 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1pgmtT5R21zcZWIGUXt222-ArHUPJCs0m?usp=share_link",
-   "label": "Supplementary content (Drive folder)"
+   "label": "Supplementary content (Drive folder)",
+   "auth": "iitm"
   },
   {
    "url": "https://www.youtube.com/@businessanalatics",
    "label": "Course YouTube channel"
-  },
-  {
-   "url": "https://docs.google.com/spreadsheets/d/1YwZFSgCpXsshD6pctR58cEHR9SbnUCC-",
-   "label": "Week-sorted playlist (spreadsheet)"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

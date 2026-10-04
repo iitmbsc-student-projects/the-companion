@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body data-page="courses">
 
@@ -29,6 +31,7 @@
         <div class="menu" id="menu-links"></div>
       </div>
     </div>
+    <span id="theme-slot"></span>
     <a class="tb-cta" href="https://github.com/iitmbsc-student-projects/the-companion" target="_blank" rel="noopener">Contribute</a>
   </div>
 </nav>
@@ -254,5 +257,6 @@
 
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/theme.js"></script>
 </body>
 </html>

@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Algorithms for Data Science — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,9 +295,15 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/13REh8MlrnTIM_XuxrnBQkVwN2Of_TohN?usp=sharing" target="_blank" rel="noopener">Drive folder</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/13REh8MlrnTIM_XuxrnBQkVwN2Of_TohN?usp=sharing" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -322,7 +377,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1","t":"Introduction to Algorithms for Data Science","v":"BSQs_6sQDWY","s":"https://drive.google.com/file/d/1HHla-zpop83vUHW5cjQnTPFoyNGEIxn8/view?usp=sharing"},{"n":"2","t":"Concentration Inequalities: Markov\u0027s Inequality","v":"4QP6xNM_17k","s":null},{"n":"3","t":"Concentration Inequalities: Chebyshev\u0027s Inequality","v":"wII0SwgzDJQ","s":null},{"n":"4","t":"Concentration Inequalities: Hoeffding\u0027s Inequality","v":"lsYovAtX0QA","s":null},{"n":"5","t":"Useful Inequalities in Probability","v":"aiLiqtksdm8","s":null},{"n":"6","t":"Johnson-Lindenstrauss Lemma: Introduction","v":"QNmBund3UXk","s":null},{"n":"7","t":"JL Lemma, Part-1, No Isometry Exists","v":"stxUeOzB-wY","s":null},{"n":"8","t":"JL Lemma, Part-2, Approximate Isometry","v":"Ihm-1PWi3y0","s":null},{"n":"9","t":"JL Lemma, Part-3, Goodness of Estimate","v":"e49ryFUmy3M","s":null}]},{"w":"Week 2","items":[{"n":"10","t":"JL Lemma, Part-4, Towards the Final Bound","v":"ZSbDqEFC1tk","s":"https://drive.google.com/file/d/1vma54E6Oka93DxWKhi30kWur0iLc1_oo/view?usp=sharing"},{"n":"11","t":"JL Lemma, Part-5, Final Bound","v":"HCvbAWlF124","s":null},{"n":"12","t":"JL Lemma: Linear Algebra Interpretation","v":"R_W-QXUPiY8","s":null}]},{"w":"Week 3","items":[{"n":"13","t":"Approximate Nearest Neighbours","v":"X1wZsCJtVvQ","s":"https://drive.google.com/file/d/1Ol50Uzk9kTwxrdaHUWOCZUAPnUj4gHad/view?usp=sharing"},{"n":"14","t":"Locality Sensitive Hashing: Introduction","v":"ye1x8bm0tlY","s":null},{"n":"15","t":"LSH: Hash Family","v":"vkYeeKT202g","s":null},{"n":"16","t":"LSH: Collision Analysis","v":"xhhPPJ2MJ6Q","s":null},{"n":"17","t":"LSH: True Positive Rate and False Positive Rate","v":"SeZgJkCT7ls","s":null},{"n":"18","t":"LSH: Reducing FPR with \"AND\"","v":"rSxunqQg0lY","s":null},{"n":"19","t":"LSH: Increasing TPR with \"OR\"","v":"ZbHGrG7NY64","s":null},{"n":"20","t":"LSH: Summary and Analysis","v":"heQv6xZ_xQI","s":null}]},{"w":"Week 4","items":[{"n":"21","t":"SVD: Recap and Applications","v":"oouveJlZn74","s":"https://drive.google.com/file/d/1xlsy8KFjVZ7rx1kowTLAqtUKcucm8XHf/view?usp=sharing"},{"n":"22","t":"From Naive SVD to Fast SVD","v":"TlKYUfjoivs","s":null},{"n":"23","t":"Randomized SVD: Part-1","v":"JYxW1xT-SyU","s":null},{"n":"24","t":"Randomized SVD: Part-2","v":"Og3M1u3j7Wg","s":null},{"n":"25","t":"Randomized SVD: Part-3","v":"tr5m5w3uaf8","s":null}]},{"w":"Week 5","items":[{"n":"26","t":"Clustering: Recap","v":"p1i3wxizHBs","s":"https://drive.google.com/file/d/1Lhu_QDP1xM6rp4O4whow24VbmLExKF8v/view?usp=sharing"},{"n":"27","t":"Spectral Clustering: Graph Cuts","v":"TCEQ11UQixs","s":null},{"n":"28","t":"Spectral Clustering: MinCut","v":"vx3jmm6NVWg","s":null}]},{"w":"Week 6","items":[{"n":"29","t":"Spectral Clustering: Algorithm","v":"upJIsWzuTY8","s":"https://drive.google.com/file/d/1cGG3shf3e8aHEmsT5v5hHMar4Pt-e3Dr/view?usp=sharing"},{"n":"30","t":"Spectral Clustering at Scale: Spectral Sparsification, Part-1","v":"7GzE3XFm_mk","s":null},{"n":"31","t":"Spectral Clustering at Scale: Spectral Sparsification, Part-2","v":"pqxuszhHVD8","s":null},{"n":"32","t":"Spectral Clustering at Scale: Summary","v":"ZlTHIH-rQSY","s":null}]},{"w":"Week 7","items":[{"n":"33","t":"Statistical Learning Theory: Underlying Distribution","v":"2hluBDWak7Q","s":"https://drive.google.com/file/d/1nKjjanoA7mWLEYuzbBfSRzSb1iBRScII/view?usp=sharing"},{"n":"34","t":"Statistical Learning Theory: Test Error and Bayes Classifier","v":"pAveo7_p0m8","s":null},{"n":"35","t":"Statistical Learning Theory: Error Decomposition","v":"dh_vcG0EAjI","s":null}]},{"w":"Week 8","items":[{"n":"36","t":"Statistical Learning Theory: Generalization Error, Sample Complexity, Part-1","v":"y9hNEdtvOVQ","s":"https://drive.google.com/file/d/1nKjjanoA7mWLEYuzbBfSRzSb1iBRScII/view"},{"n":"37","t":"Statistical Learning Theory: Generalization Error, Sample Complexity, Part-2","v":"uSHzwGELaxI","s":null}]},{"w":"Week 9","items":[{"n":"38","t":"Infinite Hypothesis Classes and Labelings","v":"FzlJ25QeWBE","s":"https://drive.google.com/file/d/1d6hpJ9r6-WFoxnwFLGwWkuKXIQoV3RJx/view?usp=sharing"},{"n":"39","t":"VC Dimension - Introduction","v":"B95QdcDePH4","s":null},{"n":"40","t":"VC Dimension - Axis Parallel Rectangles Hypothesis Class","v":"fpGpeTe2HTU","s":null},{"n":"41","t":"Finite VC Dimension and Uniform Convergence","v":"N9xxJPUv8Gc","s":null},{"n":"42","t":"VC Dimension - Linear Hypothesis Class","v":"4xNBR2uJ0fI","s":null}]},{"w":"Week 10","items":[{"n":"43","t":"Generalization Error - Recap","v":"SbU6x3oym_o","s":"https://drive.google.com/file/d/1i0r3zln3uoU15WZM5aDjs4dFet-7egVn/view?usp=sharing"},{"n":"44","t":"Estimation Error and ERM","v":"9pkoGZYBGFk","s":null},{"n":"45","t":"Approximation Error and SRM","v":"i3OGT2oOAqg","s":null},{"n":"46","t":"Sample Compression","v":"rhc5nTaVKmE","s":null}]},{"w":"Week 11","items":[{"n":"47","t":"Data Privacy","v":"etOgdDVr3mk","s":"https://drive.google.com/file/d/1rbhvWmAqi9S2phX_22FqwoaPlIXCOPLy/view?usp=sharing"},{"n":"48","t":"Differential Privacy","v":"cBU6545k-v0","s":null}]},{"w":"Week 12","items":[{"n":"49","t":"Approximate Differential Privacy","v":"G_pn8G09-KI","s":"https://drive.google.com/file/d/1zkLnE8z1eYZo4oKyaFedIy2-7itz4Tdt/view?usp=sharing"},{"n":"50","t":"Exponential Mechanism","v":"Ir_wOyCFohs","s":null}]}];
 
@@ -378,7 +433,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -519,9 +574,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>English II — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,12 +295,27 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://study.iitm.ac.in/ds/course_pages/BSHS1002.html" target="_blank" rel="noopener">Official course page</a></li>
-          <li><a href="https://drive.google.com/drive/folders/1rnznNt_yPqw3dA5cbAi3ikUZa30qRHo7" target="_blank" rel="noopener">Lecture slides (Drive folder)</a></li>
-          <li><a href="https://drive.google.com/drive/folders/18qfkUKvNh81JVOW1AqV71-iWQnAZ0LQs" target="_blank" rel="noopener">Lecture transcripts (Drive folder)</a></li>
-          <li><a href="https://drive.google.com/file/d/1iI-OW6GIpoXGOlFx9MtlHTBcqCbPB886/view" target="_blank" rel="noopener">ALS for English - 2</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://study.iitm.ac.in/ds/course_pages/BSHS1002.html" target="_blank" rel="noopener">Official course page</a>
+              <div class="res-foot"><span class="res-host">study.iitm.ac.in</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1rnznNt_yPqw3dA5cbAi3ikUZa30qRHo7" target="_blank" rel="noopener">Lecture slides (Drive folder)</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/18qfkUKvNh81JVOW1AqV71-iWQnAZ0LQs" target="_blank" rel="noopener">Lecture transcripts (Drive folder)</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1iI-OW6GIpoXGOlFx9MtlHTBcqCbPB886/view" target="_blank" rel="noopener">ALS for English - 2</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -327,7 +391,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1.1","t":"Figures of Speech - Part 1","v":"SrYTLUUfrpQ","s":null},{"n":"1.2","t":"Figures of Speech - Part 2","v":"zr4aHZ33UHA","s":null},{"n":"1.3","t":"Discourse markers","v":"gEzyD_f706w","s":null},{"n":"1.4","t":"Rhythm \u0026 Pitch in English","v":"aJhf0Vp9040","s":null},{"n":"1.5","t":"Intonation in English","v":"uE_v3pZFFe0","s":null},{"n":"1.6","t":"Language Use","v":"0XfkFlWWZtk","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Adverbs \u2013 A Quick Review","v":"QGkHH_dXtfM","s":null},{"n":"2.2","t":"Tenses \u0026 Aspects in English","v":"bvEyqHfI4Lg","s":null},{"n":"2.3","t":"Structure \u0026 Functions of Passives in English","v":"cQ-wetyKv3U","s":null},{"n":"2.4","t":"Some Important Concepts in Adjectives","v":"hkiHY0chmvk","s":null},{"n":"2.5","t":"Degree Adverbs","v":"uauQ5eO0Asg","s":null},{"n":"2.6","t":"Adverbs - Comment, Viewpoint \u0026 Focus","v":"Jyv6b3LU_pE","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Sentence, Clause, and Complex Sentences","v":"iO55So_lamA","s":null},{"n":"3.2","t":"Describing Clauses \u0026 Sentences","v":"oJP60we1YUY","s":null},{"n":"3.3","t":"Illustrating Clauses \u0026 Sentences","v":"Rse0Rxh1SlM","s":null},{"n":"3.4","t":"Adjectival (Relative) Clause","v":"EK2zwv9WO1A","s":null},{"n":"3.5","t":"Required \u0026 Optional Elements in English Sentences (Complements \u0026 Adjuncts)","v":"3nAOsJgIuDo","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Writing to Argue - I","v":"le0gtMHfD0A","s":null},{"n":"4.2","t":"Writing to Argue - II","v":"-Aunqsk8w0o","s":null},{"n":"4.3","t":"Lab Manual","v":"F0CnZHLSyYs","s":null},{"n":"4.4","t":"Writing to Influence","v":"fd70FMSa9rg","s":null},{"n":"4.5","t":"Essays on Reflection - I","v":"cE0ZsSI9UKk","s":null},{"n":"4.6","t":"Essays on Reflection-  II","v":"5QlR0QUXeAQ","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Mood \u0026 Modal Verbs","v":"zpXHE-M5nco","s":null},{"n":"5.2","t":"Modal Verbs: Can or Could","v":"qglDbdAnzkY","s":null},{"n":"5.3","t":"Will vs Would","v":"bLYW1Xqe2Cg","s":null},{"n":"5.4","t":"Could vs Would","v":"meJgUe5W6Yg","s":null},{"n":"5.5","t":"Modals (Auxiliaries) : Must, shall and should","v":"kRKZiO9QyZg","s":null},{"n":"5.6","t":"Modal Verbs: May \u0026 Might","v":"-PACFxfrcgc","s":null},{"n":"5.7","t":"Learning Softening (Knowing vs. Using)","v":"4cdnhtR06UI","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Question Tags in English Sentences","v":"inEGIdgdOk4","s":null},{"n":"6.2","t":"Questions in English (Interrogative Sentences)","v":"K4-RfkvOzXA","s":null},{"n":"6.3","t":"Questions in English Complex Sentences (Embedded Sentences)","v":"qMwFLReD5ns","s":null},{"n":"6.4","t":"Whether \u0026 if clauses in English Sentences","v":"U3fbo9xGlPQ","s":null},{"n":"6.5","t":"that-Clause in English Sentences (Complex/ Embedded Sentences)","v":"81N4bFtxc7U","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Making a Radio Report","v":"bxobbm5yhm4","s":null},{"n":"7.2","t":"Presenting numbers : Education of Girls in India","v":"OF4F9TFqmrg","s":null},{"n":"7.3","t":"Presenting numbers- 2","v":"2nbouKJ0J1o","s":null},{"n":"7.4","t":"At an Interview","v":"KH1OHK4Y6ao","s":null},{"n":"7.5","t":"Group Discussion 1","v":"N3CRoxMLIqM","s":null},{"n":"7.6","t":"Group Discussion 2","v":"D7kxJ__rqaM","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Writing SOP-1","v":"iKR77w_881A","s":null},{"n":"8.2","t":"Writing SOP-2","v":"aUWOaB8M5sc","s":null},{"n":"8.3","t":"Precis writing 1","v":"k7H0g4DdLrQ","s":null},{"n":"8.4","t":"Precis writing 2","v":"BT8OixxCEU4","s":null},{"n":"8.5","t":"Writing Lab Report","v":"YXaf1DGYAus","s":null},{"n":"8.60000000000001","t":"Punctuations - Pauses - I","v":"CI9qJo_DpNY","s":null},{"n":"8.70000000000001","t":"Punctuations - Pauses - II","v":"cC8aoY8srbI","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"Developing Communication Skills","v":"2h9sEmDv990","s":null},{"n":"9.2","t":"Developing Speaking Skills in English","v":"yMxALkLDF1o","s":null},{"n":"9.3","t":"Developing Effective Listening","v":"zYQLakKOOus","s":null},{"n":"9.4","t":"Developing Reading Skills","v":"dfhK1I8ETus","s":null},{"n":"9.5","t":"Developing Writing Skills","v":"BTh8gDPtzJ4","s":null},{"n":"9.60000000000001","t":"Write Well","v":"AAkgAaGLobo","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Passives in English","v":"Z63K3OugjUY","s":null},{"n":"10.2","t":"Participles in English","v":"7dx7qDB15Ts","s":null},{"n":"10.3","t":"Negative Sensitive Elements in English","v":"SznTE3u_Tg0","s":null},{"n":"10.4","t":"Reported speech","v":"KYeqK4c1Hig","s":null},{"n":"10.5","t":"Conditionals in English: Structure and Function","v":"iZD4Fvg6bWs","s":null},{"n":"10.6","t":"Quantifiers in English- Part 1","v":"z-ILfHZhyc8","s":null},{"n":"10.7","t":"Quantifiers in English- Part 2","v":"hAOxHB_bJVQ","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Contrast words","v":"pLPzXo8xgBA","s":null},{"n":"11.2","t":"English Vocabulary-01","v":"KGGeRd7Y-98","s":null},{"n":"11.3","t":"English Vocabulary-02","v":"oLZoS0mwhW8","s":null},{"n":"11.4","t":"Connecting Ideas Between and Within Sentences","v":"ZXWMfaRd-AI","s":null},{"n":"11.5","t":"Innovation in Vocabulary","v":"hU5teiNueck","s":null},{"n":"11.6","t":"Advanced Vocabulary","v":"pBpCNFpgzXQ","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"Pragmatic Competence Vs Communicative Confidence","v":"ZoHS2K9jmzk","s":null},{"n":"12.2","t":"Writing an Essay or a Research Report","v":"rTdNZ0qYvwM","s":null},{"n":"12.3","t":"Decent E-mails","v":"HwlmwClEmao","s":null},{"n":"12.4","t":"Barriers to Communication","v":"zCOp_u_2j6Q","s":null},{"n":"12.5","t":"Context of Communication- The Speaking Model","v":"MK6jVE62F0M","s":null},{"n":"12.6","t":"Writing Resume","v":"shVQy2W_Izs","s":null}]}];
 
@@ -383,7 +447,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -524,9 +588,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

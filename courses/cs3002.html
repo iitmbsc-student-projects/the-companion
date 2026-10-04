@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Software Testing — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,10 +295,19 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1n1SnBCS08Zh8LRbcRf7FBiVvHulBvhRa?usp=drive_link" target="_blank" rel="noopener">Drive folder</a></li>
-          <li><a href="https://www.youtube.com/@softwaretestingcs3002" target="_blank" rel="noopener">Course YouTube channel</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1n1SnBCS08Zh8LRbcRf7FBiVvHulBvhRa?usp=drive_link" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@softwaretestingcs3002" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -322,7 +380,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1.1","t":"Software Testing: Motivation","v":"tTrVlQfP11M","s":"https://drive.google.com/file/d/15xOqbl_SyfwWlRcrApkfYvyxkjVtFeh3/view"},{"n":"1.2","t":"Software Development Life Cycle","v":"79jPbpxndSw","s":"https://drive.google.com/file/d/1p21IFO7f6OpII1dQLPFSJAhZWAw-z-BQ/view?usp=drive_link"},{"n":"1.3","t":"Software Testing: Terminologies","v":"FpApclVsLrw","s":"https://drive.google.com/file/d/1JS2FSNfwD3JMEUhwluuNPP-tPcHyNDzg/view?usp=drive_link"},{"n":"1.4","t":"Software Testing: Terminologies and Processes","v":"eYkSXT89Gi8","s":"https://drive.google.com/file/d/1Mwm-2PSJUBNOVNh5VW1kKfI50GlGoCTj/view?usp=drive_link"},{"n":"1.5","t":"Software Test Automation: JUnit as an example","v":"ZgZ0kpyED9k","s":"https://drive.google.com/file/d/1RAiyyN0wmYArZr2hUDGgsV2UOEev1ueW/view?usp=drive_link"}]},{"w":"Week 2","items":[{"n":"2.1","t":"Basics of Graphs","v":"nL-086Wy4GA","s":"https://drive.google.com/file/d/1IcMXo43Kp85xStCqSotC6LxroF83jW7b/view?usp=drive_link"},{"n":"2.2","t":"Fundamental Graph Algorithms","v":"ukbL29rIvGs","s":"https://drive.google.com/file/d/1sTQynbnURxVgkQqnLA-KQlKROIzbsg4A/view?usp=drive_link"},{"n":"2.3","t":"Elementary Graph Algorithms","v":"mSOD0XURKWY","s":"https://drive.google.com/file/d/1vUHOb2zv4ioE-9vTL3l2b0u3THKG9Jgv/view?usp=drive_link"},{"n":"2.4","t":"Structural Graph Coverage Criteria","v":"hAx7h7FqfKo","s":"https://drive.google.com/file/d/1pxchj9bXasl1vnkSU3fOG87aXrG5lgXX/view?usp=drive_link"},{"n":"2.5","t":"Algorithms: Structural Graph Coverage Criteria","v":"VWDY1ohvtRI","s":"https://drive.google.com/file/d/1q_JeEDkHzkLU4KmWmWfcbgwkYasInhKn/view?usp=drive_link"}]},{"w":"Week 3","items":[{"n":"3.1","t":"Graph Coverage Criteria: Applied to Test Code","v":"e12FAVqs-EA","s":"https://drive.google.com/file/d/1hHb78DYqO5bTJp3bfYRZzfaRnuWzktlp/view?usp=drive_link"},{"n":"3.2","t":"Data Flow in Graphs","v":"5W2T0P1RNbM","s":"https://drive.google.com/file/d/1yqjeityBV5V1gT4_W7OurK2QFLQn0jYM/view?usp=drive_link"},{"n":"3.3","t":"Data Flow Graph Coverage Criteria","v":"YgbzcSP8FpQ","s":"https://drive.google.com/file/d/1yXSl15cr04G-x4y2pxQKwu5NHzvlpe6z/view?usp=drive_link"},{"n":"3.4","t":"Data Flow Testing Example","v":"FT7cS6nOz_g","s":"https://drive.google.com/file/d/1JZ3mMTyGDSJgG4g-tx-PMAV3x7ehDrwe/view?usp=drive_link"},{"n":"3.5","t":"Unit Testing Based on Graphs: Summary","v":"rp4EIadkyQo","s":"https://drive.google.com/file/d/1obX4I_ytrAPkh1JfmiqzCzj-JrHTeKzb/view?usp=drive_link"}]},{"w":"Week 4","items":[{"n":"4.1","t":"Software Design and Integration Testing","v":"rDqdQgTIpSE","s":"https://drive.google.com/file/d/11L7dk8u_Wj5tngj9MIaJ0xpUFfl94RBB/view?usp=drive_link"},{"n":"4.2","t":"Design Integration Testing and Graph Coverage","v":"zOxxg-Lb2TE","s":"https://drive.google.com/file/d/15ByQjVy9LEzLXzRzZOtVnD6ERiY5mar0/view?usp=drive_link"},{"n":"4.3","t":"Specification Testing and Graph Coverage","v":"32VO9DNqfvw","s":"https://drive.google.com/file/d/1baje9rw30b73edYfOCdUfoSluAmyIooe/view?usp=drive_link"},{"n":"4.4","t":"Graph Coverage and Finite state machines","v":"dEk_lotIfAI","s":"https://drive.google.com/file/d/1AYR0cFXYkP_slYz-6yf9MBIZ8b-S5rly/view?usp=drive_link"},{"n":"4.5","t":"Testing Source Code: Classical Coverage Criteria","v":"oR72f-9CM1E","s":"https://drive.google.com/file/d/1_Dmwh2rrZHA_EUQkybvuyiGapJ81akVN/view?usp=drive_link"}]},{"w":"Week 5","items":[{"n":"5.1","t":"Logic: Basics needed for Software Testing","v":"VRbG5hpymCA","s":"https://drive.google.com/file/d/1UU70pFXpcyyKs37JTZRoPXaS-JXbq5Ye/view?usp=drive_link"},{"n":"5.2","t":"Logic: Coverage Criteria Part-1","v":"whiScMBb9uU","s":"https://drive.google.com/file/d/1W30ZmKVmuRnlBKj2xGIehIf1j9DDttOV/view?usp=drive_link"},{"n":"5.3","t":"Logic: Coverage Criteria Part-2","v":"uIe6pSepZ3Q","s":"https://drive.google.com/file/d/1W30ZmKVmuRnlBKj2xGIehIf1j9DDttOV/view?usp=drive_link"},{"n":"5.4","t":"Logic Coverage Criteria: Making clauses determine predicate","v":"pmH_8-Nj57Q","s":"https://drive.google.com/file/d/1WRiuA33GwFDo-ISKhoP7AJBYVuKFa_vS/view?usp=drive_link"},{"n":"5.5","t":"Logic Coverage Criteria: Applied to test code","v":"MfFtunDQzu0","s":"https://drive.google.com/file/d/1RGYYpZeyzR5XjttqvTVnLaD31lX1yWQv/view?usp=drive_link"}]},{"w":"Week 6","items":[{"n":"6.1","t":"Logic: Coverage Example 2","v":"UprpvRdNJ78","s":"https://drive.google.com/file/d/1fGKIAk1M4XsI8WbsbGs1Bpe1z8Tg8M0w/view?usp=drive_link"},{"n":"6.2","t":"Logic: Coverage Specification","v":"KG_iXF-nCEc","s":"https://drive.google.com/file/d/1XkZWXoOpNPq4GwD5siJdsfhnRUj1qwmo/view?usp=drive_link"},{"n":"6.3","t":"Logic: Coverage FSM","v":"lyScDx0AWe4","s":"https://drive.google.com/file/d/1MLctWcEbrdXY1eEmqoquPucisn4xDn4x/view?usp=drive_link"},{"n":"6.4","t":"Logic: Coverage Summary","v":"mlGjJbketZU","s":"https://drive.google.com/file/d/18yudMrL4WTFBdrqnTcH4PcFJenXlhMyZ/view?usp=drive_link"},{"n":"6.5","t":"SMT - Solvers","v":"pHo6gx_tRtg","s":"https://drive.google.com/file/d/1_1288gfTacwsYn-8qz2Ry93fSSG7_3PJ/view?usp=drive_link"}]},{"w":"Week 7","items":[{"n":"7.1","t":"Symbolic Testing Part 1","v":"TxGw7we_UrE","s":"https://drive.google.com/file/d/1tfhhplpmhATSFBjTCnj4yBAbAQGKXfV6/view?usp=drive_link"},{"n":"7.2","t":"Symbolic Testing Part 2","v":"JvI7ApFCkcE","s":"https://drive.google.com/file/d/1tfhhplpmhATSFBjTCnj4yBAbAQGKXfV6/view?usp=drive_link"},{"n":"7.3","t":"Concolic Execution Part 1","v":"AaaJv_jj7OM","s":"https://drive.google.com/file/d/1tfhhplpmhATSFBjTCnj4yBAbAQGKXfV6/view?usp=drive_link"},{"n":"7.4","t":"Concolic Execution Part 2","v":"ZiK1g6_Mo4w","s":"https://drive.google.com/file/d/1K1AmyLxczOssAHu0tSBOTHRKIlb5NcTI/view?usp=drive_link"},{"n":"7.5","t":"Example and Summary Symbolic Execution","v":"paaw9BpTTKY","s":"https://drive.google.com/file/d/1K1AmyLxczOssAHu0tSBOTHRKIlb5NcTI/view?usp=drive_link"}]},{"w":"Week 8","items":[{"n":"8.1","t":"Requirements","v":"lW4NVbKpBf8","s":"https://drive.google.com/file/d/13lYhENfK7DQIozMzvpqcAgtUWNQpXhM1/view?usp=drive_link"},{"n":"8.2","t":"Functional Testing","v":"Bb7braq_YSc","s":"https://drive.google.com/file/d/1pzuulH0IczSYs_motajYvpVdvM_9gBRD/view?usp=drive_link"},{"n":"8.3","t":"ISP Part 1","v":"t2dr_HW1zPk","s":"https://drive.google.com/file/d/1gwYr-n2D-JKbSBaK7VoSnHuUOmpw86Cc/view?usp=drive_link"},{"n":"8.4","t":"ISP Part 2","v":"k3DbWB-2Ltw","s":"https://drive.google.com/file/d/1gwYr-n2D-JKbSBaK7VoSnHuUOmpw86Cc/view?usp=drive_link"},{"n":"8.5","t":"ISP Example","v":"0E5eXMa6A3I","s":"https://drive.google.com/file/d/1gwYr-n2D-JKbSBaK7VoSnHuUOmpw86Cc/view?usp=drive_link"}]},{"w":"Week 9","items":[{"n":"9.1","t":"Reg Expns Cfgs","v":"e0zjmqfpA9o","s":"https://drive.google.com/file/d/1inLluT6HG8-eMcJzog9Vnf6ONQug_JRM/view?usp=drive_link"},{"n":"9.2","t":"Mutation Testing","v":"q3Ykj3ho8ZI","s":"https://drive.google.com/file/d/1jBIX-bMXuSjk2yGc8SJhfC9obEie4NuH/view?usp=drive_link"},{"n":"9.3","t":"Mutation Operators Source Code","v":"S9ddgh_mmqU","s":"https://drive.google.com/file/d/1x5dc8YD5X7lJE2tvh5moM-6sZ8SHHW7S/view?usp=drive_link"},{"n":"9.4","t":"Mutation Testing Vs Other Criteria","v":"QmUbnfypQD4","s":"https://drive.google.com/file/d/1vCTUjrOuPOPOtx6AHnQVoNe1T0_I7C5e/view?usp=drive_link"},{"n":"9.5","t":"Mutation Testing For Integration And Tools","v":"63ksgpPUJKQ","s":"https://drive.google.com/file/d/1n6wLjHRpiScyGgD_1SDNJf4fVWNQOyDi/view?usp=drive_link"}]},{"w":"Week 10","items":[{"n":"10.1","t":"Basic OO Integration Concepts","v":"JXCbbF5oP9w","s":"https://drive.google.com/file/d/1adTquL3oIJVWcL6VWiTopnWCkqIH4OOC/view?usp=drive_link"},{"n":"10.2","t":"Mutation Operators OO Integration","v":"z1DQxFOMKf0","s":"https://drive.google.com/file/d/1adTquL3oIJVWcL6VWiTopnWCkqIH4OOC/view?usp=drive_link"},{"n":"10.3","t":"OO Integration Testing Part1","v":"fP4TkMXG6sM","s":"https://drive.google.com/file/d/1ZJWQ0neXhnIKiX7_5nBEAmvtn--7CD5Y/view?usp=drive_link"},{"n":"10.4","t":"OO Faults","v":"N20qNwLYEr0","s":"https://drive.google.com/file/d/1ZJWQ0neXhnIKiX7_5nBEAmvtn--7CD5Y/view?usp=drive_link"},{"n":"10.5","t":"Coupling Criteria","v":"e88ClDJ67rA","s":"https://drive.google.com/file/d/1ZJWQ0neXhnIKiX7_5nBEAmvtn--7CD5Y/view?usp=drive_link"}]},{"w":"Week 11","items":[{"n":"11.1","t":"Web Apps Intro","v":"VA6NstufGlI","s":"https://drive.google.com/file/d/1elRresIg0s0aWCP6QH9kquoPwGOpdZUb/view?usp=drive_link"},{"n":"11.2","t":"Client Side Testing Part1","v":"f13a36DL-bQ","s":"https://drive.google.com/file/d/1TsGXesXqX0mwXtUyDtjLN4W9jsUBU6ZC/view?usp=drive_link"},{"n":"11.3","t":"Client Side Testing Part2","v":"F6FIHvIdms4","s":"https://drive.google.com/file/d/1TsGXesXqX0mwXtUyDtjLN4W9jsUBU6ZC/view?usp=drive_link"},{"n":"11.4","t":"Server Side Testing","v":"AtggsmRL4B8","s":"https://drive.google.com/file/d/15lOfReHRCuh3KJFXnUHlS2bGUaruzxvO/view?usp=drive_link"}]},{"w":"Week 12","items":[{"n":"12.1","t":"Regression Testing","v":"mfYQw_VzgpU","s":"https://drive.google.com/file/d/1QqSJdBhbQXJ_JD0z5x2xEMKggsm2C2wL/view?usp=drive_link"},{"n":"12.2","t":"Software Quality Metrics","v":"MUZvl88PQQQ","s":"https://drive.google.com/file/d/1cNvQwopnaYhwwXJzaqUyeKxgSjmW4q9m/view?usp=drive_link"},{"n":"12.3","t":"Non Functional Testing","v":"z09bgFMIeNM","s":"https://drive.google.com/file/d/1meTvAUi6vlTqsqkqOb2Yp8NQEUf-sVlM/view?usp=drive_link"},{"n":"12.4","t":"TDD","v":"69aaHzGrmT4","s":"https://drive.google.com/file/d/1GUhpE-nNCV1LmWvMUtduFbnA6gK29wgI/view?usp=drive_link"},{"n":"12.5","t":"Course Summary","v":"a0iFY6FjA-4","s":"https://drive.google.com/file/d/1hKmGdQBh45lVdihqZmpB3L0TQv2Sd_6Q/view?usp=drive_link"}]}];
 
@@ -378,7 +436,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -519,9 +577,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

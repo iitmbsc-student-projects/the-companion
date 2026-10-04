@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Database Management Systems — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -203,6 +252,7 @@
       <div class="nav-item active" id="nav-dashboard">Dashboard</div>
       <div class="nav-item" id="nav-syllabus">Syllabus</div>
       <div class="nav-item" id="nav-x-oppe" data-extra="oppe">OPPE</div>
+      <div class="nav-item" id="nav-x-live" data-extra="live">Live sessions</div>
     </div>
 
     <div class="nav-section accordion accordion-flush" id="lecture-nav">
@@ -247,11 +297,72 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1uY0PIqv9KwbFxqKKa7ncFU9XHO3xYkcO?usp=sharing" target="_blank" rel="noopener">Supplementary content (Drive folder)</a></li>
-          <li><a href="https://www.youtube.com/@dbms-iitmadrasbsdegree1439" target="_blank" rel="noopener">Course YouTube channel</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1ZrP-vkiHmYseubNEUMWl8a7svSAzy05r" target="_blank" rel="noopener">Week-sorted playlist (spreadsheet)</a></li>
-        </ul>
+
+        <div class="res-group">
+          <h3 class="res-group-title">Course material<span class="res-count">2</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1uY0PIqv9KwbFxqKKa7ncFU9XHO3xYkcO?usp=sharing" target="_blank" rel="noopener">Supplementary content</a>
+              <p class="res-desc">Extra material shared on Google Drive.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@dbms-iitmadrasbsdegree1439" target="_blank" rel="noopener">Course YouTube channel</a>
+              <p class="res-desc">All lecture videos.</p>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Previous year questions<span class="res-count">1</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://discourse.onlinedegree.iitm.ac.in/t/dbms-weekwise-pyqs/205837" target="_blank" rel="noopener">DBMS weekwise PYQs</a>
+              <p class="res-desc">Past questions sorted by week.</p>
+              <div class="res-foot"><span class="res-host">discourse.onlinedegree.iitm.ac.in</span><span class="res-by">by Preethy Parthasarath</span><span class="res-badge">Discourse login required</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Notes<span class="res-count">1</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://medium.com/@prathambhalla7/iit-madras-diploma-in-programming-database-management-system-dbms-notes-cbb75181361a" target="_blank" rel="noopener">DBMS notes</a>
+              <p class="res-desc">Written notes for the Diploma in Programming DBMS course.</p>
+              <div class="res-foot"><span class="res-host">medium.com</span><span class="res-by">by <a href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">prathambhalla7</a></span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Extra SQL practice<span class="res-count">5</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://www.w3schools.com/sql/sql_exercises.asp" target="_blank" rel="noopener">W3Schools SQL exercises</a>
+              <p class="res-desc">Short exercises for the basics.</p>
+              <div class="res-foot"><span class="res-host">w3schools.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://leetcode.com/studyplan/top-sql-50/" target="_blank" rel="noopener">LeetCode Top SQL 50</a>
+              <p class="res-desc">A 50-problem SQL study plan.</p>
+              <div class="res-foot"><span class="res-host">leetcode.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.hackerrank.com/domains/sql" target="_blank" rel="noopener">HackerRank SQL</a>
+              <p class="res-desc">Graded SQL problems.</p>
+              <div class="res-foot"><span class="res-host">hackerrank.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.codechef.com/practice/sql-case-studies-topic-wise" target="_blank" rel="noopener">CodeChef SQL case studies</a>
+              <p class="res-desc">Topic-wise case studies.</p>
+              <div class="res-foot"><span class="res-host">codechef.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.sql-practice.com/" target="_blank" rel="noopener">SQL Practice</a>
+              <p class="res-desc">Practice queries in the browser.</p>
+              <div class="res-foot"><span class="res-host">sql-practice.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -308,10 +419,352 @@
       </div>
 
       <section class="chapter">
-        <h2><span class="num">§ 1</span>Practice and solutions</h2>
-        <ul class="link-list">
-          <li><a href="https://oppe.dev/" target="_blank" rel="noopener">oppe.dev, curated DBMS OPPE problems with a coding environment</a> <span class="res-by">by <a href="https://ishan.page/" target="_blank" rel="noopener">Ishan Das Sharma</a></span></li>
-        </ul>
+        <h2><span class="num">§ 1</span>Practice and question banks</h2>
+
+        <div class="res-group">
+          <h3 class="res-group-title">Practice platform<span class="res-count">1</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://oppe.dev/" target="_blank" rel="noopener">oppe.dev</a>
+              <p class="res-desc">Curated DBMS OPPE problems with a coding environment.</p>
+              <div class="res-foot"><span class="res-host">oppe.dev</span><span class="res-by">by <a href="https://ishan.page/" target="_blank" rel="noopener">Ishan Das Sharma</a></span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Question banks<span class="res-count">1</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://discourse.onlinedegree.iitm.ac.in/t/dbms-ope-pyq-resources-not-official/192646" target="_blank" rel="noopener">DBMS OPE PYQ resources</a>
+              <p class="res-desc">Community thread collecting OPE questions. Not official.</p>
+              <div class="res-foot"><span class="res-host">discourse.onlinedegree.iitm.ac.in</span><span class="res-badge">Discourse login required</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">SQL questions<span class="res-count">2</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://github.com/mynkpdr/dbms/tree/main/OPE%20SQL%20Questions" target="_blank" rel="noopener">OPE SQL questions</a>
+              <div class="res-foot"><span class="res-host">github.com</span><span class="res-by">by <a href="https://github.com/mynkpdr" target="_blank" rel="noopener">mynkpdr</a></span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://github.com/nelsondsouza/iitm-dbms/tree/main/ope/sql" target="_blank" rel="noopener">OPE SQL questions</a>
+              <div class="res-foot"><span class="res-host">github.com</span><span class="res-by">by <a href="https://github.com/nelsondsouza" target="_blank" rel="noopener">nelsondsouza</a></span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Python and PostgreSQL questions<span class="res-count">3</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://github.com/mynkpdr/dbms/tree/main/OPE%20Python-PostgreSQL%20Questions%20(Solve%20Any%20One)" target="_blank" rel="noopener">OPE Python-PostgreSQL questions</a>
+              <p class="res-desc">Solve any one.</p>
+              <div class="res-foot"><span class="res-host">github.com</span><span class="res-by">by <a href="https://github.com/mynkpdr" target="_blank" rel="noopener">mynkpdr</a></span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://github.com/nelsondsouza/iitm-dbms/tree/main/ope/python-postgresql" target="_blank" rel="noopener">OPE Python-PostgreSQL questions</a>
+              <div class="res-foot"><span class="res-host">github.com</span><span class="res-by">by <a href="https://github.com/nelsondsouza" target="_blank" rel="noopener">nelsondsouza</a></span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://github.com/NebulaTris/DBMS_IITM/tree/main/OPE%20Python-PostgreSQL%20Questions" target="_blank" rel="noopener">OPE Python-PostgreSQL questions</a>
+              <div class="res-foot"><span class="res-host">github.com</span><span class="res-by">by <a href="https://github.com/NebulaTris" target="_blank" rel="noopener">NebulaTris</a></span></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </section>
+    <section class="panel extra-panel" id="panel-x-live">
+
+      <div class="course-head">
+        <div class="kicker">CS2001 · Diploma / Programming · 4 credits</div>
+        <h1>Live sessions</h1>
+        <p class="standfirst">Topics from past live sessions, each linked to the exact moment in the video.</p>
+      </div>
+
+      <section class="chapter">
+        <h2><span class="num">§ 1</span>May 2022 term</h2>
+        <details class="sess">
+          <summary><span class="sess-title">Weeks 5 and 6 summary session</span><span class="sess-count">9</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=vGtc4ux8ols" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=196" target="_blank" rel="noopener"><span class="tp-time">3:16</span><span class="tp-label">Lossless join decomposition with examples</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=1828" target="_blank" rel="noopener"><span class="tp-time">30:28</span><span class="tp-label">Dependency preserving with examples</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=2766" target="_blank" rel="noopener"><span class="tp-time">46:06</span><span class="tp-label">Doubt on dependency preserving and lossless join</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=2867" target="_blank" rel="noopener"><span class="tp-time">47:47</span><span class="tp-label">Closure set of FDs</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=3071" target="_blank" rel="noopener"><span class="tp-time">51:11</span><span class="tp-label">Candidate key and primary key</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=3317" target="_blank" rel="noopener"><span class="tp-time">55:17</span><span class="tp-label">Use of closure set of FDs</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=3816" target="_blank" rel="noopener"><span class="tp-time">1:03:36</span><span class="tp-label">Extraneous attribute with examples</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=5005" target="_blank" rel="noopener"><span class="tp-time">1:23:25</span><span class="tp-label">Equivalence of sets of FDs with example</span></a></li>
+              <li><a href="https://youtu.be/vGtc4ux8ols?t=5656" target="_blank" rel="noopener"><span class="tp-time">1:34:16</span><span class="tp-label">Canonical cover with examples</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Quiz 2 revision session</span><span class="sess-count">14</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=bNMcFXywreI" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/bNMcFXywreI?t=300" target="_blank" rel="noopener"><span class="tp-time">5:00</span><span class="tp-label">Week 6 practice assignment Q9 (BCNF concept)</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=2440" target="_blank" rel="noopener"><span class="tp-time">40:40</span><span class="tp-label">Mock 2 Q8: functional dependency with example</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=2943" target="_blank" rel="noopener"><span class="tp-time">49:03</span><span class="tp-label">Mock 2 Q7: how to find a candidate key</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=3166" target="_blank" rel="noopener"><span class="tp-time">52:46</span><span class="tp-label">Mock 2 Q4: lossless join decomposition</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=4161" target="_blank" rel="noopener"><span class="tp-time">1:09:21</span><span class="tp-label">Mock 2 Q9: dependency preserving with example</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=4860" target="_blank" rel="noopener"><span class="tp-time">1:21:00</span><span class="tp-label">Mock 2 Q11: canonical cover with example</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=7098" target="_blank" rel="noopener"><span class="tp-time">1:58:18</span><span class="tp-label">BCNF with examples<span class="tp-key">Important</span></span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=8625" target="_blank" rel="noopener"><span class="tp-time">2:23:45</span><span class="tp-label">Mock 2 Q16: multivalued dependency example</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=9239" target="_blank" rel="noopener"><span class="tp-time">2:33:59</span><span class="tp-label">Week 6 content discussion</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=9301" target="_blank" rel="noopener"><span class="tp-time">2:35:01</span><span class="tp-label">Week 7 content discussion</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=9500" target="_blank" rel="noopener"><span class="tp-time">2:38:20</span><span class="tp-label">Mock 2 Q14: BST example</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=9848" target="_blank" rel="noopener"><span class="tp-time">2:44:08</span><span class="tp-label">Mock 2 Q15</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=10244" target="_blank" rel="noopener"><span class="tp-time">2:50:44</span><span class="tp-label">Mock 2 Q13</span></a></li>
+              <li><a href="https://youtu.be/bNMcFXywreI?t=10485" target="_blank" rel="noopener"><span class="tp-time">2:54:45</span><span class="tp-label">Week 8 overview</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 9 session</span><span class="sess-count">6</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=w_tT9gbvfF8" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/w_tT9gbvfF8?t=0" target="_blank" rel="noopener"><span class="tp-time">0:00</span><span class="tp-label">Indexing</span><span class="tp-end">to 30:42</span></a></li>
+              <li><a href="https://youtu.be/w_tT9gbvfF8?t=1842" target="_blank" rel="noopener"><span class="tp-time">30:42</span><span class="tp-label">2-3-4 trees with examples</span><span class="tp-end">to 1:28:04</span></a></li>
+              <li><a href="https://youtu.be/w_tT9gbvfF8?t=5284" target="_blank" rel="noopener"><span class="tp-time">1:28:04</span><span class="tp-label">Binary search tree</span><span class="tp-end">to 1:34:02</span></a></li>
+              <li><a href="https://youtu.be/w_tT9gbvfF8?t=5642" target="_blank" rel="noopener"><span class="tp-time">1:34:02</span><span class="tp-label">Balanced binary search tree</span><span class="tp-end">to 1:36:07</span></a></li>
+              <li><a href="https://youtu.be/w_tT9gbvfF8?t=5767" target="_blank" rel="noopener"><span class="tp-time">1:36:07</span><span class="tp-label">B+ tree with examples</span><span class="tp-end">to 2:10:15</span></a></li>
+              <li><a href="https://youtu.be/w_tT9gbvfF8?t=7815" target="_blank" rel="noopener"><span class="tp-time">2:10:15</span><span class="tp-label">B tree with examples</span><span class="tp-end">to 2:26:35</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 10 activity session</span><span class="sess-count">10</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=DP4t5YCcXqk" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=420" target="_blank" rel="noopener"><span class="tp-time">7:00</span><span class="tp-label">ACID properties</span><span class="tp-end">to 15:32</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=933" target="_blank" rel="noopener"><span class="tp-time">15:33</span><span class="tp-label">Transaction states</span><span class="tp-end">to 19:26</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=1167" target="_blank" rel="noopener"><span class="tp-time">19:27</span><span class="tp-label">Concurrent execution</span><span class="tp-end">to 21:00</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=1260" target="_blank" rel="noopener"><span class="tp-time">21:00</span><span class="tp-label">Schedule</span><span class="tp-end">to 36:25</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=2185" target="_blank" rel="noopener"><span class="tp-time">36:25</span><span class="tp-label">Types of schedule</span><span class="tp-end">to 40:00</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=2400" target="_blank" rel="noopener"><span class="tp-time">40:00</span><span class="tp-label">Serializability</span><span class="tp-end">to 45:00</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=2700" target="_blank" rel="noopener"><span class="tp-time">45:00</span><span class="tp-label">Conflict serializability</span><span class="tp-end">to 1:04:00</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=3840" target="_blank" rel="noopener"><span class="tp-time">1:04:00</span><span class="tp-label">Problem on conflict serializability</span><span class="tp-end">to 1:23:00</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=4980" target="_blank" rel="noopener"><span class="tp-time">1:23:00</span><span class="tp-label">View serializability</span><span class="tp-end">to 1:44:00</span></a></li>
+              <li><a href="https://youtu.be/DP4t5YCcXqk?t=6300" target="_blank" rel="noopener"><span class="tp-time">1:45:00</span><span class="tp-label">Practice problem 4</span><span class="tp-end">to 2:06:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 10 open session</span><span class="sess-count">12</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=nX3MWCQp9dE" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=290" target="_blank" rel="noopener"><span class="tp-time">4:50</span><span class="tp-label">Locking protocol</span><span class="tp-end">to 5:36</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=336" target="_blank" rel="noopener"><span class="tp-time">5:36</span><span class="tp-label">Shared lock</span><span class="tp-end">to 6:22</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=382" target="_blank" rel="noopener"><span class="tp-time">6:22</span><span class="tp-label">Exclusive lock</span><span class="tp-end">to 7:00</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=420" target="_blank" rel="noopener"><span class="tp-time">7:00</span><span class="tp-label">Locking matrix</span><span class="tp-end">to 9:30</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=570" target="_blank" rel="noopener"><span class="tp-time">9:30</span><span class="tp-label">Example of locking protocol</span><span class="tp-end">to 13:15</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=795" target="_blank" rel="noopener"><span class="tp-time">13:15</span><span class="tp-label">Example of a locking protocol that is not conflict serializable</span><span class="tp-end">to 17:08</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=1028" target="_blank" rel="noopener"><span class="tp-time">17:08</span><span class="tp-label">Two-phase locking protocol</span><span class="tp-end">to 44:10</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=2650" target="_blank" rel="noopener"><span class="tp-time">44:10</span><span class="tp-label">Strict two-phase locking protocol</span><span class="tp-end">to 50:10</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=3010" target="_blank" rel="noopener"><span class="tp-time">50:10</span><span class="tp-label">Rigorous two-phase locking protocol</span><span class="tp-end">to 56:00</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=3360" target="_blank" rel="noopener"><span class="tp-time">56:00</span><span class="tp-label">Problem on 2PL (practice assignment Q7)</span><span class="tp-end">to 1:11:00</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=4260" target="_blank" rel="noopener"><span class="tp-time">1:11:00</span><span class="tp-label">Timestamp protocol</span><span class="tp-end">to 1:43:00</span></a></li>
+              <li><a href="https://youtu.be/nX3MWCQp9dE?t=6180" target="_blank" rel="noopener"><span class="tp-time">1:43:00</span><span class="tp-label">Thomas write rule</span><span class="tp-end">to 1:48:30</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 11 activity session</span><span class="sess-count">8</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=cYN7cF09Q9Q" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=26" target="_blank" rel="noopener"><span class="tp-time">0:26</span><span class="tp-label">View serializability with examples</span><span class="tp-end">to 47:51</span></a></li>
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=2871" target="_blank" rel="noopener"><span class="tp-time">47:51</span><span class="tp-label">Week 10 doubts</span><span class="tp-end">to 58:23</span></a></li>
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=3503" target="_blank" rel="noopener"><span class="tp-time">58:23</span><span class="tp-label">Backup and recovery</span><span class="tp-end">to 1:01:47</span></a></li>
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=3707" target="_blank" rel="noopener"><span class="tp-time">1:01:47</span><span class="tp-label">Backup strategies with examples</span><span class="tp-end">to 1:30:11</span></a></li>
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=5411" target="_blank" rel="noopener"><span class="tp-time">1:30:11</span><span class="tp-label">Log-based recovery</span><span class="tp-end">to 1:51:43</span></a></li>
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=6703" target="_blank" rel="noopener"><span class="tp-time">1:51:43</span><span class="tp-label">Immediate database modification examples</span><span class="tp-end">to 1:58:25</span></a></li>
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=7105" target="_blank" rel="noopener"><span class="tp-time">1:58:25</span><span class="tp-label">State of transaction examples</span><span class="tp-end">to 2:02:03</span></a></li>
+              <li><a href="https://youtu.be/cYN7cF09Q9Q?t=7323" target="_blank" rel="noopener"><span class="tp-time">2:02:03</span><span class="tp-label">Doubts on backup and recovery</span><span class="tp-end">to 2:22:03</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 11 open session</span><span class="sess-count">3</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=tcrX1VkDGNE" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/tcrX1VkDGNE?t=80" target="_blank" rel="noopener"><span class="tp-time">1:20</span><span class="tp-label">Week 7 doubts</span><span class="tp-end">to 7:30</span></a></li>
+              <li><a href="https://youtu.be/tcrX1VkDGNE?t=450" target="_blank" rel="noopener"><span class="tp-time">7:30</span><span class="tp-label">RAID</span><span class="tp-end">to 1:27:22</span></a></li>
+              <li><a href="https://youtu.be/tcrX1VkDGNE?t=5242" target="_blank" rel="noopener"><span class="tp-time">1:27:22</span><span class="tp-label">Week 11 practice assignment Q11 and Q12</span><span class="tp-end">to 1:44:55</span></a></li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section class="chapter">
+        <h2><span class="num">§ 2</span>Jan 2022 term</h2>
+        <p class="tbd-note" style="margin:0 0 12px">Older sessions. Watch these if the ones above are not clear. Please watch all the tutorials for weeks 5 and 6, and use the tutorials for the ER diagram part.</p>
+        <details class="sess">
+          <summary><span class="sess-title">Week 4 activity session</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=Jw5OFsliy5E" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/Jw5OFsliy5E?t=290" target="_blank" rel="noopener"><span class="tp-time">4:50</span><span class="tp-label">TRC and DRC, detailed discussion with examples</span><span class="tp-end">to 1:05:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 5 session</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=XN3YtkxDuyc" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/XN3YtkxDuyc?t=840" target="_blank" rel="noopener"><span class="tp-time">14:00</span><span class="tp-label">Lossless decomposition</span><span class="tp-end">to 28:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 5 open session</span><span class="sess-count">2</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=rwz7Qn7fzBA" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/rwz7Qn7fzBA?t=840" target="_blank" rel="noopener"><span class="tp-time">14:00</span><span class="tp-label">Lossless decomposition, one example in detail</span><span class="tp-end">to 28:00</span></a></li>
+              <li><a href="https://youtu.be/rwz7Qn7fzBA?t=1680" target="_blank" rel="noopener"><span class="tp-time">28:00</span><span class="tp-label">Practice examples on equivalent FDs</span><span class="tp-end">to 40:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 6 normalisation</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=lF4hf_kN4ss" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/lF4hf_kN4ss?t=2100" target="_blank" rel="noopener"><span class="tp-time">35:00</span><span class="tp-label">Normalisation</span><span class="tp-end">to 1:54:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 6 practice assignment</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=VFmEAao6W2w" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/VFmEAao6W2w?t=780" target="_blank" rel="noopener"><span class="tp-time">13:00</span><span class="tp-label">Practice assignment questions</span><span class="tp-end">to 1:02:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 6 normalisation and decomposition</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=E7zyO7LEJ2M" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/E7zyO7LEJ2M?t=360" target="_blank" rel="noopener"><span class="tp-time">6:00</span><span class="tp-label">Normalisation and decomposition example<span class="tp-key">Important</span></span><span class="tp-end">to 42:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 7 session</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=0d62HqNM0eE" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/0d62HqNM0eE?t=540" target="_blank" rel="noopener"><span class="tp-time">9:00</span><span class="tp-label">Python and Postgres connectivity</span><span class="tp-end">to 2:00:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 8 activity session</span><span class="sess-count">2</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=vvF75iehjw8" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/vvF75iehjw8?t=420" target="_blank" rel="noopener"><span class="tp-time">7:00</span><span class="tp-label">Binary search tree (BST)</span><span class="tp-end">to 27:00</span></a></li>
+              <li><a href="https://youtu.be/vvF75iehjw8?t=2280" target="_blank" rel="noopener"><span class="tp-time">38:00</span><span class="tp-label">Important questions on BST</span><span class="tp-end">to 1:02:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 8 practice session</span><span class="sess-count">5</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=8jAiQ8UA73E" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/8jAiQ8UA73E?t=0" target="_blank" rel="noopener"><span class="tp-time">0:00</span><span class="tp-label">Magnetic disks theory</span><span class="tp-end">to 30:00</span></a></li>
+              <li><a href="https://youtu.be/8jAiQ8UA73E?t=1800" target="_blank" rel="noopener"><span class="tp-time">30:00</span><span class="tp-label">Problem 1: free space, bits for addressing</span><span class="tp-end">to 38:00</span></a></li>
+              <li><a href="https://youtu.be/8jAiQ8UA73E?t=2280" target="_blank" rel="noopener"><span class="tp-time">38:00</span><span class="tp-label">Problem 2: transfer rate</span><span class="tp-end">to 44:00</span></a></li>
+              <li><a href="https://youtu.be/8jAiQ8UA73E?t=2640" target="_blank" rel="noopener"><span class="tp-time">44:00</span><span class="tp-label">Problem 3: time to read a file</span><span class="tp-end">to 56:00</span></a></li>
+              <li><a href="https://youtu.be/8jAiQ8UA73E?t=3480" target="_blank" rel="noopener"><span class="tp-time">58:00</span><span class="tp-label">LRU problem</span><span class="tp-end">to 1:20:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 8 open session summary</span><span class="sess-count">2</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=rwz7Qn7fzBA" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/rwz7Qn7fzBA?t=840" target="_blank" rel="noopener"><span class="tp-time">14:00</span><span class="tp-label">Choose the correct binary tree</span><span class="tp-end">to 22:00</span></a></li>
+              <li><a href="https://youtu.be/rwz7Qn7fzBA?t=1320" target="_blank" rel="noopener"><span class="tp-time">22:00</span><span class="tp-label">LRU and MRU</span><span class="tp-end">to 37:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 9 practice session</span><span class="sess-count">3</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=zzfGw88hy6U" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/zzfGw88hy6U?t=500" target="_blank" rel="noopener"><span class="tp-time">8:20</span><span class="tp-label">B-tree numericals</span><span class="tp-end">to 45:00</span></a></li>
+              <li><a href="https://youtu.be/zzfGw88hy6U?t=2700" target="_blank" rel="noopener"><span class="tp-time">45:00</span><span class="tp-label">B+ tree numericals</span><span class="tp-end">to 1:23:00</span></a></li>
+              <li><a href="https://youtu.be/zzfGw88hy6U?t=4980" target="_blank" rel="noopener"><span class="tp-time">1:23:00</span><span class="tp-label">Questions on B tree and B+ tree</span><span class="tp-end">to 1:59:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 9 open session</span><span class="sess-count">3</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=zQIKcca0Hqo" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/zQIKcca0Hqo?t=350" target="_blank" rel="noopener"><span class="tp-time">5:50</span><span class="tp-label">Hashing</span><span class="tp-end">to 45:00</span></a></li>
+              <li><a href="https://youtu.be/zQIKcca0Hqo?t=2760" target="_blank" rel="noopener"><span class="tp-time">46:00</span><span class="tp-label">Bitmap and indexing</span><span class="tp-end">to 1:32:00</span></a></li>
+              <li><a href="https://youtu.be/zQIKcca0Hqo?t=5580" target="_blank" rel="noopener"><span class="tp-time">1:33:00</span><span class="tp-label">Important question on indexing</span><span class="tp-end">to 1:45:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 10 sessions</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=hx8OwWSnrbM" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/hx8OwWSnrbM?t=6420" target="_blank" rel="noopener"><span class="tp-time">1:47:00</span><span class="tp-label">Conflict serializability</span><span class="tp-end">to 2:14:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 10 schedules and locking</span><span class="sess-count">2</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=N6kLhxGz4Rs" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/N6kLhxGz4Rs?t=540" target="_blank" rel="noopener"><span class="tp-time">9:00</span><span class="tp-label">Schedules (concept)<span class="tp-key">Important</span></span><span class="tp-end">to 1:40:00</span></a></li>
+              <li><a href="https://youtu.be/N6kLhxGz4Rs?t=6000" target="_blank" rel="noopener"><span class="tp-time">1:40:00</span><span class="tp-label">Locking protocol</span><span class="tp-end">to 2:15:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 10 open session</span><span class="sess-count">2</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=efUo6tQVXf4" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/efUo6tQVXf4?t=100" target="_blank" rel="noopener"><span class="tp-time">1:40</span><span class="tp-label">Timestamp-based protocol and Thomas write rule</span><span class="tp-end">to 56:00</span></a></li>
+              <li><a href="https://youtu.be/efUo6tQVXf4?t=3420" target="_blank" rel="noopener"><span class="tp-time">57:00</span><span class="tp-label">Important questions</span><span class="tp-end">to 1:54:00</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <details class="sess">
+          <summary><span class="sess-title">Week 11 activity session</span><span class="sess-count">1</span></summary>
+          <div class="sess-body">
+            <a class="sess-watch" href="https://www.youtube.com/watch?v=bvgPMSAuhLI" target="_blank" rel="noopener">Watch the full session</a>
+            <ul class="topics">
+              <li><a href="https://youtu.be/bvgPMSAuhLI?t=1380" target="_blank" rel="noopener"><span class="tp-time">23:00</span><span class="tp-label">Backup strategies</span><span class="tp-end">to 1:10:00</span></a></li>
+            </ul>
+          </div>
+        </details>
       </section>
 
     </section>
@@ -340,7 +793,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1.1","t":"Course Overview","v":"OMHbGm9SQuE","s":"https://drive.google.com/file/d/1TKF2lPkuZ9W7a-BXiWnhe6SXs9nfR4kF/view?usp=drive_link"},{"n":"1.2","t":"Why DBMS?/1","v":"BS0-7KJdopY","s":"https://drive.google.com/file/d/1TKF2lPkuZ9W7a-BXiWnhe6SXs9nfR4kF/view?usp=drive_link"},{"n":"1.3","t":"Why DBMS?/2","v":"9SrBrnIoCjc","s":"https://drive.google.com/file/d/1K0CCvQfMx91LJExcLoXNFDPN3yJFHzNz/view?usp=drive_link"},{"n":"1.4","t":"Introduction to DBMS/1","v":"s1Jb-NJNpT4","s":"https://drive.google.com/file/d/1FTvr0exb3OH80Lb1-CJ7lJlk6qZft6-j/view?usp=drive_link"},{"n":"1.5","t":"Introduction to DBMS/2","v":"MDQxqYVXiVU","s":"https://drive.google.com/file/d/1LMgze766Ql3U8ZSuQ4PVIz4PUo9a1fPH/view?usp=drive_link"}]},{"w":"Week 2","items":[{"n":"2.1","t":"Introduction to Relational Model/1","v":"B3cCQagcoao","s":"https://drive.google.com/file/d/16NIn6qXyrxiEf_j1JFmgUx5lxEOXU-vS/view?usp=drive_link"},{"n":"2.2","t":"Introduction to Relational Model/2","v":"D8e1-apWxo8","s":"https://drive.google.com/file/d/1kgKZMkzWaP8iZQrGoZS16c3uTw35IA9j/view?usp=drive_link"},{"n":"2.3","t":"Introduction to SQL/1","v":"Wv6vM5rGCw0","s":"https://drive.google.com/file/d/1LE9rwFeT03VxRAqEatGVVqdQme_HuA64/view?usp=drive_link"},{"n":"2.4","t":"Introduction to SQL/2","v":"hEgb_76wz1s","s":"https://drive.google.com/file/d/1yT_x9__SqmAZXI6yrXsR8UJvFLu9Y5lz/view?usp=drive_link"},{"n":"2.5","t":"Introduction to SQL/3","v":"AaKMO4-g_zw","s":"https://drive.google.com/file/d/10ssrJPrxUj_3OSQmwdHQB3cXQKRHSyDr/view?usp=drive_link"},{"n":"Tutorial 2.1","t":"Binary Numbers \u0026 Character Encoding Part1","v":"7yzUtikAvsk","s":null},{"n":"Tutorial 2.2","t":"Binary Numbers \u0026 Character Encoding Part2","v":"9vD-GAyfmv8","s":null},{"n":"Tutorial 2.3","t":"Running SQL Commands in PostgreSQL","v":"UTvCO2YaPxA","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"SQL Examples","v":"j6v3lL5xbao","s":"https://drive.google.com/file/d/15lVB8rlWxkwYgUR-arvrOGX340wtheYF/view?usp=drive_link"},{"n":"3.2","t":"Intermediate SQL/1","v":"Pk1j1UE3JLI","s":"https://drive.google.com/file/d/1msoIMU42FSrx4DsCGAqkBvtQuNv7Yu09/view?usp=drive_link"},{"n":"3.3","t":"Intermediate SQL/2","v":"_-JZS7mqo6k","s":"https://drive.google.com/file/d/1qroHYkaeWeWxsHvtjLOGy4lveMDePQql/view?usp=drive_link"},{"n":"3.4","t":"Intermediate SQL/3","v":"JtCk6DurR8k","s":"https://drive.google.com/file/d/1PN4v8jWj-e1bDxq0KfHNwCyWnCQKf5ow/view?usp=drive_link"},{"n":"3.5","t":"Advanced SQL","v":"f0hK7aMloI0","s":"https://drive.google.com/file/d/1OlxFduMEwzhKYzVu2Ob9rlMwKHcm4ZIg/view?usp=drive_link"},{"n":"Tutorial 3.1","t":"Triggers(case sudies)","v":"Y4iDP3E7JxI","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Formal Relational Query Languages/1","v":"VfQcP-2VdLc","s":"https://drive.google.com/file/d/1r1oOUEiD_X-ECCFgjF5yJCrG0jdP77nY/view?usp=drive_link"},{"n":"4.2","t":"Formal Relational Query Languages/2","v":"WjlbMfEqom8","s":"https://drive.google.com/file/d/1QPT4vXBZuN4__FVK7xI9BXs64d9AB20h/view?usp=drive_link"},{"n":"4.3","t":"Entity-Relationship Model/1","v":"EGAQdgim3IA","s":"https://drive.google.com/file/d/1YLwKFBy4QFMlOxwPmrdXFodZeee8X6KH/view?usp=drive_link"},{"n":"4.4","t":"Entity-Relationship Model/2","v":"Gfcm-A-MpO4","s":"https://drive.google.com/file/d/138Kb_akN8CaZXSaYsDV6bbQtGnkVIIhn/view?usp=drive_link"},{"n":"4.5","t":"Entity-Relationship Model/3","v":"WOWKszMjmgE","s":"https://drive.google.com/file/d/1ZwC3b2PJfGsvcm7rjzuuPyk9YI78ZNX4/view?usp=drive_link"},{"n":"Tutorial 4.1","t":"Division Operation","v":"DMiZPUjRls0","s":null},{"n":"Tutorial 4.2","t":"Tuple Relational Calculus","v":null,"s":"https://drive.google.com/file/d/1WulLSIlpum-20V3emG_PqB8ApIQIk5NA/view?usp=drive_link"},{"n":"Tutorial 4.3","t":"Translation of E-R Diagram into Relational Schema","v":null,"s":"https://drive.google.com/file/d/1Js4GiQPqSr8RWv4IqS-6IVWOV3hHx1X-/view?usp=drive_link"},{"n":"Tutorial 4.4","t":"Case Study on ER Diagram","v":null,"s":"https://drive.google.com/file/d/1MH7fNa060MtfQq9hDqM-PaTRo-OK2iLg/view?usp=drive_link"}]},{"w":"Week 5","items":[{"n":"5.1","t":"Relational Database Design/1","v":"Am4ZVa1Filk","s":"https://drive.google.com/file/d/1xLUxwrlf2MZuOOifjvXOMgUWUSYaVVKE/view?usp=drive_link"},{"n":"5.2","t":"Relational Database Design/2","v":"iW5C0g8fhx4","s":"https://drive.google.com/file/d/17SR-zQF2xWcd6OsHyVk-01X3unwPL4lW/view?usp=drive_link"},{"n":"5.3","t":"Relational Database Design/3","v":"gFJuNh63MGw","s":"https://drive.google.com/file/d/1DiZjvh5affqqAoVaff71vj3LJvE9ITu8/view?usp=drive_link"},{"n":"5.4","t":"Relational Database Design/4","v":"6AZlp7EcmiQ","s":"https://drive.google.com/file/d/1e5du4h4UpHAoSxTHgd3sLEPq5-VUFOTD/view?usp=drive_link"},{"n":"5.5","t":"Relational Database Design/5","v":"WWI4ACyTneI","s":"https://drive.google.com/file/d/1IwSHg9RRJAO18Oc11qX7z9xFDykwdUQh/view?usp=drive_link"}]},{"w":"Week 6","items":[{"n":"6.1","t":"Relational Database Design/6: Normal Forms","v":"BQex0zbsMwg","s":"https://drive.google.com/file/d/1fXRIcn5MsMhlMHD2CQFpHSEpIeMOjZnG/view?usp=drive_link"},{"n":"6.2","t":"Relational Database Design/7: Normal Forms","v":"4Vn2-tcg21c","s":"https://drive.google.com/file/d/1idQ3FhkBYQ18pMnaJdpPGKurj3z213Kk/view?usp=drive_link"},{"n":"6.3","t":"Relational Database Design/8: Case Study","v":"uOxY9Hn8yz4","s":"https://drive.google.com/file/d/1mbqVODuoGjbXhMwgxVAX4t-RgmtrTnqx/view?usp=drive_link"},{"n":"6.4","t":"Relational Database Design/9: MVD \u0026 4NF","v":"pf7ws6WgklU","s":"https://drive.google.com/file/d/1YT4PC8AR_XkJDJ5aWqPeMRgjeckkE3nt/view?usp=drive_link"},{"n":"6.5","t":"Relational Database Design/10: Design Summary \u0026 Temporal Data","v":"4iOin7ls0Uk","s":"https://drive.google.com/file/d/1lzuDYZGhbcLhw1EB2Xf7Vn0uXidu5CXE/view?usp=drive_link"}]},{"w":"Week 7","items":[{"n":"7.1","t":"Application Design and Development/1: Architecture","v":"yh6yhQj4Ncg","s":"https://drive.google.com/file/d/1L5lrWw3RhVAXfYbGjgfDxHaU0g77sDjF/view?usp=drive_link"},{"n":"7.2","t":"Application Design and Development/2: Web Applications","v":"Uk8x3XvG3dA","s":"https://drive.google.com/file/d/1xm3ZADhsA-Bb3nzdpDEWpCPVhntOzFtc/view?usp=drive_link"},{"n":"7.3","t":"Application Design and Development/3: SQL and Native Language","v":"ElkvZWTN9J8","s":"https://drive.google.com/file/d/1CNGyqafro4gc0DxQdGHt8iuo9P0C5AnW/view?usp=drive_link"},{"n":"7.4","t":"Application Design and Development/4: Python and PostgreSQL","v":"uLbMLfUuAxQ","s":"https://drive.google.com/file/d/12mR8lHYQcDYgVVU49GGyUWvAcgJgWzls/view?usp=drive_link"},{"n":"7.5","t":"Application Design and Development/5: Application Development and Mobile","v":"KgK3Kz8BlmA","s":"https://drive.google.com/file/d/1lalz9Bv8zJvDYHlB3YvuVgh8zXFneIgP/view?usp=drive_link"}]},{"w":"Week 8","items":[{"n":"8.1","t":"Algorithms and Data Structures/1: Algorithms \u0026 Complexity Analysis","v":"uqpA6wySe8o","s":"https://drive.google.com/file/d/1h8j7Jj5fx1X5uZ1vgBCcc0vdspS_1BZT/view?usp=drive_link"},{"n":"8.2","t":"Algorithms and Data Structures/2: Data Structures","v":"vY6MnadNvUk","s":"https://drive.google.com/file/d/1ZVD9EKpzsnwSem0KqVkQqGsDE139JFOI/view?usp=drive_link"},{"n":"8.3","t":"Algorithms and Data Structures/3: Data Structures","v":"OgXyMwjD6Nk","s":"https://drive.google.com/file/d/1lSxYLWq8jB2dbYa9xebTobGz2fhh_dXT/view?usp=drive_link"},{"n":"8.4","t":"Storage and File Structure/1: Physical Storage","v":"tbCDTfpOC6Q","s":"https://drive.google.com/file/d/1dXHiO14wQflh1eHKvFNCAUUvpbFFgd9p/view?usp=drive_link"},{"n":"8.5","t":"Storage and File Structure/2: File Structure","v":"7Y3z_iqTYbg","s":"https://drive.google.com/file/d/1-x7oyVZ6DMaVg3FyJ3b1QkEcglvX2kGW/view?usp=drive_link"}]},{"w":"Week 9","items":[{"n":"9.1","t":"Indexing and Hashing/1: Indexing/1","v":"fY-EC1dknnQ","s":"https://drive.google.com/file/d/1mw77jj4EnnBfauTWJ9_gHVR2vCNVvHIO/view?usp=drive_link"},{"n":"9.2","t":"Indexing and Hashing/2: Indexing/2","v":"pZ9aUJUzFhg","s":"https://drive.google.com/file/d/1Gg2IH5-bmZ5NSDNws_z2oUu7hNH9bM8v/view?usp=drive_link"},{"n":"9.3","t":"Indexing and Hashing/3: Indexing/3","v":"7fhN_zacwK0","s":"https://drive.google.com/file/d/19xJyR62HdjSpOwWl6OzpDbUpbmoXlmHh/view?usp=drive_link"},{"n":"9.4","t":"Indexing and Hashing/4: Hashing","v":"yXK6yYwNJFw","s":"https://drive.google.com/file/d/1wodCbxeOrcaOwZ28m0nOyyhdCHf37YRW/view?usp=drive_link"},{"n":"9.5","t":"Indexing and Hashing/5: Index Design","v":"oZetRAwYmrw","s":"https://drive.google.com/file/d/1bzj00vw8n6WupwEF1OzS6Tjhwvgo3UbT/view?usp=drive_link"}]},{"w":"Week 10","items":[{"n":"10.1","t":"Transactions/1","v":"MwdAkFhR_I8","s":"https://drive.google.com/file/d/1vK3N_QdQnGDwBhSOL_SLlTqFVOWH-qjj/view?usp=drive_link"},{"n":"10.2","t":"Transactions/2: Serializability","v":"MNXTL69Ud9A","s":"https://drive.google.com/file/d/11ApdopuBSGDieUo7pyW6R4a3Mkow6S7R/view?usp=drive_link"},{"n":"10.3","t":"Transactions/3: Recoverability","v":"tlnEqRcVB5s","s":"https://drive.google.com/file/d/1yiF0Nvniq4eC6QFEhukyESxoMdx6xFVu/view?usp=drive_link"},{"n":"10.4","t":"Concurrency Control/1","v":"VcYdCPbyWX0","s":"https://drive.google.com/file/d/1ZvxQDleoLt1mjKmI5ODDnd6s1jsgXe7O/view?usp=drive_link"},{"n":"10.5","t":"Concurrency Control/2","v":"OYbfDSxrEKI","s":"https://drive.google.com/file/d/1EgZxaP2wMhMp4kULgxpVFNautfWAJ2zY/view?usp=drive_link"}]},{"w":"Week 11","items":[{"n":"11.1","t":"Backup \u0026 Recovery/1: Backup/1","v":"7oNFney4vhc","s":"https://drive.google.com/file/d/1OpLhpfq2AFrYFB9ocgttxOHw1FLLvWEz/view?usp=drive_link"},{"n":"11.2","t":"Backup \u0026 Recovery/2: Recovery/1","v":"2BkGxLntkBc","s":"https://drive.google.com/file/d/15jNifJuFt1SAVPUVAx3p89MJpoHCZMtt/view?usp=drive_link"},{"n":"11.3","t":"Backup \u0026 Recovery/3: Recovery/2","v":"41cWyckqqRc","s":"https://drive.google.com/file/d/1siFkeHGI0CyLK2_tqWz7RFcM43OLYmqd/view?usp=drive_link"},{"n":"11.4","t":"Backup \u0026 Recovery/4: Recovery/3","v":"zliL6LlKiNs","s":"https://drive.google.com/file/d/1PwdwqkCa2jMTN_P07MHHURMRu4d5lFa3/view?usp=drive_link"},{"n":"11.5","t":"Backup \u0026 Recovery/5: Backup/2: RAID","v":"YYl4onLINRY","s":"https://drive.google.com/file/d/1TfiCmRAnFJWgZJX8ui61hHflhU0rZAeT/view?usp=drive_link"}]},{"w":"Week 12","items":[{"n":"12.1","t":"Query Processing and Optimization/1: Processing","v":"VQrqJafvnzY","s":"https://drive.google.com/file/d/1ApfCznUbTgg9S32nZwBjj42--u-3kGNX/view?usp=drive_link"},{"n":"12.2","t":"Query Processing and Optimization/2: Optimization","v":"pAonkbv10ak","s":"https://drive.google.com/file/d/1OXmgXfGY6DdR0wm99MmJ39Vc5THhn1Tp/view?usp=drive_link"},{"n":"12.3","t":"RDBMS Performance \u0026 Architecture","v":"MGJaOVjdHvs","s":"https://drive.google.com/file/d/1VslqhPXByAS_DDUFz1_G8h9XAL40Ykqy/view?usp=drive_link"},{"n":"12.4","t":"Non-Relational DBMS: NOSQL","v":"sLapLg_dZ9c","s":"https://drive.google.com/file/d/1Y7kg1J3g2-bjmmjtfLmxmRW4hbUWU9bH/view?usp=drive_link"},{"n":"12.5","t":"Widely Used DBMSs and Course Summarization","v":"lgiN8paqhjw","s":"https://drive.google.com/file/d/1vSOuyLmNl6W9QqJufM1XrN4QI6ftlUvB/view?usp=drive_link"}]}];
 
@@ -396,7 +849,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -537,9 +990,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

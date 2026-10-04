@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Machine Learning Practice — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,11 +295,19 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1OnUYjL7tUJPsfjFZi9SlEv1lNYdEzva7?usp=share_link" target="_blank" rel="noopener">Supplementary content (Drive folder)</a></li>
-          <li><a href="https://www.youtube.com/@MachineLearningPractice" target="_blank" rel="noopener">Course YouTube channel</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/19LGuDOEer45XtgwPvUdjmDw0BvEwQknw" target="_blank" rel="noopener">Week-sorted playlist (spreadsheet)</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1OnUYjL7tUJPsfjFZi9SlEv1lNYdEzva7?usp=share_link" target="_blank" rel="noopener">Supplementary content (Drive folder)</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@MachineLearningPractice" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -323,7 +380,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 0","items":[{"n":"Orientation","t":"Orientation Session for MLP Course","v":"x0pxeWwk_tQ","s":null},{"n":"W0L1","t":"Introduction to Google Colab","v":"bWmt8IFBjH0","s":null,"c":"https://colab.research.google.com/drive/1A4NDB7XOFXwCAsgEXgYJ0qDJeY8__-uN?usp=sharing"},{"n":"W0L2","t":"Introduction to Data Visualization","v":"vsbr1vH0N-o","s":null,"c":"https://colab.research.google.com/drive/1V5ShXDNGlX3LlxoJ0UmyXTL8yjAHzg6w?usp=sharing"},{"n":"W0L3","t":"Complex Data Visualization","v":"JX9RuwkfIYI","s":null,"c":"https://colab.research.google.com/drive/1PaGgcgTshaSegtQl1I9zWihT5eyJpZl7?usp=sharing"}]},{"w":"Week 1","items":[{"n":"1.1","t":"Pandas Series and DataFrame 1","v":"MdnmbjKM7a0","s":null,"c":"https://drive.google.com/drive/folders/1r30Lgijnsk9_1-kuluGIlaOtu81iTvHj?usp=drive_link"},{"n":"1.2","t":"Pandas Series and DataFrame 2","v":"b-dMycr7SGU","s":null},{"n":"1.3","t":"Data Selction using pandas 1","v":"CbAiwXBgzfw","s":null},{"n":"1.4","t":"Data Selction using pandas 2","v":"N6YZuEpDNY4","s":null},{"n":"1.5","t":"Drop in DataFrame","v":"GjGqrjFiIuM","s":null},{"n":"1.6","t":"Apply Statistics using Pandas","v":"zQ7JXNnCS7A","s":null},{"n":"Tutorial","t":"Apply and Map","v":"n8Nd5qDit50","s":null,"c":"https://colab.research.google.com/drive/1kEuTy_d__UTDhnEUifJNM44YJDV0b1gE?usp=sharing"},{"n":"Tutorial","t":"Concatenate","v":"9AYVGYF4j_s","s":null,"c":"https://colab.research.google.com/drive/11U87Cw5pG09mlqEn-UwAUaDYkXwVunfs?usp=sharing"},{"n":"Tutorial","t":"Compare","v":"1qGFXfdEjeo","s":null,"c":"https://colab.research.google.com/drive/1_tCl7H30PbWdGxFb_-khDrr3R1BkUbgv?usp=sharing"},{"n":"Tutorial","t":"^\\d+\\.\\d+\\s+","v":"Pcwf-IIgbu0","s":null,"c":"https://colab.research.google.com/drive/1dBm1K0j_RBqGfV-XQLYF9uiWOd6biFMw?usp=sharing"},{"n":"Tutorial","t":"Merge and Join","v":"qx2QZWlEuFk","s":null,"c":"https://colab.research.google.com/drive/1l050IPobyCRQLaEVPE7i0Bv0HDcyMPOU?usp=sharing"},{"n":"Tutorial","t":"Matplotlib","v":"d8OfmTzLSAY","s":null,"c":"https://colab.research.google.com/drive/1UAuz1BniInjFXOAV6av7rzL3mXQfUlE2?usp=sharing"},{"n":"Tutorial","t":"Seaborn","v":"gD3x3-XTuXQ","s":null,"c":"https://colab.research.google.com/drive/1V6sCQPC3jW0fSZ-kdXV58eNNKRmu9bqO?usp=sharing"}]},{"w":"Week 2","items":[{"n":"2.1","t":"Introduction to Scikit-Learn","v":"4Lo10fugSOE","s":"https://drive.google.com/drive/folders/14v4WDQVBR6DNoDNo_SkTCfms6vIj-j-c?usp=drive_link","c":"https://drive.google.com/drive/folders/1iK6OsWyZ_Iq2FyvkusxrTygJaXPnylK7?usp=drive_link"},{"n":"2.2","t":"Data Loading","v":"kCxlP1tXc_0","s":null},{"n":"2.3","t":"Demonstration of sklearn dataset API","v":"bCxOHmIKDqQ","s":null},{"n":"2.4","t":"Data Preprocessing","v":"_PcVkfVsjuo","s":null},{"n":"2.4.2","t":"Handling Missing Data","v":"YQxX6TGNfgQ","s":null},{"n":"2.5","t":"Categorical Transformers","v":"QQtBTFqpv24","s":null},{"n":"2.6","t":"Numeric Transformers","v":"c85P93At8DQ","s":null},{"n":"2.6.2","t":"Feature scaling","v":"qNylDF6LnHk","s":null},{"n":"2.6.3","t":"Outliers","v":"A5KmNHYSctA","s":null},{"n":"2.7","t":"Filter based feature selection","v":"D-Bz9qXnLac","s":null},{"n":"2.8","t":"Wrapper based feature selection","v":"q8Z1mf7Nu0U","s":null},{"n":"2.9","t":"Heterogenous features transformations","v":"nmhaq1rdsHk","s":null},{"n":"2.10","t":"Dimensionality reduction by PCA","v":"UVYuejgzVW0","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Chaining Transformers","v":"wVrWAnOm0iY","s":"https://drive.google.com/drive/folders/1QvlTLyhZLLbpvkI9DlQB55i7UshByWU1?usp=drive_link"},{"n":"3.2","t":"Demonstration of Data extraction, imputation, scaling, visualizing feature distribution","v":"_lxhnV8Ucy8","s":null},{"n":"3.3","t":"Demonstration of Data transformation, Composite transformers","v":"Nn1Gi5mfIv8","s":null},{"n":"3.4","t":"Demonstration of Feature Selection Demonstration, PCA, Pipelines, Handling class imbalance","v":"C700yzE_X4Q","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Linear regression","v":"SFYn4UnZaSQ","s":"https://drive.google.com/drive/folders/1Gik-C3KHDyee52uOOw3rgsBeRAHzYHOS?usp=drive_link"},{"n":"4.2","t":"Model Evaluation","v":"TvtBGjcjdak","s":null},{"n":"4.3","t":"Polynomial Regression","v":"dMHECW-BkIM","s":null},{"n":"4.4","t":"Regularization","v":"Tj8XetBzmVE","s":null},{"n":"4.5","t":"Hyper parameter tuning","v":"2Ef12zzy9q8","s":null},{"n":"4.6","t":"Multi Learning Classification","v":"-AIkfX41Mgc","s":null},{"n":"4.7","t":"Naive Bayes Classifier","v":"uM-MNko46Zo","s":null},{"n":"4.8","t":"K Nearest Neighbours","v":"gKiFTMLgZy4","s":null},{"n":"4.9","t":"SVM in scikit-learn","v":"5erlKOqL8Xk","s":null},{"n":"4.10","t":"Decision Trees","v":"5OZc2zWS2cY","s":null},{"n":"4.11","t":"Voting, Bagging and Random Forest","v":"EZ5szvjQgWw","s":null},{"n":"4.12","t":"Boosting: AdaBoost, GradientBoost","v":"ZIMlYAKgGTg","s":null},{"n":"4.13","t":"Neural Networks: Multi-layer Perceptron","v":"wphku4k1e90","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Explore California Housing Dataset","v":"rM1h2CI_Cjw","s":null,"c":"https://drive.google.com/drive/folders/1mgjJ6Am959osQhTPk-pJPYtViKzk4pIf?usp=drive_link"},{"n":"5.2","t":"Linear Regression on California housing Dataset","v":"SkL5TyjBiHQ","s":null},{"n":"5.3","t":"Linear Regression Demonstration","v":"ddRlrZ_2JvU","s":null},{"n":"5.4","t":"Baseline Model","v":"PWhK5gePJ_g","s":null},{"n":"5.5","t":"SGDRegressor Demonstration","v":"fzX55uQs4Sg","s":null},{"n":"5.6","t":"Demonstration: KNN with California Housing Dataset","v":"QCrEPEqkRII","s":null},{"n":"5.7","t":"Decision Trees for Regression","v":"wjVCvwgwSSg","s":null},{"n":"5.8","t":"Bagging and Random Forest Regressor on California Housing Dataset","v":"cjf5b1dx6Tk","s":null},{"n":"5.9","t":"AdaBoost and GradientBoost Regressor on California Housing","v":"yJjCDkjNNaM","s":null},{"n":"5.10","t":"MLP Regressor on california housing dataset","v":"zsPNGpLFqgg","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Classification Functions in Scikit learn","v":"dhYydFzxfes","s":"https://drive.google.com/drive/folders/17oylfP0v6RiFFbnWIWjuGZuRJv9EKwi-?usp=drive_link","c":"https://drive.google.com/drive/folders/1ZlH-ZFlBTQvXVPNCB_W-lqM5D_dASlP7?usp=drive_link"},{"n":"6.2","t":"Evaluating Classifiers","v":"yDKol1MkXag","s":null},{"n":"6.3","t":"Demonstration: Binary class Image Classification with Perceptron","v":"i9tCqiNkdLA","s":null},{"n":"6.4","t":"Demonstration: Multi class Image Classification with Perceptron","v":"cB0ObIWlEEs","s":null},{"n":"6.5","t":"Demonstration: MNIST Digits Classification using SGDRegressor","v":"wnWmmmjKaTo","s":null},{"n":"6.6","t":"Demonstration: MNIST Digits Classification using Logistic Regression","v":"Gy-TZWTsKRw","s":null},{"n":"6.7","t":"Demonstration: Zero detector with Ridge Classifier","v":"qrwPx41Q22c","s":null},{"n":"6.8","t":"Demonstration: Multiclass classifier on MNIST Dataset","v":"v9jAO44KG7M","s":null},{"n":"6.9","t":"Demonstration: Naive Bayes Classifier","v":"eyPYs5jJFys","s":null},{"n":"6.10","t":"Demonstration: Softmax Regression with MNIST","v":"_zWJhbFQBQI","s":null},{"n":"6.11","t":"Demonstration: KNN with MNIST","v":"nbOcdzyPulA","s":null},{"n":"6.12","t":"Demonstration: SVC on MNIST dataset","v":"pDmRNHjCZRE","s":null},{"n":"6.13","t":"Decision Trees for Classification - Abalone","v":"SBnT0B2e5kc","s":null},{"n":"6.14","t":"Decision Trees for Classification - Iris","v":"3Lc7sD1Dj4Q","s":null},{"n":"6.15","t":"Bagging and Random Forest Classifier on MNIST","v":"fy7AhpixJ-A","s":null},{"n":"6.16","t":"AdaBoost and GradientBoost Classifier on MNIST","v":"DhftGTaoFDI","s":null},{"n":"6.17","t":"MLP Classifier on MNIST dataset","v":"lvS2ZHJeyng","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Large Scale Machine Learning","v":"CodUuMNLHyc","s":"https://drive.google.com/drive/folders/18xLfTY-FqXOiVgOUtok9n0CnYwpApPsM?usp=drive_link","c":"https://drive.google.com/drive/folders/1J4bXqy0VH6ASUKOpLaeC2xPFEKaxCZL_?usp=drive_link"},{"n":"7.2","t":"Confusion Matrix","v":"feypiLEbhr8","s":null},{"n":"7.3","t":"Accuracy","v":"j7yRrf3IYXc","s":null},{"n":"7.4","t":"Precision","v":"TJ1kghIlhto","s":null},{"n":"7.5","t":"f1 score","v":"wrfrxQNMIyQ","s":null},{"n":"7.6","t":"Recall","v":"6hayjB0TugY","s":null},{"n":"7.7","t":"Multiclass","v":"IdCzHOouck0","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Natural Language Processing","v":"RKPjFHF4dMU","s":"https://drive.google.com/drive/folders/1x2S1CwjiNVYQ4u2srbORcYZ7tilcfIt-?usp=drive_link","c":"https://drive.google.com/drive/folders/1f6MRFvr5Ro2jMm8bGOEAogK5q-x7HnqD?usp=drive_link"},{"n":"8.2","t":"Natural Language Processing 2","v":"3EisNRxzSzw","s":null},{"n":"8.3","t":"Image Classification","v":"ird2YCFIUKA","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"K-means clustering on digit dataset","v":"-tPSKI9nUf0","s":"https://drive.google.com/drive/folders/163HlwadoZuOeW2opR5q2T9vfjE465rNX?usp=drive_link","c":"https://drive.google.com/drive/folders/1uI8Mnx4f-m2WGWtKgdbd2CBJOMenbTBP?usp=drive_link"},{"n":"9.2","t":"HAC Demo","v":"GG6yYMO91FQ","s":null},{"n":"9.4","t":"Introduction: Looking at the big picture","v":"pTa9ew-E6OY","s":null},{"n":"9.5","t":"Data Visualization","v":"kIyxumBVo6o","s":null},{"n":"9.6","t":"Data Preparation","v":"R3V0hVHggwo","s":null},{"n":"9.7","t":"Selection and training of ML models","v":"TKqS2Pd1U7o","s":null},{"n":"9.8","t":"Finetuning ML models","v":"oa7QlR8kzIA","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Recommender Systems","v":"Ba87ZXtCkbE","s":"https://drive.google.com/drive/folders/17jaPIBNYM3ZisEchgYCfo7zFVzyY_ocL?usp=drive_link","c":"https://drive.google.com/drive/folders/1-lGGbpbxn2AiMi3k5nlfthaSgdWquw6s?usp=drive_link"},{"n":"10.2","t":"Movie Lens EDA","v":"S540AbZX4-0","s":null},{"n":"10.3","t":"Content Based Filtering","v":"j83A-VnXwrk","s":null},{"n":"10.4","t":"Content Based Filtering Example 2","v":"F2WHY2oWNaA","s":null},{"n":"10.5","t":"item - item Collaborative Filtering","v":"LLiA2Li7Wpc","s":null},{"n":"10.6","t":"user - user collaborative filtering","v":"KiVNFhq0KhY","s":null},{"n":"10.7","t":"Matrix Factorization","v":"yH-MWfwytco","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Time series using pandas","v":"KygCkwCm1Zo","s":null,"c":"https://drive.google.com/drive/folders/146DdxD-but0Hlr2ACo1jAhmdWpF6W3lx?usp=drive_link"},{"n":"11.2","t":"Time Resampling","v":"vKR2BzOz1to","s":null},{"n":"11.3","t":"Classical Decomposition","v":"VouvSAKc16A","s":null},{"n":"11.4","t":"STL Decomposition","v":"Vx3E7rphH2E","s":null},{"n":"11.5","t":"Stationarity","v":"UUWb5-lf9pk","s":null},{"n":"11.6","t":"Make data stationary","v":"tE1lIAW50cU","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"Case Study","v":"27G4drv3Nfk","s":null},{"n":"12.2","t":"Practical Implementation of Transfer Learning","v":"bd6Fwc9L4bk","s":null},{"n":"12.3","t":"What is transfer Learning","v":"OoCAtgDxx4A","s":null},{"n":"12.4","t":"Quick Recap of Neural Networks","v":"G0Tzd9n6M5k","s":null},{"n":"12.5","t":"Transfer Learning theoretical implementation","v":"SF41dPUKJ44","s":null}]},{"w":"Extra Lectures","items":[{"n":"EXTRA_01","t":"Intro to kaggle assignments 1","v":"0iP8PH1-WcI","s":null},{"n":"EXTRA_02","t":"Intro to Kaggle Platform","v":"F7OurnqDifY","s":null},{"n":"EXTRA_03","t":"KA sample notebook tutorial","v":"vh8Si-T9iUk","s":null}]}];
 
@@ -379,7 +436,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -520,9 +577,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

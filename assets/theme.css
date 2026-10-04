@@ -1,0 +1,68 @@
+/* Colour themes: Current (warm paper, default), Light, Dark.
+   The pages use the variables below; html[data-theme] swaps them. Set by assets/theme.js. */
+:root{--surface:#fbf8f1;--topbar:rgba(244,239,230,.92);--tint:rgba(122,30,40,.08);--tint-2:rgba(122,30,40,.12);
+  --link-ul:rgba(122,30,40,.25);--accent-line:rgba(122,30,40,.4);--shadow:rgba(28,26,23,.14);--shadow-soft:rgba(28,26,23,.04);
+  --warn-bg:rgba(184,100,42,.12);--warn-line:rgba(184,100,42,.45);--warn-ink:#7a4a12;--muted-bg:rgba(74,69,61,.08);
+  --muted-line:rgba(74,69,61,.35);--on-accent:#fff;--on-accent-2:#f0d3d6}
+html[data-theme="light"]{--paper:#ffffff;
+  --paper-2:#f3f4f6;
+  --ink:#15171c;
+  --ink-2:#596270;
+  --rule:#dde1e7;
+  --accent:#8a1c2c;
+  --accent-2:#c2571a;
+  --surface:#ffffff;
+  --topbar:rgba(255,255,255,.9);
+  --tint:rgba(138,28,44,.07);
+  --tint-2:rgba(138,28,44,.11);
+  --link-ul:rgba(138,28,44,.3);
+  --accent-line:rgba(138,28,44,.4);
+  --shadow:rgba(20,24,32,.14);
+  --shadow-soft:rgba(20,24,32,.05);
+  --warn-bg:rgba(194,87,26,.1);
+  --warn-line:rgba(194,87,26,.4);
+  --warn-ink:#8a4210;
+  --muted-bg:rgba(89,98,114,.1);
+  --muted-line:rgba(89,98,114,.35);
+  --on-accent:#fff;
+  --on-accent-2:#f3d6da;
+  color-scheme:light}
+html[data-theme="dark"]{--paper:#14151a;
+  --paper-2:#1d1f26;
+  --ink:#ece9e2;
+  --ink-2:#a8a498;
+  --rule:#353841;
+  --accent:#e58a94;
+  --accent-2:#e6a06a;
+  --surface:#0f1014;
+  --topbar:rgba(20,21,26,.9);
+  --tint:rgba(229,138,148,.12);
+  --tint-2:rgba(229,138,148,.18);
+  --link-ul:rgba(229,138,148,.35);
+  --accent-line:rgba(229,138,148,.5);
+  --shadow:rgba(0,0,0,.55);
+  --shadow-soft:rgba(0,0,0,.25);
+  --warn-bg:rgba(230,160,106,.14);
+  --warn-line:rgba(230,160,106,.5);
+  --warn-ink:#efb383;
+  --muted-bg:rgba(168,164,152,.12);
+  --muted-line:rgba(168,164,152,.4);
+  --on-accent:#1a0b0e;
+  --on-accent-2:#4a2328;
+  color-scheme:dark}
+
+/* ---- Theme switcher: three swatches ---- */
+.theme-switch{display:inline-flex;align-items:center;gap:8px;padding:5px 7px;border:1px solid var(--rule);
+  border-radius:999px;background:var(--paper-2)}
+.theme-switch button{width:18px;height:18px;padding:0;border-radius:50%;border:1px solid var(--rule);cursor:pointer;
+  transition:transform .12s ease,box-shadow .12s ease}
+.theme-switch button:hover{transform:scale(1.15)}
+.theme-switch button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--paper-2),0 0 0 4px var(--accent)}
+.theme-switch button[data-theme-set="current"]{background:linear-gradient(135deg,#f4efe6 50%,#7a1e28 50%)}
+.theme-switch button[data-theme-set="light"]{background:#ffffff}
+.theme-switch button[data-theme-set="dark"]{background:#14151a}
+.theme-switch.floating{position:fixed;top:12px;right:14px;z-index:80;box-shadow:0 2px 10px var(--shadow)}
+#theme-slot{display:flex;margin-right:8px}
+@media(max-width:640px){
+  .theme-switch.floating{left:14px;right:auto;top:auto;bottom:18px}
+}
