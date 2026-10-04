@@ -268,3 +268,9 @@ li.cta-card:hover{transform:none;box-shadow:none;border-left-color:var(--rule)}
 
 li.pp-card.plain{padding:11px 14px}
 .thanks-intro{font-size:16px}
+
+.missing-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:40px}
+.missing-note strong{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink)}
+.missing-note p{margin:4px 0 0;max-width:52ch}
+.missing-note .cta-btn{flex-shrink:0}
+#c-thanks .group-count{display:none}

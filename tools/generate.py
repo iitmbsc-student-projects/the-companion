@@ -385,8 +385,9 @@ def generate_contributors():
                            '        <ul class="links-grid cta-grid">\n          %s\n        </ul>\n      </div>'
                            % (c["id"], esc(c["title"]), esc(c["intro"]), "\n          ".join(cc)))
     m = d.get("missing")
-    miss = ('\n      <p class="missing-note">%s <a href="%s" target="_blank" rel="noopener">Vikash on Discourse &#8599;</a></p>'
-            % (esc(m["text"]), esc(m["url"], quote=True))) if m else ""
+    miss = ('\n      <div class="missing-note"><div><strong>%s</strong><p>%s</p></div>'
+            '<a class="cta-btn ghost" href="%s" target="_blank" rel="noopener">%s &#8599;</a></div>'
+            % (esc(m["title"]), esc(m["text"]), esc(m["url"], quote=True), esc(m["label"]))) if m else ""
     page = CONTRIB_TEMPLATE.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])) \
         .replace("{{JUMP}}", "".join(jump)).replace("{{GROUPS}}", "\n".join(groups_html) + miss) \
         .replace("{{FOOTNAV}}", _footer_nav("contributors"))
