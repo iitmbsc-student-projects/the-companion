@@ -36,6 +36,14 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "PDSA notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-programming-programming-data-structures-and-algorithms-using-python-notes-afc4db2cf463",
+   "group": "Notes",
+   "desc": "Written notes for the Programming, Data Structures and Algorithms using Python course.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",

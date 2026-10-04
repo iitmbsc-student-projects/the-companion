@@ -238,3 +238,19 @@ main.wrap{padding-bottom:12px}
 .site-end a{color:var(--ink-2);border:none;text-decoration:none}
 .site-end a:hover,.site-end a[aria-current]{color:var(--accent)}
 .site-end.wrap{width:calc(100% - 56px);max-width:864px;padding-left:0;padding-right:0}
+
+/* ---- top bar plain link + Contributors page ---- */
+.tb-link{position:relative;padding:9px 14px;border:none;color:var(--ink);font-weight:500;font-size:14.5px;border-radius:8px;white-space:nowrap;transition:color .15s ease}
+.tb-link:hover{color:var(--accent)}
+.tb-link.current::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:var(--accent)}
+@media(max-width:760px){ .tb-link{display:none} }
+.group-intro{margin:-4px 0 14px;color:var(--ink-2);font-size:14.5px}
+ul.people-grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+li.pp-card{padding:12px 14px 11px;gap:3px}
+li.pp-card .lk-title{font-size:16px}
+li.pp-card .lk-desc{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;flex:0}
+li.pp-card.plain{border-left-color:var(--rule)}
+li.pp-card.plain:hover{transform:none;box-shadow:none;border-left-color:var(--rule)}
+.missing-note{margin:36px 0 0;padding:14px 16px;border:1px dashed var(--rule);border-radius:3px;color:var(--ink-2);font-size:14.5px}
+@media(max-width:640px){ ul.people-grid{grid-template-columns:1fr 1fr} }
+li.pp-card .lk-title{padding-right:20px}

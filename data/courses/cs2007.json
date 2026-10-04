@@ -36,6 +36,14 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "MLT notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-data-science-machine-learning-techniques-mlt-notes-6ee203e4687d",
+   "group": "Notes",
+   "desc": "Written notes for the Machine Learning Techniques course.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",

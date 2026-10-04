@@ -30,6 +30,14 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "TDS notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-data-science-tools-in-data-science-tds-notes-49c6e9d3f4cd",
+   "group": "Notes",
+   "desc": "Written notes for the Tools in Data Science course.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",

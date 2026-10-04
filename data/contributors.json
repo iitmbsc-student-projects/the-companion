@@ -1,0 +1,160 @@
+{
+ "title": "Contributors",
+ "sub": "The students whose notes and time make this site useful.",
+ "groups": [
+  {
+   "id": "notes",
+   "title": "Made notes for you",
+   "intro": "Some of those who made notes for you to prepare well.",
+   "people": [
+    {
+     "name": "Aarthi",
+     "url": "https://instagram.com/aarthiiiii._?utm_medium=copy_link"
+    },
+    {
+     "name": "Aditya Dhar Dwivedi",
+     "url": "https://bit.ly/35Muth4"
+    },
+    {
+     "name": "Akash Kunwar",
+     "url": "https://www.linkedin.com/in/aakashkunwar/"
+    },
+    {
+     "name": "Amisha Ashok Das",
+     "url": "https://www.linkedin.com/in/amisha-ashok-das-005407116/"
+    },
+    {
+     "name": "Aviral Pandey",
+     "url": "https://www.linkedin.com/in/aviral-p-8980b1211/"
+    },
+    {
+     "name": "Azfar Faheem",
+     "url": "https://www.linkedin.com/in/azfar-faheem-mustafa-365b5517b"
+    },
+    {
+     "name": "Dev Bhatnagar",
+     "url": "https://www.linkedin.com/in/dev-bhatnagar-7266551b6"
+    },
+    {
+     "name": "Dnyaneshwari Mahajan",
+     "url": "https://www.instagram.com/dnyaneshwari_mahajan_27"
+    },
+    {
+     "name": "Gagneet Kaur",
+     "url": "https://linktr.ee/gagneetkaur"
+    },
+    {
+     "name": "Hardik Sharma",
+     "url": "https://www.linkedin.com/in/hardik-sharma-b691891b6/"
+    },
+    {
+     "name": "Hari Prapan",
+     "url": "https://www.instagram.com/h_prapan01/"
+    },
+    {
+     "name": "Harsh Gupta",
+     "url": "https://www.linkedin.com/in/harsh-gupta-605410223/"
+    },
+    {
+     "name": "Hetav Chauhan",
+     "url": "https://www.instagram.com/hetav_chauhan/?hl=en"
+    },
+    {
+     "name": "Kunal Chaturvedi",
+     "url": "https://www.kunalchaturvedi.com/"
+    },
+    {
+     "name": "Lalit Kumar"
+    },
+    {
+     "name": "Maan Kaur",
+     "url": "https://www.linkedin.com/in/maan-kaur-iit-madras/"
+    },
+    {
+     "name": "Manisha Pal",
+     "url": "https://www.linkedin.com/in/manisha-pal-a52250258/"
+    },
+    {
+     "name": "Niraj Kumar",
+     "url": "https://www.linkedin.com/in/niraj-kumar-33b9b421a/"
+    },
+    {
+     "name": "PV Shabarish",
+     "url": "https://www.linkedin.com/in/p-v-shabarish-8890b1134/"
+    },
+    {
+     "name": "Prajakta Chinvalkar",
+     "url": "https://www.instagram.com/praj_chin"
+    },
+    {
+     "name": "Pratham Bhalla",
+     "url": "https://www.linkedin.com/in/pratham-bhalla/"
+    },
+    {
+     "name": "Puneet Prasar",
+     "url": "https://linktr.ee/Puneetprasar123"
+    },
+    {
+     "name": "Rhino Mushashi",
+     "url": "https://pythonstudynotes.wordpress.com/"
+    },
+    {
+     "name": "Tushar"
+    },
+    {
+     "name": "Vaishnavi Pathak",
+     "url": "https://www.instagram.com/digi_picartgraphicdesigning?r=nametag"
+    },
+    {
+     "name": "Visist Thallam",
+     "url": "https://www.linkedin.com/in/visist-tallam-68b2831b5"
+    },
+    {
+     "name": "Yash Paruliya",
+     "url": "https://ig.me/_yash_parauliya__"
+    }
+   ]
+  },
+  {
+   "id": "credited",
+   "title": "Credited on resource cards",
+   "intro": "People and sites credited on the resource cards of the course pages.",
+   "people": [
+    {
+     "name": "Anant Kumar"
+    },
+    {
+     "name": "Ankit Kumar"
+    },
+    {
+     "name": "B R Giri Subrahmanya"
+    },
+    {
+     "name": "Karthik Thiagarajan"
+    },
+    {
+     "name": "Preethy Parthasarath"
+    },
+    {
+     "name": "Thejesh GN",
+     "url": "https://thejeshgn.com/"
+    },
+    {
+     "name": "Urjaswi Banerjee"
+    },
+    {
+     "name": "IITM BS Students' Corner",
+     "url": "https://www.iitmbsdegree.in/"
+    },
+    {
+     "name": "ML Study Hub",
+     "url": "https://degreedost.com/"
+    }
+   ]
+  }
+ ],
+ "missing": {
+  "text": "Forgot to add your name, or want a link changed? Message me on Discourse and I will fix it.",
+  "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/"
+ }
+}
