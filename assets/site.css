@@ -227,3 +227,14 @@
   .links-jump .jump-n{margin-left:5px;color:var(--accent);opacity:.8}
   .links-jump a:hover .jump-n{color:var(--on-accent)}
   .page-head .links-jump{margin:18px 0 0}
+
+/* ---- page end: a quiet footer so long pages don't stop abruptly ---- */
+main.wrap{padding-bottom:12px}
+.site-end{margin-top:48px;padding-top:20px;padding-bottom:84px;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.site-end .se-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.site-end .se-nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+.site-end a{color:var(--ink-2);border:none;text-decoration:none}
+.site-end a:hover,.site-end a[aria-current]{color:var(--accent)}
+.site-end.wrap{width:calc(100% - 56px);max-width:864px;padding-left:0;padding-right:0}
