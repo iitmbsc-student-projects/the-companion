@@ -265,3 +265,6 @@ li.cta-card:hover{transform:none;box-shadow:none;border-left-color:var(--rule)}
 .cta-btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
 .cta-btn.ghost:hover{background:var(--tint);color:var(--accent);border-color:var(--accent)}
 #contribute{scroll-margin-top:78px}
+
+li.pp-card.plain{padding:11px 14px}
+.thanks-intro{font-size:16px}
