@@ -52,6 +52,11 @@
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
      hand-rolled show/hide JS. These rules just strip Bootstrap's own accordion skin back down
      to the paper theme so the look is unchanged. */
+  /* Bootstrap paints its own text and surface colours; point them at the theme variables so every theme reads. */
+  :root{--bs-body-color:var(--ink);--bs-body-bg:var(--paper);--bs-border-color:var(--rule);--bs-link-color:var(--accent)}
+  .accordion{--bs-accordion-color:var(--ink);--bs-accordion-bg:transparent;--bs-accordion-border-color:var(--rule);
+    --bs-accordion-btn-color:var(--ink-2);--bs-accordion-btn-bg:var(--paper-2);
+    --bs-accordion-active-color:var(--ink-2);--bs-accordion-active-bg:var(--paper-2)}
   .accordion-item{background:transparent;border:none}
   .week-group{border-top:1px solid var(--rule)}
   .nav-section > .week-group:first-child{border-top:none}

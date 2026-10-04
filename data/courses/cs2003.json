@@ -11,13 +11,53 @@
  "prereq": "CS1002",
  "resources": [
   {
+   "label": "Supplementary content",
    "url": "https://drive.google.com/drive/folders/1UzqQ5OaysL9hhKDS8IElRGW5eaNtc-bv?usp=sharing",
-   "label": "Supplementary content (Drive folder)",
+   "group": "Course material",
+   "desc": "Extra material shared on Google Drive.",
    "auth": "iitm"
   },
   {
+   "label": "Course YouTube channel",
    "url": "https://www.youtube.com/@madi6496",
-   "label": "Course YouTube channel"
+   "group": "Course material",
+   "desc": "All lecture videos."
+  },
+  {
+   "label": "Lab sessions",
+   "url": "https://thejeshgn.com/projects/modern-application-development-1/",
+   "group": "Course material",
+   "desc": "25 screencast lab sessions on HTML, CSS, Flask, databases and testing.",
+   "by": "Thejesh GN",
+   "by_url": "https://thejeshgn.com/"
+  },
+  {
+   "label": "TA live sessions",
+   "url": "https://docs.google.com/spreadsheets/d/1854ddKz0pY-575cldsRuX889HNvol6keogkEHNXMR-8/edit?usp=sharing",
+   "group": "Live sessions",
+   "desc": "Sheet of TA sessions with dates, topics and recordings."
+  },
+  {
+   "label": "MAD 1 weekwise PYQs",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/mad1-weekwise-pyqs/205835",
+   "group": "Previous year questions",
+   "desc": "Past questions sorted by week.",
+   "by": "Preethy Parthasarath"
+  },
+  {
+   "label": "MAD 1 notes",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-programming-modern-application-development-1-mad1-appdev1-notes-0e7e82f3b423",
+   "group": "Notes and guides",
+   "desc": "Written notes for the Diploma in Programming MAD 1 course.",
+   "by": "prathambhalla7",
+   "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MAD 1 resources",
+   "url": "https://docs.google.com/document/d/14Pp72_r-ZmMDf6TrCOWP5Wu-jRDFirArHyxW2zWWdX0/edit?tab=t.0#heading=h.63n7yq2zvqa8",
+   "group": "Notes and guides",
+   "desc": "YouTube playlists and TA session details in one document.",
+   "by": "Urjaswi Banerjee"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
