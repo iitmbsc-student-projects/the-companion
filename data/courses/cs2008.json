@@ -12,15 +12,12 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1OnUYjL7tUJPsfjFZi9SlEv1lNYdEzva7?usp=share_link",
-   "label": "Supplementary content (Drive folder)"
+   "label": "Supplementary content (Drive folder)",
+   "auth": "iitm"
   },
   {
    "url": "https://www.youtube.com/@MachineLearningPractice",
    "label": "Course YouTube channel"
-  },
-  {
-   "url": "https://docs.google.com/spreadsheets/d/19LGuDOEer45XtgwPvUdjmDw0BvEwQknw",
-   "label": "Week-sorted playlist (spreadsheet)"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Strategies for Professional Growth — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,10 +295,19 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1BNXjaLU5nY6mWQcEsDdfLE4Nazw75hYS?usp=drive_link" target="_blank" rel="noopener">Drive folder</a></li>
-          <li><a href="https://www.youtube.com/@spgiitmbsdegree" target="_blank" rel="noopener">Course YouTube channel</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1BNXjaLU5nY6mWQcEsDdfLE4Nazw75hYS?usp=drive_link" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@spgiitmbsdegree" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -329,7 +387,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1 (Teamwork \u0026 Getting Along)","items":[{"n":"L1","t":"Outbound Training (Optional)","v":"ZU1oJJq_Wh0","s":"https://drive.google.com/file/d/1saODnPDZe4wlwpv4R3McfoM9y_KF9ZYM/view?usp=drive_link"},{"n":"L2","t":"Preliminaries (Optional)","v":"aE6-kS5LmbM","s":null},{"n":"L3","t":"OBT Instructions (Optional)","v":"lr22gw1P2cI","s":null},{"n":"L4","t":"A-Frame March (Optional)","v":"QAlvlbaq4xE","s":null},{"n":"L5","t":"Participant Feedback (Optional)","v":"3jbGnpv3pRE","s":null},{"n":"L6","t":"Caterpillar Walk (Optional)","v":"cUFy25Ue8lE","s":null},{"n":"L7","t":"Breifing by the Faculty (Optional)","v":"TCzgBArsKxo","s":null},{"n":"L8","t":"Introduction To Teamwork \u0026 Getting Along","v":"M93fN4c6xMw","s":null},{"n":"L9.1","t":"What is Teamwork?","v":"FeZrxO8WoBU","s":null},{"n":"L9.2","t":"Why Teamwork is Relevant and Important?","v":"9it-QUci0KM","s":null},{"n":"L9.3","t":"Common Challenges in Teamwork (No Video)","v":null,"s":null},{"n":"L10.0","t":"10 C\u0027s of Teamwork (No Video)","v":null,"s":null},{"n":"L10.1","t":"Clarity","v":"8SA2QYZ6_XY","s":null},{"n":"L10.2","t":"Commitment","v":"5rH5eZQW5Co","s":null},{"n":"L10.3","t":"Communication","v":"tsPm13849Gw","s":null},{"n":"L10.4","t":"Competence","v":"IFel88ylyrI","s":null},{"n":"L10.5","t":"Collaboration","v":"zF6MBrHjsfU","s":null},{"n":"L10.6","t":"Coordination","v":"eN_86PcSgto","s":null},{"n":"L10.7","t":"Connection","v":"adlPK28PGho","s":null},{"n":"L10.8","t":"Conflict Resolution","v":"y_J1onTvSLQ","s":null},{"n":"L10.9","t":"Change Management","v":"jikL6w38154","s":null},{"n":"L11","t":"Continuous Improvement","v":"JUn8m9mm37s","s":null},{"n":"L12","t":"Team Roles at Workplace (No Video)","v":null,"s":null}]},{"w":"Week 2 (Communication \u0026 Listening Skills)","items":[{"n":"L1","t":"Types of Communication","v":"PV_RN06gHEQ","s":"https://drive.google.com/file/d/10RHVX3zBxvkQQCp8mf71tsMEpLuBzmC8/view?usp=drive_link"},{"n":"L2.0","t":"Barriers of Communication (No Video)","v":null,"s":null},{"n":"L2.1","t":"Psychological Barriers to Communication","v":"Fp9Ndgvfs4o","s":null},{"n":"L2.2","t":"Language Barriers to Communication","v":"0X9Af8eyopk","s":null},{"n":"L2.3","t":"Cultural Barriers to Communication (No Video)","v":"9oYfhTC9lIQ","s":null},{"n":"L2.4","t":"Organizational Barriers to Communication","v":"eUfyfngF0pM","s":null},{"n":"L2.5","t":"Physical Barriers to Communication","v":"PUpshUUqSEE","s":null},{"n":"L3","t":"Tips for Effective Communication","v":"whGFKY7nCDw","s":null},{"n":"L4","t":"10 C\u0027s of Communication","v":"yWi2d5wx5x4","s":null},{"n":"L5.0","t":"What is Listening?","v":"A-dkTqfLnkw","s":null},{"n":"L5.1","t":"Listening to the Future","v":"eVLHZiIWDrg","s":null},{"n":"L6","t":"How to become an Authentic Speaker (No Video)","v":null,"s":null},{"n":"L7","t":"Active Listening (No Video)","v":null,"s":null}]},{"w":"Week 3 (Presentation Skills)","items":[{"n":"L1","t":"Communication in Professional Setting","v":"QWnTtE7wIwg","s":"https://drive.google.com/file/d/1RzHGoPvhS3T_vbSNGPM40yCp0mbOO06n/view?usp=drive_link"},{"n":"L2","t":"Professional Presentation","v":"jM7H6vJE1ds","s":null},{"n":"L3","t":"Writing a Report","v":"a3kuBlByA8M","s":null}]},{"w":"Week 4 (Leadership Lessons)","items":[{"n":"L1","t":"Introduction to Leadership","v":"AVCGar32REg","s":"https://drive.google.com/file/d/1vOnh-aF6SfQDO5RqIgCk2Gg5vCqACcOU/view?usp=drive_link"},{"n":"L2","t":"Lead Yourself From Within","v":"M8Be8eB9a6M","s":null},{"n":"L3","t":"Lead Yourself to Lead Others","v":"wZ_Eg4GA9b8","s":null},{"n":"L4","t":"Lead Others to Lead Themselves","v":"1vUEEiAZwFE","s":null}]},{"w":"Week 5 (Emotional Intelligence and Conflict Management)","items":[{"n":"L1","t":"Introduction to Emotional Intelligence: 6R Framework","v":"8I-iCZVx1jU","s":"https://drive.google.com/file/d/1_g3VhRsEUnBjZRYqbyMbZBV_J3Sgb6Ow/view?usp=drive_link"},{"n":"L2","t":"Understanding Emotional Intelligence","v":"9m518JM1PnQ","s":null},{"n":"L3","t":"What is Conflict Management?","v":"O2UQrcuS1zE","s":null},{"n":"L4","t":"Understanding Conflict Managment","v":"2d6rTRqslEw","s":null},{"n":"L5","t":"Emotional Intelligence \u0026 Conflict Management Applied","v":"yRXUrqpGoB4","s":null}]},{"w":"Week 6 (Cross-Cultural Understanding and Personal Grooming)","items":[{"n":"L1","t":"The Elements of Culture","v":"BRq-Oagyy7U","s":"https://drive.google.com/file/d/1OHo8yp9QMNkFuzE1pipSGns8P9g-bJAN/view?usp=drive_link"},{"n":"L2","t":"Cross-Cultural Understanding","v":"qD3klb0UYps","s":null},{"n":"L3","t":"Dimensions of Culture","v":"pwvsYdRX2-k","s":null},{"n":"L4","t":"Dealing with Cross-Cultural Issues","v":"nNLENDnax8A","s":null},{"n":"L5","t":"Personal Grooming for Workplace","v":"7RQ4tefMrgY","s":null}]},{"w":"Week 7 (Fiscal and Economic Sense)","items":[{"n":"L1","t":"Introduction to Fiscal \u0026 Economic Sense - Part 1","v":"t5P3ydyXRSU","s":"https://drive.google.com/file/d/1O3U-gqDoYppfEqgVENn43BEX5zbV1n_m/view?usp=drive_link"},{"n":"L2","t":"Introduction to Fiscal \u0026 Economic Sense - Part 2","v":"53ZLPy7arvY","s":null},{"n":"L3","t":"Basics of Personal Finance","v":"4oMRxhsqhBs","s":null},{"n":"L4","t":"Cash Flows vs Life-span","v":"-63gZFi6Q2w","s":null},{"n":"L5","t":"Returns, Inflation \u0026 Power of Compounding","v":"GLYtvwip8UM","s":null},{"n":"L6","t":"Indian Income Tax","v":"hQ7qgJeHTTw","s":null},{"n":"L7","t":"Employee vs Entrepreneur","v":"X3BtrMBguEc","s":null},{"n":"L8","t":"Asset Allocation, Saving and Investing Options","v":"ulSXNRxKVeQ","s":null},{"n":"L9","t":"Finance Bill 2023 \u0026 Financial Calculator Apps","v":"XyiBW2mV5Q8","s":null},{"n":"L10","t":"Types of Rate of Returns","v":"PvVDTmIhQhg","s":null}]},{"w":"Week 8 (Creativity and Thinking Skills)","items":[{"n":"L1","t":"What is Creativity?","v":"rvvWAcLmPEY","s":"https://drive.google.com/file/d/19zkzaSaZ9yKW2BJPgG5lDaEtQ6uCOD7e/view?usp=drive_link"},{"n":"L2.0","t":"The Creative Journey - Part 1","v":"X7mM6oIau_M","s":null},{"n":"L2.1","t":"The Creative Journey - Part 2","v":"FBrBBXU1Pus","s":null},{"n":"L3","t":"The Process of Creativity","v":"9cOJNkyXQfU","s":null},{"n":"L4","t":"Tools for Creativity","v":"Yf9tiDDuiDk","s":null},{"n":"L5","t":"Attitude for Creativity","v":"MQ4DU-DLCJU","s":null}]},{"w":"Week 9 (Cultivating Growth Mindset)","items":[{"n":"L1","t":"Introduction to Growth Mindset","v":"msWTTk4nghU","s":"https://drive.google.com/file/d/1k6k7OK8p5dnGu7cs1Uk6gZq973Vk5lQw/view?usp=drive_link"},{"n":"L2","t":"Fixed vs Growth Mindset","v":"nHaspOiZqbA","s":null},{"n":"L3","t":"Four Zone Model (No Video)","v":null,"s":null},{"n":"L4","t":"Understanding the Four Zones of Growth","v":"9sfK9lA5E4M","s":null},{"n":"L5","t":"Handling Rejection - Part 1","v":"pBlEXeBK3rY","s":null},{"n":"L6","t":"Handling Rejection - Part 2","v":"aVWis_F4n7c","s":null},{"n":"L7","t":"End Negative Self-Talk","v":"Syh_Au3Vogo","s":null},{"n":"L8","t":"The Fringe Benefits of Failure \u0026 The Importance of Imagination","v":"BamWDV8XMEM","s":null},{"n":"L9","t":"The Mouse Merchant Story","v":"GUnCHUOghWQ","s":null},{"n":"L10","t":"Harness the Power of a Positive \u0026 Abundance Mindset","v":"BRQQ3Tu6HKg","s":null},{"n":"L12","t":"The 4R Framework","v":"9aS9R6xOqYg","s":null},{"n":"L13","t":"Conclusion","v":"PYAkJ92Pu3Q","s":null}]},{"w":"Week 10 (Systems Thinking)","items":[{"n":"L1","t":"Introduction to Systems Thinking","v":"1VUDFvAdld8","s":"https://drive.google.com/file/d/1Xk21xelqBcMLoKt6YYgfIDsIOJd2uc9w/view?usp=drive_link"},{"n":"L2","t":"Examples of a System","v":"GCuJFHUsNEM","s":null},{"n":"L3","t":"Systems View","v":"r29ZyI1FhOI","s":null},{"n":"L4","t":"Becoming Systems Thinker - Part 1","v":"lpIxTHmiLTE","s":null},{"n":"L5","t":"Becoming Systems Thinker - Part 2","v":"WMLtTQx2FVM","s":null},{"n":"L6","t":"Becoming Systems Thinker - Part 3","v":"uzGPPj1Go0c","s":null},{"n":"L7","t":"Becoming Systems Thinker - Part 4","v":"c7VWf3AHsNA","s":null},{"n":"L7 (Mistake in course portal)","t":"Becoming Systems Thinker - Part 5","v":"ccVzkwqcWTc","s":null},{"n":"L8","t":"Guidelines for System Thinking Practice","v":"j8WrxDZIf0I","s":null}]},{"w":"Week 11 (Engineering Sense)","items":[{"n":"L1","t":"Engineer \u0026 Engineering Sense","v":"c9RC7Y39HVA","s":"https://drive.google.com/file/d/1aV2BGll06GpD78eyiV8OLK3T5gTo0H-R/view?usp=drive_link"},{"n":"L2","t":"Discussion on Planning, Big Picture Thinking, Documenting and Improving","v":"UewSFan9J2k","s":null},{"n":"L3","t":"Discussion on Technical Auditing, Exchange of Ideas, Collaboration Meetings and Debriefings","v":"TUP49xjWdJ4","s":null},{"n":"L4","t":"Discussion on Mental Models, Perspectives and Breaking Complex Problems","v":"OhvsmmGCKz0","s":null},{"n":"L5","t":"Discussion on Abstracting, Specification, Deconstruction and Taxonomy","v":"_UyA2MaDujU","s":null}]},{"w":"Week 12 (Personal and Professional Development (PPD))","items":[{"n":"L1","t":"Personal \u0026 Professional Development - Part 1","v":"x0SzHLu7CjM","s":"https://drive.google.com/file/d/1PnXjDZ5et9yiwhKtNhD2Df2TAuFDm_DZ/view?usp=drive_link"},{"n":"L2","t":"Personal \u0026 Professional Development - Part 2","v":"Eyb6hyaakNw","s":null},{"n":"L3.0","t":"Personal \u0026 Professional Development - Part 3","v":"03Pv2Z05Kjc","s":null},{"n":"L3.1","t":"Personal \u0026 Professional Development (No Video)","v":null,"s":null},{"n":"L4","t":"Personal \u0026 Professional Development - Part 4","v":"IcvwiIMmwl4","s":null},{"n":"L5","t":"Personal \u0026 Professional Development - Part 5","v":"c_mogRzCZFA","s":null}]}];
 
@@ -385,7 +443,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -526,9 +584,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

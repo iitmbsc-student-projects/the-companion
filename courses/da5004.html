@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Large Language Models — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,10 +295,19 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/15Uym7DC2f3BB66P_pP33w0u42j9l8UTQ?usp=sharing" target="_blank" rel="noopener">Drive folder</a></li>
-          <li><a href="https://www.youtube.com/@LLMCourseTeam" target="_blank" rel="noopener">Course YouTube channel</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/15Uym7DC2f3BB66P_pP33w0u42j9l8UTQ?usp=sharing" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@LLMCourseTeam" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -323,7 +381,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1","t":"Introduction to Transformer Architecture","v":"qrsNX1Rwle0","s":null},{"n":"2","t":"Attention is all you need","v":"noDGpTtGhhI","s":null},{"n":"3","t":"Self-Attention","v":"xg9PqdK8qow","s":null},{"n":"4","t":"Multi-headed attention","v":"1PJW1eb1ut4","s":null}]},{"w":"Week 2","items":[{"n":"5","t":"Teacher Forcing and Masked attention","v":"UM-YGZi6jRo","s":null},{"n":"6","t":"Positional Encoding","v":"xsbCtx1ts5A","s":null},{"n":"7","t":"Zooming into Decoder layer","v":"ITLaMPKxdeM","s":null},{"n":"8","t":"Sinusoidal encoding","v":"fX-ccBfhnuI","s":null},{"n":"9","t":"Batch normalization","v":"HBTKXQgDtSM","s":null},{"n":"10","t":"Layer normalization","v":"nDmPAdUmz7Q","s":null}]},{"w":"Week 3","items":[{"n":"11","t":"Introduction to language modelling - Motivation","v":"zLyFtHJlTQ0","s":null},{"n":"12","t":"Language Modelling","v":"y2khskxBbMY","s":null},{"n":"13","t":"Transformers for language modelling","v":"eFcTbCA0Dqg","s":null},{"n":"14","t":"Causal Language Modelling","v":"rPZuLvDdsyo","s":null},{"n":"15","t":"Generative Pre-trained Transformer","v":"nlQ34O8mfws","s":null},{"n":"16","t":"Pre-training and Fine Tuning","v":"u2g21FSvbog","s":null}]},{"w":"Week 4","items":[{"n":"17","t":"Decoding Strategies","v":"IYeveGivlCg","s":null},{"n":"18","t":"Exhaustive search","v":"OsKhfwYkCS0","s":null},{"n":"19","t":"Gready  and Beam Search","v":"p_yNDEq6cgM","s":null},{"n":"20","t":"Sampling Stratagies : Top-K","v":"KamH3uGraoI","s":null},{"n":"21","t":"Sampling Stratagies : Top-P","v":"7I2JedT-gZA","s":null},{"n":"22","t":"BERT- Masked Language Modelling","v":"0q18FupeywU","s":null},{"n":"23","t":"Next Sentence Prediction","v":"AsI2VeydCkA","s":null},{"n":"24","t":"Pre-training and Parameters","v":"LxXGgf5zWXA","s":null},{"n":"25","t":"Adapting to Downstream tasks","v":"BCCIExmPYqI","s":null}]},{"w":"Week 5","items":[{"n":"26","t":"Tokenization - Challenges","v":"-2SW3Z4Lk3Q","s":null},{"n":"27","t":"Motivation for sub-word tokenization","v":"odiyBJnKQ68","s":null},{"n":"28","t":"Byte Pair Encoding","v":"yEcEzyaQB5c","s":null},{"n":"29","t":"Word-Piece tokenizer","v":"FkKCpGyHEhg","s":null},{"n":"30","t":"Sentence-Piece Tokenizer","v":"C1aglYTjBX0","s":null}]},{"w":"Week 7","items":[{"n":"31","t":"Brief intro to BART","v":"PgggZZxzKA4","s":null},{"n":"32","t":"GPT-2:Prompting the models","v":"KCJ7hmL68X0","s":null},{"n":"33","t":"Choices that affects the model performance","v":"cVYHfxs-jog","s":null},{"n":"34","t":"Baseline Model","v":"8yMPpwYQmgU","s":null},{"n":"35","t":"Experiment with different architecture","v":"Vxu_heLCKhM","s":null},{"n":"36","t":"Experiment with unsupervised objectives","v":"bCLlE_btgl0","s":null},{"n":"37","t":"Effect of size of pre-training dataset","v":"hOYyE_AKk8I","s":null},{"n":"38","t":"Fine tuning stratagies","v":"AxJntDfB0oM","s":null},{"n":"39","t":"Multi-task learning","v":"yRNaHsE0Y7s","s":null},{"n":"40","t":"Pushing the limits","v":"myzvtGFl764","s":null}]},{"w":"Week 8","items":[{"n":"41","t":"Big Picture - Road ahead","v":"Izb51AZfNb8","s":null},{"n":"42","t":"Motivation for scaling the data size","v":"CF5fLOMikkA","s":null},{"n":"43","t":"Data sourcing and cleaning","v":"NJhQw5_RdeE","s":null},{"n":"44","t":"Pre-processing Pipeline","v":"slC4lMPw3cw","s":null},{"n":"45","t":"Pre-training datasets","v":"7FHu-MRaiG4","s":null}]},{"w":"Week 11","items":[{"n":"46","t":"Motivation for fast attention mechanism, time and space complexity of attention","v":"iNkcLI1LFEM","s":null},{"n":"47","t":"Fast attention Mechanisms: Approaches","v":"s_ATOMoKsyk","s":null},{"n":"48","t":"Local attention mechanisms","v":"9K0uzfZF8CM","s":null},{"n":"49","t":"Sparse Block Attention","v":"jfu1Yo1Y0PE","s":null},{"n":"50","t":"Low rank approximation","v":"vqG0NKFoDE0","s":null},{"n":"51","t":"Fast Inference Mechanisms","v":"-TzNoSOCvEg","s":null}]},{"w":"Week 12","items":[{"n":"52","t":"Motivation for Relative Position Encoding","v":"RKiB0QvdRPA","s":null},{"n":"53","t":"Relative Position Encoding","v":"15eqSQrl1Ag","s":null},{"n":"54","t":"Rotary Positional Embedding","v":"T3PEi1lENjU","s":null},{"n":"55","t":"ALiBi and NoPE","v":"0VWZzHyHEOg","s":null}]}];
 
@@ -379,7 +437,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -520,9 +578,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

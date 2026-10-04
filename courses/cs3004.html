@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Deep Learning — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,10 +295,19 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/10dbyEq_jOmDPJbyXWge06E7ToJUbhbiA?usp=drive_link" target="_blank" rel="noopener">Drive folder</a></li>
-          <li><a href="https://www.youtube.com/@Deeplearning-CS3004" target="_blank" rel="noopener">Course YouTube channel</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/10dbyEq_jOmDPJbyXWge06E7ToJUbhbiA?usp=drive_link" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@Deeplearning-CS3004" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -322,7 +380,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 0","items":[{"n":"0.1","t":"Brief History of Deep Learning","v":"zdmEzqpAG70","s":"https://drive.google.com/file/d/1X323NqtDeSgESnS2Kp32zCi53fQo7aXb/view?usp=drive_link"},{"n":"0.2","t":"The Deep Revival: From Cats to ConvNet","v":"EifcfTLIzxc","s":null},{"n":"0.3","t":"The Rise of Deep Learning","v":"csM_nCAhIQk","s":null},{"n":"0.4","t":"The Rise and Madness of Transformers","v":"m2tyQC2qTDQ","s":null},{"n":"0.5","t":"Call for Sanity in AI: Efficient Deep Learning","v":"49F3moGjuwc","s":null}]},{"w":"Week 1","items":[{"n":"1.1","t":"Motivation From Biological Neuron","v":"KjMvUwq7PdQ","s":"https://drive.google.com/file/d/1-waoR7UFU7Cx-hIZCMMJcvEHod8_r7ZD/view?usp=sharing"},{"n":"1.2","t":"McCulloch Pitts Neuron \u0026 Thresholding Logic","v":"-bxOadOFNYc","s":null},{"n":"1.3","t":"Perceptron","v":"Ydd9TMyoG6k","s":null},{"n":"1.4","t":"Errors and Errors Surfaces","v":"oIjsEzG6zR0","s":null},{"n":"1.5","t":"Perceptron Learning Algorithm","v":"HPfZ9lEZOj4","s":null},{"n":"1.6","t":"Proof of Convergence","v":"9AmGI-tVCSQ","s":null},{"n":"1.7","t":"Linearly Seperable Functions","v":"VYnzTwx3lpk","s":null},{"n":"1.8","t":"Representation Power of Network of Perceptrons","v":"dFnNoZeuKzQ","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Sigmoid Neuron","v":"ay402XiRrzc","s":"https://drive.google.com/file/d/1IITdWaSyj_dXpKgrI41aHDmm20aYnn8V/view?usp=drive_link"},{"n":"2.2","t":"A Typical Supervised Machine Learning Setup","v":"Evhb4HxI32I","s":null},{"n":"2.3","t":"Learning Parameters: (Infeasible) Guess Work","v":"LbPKf7UVkyU","s":null},{"n":"2.4","t":"Learning Parameters: Taylor Series Approximation","v":"qyn6RERiIIY","s":null},{"n":"2.5","t":"Learning Parameters: Gradient Descent","v":"o2pT74Nplq0","s":null},{"n":"2.6","t":"Gradient Descent: Weight Update Rule","v":"HEx-q6fkCbo","s":null},{"n":"2.7","t":"Representation Power of Multilayer Network of Sigmoid Neurons: 1D Functions","v":"xHSErLWAlbU","s":null},{"n":"2.8","t":"Representation Power of Multilayer Network of Sigmoid Neurons: 2D Functions","v":"BUGi6AH1D2c","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Feed Forward Neural Networks","v":"HHv6Ndo9VBU","s":"https://drive.google.com/file/d/1ZswB0zhzGDg_2S8dA9I4VeZuYrY0P3Ti/view?usp=drive_link"},{"n":"3.2","t":"Learning Parameters: Intuition","v":"0Me1ywSlJE8","s":null},{"n":"3.3","t":"Output Functions and Loss Functions","v":"1hefEWZHvJg","s":null},{"n":"3.4","t":"Backpropagation: Intuition","v":"i0YC2jZuxUI","s":null},{"n":"3.5","t":"Gradient w.r.t Output","v":"T6kfyQ3_JQ8","s":null},{"n":"3.6","t":"Gradient w.r.t Hidden Layers","v":"7g-THFmBpRA","s":null},{"n":"3.7","t":"Gradient w.r.t Parameters","v":"7TL_9QUIL0g","s":null},{"n":"3.8","t":"Backpropagation: Pseudocode","v":"1f22ZAS-YGE","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Quick Recap: Gradient Descent \u0026 Derivatives","v":"gupSH0MU7vs","s":"https://drive.google.com/file/d/1MeladpRX-ACdC7q2CbzBYY49VBnwmqYG/view?usp=drive_link"},{"n":"4.2","t":"Plotting Contours","v":"fGzJOBIxXdg","s":null},{"n":"4.3","t":"Momentum Based GD","v":"R3jlvdclAHI","s":null},{"n":"4.4","t":"Nesterov Accelerated GD","v":"dIYDPtHWBNA","s":null},{"n":"4.5","t":"Stochastic GD vs Batch GD","v":"hXK16fgWjsc","s":null},{"n":"4.6","t":"Scheduling Learning Rate","v":"-7ET3TUWi8M","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Gradient Descent with Adaptive Learning Rate","v":"oqkfhBf71gc","s":"https://drive.google.com/file/d/1IdXTfmkkAebAFR0KCE3oAhsc-F4MQpLF/view?usp=drive_link"},{"n":"5.2","t":"AdaGrad","v":"WSvxne3oGr0","s":null},{"n":"5.3","t":"RMSProp","v":"ubOy0NPI2cY","s":null},{"n":"5.4","t":"AdaDelta","v":"EcX0rqjHR9k","s":null},{"n":"5.5","t":"ADAM","v":"m9g9Hij1h1A","s":null},{"n":"5.6","t":"AdaMax \u0026 MaxProp","v":"d2mSof7c4Jo","s":null},{"n":"5.7","t":"NADAM","v":"fsTRJeWpZ_o","s":null},{"n":"5.8","t":"Learning Rate Schemes","v":"Lqauh9dJzNc","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Introduction to Bias \u0026 Variance","v":"Wrscc4tVmVs","s":"https://drive.google.com/file/d/19sUGIn9JM9GPI4ayoioT6Izzv30CCP8w/view?usp=drive_link"},{"n":"6.2","t":"Training Error vs Test Error","v":"RKo-jONCjjU","s":null},{"n":"6.3","t":"Estimate Error from Test Data","v":"nu6x-L04CG4","s":null},{"n":"6.4","t":"True Error vs Model Complexity","v":"YNAq1X8b-r4","s":null},{"n":"6.5","t":"L2 Regularization","v":"eqATcLh_X64","s":null},{"n":"6.6","t":"Dataset Augmentation and Parameter Sharing","v":"in9ZdGxGhW8","s":null},{"n":"6.7","t":"Injecting Noise at Inputs","v":"S1KKaCrg0G8","s":null},{"n":"6.8","t":"Injecting Noise at Outputs","v":"sUnsawJ5-zw","s":null},{"n":"6.9","t":"Early Stopping","v":"CrO__rzk9hU","s":null},{"n":"6.10","t":"Ensemble Methods","v":"Njytanc4oHY","s":null},{"n":"6.11","t":"Dropout","v":"WzScUPDGFVA","s":null},{"n":"6.12","t":"Summary","v":"_wK-MOylRtw","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Deep Learning Revival","v":"PwKAEs9uuZw","s":"https://drive.google.com/file/d/1pvKaaJTo2UHD1FuWo6DP_YwDdy9A_Naf/view?usp=drive_link"},{"n":"7.2","t":"Unsupervised Pre-Training","v":"TNcZ5l54pLc","s":null},{"n":"7.3","t":"Optimization or Regularization?","v":"n5ZP4Ek9cxE","s":null},{"n":"7.4","t":"Better Activation Functions","v":"4eQiXN69FdQ","s":null},{"n":"7.5","t":"MaxOut","v":"oW7ZBLss2L0","s":null},{"n":"7.6","t":"GELU to SiLU","v":"srcPpAV6Yfs","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Introduction to Convolutional Neural Networks","v":"Dsq-fSb_lj4","s":"https://drive.google.com/file/d/1lIYKXgfYgbWwBPzZS6COw9DxL9cP6xKP/view?usp=drive_link"},{"n":"8.2","t":"Convolutional Operation","v":"yw8xwS15Pf4","s":null},{"n":"8.3","t":"Relation b/w Input, Output and Kernel/Filter Sizes","v":"7eiYBFladus","s":null},{"n":"8.4","t":"CNN","v":"PmZp5VtMwLE","s":null},{"n":"8.5","t":"CNN (contd.)","v":"9eZN8U-68eI","s":null},{"n":"8.60000000000001","t":"CNNs (Success Stories on ImageNet)","v":"53ysOFHCaqI","s":null},{"n":"8.70000000000001","t":"Image Classification Contd. (GoogLeNet \u0026 ResNet)","v":"UukbB6q6CTo","s":null},{"n":"8.80000000000001","t":"Visualizing Patches Which Maximally Activate a Neuron","v":"nBxy_vzmO_M","s":null},{"n":"8.90000000000001","t":"Visualizing Kernel/Filters of CNN","v":"XE8O5p5mceA","s":null},{"n":"8.10","t":"Occlusion Experiments","v":"DaLZRH6D7wo","s":null},{"n":"8.11","t":"Finding Influence of Input Pixels Using Backprop","v":"SPJnlFtw6h0","s":null},{"n":"8.11 (A mistake on course portal)","t":"Guided Backpropagation","v":"rcXOEzAuvu4","s":null},{"n":"8.12","t":"Optimization Over Images","v":"a4k8YorzUdI","s":null},{"n":"8.13","t":"Create Images from Embeddings","v":"orTNf_R5odY","s":null},{"n":"8.15","t":"Deep Dream","v":"YHAIrwRVvWg","s":null},{"n":"8.16","t":"Deep Art","v":"gctnJbUaW08","s":null},{"n":"8.17","t":"Fooling Deep Convolutional Neural Networks","v":"zgfcRJYA_kk","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"One-Hot Representation of Words","v":"M2T36PlRv1U","s":"https://drive.google.com/file/d/1M1Wis11e-iElswczoDpHzXulmqJuC7wr/view?usp=drive_link"},{"n":"9.2","t":"Distributed Representation of Words","v":"74clhgHhR2M","s":null},{"n":"9.3","t":"SVD(Singular Value Decomposition) for Learning Word Representation","v":"SSpSk1Io52w","s":null},{"n":"9.4","t":"SVD for Learning Word Representation (Contd.)","v":"05L1tSvzWHs","s":null},{"n":"9.5","t":"Continuous Bag Of Word Model (CBOW)","v":"yBmtXtVya9A","s":null},{"n":"9.6","t":"Skip-Gram Model","v":"XO2GHDm-ZoI","s":null},{"n":"9.7","t":"Skip-Gram Model (Contd.)","v":"3F6KInYCJxI","s":null},{"n":"9.8","t":"Contrastive Estimation","v":"XZUGn36eAgA","s":null},{"n":"9.9","t":"Hierarchical Softmax","v":"ioe1eeEWU0I","s":null},{"n":"9.10","t":"GloVe Representation","v":"zA0U8C_q04M","s":null},{"n":"9.11","t":"Evaluating Word Representations","v":"b0M0AzjpPqc","s":null},{"n":"9.12","t":"Relation b/w SVD and Word2Vec","v":"MBcnPueElDU","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Sequence Learning Problems","v":"_BBTTS9gx7Q","s":"https://drive.google.com/file/d/1RpWbdDTJpi_i4vwdU5DwnUIQDT5yYqi3/view?usp=drive_link"},{"n":"10.2","t":"Recurrent Neural Networks (RNNs)","v":"ym5qG-3kJ10","s":null},{"n":"10.3","t":"Backpropagation Through Time (BTT/BPTT)","v":"Xeb6OjnVn8g","s":null},{"n":"10.4","t":"The Problem of Vanishing \u0026 Exploding Gradients","v":"EB1SoyivHFU","s":null},{"n":"10.5","t":"Some Gory Details","v":"gZ65vyTNipM","s":null},{"n":"10.6","t":"Selective Read, Selective Write, \u0026 Selective Forget","v":"pI-3TreYU18","s":null},{"n":"10.7","t":"LSTM vs GRU","v":"9TFnjJkfqmA","s":null},{"n":"10.8","t":"How LSTMs Avoid Vanishing Gradient Problem","v":"PMv8C-Ws1b8","s":null},{"n":"10.9","t":"How LSTMs Avoid Vanishing Gradient Problem (Contd.)","v":"dKKPtG-qeaI","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Introduction to Encoder-Decoder Models","v":"7Np_5Q-P8eo","s":"https://drive.google.com/file/d/14bMQo-SUJJwguNquXBs7-vLH3ewfWPuK/view?usp=drive_link"},{"n":"11.2","t":"Applications of Encoder-Decoder Models","v":"dC_d3iVw6sc","s":null},{"n":"11.3","t":"Attention Mechanism (Bahdanau Attention)","v":"yInilk6x-OY","s":null},{"n":"11.4","t":"Introduction to Transformer Architecture","v":"cVbGNL0N2RI","s":null}]},{"w":"Week 12","items":[{"n":"12.1 (Not in course portal)","t":"\"Attention Is All You Need\"","v":"MVeOwsggkt4","s":"https://drive.google.com/file/d/1W0trq392JKpM5x6TY9blNymD-P3Ext6F/view?usp=drive_link"},{"n":"12.2","t":"Self Attention","v":"MLdUzA6ltEQ","s":null},{"n":"12.3","t":"Multi-Headed Attention","v":"VN2Bfi0_pbw","s":null},{"n":"12.4","t":"Decoder Block: Masked(Casual) Attention \u0026 Cross Attention","v":"cVuyWE4yMBU","s":null}]}];
 
@@ -378,7 +436,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -519,9 +577,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

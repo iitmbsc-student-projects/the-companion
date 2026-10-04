@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Programming Concepts using Java — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,11 +295,19 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1KUq9MxHd5QBfyMN9a0ZybkWwYXi3nBP4?usp=sharing" target="_blank" rel="noopener">Supplementary content (Drive folder)</a></li>
-          <li><a href="https://www.youtube.com/@cs-ds7kh" target="_blank" rel="noopener">Course YouTube channel</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/13L9jWorgJ7xQiB0deNfRGjp3eM16PXQD" target="_blank" rel="noopener">Week-sorted playlist (spreadsheet)</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1KUq9MxHd5QBfyMN9a0ZybkWwYXi3nBP4?usp=sharing" target="_blank" rel="noopener">Supplementary content (Drive folder)</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@cs-ds7kh" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -323,7 +380,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1.1","t":"Introduction","v":"3a1FXBR6QXY","s":"https://drive.google.com/drive/folders/1mld_BrAAtSjLs92DFWKeqEbvba5Pkp7e?usp=drive_link"},{"n":"1.2","t":"Types","v":"0Gl9ygUk4K8","s":null},{"n":"1.3","t":"Memory Management","v":"b4nsGWXNm2c","s":null},{"n":"1.4","t":"Abstraction and Modularity","v":"8ciDI5cUhSs","s":null},{"n":"1.5","t":"Object Oriented Programming","v":"NmYcNMPUlzY","s":null},{"n":"1.6","t":"Classes and Objects","v":"TJC0WhS6FNo","s":null},{"n":"Extra 1.1","t":"How to execute java program","v":null,"s":null,"dv":"https://drive.google.com/file/d/1vFuRxEflGSfDB-yOQAYRqATYSTZP3npQ/view?usp=drive_link"}]},{"w":"Week 2","items":[{"n":"2.1","t":"A First Taste of Java","v":"ULpvhw2hmSg","s":"https://drive.google.com/drive/folders/1OG478sGvjSWmi1YFFOThqe3YM30fQVDH?usp=drive_link"},{"n":"2.2","t":"Basic Datatypes in Java","v":"IwTdVsLxz04","s":null},{"n":"2.3","t":"Control Flow in Java","v":"0RHDEourhdo","s":null},{"n":"2.4","t":"Defining Classes and Object in Java","v":"XB-PcJJpKXg","s":null},{"n":"2.5","t":"Basic Input and Output in Java","v":"zvtvQcUhFxo","s":null},{"n":"Code Walkthrough 1","t":"Code Walkthrough Week 2 - Part 1","v":null,"s":null,"dv":"https://drive.google.com/file/d/1rOm4zO6fLQa8fdDA_2V3UQjgvEAbpIp5/view?usp=drive_link"},{"n":"Code Walkthrough 2","t":"Code Walkthrough Week 2 - Part 2","v":null,"s":null,"dv":"https://drive.google.com/file/d/1_beCa9rA4EAWJAF0whlusfZXUkz6EebB/view?usp=sharing"}]},{"w":"Week 3","items":[{"n":"3.1","t":"The Philosophy of 00 Programming","v":"PF6bAB-d9hI","s":"https://drive.google.com/drive/folders/1bhXb-sXa4oGkk0rUroXzalA65nXwz105?usp=drive_link"},{"n":"3.2","t":"Subclasses and inheritance","v":"6tDGUnETvv4","s":null},{"n":"3.3","t":"Dynamic dispatch and polymorphism","v":"2BRAgwZamIU","s":null},{"n":"3.4","t":"The Java class hierarchy","v":"WRN3QWICaag","s":null},{"n":"3.5","t":"Subtyping vs inheritance","v":"CYY7IT-YHVA","s":null},{"n":"3.6","t":"Java modifiers","v":"IO-K87_QXGs","s":null},{"n":"Code Walkthrough","t":"Code Walkthrough Week 3","v":null,"s":null,"dv":"https://drive.google.com/file/d/1ffG5mdbS8oBv_IW3WRK1FF1OitUHN0yw/view?usp=sharing"}]},{"w":"Week 4","items":[{"n":"4.1","t":"Abstract Classes and Interfaces","v":"RiGkT9NDof4","s":"https://drive.google.com/drive/folders/1YiXvWmc-yPxc84tcR8bTbmvZW-T-xD7m?usp=drive_link"},{"n":"4.2","t":"Interfaces","v":"adkU2TMbJfk","s":null},{"n":"4.3","t":"Private Classes","v":"6eZ9mNX-GQ8","s":null},{"n":"4.4","t":"Controlled Interaction with Objects","v":"YefHD5_AGiw","s":null},{"n":"4.5","t":"CallBacks","v":"CKjGnZCvlng","s":null},{"n":"4.6","t":"Iterators","v":"BG_Btui0K1o","s":null},{"n":"Code Walkthrough 1","t":"Code Walkthrough Week 4 - Part 1","v":"8YpplxemAjM","s":null},{"n":"Code Walkthrough 2","t":"Code Walkthrough Week 4 - Part 2","v":"8YpplxemAjM","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Polymorphism Revisited","v":"xvzxGV3pdMM","s":"https://drive.google.com/drive/folders/1onGJJfRAdthFqiv4QyfuCGHROMogq03m?usp=drive_link"},{"n":"5.2","t":"Generic Programming in Java","v":"wqqOMQb0ft0","s":null},{"n":"5.3","t":"Java Generics and Subtyping","v":"Dd9rAJo5H9s","s":null},{"n":"5.4","t":"Reflection","v":"bPpWwY6YLyg","s":null},{"n":"5.5","t":"Java Generics at Run Time","v":"V7l0pVIIaEU","s":null},{"n":"Code Walkthrough","t":"Code Walkthrough Week 5","v":"ejsIXEVNaTs","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"The Benefits of Indirection","v":"LY7TRCI3z24","s":"https://drive.google.com/drive/folders/1PikcR8KlMc2lP0vOGjJNvGxKIHWLX5h1?usp=drive_link"},{"n":"6.2","t":"Collection","v":"-EwtNZTsOVw","s":null},{"n":"6.3","t":"Concrete Collections","v":"XPzVy2DyO6E","s":null},{"n":"6.4","t":"Maps","v":"fWXf5aI3Cr0","s":null},{"n":"Code Walkthrough","t":"Code Walkthrough Week 6","v":"TQeLiDhOqno","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Dealing With Errors","v":"5t0UPIdDYo4","s":"https://drive.google.com/drive/folders/1tunm3V_1D7wjUFr-8i2vTpGpT2YUOy5g?usp=drive_link"},{"n":"7.2","t":"Exceptions in Java","v":"hsVEjkYKjpg","s":null},{"n":"7.3","t":"Packages","v":"U_rxCLyJHgw","s":null},{"n":"7.4","t":"Assertions","v":"hKl3tCQdfTI","s":null},{"n":"7.5","t":"Logging","v":"fkGfOzVC8zI","s":null},{"n":"Code Walkthrough 1","t":"Code Walkthrough Week 7 - Part 1","v":"wzhbL_yNFsU","s":null},{"n":"Code Walkthrough 2","t":"Code Walkthrough Week 7 - Part 2","v":"_oDj4W0mSiE","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Cloning","v":"aJxPvy1poaU","s":"https://drive.google.com/drive/folders/1Q7rzlWwQbC3lm1le5RRkGtyVaqL1g1X0?usp=drive_link"},{"n":"8.2","t":"Type Inference","v":"o1cQO3iB2Ok","s":null},{"n":"8.3","t":"Higher Order Functions","v":"4nrbgx0e4RA","s":null},{"n":"8.4","t":"Streams","v":"xs94mCRwqVQ","s":null},{"n":"Code Walkthrough","t":"Code Walkthrough Week 8","v":"uQt0RrR08fw","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"Optional Types","v":"3Q7Rp6sxE_M","s":"https://drive.google.com/drive/folders/1zA3S7_OfuI3p5Ikonm50xI9AVCTwTGrr?usp=drive_link"},{"n":"9.2","t":"Collecting Results From Streams","v":"v0fNOGui3Wg","s":null},{"n":"9.3","t":"Input/Output Streams","v":"FFdDai4qf8w","s":null},{"n":"9.4","t":"Serialization","v":"oweQzNSHA5I","s":null},{"n":"Code Walkthrough","t":"Code Walkthrough Week 9","v":"H7pNRuqe1bc","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Concurrency: Threads and Processes","v":"dR0_7AmJKKk","s":"https://drive.google.com/drive/folders/1ULFBwpwoSfayLE-xUI1OPw11I6xxpSOI?usp=drive_link"},{"n":"10.2","t":"Race Conditions","v":"a9PZhjCKm9k","s":null},{"n":"10.3","t":"Mutual Exclusion","v":"i6FNvH3ULMU","s":null},{"n":"10.4","t":"Test and Set","v":"MbFbJy3mkqI","s":null},{"n":"10.5","t":"Monitors","v":"sK1-Qkeh8mE","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Monitors in Java","v":"Srz0mewFaEg","s":"https://drive.google.com/drive/folders/1t27eTF4fFdRQSkyU6GnGJ8F8FdmySo8K?usp=drive_link"},{"n":"11.2","t":"Thread in Java","v":"htwvFDP5t5I","s":null},{"n":"11.3","t":"Concurrent Programming: An Example","v":"yI_WSIaFbFQ","s":null},{"n":"11.4","t":"Thread Safe Collection","v":"yDmnozJBKic","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"Graphical Interfaces and Event-Driven Programming","v":"A_BV43krS2I","s":"https://drive.google.com/drive/folders/1Ct91vaPNnLiC2YtkxyIadstnhf6zMTTD?usp=drive_link"},{"n":"12.2","t":"The SwingToolKit","v":"sV4ItidrL8s","s":null},{"n":"12.3","t":"More Swing Examples","v":"c6Z8BNSv9zY","s":null}]}];
 
@@ -379,7 +436,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -520,9 +577,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

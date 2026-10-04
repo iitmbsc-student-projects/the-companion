@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Speech Technology — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,9 +295,15 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1oeD3GrgA9xeJ4Not-gYwYrNXmf3n7IAf?usp=drive_link" target="_blank" rel="noopener">Drive folder</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1oeD3GrgA9xeJ4Not-gYwYrNXmf3n7IAf?usp=drive_link" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -321,7 +376,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1.1","t":"W1L1_Course Introduction","v":"EJClBjhX_fw","s":null},{"n":"1.2","t":"W1L2_Digital Signal Processing Fundamentals","v":"pFOX4COOPQA","s":null},{"n":"1.3","t":"W1L3_Fourier Series","v":"cN1pwFJNnZc","s":null},{"n":"1.4","t":"W1L4_Speech Production","v":"hYqVsP_qjGY","s":null},{"n":"1.5","t":"W1L5_Revision","v":"9AzeQT4n7Lk","s":null},{"n":"1.6","t":"W1L6_Waveforms","v":"6A6g0Deh5_w","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"W2L1_Speech Production, Perception and Frequency Analysis","v":"VEgtlYrPL0E","s":null},{"n":"2.2","t":"W2L2_Perceptual Masking, Cepstrum and Filtering","v":"Ns2ssbwjVgQ","s":null},{"n":"2.3","t":"W2L3_Feature Extraction for Speech Processing - Part 01","v":"RJBrHbdOfsU","s":null},{"n":"2.4","t":"W2L4_Feature Extraction for Speech Processing - Part 02","v":"7Kp_IdwUPZg","s":null},{"n":"2.5","t":"Lecture 2.5","v":"-jeVsWOlRbA","s":null},{"n":"2.6","t":"W2L6_Gaussian Review","v":"5BjraNnvSDk","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"W3L1_Gaussian Model for Binary Classification Problem","v":"Pkfxgjdau_k","s":null},{"n":"3.2","t":"W3L2_Error Analysis of Gaussian Model","v":"q-oXfO23nzU","s":null},{"n":"3.3","t":"W3L3_Introduction to Bi Variate Gaussian Model","v":"qAgRUPikLhM","s":null},{"n":"3.4","t":"W3L4_Mixture of Gaussians   Introduction","v":"Nkbg9V6dV-4","s":null},{"n":"3.5","t":"W3L5_Mixture of Gaussians","v":"WEQx548Irt4","s":null},{"n":"3.6","t":"W3L6_Parameter Estimation of GMM","v":"jMPoO_3aems","s":null},{"n":"3.7","t":"W3L7_Vector Quantization   Introduction","v":"UZuiAUZRMrc","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"W4L1_Vector Quantization","v":"KktLY1U9kl0","s":null},{"n":"4.2","t":"W4L2_Markov Model","v":"JNxyo8Ahlas","s":null},{"n":"4.3","t":"W4L3_Markov Chain - Example","v":"hYP6ciwfL8E","s":null},{"n":"4.4","t":"W4L4_Predicting Weather Sequence","v":"ao9ibxDulO0","s":null},{"n":"4.5","t":"W4L5_Viterbi Algorithm   Introduction","v":"OaHMsMcc5iw","s":null},{"n":"4.6","t":"W4L6_Viterbi Algorithm","v":"EYKReNZSkiQ","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"W5L1_Hidden Markov Model","v":"dOHE90enPYc","s":null},{"n":"5.2","t":"W5L2_Review of the Weather Prediction Example","v":"fCEGDlJTrGM","s":null},{"n":"5.3","t":"W5L3_Efficiency of Viterbi Algorithm","v":"325bp50S2yw","s":null},{"n":"5.4","t":"W5L4_Review of HMM   Weather and Grass Example","v":"KxtzLgHK3oY","s":null},{"n":"5.5","t":"W5L5_Forward Algorithm for HMM","v":"WaU3pP8DF-M","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"W6L1_Review of Speech Feature Extraction","v":"mZHAguNJ_Tg","s":null},{"n":"6.2","t":"W6L2_Review of a Pattern Classification Problem","v":"pKVcnLJP6kg","s":null},{"n":"6.3","t":"W6L3_Limited Vocabulary Speech Recognition","v":"cTtxZboztbA","s":null},{"n":"6.4","t":"W6L4_Review of Limited Vocabulary Speech Recognition","v":"8Rq7brmTINY","s":null},{"n":"6.5","t":"W6L5_Introduction to HMM GMM Model for Speech Recognition - Part 01","v":"QNtxvPo946c","s":null},{"n":"6.6","t":"W6L6_Introduction to HMM GMM Model for Speech Recognition - Part 02","v":"8PRFLhyDuXI","s":null},{"n":"6.7","t":"W6L7_HMM Applied to Speech","v":"3Oa7hkejfJc","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"W7L1_Continuous Vs Discrete HMM Models","v":"VGBNboO4Drw","s":null},{"n":"7.2","t":"W7L2_Different Types of HMM Models","v":"rRXWvOkc_k8","s":null},{"n":"7.3","t":"W7L3_Lexicon / Pronunciation Dictionary","v":"JtDrFr1ri7E","s":null},{"n":"7.4","t":"W7L4_Intorduction to Language Model","v":"mI5HluINmwQ","s":null},{"n":"7.5","t":"W7L5_N Gram Language Model","v":"awfFmHM_vjQ","s":null},{"n":"7.6","t":"W7L6_Introduction to Deep Neural Network","v":"IH4rJ-jsm9U","s":null},{"n":"7.7","t":"W7L7_Deep Learning Basics - Part 01","v":"0ceEi9F9epo","s":null},{"n":"7.8","t":"W7L8_Deep Learning Basics - Part 02","v":"roIjKC0Yh0c","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"W8L1_Feed Forward Neural Network - `Part 01","v":"93-fLPNVTA4","s":null},{"n":"8.2","t":"W8L3_Revision of Feed Forward Neural Networks","v":"InpIGg75y9I","s":null},{"n":"8.3","t":"W8L5_Intorduction to CTC - Part 01","v":"df6xi64cRPo","s":null},{"n":"8.4","t":"W8L6_Intorduction to CTC - Part 02","v":"f4hTX1EjlG0","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"W9L1_CTC   Recap","v":"axN-1SyESA4","s":null},{"n":"9.2","t":"W9L2_Recurrent Neural Networks","v":"LsXaYQZQzfU","s":null},{"n":"9.3","t":"W9L3_Application in Language Modelling","v":"4qlv4RhKQ2Q","s":null},{"n":"9.4","t":"W9L4_Disadvantages with RNN","v":"-RjJFRvpi7I","s":null},{"n":"9.5","t":"W9L5_Language Model - Part 01","v":"_ge-iuX-HOc","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"W10L1_Introduction to Word2Vec","v":"gJTqoZ4U7vs","s":null},{"n":"10.2","t":"W10L2_Sequence to Sequence Modelling","v":"HihH6U2Aklg","s":null},{"n":"10.3","t":"W10L3_Introduction to CNN","v":"6REU0gOe36M","s":null},{"n":"10.4","t":"W10L4_CNN Example","v":"dgRqesmRulE","s":null},{"n":"10.5","t":"W10L5_CNN for Speech","v":"UyrsLodSoRo","s":null},{"n":"10.6","t":"W10L6_Sequence to Sequence Networks","v":"SdxGP0_S4dI","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"W11L1_Transformer   Introduction","v":"c1HQOJh3X8c","s":null},{"n":"11.2","t":"W11L2_Transformer - Self Attention","v":"A0A5cJMf3Co","s":null},{"n":"11.3","t":"W11L3_Transformer - Training","v":"hhMiypRA7Do","s":null},{"n":"11.4","t":"W11L4_Transformers for Speech","v":"xrk2CbF27ns","s":null},{"n":"11.5","t":"W11L5_Introduction to Self Supervised Learning","v":"WtuqREgb1JI","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"W12L1_Intoduction to Text to Speech Synthesis","v":"eu5XBDYjuPc","s":null},{"n":"12.2","t":"W12L2_End to End Speech Synthesis: Auto Regressive Networks","v":"yVLvz3Yr_Dc","s":null},{"n":"12.3","t":"W12L3_End to End Speech Synthesis: Non Auto Regressive Networks","v":"itItXcYOqO0","s":null},{"n":"12.4","t":"W12L4_Introduction to Speaker Verification","v":"ixLpAZZWznQ","s":null},{"n":"12.5","t":"W12L5_Speaker Classification Architectures for Speaker Verification","v":"eaUAEC-exMo","s":null},{"n":"12.6","t":"W12L6_Speaker Verification  Scoring Techniques \u0026 Evaluation Metrics","v":"imPo0z7FovI","s":null},{"n":"12.7","t":"W12L7_Speaker Diarization","v":"to9AKEurJbs","s":null}]},{"w":"Week 13","items":[{"n":"13.1","t":"Lecture 13.1","v":"Olw7wGFiBWI","s":null}]}];
 
@@ -377,7 +432,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -518,9 +573,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

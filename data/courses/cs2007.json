@@ -12,15 +12,12 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1cB-kYSkqvsN3ooC_dEFJk1qRkwz_utnq?usp=share_link",
-   "label": "Supplementary content (Drive folder)"
+   "label": "Supplementary content (Drive folder)",
+   "auth": "iitm"
   },
   {
    "url": "https://www.youtube.com/@MLT_CS2007",
    "label": "Course YouTube channel"
-  },
-  {
-   "url": "https://docs.google.com/spreadsheets/d/1c1yC_BazeIdi957GgYH6R77oELgKqVr4",
-   "label": "Week-sorted playlist (spreadsheet)"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mathematical Foundations of Generative AI — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,11 +295,23 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://drive.google.com/drive/folders/1svcywULCSNQCPe6supxDngKGNQY6fOQO?usp=sharing" target="_blank" rel="noopener">Drive folder</a></li>
-          <li><a href="https://github.com/Chandan-IISc/IITM_GenAI" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.youtube.com/@da5002-y8d" target="_blank" rel="noopener">Course YouTube channel</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1svcywULCSNQCPe6supxDngKGNQY6fOQO?usp=sharing" target="_blank" rel="noopener">Drive folder</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://github.com/Chandan-IISc/IITM_GenAI" target="_blank" rel="noopener">GitHub</a>
+              <div class="res-foot"><span class="res-host">github.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@da5002-y8d" target="_blank" rel="noopener">Course YouTube channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -323,7 +384,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 1","items":[{"n":"1","t":"W1L1: Course Outline","v":"skWhn8W9P_Y","s":"https://drive.google.com/file/d/1GkZcsIPXjJBTDrLKSbFE0yHf5Pf6WbYQ/view?usp=sharing"},{"n":"2","t":"W1L2: Introduction and Problem setting","v":"HUunmwZfGzc","s":null},{"n":"3","t":"W1L3: f-Divergence","v":"nfZQYopzv20","s":null},{"n":"4","t":"W1L4: Variational divergence minimization","v":"VxRIqenOoQw","s":null},{"n":"5","t":"W1T1: Tutorial: Forward pass and backpropagation","v":"stZC0Zk5KYo","s":null},{"n":"6","t":"W1T2: Tutorial: Introduction to Pytorch: Tensors","v":"rHnrALMCyIQ","s":null},{"n":"7","t":"W1T3: Tutorial: Introduction to Pytorch: Datasets and DataLoaders","v":"L5n4rNrLZ_8","s":null},{"n":"8","t":"W1T4: Tutorial: Introduction to Pytorch: Model Building","v":"h1hEddM0aVE","s":null}]},{"w":"Week 2","items":[{"n":"9","t":"W2L5: Generative Modelling via variational Divergence Minimization","v":"c2gN3TK3U74","s":"https://drive.google.com/file/d/1bdeMMzACdWV1dGU0s1hNHD81KtRo9sRR/view?usp=sharing"},{"n":"10","t":"W2L6: Generative Adversarial Networks: Introduction","v":"EHhURRwMEPo","s":null},{"n":"11","t":"W2L7: Generative Adversarial Networks: Formulation","v":"pLD5Q5cS4kI","s":null},{"n":"12","t":"W2T5: Tutorial: Implementation of GAN","v":"iOb8vmlJd8o","s":null}]},{"w":"Week 3","items":[{"n":"13","t":"W3L8: GANs as classifier-guided generative sampler","v":"ga8VOW6pPeA","s":"https://drive.google.com/file/d/14l10sADt7aSDNaI3juN7QgCBTRZHZ5WT/view?usp=sharing"},{"n":"14","t":"W3L9: Deep Convolution GANs and Conditional GANs","v":"CFymHrr5iQw","s":null},{"n":"15","t":"W3T6: Tutorial: Implementation of DC-GAN","v":"4-o6d8EyxCU","s":null}]},{"w":"Week 4","items":[{"n":"16","t":"W4L10: Saturation of GAN training","v":"2RMeQ5YxIxI","s":"https://drive.google.com/file/d/1WHyxsqikZkQ5Qk5HKvxLIU9nfvdB-IuS/view?usp=sharing"},{"n":"17","t":"W4L11: Wasserstein GANs","v":"_IBfVkrvqAI","s":null},{"n":"18","t":"W4L12: Inversion with GANs","v":"S84MmiEr-6o","s":null},{"n":"19","t":"W4L13: Bi-directional GANs","v":"9av__QKR_xk","s":null},{"n":"20","t":"W4L14: GAN inversion via latent regression","v":"gkMIerCn8n0","s":null},{"n":"21","t":"W4L15: Domain Adversarial Networks","v":"rWk04R1VH8Q","s":null},{"n":"22","t":"W4L16: Evaluation of Generative Models","v":"5Mchnh2xedI","s":null},{"n":"23","t":"W4T7: Tutorial: Implementation of Bi-GAN","v":"eH9skKyqjJM","s":null},{"n":"24","t":"W4T8: Tutorial: Implementation of UDA","v":"kD708wpM14c","s":null},{"n":"25","t":"W4T9: Tutorial: Implementation of WGAN","v":"ZApQpSKjazs","s":null}]},{"w":"Week 5","items":[{"n":"26","t":"W5L17: Introduction to latent variable models","v":"UAnp6yU8K0A","s":"https://drive.google.com/file/d/1dFGn2QRuH3_mpVIzfgL-wkgKWtMDGHPk/view?usp=sharing"},{"n":"27","t":"W5L18: Evidence Lower Bound (ELBO)","v":"d9fDDUcQqq4","s":null},{"n":"28","t":"W5L19: Gaussian Mixture Models: Expectation-Maximization Algorithm","v":"zUJNypPc-Vo","s":null},{"n":"29","t":"W5L20: Variational Autoencoder (VAE)","v":"RN3_gkjlYoA","s":null},{"n":"30","t":"W5T10: Proof of Jensen\u0027s inequality","v":"br7oydgTero","s":null},{"n":"31","t":"W5T11: GMM","v":"VB0E_tzwuxI","s":null}]},{"w":"Week 6","items":[{"n":"32","t":"W6L21: Training VAE: Reparameterization methods","v":"blh_AnhwIpw","s":"https://drive.google.com/file/d/1uo99CIsfJbcixLRNSaaQiIRbdRD3TDHq/view?usp=sharing"},{"n":"33","t":"W6L22: Training VAE","v":"dAQVTNnRrEg","s":null},{"n":"34","t":"W6L23: Inference with a trained VAE","v":"x85aw6DXX0w","s":null},{"n":"35","t":"W6L24: Beta-VAE","v":"6ZBvXaVgAGA","s":null},{"n":"36","t":"W6L25: Vector Quantized VAE (VQ-VAE)","v":"8UbwFtDJEG0","s":null},{"n":"37","t":"W6T12: Implementation of VAE","v":"ZJh_Jv0hxZM","s":null},{"n":"38","t":"W6T13: Implementation of VQ-VAE","v":"o2Nc6_kcgEw","s":null}]},{"w":"Week 7","items":[{"n":"39","t":"W7L26: Denoising Diffusion Probabilistic Models (DDPMs)","v":"N0OOnTKMYJE","s":"https://drive.google.com/file/d/1zdLbiyoaAuKuWWA6Td22eYCrewiP9Z6l/view?usp=sharing"},{"n":"40","t":"W7L27: DDPM: Formulation","v":"P8AiIW0Gg0s","s":null},{"n":"41","t":"W7T14: U-Net","v":"-sOaKgKAmaM","s":null}]},{"w":"Week 8","items":[{"n":"42","t":"W8L28: ELBO for DDPM : Part 1","v":"AnWitwNPnN4","s":"https://drive.google.com/file/d/1lLPgjGpgeb6FNJyesDjwUSQCP62-03X2/view?usp=sharing"},{"n":"43","t":"W8L29: ELBO for DDPM : Part 2","v":"wPx64rVy2c4","s":null},{"n":"44","t":"W8L30: Optimization of DDPM loss","v":"yzU0ueuABLw","s":null},{"n":"45","t":"W8L31: ELBO Equivalence","v":"j-xrjqvSKhU","s":null},{"n":"46","t":"W8L32: Training of DDPM","v":"47TD4eSLVMI","s":null},{"n":"47","t":"W8L33: Inference in DDPM","v":"0p7T-3WiPnQ","s":null},{"n":"48","t":"W8T15: Implementation of DDPM","v":"au-7zLxcP1k","s":null},{"n":"49","t":"W8T16: Proofs","v":"rNxtbFa8J-s","s":null}]},{"w":"Week 9","items":[{"n":"50","t":"W9L34: alternate interpretations of DDPMs","v":"30fSjB8oGN0","s":"https://drive.google.com/file/d/1PAb6TmgCydlui2VB1LHDCdLLcwquJaiY/view?usp=sharing"},{"n":"51","t":"W9L35: DDPMs as score-predictors","v":"2Sp0BqAWWXY","s":null},{"n":"52","t":"W9L36: Guided Difusion Models","v":"kJCgO7rwo3Y","s":null},{"n":"53","t":"W9L37: Latent Diffusion Models","v":"qkinkLtwSyc","s":null},{"n":"54","t":"W9L38: Denoising Difusion Implicit Models (DDIMs)","v":"qiMJBB8chzI","s":null},{"n":"55","t":"W9L39: Inference in DDIM","v":"3KQWN9SS7L0","s":null},{"n":"56","t":"W9T17: Implementation of DDPM Noise estimation","v":"cmMm8Jgm3hI","s":null},{"n":"57","t":"W9T18: Implementation of DDIM","v":"kT-PCHIayS0","s":null},{"n":"58","t":"W9T19: Implementation of Guided DDPM","v":"BKqUPihkNmY","s":null}]},{"w":"Week 10","items":[{"n":"59","t":"W10L40: Auto-Regressive Models","v":"PtDFqdTbQUY","s":"https://drive.google.com/file/d/1CpurLn4oZcAizgNw42AJyWuWzMu3KJM7/view?usp=sharing"},{"n":"60","t":"W10L41: Attention Mechanism","v":"LoO0zQvmArE","s":null},{"n":"61","t":"W10L42: Transformers for Auto-Regressive Models","v":"uOb-dRc8yrA","s":null},{"n":"62","t":"W10L43: Transformers architecture","v":"NAWe0F0PmRU","s":null},{"n":"63","t":"W10L44: Transformers: Skip Connections and Normalization","v":"ZtGkl72SZPo","s":null},{"n":"64","t":"W10L45: Transformers: Position Embeddings","v":"_k1vd1DaMzQ","s":null},{"n":"65","t":"W10L46: Transformers: Training and Inference","v":"RJmTsB7mnUk","s":null}]},{"w":"Week 11","items":[{"n":"66","t":"W11L47: An overview of Reinforcement Learning","v":"4NZ6DLFF2DY","s":"https://drive.google.com/file/d/15vlap9A5bYlSv4bZTUoKb2W6XgCQj6iY/view?usp=sharing"},{"n":"67","t":"W11L48: Policy Gradient Theorem","v":"5FOz4agFl4M","s":null},{"n":"68","t":"W11L49: Expressing an AR-LM as RL policy","v":"Y2KZ_zDGhKw","s":null},{"n":"69","t":"W11L50: Proximal Policy Optimization (PPO)","v":"mvANXESrhqc","s":null},{"n":"70","t":"W11L51: Trust Region Policy Optimization (TRPO)","v":"9MJkL3XiCsk","s":null}]},{"w":"Week 12","items":[{"n":"71","t":"W12L52: Reward-Modelling","v":"kCwdMhKO0x8","s":"https://drive.google.com/file/d/1Y73cCHNfw_wAbeLvrWlHgdfXKSCW8I1p/view?usp=sharing"},{"n":"72","t":"W12L53: Direct Preference Optimization (DPO)","v":"P4Tm0FURBFU","s":null},{"n":"73","t":"W12L54: State-space-Models","v":"A7iAmVr0QE4","s":null}]}];
 
@@ -379,7 +440,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -520,9 +581,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

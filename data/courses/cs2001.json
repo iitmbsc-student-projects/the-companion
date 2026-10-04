@@ -11,16 +11,62 @@
  "prereq": "CS1002",
  "resources": [
   {
+   "label": "Supplementary content",
    "url": "https://drive.google.com/drive/folders/1uY0PIqv9KwbFxqKKa7ncFU9XHO3xYkcO?usp=sharing",
-   "label": "Supplementary content (Drive folder)"
+   "group": "Course material",
+   "desc": "Extra material shared on Google Drive.",
+   "auth": "iitm"
   },
   {
+   "label": "Course YouTube channel",
    "url": "https://www.youtube.com/@dbms-iitmadrasbsdegree1439",
-   "label": "Course YouTube channel"
+   "group": "Course material",
+   "desc": "All lecture videos."
   },
   {
-   "url": "https://docs.google.com/spreadsheets/d/1ZrP-vkiHmYseubNEUMWl8a7svSAzy05r",
-   "label": "Week-sorted playlist (spreadsheet)"
+   "label": "DBMS weekwise PYQs",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/dbms-weekwise-pyqs/205837",
+   "group": "Previous year questions",
+   "desc": "Past questions sorted by week.",
+   "by": "Preethy Parthasarath"
+  },
+  {
+   "label": "DBMS notes",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-programming-database-management-system-dbms-notes-cbb75181361a",
+   "group": "Notes",
+   "desc": "Written notes for the Diploma in Programming DBMS course.",
+   "by": "prathambhalla7",
+   "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "W3Schools SQL exercises",
+   "url": "https://www.w3schools.com/sql/sql_exercises.asp",
+   "group": "Extra SQL practice",
+   "desc": "Short exercises for the basics."
+  },
+  {
+   "label": "LeetCode Top SQL 50",
+   "url": "https://leetcode.com/studyplan/top-sql-50/",
+   "group": "Extra SQL practice",
+   "desc": "A 50-problem SQL study plan."
+  },
+  {
+   "label": "HackerRank SQL",
+   "url": "https://www.hackerrank.com/domains/sql",
+   "group": "Extra SQL practice",
+   "desc": "Graded SQL problems."
+  },
+  {
+   "label": "CodeChef SQL case studies",
+   "url": "https://www.codechef.com/practice/sql-case-studies-topic-wise",
+   "group": "Extra SQL practice",
+   "desc": "Topic-wise case studies."
+  },
+  {
+   "label": "SQL Practice",
+   "url": "https://www.sql-practice.com/",
+   "group": "Extra SQL practice",
+   "desc": "Practice queries in the browser."
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
@@ -561,13 +607,739 @@
    "id": "oppe",
    "label": "OPPE",
    "standfirst": "Practice material for the Database Management Systems online proctored programming exam.",
-   "links_heading": "Practice and solutions",
+   "links_heading": "Practice and question banks",
    "links": [
     {
      "url": "https://oppe.dev/",
-     "label": "oppe.dev, curated DBMS OPPE problems with a coding environment",
+     "label": "oppe.dev",
      "by": "Ishan Das Sharma",
-     "by_url": "https://ishan.page/"
+     "by_url": "https://ishan.page/",
+     "group": "Practice platform",
+     "desc": "Curated DBMS OPPE problems with a coding environment."
+    },
+    {
+     "label": "DBMS OPE PYQ resources",
+     "url": "https://discourse.onlinedegree.iitm.ac.in/t/dbms-ope-pyq-resources-not-official/192646",
+     "group": "Question banks",
+     "desc": "Community thread collecting OPE questions. Not official."
+    },
+    {
+     "label": "OPE SQL questions",
+     "url": "https://github.com/mynkpdr/dbms/tree/main/OPE%20SQL%20Questions",
+     "group": "SQL questions",
+     "by": "mynkpdr",
+     "by_url": "https://github.com/mynkpdr"
+    },
+    {
+     "label": "OPE SQL questions",
+     "url": "https://github.com/nelsondsouza/iitm-dbms/tree/main/ope/sql",
+     "group": "SQL questions",
+     "by": "nelsondsouza",
+     "by_url": "https://github.com/nelsondsouza"
+    },
+    {
+     "label": "OPE Python-PostgreSQL questions",
+     "url": "https://github.com/mynkpdr/dbms/tree/main/OPE%20Python-PostgreSQL%20Questions%20(Solve%20Any%20One)",
+     "group": "Python and PostgreSQL questions",
+     "desc": "Solve any one.",
+     "by": "mynkpdr",
+     "by_url": "https://github.com/mynkpdr"
+    },
+    {
+     "label": "OPE Python-PostgreSQL questions",
+     "url": "https://github.com/nelsondsouza/iitm-dbms/tree/main/ope/python-postgresql",
+     "group": "Python and PostgreSQL questions",
+     "by": "nelsondsouza",
+     "by_url": "https://github.com/nelsondsouza"
+    },
+    {
+     "label": "OPE Python-PostgreSQL questions",
+     "url": "https://github.com/NebulaTris/DBMS_IITM/tree/main/OPE%20Python-PostgreSQL%20Questions",
+     "group": "Python and PostgreSQL questions",
+     "by": "NebulaTris",
+     "by_url": "https://github.com/NebulaTris"
+    }
+   ]
+  },
+  {
+   "id": "live",
+   "label": "Live sessions",
+   "standfirst": "Topics from past live sessions, each linked to the exact moment in the video.",
+   "sessions": [
+    {
+     "term": "May 2022 term",
+     "items": [
+      {
+       "title": "Weeks 5 and 6 summary session",
+       "url": "https://www.youtube.com/watch?v=vGtc4ux8ols",
+       "topics": [
+        {
+         "label": "Lossless join decomposition with examples",
+         "time": "3:16",
+         "url": "https://youtu.be/vGtc4ux8ols?t=196"
+        },
+        {
+         "label": "Dependency preserving with examples",
+         "time": "30:28",
+         "url": "https://youtu.be/vGtc4ux8ols?t=1828"
+        },
+        {
+         "label": "Doubt on dependency preserving and lossless join",
+         "time": "46:06",
+         "url": "https://youtu.be/vGtc4ux8ols?t=2766"
+        },
+        {
+         "label": "Closure set of FDs",
+         "time": "47:47",
+         "url": "https://youtu.be/vGtc4ux8ols?t=2867"
+        },
+        {
+         "label": "Candidate key and primary key",
+         "time": "51:11",
+         "url": "https://youtu.be/vGtc4ux8ols?t=3071"
+        },
+        {
+         "label": "Use of closure set of FDs",
+         "time": "55:17",
+         "url": "https://youtu.be/vGtc4ux8ols?t=3317"
+        },
+        {
+         "label": "Extraneous attribute with examples",
+         "time": "1:03:36",
+         "url": "https://youtu.be/vGtc4ux8ols?t=3816"
+        },
+        {
+         "label": "Equivalence of sets of FDs with example",
+         "time": "1:23:25",
+         "url": "https://youtu.be/vGtc4ux8ols?t=5005"
+        },
+        {
+         "label": "Canonical cover with examples",
+         "time": "1:34:16",
+         "url": "https://youtu.be/vGtc4ux8ols?t=5656"
+        }
+       ]
+      },
+      {
+       "title": "Quiz 2 revision session",
+       "url": "https://www.youtube.com/watch?v=bNMcFXywreI",
+       "topics": [
+        {
+         "label": "Week 6 practice assignment Q9 (BCNF concept)",
+         "time": "5:00",
+         "url": "https://youtu.be/bNMcFXywreI?t=300"
+        },
+        {
+         "label": "Mock 2 Q8: functional dependency with example",
+         "time": "40:40",
+         "url": "https://youtu.be/bNMcFXywreI?t=2440"
+        },
+        {
+         "label": "Mock 2 Q7: how to find a candidate key",
+         "time": "49:03",
+         "url": "https://youtu.be/bNMcFXywreI?t=2943"
+        },
+        {
+         "label": "Mock 2 Q4: lossless join decomposition",
+         "time": "52:46",
+         "url": "https://youtu.be/bNMcFXywreI?t=3166"
+        },
+        {
+         "label": "Mock 2 Q9: dependency preserving with example",
+         "time": "1:09:21",
+         "url": "https://youtu.be/bNMcFXywreI?t=4161"
+        },
+        {
+         "label": "Mock 2 Q11: canonical cover with example",
+         "time": "1:21:00",
+         "url": "https://youtu.be/bNMcFXywreI?t=4860"
+        },
+        {
+         "label": "BCNF with examples",
+         "time": "1:58:18",
+         "url": "https://youtu.be/bNMcFXywreI?t=7098",
+         "key": true
+        },
+        {
+         "label": "Mock 2 Q16: multivalued dependency example",
+         "time": "2:23:45",
+         "url": "https://youtu.be/bNMcFXywreI?t=8625"
+        },
+        {
+         "label": "Week 6 content discussion",
+         "time": "2:33:59",
+         "url": "https://youtu.be/bNMcFXywreI?t=9239"
+        },
+        {
+         "label": "Week 7 content discussion",
+         "time": "2:35:01",
+         "url": "https://youtu.be/bNMcFXywreI?t=9301"
+        },
+        {
+         "label": "Mock 2 Q14: BST example",
+         "time": "2:38:20",
+         "url": "https://youtu.be/bNMcFXywreI?t=9500"
+        },
+        {
+         "label": "Mock 2 Q15",
+         "time": "2:44:08",
+         "url": "https://youtu.be/bNMcFXywreI?t=9848"
+        },
+        {
+         "label": "Mock 2 Q13",
+         "time": "2:50:44",
+         "url": "https://youtu.be/bNMcFXywreI?t=10244"
+        },
+        {
+         "label": "Week 8 overview",
+         "time": "2:54:45",
+         "url": "https://youtu.be/bNMcFXywreI?t=10485"
+        }
+       ]
+      },
+      {
+       "title": "Week 9 session",
+       "url": "https://www.youtube.com/watch?v=w_tT9gbvfF8",
+       "topics": [
+        {
+         "label": "Indexing",
+         "time": "0:00",
+         "url": "https://youtu.be/w_tT9gbvfF8?t=0",
+         "end": "30:42"
+        },
+        {
+         "label": "2-3-4 trees with examples",
+         "time": "30:42",
+         "url": "https://youtu.be/w_tT9gbvfF8?t=1842",
+         "end": "1:28:04"
+        },
+        {
+         "label": "Binary search tree",
+         "time": "1:28:04",
+         "url": "https://youtu.be/w_tT9gbvfF8?t=5284",
+         "end": "1:34:02"
+        },
+        {
+         "label": "Balanced binary search tree",
+         "time": "1:34:02",
+         "url": "https://youtu.be/w_tT9gbvfF8?t=5642",
+         "end": "1:36:07"
+        },
+        {
+         "label": "B+ tree with examples",
+         "time": "1:36:07",
+         "url": "https://youtu.be/w_tT9gbvfF8?t=5767",
+         "end": "2:10:15"
+        },
+        {
+         "label": "B tree with examples",
+         "time": "2:10:15",
+         "url": "https://youtu.be/w_tT9gbvfF8?t=7815",
+         "end": "2:26:35"
+        }
+       ]
+      },
+      {
+       "title": "Week 10 activity session",
+       "url": "https://www.youtube.com/watch?v=DP4t5YCcXqk",
+       "topics": [
+        {
+         "label": "ACID properties",
+         "time": "7:00",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=420",
+         "end": "15:32"
+        },
+        {
+         "label": "Transaction states",
+         "time": "15:33",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=933",
+         "end": "19:26"
+        },
+        {
+         "label": "Concurrent execution",
+         "time": "19:27",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=1167",
+         "end": "21:00"
+        },
+        {
+         "label": "Schedule",
+         "time": "21:00",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=1260",
+         "end": "36:25"
+        },
+        {
+         "label": "Types of schedule",
+         "time": "36:25",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=2185",
+         "end": "40:00"
+        },
+        {
+         "label": "Serializability",
+         "time": "40:00",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=2400",
+         "end": "45:00"
+        },
+        {
+         "label": "Conflict serializability",
+         "time": "45:00",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=2700",
+         "end": "1:04:00"
+        },
+        {
+         "label": "Problem on conflict serializability",
+         "time": "1:04:00",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=3840",
+         "end": "1:23:00"
+        },
+        {
+         "label": "View serializability",
+         "time": "1:23:00",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=4980",
+         "end": "1:44:00"
+        },
+        {
+         "label": "Practice problem 4",
+         "time": "1:45:00",
+         "url": "https://youtu.be/DP4t5YCcXqk?t=6300",
+         "end": "2:06:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 10 open session",
+       "url": "https://www.youtube.com/watch?v=nX3MWCQp9dE",
+       "topics": [
+        {
+         "label": "Locking protocol",
+         "time": "4:50",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=290",
+         "end": "5:36"
+        },
+        {
+         "label": "Shared lock",
+         "time": "5:36",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=336",
+         "end": "6:22"
+        },
+        {
+         "label": "Exclusive lock",
+         "time": "6:22",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=382",
+         "end": "7:00"
+        },
+        {
+         "label": "Locking matrix",
+         "time": "7:00",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=420",
+         "end": "9:30"
+        },
+        {
+         "label": "Example of locking protocol",
+         "time": "9:30",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=570",
+         "end": "13:15"
+        },
+        {
+         "label": "Example of a locking protocol that is not conflict serializable",
+         "time": "13:15",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=795",
+         "end": "17:08"
+        },
+        {
+         "label": "Two-phase locking protocol",
+         "time": "17:08",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=1028",
+         "end": "44:10"
+        },
+        {
+         "label": "Strict two-phase locking protocol",
+         "time": "44:10",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=2650",
+         "end": "50:10"
+        },
+        {
+         "label": "Rigorous two-phase locking protocol",
+         "time": "50:10",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=3010",
+         "end": "56:00"
+        },
+        {
+         "label": "Problem on 2PL (practice assignment Q7)",
+         "time": "56:00",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=3360",
+         "end": "1:11:00"
+        },
+        {
+         "label": "Timestamp protocol",
+         "time": "1:11:00",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=4260",
+         "end": "1:43:00"
+        },
+        {
+         "label": "Thomas write rule",
+         "time": "1:43:00",
+         "url": "https://youtu.be/nX3MWCQp9dE?t=6180",
+         "end": "1:48:30"
+        }
+       ]
+      },
+      {
+       "title": "Week 11 activity session",
+       "url": "https://www.youtube.com/watch?v=cYN7cF09Q9Q",
+       "topics": [
+        {
+         "label": "View serializability with examples",
+         "time": "0:26",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=26",
+         "end": "47:51"
+        },
+        {
+         "label": "Week 10 doubts",
+         "time": "47:51",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=2871",
+         "end": "58:23"
+        },
+        {
+         "label": "Backup and recovery",
+         "time": "58:23",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=3503",
+         "end": "1:01:47"
+        },
+        {
+         "label": "Backup strategies with examples",
+         "time": "1:01:47",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=3707",
+         "end": "1:30:11"
+        },
+        {
+         "label": "Log-based recovery",
+         "time": "1:30:11",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=5411",
+         "end": "1:51:43"
+        },
+        {
+         "label": "Immediate database modification examples",
+         "time": "1:51:43",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=6703",
+         "end": "1:58:25"
+        },
+        {
+         "label": "State of transaction examples",
+         "time": "1:58:25",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=7105",
+         "end": "2:02:03"
+        },
+        {
+         "label": "Doubts on backup and recovery",
+         "time": "2:02:03",
+         "url": "https://youtu.be/cYN7cF09Q9Q?t=7323",
+         "end": "2:22:03"
+        }
+       ]
+      },
+      {
+       "title": "Week 11 open session",
+       "url": "https://www.youtube.com/watch?v=tcrX1VkDGNE",
+       "topics": [
+        {
+         "label": "Week 7 doubts",
+         "time": "1:20",
+         "url": "https://youtu.be/tcrX1VkDGNE?t=80",
+         "end": "7:30"
+        },
+        {
+         "label": "RAID",
+         "time": "7:30",
+         "url": "https://youtu.be/tcrX1VkDGNE?t=450",
+         "end": "1:27:22"
+        },
+        {
+         "label": "Week 11 practice assignment Q11 and Q12",
+         "time": "1:27:22",
+         "url": "https://youtu.be/tcrX1VkDGNE?t=5242",
+         "end": "1:44:55"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "term": "Jan 2022 term",
+     "note": "Older sessions. Watch these if the ones above are not clear. Please watch all the tutorials for weeks 5 and 6, and use the tutorials for the ER diagram part.",
+     "items": [
+      {
+       "title": "Week 4 activity session",
+       "url": "https://www.youtube.com/watch?v=Jw5OFsliy5E",
+       "topics": [
+        {
+         "label": "TRC and DRC, detailed discussion with examples",
+         "time": "4:50",
+         "url": "https://youtu.be/Jw5OFsliy5E?t=290",
+         "end": "1:05:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 5 session",
+       "url": "https://www.youtube.com/watch?v=XN3YtkxDuyc",
+       "topics": [
+        {
+         "label": "Lossless decomposition",
+         "time": "14:00",
+         "url": "https://youtu.be/XN3YtkxDuyc?t=840",
+         "end": "28:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 5 open session",
+       "url": "https://www.youtube.com/watch?v=rwz7Qn7fzBA",
+       "topics": [
+        {
+         "label": "Lossless decomposition, one example in detail",
+         "time": "14:00",
+         "url": "https://youtu.be/rwz7Qn7fzBA?t=840",
+         "end": "28:00"
+        },
+        {
+         "label": "Practice examples on equivalent FDs",
+         "time": "28:00",
+         "url": "https://youtu.be/rwz7Qn7fzBA?t=1680",
+         "end": "40:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 6 normalisation",
+       "url": "https://www.youtube.com/watch?v=lF4hf_kN4ss",
+       "topics": [
+        {
+         "label": "Normalisation",
+         "time": "35:00",
+         "url": "https://youtu.be/lF4hf_kN4ss?t=2100",
+         "end": "1:54:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 6 practice assignment",
+       "url": "https://www.youtube.com/watch?v=VFmEAao6W2w",
+       "topics": [
+        {
+         "label": "Practice assignment questions",
+         "time": "13:00",
+         "url": "https://youtu.be/VFmEAao6W2w?t=780",
+         "end": "1:02:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 6 normalisation and decomposition",
+       "url": "https://www.youtube.com/watch?v=E7zyO7LEJ2M",
+       "topics": [
+        {
+         "label": "Normalisation and decomposition example",
+         "time": "6:00",
+         "url": "https://youtu.be/E7zyO7LEJ2M?t=360",
+         "end": "42:00",
+         "key": true
+        }
+       ]
+      },
+      {
+       "title": "Week 7 session",
+       "url": "https://www.youtube.com/watch?v=0d62HqNM0eE",
+       "topics": [
+        {
+         "label": "Python and Postgres connectivity",
+         "time": "9:00",
+         "url": "https://youtu.be/0d62HqNM0eE?t=540",
+         "end": "2:00:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 8 activity session",
+       "url": "https://www.youtube.com/watch?v=vvF75iehjw8",
+       "topics": [
+        {
+         "label": "Binary search tree (BST)",
+         "time": "7:00",
+         "url": "https://youtu.be/vvF75iehjw8?t=420",
+         "end": "27:00"
+        },
+        {
+         "label": "Important questions on BST",
+         "time": "38:00",
+         "url": "https://youtu.be/vvF75iehjw8?t=2280",
+         "end": "1:02:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 8 practice session",
+       "url": "https://www.youtube.com/watch?v=8jAiQ8UA73E",
+       "topics": [
+        {
+         "label": "Magnetic disks theory",
+         "time": "0:00",
+         "url": "https://youtu.be/8jAiQ8UA73E?t=0",
+         "end": "30:00"
+        },
+        {
+         "label": "Problem 1: free space, bits for addressing",
+         "time": "30:00",
+         "url": "https://youtu.be/8jAiQ8UA73E?t=1800",
+         "end": "38:00"
+        },
+        {
+         "label": "Problem 2: transfer rate",
+         "time": "38:00",
+         "url": "https://youtu.be/8jAiQ8UA73E?t=2280",
+         "end": "44:00"
+        },
+        {
+         "label": "Problem 3: time to read a file",
+         "time": "44:00",
+         "url": "https://youtu.be/8jAiQ8UA73E?t=2640",
+         "end": "56:00"
+        },
+        {
+         "label": "LRU problem",
+         "time": "58:00",
+         "url": "https://youtu.be/8jAiQ8UA73E?t=3480",
+         "end": "1:20:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 8 open session summary",
+       "url": "https://www.youtube.com/watch?v=rwz7Qn7fzBA",
+       "topics": [
+        {
+         "label": "Choose the correct binary tree",
+         "time": "14:00",
+         "url": "https://youtu.be/rwz7Qn7fzBA?t=840",
+         "end": "22:00"
+        },
+        {
+         "label": "LRU and MRU",
+         "time": "22:00",
+         "url": "https://youtu.be/rwz7Qn7fzBA?t=1320",
+         "end": "37:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 9 practice session",
+       "url": "https://www.youtube.com/watch?v=zzfGw88hy6U",
+       "topics": [
+        {
+         "label": "B-tree numericals",
+         "time": "8:20",
+         "url": "https://youtu.be/zzfGw88hy6U?t=500",
+         "end": "45:00"
+        },
+        {
+         "label": "B+ tree numericals",
+         "time": "45:00",
+         "url": "https://youtu.be/zzfGw88hy6U?t=2700",
+         "end": "1:23:00"
+        },
+        {
+         "label": "Questions on B tree and B+ tree",
+         "time": "1:23:00",
+         "url": "https://youtu.be/zzfGw88hy6U?t=4980",
+         "end": "1:59:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 9 open session",
+       "url": "https://www.youtube.com/watch?v=zQIKcca0Hqo",
+       "topics": [
+        {
+         "label": "Hashing",
+         "time": "5:50",
+         "url": "https://youtu.be/zQIKcca0Hqo?t=350",
+         "end": "45:00"
+        },
+        {
+         "label": "Bitmap and indexing",
+         "time": "46:00",
+         "url": "https://youtu.be/zQIKcca0Hqo?t=2760",
+         "end": "1:32:00"
+        },
+        {
+         "label": "Important question on indexing",
+         "time": "1:33:00",
+         "url": "https://youtu.be/zQIKcca0Hqo?t=5580",
+         "end": "1:45:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 10 sessions",
+       "url": "https://www.youtube.com/watch?v=hx8OwWSnrbM",
+       "topics": [
+        {
+         "label": "Conflict serializability",
+         "time": "1:47:00",
+         "url": "https://youtu.be/hx8OwWSnrbM?t=6420",
+         "end": "2:14:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 10 schedules and locking",
+       "url": "https://www.youtube.com/watch?v=N6kLhxGz4Rs",
+       "topics": [
+        {
+         "label": "Schedules (concept)",
+         "time": "9:00",
+         "url": "https://youtu.be/N6kLhxGz4Rs?t=540",
+         "end": "1:40:00",
+         "key": true
+        },
+        {
+         "label": "Locking protocol",
+         "time": "1:40:00",
+         "url": "https://youtu.be/N6kLhxGz4Rs?t=6000",
+         "end": "2:15:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 10 open session",
+       "url": "https://www.youtube.com/watch?v=efUo6tQVXf4",
+       "topics": [
+        {
+         "label": "Timestamp-based protocol and Thomas write rule",
+         "time": "1:40",
+         "url": "https://youtu.be/efUo6tQVXf4?t=100",
+         "end": "56:00"
+        },
+        {
+         "label": "Important questions",
+         "time": "57:00",
+         "url": "https://youtu.be/efUo6tQVXf4?t=3420",
+         "end": "1:54:00"
+        }
+       ]
+      },
+      {
+       "title": "Week 11 activity session",
+       "url": "https://www.youtube.com/watch?v=bvgPMSAuhLI",
+       "topics": [
+        {
+         "label": "Backup strategies",
+         "time": "23:00",
+         "url": "https://youtu.be/bvgPMSAuhLI?t=1380",
+         "end": "1:10:00"
+        }
+       ]
+      }
+     ]
     }
    ]
   }

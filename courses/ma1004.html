@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Statistics for Data Science II — The Companion</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
     font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,30,40,.25)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
   /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
@@ -42,8 +45,8 @@
     letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:rgba(122,30,40,.07)}
-  .nav-item.active{background:var(--accent);color:#fff;border-left-color:var(--accent-2)}
+  .nav-item:hover{background:var(--tint)}
+  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -69,9 +72,9 @@
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
-  .lecture-item:hover{background:rgba(122,30,40,.07)}
-  .lecture-item.active{background:var(--accent);color:#fff}
-  .lecture-item.active .lnum{color:#f0d3d6}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
+  .lecture-item.active .lnum{color:var(--on-accent-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -86,7 +89,7 @@
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
     font:600 18px/1 'JetBrains Mono',monospace;transition:left .22s ease,background .15s ease}
-  .sidebar-toggle:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
@@ -155,7 +158,53 @@
      loading-skeleton component (a solid gray bar) */
   .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
   .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .embed-wrap{border:1px solid var(--rule);background:#fff}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
+  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
+  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
+  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
+  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
+  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -246,17 +295,47 @@
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        <ul class="link-list">
-          <li><a href="https://study.iitm.ac.in/ds/course_pages/BSMA1004.html" target="_blank" rel="noopener">Official course page</a></li>
-          <li><a href="https://www.youtube.com/@statisticsfordatascience_i793" target="_blank" rel="noopener">Live session channel</a></li>
-          <li><a href="https://drive.google.com/file/d/1AJ5KDvLDW7GKVjYK6I0fZ-fOi_7gcCsA/view" target="_blank" rel="noopener">Book 1: Joint Discrete Distributions</a></li>
-          <li><a href="https://drive.google.com/file/d/1rryML2p2hKxde2Hc2LjUECQGPpMmJlnf/view" target="_blank" rel="noopener">Book 2: Joint Continuous Distributions</a></li>
-          <li><a href="https://psweur.github.io/" target="_blank" rel="noopener">Probability and Statistics with Examples using R (free book)</a></li>
-          <li><a href="https://drive.google.com/drive/folders/1giM0HunaYBKNzTeXXK_XEYcDQl7iZECl" target="_blank" rel="noopener">Lecture slides (Drive folder)</a></li>
-          <li><a href="https://drive.google.com/drive/folders/1PdQWT_sSFxizpVkU3UzaraBzxmo4Cf22" target="_blank" rel="noopener">Lecture transcripts (Drive folder)</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PLZd_9NahuB3EkFh799JfOes_rtv_Z_U9Q" target="_blank" rel="noopener">MyCampus YouTube playlist</a></li>
-          <li><a href="https://drive.google.com/file/d/12Zs81Kon-QZH86YsLj7OE3CHU-5Ub6ia/view?usp=sharing" target="_blank" rel="noopener">End term exam formula sheet</a></li>
-        </ul>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://study.iitm.ac.in/ds/course_pages/BSMA1004.html" target="_blank" rel="noopener">Official course page</a>
+              <div class="res-foot"><span class="res-host">study.iitm.ac.in</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/@statisticsfordatascience_i793" target="_blank" rel="noopener">Live session channel</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1AJ5KDvLDW7GKVjYK6I0fZ-fOi_7gcCsA/view" target="_blank" rel="noopener">Book 1: Joint Discrete Distributions</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1rryML2p2hKxde2Hc2LjUECQGPpMmJlnf/view" target="_blank" rel="noopener">Book 2: Joint Continuous Distributions</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://psweur.github.io/" target="_blank" rel="noopener">Probability and Statistics with Examples using R (free book)</a>
+              <div class="res-foot"><span class="res-host">psweur.github.io</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1giM0HunaYBKNzTeXXK_XEYcDQl7iZECl" target="_blank" rel="noopener">Lecture slides (Drive folder)</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/1PdQWT_sSFxizpVkU3UzaraBzxmo4Cf22" target="_blank" rel="noopener">Lecture transcripts (Drive folder)</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://www.youtube.com/playlist?list=PLZd_9NahuB3EkFh799JfOes_rtv_Z_U9Q" target="_blank" rel="noopener">MyCampus YouTube playlist</a>
+              <div class="res-foot"><span class="res-host">youtube.com</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/12Zs81Kon-QZH86YsLj7OE3CHU-5Ub6ia/view?usp=sharing" target="_blank" rel="noopener">End term exam formula sheet</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span></div>
+            </li>
+          </ul>
+        </div>
         <p class="tbd-note" style="margin-top:10px">An IITM email may be required for some of the resources above; any other access request will be strictly rejected.</p>
       </section>
 
@@ -329,7 +408,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js"></script>
 <script>
-  // Per-lecture data sourced from the course's own week-sorted playlist spreadsheet
+  // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
   const WEEKS_DATA = [{"w":"Week 0","items":[{"n":"0.1.1","t":"Introduction to Course : Data, Statistics and Probability","v":"k4oWqYT6tjk","s":null},{"n":"0.1.2","t":"Format of match data in spreadsheet","v":"NrkT8OIO6NU","s":null},{"n":"0.1.3","t":"Summarising powerplay overs data","v":"inIzLErsaYw","s":null},{"n":"0.2.1","t":"Repeated indepedent trial and Bernoulli distribution","v":"HfbF8kg8r9Y","s":null},{"n":"0.2.2","t":"Binomial distribution","v":"FFQ1LY3_wTU","s":null},{"n":"0.2.3","t":"Geometric distribution","v":"-b5yWSQ_9Sw","s":null},{"n":"0.2.4","t":"Probability in Python","v":"AqWajptoWP0","s":null},{"n":"0.3.1","t":"Common distributions","v":"KMXY2Tq5vVU","s":null},{"n":"0.3.2","t":"Poisson random variable","v":"s5JMtuibjfQ","s":null},{"n":"0.3.3","t":"Functions of one random variable","v":"8HzrW7m08D4","s":null}]},{"w":"Week 1","items":[{"n":"1.1","t":"Joint PMF of two discrete random variables","v":"0kvuT4ZwpJ0","s":null},{"n":"1.2","t":"Marginal PMF of discrete random variables","v":"Yi5mf3fQP3k","s":null},{"n":"1.3","t":"Conditional distribution of one random variable given another","v":"6eQxA6ElXOo","s":null},{"n":"1.4","t":"Examples on joint, marginal and conditional probabilities","v":"B0-W5xQa5GE","s":null},{"n":"1.5","t":"Joint PMF of more than two discrete random variables","v":"1d-6FI33HmY","s":null},{"n":"1.6","t":"Marginal PMF of multiple discrete random variables","v":"t5GR3Eq1mLI","s":null},{"n":"1.7","t":"Conditioning with multiple discrete random variables","v":"4a5rbPTqbOg","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Independence of two random variables","v":"YXaYJths2Ts","s":null},{"n":"2.2","t":"Independence of multiple random variables","v":"Ndy0KTpmJAI","s":null},{"n":"2.3","t":"Visualizing functions of one random variable, one-to-one functions","v":"vQ8nsT6RH1I","s":null},{"n":"2.4","t":"Visualizing functions of one random variable, many-to-one functions","v":"4nMkqSG9-_s","s":null},{"n":"2.5","t":"Examples on functions of one random variables","v":"xK4Vbtv7DFY","s":null},{"n":"2.6","t":"Introduction to functions of two random variables","v":"a0EHS19ZY0Y","s":null},{"n":"2.7","t":"Visualizing functions of two random variables","v":"eyPW1iX66oI","s":null},{"n":"2.8","t":"Sum of two random variables","v":"qWnGC_Jg0Qs","s":null},{"n":"2.9","t":"Maximum of two random variables","v":"CyhOZjX5Ch8","s":null},{"n":"2.1","t":"Functions of random variables","v":"I2S7nlCBkA8","s":null},{"n":"2.11","t":"Minimum and maximum of two random variables","v":"sgzr8rTaAcI","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Expected value of a random variable","v":"7FrGkXw0OKQ","s":null},{"n":"3.2","t":"Properties of expected value","v":"r1-n85hdJUw","s":null},{"n":"3.3","t":"Simulation of expected value using python","v":"hUidLbV0fNo","s":null},{"n":"3.4","t":"Variance and standard deviation","v":"tZs2xS6XfYg","s":null},{"n":"3.5","t":"Covariance and its properties","v":"UoZc81wNK4I","s":null},{"n":"3.6","t":"Correlation coefficient","v":"BtZXJohBrno","s":null},{"n":"3.7","t":"Bounds in probabilities using mean and variance","v":"NTGLrewi_uY","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Introduction","v":"VfmiCE67QrE","s":null},{"n":"4.2","t":"Cumulative distribution function","v":"bjQmbMOIL4Q","s":null},{"n":"4.3","t":"Approximation of CDF from discrete to continuous","v":"3vpKxQjm0l8","s":null},{"n":"4.4","t":"General random variables and continuous random variables","v":"bEPwrTc6-m4","s":null},{"n":"4.5","t":"Probability density function","v":"YgCBemBF3pg","s":null},{"n":"4.6","t":"Common distributions","v":"Sr_oC-iaXIs","s":null},{"n":"4.7","t":"Illustration in Colab","v":"QFd8KeaY4Tk","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Functions of a continuous random variable","v":"EJjvm7rXswU","s":null},{"n":"5.2","t":"Expectations of continuous random variables","v":"cyu51WEwo7w","s":null},{"n":"5.3","t":"Motivation","v":"PGKH0mFlOAg","s":null},{"n":"5.4","t":"Joint distribution: discrete and continuous","v":"s_VmvOWnPWs","s":null},{"n":"Tutorial 5.1","t":"Week 5 Tutorial 1","v":"jNxALEU7q2w","s":null},{"n":"Tutorial 5.2","t":"Week 5 Tutorial 2","v":"c1J3W_YQPcI","s":null},{"n":"Tutorial 5.3","t":"Week 5 Tutorial 3","v":"o_WtuCPiDfY","s":null},{"n":"Tutorial 5.4","t":"Week 5 Tutorial 4","v":"MnCKTRjKzYE","s":null},{"n":"Tutorial 5.5","t":"Week 5 Tutorial 5","v":"TCU9DtD6rw0","s":null},{"n":"Tutorial 5.6","t":"Week 5 Tutorial 6","v":"0I8tmShq0uo","s":null},{"n":"Tutorial 5.7","t":"Week 5 Tutorial 7","v":"ni_hPOq42Ds","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Jointly continuous random variables","v":"CIyqDJG-U9Q","s":null},{"n":"6.2","t":"Marginal densities","v":"TirRvH4PiiA","s":null},{"n":"6.3","t":"Independence","v":"cms_2NGMiHY","s":null},{"n":"6.4","t":"Conditional density","v":"lTCc9oYRwr8","s":null},{"n":"6.5","t":"From data to distribution","v":"RD-NtteZjzY","s":null},{"n":"6.6","t":"Summarizing data and plotting 1D/2D histograms in Colab","v":"tpeP4uxybYY","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Statistics from i.i.d. samples","v":"vcsSO5Gs2NE","s":null},{"n":"7.2","t":"Empirical distribution and descriptive statistics","v":"7pEE9GSZuIg","s":null},{"n":"7.3","t":"Illustrations with data","v":"6jPW0M4ruX4","s":null},{"n":"7.4","t":"Sum of independent random variables I","v":"z2TrKozjcAk","s":null},{"n":"Additional Lecture 1","t":"Concentration Phenomenon","v":"kPaqp72La2o","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Moment Generating functions","v":"OSL7bAmH6E4","s":null},{"n":"8.2","t":"Central Limit Theorem","v":"o5wSSPcbp6U","s":null},{"n":"8.3","t":"Distribution, properties and connections","v":"ArkKg5F1x38","s":null},{"n":"8.4","t":"Descriptive statistics of normal samples","v":"Jrw7dyC4D4I","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"Statistical problems in real life","v":"iY6u-gh6324","s":null},{"n":"9.2","t":"Introduction to parameter estimation","v":"NPmDCjN9s7A","s":null},{"n":"9.3","t":"Error in estimation","v":"73F6lceo6iM","s":null},{"n":"9.4","t":"Bias, Variance and Risk of an estimator","v":"fZjMovn18YE","s":null},{"n":"9.5","t":"Estimator design approach: Method of Moments","v":"XMX3lesags8","s":null},{"n":"9.6","t":"Estimator design approach: Maximum Likelihood","v":"0qnRu8GNxBg","s":null},{"n":"9.7","t":"Evaluation of ML estimators","v":"0hbUXNPVrro","s":null},{"n":"9.8","t":"Finding MME and ML estimators","v":"R1k74Kk7dbM","s":null},{"n":"Additional Lecture 1","t":"Properties of Estimators","v":"MY577tygpRU","s":null},{"n":"Additional Lecture 2","t":"Confidence Intervals","v":"Yq1YQawB2VY","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Bayesian estimation","v":"iMjDOTIb3-Q","s":null},{"n":"10.2","t":"Choice of prior and examples","v":null,"s":null},{"n":"10.3","t":"Problems: Finding estimators","v":"2owMxamj-Tc","s":null},{"n":"10.4","t":"Problems: Model estimation","v":"c-N6tSRb_-0","s":null},{"n":"10.5","t":"Problems: Fitting distributions","v":"QvLHiTpfzgY","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Introduction to Hypothesis testing","v":"F9lk8tlkDXI","s":null},{"n":"11.2","t":"Size and power of a test (problems)","v":"4__hxeWOs5w","s":null},{"n":"11.3","t":"Types of Hypothesis testing","v":"gvvWghxz9SU","s":null},{"n":"11.4","t":"Answering questions using data","v":"LP11xjRaL4k","s":null},{"n":"11.5","t":"Standard testing methods - z - test","v":"ZLj66E1Ue5Q","s":null},{"n":"11.6","t":"P-value","v":"RfJBrqRljEg","s":null},{"n":"11.7","t":"z-test problems","v":"RvQqGzHzKgo","s":null},{"n":"11.8","t":"More problems on z-test","v":"bcm0eYB2ZyQ","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"t-test, Chi squared test, two sample z/F test","v":"mWafJVZxKOY","s":null},{"n":"12.2","t":"t-test for mean (variance unknown) and Chi squared test for variance","v":"dbJwXIoDBtQ","s":null},{"n":"12.3","t":"Two samples from normal distribution","v":"G4mJrRem0H0","s":null},{"n":"12.4","t":"Two samples test","v":"rOTvOV3RviE","s":null},{"n":"12.5","t":"Problems on t-test, chi-squared test and two-sample z/F test","v":"Tyraw3Xue0Q","s":null},{"n":"12.6","t":"More problems on t-test, chi-squared test and two-sample z/F test","v":"U7E4IstED2s","s":null},{"n":"12.7","t":"Problems on two-sample test","v":"2lp4VeuE6OM","s":null}]}];
 
@@ -385,7 +464,7 @@
   // in place of the hand-rolled openWeek/toggleWeek toggling this used before.
   WEEKS_DATA.forEach((week, wi) => {
     const collapseId = `week-collapse-${wi}`;
-    const isFirst = wi === 0;
+    const isFirst = false;   // every week starts collapsed
 
     const group = document.createElement('div');
     group.className = 'week-group accordion-item';
@@ -526,9 +605,9 @@
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (Week 1's accordion item already starts expanded,
-  // set via the "show" class when it was built above).
+  // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
+<script src="../assets/theme.js"></script>
 </body>
 </html>

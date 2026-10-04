@@ -39,6 +39,37 @@ env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATES_DIR))
 env.policies["json.dumps_kwargs"] = {"sort_keys": False, "ensure_ascii": True,
                                       "separators": (",", ":")}
 
+def _group_resources(items):
+    """Group resource dicts by their optional "group", keeping first-appearance order.
+    Items with no group come out as one unnamed group (rendered without a heading)."""
+    groups, index = [], {}
+    for r in items or []:
+        name = r.get("group", "") if isinstance(r, dict) else ""
+        if name not in index:
+            index[name] = {"name": name, "rows": []}
+            groups.append(index[name])
+        index[name]["rows"].append(r)
+    return groups
+
+
+def _host(url):
+    m = re.match(r"https?://(?:www\.)?([^/?#]+)", url or "")
+    return m.group(1) if m else ""
+
+
+def _login_badge(r):
+    """Badge text for a resource dict: explicit "auth" ("iitm" / "site") wins, else Discourse links."""
+    auth = r.get("auth") if isinstance(r, dict) else ""
+    if auth == "iitm":
+        return "IITM login required"
+    if auth == "site":
+        return "Login needed for full access"
+    url = r.get("url", "") if isinstance(r, dict) else str(r or "")
+    return "Discourse login required" if "discourse.onlinedegree.iitm.ac.in" in url else ""
+
+
+env.filters.update(group_resources=_group_resources, host=_host, login_badge=_login_badge)
+
 TPL = {"lecture": env.get_template("lecture.html.j2"),
        "project": env.get_template("project.html.j2")}
 
