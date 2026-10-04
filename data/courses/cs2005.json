@@ -28,6 +28,14 @@
    "by": "IITM BS Students' Corner",
    "by_url": "https://www.iitmbsdegree.in/",
    "group": "Notes"
+  },
+  {
+   "label": "Java notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-programming-programming-concepts-using-java-notes-5c994bac37da",
+   "group": "Notes",
+   "desc": "Written notes for the Programming Concepts using Java course.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",

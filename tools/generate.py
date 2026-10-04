@@ -16,6 +16,7 @@ Layout this expects (site root = the folder holding index.html):
   tools/templates/*.j2
 """
 import json, os, glob, re
+from urllib.parse import urlparse
 import html as html_lib
 import hashlib
 import jinja2
@@ -29,6 +30,9 @@ TEMPLATES_DIR = os.path.join(TOOLS_DIR, "templates")
 COURSES_DIR = os.path.join(SITE_ROOT, "courses")
 COURSES_PAGE = os.path.join(SITE_ROOT, "courses.html")
 LINKS_PAGE = os.path.join(SITE_ROOT, "links.html")
+CONTRIB_PAGE = os.path.join(SITE_ROOT, "contributors.html")
+CONTRIB_PATH = os.path.join(SITE_ROOT, "data", "contributors.json")
+CONTRIB_TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "contributors.html.tpl")
 MENU_JS = os.path.join(SITE_ROOT, "assets", "menu-data.js")
 INDEX_PATH = COURSES_PAGE  # the course listing (kept under its old name for callers)
 MENU_EXCLUDE = {"mtech"}   # sections left out of the Courses dropdown
@@ -125,7 +129,7 @@ def stamp_assets(html):
 
 def restamp_pages():
     """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
-    for name in ("index.html", "courses.html", "links.html"):
+    for name in ("index.html", "courses.html", "links.html", "contributors.html"):
         path = os.path.join(SITE_ROOT, name)
         if os.path.exists(path):
             old = open(path, encoding="utf-8").read()
@@ -333,12 +337,58 @@ def generate_links():
     return LINKS_PAGE
 
 
+def _platform(url):
+    h = urlparse(url).netloc.lower().replace("www.", "")
+    for key, label in (("linkedin.com", "LinkedIn"), ("instagram.com", "Instagram"), ("ig.me", "Instagram"),
+                       ("linktr.ee", "Linktree"), ("github.com", "GitHub"), ("medium.com", "Medium")):
+        if h.endswith(key):
+            return label
+    return "Website" if h and h != "bit.ly" else "Link"
+
+
+def _footer_nav(current):
+    items = (("index.html", "Home", "home"), ("courses.html", "Courses", "courses"),
+             ("links.html", "Important links", "links"), ("contributors.html", "Contributors", "contributors"))
+    return "".join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if k == current else "", t) for h, t, k in items)
+
+
+def generate_contributors():
+    """contributors.html is generated whole from data/contributors.json."""
+    d = json.load(open(CONTRIB_PATH, encoding="utf-8"))
+    CONTRIB_TEMPLATE = open(CONTRIB_TEMPLATE_PATH, encoding="utf-8").read()
+    esc = html_lib.escape
+    groups_html, jump = [], []
+    for g in d["groups"]:
+        cards = []
+        for pr in g["people"]:
+            if pr.get("url"):
+                cards.append('<li class="lk-card pp-card"><h4 class="lk-title"><a class="lk-main" href="%s" target="_blank" rel="noopener">%s</a></h4>'
+                             '<p class="lk-desc">%s</p></li>' % (esc(pr["url"], quote=True), esc(pr["name"]), _platform(pr["url"])))
+            else:
+                cards.append('<li class="lk-card pp-card plain"><h4 class="lk-title">%s</h4></li>' % esc(pr["name"]))
+        jump.append('<a href="#c-%s">%s</a>' % (g["id"], esc(g["title"])))
+        groups_html.append(
+            '      <div class="link-group" id="c-%s">\n        <div class="group-head"><h3>%s</h3><span class="group-count">%d</span></div>\n'
+            '        <p class="group-intro">%s</p>\n        <ul class="links-grid people-grid">\n          %s\n        </ul>\n      </div>'
+            % (g["id"], esc(g["title"]), len(g["people"]), esc(g.get("intro", "")), "\n          ".join(cards)))
+    m = d.get("missing")
+    miss = ('\n      <p class="missing-note">%s <a href="%s" target="_blank" rel="noopener">Vikash on Discourse &#8599;</a></p>'
+            % (esc(m["text"]), esc(m["url"], quote=True))) if m else ""
+    page = CONTRIB_TEMPLATE.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])) \
+        .replace("{{JUMP}}", "".join(jump)).replace("{{GROUPS}}", "\n".join(groups_html) + miss) \
+        .replace("{{FOOTNAV}}", _footer_nav("contributors"))
+    open(CONTRIB_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    write_menu()
+    return CONTRIB_PAGE
+
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_course(stem))
     else:
         paths = generate_all()
         print(f"generated {len(paths)} pages into {COURSES_DIR}")
         generate_links()
+        generate_contributors()
