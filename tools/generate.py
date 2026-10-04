@@ -17,6 +17,7 @@ Layout this expects (site root = the folder holding index.html):
 """
 import json, os, glob, re
 import html as html_lib
+import hashlib
 import jinja2
 
 TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -106,9 +107,36 @@ def load_all():
     return [load(s) for s in all_stems()]
 
 
+# Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
+# stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
+ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js))(?:\?v=[0-9a-f]+)?')
+
+
+def _asset_ver(rel):
+    try:
+        return hashlib.md5(open(os.path.join(SITE_ROOT, rel), "rb").read()).hexdigest()[:8]
+    except OSError:
+        return "0"
+
+
+def stamp_assets(html):
+    return ASSET_RE.sub(lambda m: f"{m.group(1)}?v={_asset_ver(m.group(1))}", html)
+
+
+def restamp_pages():
+    """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
+    for name in ("index.html", "courses.html", "links.html"):
+        path = os.path.join(SITE_ROOT, name)
+        if os.path.exists(path):
+            old = open(path, encoding="utf-8").read()
+            new = stamp_assets(old)
+            if new != old:
+                open(path, "w", encoding="utf-8").write(new)
+
+
 def render_course(data):
     tpl = TPL[data["kind"]]
-    return tpl.render(**data) + "\n"
+    return stamp_assets(tpl.render(**data) + "\n")
 
 
 def generate_course(stem):
@@ -181,6 +209,7 @@ def read_index():
 def write_index(html):
     open(COURSES_PAGE, "w", encoding="utf-8").write(html)
     write_menu(html)
+    restamp_pages()
 
 
 def write_menu(courses_html=None):
@@ -300,6 +329,7 @@ def generate_links():
         html = qpat.sub(lambda m: qblock, html, count=1)
     open(LINKS_PAGE, "w", encoding="utf-8").write(html)
     write_menu()
+    restamp_pages()
     return LINKS_PAGE
 
 
