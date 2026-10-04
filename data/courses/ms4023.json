@@ -12,7 +12,16 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1i29874j58gYu3iyiuAOllZWpgdhu8po7?usp=sharing",
-   "label": "Drive folder"
+   "label": "Drive folder",
+   "group": "Course material"
+  },
+  {
+   "label": "Degree level notes on Medium",
+   "url": "https://medium.com/@prathambhalla7/iit-madras-bsc-bs-degree-in-data-science-and-applications-notes-73f7a3dfb7e9",
+   "group": "Notes",
+   "desc": "Notes for several degree courses collected on one page. Look for this course's section.",
+   "by": "Pratham Bhalla",
+   "by_url": "https://medium.com/@prathambhalla7"
   }
  ],
  "resources_note": "",
