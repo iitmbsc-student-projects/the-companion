@@ -12,11 +12,21 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1Jcq6QqjfhWgZqFQaLj2K5WDlFNTSvQMg?usp=sharing",
-   "label": "Drive folder"
+   "label": "Drive folder",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@DLP-IITMBS/videos",
-   "label": "Course YouTube channel"
+   "label": "Course YouTube channel",
+   "group": "Course material"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/dlpractice",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

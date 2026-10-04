@@ -12,39 +12,56 @@
  "resources": [
   {
    "url": "https://study.iitm.ac.in/ds/course_pages/BSMA1003.html",
-   "label": "Official course page"
+   "label": "Official course page",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@maths-2",
-   "label": "Live session channel"
+   "label": "Live session channel",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/file/d/1nMGSpQfLObffDsaojI-56kkl_tuo94hJ/view",
-   "label": "Linear Algebra book"
+   "label": "Linear Algebra book",
+   "group": "Course material"
   },
   {
    "url": "https://mml-book.com/",
-   "label": "Mathematics for Machine Learning (free book)"
+   "label": "Mathematics for Machine Learning (free book)",
+   "group": "Course material"
   },
   {
    "url": "https://www.mecmath.net/",
-   "label": "Vector Calculus by Michael Corral (free book)"
+   "label": "Vector Calculus by Michael Corral (free book)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1EPt5z4GLPbmJciNx8vsoDmCSis2l0Fgg",
-   "label": "Lecture slides (Drive folder)"
+   "label": "Lecture slides (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1vZav5pceqRv4yybdQ69By5Y2V4154pO0",
-   "label": "Lecture transcripts (Drive folder)"
+   "label": "Lecture transcripts (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://www.khanacademy.org/math/linear-algebra",
-   "label": "Khan Academy: Linear Algebra"
+   "label": "Khan Academy: Linear Algebra",
+   "group": "Course material"
   },
   {
    "url": "https://youtube.com/playlist?list=PLZd_9NahuB3EztpCeK9O81agMhePG0hfk&si=Hsjb_pb77b1svH3Y",
-   "label": "MyCampus YouTube playlist"
+   "label": "MyCampus YouTube playlist",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/maths-2",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

@@ -12,7 +12,16 @@
  "resources": [
   {
    "url": "https://www.youtube.com/playlist?list=PLZ2ps__7DhBaI_g3_V-CFrgFIf-0Yksiv",
-   "label": "Full lecture playlist (YouTube)"
+   "label": "Full lecture playlist (YouTube)",
+   "group": "Course material"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/speechtech",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "",

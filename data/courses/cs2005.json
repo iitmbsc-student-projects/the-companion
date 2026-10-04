@@ -13,11 +13,21 @@
   {
    "url": "https://drive.google.com/drive/folders/1KUq9MxHd5QBfyMN9a0ZybkWwYXi3nBP4?usp=sharing",
    "label": "Supplementary content (Drive folder)",
-   "auth": "iitm"
+   "auth": "iitm",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@cs-ds7kh",
-   "label": "Course YouTube channel"
+   "label": "Course YouTube channel",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/java",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

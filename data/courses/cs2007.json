@@ -13,11 +13,29 @@
   {
    "url": "https://drive.google.com/drive/folders/1cB-kYSkqvsN3ooC_dEFJk1qRkwz_utnq?usp=share_link",
    "label": "Supplementary content (Drive folder)",
-   "auth": "iitm"
+   "auth": "iitm",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@MLT_CS2007",
-   "label": "Course YouTube channel"
+   "label": "Course YouTube channel",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/mlt",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/mlt",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

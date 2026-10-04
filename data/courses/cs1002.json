@@ -12,43 +12,69 @@
  "resources": [
   {
    "url": "https://study.iitm.ac.in/ds/course_pages/BSCS1002.html",
-   "label": "Official course page"
+   "label": "Official course page",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@introtopython",
-   "label": "Live session channel"
+   "label": "Live session channel",
+   "group": "Course material"
   },
   {
    "url": "https://bsc-iitm.github.io/python-textbook/",
-   "label": "IITM Python textbook"
+   "label": "IITM Python textbook",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1xjgelPNfh5QGKjnBxtjVYJwICG0Pkix_",
-   "label": "Lecture slides (Drive folder)"
+   "label": "Lecture slides (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1Sgia-K95Bc8FLdNBuDR5xQwehoWXabCI",
-   "label": "Lecture transcripts (Drive folder)"
+   "label": "Lecture transcripts (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf",
-   "label": "Python for Everybody (free book)"
+   "label": "Python for Everybody (free book)",
+   "group": "Course material"
   },
   {
    "url": "https://youtube.com/playlist?list=PLZd_9NahuB3Hkm4OoLbZGoXvdslgTSGeG&si=wez_u5147Qd_u-NB",
-   "label": "MyCampus YouTube playlist"
+   "label": "MyCampus YouTube playlist",
+   "group": "Course material"
   },
   {
    "url": "https://www.w3schools.com/python/",
-   "label": "W3Schools Python tutorial"
+   "label": "W3Schools Python tutorial",
+   "group": "Course material"
   },
   {
    "url": "https://zerotomastery.io/cheatsheets/python-cheat-sheet/",
-   "label": "Python cheat sheet (zerotomastery.io)"
+   "label": "Python cheat sheet (zerotomastery.io)",
+   "group": "Course material"
   },
   {
    "url": "https://docs.google.com/document/d/e/2PACX-1vTkdWzlMnt4qnZBelQGfd1K9RGGotM9bHabcqnoOq_VXWVlzhKSekh3Uu6SZIATPtJ-yr9qleASYhHO/pub",
-   "label": "Python cheat sheet (quick reference)"
+   "label": "Python cheat sheet (quick reference)",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/python",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/python",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

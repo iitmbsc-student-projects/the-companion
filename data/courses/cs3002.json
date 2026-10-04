@@ -12,11 +12,21 @@
  "resources": [
   {
    "url": "https://drive.google.com/drive/folders/1n1SnBCS08Zh8LRbcRf7FBiVvHulBvhRa?usp=drive_link",
-   "label": "Drive folder"
+   "label": "Drive folder",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@softwaretestingcs3002",
-   "label": "Course YouTube channel"
+   "label": "Course YouTube channel",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/software-testing",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

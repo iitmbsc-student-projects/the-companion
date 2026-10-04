@@ -12,15 +12,26 @@
  "resources": [
   {
    "url": "https://github.com/DL4CV-NPTEL/Deep-Learning-For-Computer-Vision?tab=readme-ov-file",
-   "label": "Deep Learning For Computer Vision (GitHub)"
+   "label": "Deep Learning For Computer Vision (GitHub)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1yOy11QGWC1YX3HT2NH8hKtHcMFupP8f7?usp=sharing",
-   "label": "Drive folder"
+   "label": "Drive folder",
+   "group": "Course material"
   },
   {
    "url": "https://www.youtube.com/@DLCVCourseTeam",
-   "label": "Course YouTube channel"
+   "label": "Course YouTube channel",
+   "group": "Course material"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/dlcv",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",

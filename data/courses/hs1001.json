@@ -12,19 +12,39 @@
  "resources": [
   {
    "url": "https://study.iitm.ac.in/ds/course_pages/BSHS1001.html",
-   "label": "Official course page"
+   "label": "Official course page",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1oSrU47SJ3Dvgjfmxr1u8I1NdFHdje4q_",
-   "label": "Lecture slides (Drive folder)"
+   "label": "Lecture slides (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/drive/folders/1uiocLDg-VECyiP6spsw92CAEXaNz-YmK",
-   "label": "Lecture transcripts (Drive folder)"
+   "label": "Lecture transcripts (Drive folder)",
+   "group": "Course material"
   },
   {
    "url": "https://drive.google.com/file/d/1-6Xog7_z2VVtmZ3mdHfudVQ86UfWwmZI/view",
-   "label": "ALS for English - 1"
+   "label": "ALS for English - 1",
+   "group": "Course material"
+  },
+  {
+   "label": "Course notes",
+   "url": "https://www.iitmbsdegree.in/notes/english-1",
+   "desc": "Notes and study material for this course.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/",
+   "group": "Notes"
+  },
+  {
+   "label": "Topic-wise notes",
+   "url": "https://degreedost.com/#notes/english1",
+   "desc": "Topic-wise notes on ML Study Hub.",
+   "by": "ML Study Hub",
+   "by_url": "https://degreedost.com/",
+   "group": "Notes"
   }
  ],
  "resources_note": "An IITM email may be required for some of the resources above; any other access request will be strictly rejected.",
