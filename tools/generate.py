@@ -371,6 +371,19 @@ def generate_contributors():
             '      <div class="link-group" id="c-%s">\n        <div class="group-head"><h3>%s</h3><span class="group-count">%d</span></div>\n'
             '        <p class="group-intro">%s</p>\n        <ul class="links-grid people-grid">\n          %s\n        </ul>\n      </div>'
             % (g["id"], esc(g["title"]), len(g["people"]), esc(g.get("intro", "")), "\n          ".join(cards)))
+    c = d.get("contribute")
+    if c:
+        cc = []
+        for cd in c["cards"]:
+            acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
+            if cd.get("url2"):
+                acts += '<a class="cta-btn ghost" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url2"], quote=True), esc(cd["label2"]))
+            cc.append('<li class="lk-card cta-card"><h4 class="lk-title">%s</h4><p class="lk-desc">%s</p><div class="cta-row">%s</div></li>'
+                      % (esc(cd["title"]), esc(cd["text"]), acts))
+        jump.append('<a href="#%s">%s</a>' % (c["id"], esc(c["title"])))
+        groups_html.append('      <div class="link-group" id="%s">\n        <div class="group-head"><h3>%s</h3></div>\n        <p class="group-intro">%s</p>\n'
+                           '        <ul class="links-grid cta-grid">\n          %s\n        </ul>\n      </div>'
+                           % (c["id"], esc(c["title"]), esc(c["intro"]), "\n          ".join(cc)))
     m = d.get("missing")
     miss = ('\n      <p class="missing-note">%s <a href="%s" target="_blank" rel="noopener">Vikash on Discourse &#8599;</a></p>'
             % (esc(m["text"]), esc(m["url"], quote=True))) if m else ""

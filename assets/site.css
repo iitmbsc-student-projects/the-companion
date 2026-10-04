@@ -254,3 +254,14 @@ li.pp-card.plain:hover{transform:none;box-shadow:none;border-left-color:var(--ru
 .missing-note{margin:36px 0 0;padding:14px 16px;border:1px dashed var(--rule);border-radius:3px;color:var(--ink-2);font-size:14.5px}
 @media(max-width:640px){ ul.people-grid{grid-template-columns:1fr 1fr} }
 li.pp-card .lk-title{padding-right:20px}
+
+ul.cta-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+li.cta-card{gap:8px;padding:16px 18px 16px}
+li.cta-card:hover{transform:none;box-shadow:none;border-left-color:var(--rule)}
+.cta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.cta-btn{display:inline-block;padding:7px 14px;border-radius:999px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);
+  font-size:13px;font-weight:500;transition:background .15s,border-color .15s}
+.cta-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.cta-btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.cta-btn.ghost:hover{background:var(--tint);color:var(--accent);border-color:var(--accent)}
+#contribute{scroll-margin-top:78px}
