@@ -24,15 +24,21 @@
     });
     box.appendChild(b);
   });
-  // In the top bar on wide screens; floating at the bottom-left on phones (the bar has no room, and its
-  // backdrop-filter would trap a fixed-position child inside it).
+  // Where the switcher lives:
+  //  - top bar (wide screens) / floating bottom-left (phones: no room, and the bar's backdrop-filter would trap a fixed child)
+  //  - course pages: inside the sidebar, or floating top-right while the sidebar is hidden
   var slot = document.getElementById('theme-slot');
   var narrow = window.matchMedia('(max-width: 640px)');
   function place() {
-    if (slot && !narrow.matches) { box.classList.remove('floating'); slot.appendChild(box); }
+    var inSlot = slot && !(slot.hasAttribute('data-float-narrow') && narrow.matches) &&
+      !(slot.dataset.collapsible === 'sidebar' && document.body.classList.contains('sidebar-collapsed'));
+    if (inSlot) { box.classList.remove('floating'); slot.appendChild(box); }
     else { box.classList.add('floating'); document.body.appendChild(box); }
   }
   place();
   if (narrow.addEventListener) narrow.addEventListener('change', place);
+  if (slot && slot.dataset.collapsible === 'sidebar') {
+    new MutationObserver(place).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  }
   apply(saved());
 })();
