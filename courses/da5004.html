@@ -74,6 +74,8 @@
     transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
   .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
   .accordion-body{padding:0}
+  .sidebar-theme{margin-top:12px}
+  .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
@@ -250,6 +252,7 @@
       <a class="back-link" href="../courses.html">← All courses</a>
       <div class="brand-code">DA5004</div>
       <div class="brand-sub">BS elective · 4 credits</div>
+      <div id="theme-slot" class="sidebar-theme" data-collapsible="sidebar"></div>
     </div>
 
     <div class="nav-section">
