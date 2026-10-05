@@ -18,6 +18,10 @@
     MENU.links.total + '</span></a>' +
     MENU.links.items.map(function (i) { return item('links.html#links-' + i.id, '', i.title, i.count); }).join('');
 
+  if (ml) ml.innerHTML += '<a class="menu-more menu-more-first" href="calculator.html"><span class="mi-title">Grade calculator</span></a>' +
+    '<a class="menu-more" href="contributors.html"><span class="mi-title">Contributors</span></a>' +
+    '<a class="menu-more" href="scam-alert.html"><span class="mi-title">Scam alert</span></a>';
+
   var jump = document.getElementById('level-jump');
   if (jump) jump.innerHTML = MENU.courses.items.map(function (i) {
     return '<a href="#' + i.id + '">' + esc(i.title) + ' <span class="jump-n">' + i.count + '</span></a>';
