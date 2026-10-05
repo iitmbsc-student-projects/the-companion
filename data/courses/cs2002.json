@@ -703,5 +703,36 @@
     }
    ]
   }
+ ],
+ "extra_tabs": [
+  {
+   "id": "oppe",
+   "label": "OPPE",
+   "standfirst": "The Programming, Data Structures and Algorithms using Python course has one online proctored programming exam (OPPE). It counts for 20% of the final score.",
+   "links_heading": "Resources",
+   "links": [
+    {
+     "label": "Grading policy document",
+     "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1",
+     "group": "Official",
+     "desc": "Find this course in the grading document for the exam dates and the full formula."
+    },
+    {
+     "label": "LeetCode with Python",
+     "url": "https://vikrantmehta123.github.io/dsa/",
+     "group": "Practice",
+     "desc": "Worked solutions to common data structures and algorithms problems, useful for OPPE practice.",
+     "by": "Vikrant Mehta",
+     "by_url": "https://vikrantmehta123.github.io/"
+    },
+    {
+     "label": "TA session resources (May 2026)",
+     "url": "https://discourse.onlinedegree.iitm.ac.in/t/session-resources-thread-by-ta-may26/206819",
+     "group": "TA sessions",
+     "desc": "TA session slides and materials, including problem-solving sessions."
+    }
+   ],
+   "note": "Formula from the grading document: T = 0.1 GAA + 0.4 F + 0.2 OP + max(0.2 max(Qz1, Qz2), 0.15 Qz1 + 0.15 Qz2). No OPPE-specific question bank has been shared yet. If you have one, please send it in."
+  }
  ]
 }

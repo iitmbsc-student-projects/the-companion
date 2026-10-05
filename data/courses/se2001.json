@@ -527,5 +527,22 @@
     }
    ]
   }
+ ],
+ "extra_tabs": [
+  {
+   "id": "oppe",
+   "label": "OPPE",
+   "standfirst": "System Commands has an online proctored exam (OPPE) with a re-exam, worth 30% of the final score.",
+   "links_heading": "Resources",
+   "links": [
+    {
+     "label": "Grading policy document",
+     "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1#h.2p2csry:~:text=Total%20score%20T-,11.%20System%C2%A0commands%C2%A0(Diploma%20in%20programming),-Quiz%201%3A%20October",
+     "group": "Official",
+     "desc": "Opens at the System Commands grading section."
+    }
+   ],
+   "note": "Formula from the grading document: T = 0.10 GAA + 0.2 Qz1 + 0.3 OPE + 0.3 F + 0.1 BPTA. No OPPE-specific question bank has been shared yet. If you have one, please send it in."
+  }
  ]
 }
