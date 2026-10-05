@@ -88,10 +88,23 @@
    "desc": "Competition used for OPPE 1 practice."
   },
   {
-   "label": "OPPE PYQs and practice set",
-   "url": "https://drive.google.com/drive/folders/1edymaYiafFQTX1aeq2RHP8d0sQ87m7Kj",
-   "group": "Code and practice",
-   "desc": "Past OPPE questions and a practice set."
+   "label": "Concept-wise PYQs, last 6 terms",
+   "url": "https://drive.google.com/file/d/17MXL6KY-QLHThVJk478KN_Rm8RnMgL_g/view?usp=sharing",
+   "group": "Previous year questions",
+   "desc": "Questions grouped by concept, with exam analysis, repetition analysis and short notes.",
+   "by": "Abhishek Guru"
+  },
+  {
+   "label": "OPPE 1 resources",
+   "url": "https://drive.google.com/drive/folders/1edymaYiafFQTX1aeq2RHP8d0sQ87m7Kj?usp=sharing",
+   "group": "OPPE",
+   "desc": "Past OPPE 1 questions and a practice set."
+  },
+  {
+   "label": "OPPE 2 resources",
+   "url": "https://drive.google.com/drive/folders/1VlUo5ZmIYJyRycTzyKV-nLt8hp5fWkMv",
+   "group": "OPPE",
+   "desc": "Practice material for OPPE 2."
   }
  ],
  "resources_note": "",
