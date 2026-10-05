@@ -33,6 +33,9 @@ LINKS_PAGE = os.path.join(SITE_ROOT, "links.html")
 CONTRIB_PAGE = os.path.join(SITE_ROOT, "contributors.html")
 CONTRIB_PATH = os.path.join(SITE_ROOT, "data", "contributors.json")
 CONTRIB_TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "contributors.html.tpl")
+SCAM_PAGE = os.path.join(SITE_ROOT, "scam-alert.html")
+SCAM_PATH = os.path.join(SITE_ROOT, "data", "scam_alert.json")
+SCAM_TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "scam_alert.html.tpl")
 MENU_JS = os.path.join(SITE_ROOT, "assets", "menu-data.js")
 INDEX_PATH = COURSES_PAGE  # the course listing (kept under its old name for callers)
 MENU_EXCLUDE = {"mtech"}   # sections left out of the Courses dropdown
@@ -133,7 +136,7 @@ def stamp_assets(html):
 
 def restamp_pages():
     """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
-    for name in ("index.html", "courses.html", "links.html", "contributors.html"):
+    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html"):
         path = os.path.join(SITE_ROOT, name)
         if os.path.exists(path):
             old = open(path, encoding="utf-8").read()
@@ -352,7 +355,8 @@ def _platform(url):
 
 def _footer_nav(current):
     items = (("index.html", "Home", "home"), ("courses.html", "Courses", "courses"),
-             ("links.html", "Important links", "links"), ("contributors.html", "Contributors", "contributors"))
+             ("links.html", "Important links", "links"), ("contributors.html", "Contributors", "contributors"),
+             ("scam-alert.html", "Scam alert", "scam"))
     return "".join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if k == current else "", t) for h, t, k in items)
 
 
@@ -410,13 +414,56 @@ def generate_contributors():
     return CONTRIB_PAGE
 
 
+def generate_scam_alert():
+    """scam-alert.html is generated whole from data/scam_alert.json."""
+    d = json.load(open(SCAM_PATH, encoding="utf-8"))
+    tpl = open(SCAM_TEMPLATE_PATH, encoding="utf-8").read()
+    esc = html_lib.escape
+    parts, jump = [], []
+    intro = "".join("<p>%s</p>" % esc(t) for t in d["intro"])
+    co = d["callout"]
+    parts.append('      <div class="scam-intro">%s</div>\n      <div class="scam-callout"><strong>%s.</strong> %s</div>'
+                 % (intro, esc(co["title"]), esc(co["text"])))
+    for sec in d["sections"]:
+        head = ('      <div class="link-group" id="%s">\n        <div class="group-head"><h3>%s</h3>%s</div>\n        <p class="group-intro">%s</p>\n'
+                % (sec["id"], esc(sec["title"]),
+                   ('<span class="group-count">%d</span>' % len(sec["items"])) if sec["type"] == "providers" else "", esc(sec["intro"])))
+        if sec["type"] == "cards":
+            body = '        <ul class="links-grid scam-grid">\n          %s\n        </ul>' % "\n          ".join(
+                '<li class="lk-card warn-card"><h4 class="lk-title">%s</h4><p class="lk-desc">%s</p></li>' % (esc(c["title"]), esc(c["text"]))
+                for c in sec["cards"])
+        elif sec["type"] == "providers":
+            cards = []
+            for it in sec["items"]:
+                hosts = ("Names as hosts: %s" % esc(it["hosts"])) if it["hosts"] else "No host companies listed."
+                chips = "".join("<span>%s</span>" % esc(x) for x in it["platforms"])
+                cards.append('<li class="lk-card prov-card"><h4 class="lk-title">%s</h4><p class="lk-desc">%s</p><div class="plat-row">%s</div></li>'
+                             % (esc(it["name"]), hosts, chips))
+            body = '        <ul class="links-grid scam-grid">\n          %s\n        </ul>' % "\n          ".join(cards)
+        else:
+            body = '        <ol class="scam-steps">%s</ol>' % "".join("<li>%s</li>" % x for x in sec["steps"])
+            if sec.get("actions"):
+                body += '\n        <div class="cta-row">%s</div>' % "".join(
+                    '<a class="cta-btn%s" href="%s"%s>%s%s</a>' % (
+                        "" if i == 0 else " ghost", esc(x["url"], quote=True),
+                        "" if x["url"].startswith("mailto:") else ' target="_blank" rel="noopener"',
+                        esc(x["label"]), "" if x["url"].startswith("mailto:") else " &#8599;")
+                    for i, x in enumerate(sec["actions"]))
+        jump.append('<a href="#%s">%s</a>' % (sec["id"], esc(sec["title"])))
+        parts.append(head + body + "\n      </div>")
+    page = tpl.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])) \
+        .replace("{{JUMP}}", "".join(jump)).replace("{{GROUPS}}", "\n".join(parts)).replace("{{FOOTNAV}}", _footer_nav("scam"))
+    open(SCAM_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    return SCAM_PAGE
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_course(stem))
     else:
         paths = generate_all()
         print(f"generated {len(paths)} pages into {COURSES_DIR}")
         generate_links()
         generate_contributors()
+        generate_scam_alert()

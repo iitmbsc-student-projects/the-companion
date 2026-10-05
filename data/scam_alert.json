@@ -1,0 +1,277 @@
+{
+ "title": "Scam alert",
+ "sub": "How fake internship offers work, how to spot them, and what to do if one reaches you.",
+ "intro": [
+  "A student email ID is a useful target for a scammer. It lets the sender hint at a link with IIT Madras, and a message that lands in an institute mailbox looks more trustworthy than a random one. Soon after you get your ID, you may start receiving internship offers from EdTech companies that claim tie-ups with firms like Wipro and Microsoft, or with institutions like IIT Guwahati.",
+  "These are rarely internships in the usual sense. They are products sold to students, and the company names are borrowed to make them look credible. The firms they name do not work with these providers and hire interns through their own channels. This page explains the pattern so that you can recognise the next one, including those that are not on the list below."
+ ],
+ "callout": {
+  "title": "Never pay or register",
+  "text": "A real internship does not charge you. Do not pay or register for any offer you cannot verify, and do not send your resume or contact details to the sender."
+ },
+ "sections": [
+  {
+   "id": "how",
+   "type": "cards",
+   "title": "How these offers work",
+   "intro": "Most of them follow the same three steps.",
+   "cards": [
+    {
+     "title": "1. The pitch",
+     "text": "A long list of famous companies and institutes, often a dozen or more in one email, and a promise of a certificate, a letter of recommendation or a job lead. The more names in the list, the less likely any of them is real."
+    },
+    {
+     "title": "2. The catch",
+     "text": "After you reply, the \"internship\" turns out to need a registration fee, a paid training programme, a certification charge or a refundable deposit that never comes back. Some skip the fee and instead take weeks of unpaid work, then stop replying."
+    },
+    {
+     "title": "3. The real goal",
+     "text": "Money is the usual aim. Your resume, phone number and ID documents are also worth something, and so is your reach, since some ask you to recruit friends or share posts. Treat anything you send as gone for good."
+    }
+   ]
+  },
+  {
+   "id": "red-flags",
+   "type": "cards",
+   "title": "Red flags",
+   "intro": "One of these is a reason to be careful. Two or more is enough to stop.",
+   "cards": [
+    {
+     "title": "It asks for money",
+     "text": "Registration, onboarding, training, kit, certificate, security deposit. Employers pay interns. They do not charge them, and a fee described as refundable is still a fee."
+    },
+    {
+     "title": "A very long list of hosts",
+     "text": "Companies hire interns for specific teams and roles. A single provider that claims to place you at Google, Amazon, Tata and Toyota together is selling a brand, not a placement."
+    },
+    {
+     "title": "No selection at all",
+     "text": "You are \"selected\" without an interview, a test or any look at your skills. A real process tries to find out whether you can do the work."
+    },
+    {
+     "title": "Pressure to act now",
+     "text": "\"Offer expires in 24 hours\" or \"only 5 seats left\" is there so that you pay before you check."
+    },
+    {
+     "title": "Sloppy writing and the External tag",
+     "text": "Spelling and grammar mistakes, a generic greeting and a yellow External tag in your student mailbox are common. Large companies do not write like this."
+    },
+    {
+     "title": "Contact only through chat apps or free email",
+     "text": "A recruiter who insists on WhatsApp or Telegram, or writes from a free mail address while claiming to be from a big company, is a bad sign."
+    }
+   ]
+  },
+  {
+   "id": "verify",
+   "type": "steps",
+   "title": "Check before you reply",
+   "intro": "These checks take about ten minutes and catch most fakes.",
+   "steps": [
+    "Read the sender's actual address, not the display name. A company mail comes from the company's own domain, not a lookalike or a free mail service.",
+    "Do not use the links in the mail. Type the company's address yourself and look for the same internship on its careers page. If it is not listed there, treat the offer as unconfirmed.",
+    "Search LinkedIn for the person who contacted you and check whether they really work at the company they name.",
+    "Look up the company. India's Ministry of Corporate Affairs lets you search company master data for free, and a WHOIS lookup shows how old the website's domain is. A \"leading\" firm whose site is a few months old is suspicious.",
+    "Search the provider's name together with \"scam\" or \"reviews\", and check the list on this page.",
+    "If the offer reached your student mailbox, ask the IIC at <a href=\"mailto:iic@study.iitm.ac.in\">iic@study.iitm.ac.in</a> before you reply."
+   ]
+  },
+  {
+   "id": "iitm",
+   "type": "cards",
+   "title": "What IITM says",
+   "intro": "These points apply to every internship mail you receive on your student ID.",
+   "cards": [
+    {
+     "title": "The IIC is the only official sender",
+     "text": "Official emails about internships and placement training come only from iic@study.iitm.ac.in. There is no \"Academic Coordination Team\" that sends internship or placement mails through student IDs."
+    },
+    {
+     "title": "An internship is not required",
+     "text": "IITM does not require an internship to fulfil your academic requirements, so there is no deadline or credit that makes a rushed offer necessary."
+    },
+    {
+     "title": "Mails from other students",
+     "text": "Sometimes another student forwards an internship offer. Do not engage with it, and check it the same way as any other offer."
+    },
+    {
+     "title": "Paid offers can still be traps",
+     "text": "Some paid internships block or ghost you after the work is done instead of paying. Ask other students to confirm a company is genuine before you start."
+    },
+    {
+     "title": "Check the hosts yourself",
+     "text": "If a provider says it connects you with other companies, ask those companies whether the arrangement is real before you rely on it."
+    }
+   ]
+  },
+  {
+   "id": "paid",
+   "type": "steps",
+   "title": "If you already paid or shared details",
+   "intro": "Act quickly. Reports made soon after a payment have the best chance of stopping it.",
+   "steps": [
+    "Stop all contact, but keep every email, chat, receipt and payment screenshot as evidence.",
+    "Call the national cyber crime helpline <strong>1930</strong> and file a complaint at <a href=\"https://cybercrime.gov.in/\" target=\"_blank\" rel=\"noopener\">cybercrime.gov.in</a>. Do this in the first hours if you can.",
+    "Tell your bank or UPI app about the payment and ask them to block further debits.",
+    "If you sent ID documents or passwords, change the passwords at once and watch your accounts for misuse.",
+    "Never approve a UPI collect request or share an OTP to \"receive\" money. Receiving money never needs your PIN or OTP.",
+    "Tell the IIC and tell us, so that the provider can be added here for the next batch."
+   ]
+  },
+  {
+   "id": "providers",
+   "type": "providers",
+   "title": "Providers reported by students",
+   "intro": "This list is kept by students and is not an official IITM list. These providers send unsolicited offers and name well-known companies and institutions as hosts, none of which work with them.",
+   "items": [
+    {
+     "name": "Wayspire",
+     "hosts": "Microsoft, IBM, Cisco, Meta, Autodesk, Tryst IIT Delhi",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn"
+     ]
+    },
+    {
+     "name": "Krutanic",
+     "hosts": "Wipro",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn"
+     ]
+    },
+    {
+     "name": "Corizo",
+     "hosts": "Wipro, Deloitte, KPMG, Amazon, IBM, Goldman Sachs; NIT, VIT, BIT, SRM, DYPU",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn"
+     ]
+    },
+    {
+     "name": "Navikshaa",
+     "hosts": "Google, Amazon, Microsoft, IBM, Deloitte, EY, Accenture, TCS, Infosys, Capgemini, Cognizant, Oracle, PwC, J.P. Morgan, Meta, Barclays, Wipro, Cisco",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Internshala"
+     ]
+    },
+    {
+     "name": "Mindenious Edutech / Mindenious Company",
+     "hosts": "IBM, Microsoft, Deloitte",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Internshala",
+      "Instagram"
+     ]
+    },
+    {
+     "name": "LaunchEd",
+     "hosts": "Kshitij IIT Kharagpur, Brave, Circle, Jump, Google, Discord, Biocons, IBM, Microsoft, Apple, Meta, Nvidia, TCMC, Adobe, Samsung",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Instagram"
+     ]
+    },
+    {
+     "name": "Acmegrade",
+     "hosts": "Samsung, Amazon, Toyota, Tata",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Instagram",
+      "WhatsApp",
+      "Indeed"
+     ]
+    },
+    {
+     "name": "Teachnook Edutech",
+     "hosts": "IIT Roorkee Cognizance, IIT Kharagpur Communique, Microsoft, Google, Cisco, IBM, TCS, Meta, Amazon, Netflix, Flipkart, Autodesk, Adobe, Unity, Tally, Apple, Wipro",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Instagram",
+      "Upskill",
+      "WhatsApp"
+     ]
+    },
+    {
+     "name": "Skill Vedanth",
+     "hosts": "",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Instagram"
+     ]
+    },
+    {
+     "name": "SparkIIT",
+     "hosts": "Apple, Amazon, Adobe, Barclays, Booking.com, Capgemini, Cognizant, Google, HCL, Microsoft, PwC, Tech Mahindra, Tiger Analytics, Toyota, Walmart, Accenture, IBM, Genpact, TCS, Byju's, Infosys",
+     "platforms": [
+      "Website",
+      "LinkedIn",
+      "Instagram",
+      "WhatsApp"
+     ]
+    },
+    {
+     "name": "InternVision / Intern Vision",
+     "hosts": "Accenture, Adobe, Microsoft, EY, Infosys, Cognizant",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Internshala",
+      "Instagram"
+     ]
+    },
+    {
+     "name": "Skillumni",
+     "hosts": "Microsoft, Zepto, Google, Flipkart, ZeeTV, BlinkIt, HP, PayPal, Nokia Networks, Salesforce, Groww, Bullsmart, Upstox, Xplorazzi",
+     "platforms": [
+      "Emails (incl. student emails)",
+      "Website",
+      "LinkedIn",
+      "Instagram"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "help",
+   "type": "steps",
+   "title": "How to help stop these scams",
+   "intro": "Spotted a provider that is not on this list, or got one of these emails?",
+   "steps": [
+    "Report the email as spam. Gmail has a short guide: <a href=\"https://support.google.com/mail/answer/1366858?hl=en&co=GENIE.Platform%3DDesktop\" target=\"_blank\" rel=\"noopener\">report spam in Gmail</a>.",
+    "Tell us about any provider that is missing, so the list stays useful for the next batch."
+   ],
+   "actions": [
+    {
+     "label": "Message on Discourse",
+     "url": "https://discourse.onlinedegree.iitm.ac.in/u/vikash/"
+    },
+    {
+     "label": "Open a GitHub issue",
+     "url": "https://github.com/iitmbsc-student-projects/the-companion/issues"
+    },
+    {
+     "label": "Email",
+     "url": "mailto:vikash.iitmbs@gmail.com"
+    }
+   ]
+  }
+ ]
+}

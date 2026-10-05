@@ -31,6 +31,7 @@
         <div class="menu" id="menu-links"></div>
       </div>
       <a class="tb-link current" href="contributors.html">Contributors</a>
+      <a class="tb-link" href="scam-alert.html">Scam alert</a>
     </div>
     <span id="theme-slot" data-float-narrow></span>
   </div>
