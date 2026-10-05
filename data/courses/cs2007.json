@@ -839,12 +839,6 @@
      "group": "Activity question solutions"
     },
     {
-     "label": "Week 11: session instead of a solution",
-     "url": "https://drive.google.com/file/d/1IFWrqA72rInhUY5t1LJ54NOv9BYAYMRk/view",
-     "group": "Activity question solutions",
-     "desc": "There is no solution PDF for Week 11. Refer to this session."
-    },
-    {
      "label": "Week 9: Perceptron solution",
      "url": "https://drive.google.com/file/d/11qRyu8JlLhqa0xb2iMecOOJCDNtahri3/view?usp=sharing",
      "group": "Activity question solutions"
@@ -853,6 +847,12 @@
      "label": "Week 10: SVM solution",
      "url": "https://drive.google.com/file/d/1nqev_1l9DFMe5NgM3lOmIRA3IpzSUga3/view?usp=sharing",
      "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 11: session instead of a solution",
+     "url": "https://drive.google.com/file/d/1IFWrqA72rInhUY5t1LJ54NOv9BYAYMRk/view",
+     "group": "Activity question solutions",
+     "desc": "There is no solution PDF for Week 11. Refer to this session."
     },
     {
      "label": "Week 12: Loss Function and ANN solution",
