@@ -29,12 +29,6 @@
    "auth": "iitm"
   },
   {
-   "label": "Grading document, Sep 2026",
-   "url": "https://tiny.cc/IITM-GD",
-   "group": "Course material",
-   "desc": "Eligibility, dates and the formula for every course this term."
-  },
-  {
    "label": "Live sessions on YouTube",
    "url": "https://www.youtube.com/@BSSE2001/streams",
    "group": "Course material",
@@ -532,17 +526,7 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "One online proctored exam on 20 Dec 2026, covering weeks 1 to 9, with a re-exam on 3 Jan 2027. It is worth 30% of the final score.",
-   "links_heading": "Resources",
-   "links": [
-    {
-     "label": "Grading document, Sep 2026",
-     "url": "https://tiny.cc/IITM-GD",
-     "group": "Official",
-     "desc": "Find this course in the document for eligibility, dates and the full formula."
-    }
-   ],
-   "note": "Sep 2026 formula: T = 0.05 GAA + 0.25 Qz1 + 0.3 OPPE + 0.3 F + 0.1 BPTA. You are eligible for the OPPE if the average of your first three BPTs is at least 40/100, and you need at least 40/100 in the OPPE for a course grade. If you are absent on 20 Dec, there is no second chance on 3 Jan. To be eligible for the re-exam you must score at least 20 in the OPPE and stay in the proctoring meet for 1 hour 30 minutes. No OPPE question bank has been shared for this course yet. If you have one, please send it in."
+   "standfirst": "Practice material for the System Commands online proctored programming exam. No practice material has been shared for it yet. If you have some, please send it in."
   }
  ]
 }

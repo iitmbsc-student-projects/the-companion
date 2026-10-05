@@ -776,15 +776,9 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "Two online proctored programming exams (PE1 and PE2). PE1 is on 22 Nov 2026 (weeks 2 to 6) and PE2 on 20 Dec 2026 or 3 Jan 2027 (weeks 2 to 9). The better score counts 20% and the other 10%.",
+   "standfirst": "Past questions and practice for the Programming Concepts using Java online proctored programming exams.",
    "links_heading": "Practice and past questions",
    "links": [
-    {
-     "label": "Grading document, Sep 2026",
-     "url": "https://tiny.cc/IITM-GD",
-     "group": "Official",
-     "desc": "Find this course in the document for eligibility, dates and the full formula."
-    },
     {
      "label": "HackerRank Java practice",
      "url": "https://www.hackerrank.com/java-practice-programming-questions",
@@ -803,8 +797,7 @@
      "group": "OPPE 2",
      "desc": "Practice material for OPPE 2."
     }
-   ],
-   "note": "Sep 2026 formula: T = 0.05 GAA + 0.2 max(PE1, PE2) + 0.45 F + max(0.2 max(Qz1, Qz2), 0.10 Qz1 + 0.20 Qz2) + 0.10 min(PE1, PE2). To get a course grade you must attend the end term exam and score at least 30% in one programming exam. Each OPPE needs the system compatibility test and the GrPA averages listed in the document."
+   ]
   }
  ]
 }

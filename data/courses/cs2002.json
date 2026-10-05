@@ -708,15 +708,9 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "One online proctored programming exam of 120 minutes, on 20 Dec 2026 or 3 Jan 2027 (your slot is allotted in advance). It is worth 20% of the final score.",
-   "links_heading": "Resources",
+   "standfirst": "Practice material for the Programming, Data Structures and Algorithms using Python online proctored programming exam.",
+   "links_heading": "Practice and past questions",
    "links": [
-    {
-     "label": "Grading document, Sep 2026",
-     "url": "https://tiny.cc/IITM-GD",
-     "group": "Official",
-     "desc": "Find this course in the document for eligibility, dates and the full formula."
-    },
     {
      "label": "LeetCode with Python",
      "url": "https://vikrantmehta123.github.io/dsa/",
@@ -731,8 +725,7 @@
      "group": "TA sessions",
      "desc": "TA session slides and materials, including problem-solving sessions."
     }
-   ],
-   "note": "Sep 2026 formula: T = 0.05 GAA + 0.2 OP + 0.45 F + max(0.2 max(Qz1, Qz2), 0.10 Qz1 + 0.20 Qz2). To be eligible you need the OPPE system compatibility test and at least 40/100 in the GrPA average of each of weeks 2 to 8. If you are absent, there is no repeat OPPE next term, because it does not affect passing the course. No OPPE question bank has been shared for this course yet. If you have one, please send it in."
+   ]
   }
  ]
 }

@@ -244,17 +244,7 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "Two online proctored programming exams: OPPE 1 on 22 Nov 2026 and OPPE 2 on 3 Jan 2027, worth 25% each of the final score.",
-   "links_heading": "Resources",
-   "links": [
-    {
-     "label": "Grading document, Sep 2026",
-     "url": "https://tiny.cc/IITM-GD",
-     "group": "Official",
-     "desc": "Find this course in the document for eligibility, dates and the full formula."
-    }
-   ],
-   "note": "Sep 2026 formula: T = 0.2 GAA + 0.3 F + 0.25 OPPE1 + 0.25 OPPE2 + Bonus, capped at 100. The bonus is 5 marks for active course participation. No OPPE question bank has been shared for this course yet. If you have one, please send it in."
+   "standfirst": "Practice material for the Machine Learning Operations online proctored programming exams. No practice material has been shared for it yet. If you have some, please send it in."
   }
  ],
  "hide_lectures": true
