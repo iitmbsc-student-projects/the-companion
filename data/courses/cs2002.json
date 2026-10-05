@@ -44,6 +44,35 @@
    "desc": "Written notes for the Programming, Data Structures and Algorithms using Python course.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "PDSA online textbook",
+   "url": "https://pdsaiitm.github.io/home.html#",
+   "group": "Books",
+   "desc": "The course textbook as a website, by the instructor.",
+   "by": "Atul Pratap Singh (Instructor)",
+   "by_url": "https://pdsaiitm.github.io/"
+  },
+  {
+   "label": "TA session resources (May 2026)",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/session-resources-thread-by-ta-may26/206819",
+   "group": "TA resources",
+   "desc": "Slides and materials from the TA sessions, in one thread."
+  },
+  {
+   "label": "PDSA weekwise PYQs",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/pdsa-week-wise-pyqs/216573",
+   "group": "Previous year questions",
+   "desc": "Past questions sorted by week.",
+   "by": "Preethy Parthasarathy"
+  },
+  {
+   "label": "LeetCode with Python",
+   "url": "https://vikrantmehta123.github.io/dsa/",
+   "group": "Practice",
+   "desc": "Worked solutions to common data structures and algorithms problems.",
+   "by": "Vikrant Mehta",
+   "by_url": "https://vikrantmehta123.github.io/"
   }
  ],
  "resources_note": "",
