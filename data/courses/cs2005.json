@@ -36,6 +36,62 @@
    "desc": "Written notes for the Programming Concepts using Java course.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Week-by-week revision notes",
+   "url": "https://bsjavacs2005.github.io/javacs2005notes/",
+   "group": "Notes",
+   "desc": "Short revision notes for every week, from the TA team."
+  },
+  {
+   "label": "Week-by-week resources",
+   "url": "https://docs.google.com/spreadsheets/d/1H7T7jzLM9QgCQJRj8HnNgcB2xmMrjoDJE2hzk6B9E_0/edit?usp=sharing",
+   "group": "TA resources",
+   "desc": "Sheet of resources for each week."
+  },
+  {
+   "label": "TA sessions, May 2026 term",
+   "url": "https://docs.google.com/spreadsheets/d/1ND-aezGXTbzi3EzfaXB81aMGHPyqGsxw9M34pZvlusQ/edit?gid=0#gid=0",
+   "group": "TA resources",
+   "desc": "Sheet of the Java TA sessions held in the May 2026 term."
+  },
+  {
+   "label": "TA session materials",
+   "url": "https://drive.google.com/drive/folders/1nmd9VbvTFi8yl3bQ-i_rzPGUMlgjeZJa?usp=drive_link",
+   "group": "TA resources",
+   "desc": "Slides and files shared in the TA sessions."
+  },
+  {
+   "label": "Quiz 2 session class notes",
+   "url": "https://drive.google.com/file/d/14TiT9Pr_g70ypu0s1drGD_bvrlFx7vfp/view",
+   "group": "TA resources",
+   "desc": "Notes from the Quiz 2 previous year questions session."
+  },
+  {
+   "label": "TA session source code",
+   "url": "https://github.com/Kaushal00Vaid/Java_TA_Jan26",
+   "group": "Code and practice",
+   "desc": "Code written in the TA sessions. Read the README first.",
+   "by": "Kaushal00Vaid",
+   "by_url": "https://github.com/Kaushal00Vaid"
+  },
+  {
+   "label": "Practice questions",
+   "url": "https://docs.google.com/document/d/1f_K04RG2jbCImy74s6jh0JhI92woYbk6uyXrXllIJKU/edit?usp=sharing",
+   "group": "Code and practice",
+   "desc": "Questions on function overloading, getters and setters, and copy constructors."
+  },
+  {
+   "label": "HackerRank Java practice",
+   "url": "https://www.hackerrank.com/java-practice-programming-questions",
+   "group": "Code and practice",
+   "desc": "Competition used for OPPE 1 practice."
+  },
+  {
+   "label": "OPPE PYQs and practice set",
+   "url": "https://drive.google.com/drive/folders/1edymaYiafFQTX1aeq2RHP8d0sQ87m7Kj",
+   "group": "Code and practice",
+   "desc": "Past OPPE questions and a practice set."
   }
  ],
  "resources_note": "",
@@ -577,6 +633,148 @@
      "t": "More Swing Examples",
      "v": "c6Z8BNSv9zY",
      "s": null
+    }
+   ]
+  }
+ ],
+ "extra_tabs": [
+  {
+   "id": "ta",
+   "label": "TA sessions",
+   "standfirst": "Recordings of the January 2026 term TA sessions, week by week, with what each one covered.",
+   "links_heading": "Session recordings",
+   "links": [
+    {
+     "label": "Session 1 · 12 Feb 2026",
+     "url": "https://drive.google.com/file/d/1WzeDqFynImAeH6irvNqcrULjJlN-Vp-M/view",
+     "group": "Week 1 and 2: Intro to Java programming",
+     "desc": "Input and output, memory management, conditions, operators, datatypes and variables."
+    },
+    {
+     "label": "Session 2 · 15 Feb 2026",
+     "url": "https://drive.google.com/file/d/1YE7faz9uGB0fndfi87i7dyv9VIp-utkw/view",
+     "group": "Week 1 and 2: Intro to Java programming",
+     "desc": "Switch, loops, arrays, functions, constructors, overloading and copy constructors."
+    },
+    {
+     "label": "Session 3 · 19 Feb 2026",
+     "url": "https://drive.google.com/file/d/1jQ8zGEiQqrtjMVCLySkmJcPbjtlrLJEs/view",
+     "group": "Week 1 and 2: Intro to Java programming",
+     "desc": "Type casting, getters and setters, deep and shallow copy, practice coding questions."
+    },
+    {
+     "label": "Session 1 · 22 Feb 2026",
+     "url": "https://drive.google.com/file/d/1h8Nc0J2Ot8gmCDeoaIcdQRr99HUKLFpC/view",
+     "group": "Week 3: Inheritance and subtyping",
+     "desc": "Inheritance, subtyping and dynamic dispatch."
+    },
+    {
+     "label": "Session 2 · 26 Feb 2026",
+     "url": "https://drive.google.com/file/d/1FSMIao6OMdO_Mhv3oXG1uda9Z7pYx5wv/view",
+     "group": "Week 3: Inheritance and subtyping",
+     "desc": "Practice assignments for weeks 2 and 3."
+    },
+    {
+     "label": "Session 1 · 5 Mar 2026",
+     "url": "https://drive.google.com/file/d/18wT4cn57PPBomCc7g7nBJU7_aUmsVayh/view",
+     "group": "Week 4: Abstract classes and interfaces",
+     "desc": "Abstract classes and interfaces."
+    },
+    {
+     "label": "Session 2 · 8 Mar 2026",
+     "url": "https://drive.google.com/file/d/1zU1scY1_nkWROe6eajJnXbVax7loQuHL/view",
+     "group": "Week 4: Abstract classes and interfaces",
+     "desc": "Private classes, week 4 practice assignment and a Quiz 1 PYQ paper."
+    },
+    {
+     "label": "Session 1 · 12 Mar 2026",
+     "url": "https://drive.google.com/file/d/1_cYvE4woDEcZ9S8OVYSLXMK8TJjkjngH/view",
+     "group": "Quiz 1 PYQs",
+     "desc": "Last year's paper and the Jan 2025 term paper."
+    },
+    {
+     "label": "Session 1 · 20 Mar 2026",
+     "url": "https://drive.google.com/file/d/1DuvMjZlwLXjOL75201_qaO0cAA3B_Z23/view",
+     "group": "Week 5: Generics",
+     "desc": "Basic generics, multiple generic arguments and wildcards."
+    },
+    {
+     "label": "Session 1 · 22 Mar 2026",
+     "url": "https://drive.google.com/file/d/1qeBf0TJeFVSbSXnoIHwAkq26YK9RfwoY/view",
+     "group": "Week 6: Collections framework",
+     "desc": "ArrayList and HashSet."
+    },
+    {
+     "label": "Session 1 · 26 Mar 2026",
+     "url": "https://drive.google.com/file/d/1-eLbaMNnmp-WQm8RLPOdUMwrKdNUeh5M/view",
+     "group": "OPPE 1 practice (weeks 1 to 6)",
+     "desc": "OPPE 1 practice."
+    },
+    {
+     "label": "Session 2 · 29 Mar 2026",
+     "url": "https://drive.google.com/file/d/1riWBWUWAwP7EHktzzUhn_LkZu2EpZ7yg/view",
+     "group": "OPPE 1 practice (weeks 1 to 6)",
+     "desc": "OPPE 1 practice."
+    },
+    {
+     "label": "Session 3 · Instructor session",
+     "url": "https://drive.google.com/file/d/1qfMqIvNukWKim2prfBQNReeLUsWlrd0M/view",
+     "group": "OPPE 1 practice (weeks 1 to 6)",
+     "desc": "OPPE 1 practice with the instructor."
+    },
+    {
+     "label": "Session 1 · 3 Apr 2026",
+     "url": "https://drive.google.com/file/d/1RV5EQg3pUkZzk4Uv8ixy3gVRzJ6s4VnN/view",
+     "group": "Week 7: Exception handling",
+     "desc": "Exception handling and custom exceptions."
+    },
+    {
+     "label": "Session 1 · 9 Apr 2026",
+     "url": "https://drive.google.com/file/d/1kVA1uIvrnLvdBb8Gsy_dgIHq_Ugd9Hby/view",
+     "group": "Quiz 2 PYQs",
+     "desc": "Papers from the last two terms. Class notes are in the Resources section."
+    },
+    {
+     "label": "Session 1 · 16 Apr 2026",
+     "url": "https://drive.google.com/file/d/1wExFgqbJw7bGxiDwdz6z98fpnAJhCoDK/view",
+     "group": "Week 9: Optional types and streams",
+     "desc": "Optional types, collecting results from streams, input and output streams."
+    },
+    {
+     "label": "Session 2 · 19 Apr 2026",
+     "url": "https://drive.google.com/file/d/1-5Xt_6IAdcTYZoIaGOfpeoMQFbDKCuAu/view",
+     "group": "Week 9: Optional types and streams",
+     "desc": "Practice and graded assignments for week 9."
+    },
+    {
+     "label": "Session 1 · 23 Apr 2026",
+     "url": "https://drive.google.com/file/d/18aXuOO2WSf7b2gJ8uBTjQrUb8IHnYfqR/view",
+     "group": "Week 10: Threads and concurrency",
+     "desc": "Threads, the Runnable interface, race conditions and how to avoid them."
+    },
+    {
+     "label": "Session 2 · 26 Apr 2026",
+     "url": "https://drive.google.com/file/d/1PCekUI2IDOs_7Zhusw3afLDqMjjxcvmv/view",
+     "group": "Week 10: Threads and concurrency",
+     "desc": "Practice and graded assignments for week 10."
+    },
+    {
+     "label": "Session 1 · 30 Apr 2026",
+     "url": "https://drive.google.com/file/d/1Mos3syvs3WCOFqqZFZD9uDkdMQ2b8D-x/view",
+     "group": "Weeks 11 and 12: Threads and Swing",
+     "desc": "Week 11 practice assignment discussion and week 12 practice assignment, with a bird's eye view of Swing."
+    },
+    {
+     "label": "Session 1 · 3 May 2026",
+     "url": "https://drive.google.com/file/d/1_ws09rqCJjZON7j89fmu7MewbMnXEP0j/view",
+     "group": "End term PYQs",
+     "desc": "The Sept 2025 paper."
+    },
+    {
+     "label": "Session 2 · 7 May 2026",
+     "url": "https://drive.google.com/file/d/1ZBABuabVuIzrXNb5EAW_zp4R25oThfLF/view",
+     "group": "End term PYQs",
+     "desc": "More end term papers."
     }
    ]
   }
