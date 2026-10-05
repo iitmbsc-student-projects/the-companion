@@ -489,5 +489,17 @@
     }
    ]
   }
+ ],
+ "hide_lectures": true,
+ "extra_tabs": [
+  {
+   "id": "website",
+   "label": "Course website",
+   "standfirst": "The Tools in Data Science course website, shown here so you can read it without leaving the page.",
+   "embed": {
+    "title": "Tools in Data Science",
+    "url": "https://tds.s-anand.net/"
+   }
+  }
  ]
 }
