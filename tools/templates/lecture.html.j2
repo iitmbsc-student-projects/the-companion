@@ -278,9 +278,6 @@
           <span><b>Term</b> {{ term }}</span>
           <span><b>Prereq</b> {{ prereq }}</span>
         </div>
-        {%- if course_site %}
-        <a class="site-btn" href="{{ course_site.url }}" target="_blank" rel="noopener">{{ course_site.label or "Course website" }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h7v7M13 3 5 11"/></svg></a>
-        {%- endif %}
       </div>
 
       <section class="chapter" id="calendar">
@@ -383,6 +380,9 @@
         <h1>{{ t.label }}</h1>
         {%- if t.standfirst %}
         <p class="standfirst">{{ t.standfirst }}</p>
+        {%- endif %}
+        {%- if t.button %}
+        <a class="site-btn" href="{{ t.button.url }}" target="_blank" rel="noopener">{{ t.button.label or "Open website" }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h7v7M13 3 5 11"/></svg></a>
         {%- endif %}
       </div>
       {%- if t.links %}
