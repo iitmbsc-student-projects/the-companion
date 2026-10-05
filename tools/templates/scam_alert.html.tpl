@@ -32,6 +32,7 @@
       </div>
       <a class="tb-link" href="contributors.html">Contributors</a>
       <a class="tb-link current" href="scam-alert.html">Scam alert</a>
+      <a class="tb-link" href="calculator.html">Grade calculator</a>
     </div>
     <span id="theme-slot" data-float-narrow></span>
   </div>

@@ -36,6 +36,9 @@ CONTRIB_TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
 SCAM_PAGE = os.path.join(SITE_ROOT, "scam-alert.html")
 SCAM_PATH = os.path.join(SITE_ROOT, "data", "scam_alert.json")
 SCAM_TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "scam_alert.html.tpl")
+CALC_PAGE = os.path.join(SITE_ROOT, "calculator.html")
+CALC_PATH = os.path.join(SITE_ROOT, "data", "grading.json")
+CALC_TEMPLATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "calculator.html.tpl")
 MENU_JS = os.path.join(SITE_ROOT, "assets", "menu-data.js")
 INDEX_PATH = COURSES_PAGE  # the course listing (kept under its old name for callers)
 MENU_EXCLUDE = {"mtech"}   # sections left out of the Courses dropdown
@@ -120,7 +123,7 @@ def load_all():
 
 # Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
 # stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
-ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js))(?:\?v=[0-9a-f]+)?')
+ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js))(?:\?v=[0-9a-f]+)?')
 
 
 def _asset_ver(rel):
@@ -136,7 +139,7 @@ def stamp_assets(html):
 
 def restamp_pages():
     """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
-    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html"):
+    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html"):
         path = os.path.join(SITE_ROOT, name)
         if os.path.exists(path):
             old = open(path, encoding="utf-8").read()
@@ -356,7 +359,7 @@ def _platform(url):
 def _footer_nav(current):
     items = (("index.html", "Home", "home"), ("courses.html", "Courses", "courses"),
              ("links.html", "Important links", "links"), ("contributors.html", "Contributors", "contributors"),
-             ("scam-alert.html", "Scam alert", "scam"))
+             ("scam-alert.html", "Scam alert", "scam"), ("calculator.html", "Grade calculator", "calculator"))
     return "".join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if k == current else "", t) for h, t, k in items)
 
 
@@ -414,6 +417,24 @@ def generate_contributors():
     return CONTRIB_PAGE
 
 
+def generate_calculator():
+    """calculator.html is generated whole from data/grading.json; assets/calculator.js does the sums."""
+    d = json.load(open(CALC_PATH, encoding="utf-8"))
+    tpl = open(CALC_TEMPLATE_PATH, encoding="utf-8").read()
+    esc = html_lib.escape
+    src = d["source"]
+    hb = d["handbook"]
+    note = ('<strong>Disclaimer.</strong> This is an unofficial tool made by students. The formulas were copied by hand from the '
+            '<a href="%s">%s</a> and the letter grades from the <a href="%s">%s</a> (section %s), so they may contain mistakes or go out of date if either changes. '
+            'Treat the result as an estimate, not your actual score or grade. The grading document, the handbook and the marks on your portal are always final.'
+            % (esc(src["url"]), esc(src["label"]), esc(hb["url"]), esc(hb["label"]), esc(hb["section"])))
+    data = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    page = tpl.replace("{{TITLE}}", "Grade calculator") \
+        .replace("{{NOTE}}", note).replace("{{DATA}}", data).replace("{{FOOTNAV}}", _footer_nav("calculator"))
+    open(CALC_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    return CALC_PAGE
+
+
 def generate_scam_alert():
     """scam-alert.html is generated whole from data/scam_alert.json."""
     d = json.load(open(SCAM_PATH, encoding="utf-8"))
@@ -460,10 +481,11 @@ if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_course(stem))
     else:
         paths = generate_all()
         print(f"generated {len(paths)} pages into {COURSES_DIR}")
         generate_links()
         generate_contributors()
         generate_scam_alert()
+        generate_calculator()
