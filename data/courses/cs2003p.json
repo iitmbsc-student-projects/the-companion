@@ -43,5 +43,15 @@
    "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu3mzNqBDtxctv1OlgqFGkaT&si=GmKtiSfVerYGVBOB",
    "label": "MAD I Sept 2025 Project Sessions"
   }
+ ],
+ "resources": [
+  {
+   "label": "MAD 1 project guides",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/docs/mad1-project",
+   "group": "Project help",
+   "desc": "Project guides, day-wise plans and implementation help.",
+   "by": "Shrikrishna Pandey",
+   "by_url": "https://github.com/shrikrishna97"
+  }
  ]
 }

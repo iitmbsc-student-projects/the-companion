@@ -1,0 +1,24 @@
+{% macro reslist(items, plain=false) -%}
+{%- for g in items|group_resources %}
+        <div class="res-group">
+{%- if g.name and not plain %}
+          <h3 class="res-group-title">{{ g.name }}<span class="res-count">{{ g.rows|length }}</span></h3>
+{%- endif %}
+          <ul class="res-grid">
+{%- for r in g.rows %}
+{%- if r.url %}
+            <li class="res-card">
+              <a class="res-main" href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a>
+{%- if r.desc %}
+              <p class="res-desc">{{ r.desc }}</p>
+{%- endif %}
+              <div class="res-foot"><span class="res-host">{{ r.url|host }}</span>{% if r.by %}<span class="res-by">by {% if r.by_url %}<a href="{{ r.by_url }}" target="_blank" rel="noopener">{{ r.by }}</a>{% else %}{{ r.by }}{% endif %}</span>{% endif %}{% if r|login_badge %}<span class="res-badge{% if r.auth == "iitm" %} iitm{% endif %}">{{ r|login_badge }}</span>{% endif %}</div>
+            </li>
+{%- else %}
+            <li class="res-card"><p class="res-desc">{{ r.raw|safe }}</p></li>
+{%- endif %}
+{%- endfor %}
+          </ul>
+        </div>
+{%- endfor %}
+{%- endmacro %}
