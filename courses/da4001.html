@@ -174,7 +174,7 @@
      by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
      (The old padding-top trick took its % from the container, not the video, so it went too
      tall once the content area was wider than 1000px, e.g. with the sidebar collapsed.) */
-  .video{position:relative;width:min(100%,1200px,calc((100vh - 150px)*16/9));min-width:min(100%,480px);
+  .video{position:relative;width:min(100%,1200px,calc((100vh - 210px)*16/9));min-width:min(100%,480px);
     aspect-ratio:16/9;background:#111;overflow:hidden;border:1px solid var(--rule)}
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .link-list{margin:0;padding:0;list-style:none}
@@ -244,6 +244,40 @@
   .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.1em;text-transform:uppercase}
 
+  /* lecture stage: a small title line, the video taking all the room that fits on screen, then Previous / Next */
+  /* while a lecture is open, trim the page padding so the video can be as large as the screen allows */
+  body:has(#panel-lecture.active) .main-content,
+  body:has(#panel-lecture.active).sidebar-collapsed .main-content{padding:14px 24px}
+  body:has(#panel-lecture.active).sidebar-collapsed .lec-id{padding-left:46px}
+  .lec-stage{width:min(100%,calc((100vh - 112px)*16/9))}
+  @media(max-width:820px){
+    body:has(#panel-lecture.active) .main-content,
+    body:has(#panel-lecture.active).sidebar-collapsed .main-content{padding:64px 12px 24px}
+    body:has(#panel-lecture.active).sidebar-collapsed .lec-id{padding-left:0}
+    .lec-stage{width:min(100%,calc((100vh - 150px)*16/9))}
+  }
+  .lec-stage .video{width:100%;min-width:0}
+  .lec-id{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px;margin-bottom:6px}
+  .lec-id .current-eyebrow{margin:0;font-size:10.5px}
+  .lec-id .current-title{margin:0;font-size:16px}
+  .lec-nav{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
+  .lec-nav button{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:0 14px 0 11px;border:1px solid var(--rule);
+    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;white-space:nowrap;
+    transition:border-color .15s,background .15s,transform .1s,filter .15s}
+  .lec-nav button svg,.m-step svg{width:15px;height:15px;flex:none;transition:transform .15s}
+  .lec-nav .ls-n{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.06em;opacity:.65}
+  .lec-nav button:hover:not([disabled]){border-color:var(--accent)}
+  .lec-nav button:active:not([disabled]){transform:scale(.97)}
+  .lec-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .lec-nav button[disabled]{opacity:.35;cursor:default;border-style:dashed}
+  .lec-nav #lec-prev:hover:not([disabled]) svg{transform:translateX(-3px)}
+  .lec-nav .ls-next{padding:0 11px 0 14px;background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+  .lec-nav .ls-next:hover:not([disabled]){border-color:var(--accent-fill);filter:brightness(1.1)}
+  .lec-nav .ls-next:hover:not([disabled]) svg{transform:translateX(3px)}
+  #panel-lecture .current-actions{margin-top:10px}
+  #panel-lecture .current-actions:empty{display:none}
+  .m-step{display:none}
+
   footer.colophon{margin-left:300px}
   /* ---- page footer ---- */
   footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'Inter',sans-serif;font-style:normal}
@@ -265,6 +299,7 @@
   /* ---- phones and small tablets: the sidebar becomes a slide-in drawer opened from a slim top bar,
      so the course content is the first thing you see instead of a tall menu block ---- */
   .m-bar,.m-scrim{display:none}
+  @media(max-width:430px){ .m-code{display:none} }
   @media(max-width:820px){
     .sidebar-toggle{display:none}
     .m-bar{display:flex;align-items:center;gap:10px;position:fixed;top:0;left:0;right:0;height:54px;padding:0 12px;
@@ -274,6 +309,10 @@
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .m-code{font-family:'Fraunces',serif;font-weight:700;font-size:16px;flex:none}
+    .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
+      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
+    .m-step[hidden]{display:none}
+    .m-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .m-here{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;
       font-size:12.5px;color:var(--ink-2)}
     .sidebar,body.sidebar-collapsed .sidebar{display:block;position:fixed;top:0;left:0;bottom:0;width:min(88vw,340px);
@@ -307,6 +346,7 @@
   <button type="button" class="m-menu" id="m-menu" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg>Menu</button>
   <span class="m-code">DA4001</span>
   <span class="m-here" id="m-here">Dashboard</span>
+  <button type="button" class="m-step" id="m-next" hidden></button>
 </div>
 <div class="m-scrim" id="m-scrim"></div>
 
@@ -422,13 +462,21 @@
     </section>
 
     <section class="panel" id="panel-lecture">
-      <div class="video" id="video-box">
-        <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
-        <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet — try the slide link below.</div>
+      <div class="lec-stage">
+        <div class="lec-id">
+          <div class="current-eyebrow" id="current-eyebrow"></div>
+          <h3 class="current-title" id="current-title"></h3>
+        </div>
+        <div class="video" id="video-box">
+          <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
+          <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet. Try the slide link below.</div>
+        </div>
+        <div class="current-actions" id="current-actions"></div>
+        <div class="lec-nav">
+          <button type="button" id="lec-prev"></button>
+          <button type="button" id="lec-next" class="ls-next"></button>
+        </div>
       </div>
-      <div class="current-eyebrow" id="current-eyebrow"></div>
-      <h3 class="current-title" id="current-title"></h3>
-      <div class="current-actions" id="current-actions"></div>
     </section>
 
   </main>
@@ -547,6 +595,7 @@
   }
 
   function showDashboard(){
+    curLec = null; updateStep();
     mHere.textContent = 'Dashboard';
     clearExtras();
     navDashboard.classList.add('active');
@@ -559,6 +608,7 @@
   }
 
   function showSyllabus(){
+    curLec = null; updateStep();
     mHere.textContent = 'Syllabus';
     clearExtras();
     navSyllabus.classList.add('active');
@@ -579,6 +629,7 @@
     panelSyllabus.classList.remove('active');
     panelLecture.classList.remove('active');
     extraNavs.forEach(el => el.classList.toggle('active', el.dataset.extra === id));
+    curLec = null; updateStep();
     const xn = extraNavs.filter(el => el.dataset.extra === id)[0]; if (xn) mHere.textContent = xn.textContent;
     const panel = document.getElementById('panel-x-' + id);
     if (panel){
@@ -589,7 +640,41 @@
     window.scrollTo(0, 0);
   }
 
+  // previous / next lecture, across weeks
+  const FLAT = [];
+  WEEKS_DATA.forEach((wk, wi) => wk.items.forEach((it, ii) => FLAT.push({ wi: wi, ii: ii, t: it.t, n: it.n })));
+  let curLec = null;
+  const lecPrev = document.getElementById('lec-prev'), lecNext = document.getElementById('lec-next'), mNext = document.getElementById('m-next');
+  const ARROW = {
+    left: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>',
+    right: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>'
+  };
+  function stepLabel(btn, text, f, dir) {
+    const num = f ? '<span class="ls-n">' + f.n + '</span>' : '';
+    btn.innerHTML = dir === 'left' ? ARROW.left + '<span>' + text + '</span>' + num : '<span>' + text + '</span>' + num + ARROW.right;
+    btn.disabled = !f;
+    btn.title = f ? f.n + '  ' + f.t : '';
+  }
+  function updateStep() {
+    const idx = curLec ? FLAT.findIndex(f => f.wi === curLec.wi && f.ii === curLec.ii) : -1;
+    const prev = idx > 0 ? FLAT[idx - 1] : null;
+    const next = idx >= 0 ? FLAT[idx + 1] || null : FLAT[0] || null;
+    stepLabel(lecPrev, 'Previous', prev, 'left');
+    stepLabel(lecNext, 'Next', next, 'right');
+    if (next) { mNext.hidden = false; mNext.innerHTML = (idx >= 0 ? 'Next' : 'Start') + ARROW.right; mNext.setAttribute('aria-label', (idx >= 0 ? 'Next lecture: ' : 'Start with ') + next.t); }
+    else mNext.hidden = true;
+  }
+  function goStep(d) {
+    const idx = curLec ? FLAT.findIndex(f => f.wi === curLec.wi && f.ii === curLec.ii) : -1;
+    const t = FLAT[idx + d] || (idx < 0 && d > 0 ? FLAT[0] : null);
+    if (t) selectLecture(t.wi, t.ii);
+  }
+  lecPrev.addEventListener('click', () => goStep(-1));
+  lecNext.addEventListener('click', () => goStep(1));
+  mNext.addEventListener('click', () => goStep(1));
+
   function selectLecture(wi, ii){
+    curLec = { wi: wi, ii: ii }; updateStep();
     const item = WEEKS_DATA[wi].items[ii];
     clearExtras();
     navDashboard.classList.remove('active');
@@ -616,7 +701,6 @@
       emptyOverlay.style.display = '';
     }
     let html = '';
-    if (item.v) html += `<a href="https://www.youtube.com/watch?v=${item.v}" target="_blank" rel="noopener">Watch on YouTube ↗</a>`;
     if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">View slide ↗</a>`;
     if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
     actions.innerHTML = html;
