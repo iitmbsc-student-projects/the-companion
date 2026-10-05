@@ -501,5 +501,9 @@
     "url": "https://tds.s-anand.net/"
    }
   }
- ]
+ ],
+ "course_site": {
+  "label": "Course website",
+  "url": "https://tds.s-anand.net/"
+ }
 }
