@@ -9,6 +9,9 @@ iitm-bs-hub.zip
 Degree Level - Course Link/
 Degree Level - Course Link (sorted)/
 Degree Playlist List.txt
+calendar.txt
+DBMS important live session info.txt
+Link for almost all resource.txt
 
 # OS junk
 .DS_Store
@@ -27,3 +30,4 @@ __pycache__/
 # Misc
 *.log
 *.tmp
+
