@@ -622,9 +622,15 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "Practice material for the Database Management Systems online proctored programming exam.",
+   "standfirst": "One online proctored programming exam with two chances: the first date, and the next weekend if you fail. It covers SQL (weeks 2 and 3) and Python-database connectivity (week 7) and is worth 20% of the final score.",
    "links_heading": "Practice and question banks",
    "links": [
+    {
+     "label": "Grading document, Sep 2026",
+     "url": "https://tiny.cc/IITM-GD",
+     "group": "Official",
+     "desc": "Find this course in the document for eligibility, dates and the full formula."
+    },
     {
      "url": "https://oppe.dev/",
      "label": "oppe.dev",
@@ -675,7 +681,8 @@
      "by": "NebulaTris",
      "by_url": "https://github.com/NebulaTris"
     }
-   ]
+   ],
+   "note": "Sep 2026 formula: T = 0.03 GAA2 + 0.02 GAA3 + 0.2 OPPE + 0.45 F + max(0.2 max(Qz1, Qz2), 0.10 Qz1 + 0.20 Qz2). For a course grade you need at least 35% in the OPPE and the Python-database connectivity question correct. If you are absent on the first date, you do not get the second chance."
   },
   {
    "id": "live",

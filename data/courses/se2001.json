@@ -29,10 +29,10 @@
    "auth": "iitm"
   },
   {
-   "label": "Grading policy document",
-   "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1#h.2p2csry:~:text=Total%20score%20T-,11.%20System%C2%A0commands%C2%A0(Diploma%20in%20programming),-Quiz%201%3A%20October",
+   "label": "Grading document, Sep 2026",
+   "url": "https://tiny.cc/IITM-GD",
    "group": "Course material",
-   "desc": "Opens at the System Commands grading section."
+   "desc": "Eligibility, dates and the formula for every course this term."
   },
   {
    "label": "Live sessions on YouTube",
@@ -532,17 +532,17 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "System Commands has an online proctored exam (OPPE) with a re-exam, worth 30% of the final score.",
+   "standfirst": "One online proctored exam on 20 Dec 2026, covering weeks 1 to 9, with a re-exam on 3 Jan 2027. It is worth 30% of the final score.",
    "links_heading": "Resources",
    "links": [
     {
-     "label": "Grading policy document",
-     "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1#h.2p2csry:~:text=Total%20score%20T-,11.%20System%C2%A0commands%C2%A0(Diploma%20in%20programming),-Quiz%201%3A%20October",
+     "label": "Grading document, Sep 2026",
+     "url": "https://tiny.cc/IITM-GD",
      "group": "Official",
-     "desc": "Opens at the System Commands grading section."
+     "desc": "Find this course in the document for eligibility, dates and the full formula."
     }
    ],
-   "note": "Formula from the grading document: T = 0.10 GAA + 0.2 Qz1 + 0.3 OPE + 0.3 F + 0.1 BPTA. No OPPE-specific question bank has been shared yet. If you have one, please send it in."
+   "note": "Sep 2026 formula: T = 0.05 GAA + 0.25 Qz1 + 0.3 OPPE + 0.3 F + 0.1 BPTA. You are eligible for the OPPE if the average of your first three BPTs is at least 40/100, and you need at least 40/100 in the OPPE for a course grade. If you are absent on 20 Dec, there is no second chance on 3 Jan. To be eligible for the re-exam you must score at least 20 in the OPPE and stay in the proctoring meet for 1 hour 30 minutes. No OPPE question bank has been shared for this course yet. If you have one, please send it in."
   }
  ]
 }
