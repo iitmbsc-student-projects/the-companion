@@ -71,10 +71,10 @@
   },
   {
    "label": "GNU/Linux commands notes",
-   "url": "https://github.com/prassr/gnu-linux-commands",
+   "url": "https://github.com/prassr/gnu-linux-commands/",
    "group": "Notes",
    "desc": "Week-wise content may not match the current course structure.",
-   "by": "prassr",
+   "by": "Sanjay Kumar",
    "by_url": "https://github.com/prassr"
   },
   {
@@ -93,10 +93,10 @@
    "by_url": "https://github.com/cheriangeorge"
   },
   {
-   "label": "Navigating Linux",
-   "url": "https://drive.google.com/drive/folders/1NZBmJYwtCreV-HCminQGxUZTYxa6zRKv",
+   "label": "Navigating Linux, in-house reference book",
+   "url": "https://drive.google.com/drive/folders/1NZBmJYwtCreV-HCminQGxUZTYxa6zRKv?usp=drive_link",
    "group": "Books",
-   "desc": "Book on using Linux, in a Drive folder.",
+   "desc": "The reference book for the course. Feedback and topic requests are welcome.",
    "auth": "iitm"
   },
   {
@@ -140,7 +140,7 @@
    "label": "RobertElderSoftware shorts",
    "url": "https://www.youtube.com/@RobertElderSoftware/shorts",
    "group": "Tools and references",
-   "desc": "Short videos on coreutils."
+   "desc": "Quick summaries of common GNU coreutils."
   },
   {
    "label": "BRE vs ERE",
@@ -161,12 +161,74 @@
    "desc": "Paste a command and see what each part does."
   },
   {
-   "label": "SE2001 notes and PYQ repository",
+   "label": "PYQ papers, with errors corrected",
    "url": "https://github.com/hashkrish/se2001-notes",
    "group": "Previous year questions",
-   "desc": "Repository with previous year questions.",
+   "desc": "Repository of previous year papers with errors fixed.",
    "by": "hashkrish",
    "by_url": "https://github.com/hashkrish"
+  },
+  {
+   "label": "Weekwise slides (updated)",
+   "url": "https://drive.google.com/drive/folders/10b0CAda1KeNQO8tFEq9tG672XFAJdJI2?usp=drive_link",
+   "group": "Course material",
+   "desc": "Updated slides for every week.",
+   "auth": "iitm",
+   "by": "Sayan"
+  },
+  {
+   "label": "Weekwise transcripts (updated)",
+   "url": "https://drive.google.com/drive/folders/1LuZcEqjVWDLolm0oUb-i2RU7f-sb6m5J?usp=drive_link",
+   "group": "Course material",
+   "desc": "Updated transcripts for every week.",
+   "auth": "iitm",
+   "by": "Sayan"
+  },
+  {
+   "label": "Regular expressions, detailed book",
+   "url": "https://gotellilab.github.io/Bio381/Scripts/Feb07/RegularExpressionsTutorial.pdf",
+   "group": "Books",
+   "desc": "A long tutorial on regular expressions (PDF)."
+  },
+  {
+   "label": "Visualize regex",
+   "url": "https://blog.robertelder.org/regular-expression-visualizer/",
+   "group": "Tools and references",
+   "desc": "See how a regular expression is read, step by step."
+  },
+  {
+   "label": "Common regex mistakes to avoid",
+   "url": "https://blog.robertelder.org/top-5-grep-mistakes/",
+   "group": "Tools and references",
+   "desc": "The top grep mistakes and how to avoid them."
+  },
+  {
+   "label": "What is SSH? Theory and networking",
+   "url": "https://youtu.be/JdipMsqnjVo",
+   "group": "Revision videos",
+   "desc": "Explains SSH and the networking behind it.",
+   "by": "Sayan"
+  },
+  {
+   "label": "Entire regex revision session",
+   "url": "https://www.youtube.com/watch?v=oIjhcqZMEzU&list=PLLuZiiAWg2wp6O0cmFBAzVUmEcI8Mwo1j&index=7&pp=iAQB",
+   "group": "Revision videos",
+   "desc": "Full revision of regular expressions.",
+   "by": "Sayan"
+  },
+  {
+   "label": "Quiz 1 PYQ discussion, 23T2 and 23T3",
+   "url": "https://www.youtube.com/watch?v=FZAO0PZGIVM&list=PLLuZiiAWg2wp6O0cmFBAzVUmEcI8Mwo1j&index=2&pp=iAQB",
+   "group": "Previous year questions",
+   "desc": "Discussion of the Quiz 1 papers from 23T2 and 23T3.",
+   "by": "Sayan"
+  },
+  {
+   "label": "Quiz 1 PYQ discussion, 24T1",
+   "url": "https://www.youtube.com/watch?v=pYsjqWyn184&list=PLLuZiiAWg2wpuU7vVNIbQPtEYoSvqQFY-&index=2",
+   "group": "Previous year questions",
+   "desc": "Discussion of the Quiz 1 paper from 24T1.",
+   "by": "Sayan"
   }
  ],
  "resources_note": "",
