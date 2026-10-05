@@ -74,6 +74,22 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes and guides"
+  },
+  {
+   "label": "MAD 1 resources website",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/docs/mad1",
+   "group": "Notes and guides",
+   "desc": "Notes, guides and video lectures for Flask, Jinja2, SQL, APIs and more.",
+   "by": "Shrikrishna Pandey",
+   "by_url": "https://github.com/shrikrishna97"
+  },
+  {
+   "label": "Setup guides",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/",
+   "group": "Notes and guides",
+   "desc": "GitHub, VS Code, WSL, Python virtual environments and installation help, linked from the home page.",
+   "by": "Shrikrishna Pandey",
+   "by_url": "https://github.com/shrikrishna97"
   }
  ],
  "resources_note": "",

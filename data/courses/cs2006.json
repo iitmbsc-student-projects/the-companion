@@ -44,6 +44,22 @@
    "desc": "Written notes for the Modern Application Development 2 course.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MAD 2 resources website",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/docs/mad2",
+   "group": "Notes",
+   "desc": "Notes, guides and video lectures for Vue.js, Celery, Redis, JWT and more.",
+   "by": "Shrikrishna Pandey",
+   "by_url": "https://github.com/shrikrishna97"
+  },
+  {
+   "label": "MAD 2 course playlist",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87Nq6mkCp6tIBu8Caj5UdJC0B",
+   "group": "Notes",
+   "desc": "Video lectures playlist.",
+   "by": "Shrikrishna Pandey",
+   "by_url": "https://github.com/shrikrishna97"
   }
  ],
  "resources_note": "",

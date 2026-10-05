@@ -43,5 +43,23 @@
    "url": "https://youtube.com/playlist?list=PLZVf4uJM87NpoEVQtoSuwipenoKZVN1b_&si=2VZ1jJsYRaR6EMhf",
    "label": "MAD 2 Project Sessions — Sep 2025"
   }
+ ],
+ "resources": [
+  {
+   "label": "MAD 2 project guides",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/docs/mad2-project",
+   "group": "Project help",
+   "desc": "Full-stack setup: backend, frontend and deployment.",
+   "by": "Shrikrishna Pandey",
+   "by_url": "https://github.com/shrikrishna97"
+  },
+  {
+   "label": "MAD 2 project session playlist",
+   "url": "https://youtube.com/playlist?list=PLZVf4uJM87NqD3YknIXUMjwfC2okBHgMI",
+   "group": "Project help",
+   "desc": "Recorded project sessions.",
+   "by": "Shrikrishna Pandey",
+   "by_url": "https://github.com/shrikrishna97"
+  }
  ]
 }

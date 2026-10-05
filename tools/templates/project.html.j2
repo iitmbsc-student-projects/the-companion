@@ -1,3 +1,4 @@
+{% from "_reslist_macro.j2" import reslist %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -116,6 +117,7 @@
 
   footer.colophon{margin-top:70px;padding:24px 0 40px;border-top:3px double var(--ink);
     text-align:center;font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--ink-2)}
+{% include "_reslist_css.j2" %}
 </style>
 </head>
 <body>
@@ -147,6 +149,9 @@
       <li><a href="#milestones">Milestones</a><span class="p">§ 2</span></li>
       <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
       <li><a href="#sessions">Project Sessions</a><span class="p">§ 4</span></li>
+{%- if resources %}
+      <li><a href="#resources">Resources</a><span class="p">§ 5</span></li>
+{%- endif %}
     </ol>
   </div>
 
@@ -193,6 +198,13 @@
       </tbody>
     </table>
   </section>
+{%- if resources %}
+
+  <section class="chapter" id="resources">
+    <h2><span class="num">§ 5</span>Resources</h2>
+{{ reslist(resources) }}
+  </section>
+{%- endif %}
 </div>
 
 <footer class="colophon">
