@@ -117,6 +117,31 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "Vectors in NumPy",
+   "url": "https://colab.research.google.com/drive/13BwuQmgillEYbqfRBxtpFwv07olRxxaR",
+   "group": "NumPy practice",
+   "desc": "Colab notebook on working with vectors."
+  },
+  {
+   "label": "Matrices in NumPy",
+   "url": "https://colab.research.google.com/drive/1ZqJIS0BnbpHo6RofWkXTilRkEdmdQ4dH",
+   "group": "NumPy practice",
+   "desc": "Colab notebook on working with matrices."
+  },
+  {
+   "label": "More on NumPy arrays",
+   "url": "https://colab.research.google.com/drive/1kn9OrihGePy8qFFJSSic6wDuVzYk9FqU",
+   "group": "NumPy practice",
+   "desc": "Colab notebook with further array operations."
+  },
+  {
+   "label": "Introduction to NumPy and Matplotlib",
+   "url": "https://www.youtube.com/playlist?list=PLnr10Udg0KnQaYhq8v-SUUCUP8NLwPTVN",
+   "group": "NumPy practice",
+   "desc": "Highly recommended lecture playlist.",
+   "by": "Karthik"
   }
  ],
  "resources_note": "",
