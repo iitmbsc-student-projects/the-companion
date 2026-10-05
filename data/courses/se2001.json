@@ -22,6 +22,31 @@
    "group": "Course material"
   },
   {
+   "label": "Course portal",
+   "url": "https://seek.study.iitm.ac.in/courses/ns_25t3_se2001",
+   "group": "Course material",
+   "desc": "Direct link to the course on the study portal.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Grading policy document",
+   "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1#h.2p2csry:~:text=Total%20score%20T-,11.%20System%C2%A0commands%C2%A0(Diploma%20in%20programming),-Quiz%201%3A%20October",
+   "group": "Course material",
+   "desc": "Opens at the System Commands grading section."
+  },
+  {
+   "label": "Live sessions on YouTube",
+   "url": "https://www.youtube.com/@BSSE2001/streams",
+   "group": "Course material",
+   "desc": "Recordings of the live sessions."
+  },
+  {
+   "label": "Course playlist",
+   "url": "https://www.youtube.com/playlist?list=PLLuZiiAWg2wqf0TXCVYWJW8dtdt2bFao1",
+   "group": "Course material",
+   "desc": "Lecture videos in one playlist."
+  },
+  {
    "label": "Course notes",
    "url": "https://www.iitmbsdegree.in/notes/system-commands",
    "desc": "Notes and study material for this course.",
@@ -36,6 +61,112 @@
    "desc": "Written notes for the System Commands course.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Notes by Rishi Patel",
+   "url": "https://rishi-2893.notion.site/System-Commands-3653481fd6ef4e7babe9cf223bd107bd",
+   "group": "Notes",
+   "desc": "Week-wise content may not match the current course structure.",
+   "by": "Rishi Patel"
+  },
+  {
+   "label": "GNU/Linux commands notes",
+   "url": "https://github.com/prassr/gnu-linux-commands",
+   "group": "Notes",
+   "desc": "Week-wise content may not match the current course structure.",
+   "by": "prassr",
+   "by_url": "https://github.com/prassr"
+  },
+  {
+   "label": "Notes by Pandey",
+   "url": "https://spangle-curio-e94.notion.site/System-Commands-702a5e5aca064798a8757dcf8d7f3e33",
+   "group": "Notes",
+   "desc": "Week-wise content may not match the current course structure.",
+   "by": "Pandey"
+  },
+  {
+   "label": "System Commands course notes",
+   "url": "https://github.com/cheriangeorge/System-Commands-course",
+   "group": "Notes",
+   "desc": "Notes and files for the whole course.",
+   "by": "Cherian George",
+   "by_url": "https://github.com/cheriangeorge"
+  },
+  {
+   "label": "Navigating Linux",
+   "url": "https://drive.google.com/drive/folders/1NZBmJYwtCreV-HCminQGxUZTYxa6zRKv",
+   "group": "Books",
+   "desc": "Book on using Linux, in a Drive folder.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Bash cheat sheet",
+   "url": "https://devhints.io/bash",
+   "group": "Cheat sheets"
+  },
+  {
+   "label": "Vim cheat sheet",
+   "url": "https://vim.rtorr.com/",
+   "group": "Cheat sheets"
+  },
+  {
+   "label": "Regular expressions (sed manual)",
+   "url": "https://www.gnu.org/software/sed/manual/html_node/sed-regular-expressions.html#sed-regular-expressions",
+   "group": "Cheat sheets",
+   "desc": "Also available inside the VM with info sed and info grep."
+  },
+  {
+   "label": "Sed cheat sheet 1",
+   "url": "https://quickref.me/sed.html",
+   "group": "Cheat sheets"
+  },
+  {
+   "label": "Sed cheat sheet 2",
+   "url": "https://gist.github.com/ssstonebraker/6140154",
+   "group": "Cheat sheets"
+  },
+  {
+   "label": "Awk cheat sheet",
+   "url": "https://quickref.me/awk.html",
+   "group": "Cheat sheets"
+  },
+  {
+   "label": "Jan 2024 sessions and resources",
+   "url": "https://docs.google.com/spreadsheets/d/1ioYzV_Y8hmZVvrCJbOltVJXOMwFFjnmjw_efsmjYZ-Q/edit?usp=sharing",
+   "group": "Live sessions",
+   "desc": "Sessions, links, recordings and resources, with the old and new course structure compared."
+  },
+  {
+   "label": "RobertElderSoftware shorts",
+   "url": "https://www.youtube.com/@RobertElderSoftware/shorts",
+   "group": "Tools and references",
+   "desc": "Short videos on coreutils."
+  },
+  {
+   "label": "BRE vs ERE",
+   "url": "https://www.gnu.org/software/sed/manual/html_node/BRE-vs-ERE.html",
+   "group": "Tools and references",
+   "desc": "Basic and extended regular expressions compared."
+  },
+  {
+   "label": "Regexr",
+   "url": "https://regexr.com",
+   "group": "Tools and references",
+   "desc": "Build and test regular expressions."
+  },
+  {
+   "label": "Explainshell",
+   "url": "https://www.explainshell.com",
+   "group": "Tools and references",
+   "desc": "Paste a command and see what each part does."
+  },
+  {
+   "label": "SE2001 notes and PYQ repository",
+   "url": "https://github.com/hashkrish/se2001-notes",
+   "group": "Previous year questions",
+   "desc": "Repository with previous year questions.",
+   "by": "hashkrish",
+   "by_url": "https://github.com/hashkrish"
   }
  ],
  "resources_note": "",
