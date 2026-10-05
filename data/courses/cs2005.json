@@ -82,29 +82,11 @@
    "desc": "Questions on function overloading, getters and setters, and copy constructors."
   },
   {
-   "label": "HackerRank Java practice",
-   "url": "https://www.hackerrank.com/java-practice-programming-questions",
-   "group": "Code and practice",
-   "desc": "Competition used for OPPE 1 practice."
-  },
-  {
    "label": "Concept-wise PYQs, last 6 terms",
    "url": "https://drive.google.com/file/d/17MXL6KY-QLHThVJk478KN_Rm8RnMgL_g/view?usp=sharing",
    "group": "Previous year questions",
    "desc": "Questions grouped by concept, with exam analysis, repetition analysis and short notes.",
    "by": "Abhishek Guru"
-  },
-  {
-   "label": "OPPE 1 resources",
-   "url": "https://drive.google.com/drive/folders/1edymaYiafFQTX1aeq2RHP8d0sQ87m7Kj?usp=sharing",
-   "group": "OPPE",
-   "desc": "Past OPPE 1 questions and a practice set."
-  },
-  {
-   "label": "OPPE 2 resources",
-   "url": "https://drive.google.com/drive/folders/1VlUo5ZmIYJyRycTzyKV-nLt8hp5fWkMv",
-   "group": "OPPE",
-   "desc": "Practice material for OPPE 2."
   }
  ],
  "resources_note": "",
@@ -790,6 +772,39 @@
      "desc": "More end term papers."
     }
    ]
+  },
+  {
+   "id": "oppe",
+   "label": "OPPE",
+   "standfirst": "Programming Concepts using Java has two online proctored programming exams, counted as PE1 and PE2 in the grading document. The better one is worth 20% and the other 10%.",
+   "links_heading": "Practice and past questions",
+   "links": [
+    {
+     "label": "Grading policy document",
+     "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1",
+     "group": "Official",
+     "desc": "Find this course in the grading document for the exam dates and the full formula."
+    },
+    {
+     "label": "HackerRank Java practice",
+     "url": "https://www.hackerrank.com/java-practice-programming-questions",
+     "group": "Practice",
+     "desc": "Competition used for OPPE 1 practice."
+    },
+    {
+     "label": "OPPE 1 resources",
+     "url": "https://drive.google.com/drive/folders/1edymaYiafFQTX1aeq2RHP8d0sQ87m7Kj?usp=sharing",
+     "group": "OPPE 1",
+     "desc": "Past OPPE 1 questions and a practice set."
+    },
+    {
+     "label": "OPPE 2 resources",
+     "url": "https://drive.google.com/drive/folders/1VlUo5ZmIYJyRycTzyKV-nLt8hp5fWkMv",
+     "group": "OPPE 2",
+     "desc": "Practice material for OPPE 2."
+    }
+   ],
+   "note": "Formula from the grading document: T = 0.1 GAA + 0.3 F + 0.2 max(PE1, PE2) + 0.10 min(PE1, PE2) + max(0.25 max(Qz1, Qz2), 0.15 Qz1 + 0.25 Qz2)."
   }
  ]
 }

@@ -871,5 +871,22 @@
     }
    ]
   }
+ ],
+ "extra_tabs": [
+  {
+   "id": "oppe",
+   "label": "OPPE",
+   "standfirst": "Machine Learning Practice has two online proctored programming exams, OPPE 1 and OPPE 2, worth 20% each of the final score.",
+   "links_heading": "Resources",
+   "links": [
+    {
+     "label": "Grading policy document",
+     "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1",
+     "group": "Official",
+     "desc": "Find this course in the grading document for the exam dates and the full formula."
+    }
+   ],
+   "note": "Formula from the grading document: T = 0.1 GAA + 0.30 F + 0.20 OPPE1 + 0.20 OPPE2 + 0.20 KA. No OPPE-specific question bank has been shared yet. If you have one, please send it in."
+  }
  ]
 }
