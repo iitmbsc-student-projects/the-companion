@@ -109,6 +109,20 @@
    "group": "NumPy practice",
    "desc": "Highly recommended lecture playlist.",
    "by": "Karthik"
+  },
+  {
+   "label": "MLT notes (Sherry's site)",
+   "url": "https://bsc-iitm.github.io/MLT_notes/",
+   "group": "Notes",
+   "desc": "Full course notes.",
+   "by": "Sherry Thomas"
+  },
+  {
+   "label": "MLT notes (Karthik's site)",
+   "url": "https://karthik-iitm.github.io/MLT/",
+   "group": "Notes",
+   "desc": "Full course notes.",
+   "by": "Karthik Thiagarajan"
   }
  ],
  "resources_note": "",
