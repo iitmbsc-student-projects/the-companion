@@ -422,7 +422,9 @@
       {%- if t.embed and t.embed.url %}
 
       <section class="chapter">
+        {%- if not t.embed.no_heading %}
         <h2><span class="num">§ {{ 2 if t.links else 1 }}</span>{{ t.embed.title or t.label }}</h2>
+        {%- endif %}
         {%- if t.embed.note %}
         <p class="tbd-note" style="margin-bottom:10px">{{ t.embed.note|safe }}</p>
         {%- endif %}
