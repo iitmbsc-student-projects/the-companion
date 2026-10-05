@@ -44,6 +44,46 @@
    "desc": "Written notes for the Machine Learning Techniques course.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MLT concept notes",
+   "url": "https://drive.google.com/drive/folders/1oQVRneEFJCQTxQfhTyQ08UmfobwCc2LV?usp=drive_link",
+   "group": "Notes",
+   "desc": "Concept-wise notes in a Drive folder.",
+   "by": "Srinivasan"
+  },
+  {
+   "label": "MLT course FAQs",
+   "url": "https://mlt.pulki.in/",
+   "group": "Notes",
+   "desc": "Answers to common questions about the course.",
+   "by": "Pulkit Mangal"
+  },
+  {
+   "label": "MLT weekwise PYQs",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/mlt-week-wise-pyqs/216574",
+   "group": "Previous year questions",
+   "desc": "Past questions sorted by week.",
+   "by": "Preethy Parthasarathy"
+  },
+  {
+   "label": "MLT weekwise practice questions",
+   "url": "https://shiva-yadav-ds.github.io/MLT_weekwise_questions/",
+   "group": "Practice",
+   "desc": "Practice questions for every week.",
+   "by": "Shiva Yadav"
+  },
+  {
+   "label": "Practice questions thread",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/mlt-week-wise-practice-questions/216654",
+   "group": "Practice",
+   "desc": "Discussion thread for the weekwise practice questions."
+  },
+  {
+   "label": "MLT TA sessions, T2 2026",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/mlt-ta-sessions-t2-2026/206247",
+   "group": "TA resources",
+   "desc": "Recordings and materials from the TA sessions."
   }
  ],
  "resources_note": "",
@@ -675,6 +715,161 @@
      "t": "Summary of the course and future directions",
      "v": "06PP-3xUCs0",
      "s": null
+    }
+   ]
+  }
+ ],
+ "extra_tabs": [
+  {
+   "id": "weekly",
+   "label": "Weekly notes",
+   "standfirst": "Week-wise lecture notes and activity question solutions for Weeks 1 to 12, shared by Piush Das (MLT TA, T1 and T2 2025).",
+   "links_heading": "Notes and solutions",
+   "links": [
+    {
+     "label": "Week 1: Principal Component Analysis",
+     "url": "https://drive.google.com/file/d/1sg46N6yniVqUOCL8vfYMQ-AMs-C0SqkV/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Dimensionality reduction, variance maximisation and eigen decomposition."
+    },
+    {
+     "label": "Week 2: Kernel PCA",
+     "url": "https://drive.google.com/file/d/1WX6d6dUh2VkHmR8uT5mFk_QxjhIaiiVK/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Non-linear PCA with kernels, the kernel trick and the Gram matrix."
+    },
+    {
+     "label": "Week 3: Clustering",
+     "url": "https://drive.google.com/file/d/1zwbU0QOlPEj4Y9_yhV7j7zKGeMFxusVg/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "K-means, Lloyd's algorithm and K-means++."
+    },
+    {
+     "label": "Week 4: Expectation-Maximization",
+     "url": "https://drive.google.com/file/d/12njrKAUEnPmI0u2n6zLE1xmk5Pi3ZRIQ/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "GMMs, E-step and M-step derivations, and log-likelihood optimisation."
+    },
+    {
+     "label": "Week 5: Linear Regression",
+     "url": "https://drive.google.com/file/d/1Xk9CjT-8pt8SyVVQauDhxO7ej_kFvZZD/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Least squares estimation and gradient descent updates."
+    },
+    {
+     "label": "Week 6: Regularisation",
+     "url": "https://drive.google.com/file/d/1ezKp5agaE3yRcUBR1xc3CxttBc4LJXIn/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Ridge (L2) and Lasso (L1) regularisation, and the Bayesian view."
+    },
+    {
+     "label": "Week 7: KNN and Decision Trees",
+     "url": "https://drive.google.com/file/d/1pU5cEB7li75egK-PL7-w7Wb_dLJA-a8_/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Nearest neighbours, distance-based classification, entropy and tree construction."
+    },
+    {
+     "label": "Week 8: Naive Bayes",
+     "url": "https://drive.google.com/file/d/16mv0Qcr8mtjDOdXQeACk8TxhyRyFV-F7/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Bayes' theorem, conditional independence and Gaussian naive Bayes."
+    },
+    {
+     "label": "Week 9: Perceptron and Logistic Regression",
+     "url": "https://drive.google.com/file/d/1m3CzKmTSI-AxXhrF0pCHK-O_KBkroEjt/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Linear classifiers, perceptron convergence and logistic regression."
+    },
+    {
+     "label": "Week 10: SVM hard margin",
+     "url": "https://drive.google.com/file/d/1HaRodWLSF8K1c3HDA__8mXZpMnBYwGXE/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Maximum margin classification, separating hyperplanes and support vectors."
+    },
+    {
+     "label": "Week 11: SVM soft margin and ensembles",
+     "url": "https://drive.google.com/file/d/1nqev_1l9DFMe5NgM3lOmIRA3IpzSUga3/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Slack variables, regularisation in SVMs, bagging and boosting."
+    },
+    {
+     "label": "Week 12: Loss functions and ANN",
+     "url": "https://drive.google.com/file/d/1mpz09i4BQbFlvqlIuyZV8OeqNv8CKJmC/view?usp=sharing",
+     "group": "Lecture notes",
+     "desc": "Loss functions, convex surrogates to 0-1 loss and the basics of neural networks."
+    },
+    {
+     "label": "Week 1: PCA solution",
+     "url": "https://drive.google.com/file/d/1Qh8KyWnzikAAg7qY2rYVRG3vLp0or0Ig/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 2: Kernel PCA solution",
+     "url": "https://drive.google.com/file/d/1vAFcrzqtdRXmLkgIVA33CrIY41jEQJ3D/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 3: Clustering solution",
+     "url": "https://drive.google.com/file/d/1BMJyVOD8g-_zgNpTqRLLH5keHPDq8dH2/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 4: MLE and EM solution",
+     "url": "https://drive.google.com/file/d/1wSDwD_35j1j1qqC1wDkDqyF5f8ASsbWP/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 5: Linear Regression solution",
+     "url": "https://drive.google.com/file/d/1ZOrNKpE4O5e3sMhRJ8AzJ4fXwh1JoZ-I/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 6: Regularisation solution",
+     "url": "https://drive.google.com/file/d/1zy2awqqxK4W2l3L64aL9w_aAX6i1iGA9/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 7: KNN and Decision Tree solution",
+     "url": "https://drive.google.com/file/d/13qzllHEuAvWTr60nF6zuDdYnofltuQ81/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 8: Naive Bayes solution",
+     "url": "https://drive.google.com/file/d/17KZMw1BkHcRjfB_cdiLbFf4YIkWKePg5/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 11: session instead of a solution",
+     "url": "https://drive.google.com/file/d/1IFWrqA72rInhUY5t1LJ54NOv9BYAYMRk/view",
+     "group": "Activity question solutions",
+     "desc": "There is no solution PDF for Week 11. Refer to this session."
+    },
+    {
+     "label": "Week 9: Perceptron solution",
+     "url": "https://drive.google.com/file/d/11qRyu8JlLhqa0xb2iMecOOJCDNtahri3/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 10: SVM solution",
+     "url": "https://drive.google.com/file/d/1nqev_1l9DFMe5NgM3lOmIRA3IpzSUga3/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Week 12: Loss Function and ANN solution",
+     "url": "https://drive.google.com/file/d/1UU5UsyVD-TexDx9_-_PTe6ocEUPFbBXK/view?usp=sharing",
+     "group": "Activity question solutions"
+    },
+    {
+     "label": "Consolidated solutions, Weeks 1 to 8",
+     "url": "https://drive.google.com/drive/folders/1MjzA3agNMOXJwh7BC8303HH1ijC8xScw?usp=sharing",
+     "group": "Question compilations",
+     "desc": "Weekwise question compilation with solutions."
+    },
+    {
+     "label": "End term paper, detailed solution",
+     "url": "https://drive.google.com/file/d/1utyVpTWbU0zkuRQ_nrCqa-UGbtI2o0hJ/view?usp=drive_link",
+     "group": "Question compilations",
+     "desc": "Worked solution covering Weeks 1 to 12."
     }
    ]
   }
