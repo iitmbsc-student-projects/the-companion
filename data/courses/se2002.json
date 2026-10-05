@@ -498,7 +498,8 @@
    "standfirst": "The Tools in Data Science course website, shown here so you can read it without leaving the page.",
    "embed": {
     "title": "Tools in Data Science",
-    "url": "https://tds.s-anand.net/"
+    "url": "https://tds.s-anand.net/",
+    "no_heading": true
    },
    "button": {
     "label": "Open course website",
