@@ -53,7 +53,8 @@
    "label": "TA sessions, May 2026 term",
    "url": "https://docs.google.com/spreadsheets/d/1ND-aezGXTbzi3EzfaXB81aMGHPyqGsxw9M34pZvlusQ/edit?gid=0#gid=0",
    "group": "TA resources",
-   "desc": "Sheet of the Java TA sessions held in the May 2026 term."
+   "desc": "Sheet of the Java TA sessions held in the May 2026 term.",
+   "auth": "iitm"
   },
   {
    "label": "TA session materials",

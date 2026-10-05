@@ -56,6 +56,12 @@
    "group": "Course material"
   },
   {
+   "label": "Lecture and tutorial videos with slides (Google Sheet)",
+   "url": "https://docs.google.com/spreadsheets/d/1ZwaAEcypPi5MFmjrzfqH_FrubS0o40bxHXDhWcXO8VE/edit",
+   "group": "Course material",
+   "desc": "Every week's lecture and tutorial video, with the slides."
+  },
+  {
    "label": "Course notes",
    "url": "https://www.iitmbsdegree.in/notes/maths-2",
    "desc": "Notes and study material for this course.",
@@ -72,12 +78,120 @@
    "by_url": "https://medium.com/@prathambhalla7"
   },
   {
+   "label": "Maths 2 notes, May 2024",
+   "url": "https://drive.google.com/drive/folders/1XZgCWEb_nz6xLyQENB7NIXjyghCU8a3_",
+   "group": "Notes",
+   "desc": "Notes from the May 2024 term.",
+   "by": "Course team"
+  },
+  {
+   "label": "Week-wise question bank",
+   "url": "https://drive.google.com/drive/folders/16vvboLqwnOxT0vHpSZlGWRG-owv8qjim",
+   "group": "Practice",
+   "desc": "Questions from quizzes and end terms, sorted by week. Updated up to the Jan 2024 Quiz 1."
+  },
+  {
+   "label": "Practice assignment solution videos",
+   "url": "https://www.youtube.com/playlist?list=PLI8SHr6ko8IokrSnKKBSBSrH8O7Q9v2g0",
+   "group": "Practice",
+   "desc": "Video solutions for the practice assignments."
+  },
+  {
+   "label": "Practice questions, Weeks 5 and 6",
+   "url": "https://drive.google.com/file/d/1caVoLh_E1ZU622B3_hLLvq4QptyA3TMz/view",
+   "group": "Practice",
+   "desc": "Frequently asked questions for Weeks 5 and 6."
+  },
+  {
+   "label": "Week 8 concepts",
+   "url": "https://drive.google.com/file/d/1p_Jb8O8eJIr6apPYzj3Am3dh8LqsOVyM/view",
+   "group": "Practice",
+   "desc": "Orthogonal transformation, orthogonal matrix and rotation matrix."
+  },
+  {
+   "label": "A glance at Week 8",
+   "url": "https://drive.google.com/file/d/1ygmqnsfAkRhQIf6c4W1gdPeSaRjbmy4L/view",
+   "group": "Practice",
+   "desc": "A short overview of Week 8.",
+   "by": "Aradhana"
+  },
+  {
+   "label": "Recall of single variable calculus",
+   "url": "https://drive.google.com/file/d/117x8nCbTkpqHx5vytPXaxvEwnHMRFmXz/view",
+   "group": "Practice",
+   "desc": "A refresher before the calculus weeks."
+  },
+  {
+   "label": "Linear algebra practice problems",
+   "url": "https://drive.google.com/file/d/1-Wa7gZgmrneCP0wNcE-YCxYvOJazdZ-t/view",
+   "group": "Practice",
+   "desc": "Extra problems on linear algebra."
+  },
+  {
+   "label": "Quick review of limits and continuity",
+   "url": "https://drive.google.com/file/d/1M3KD1s0rBRCuoXw1azFFHBe1CimikG6R/view",
+   "group": "Practice",
+   "desc": "A short review of limits and continuity."
+  },
+  {
+   "label": "Extra questions on global maxima and minima",
+   "url": "https://drive.google.com/file/d/1ic7SXnpEyW8vD75kSPzLaUKziLpkb4pW/view",
+   "group": "Practice",
+   "desc": "More questions on global maxima and minima."
+  },
+  {
+   "label": "Linear Algebra by Friedberg",
+   "url": "https://drive.google.com/file/d/17i2nSjWqzq0QsEzq40PocXSloHyQoQro/view",
+   "group": "Books",
+   "desc": "Friedberg, Insel and Spence, as a PDF."
+  },
+  {
+   "label": "TA sessions, 23T3",
+   "url": "https://drive.google.com/drive/folders/1a-ZK-5UiBIDNz3NjYZIzTixVp_y_WAEA",
+   "group": "TA resources",
+   "desc": "Recordings and material from the 23T3 TA sessions."
+  },
+  {
+   "label": "Old question paper discussion sessions (Google Sheet)",
+   "url": "https://docs.google.com/spreadsheets/d/1oq4hh6VX4YrUR1zRVgMFetqb9RNrGiSBqLO37ytIM_A/edit",
+   "group": "TA resources",
+   "desc": "PDFs and videos from the TA sessions that discussed old question papers.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Quiz 1 quick revision guide",
+   "url": "https://drive.google.com/file/d/1aIK5IEIzTiewh31H44RFPHa9zMMv3KAd/view",
+   "group": "Revision guides",
+   "desc": "A short revision guide for Quiz 1.",
+   "by": "Ajai Krishna"
+  },
+  {
+   "label": "Quiz 2 quick revision guide",
+   "url": "https://drive.google.com/file/d/1mbPbFKRRQ2LdQelTe1w-xej3KZGy1P29/view",
+   "group": "Revision guides",
+   "desc": "A short revision guide for Quiz 2.",
+   "by": "Ajai Krishna"
+  },
+  {
+   "label": "End term quick revision guide",
+   "url": "https://drive.google.com/file/d/1a5Zlh6JuGkkmdSjUSNlLZe8OQVKYawEa/view",
+   "group": "Revision guides",
+   "desc": "A short revision guide for the end term.",
+   "by": "Ajai Krishna"
+  },
+  {
    "label": "Foundation previous term papers",
    "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-courses-previous-term-question-papers-with-answer-key-f5fe7b909b04",
    "group": "Previous year questions",
    "desc": "Past quizzes and end term papers with answer keys, for all foundation courses.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Previous year question sheet",
+   "url": "https://docs.google.com/spreadsheets/d/1x5KAXRlvZLvRjrRfIxFWuNpc8wwboLc21PpYKn8Fv90/edit",
+   "group": "Previous year questions",
+   "desc": "A sheet that links to past papers."
   }
  ],
  "resources_note": "",

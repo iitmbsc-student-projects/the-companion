@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mathematics for Data Science I — The Companion</title>
-<link rel="stylesheet" href="../assets/theme.css?v=225b80af">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/theme.css?v=5264f0b8">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
   .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
     font-weight:600;border-left:3px solid transparent}
   .nav-item:hover{background:var(--tint)}
-  .nav-item.active{background:var(--accent);color:var(--on-accent);border-left-color:var(--accent-2)}
+  .nav-item.active{background:var(--accent-fill);color:var(--on-fill);border-left-color:var(--accent-2)}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -87,8 +87,8 @@
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
   .lecture-item:hover{background:var(--tint)}
-  .lecture-item.active{background:var(--accent);color:var(--on-accent)}
-  .lecture-item.active .lnum{color:var(--on-accent-2)}
+  .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
+  .lecture-item.active .lnum{color:var(--on-fill-2)}
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
@@ -104,7 +104,7 @@
     background:var(--paper-2);color:var(--ink-2);border:1px solid var(--rule);border-radius:50%;
     transition:left .22s ease,background .15s ease,color .15s,border-color .15s,transform .15s}
   .sidebar-toggle svg{width:16px;height:16px}
-  .sidebar-toggle:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+  .sidebar-toggle:hover{background:var(--accent-fill);color:var(--on-fill);border-color:var(--accent-fill)}
   .sidebar-toggle:active{transform:scale(.92)}
   .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
@@ -130,7 +130,7 @@
     background:var(--ink);color:var(--paper);border:1px solid var(--ink);text-decoration:none;
     font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
     transition:background .15s,border-color .15s,color .15s}
-  .site-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+  .site-btn:hover{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
   .site-btn svg{width:13px;height:13px}
   .meta-line span{margin:0}
   .meta-line b{color:var(--ink);font-weight:500}
@@ -244,8 +244,23 @@
   .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.1em;text-transform:uppercase}
 
-  footer.colophon{margin-top:32px;margin-left:300px;padding:16px 0 22px;border-top:3px double var(--ink);
-    text-align:center;font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--ink-2)}
+  footer.colophon{margin-left:300px}
+  /* ---- page footer ---- */
+  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'Inter',sans-serif;font-style:normal}
+  footer.colophon .co-in{max-width:900px;margin:0 auto;padding:22px 28px 30px}
+  footer.colophon .co-note{display:flex;align-items:flex-start;gap:12px;margin:0 0 20px;padding:12px 16px;
+    border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
+    font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+  footer.colophon .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
+    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Fraunces',serif}
+  footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
+  footer.colophon .co-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--ink)}
+  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase}
+  footer.colophon .co-nav a{color:var(--ink-2);border:none}
+  footer.colophon .co-nav a:hover{color:var(--accent)}
+  footer.colophon .co-in{max-width:none;padding-left:56px;padding-right:56px}
+  @media(max-width:900px){ footer.colophon .co-in{padding-left:28px;padding-right:28px} }
 
   @media(max-width:820px){
     .sidebar{position:relative;width:100%;height:auto;max-height:320px;top:auto;left:auto}
@@ -369,7 +384,7 @@
           </ul>
         </div>
         <div class="res-group">
-          <h3 class="res-group-title">Notes<span class="res-count">3</span></h3>
+          <h3 class="res-group-title">Notes<span class="res-count">5</span></h3>
           <ul class="res-grid">
             <li class="res-card">
               <a class="res-main" href="https://www.iitmbsdegree.in/notes/maths-1" target="_blank" rel="noopener">Course notes</a>
@@ -385,6 +400,103 @@
               <a class="res-main" href="https://medium.com/@prathambhalla7/iit-madras-bs-foundational-course-mathematics-for-data-science-1-fac079650e07" target="_blank" rel="noopener">Maths 1 notes on Medium</a>
               <p class="res-desc">Written notes for Mathematics for Data Science 1.</p>
               <div class="res-foot"><span class="res-host">medium.com</span><span class="res-by">by <a href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">Pratham Bhalla</a></span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/drive/folders/12Eh_fmj2fyluHFVvc0jnch-cXZcrf2an" target="_blank" rel="noopener">Comprehensive lecture notes</a>
+              <p class="res-desc">Detailed lecture notes for the course.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-by">by Vishal Raj</span><span class="res-badge">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1o_5SKqF4jncMt0RMmoN2pr2Ac4k8AAoc/view" target="_blank" rel="noopener">Class notes</a>
+              <p class="res-desc">Notes from the live classes.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-by">by Ashish Kunwar</span><span class="res-badge">IITM login required</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Practice<span class="res-count">6</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://discourse.onlinedegree.iitm.ac.in/t/extra-practice-question/202092" target="_blank" rel="noopener">Extra practice questions</a>
+              <p class="res-desc">More questions to build problem-solving skill.</p>
+              <div class="res-foot"><span class="res-host">discourse.onlinedegree.iitm.ac.in</span><span class="res-by">by Manish Kumar Sahani</span><span class="res-badge">Discourse login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1_pAwFeUmf6obZeLGvHIbA7GrqGanB_GI/view" target="_blank" rel="noopener">Week 10 extra practice questions</a>
+              <p class="res-desc">More questions for Week 10.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1xrKWY9Nb2FMMBvYAKMIXvBpp4PSzBdoB/view" target="_blank" rel="noopener">Combined AQ and PA book (PDF)</a>
+              <p class="res-desc">AQ and PA questions combined in one PDF.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/16rIMXGrlfpzjCRTwf12DRNCh9RSMuAUq/view" target="_blank" rel="noopener">Integrals from an exam point of view</a>
+              <p class="res-desc">Common integrals and integration by parts, for Week 9.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/16nbglfxnUgzIxSXvZQm5TODQDapwGMxz/view" target="_blank" rel="noopener">Greatest integer and fractional part functions</a>
+              <p class="res-desc">Recorded session. Watch from 19:20.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://discourse.onlinedegree.iitm.ac.in/t/graphical-and-visual-intuition-of-equivalence-relation/207808" target="_blank" rel="noopener">Graphical intuition for equivalence relations</a>
+              <p class="res-desc">A visual way to understand equivalence relations.</p>
+              <div class="res-foot"><span class="res-host">discourse.onlinedegree.iitm.ac.in</span><span class="res-badge">Discourse login required</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Weekly slides<span class="res-count">3</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1ZcfCu7wEijJEJUx5f8_AuIisdTbg8o3b/view" target="_blank" rel="noopener">Week 9 slides</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/14EnVhkT5XWiui3k0RNs-8MUJHqKYogNb/view" target="_blank" rel="noopener">Week 10 slides</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1SoJyBxgSSQEcVGDV2x6kg5NLIralnsmE/view" target="_blank" rel="noopener">Week 11 slides</a>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Books<span class="res-count">1</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://drive.google.com/file/d/1uKcFl_dzAIakZzrUriuaD--ogNl12JUa/view" target="_blank" rel="noopener">Reference book for Weeks 10 and 11</a>
+              <p class="res-desc">Extra reading for Weeks 10 and 11.</p>
+              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">TA resources<span class="res-count">4</span></h3>
+          <ul class="res-grid">
+            <li class="res-card">
+              <a class="res-main" href="https://discourse.onlinedegree.iitm.ac.in/t/resources-by-ta-maths-1/185657" target="_blank" rel="noopener">Resources by TA, Maths 1</a>
+              <p class="res-desc">The TA team's resource thread for this course.</p>
+              <div class="res-foot"><span class="res-host">discourse.onlinedegree.iitm.ac.in</span><span class="res-badge">Discourse login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://docs.google.com/spreadsheets/d/135KCAEOrMQfpFGRGZuNLvNVYTiiN5CigNDrGdB-kcjw/edit?usp=sharing" target="_blank" rel="noopener">Recorded TA sessions, May 2026</a>
+              <p class="res-desc">Sessions by Manish and Sadaan.</p>
+              <div class="res-foot"><span class="res-host">docs.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://docs.google.com/spreadsheets/d/1s-Qks56BxifPVfBJaEd5ByqO21WGk-zh0V1peRvppmM/edit?usp=sharing" target="_blank" rel="noopener">Recorded TA sessions, Jan 2026</a>
+              <p class="res-desc">Sessions by Manish and Nitya.</p>
+              <div class="res-foot"><span class="res-host">docs.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+            </li>
+            <li class="res-card">
+              <a class="res-main" href="https://docs.google.com/spreadsheets/d/1YnvIo-0or892feRMoSeMdns0VNmHkPlLplNVIsWdNks/edit?usp=sharing" target="_blank" rel="noopener">Recorded TA sessions, Sept 2025</a>
+              <p class="res-desc">Sessions by Ankit and Manish.</p>
+              <div class="res-foot"><span class="res-host">docs.google.com</span><span class="res-badge iitm">IITM login required</span></div>
             </li>
           </ul>
         </div>
@@ -451,9 +563,12 @@
 </div>
 
 <footer class="colophon">
-  <div style="max-width:900px;margin:0 auto;padding:0 28px">
-    Course details here may be outdated or incorrect — always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.<br>
-    <a href="../courses.html">Return to the table of contents</a>
+  <div class="co-in">
+    <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
+    <div class="co-row">
+      <span class="co-name">The Companion</span>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../contributors.html">Contributors</a><a href="../scam-alert.html">Scam alert</a></nav>
+    </div>
   </div>
 </footer>
 
@@ -660,6 +775,6 @@
   // Land on the Dashboard by default (every week's accordion item starts collapsed).
   showDashboard();
 </script>
-<script src="../assets/theme.js?v=94147434"></script>
+<script src="../assets/theme.js?v=8e860dc4"></script>
 </body>
 </html>

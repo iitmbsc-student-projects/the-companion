@@ -35,7 +35,8 @@
    "label": "TA live sessions",
    "url": "https://docs.google.com/spreadsheets/d/1854ddKz0pY-575cldsRuX889HNvol6keogkEHNXMR-8/edit?usp=sharing",
    "group": "Live sessions",
-   "desc": "Sheet of TA sessions with dates, topics and recordings."
+   "desc": "Sheet of TA sessions with dates, topics and recordings.",
+   "auth": "iitm"
   },
   {
    "label": "MAD 1 weekwise PYQs",
