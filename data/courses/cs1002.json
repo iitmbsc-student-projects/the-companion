@@ -767,15 +767,22 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "Solved questions for the Programming in Python online proctored programming exams (OPPE 1 and OPPE 2).",
+   "standfirst": "Two online proctored programming exams: OPPE 1 on 22 Nov 2026 (weeks 1 to 5) and OPPE 2 on 3 Jan 2027 (weeks 1 to 8). The better score counts 25% and the other 20%.",
    "links_heading": "Practice and solutions",
    "links": [
+    {
+     "label": "Grading document, Sep 2026",
+     "url": "https://tiny.cc/IITM-GD",
+     "group": "Official",
+     "desc": "Find this course in the document for eligibility, dates and the full formula."
+    },
     {
      "url": "https://nirban-a.github.io/python-oppe-solutions/",
      "label": "Python OPPE solutions and question bank",
      "by": "Anirban Mandal"
     }
-   ]
+   ],
+   "note": "Sep 2026 formula: T = 0.15 Qz1 + 0.4 F + 0.25 max(PE1, PE2) + 0.2 min(PE1, PE2). Both OPPEs need the system compatibility test and GrPA averages of at least 40/100 for the weeks they cover. To get a course grade you must attend the end term exam and score at least 40/100 in one OPPE."
   }
  ]
 }

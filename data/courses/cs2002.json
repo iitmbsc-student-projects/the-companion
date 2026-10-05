@@ -708,14 +708,14 @@
   {
    "id": "oppe",
    "label": "OPPE",
-   "standfirst": "The Programming, Data Structures and Algorithms using Python course has one online proctored programming exam (OPPE). It counts for 20% of the final score.",
+   "standfirst": "One online proctored programming exam of 120 minutes, on 20 Dec 2026 or 3 Jan 2027 (your slot is allotted in advance). It is worth 20% of the final score.",
    "links_heading": "Resources",
    "links": [
     {
-     "label": "Grading policy document",
-     "url": "https://docs.google.com/document/u/0/d/e/2PACX-1vSBP6TJyZDklGPMyRtTwQc1cWZKOrozsOy5qmBwB8awTFvBbPN33-IxUV2WYupNdlXQOCgKwV9fDQKq/pub?pli=1",
+     "label": "Grading document, Sep 2026",
+     "url": "https://tiny.cc/IITM-GD",
      "group": "Official",
-     "desc": "Find this course in the grading document for the exam dates and the full formula."
+     "desc": "Find this course in the document for eligibility, dates and the full formula."
     },
     {
      "label": "LeetCode with Python",
@@ -732,7 +732,7 @@
      "desc": "TA session slides and materials, including problem-solving sessions."
     }
    ],
-   "note": "Formula from the grading document: T = 0.1 GAA + 0.4 F + 0.2 OP + max(0.2 max(Qz1, Qz2), 0.15 Qz1 + 0.15 Qz2). No OPPE-specific question bank has been shared yet. If you have one, please send it in."
+   "note": "Sep 2026 formula: T = 0.05 GAA + 0.2 OP + 0.45 F + max(0.2 max(Qz1, Qz2), 0.10 Qz1 + 0.20 Qz2). To be eligible you need the OPPE system compatibility test and at least 40/100 in the GrPA average of each of weeks 2 to 8. If you are absent, there is no repeat OPPE next term, because it does not affect passing the course. No OPPE question bank has been shared for this course yet. If you have one, please send it in."
   }
  ]
 }
