@@ -69,7 +69,11 @@ def _login_badge(r):
         return "IITM login required"
     if auth == "site":
         return "Login needed for full access"
+    if auth == "public":
+        return ""
     url = r.get("url", "") if isinstance(r, dict) else str(r or "")
+    if "drive.google.com" in url:
+        return "IITM login required"
     return "Discourse login required" if "discourse.onlinedegree.iitm.ac.in" in url else ""
 
 
