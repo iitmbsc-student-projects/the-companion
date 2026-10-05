@@ -1,7 +1,7 @@
-{% macro reslist(items) -%}
+{% macro reslist(items, plain=false) -%}
 {%- for g in items|group_resources %}
         <div class="res-group">
-{%- if g.name %}
+{%- if g.name and not plain %}
           <h3 class="res-group-title">{{ g.name }}<span class="res-count">{{ g.rows|length }}</span></h3>
 {%- endif %}
           <ul class="res-grid">
@@ -332,24 +332,30 @@
 
       <section class="chapter" id="pyq">
         <h2><span class="num">§ 2</span>Previous Year Questions</h2>
+{%- set pyq_items = (resources or [])|selectattr("group", "equalto", "Previous year questions")|list %}
+{%- set other_resources = (resources or [])|rejectattr("group", "equalto", "Previous year questions")|list %}
+{%- if pyq %}
         <table class="papers">
           <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
           <tbody>
-{%- if pyq %}
 {%- for row in pyq %}
             <tr><td>{{ row.term }}</td><td>{% if row.paper_url %}<a href="{{ row.paper_url }}" target="_blank" rel="noopener">{{ row.paper_label }}</a>{% endif %}</td><td>{% if row.solutions_url %}<a href="{{ row.solutions_url }}" target="_blank" rel="noopener">{{ row.solutions_label }}</a>{% endif %}</td><td>{{ row.notes }}</td></tr>
 {%- endfor %}
-{%- else %}
-            <tr><td colspan="4" class="empty">No papers uploaded yet.</td></tr>
-{%- endif %}
           </tbody>
         </table>
+{%- endif %}
+{%- if pyq_items %}
+{{ reslist(pyq_items, true) }}
+{%- endif %}
+{%- if not pyq and not pyq_items %}
+        <p class="tbd-note">No papers uploaded yet.</p>
+{%- endif %}
       </section>
 
       <section class="chapter" id="resources">
         <h2><span class="num">§ 3</span>Resources</h2>
-        {%- if resources %}
-{{ reslist(resources) }}
+        {%- if other_resources %}
+{{ reslist(other_resources) }}
 {%- else %}
         <p class="tbd-note">No resources located yet for this course.</p>
 {%- endif %}
