@@ -41,6 +41,12 @@
    "group": "Course material"
   },
   {
+   "label": "Instructor session playlist (YouTube)",
+   "url": "https://www.youtube.com/watch?v=QCnrdr5dwJ4&list=PLZ2ps__7DhBa1xm2Mp_mBs_blGlB-gD0-",
+   "group": "Course material",
+   "desc": "Instructor revision sessions for the course."
+  },
+  {
    "label": "Course notes",
    "url": "https://www.iitmbsdegree.in/notes/stats-1",
    "desc": "Notes and study material for this course.",
@@ -63,6 +69,39 @@
    "desc": "Written notes for Statistics for Data Science 1.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Course notes (Drive folder)",
+   "url": "https://drive.google.com/drive/folders/1ehKuD0rlRAvEATmD0wgSPNKZ_QRXuUhV",
+   "group": "Notes",
+   "desc": "Notes shared in the TA resources thread."
+  },
+  {
+   "label": "Statistics 1, Weeks 1 to 12",
+   "url": "https://drive.google.com/file/d/1rtpF7_G_vj_2boUEtEyZLh_FBb26z5Pf/view",
+   "group": "Notes",
+   "desc": "Notes covering all twelve weeks.",
+   "by": "Akash Kunwar"
+  },
+  {
+   "label": "Books (Drive folder)",
+   "url": "https://drive.google.com/drive/folders/12FT7AzszUqhQptZkM9JdB6Es_QB3-Vq3",
+   "group": "Books",
+   "desc": "Reference books for the course."
+  },
+  {
+   "label": "Resources by TA, January 2025",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/resources-by-ta-january-2025/167818",
+   "group": "TA resources",
+   "desc": "Revision links gathered by the TAs in one thread.",
+   "by": "Sneha Sarkar"
+  },
+  {
+   "label": "TA session recordings (Google Sheet)",
+   "url": "https://docs.google.com/spreadsheets/d/14ks3Nj5PFmjr3jb_tpdqrArKsHQW-Bwm_9gQ0P3I_lo/edit",
+   "group": "TA resources",
+   "desc": "Recordings of past TA sessions.",
+   "auth": "iitm"
   },
   {
    "label": "Foundation previous term papers",

@@ -61,6 +61,12 @@
    "group": "Course material"
   },
   {
+   "label": "Summary of weekly live sessions",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/summary-of-weekly-live-sessions-instructors-and-tas/206209",
+   "group": "Course material",
+   "desc": "What the instructor and TA live sessions covered, week by week."
+  },
+  {
    "label": "Course notes",
    "url": "https://www.iitmbsdegree.in/notes/python",
    "desc": "Notes and study material for this course.",
@@ -774,6 +780,29 @@
      "url": "https://nirban-a.github.io/python-oppe-solutions/",
      "label": "Python OPPE solutions and question bank",
      "by": "Anirban Mandal"
+    },
+    {
+     "url": "https://sites.google.com/ds.study.iitm.ac.in/navalandbuddies/oppe1",
+     "label": "Solved OPPE 1 sets",
+     "desc": "Solutions to a few previous term OPPE 1 sets.",
+     "auth": "iitm"
+    },
+    {
+     "url": "https://sites.google.com/ds.study.iitm.ac.in/navalandbuddies/oppe2",
+     "label": "Solved OPPE 2 sets",
+     "desc": "Solutions to a few previous term OPPE 2 sets.",
+     "auth": "iitm"
+    },
+    {
+     "url": "https://gistpreview.github.io/?b3dfba7f3024591cfd30ce57ca718545/oppe_pattern.html",
+     "label": "OPPE syllabus and pattern",
+     "desc": "What the OPPE covers and how it is laid out."
+    },
+    {
+     "url": "https://docs.google.com/spreadsheets/d/14CiQISiI-QMJCyebyLrO91tKqcwyBCr2G36zREvKYtE/edit",
+     "label": "Practice and revision sessions (Google Sheet)",
+     "desc": "Links to the OPPE practice and revision sessions.",
+     "auth": "iitm"
     }
    ]
   }

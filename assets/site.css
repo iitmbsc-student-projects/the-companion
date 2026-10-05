@@ -17,7 +17,7 @@
     border-bottom:1px solid var(--rule)}
   .topbar-in{display:flex;align-items:center;gap:8px;height:62px}
   .tb-brand{display:flex;align-items:center;gap:10px;border:none;color:var(--ink);margin-right:14px}
-  .tb-mark{width:32px;height:32px;border-radius:8px;background:var(--accent);color:var(--on-accent);display:grid;
+  .tb-mark{width:32px;height:32px;border-radius:8px;background:var(--accent-fill);color:var(--on-fill);display:grid;
     place-items:center;font-family:'Fraunces',serif;font-weight:700;font-size:18px;line-height:1}
   .tb-name{font-family:'Fraunces',serif;font-weight:700;font-size:19px;letter-spacing:-0.01em;white-space:nowrap}
   .tb-brand:hover .tb-name{color:var(--accent)}
@@ -128,7 +128,7 @@
   .links-jump a{border:1px solid var(--rule);border-radius:999px;padding:5px 13px;color:var(--ink);
     font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
     transition:background .15s ease,color .15s ease,border-color .15s ease}
-  .links-jump a:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+  .links-jump a:hover{background:var(--accent-fill);color:var(--on-fill);border-color:var(--accent-fill)}
   .link-group{margin-top:34px}
   .group-head{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:6px;
     border-bottom:1px solid var(--rule)}
@@ -214,8 +214,8 @@
     transition:transform .18s ease}
   .land-card:hover::after{transform:translateX(4px)}
   .lc-num{position:absolute;top:19px;left:22px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;opacity:.55}
-  .land-card.primary{grid-column:1/-1;min-height:156px;background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-  .land-card.primary::after{color:var(--on-accent);font-size:24px;top:20px;right:26px}
+  .land-card.primary{grid-column:1/-1;min-height:156px;background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+  .land-card.primary::after{color:var(--on-fill);font-size:24px;top:20px;right:26px}
   .land-card.primary .lc-title{font-size:38px}
   .land-card.primary .lc-sub{font-size:15.5px}
   .lc-title{font-family:'Fraunces',serif;font-weight:600;font-size:25px;line-height:1.1;letter-spacing:-0.01em}
@@ -237,7 +237,7 @@
   }
 
   .links-jump .jump-n{margin-left:5px;color:var(--accent);opacity:.8}
-  .links-jump a:hover .jump-n{color:var(--on-accent)}
+  .links-jump a:hover .jump-n{color:var(--on-fill)}
   .page-head .links-jump{margin:18px 0 0}
 
 /* ---- page end: a quiet footer so long pages don't stop abruptly ---- */
@@ -273,7 +273,7 @@ li.cta-card:hover{transform:none;box-shadow:none;border-left-color:var(--rule)}
 .cta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .cta-btn{display:inline-block;padding:7px 14px;border-radius:999px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);
   font-size:13px;font-weight:500;transition:background .15s,border-color .15s}
-.cta-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.cta-btn:hover{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
 .cta-btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
 .cta-btn.ghost:hover{background:var(--tint);color:var(--accent);border-color:var(--accent)}
 #contribute{scroll-margin-top:78px}

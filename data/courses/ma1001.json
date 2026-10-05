@@ -80,6 +80,105 @@
    "by_url": "https://medium.com/@prathambhalla7"
   },
   {
+   "label": "Comprehensive lecture notes",
+   "url": "https://drive.google.com/drive/folders/12Eh_fmj2fyluHFVvc0jnch-cXZcrf2an",
+   "group": "Notes",
+   "desc": "Detailed lecture notes for the course.",
+   "by": "Vishal Raj"
+  },
+  {
+   "label": "Class notes",
+   "url": "https://drive.google.com/file/d/1o_5SKqF4jncMt0RMmoN2pr2Ac4k8AAoc/view",
+   "group": "Notes",
+   "desc": "Notes from the live classes.",
+   "by": "Ashish Kunwar"
+  },
+  {
+   "label": "Extra practice questions",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/extra-practice-question/202092",
+   "group": "Practice",
+   "desc": "More questions to build problem-solving skill.",
+   "by": "Manish Kumar Sahani"
+  },
+  {
+   "label": "Week 10 extra practice questions",
+   "url": "https://drive.google.com/file/d/1_pAwFeUmf6obZeLGvHIbA7GrqGanB_GI/view",
+   "group": "Practice",
+   "desc": "More questions for Week 10."
+  },
+  {
+   "label": "Combined AQ and PA book (PDF)",
+   "url": "https://drive.google.com/file/d/1xrKWY9Nb2FMMBvYAKMIXvBpp4PSzBdoB/view",
+   "group": "Practice",
+   "desc": "AQ and PA questions combined in one PDF."
+  },
+  {
+   "label": "Integrals from an exam point of view",
+   "url": "https://drive.google.com/file/d/16rIMXGrlfpzjCRTwf12DRNCh9RSMuAUq/view",
+   "group": "Practice",
+   "desc": "Common integrals and integration by parts, for Week 9."
+  },
+  {
+   "label": "Greatest integer and fractional part functions",
+   "url": "https://drive.google.com/file/d/16nbglfxnUgzIxSXvZQm5TODQDapwGMxz/view",
+   "group": "Practice",
+   "desc": "Recorded session. Watch from 19:20."
+  },
+  {
+   "label": "Graphical intuition for equivalence relations",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/graphical-and-visual-intuition-of-equivalence-relation/207808",
+   "group": "Practice",
+   "desc": "A visual way to understand equivalence relations."
+  },
+  {
+   "label": "Week 9 slides",
+   "url": "https://drive.google.com/file/d/1ZcfCu7wEijJEJUx5f8_AuIisdTbg8o3b/view",
+   "group": "Weekly slides"
+  },
+  {
+   "label": "Week 10 slides",
+   "url": "https://drive.google.com/file/d/14EnVhkT5XWiui3k0RNs-8MUJHqKYogNb/view",
+   "group": "Weekly slides"
+  },
+  {
+   "label": "Week 11 slides",
+   "url": "https://drive.google.com/file/d/1SoJyBxgSSQEcVGDV2x6kg5NLIralnsmE/view",
+   "group": "Weekly slides"
+  },
+  {
+   "label": "Reference book for Weeks 10 and 11",
+   "url": "https://drive.google.com/file/d/1uKcFl_dzAIakZzrUriuaD--ogNl12JUa/view",
+   "group": "Books",
+   "desc": "Extra reading for Weeks 10 and 11."
+  },
+  {
+   "label": "Resources by TA, Maths 1",
+   "url": "https://discourse.onlinedegree.iitm.ac.in/t/resources-by-ta-maths-1/185657",
+   "group": "TA resources",
+   "desc": "The TA team's resource thread for this course."
+  },
+  {
+   "label": "Recorded TA sessions, May 2026",
+   "url": "https://docs.google.com/spreadsheets/d/135KCAEOrMQfpFGRGZuNLvNVYTiiN5CigNDrGdB-kcjw/edit?usp=sharing",
+   "group": "TA resources",
+   "desc": "Sessions by Manish and Sadaan.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Recorded TA sessions, Jan 2026",
+   "url": "https://docs.google.com/spreadsheets/d/1s-Qks56BxifPVfBJaEd5ByqO21WGk-zh0V1peRvppmM/edit?usp=sharing",
+   "group": "TA resources",
+   "desc": "Sessions by Manish and Nitya.",
+   "auth": "iitm"
+  },
+  {
+   "label": "Recorded TA sessions, Sept 2025",
+   "url": "https://docs.google.com/spreadsheets/d/1YnvIo-0or892feRMoSeMdns0VNmHkPlLplNVIsWdNks/edit?usp=sharing",
+   "group": "TA resources",
+   "desc": "Sessions by Ankit and Manish.",
+   "auth": "iitm"
+  },
+  {
    "label": "Foundation previous term papers",
    "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-courses-previous-term-question-papers-with-answer-key-f5fe7b909b04",
    "group": "Previous year questions",

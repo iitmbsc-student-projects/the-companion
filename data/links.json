@@ -217,6 +217,36 @@
        "url": "https://discourse.onlinedegree.iitm.ac.in/t/question-paper-repository-we-need-your-help/202463"
       }
      ]
+    },
+    {
+     "title": "IITM BS Students' Corner",
+     "desc": "Notes and study material for most courses, foundation to degree level.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://www.iitmbsdegree.in/"
+      }
+     ]
+    },
+    {
+     "title": "ML Study Hub",
+     "desc": "Topic-wise notes for many courses, kept by students.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://degreedost.com/"
+      }
+     ]
+    },
+    {
+     "title": "Pratham Bhalla on Medium",
+     "desc": "Written notes for the foundation courses, plus past term papers with answer keys.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://medium.com/@prathambhalla7"
+      }
+     ]
     }
    ]
   },
