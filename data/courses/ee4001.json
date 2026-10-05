@@ -16,6 +16,11 @@
    "group": "Course material"
   },
   {
+   "label": "Full lecture playlist (YouTube)",
+   "url": "https://www.youtube.com/playlist?list=PLZ2ps__7DhBaI_g3_V-CFrgFIf-0Yksiv",
+   "group": "Course material"
+  },
+  {
    "label": "Topic-wise notes",
    "url": "https://degreedost.com/#notes/speechtech",
    "desc": "Topic-wise notes on ML Study Hub.",
