@@ -174,7 +174,7 @@
    "group": "Course material",
    "desc": "Updated slides for every week.",
    "auth": "iitm",
-   "by": "Sayan"
+   "by": "Sayan Ghosh"
   },
   {
    "label": "Weekwise transcripts (updated)",
@@ -182,7 +182,7 @@
    "group": "Course material",
    "desc": "Updated transcripts for every week.",
    "auth": "iitm",
-   "by": "Sayan"
+   "by": "Sayan Ghosh"
   },
   {
    "label": "Regular expressions, detailed book",
@@ -207,28 +207,28 @@
    "url": "https://youtu.be/JdipMsqnjVo",
    "group": "Revision videos",
    "desc": "Explains SSH and the networking behind it.",
-   "by": "Sayan"
+   "by": "Sayan Ghosh"
   },
   {
    "label": "Entire regex revision session",
    "url": "https://www.youtube.com/watch?v=oIjhcqZMEzU&list=PLLuZiiAWg2wp6O0cmFBAzVUmEcI8Mwo1j&index=7&pp=iAQB",
    "group": "Revision videos",
    "desc": "Full revision of regular expressions.",
-   "by": "Sayan"
+   "by": "Sayan Ghosh"
   },
   {
    "label": "Quiz 1 PYQ discussion, 23T2 and 23T3",
    "url": "https://www.youtube.com/watch?v=FZAO0PZGIVM&list=PLLuZiiAWg2wp6O0cmFBAzVUmEcI8Mwo1j&index=2&pp=iAQB",
    "group": "Previous year questions",
    "desc": "Discussion of the Quiz 1 papers from 23T2 and 23T3.",
-   "by": "Sayan"
+   "by": "Sayan Ghosh"
   },
   {
    "label": "Quiz 1 PYQ discussion, 24T1",
    "url": "https://www.youtube.com/watch?v=pYsjqWyn184&list=PLLuZiiAWg2wpuU7vVNIbQPtEYoSvqQFY-&index=2",
    "group": "Previous year questions",
    "desc": "Discussion of the Quiz 1 paper from 24T1.",
-   "by": "Sayan"
+   "by": "Sayan Ghosh"
   }
  ],
  "resources_note": "",
