@@ -498,6 +498,20 @@
    "title": "Community and perks",
    "items": [
     {
+     "title": "Unofficial course WhatsApp groups",
+     "desc": "Student-run groups for each course. The community site needs your IITM email to sign in; AceGrade is open to everyone.",
+     "links": [
+      {
+       "label": "IITM BS Community site",
+       "url": "https://sites.google.com/student.onlinedegree.iitm.ac.in/iitmbs-community"
+      },
+      {
+       "label": "AceGrade",
+       "url": "https://www.acegrade.in/"
+      }
+     ]
+    },
+    {
      "title": "Student Discord (unofficial)",
      "desc": "Student-run server for academic and general queries.",
      "links": [
