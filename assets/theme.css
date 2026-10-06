@@ -96,16 +96,10 @@ html[data-theme="pink"]{--paper:#fff3f7;
 .theme-switch.floating{position:fixed;top:12px;right:14px;z-index:80;box-shadow:0 2px 10px var(--shadow)}
 #theme-slot{display:flex;margin-right:8px}
 .sidebar-theme{margin-right:0 !important}
-.sidebar-theme{flex-direction:column;gap:8px}
-.sidebar-theme .theme-switch{position:static;display:grid;grid-template-columns:1fr 1fr;width:100%;gap:3px;padding:3px;border-radius:10px;box-sizing:border-box}
-.sidebar-theme .theme-switch button{min-width:0;justify-content:flex-start;padding:8px 10px;border-radius:7px;
-  font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.04em;transition:background .15s,color .15s}
-.sidebar-theme .theme-switch button:hover{color:var(--ink)}
-.sidebar-theme .theme-switch button[aria-pressed="true"]{background:var(--paper);color:var(--ink);
-  box-shadow:0 1px 3px var(--shadow),inset 0 0 0 1px var(--rule)}
-.sidebar-theme .theme-switch .sw{width:12px;height:12px}
-.sidebar-theme .theme-switch button[aria-pressed="true"] .sw{box-shadow:none}
-.sidebar-theme .theme-switch .lb{display:inline}
+/* in the course sidebar: just the four dots, kept slim and tucked at the bottom */
+.sidebar-theme .theme-switch{position:static;gap:10px;padding:0;border:0;background:none}
+.sidebar-theme .theme-switch .sw{width:14px;height:14px}
+.sidebar-theme .theme-switch button{padding:3px}
 @media(max-width:640px){
   .theme-switch.floating{left:14px;right:auto;top:auto;bottom:18px}
 }

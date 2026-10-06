@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mathematics for Data Science I — The Companion</title>
-<link rel="stylesheet" href="../assets/theme.css?v=5264f0b8">
+<link rel="stylesheet" href="../assets/theme.css?v=a714491e">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,32 +28,69 @@
      column's length can create dead space next to the other.
      (Note: this one stays plain CSS rather than Bootstrap's position/vh utilities, since
      those ship as !important and would fight the mobile override in the media query below.) ---- */
-  .sidebar{position:fixed;top:0;left:0;width:300px;height:100vh;overflow-y:auto;
+  .sidebar{position:fixed;top:0;left:0;width:var(--sb-w,300px);height:100vh;display:flex;flex-direction:column;overflow:hidden;
     background:var(--paper-2);border-right:1px solid var(--rule);z-index:10}
-  .sidebar-brand{padding:16px 20px 20px;border-bottom:1px solid var(--rule)}
-  .sidebar-brand .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);
-    border:1px solid var(--rule);border-radius:999px;padding:6px 13px 6px 10px;margin-bottom:22px;
-    font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
-    line-height:1;transition:color .15s,border-color .15s,background .15s}
-  .sidebar-brand .back-link svg{width:13px;height:13px;transition:transform .15s}
-  .sidebar-brand .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
-  .sidebar-brand .back-link:hover svg{transform:translateX(-3px)}
-  .sidebar-brand .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:30px;
-    letter-spacing:-0.02em;line-height:1}
-  .sidebar-brand .brand-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-  .sidebar-brand .chip{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;
-    padding:4px 8px;line-height:1}
-  .sidebar-brand .chip.credits{color:var(--accent);border-color:var(--accent)}
+  .sb-top{flex:none;display:flex;flex-direction:column;gap:10px;padding:14px 16px 12px;max-height:62vh;overflow-y:auto;
+    border-bottom:1px solid var(--rule)}
+  .sb-head{display:flex;align-items:center;gap:12px;min-height:34px;padding-right:44px}   /* room on the right for the collapse button */
+  .sb-head .back-link{flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--rule);background:var(--paper);color:var(--ink-2);transition:color .15s,border-color .15s,background .15s}
+  .sb-head .back-link svg{width:15px;height:15px;transition:transform .15s}
+  .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
+  .sb-head .back-link:hover svg{transform:translateX(-2px)}
+  .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .sb-head .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
-  .nav-section{padding:14px 0}
-  .nav-section + .nav-section{border-top:1px solid var(--rule)}
-  .nav-label{padding:4px 20px 8px;font-family:'JetBrains Mono',monospace;font-size:10px;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
-  .nav-item{padding:9px 20px;cursor:pointer;font-family:'Fraunces',serif;font-size:15px;
-    font-weight:600;border-left:3px solid transparent}
-  .nav-item:hover{background:var(--tint)}
-  .nav-item.active{background:var(--accent-fill);color:var(--on-fill);border-left-color:var(--accent-2)}
+  .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
+  .nav-item{cursor:pointer;user-select:none}
+  .sb-tabs .nav-item{padding:7px 13px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);
+    font:600 13px 'Inter',sans-serif;color:var(--ink);transition:background .15s,border-color .15s}
+  .sb-tabs .nav-item:hover{border-color:var(--accent)}
+  .sb-tabs .nav-item.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+
+  .sb-continue{display:block;width:100%;padding:9px 11px 10px;text-align:left;cursor:pointer;color:var(--ink);
+    border:1px solid var(--rule);border-radius:10px;background:var(--paper);transition:border-color .15s}
+  .sb-continue:hover{border-color:var(--accent)}
+  .sb-continue[hidden]{display:none}
+  .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;line-height:1.3;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
+  .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
+  .sc-n{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-2)}
+
+  .sb-tools{display:flex;flex-direction:column;gap:8px}
+  .sb-tools[hidden]{display:none}
+  #lec-search{width:100%;box-sizing:border-box;padding:8px 10px 8px 31px;border:1px solid var(--rule);border-radius:8px;
+    background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='4.5'/%3E%3Cpath d='m10.5 10.5 3 3'/%3E%3C/svg%3E") 10px center/14px no-repeat;
+    color:var(--ink);font:500 13.5px 'Inter',sans-serif}
+  #lec-search:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .sb-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+  .sb-spacer{flex:1}
+  .sb-chip{padding:5px 11px;border:1px solid var(--rule);border-radius:999px;background:none;color:var(--ink-2);
+    font:600 11.5px 'Inter',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+  .sb-chip:hover{border-color:var(--accent);color:var(--ink)}
+  .sb-chip[aria-pressed="true"]{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'Inter',sans-serif;cursor:pointer}
+  .sb-link:hover{color:var(--accent)}
+  .sb-chip:focus-visible,.sb-link:focus-visible,.sb-continue:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .sb-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+  .sb-empty{margin:0;padding:18px 20px;font-size:13px;color:var(--ink-2)}
+  .sb-empty[hidden]{display:none}
+  .sb-bottom{flex:none;padding:4px 16px;border-top:1px solid var(--rule)}
+  /* short screens (phone held sideways): give the lecture list the room */
+  @media(max-height:560px){
+    .sb-top{gap:6px;padding:8px 12px}
+    .sb-head .brand-code{font-size:20px}
+    .sb-continue{display:none}
+    .sb-bottom{padding:6px 12px}
+  }
+  .sb-resize{position:absolute;top:0;right:0;width:6px;height:100%;cursor:col-resize;z-index:5;touch-action:none}
+  .sb-resize:hover,body.sb-dragging .sb-resize{background:var(--accent);opacity:.3}
+  body.sb-dragging{user-select:none;cursor:col-resize}
+  body.sb-dragging iframe{pointer-events:none}   /* an iframe under the pointer would swallow the drag */
+  body.sb-dragging .sidebar,body.sb-dragging .main-content,body.sb-dragging footer.colophon,body.sb-dragging .sidebar-toggle{transition:none}
 
   /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
      data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
@@ -66,8 +103,9 @@
     --bs-accordion-active-color:var(--ink-2);--bs-accordion-active-bg:var(--paper-2)}
   .accordion-item{background:transparent;border:none}
   .week-group{border-top:1px solid var(--rule)}
-  .nav-section > .week-group:first-child{border-top:none}
-  .week-title{padding:9px 20px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  .sb-scroll > .week-group:first-child{border-top:none}
+  .week-group.is-hid,.lecture-item.is-hid{display:none}
+  .week-title{position:relative;padding:9px 20px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
     letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
     border-bottom:1px solid var(--rule);cursor:pointer;box-shadow:none;border-radius:0;
     display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none}
@@ -81,7 +119,13 @@
     transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
   .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
   .accordion-body{padding:0}
-  .sidebar-theme{margin-top:18px}
+  /* the week heading fills from the left as you watch its lectures */
+  .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
+    background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
+  .week-title > span{position:relative;z-index:1}
+  .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
+  .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
+  .lecture-item.novid .ltitle{opacity:.62}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
@@ -92,14 +136,14 @@
   .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
-  .main-content{margin-left:300px;padding:40px 56px 60px}
+  .main-content{margin-left:var(--sb-w,300px);padding:40px 56px 60px}
   @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
 
   /* ---- collapsible sidebar: body.sidebar-collapsed slides the sidebar off-screen and lets the
      content take the full width. The toggle button is fixed so it is always reachable. ---- */
   .sidebar{transition:transform .22s ease}
   .main-content,footer.colophon{transition:margin-left .22s ease}
-  .sidebar-toggle{position:fixed;top:14px;left:254px;z-index:20;width:32px;height:32px;
+  .sidebar-toggle{position:fixed;top:14px;left:calc(var(--sb-w,300px) - 46px);z-index:20;width:32px;height:32px;
     display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
     background:var(--paper-2);color:var(--ink-2);border:1px solid var(--rule);border-radius:50%;
     transition:left .22s ease,background .15s ease,color .15s,border-color .15s,transform .15s}
@@ -261,24 +305,56 @@
   .lec-id .current-eyebrow{margin:0;font-size:10.5px}
   .lec-id .current-title{margin:0;font-size:16px}
   .lec-nav{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
-  .lec-nav button{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:0 14px 0 11px;border:1px solid var(--rule);
+  .lec-nav button,.rs-go{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:0 14px 0 11px;border:1px solid var(--rule);
     border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;white-space:nowrap;
     transition:border-color .15s,background .15s,transform .1s,filter .15s}
-  .lec-nav button svg,.m-step svg{width:15px;height:15px;flex:none;transition:transform .15s}
+  .lec-nav button svg,.m-step svg,.rs-go svg{width:15px;height:15px;flex:none;transition:transform .15s}
   .lec-nav .ls-n{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.06em;opacity:.65}
   .lec-nav button:hover:not([disabled]){border-color:var(--accent)}
   .lec-nav button:active:not([disabled]){transform:scale(.97)}
   .lec-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .lec-nav button[disabled]{opacity:.35;cursor:default;border-style:dashed}
   .lec-nav #lec-prev:hover:not([disabled]) svg{transform:translateX(-3px)}
-  .lec-nav .ls-next{padding:0 11px 0 14px;background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
-  .lec-nav .ls-next:hover:not([disabled]){border-color:var(--accent-fill);filter:brightness(1.1)}
-  .lec-nav .ls-next:hover:not([disabled]) svg{transform:translateX(3px)}
-  #panel-lecture .current-actions{margin-top:10px}
-  #panel-lecture .current-actions:empty{display:none}
+  .lec-nav .ls-next,.rs-go{padding:0 11px 0 14px;background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+  .lec-nav .ls-next:hover:not([disabled]),.rs-go:hover{border-color:var(--accent-fill);filter:brightness(1.1)}
+  .lec-nav .ls-next:hover:not([disabled]) svg,.rs-go:hover svg{transform:translateX(3px)}
+  .rs-go:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  /* slide link sits on the title line, pushed to the right */
+  .lec-id .current-actions{margin-left:auto;gap:8px}
+  .lec-id .current-actions:empty{display:none}
+  .lec-id .current-actions a{display:inline-flex;align-items:center;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;
+    background:var(--paper-2);color:var(--accent);font-size:10.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
+  .lec-id .current-actions a:hover{border-color:var(--accent);background:var(--tint)}
+  .lec-id .current-actions .tbd-note{font-size:12px;color:var(--ink-2)}
   .m-step{display:none}
 
-  footer.colophon{margin-left:300px}
+  /* watched ticks and the resume card */
+  .lecture-item .ltitle{flex:1;min-width:0}
+  .lcheck{flex:none;align-self:center;margin:-6px -10px -6px 0;padding:6px 10px;border:0;background:none;cursor:pointer;color:inherit;line-height:0}
+  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.55;
+    transition:background .12s,border-color .12s,opacity .12s}
+  .lcheck:hover::before{opacity:1;border-color:var(--accent)}
+  .lcheck:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
+  .lecture-item.done .lcheck::before{opacity:1;border-color:var(--accent);background:var(--accent)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3.5 8.5 3 3 6-6.5'/%3E%3C/svg%3E") center/11px no-repeat}
+  .lecture-item.active .lcheck::before{border-color:var(--on-fill)}
+  .lecture-item.active.done .lcheck::before{background-color:var(--on-fill);border-color:var(--on-fill)}
+  .lec-nav .ls-done{padding:0 13px 0 11px}
+  .lec-nav .ls-done.is-done{border-color:var(--accent);color:var(--accent);background:var(--tint)}
+  @media(max-width:520px){ .lec-nav .ls-done .lbl{display:none} .lec-nav .ls-done{padding:0 11px} }
+  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:0 0 26px;padding:14px 18px;
+    border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
+  .resume[hidden]{display:none}
+  .rs-text{flex:1 1 280px;min-width:0}
+  .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .rs-t{margin:3px 0 9px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
+  .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
+  .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
+  .rs-reset{margin-left:10px;padding:0;border:0;background:none;color:var(--ink-2);font:inherit;text-decoration:underline;cursor:pointer}
+  .rs-reset:hover{color:var(--accent)}
+
+  footer.colophon{margin-left:var(--sb-w,300px)}
   /* ---- page footer ---- */
   footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'Inter',sans-serif;font-style:normal}
   footer.colophon .co-in{max-width:900px;margin:0 auto;padding:22px 28px 30px}
@@ -315,7 +391,7 @@
     .m-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .m-here{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;
       font-size:12.5px;color:var(--ink-2)}
-    .sidebar,body.sidebar-collapsed .sidebar{display:block;position:fixed;top:0;left:0;bottom:0;width:min(88vw,340px);
+    .sidebar,body.sidebar-collapsed .sidebar{display:flex;position:fixed;top:0;left:0;bottom:0;width:min(88vw,340px);
       height:100%;max-height:none;z-index:40;transform:translateX(-104%);visibility:hidden;
       transition:transform .22s ease,visibility .22s}
     body.nav-open .sidebar,body.nav-open.sidebar-collapsed .sidebar{transform:none;visibility:visible;
@@ -329,7 +405,10 @@
     footer.colophon .co-in{padding-left:18px;padding-right:18px}
     .course-head h1{font-size:28px}
     .course-head .kicker{letter-spacing:.14em}
-    .nav-item{padding:13px 20px}
+    .sb-resize{display:none}
+    .sb-tabs .nav-item{padding:10px 15px;font-size:14px}
+    #lec-search{font-size:16px;padding-top:11px;padding-bottom:11px}
+    .sb-chip,.sb-link{padding-top:9px;padding-bottom:9px}
     .week-title{padding-top:14px;padding-bottom:12px}
     .lecture-item{padding-top:11px;padding-bottom:11px}
   }
@@ -339,6 +418,7 @@
 <script>
   // Restore the sidebar state before first paint so the page doesn't flash open then shut.
   try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
+  try { var w = parseInt(localStorage.getItem('companion-sb-w'), 10); if (w >= 240 && w <= 520) document.documentElement.style.setProperty('--sb-w', w + 'px'); } catch (e) {}
 </script>
 <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="true" aria-label="Hide sidebar" title="Hide sidebar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
 
@@ -352,22 +432,37 @@
 
 <div class="app-shell">
   <nav class="sidebar" id="sidebar">
-    <div class="sidebar-brand">
-      <a class="back-link" href="../courses.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>All courses</a>
-      <div class="brand-code">MA1001</div>
-      <div class="brand-meta"><span class="chip">Foundation</span><span class="chip credits">4 credits</span></div>
-      <div id="theme-slot" class="sidebar-theme" data-collapsible="sidebar"></div>
+    <div class="sb-top">
+      <div class="sb-head">
+        <a class="back-link" href="../courses.html" aria-label="All courses" title="All courses"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg></a>
+        <span class="brand-code">MA1001</span>
+      </div>
+      <div class="sb-tabs">
+        <div class="nav-item active" id="nav-dashboard">Dashboard</div>
+        <div class="nav-item" id="nav-syllabus">Syllabus</div>
+      </div>
+      <button type="button" class="sb-continue" id="sb-continue" hidden>
+        <span class="sc-k" id="sc-k"></span>
+        <span class="sc-t" id="sc-t"></span>
+        <span class="sc-bar"><i id="sc-fill"></i></span>
+        <span class="sc-n" id="sc-n"></span>
+      </button>
+      <div class="sb-tools" id="sb-tools">
+        <input type="search" id="lec-search" placeholder="Find a lecture" aria-label="Find a lecture" autocomplete="off">
+        <div class="sb-row">
+          <button type="button" class="sb-chip" id="f-unwatched" aria-pressed="false" title="Show only the lectures you have not watched">Unwatched</button>
+          <span class="sb-spacer"></span>
+          <button type="button" class="sb-link" id="wk-expand">Expand all</button>
+          <button type="button" class="sb-link" id="wk-collapse">Collapse all</button>
+        </div>
+      </div>
     </div>
 
-    <div class="nav-section">
-      <div class="nav-label">Main</div>
-      <div class="nav-item active" id="nav-dashboard">Dashboard</div>
-      <div class="nav-item" id="nav-syllabus">Syllabus</div>
-    </div>
+    <div class="sb-scroll accordion accordion-flush" id="lecture-nav"></div>
+    <p class="sb-empty" id="sb-empty" hidden>No lectures match.</p>
 
-    <div class="nav-section accordion accordion-flush" id="lecture-nav">
-      <div class="nav-label">Weekly Lectures</div>
-    </div>
+    <div class="sb-bottom"><div id="theme-slot" class="sidebar-theme" data-collapsible="sidebar"></div></div>
+    <div class="sb-resize" id="sb-resize" aria-hidden="true" title="Drag to resize. Double-click to reset."></div>
   </nav>
 
   <main class="main-content">
@@ -383,6 +478,16 @@
           <span><b>Term</b> Every term</span>
           <span><b>Prereq</b> class XII maths</span>
         </div>
+      </div>
+
+      <div class="resume" id="resume" hidden>
+        <div class="rs-text">
+          <div class="rs-k" id="rs-k">Your progress</div>
+          <div class="rs-t" id="rs-title"></div>
+          <div class="rs-bar"><span id="rs-fill"></span></div>
+          <div class="rs-n"><span id="rs-n"></span><button type="button" class="rs-reset" id="rs-reset" hidden>Reset</button></div>
+        </div>
+        <button type="button" class="rs-go" id="rs-go"></button>
       </div>
 
       <section class="chapter" id="calendar">
@@ -624,14 +729,15 @@
         <div class="lec-id">
           <div class="current-eyebrow" id="current-eyebrow"></div>
           <h3 class="current-title" id="current-title"></h3>
+          <div class="current-actions" id="current-actions"></div>
         </div>
         <div class="video" id="video-box">
           <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
-          <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet. Try the slide link below.</div>
+          <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet. Try the slide link above.</div>
         </div>
-        <div class="current-actions" id="current-actions"></div>
         <div class="lec-nav">
           <button type="button" id="lec-prev"></button>
+          <button type="button" id="lec-done" class="ls-done" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.2 3.2L13 4.8"/></svg><span class="lbl">Mark watched</span></button>
           <button type="button" id="lec-next" class="ls-next"></button>
         </div>
       </div>
@@ -655,7 +761,7 @@
 <script>
   // Per-lecture data sourced from the course's lecture playlist
   // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
-  const WEEKS_DATA = [{"w":"Week 0","items":[{"n":"0.1","t":"Mathematics for Data Science 1 | Introduction to the course basics","v":"F9BZ5JsnjYM","s":null}]},{"w":"Week 1","items":[{"n":"1.1","t":"Natural Numbers and their operations","v":"WEC6jPWvoj8","s":null},{"n":"1.2","t":"Rational Numbers","v":"jHBIJ50DhJQ","s":null},{"n":"1.3","t":"Real and Complex numbers","v":"hz7cuJj17wU","s":null},{"n":"1.4","t":"Set Theory","v":"8z04uTycZpE","s":null},{"n":"1.5","t":"Construction of Subsets and set operations","v":"Ue3y-OE_2lE","s":null},{"n":"1.6","t":"Sets: Examples","v":"bW5O7a1VX4w","s":null},{"n":"1.7","t":"Examples of Set Operations and Counting Problems","v":"NwYHojyw3SU","s":null},{"n":"1.8","t":"Relations","v":"_bNfC5yW6bk","s":null},{"n":"1.9","t":"Functions","v":"M-nlI2fgaWI","s":null},{"n":"1.1","t":"Relations: examples","v":"6CyagSq3fWA","s":null},{"n":"1.11","t":"Function: examples","v":"6YrUx0bAnuQ","s":null},{"n":"1.12","t":"Prime numbers","v":"98NeCye2i3k","s":null},{"n":"1.13","t":"Why is a number irrational?","v":"xUZeskT6WiQ","s":null},{"n":"1.14","t":"Sets versus Collections","v":"kM9nVJks1a8","s":null},{"n":"1.15","t":"Degrees of infinity","v":"yjJ_pualJr4","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Rectangular Coordinate System","v":"RfG2NLXqGE8","s":null},{"n":"2.2","t":"Distance Formula","v":"aDhyAkXiDOY","s":null},{"n":"2.3","t":"Section Formula","v":"B5yv8zPrkek","s":null},{"n":"2.4","t":"Area of triangle","v":"x62fodF7ezk","s":null},{"n":"2.5","t":"Slope of a line","v":"V-b3BL8DAvU","s":null},{"n":"2.6","t":"Parallel and perpendicular lines","v":"CXhBGVfmtBg","s":null},{"n":"2.7","t":"Representation of a Line- 1","v":"fKUK8xeuWNo","s":null},{"n":"2.8","t":"Representation of a Line- 2","v":"zM0q4y-y4so","s":null},{"n":"2.9","t":"General equation of a line","v":"_3Iidm8NnbM","s":null},{"n":"2.1","t":"Equation of parallel and perpendicular lines in general form","v":"gJuJtTYmbSs","s":null},{"n":"2.11","t":"Equation of a perpendicular line passing through a point","v":"CjeHgCXhi4k","s":null},{"n":"2.12","t":"Distance of a line from a given point","v":"tYSZ4L0X3kY","s":null},{"n":"2.13","t":"Straight line fit","v":"xdZHsFuyBZM","s":null},{"n":"Tutorial 2.1","t":"Week 02 - Tutorial 01","v":"ggpFtRiDUFA","s":null},{"n":"Tutorial 2.2","t":"Week 02 - Tutorial 02","v":"Qr7Kou01yj8","s":null},{"n":"Tutorial 2.3","t":"Week 02 - Tutorial 03","v":"sCoim0snAA8","s":null},{"n":"Tutorial 2.4","t":"Week 02 - Tutorial 04","v":"vq7_toO2kYg","s":null},{"n":"Tutorial 2.5","t":"Week 02 - Tutorial 05","v":"1INLxb3f9YI","s":null},{"n":"Tutorial 2.6","t":"Week 02 - Tutorial 06","v":"-fZvZdJhzUs","s":null},{"n":"Tutorial 2.7","t":"Week 02 - Tutorial 07","v":"dbJO3jF4WXs","s":null},{"n":"Tutorial 2.8","t":"Week 02 - Tutorial 08","v":"dteNmaw328E","s":null},{"n":"Tutorial 2.9","t":"Week 02 - Tutorial 09","v":"ORTfj35Hrcw","s":null},{"n":"Tutorial 2.10","t":"Week 02 - Tutorial 10","v":"liFQ6XE3yjM","s":null},{"n":"Tutorial 2.11","t":"Week 02 - Tutorial 11","v":"158cd3s0F8k","s":null},{"n":"Tutorial 2.12","t":"Week 02 - Tutorial 12","v":"dUAoCjc3rTQ","s":null},{"n":"Tutorial 2.13","t":"Week 02 - Tutorial 13","v":"qEmKQwJtJGE","s":null},{"n":"Tutorial 2.14","t":"Week 02 - Tutorial 14","v":"naHjpSVM3FU","s":null},{"n":"Tutorial 2.15","t":"Week 02 - Tutorial 15","v":"EJ-xQkbr8mU","s":null},{"n":"Tutorial 2.16","t":"Week 02 - Tutorial 16","v":"J3rs7MaSR1M","s":null},{"n":"Tutorial 2.17","t":"Week 02 - Tutorial 17","v":"j1KP8QmJB9k","s":null},{"n":"Additional Lecture 1","t":"Week 02 - Additional Lecture 01","v":"wGoHykE6OeM","s":null},{"n":"Additional Lecture 2","t":"Week 02 - Additional Lecture 02","v":"HorfaKBnghw","s":null},{"n":"Additional Lecture 3","t":"Week 02 - Additional Lecture 03","v":"YPQiTLElYEU","s":null},{"n":"Additional Lecture 4","t":"Week 02 - Additional Lecture 04","v":"cDEa9jgcSyc","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Quadratic functions","v":"U4gr4zMosMk","s":null},{"n":"3.2","t":"Examples of Quadratic functions","v":"dvJKbgIPG8Q","s":null},{"n":"3.3","t":"Slope of a quadratic function","v":"1_Y2cZMrcfY","s":null},{"n":"3.4","t":"Solution of quadratic equation using graph","v":"RzIBZbGov4w","s":null},{"n":"3.5","t":"Slope: Line and Parabola","v":"kaByg1VQxqk","s":null},{"n":"3.6","t":"Summary lecture (Quadratic Functions)","v":"JkbFTVFw1yQ","s":null},{"n":"3.7","t":"Solution of a quadratic equation using Factorization","v":"ZRXWkzFSZzU","s":null},{"n":"3.8","t":"Solution of a quadratic equation using Square method","v":"qvUX-jgtogg","s":null},{"n":"3.9","t":"Quadratic formula","v":"1shGS3xfmwc","s":null},{"n":"3.1","t":"Summary Lecture","v":"J8uQvJN_UWY","s":null},{"n":"Additional Lecture 1","t":"Week 03 - Additional lecture","v":"rfj8d3FrEU4","s":null},{"n":"Additional Lecture 2","t":"Week 03 - Surface of Revolution","v":"nS5csm4GRNo","s":null},{"n":"Tutorial 3.1","t":"Week 03 - Tutorial 01","v":"XKsxb2aRdiQ","s":null},{"n":"Tutorial 3.2","t":"Week 03 - Tutorial 02","v":"GLe86OGBSCo","s":null},{"n":"Tutorial 3.3","t":"Week 03 - Tutorial 03","v":"R9f0je9RMNg","s":null},{"n":"Tutorial 3.4","t":"Week 03 - Tutorial 04","v":"TZlrhtinZwM","s":null},{"n":"Tutorial 3.5","t":"Week 03 - Tutorial 05","v":"dMwQWGyS2pA","s":null},{"n":"Tutorial 3.6","t":"Week 03 - Tutorial 06","v":"FGoZgOBiGc0","s":null},{"n":"Tutorial 3.7","t":"Week 03 - Tutorial 07","v":"vAflUyD4LWw","s":null},{"n":"Tutorial 3.8","t":"Week 03 - Tutorial 08","v":"qva4TSPBA4g","s":null},{"n":"Tutorial 3.9","t":"Week 03 - Tutorial 09","v":"YHkQPGXbmNU","s":null},{"n":"Tutorial 3.10","t":"Week 03 - Tutorial 10","v":"oUZx4cYIpdk","s":null},{"n":"Tutorial 3.11","t":"Week 03 - Tutorial 11","v":"4AY5bW0hwNk","s":null},{"n":"Tutorial 3.12","t":"Week 03 - Tutorial 12","v":"x7hweo9BhxY","s":null},{"n":"Tutorial 3.13","t":"Week 03 - Tutorial 13","v":"hPBoJmRnmuE","s":null},{"n":"Tutorial 3.14","t":"Week 03 - Tutorial 14","v":"yZLfnTv0Uy8","s":null},{"n":"Tutorial 3.15","t":"Week 03 - Tutorial 15","v":"McFL8K7SvUk","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Polynomials","v":"2PTcxG8e6os","s":null},{"n":"4.2","t":"Degree of Polynomials","v":"s9zDRWmgsb4","s":null},{"n":"4.3","t":"Algebra of Polynomials: Addition and Subtraction","v":"KJXkTzKAZ6k","s":null},{"n":"4.4","t":"Algebra of Polynomials: Multiplication","v":"WOqISzw8jYs","s":null},{"n":"4.5","t":"Algebra of Polynomials: Division","v":"2eWP19N8wn4","s":null},{"n":"4.6","t":"Division Algorithm","v":"Y1_T6augNFo","s":null},{"n":"4.7","t":"Graphs of Polynomials: Identification and Characterization","v":"5M_oX0EjiEk","s":null},{"n":"4.8","t":"Zeroes of Polynomial Functions","v":"-E21FQ567F8","s":null},{"n":"4.9","t":"Graphs of Polynomials: Multiplicities","v":"-flkMRCNTPE","s":null},{"n":"4.1","t":"Graphs of Polynomials: Behavior at X-intercepts","v":"1t4-35dKUno","s":null},{"n":"4.11","t":"Graphs of Polynomials: End behavior","v":"cggv0rx2yBo","s":null},{"n":"4.12","t":"Graphs of Polynomials: Turning points","v":"8a--SspXSXU","s":null},{"n":"4.13","t":"Graphs of Polynomials: Graphing and Polynomial creation","v":"6IVf5Af1nO0","s":null},{"n":"Tutorial 4.1","t":"Week 04 - Tutorial 01","v":"Z6_zN6hHYzM","s":null},{"n":"Tutorial 4.2","t":"Week 04 - Tutorial 02","v":"aA3is7Mx0rU","s":null},{"n":"Tutorial 4.3","t":"Week 04 - Tutorial 03","v":"Z3v7rqHV24w","s":null},{"n":"Tutorial 4.4","t":"Week 04 - Tutorial 04","v":"S5LzOq6JRJQ","s":null},{"n":"Tutorial 4.5","t":"Week 04 - Tutorial 05","v":"liH472du-VE","s":null},{"n":"Tutorial 4.6","t":"Week 04 - Tutorial 06","v":"syQeX4aKpBQ","s":null},{"n":"Tutorial 4.7","t":"Week 04 - Tutorial 07","v":"NbZve1-mp0E","s":null},{"n":"Tutorial 4.8","t":"Week 04 - Tutorial 08","v":"tpfN1ZhK8VM","s":null},{"n":"Tutorial 4.9","t":"Week 04 - Tutorial 09","v":"4H49WeX1AF8","s":null},{"n":"Tutorial 4.10","t":"Week 04 - Tutorial 10","v":"fmhDfVJapVQ","s":null},{"n":"Tutorial 4.11","t":"Week 04 - Tutorial 11","v":"XEHEEW7Nt0E","s":null},{"n":"Tutorial 4.12","t":"Week 04 - Tutorial 12","v":"2HW6asEXWEU","s":null},{"n":"Tutorial 4.13","t":"Week 04 - Tutorial 13","v":"X75oDymTpj8","s":null},{"n":"Tutorial 4.14","t":"Week 04 - Tutorial 14","v":"dbyOtQhdIXg","s":null},{"n":"Tutorial 4.15","t":"Week 04 - Tutorial 15","v":"hFgUTj5ZbJg","s":null},{"n":"Tutorial 4.16","t":"Week 04 - Tutorial 16","v":"vLrbA0Lfqeg","s":null},{"n":"Tutorial 4.17","t":"Week 04 - Tutorial 17","v":"cM895dEB2xA","s":null},{"n":"Additonal Lecture 1","t":"Week 04 - Summary","v":"fbvj1w_NI9c","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"One-to-One Function: Definition and Tests","v":"CiZrP2-cpGM","s":null},{"n":"5.2","t":"One-to-One Function: Examples and Theorems","v":"em8Lw7g776M","s":null},{"n":"5.3","t":"Exponential Functions: Definitions","v":"0l47NHJy-f4","s":null},{"n":"5.4","t":"Exponential Functions: Graphing","v":"dMvBjIeJe80","s":null},{"n":"5.5","t":"Natural Exponential Function","v":"d_LJM7F33uo","s":null},{"n":"5.6","t":"Composite Functions","v":"T4Q2bg0jQZ8","s":null},{"n":"5.7","t":"Composite Functions: Examples","v":"QfO-gh-Fpts","s":null},{"n":"5.8","t":"Composite Functions: Domain","v":"5u1OlsxuJnw","s":null},{"n":"5.9","t":"Inverse Functions","v":"BpoWKCrLm14","s":null},{"n":"Additional Lecture 1","t":"Week 05 - Additional lecture - Inverse Function","v":"tVoe7VtZXK8","s":null},{"n":"Tutorial 5.1","t":"Week 05 - Tutorial 01","v":"K0aMjD527Mw","s":null},{"n":"Tutorial 5.2","t":"Week 05 - Tutorial 02","v":"hfEr9yWtO1E","s":null},{"n":"Tutorial 5.3","t":"Week 05 - Tutorial 03","v":"oEQrfi85nqo","s":null},{"n":"Tutorial 5.4","t":"Week 05 - Tutorial 04","v":"CVVQqNBtYFw","s":null},{"n":"Tutorial 5.5","t":"Week 05 - Tutorial 05","v":"8GJzLNcsWVA","s":null},{"n":"Tutorial 5.6","t":"Week 05 - Tutorial 06","v":"ODzZ9p6vtlY","s":null},{"n":"Tutorial 5.7","t":"Week 05 - Tutorial 07","v":"zI5K04KiJOc","s":null},{"n":"Tutorial 5.8","t":"Week 05 - Tutorial 08","v":"AzbVvbgz5zU","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Logarithmic Functions","v":"G5A7imv2Otc","s":null},{"n":"6.2","t":"Logarithmic Functions : Graphs","v":"NL8MlTO-Yf8","s":null},{"n":"6.3","t":"Solving Exponential Equations","v":"Q5ef_uFX7ug","s":null},{"n":"6.4","t":"Logarithmic Functions: Properties - 1","v":"0WQFcv-wjiI","s":null},{"n":"6.5","t":"Logarithmic Functions : Applications","v":"XSJ1QZ0MHOs","s":null},{"n":"6.6","t":"Logarithmic Functions: Properties - 2","v":"eMt8xq0Fuww","s":null},{"n":"6.7","t":"Logarithmic Equations","v":"bB1um2s0NDE","s":null},{"n":"Tutorial 6.1","t":"Week 06 - Tutorial 01","v":"2jFIeTvKg1E","s":null},{"n":"Tutorial 6.2","t":"Week 06 - Tutorial 02","v":"jk2Laj0L5YI","s":null},{"n":"Tutorial 6.3","t":"Week 06 - Tutorial 03","v":"UNhLOmnDoMY","s":null},{"n":"Tutorial 6.4","t":"Week 06 - Tutorial 04","v":"YG5pvyZI6JM","s":null},{"n":"Tutorial 6.5","t":"Week 06 - Tutorial 05","v":"8-EHrKfs1CI","s":null},{"n":"Tutorial 6.6","t":"Week 06 - Tutorial 06","v":"HfED70SLiNo","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Some topics from Maths 1","v":"0WHixZdnxTQ","s":null},{"n":"7.2","t":"Functions of one variable","v":"G69JB5310vA","s":null},{"n":"7.3","t":"Graphs and tangents of functions of one variable","v":"EIwT-ibJ7bA","s":null},{"n":"7.4","t":"Limits for sequences","v":"1uySBjXUR1k","s":null},{"n":"7.5","t":"Limits for functions of one variable","v":"wXPoDGuv1wM","s":null},{"n":"Additional Lecture 1","t":"Week 7 - Revision","v":"tRJTkQpIU9Y","s":null},{"n":"Tutorial 7.1","t":"Week 07 - Tutorial 01","v":"MsWKI3AlurM","s":null},{"n":"Tutorial 7.2","t":"Week 07 - Tutorial 02","v":"xG7Ii18HMm8","s":null},{"n":"Tutorial 7.3","t":"Week 07 - Tutorial 03","v":"pEpeKw8acfs","s":null},{"n":"Tutorial 7.4","t":"Week 07 - Tutorial 04","v":"qtwwkVuWmPQ","s":null},{"n":"Tutorial 7.5","t":"Week 07 - Tutorial 05","v":"jrfIGJqESro","s":null},{"n":"Tutorial 7.6","t":"Week 07 - Tutorial 06","v":"KIZq6N-1ewI","s":null},{"n":"Tutorial 7.7","t":"Week 07 - Tutorial 07","v":"g7C2O4P7yjM","s":null},{"n":"Tutorial 7.8","t":"Week 07 - Tutorial 08","v":"KK1cbakBHCE","s":null},{"n":"Tutorial 7.9","t":"Week 07 - Tutorial 09","v":"3d36ENBUoig","s":null},{"n":"Tutorial 7.10","t":"Week 07 - Tutorial 10","v":"RPwqUgCbNA8","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Limits and continuity","v":"do-iDBxQCpw","s":null},{"n":"8.2","t":"Differentiability and the derivative","v":"w8R2RdS6xQ4","s":null},{"n":"8.3","t":"Computing derivatives and L\u0027H\u00f4pital\u0027s rule","v":"Ah3laZhgHus","s":null},{"n":"8.4","t":"Derivatives, tangents and linear approximation","v":"4IpVR6QpBok","s":null},{"n":"Tutorial 8.1","t":"Week 08 - Tutorial 01","v":"Th5VUAdbSy0","s":null},{"n":"Tutorial 8.2","t":"Week 08 - Tutorial 02","v":"dYQlotGp5QE","s":null},{"n":"Tutorial 8.3","t":"Week 08 - Tutorial 03","v":"jTB5dWOLo9s","s":null},{"n":"Tutorial 8.4","t":"Week 08 - Tutorial 04","v":"sRK1ZSWUX3w","s":null},{"n":"Tutorial 8.5","t":"Week 08 - Tutorial 05","v":"-IFBgN_qkzA","s":null},{"n":"Tutorial 8.6","t":"Week 08 - Tutorial 06","v":"qwL-g1j3fqU","s":null},{"n":"Tutorial 8.7","t":"Week 08 - Tutorial 07","v":"RSlIwizbMkQ","s":null},{"n":"Additional Lecture 1","t":"Revision session- Week 8","v":"8H0EyejZ3zI","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"Critical points: local maxima and minima","v":"wUPkaBwF1-Y","s":null},{"n":"9.2","t":"Examples : Computing Maxima and Minima","v":"LvCh7GTke2E","s":null},{"n":"9.3","t":"Computing areas","v":"ZehrWVYoJ_s","s":null},{"n":"9.4","t":"Riemann sums and the integral","v":"qEZiq3QQBok","s":null},{"n":"9.5","t":"Integrals as anti-derivatives","v":"EeE-4Tp2yGA","s":null},{"n":"9.60000000000001","t":"Computing areas using Integrals","v":"79YBSjrg19w","s":null},{"n":"Tutorial 9.1","t":"Week 09 - Tutorial 01","v":"r_QsjHqSNcs","s":null},{"n":"Tutorial 9.2","t":"Week 09 - Tutorial 02","v":"kc6GgdK_VHg","s":null},{"n":"Tutorial 9.3","t":"Week 09 - Tutorial 03","v":"XlN-3VnaFJU","s":null},{"n":"Tutorial 9.4","t":"Week 09 - Tutorial 04","v":"KS5ybCJSLUI","s":null},{"n":"Tutorial 9.5","t":"Week 09 - Tutorial 05","v":"_Y96gfJPwpg","s":null},{"n":"Tutorial 9.6","t":"Week 09 - Tutorial 06","v":"jMeTX1yoLgo","s":null},{"n":"Tutorial 9.7","t":"Week 09 - Tutorial 07","v":"WpJVYsPy29E","s":null},{"n":"Tutorial 9.8","t":"Week 09 - Tutorial 08","v":"vDsKyLgLLzA","s":null},{"n":"Tutorial 9.9","t":"Week 09 - Tutorial 09","v":"4_O4g5qY8go","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Introduction to Graphs","v":"wtQ6RtTwCVk","s":null},{"n":"10.2","t":"Some general graph problems","v":"4K2wZkFKqIY","s":null},{"n":"10.3","t":"Representation of graphs","v":"4M-1F4DORps","s":null},{"n":"10.4","t":"Breadth-first search","v":"WPaX9PFJY_4","s":null},{"n":"10.5","t":"Depth-first search","v":"1BvUzBkyD_o","s":null},{"n":"10.6","t":"Applications of BFS and DFS - 1","v":"l56BfAgi5LA","s":null},{"n":"10.7","t":"Applications of BFS and DFS - 2","v":"yD4mk9nD_-s","s":null},{"n":"10.8","t":"Complexity of BFS and DFS","v":"rCiV-4ceYRU","s":null},{"n":"10.9","t":"Directed Acyclic Graphs","v":"-VKVovlBnwE","s":null},{"n":"10.1","t":"Topological Sorting","v":"Rax3k-rCYkY","s":null},{"n":"Tutorial 10.1","t":"W10 - Tutorial 1","v":"voQeqd7W4-U","s":null},{"n":"Tutorial 10.2","t":"W10 - Tutorial 2","v":"mAysETm0IAM","s":null},{"n":"Tutorial 10.3","t":"W10 - Tutorial 3","v":"27CmZi3ImTY","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Longest Paths in DAGs","v":"934a17SB5NY","s":null},{"n":"11.2","t":"Transitive Closure","v":"6Ax9K7gSuJE","s":null},{"n":"11.3","t":"Matrix Multiplication","v":"N_PvNrQXUg4","s":null},{"n":"11.4","t":"Shortest Paths in Weighted Graphs","v":"4l_g6IQz6Go","s":null},{"n":"11.5","t":"Single Source Shortest paths","v":"XXFcZyP2KlM","s":null},{"n":"11.6","t":"Single Source Shortest Paths with Negative Weights","v":"FGGMybRD4O4","s":null},{"n":"11.7","t":"All-Pairs Shortest Paths","v":"Rhm-0SD-NfE","s":null},{"n":"11.8","t":"Minimum cost Spanning Trees","v":"3GwJAstzzBk","s":null},{"n":"11.9","t":"Minimum cost Spanning Trees: Prim\u2019s Algorithm","v":"btr8zJBgaQg","s":null},{"n":"11.1","t":"Minimum cost Spanning Trees: Kruskal\u0027s Algorithm","v":"-0diRWTGgk8","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"Revision lecture on Set Theory","v":"n514TARtjyA","s":null},{"n":"12.2","t":"Revision lecture on Relations","v":"7YA4CwJeUNw","s":null},{"n":"12.3","t":"Revision lecture on polynomial graphing","v":"PBqfqFqnvpw","s":null},{"n":"12.4","t":"Revision lecture on Logarithmic Functions","v":"9jbRtJjuNiY","s":null},{"n":"12.5","t":"Revision lecture on Functions","v":"sHPX4vwNplo","s":null},{"n":"12.6","t":"Revision lecture on Graph theory basics","v":"jCe_9qtCv7k","s":null},{"n":"12.7","t":"Revision lecture on Exponential and Composite Function","v":"3B63uAVzs08","s":null}]}];
+  const WEEKS_DATA = [{"w":"Week 0","items":[{"n":"0.1","t":"Mathematics for Data Science 1 | Introduction to the course basics","v":"F9BZ5JsnjYM","s":null}]},{"w":"Week 1","items":[{"n":"1.1","t":"Natural Numbers and their operations","v":"WEC6jPWvoj8","s":null},{"n":"1.2","t":"Rational Numbers","v":"jHBIJ50DhJQ","s":null},{"n":"1.3","t":"Real and Complex numbers","v":"hz7cuJj17wU","s":null},{"n":"1.4","t":"Set Theory","v":"8z04uTycZpE","s":null},{"n":"1.5","t":"Construction of Subsets and set operations","v":"Ue3y-OE_2lE","s":null},{"n":"1.6","t":"Sets: Examples","v":"bW5O7a1VX4w","s":null},{"n":"1.7","t":"Examples of Set Operations and Counting Problems","v":"NwYHojyw3SU","s":null},{"n":"1.8","t":"Relations","v":"_bNfC5yW6bk","s":null},{"n":"1.9","t":"Functions","v":"M-nlI2fgaWI","s":null},{"n":"1.1","t":"Relations: examples","v":"6CyagSq3fWA","s":null},{"n":"1.11","t":"Function: examples","v":"6YrUx0bAnuQ","s":null},{"n":"1.12","t":"Prime numbers","v":"98NeCye2i3k","s":null},{"n":"1.13","t":"Why is a number irrational?","v":"xUZeskT6WiQ","s":null},{"n":"1.14","t":"Sets versus Collections","v":"kM9nVJks1a8","s":null},{"n":"1.15","t":"Degrees of infinity","v":"yjJ_pualJr4","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Rectangular Coordinate System","v":"RfG2NLXqGE8","s":null},{"n":"2.2","t":"Distance Formula","v":"aDhyAkXiDOY","s":null},{"n":"2.3","t":"Section Formula","v":"B5yv8zPrkek","s":null},{"n":"2.4","t":"Area of triangle","v":"x62fodF7ezk","s":null},{"n":"2.5","t":"Slope of a line","v":"V-b3BL8DAvU","s":null},{"n":"2.6","t":"Parallel and perpendicular lines","v":"CXhBGVfmtBg","s":null},{"n":"2.7","t":"Representation of a Line- 1","v":"fKUK8xeuWNo","s":null},{"n":"2.8","t":"Representation of a Line- 2","v":"zM0q4y-y4so","s":null},{"n":"2.9","t":"General equation of a line","v":"_3Iidm8NnbM","s":null},{"n":"2.1","t":"Equation of parallel and perpendicular lines in general form","v":"gJuJtTYmbSs","s":null},{"n":"2.11","t":"Equation of a perpendicular line passing through a point","v":"CjeHgCXhi4k","s":null},{"n":"2.12","t":"Distance of a line from a given point","v":"tYSZ4L0X3kY","s":null},{"n":"2.13","t":"Straight line fit","v":"xdZHsFuyBZM","s":null},{"n":"Tutorial 2.1","t":"Week 02 - Tutorial 01","v":"ggpFtRiDUFA","s":null},{"n":"Tutorial 2.2","t":"Week 02 - Tutorial 02","v":"Qr7Kou01yj8","s":null},{"n":"Tutorial 2.3","t":"Week 02 - Tutorial 03","v":"sCoim0snAA8","s":null},{"n":"Tutorial 2.4","t":"Week 02 - Tutorial 04","v":"vq7_toO2kYg","s":null},{"n":"Tutorial 2.5","t":"Week 02 - Tutorial 05","v":"1INLxb3f9YI","s":null},{"n":"Tutorial 2.6","t":"Week 02 - Tutorial 06","v":"-fZvZdJhzUs","s":null},{"n":"Tutorial 2.7","t":"Week 02 - Tutorial 07","v":"dbJO3jF4WXs","s":null},{"n":"Tutorial 2.8","t":"Week 02 - Tutorial 08","v":"dteNmaw328E","s":null},{"n":"Tutorial 2.9","t":"Week 02 - Tutorial 09","v":"ORTfj35Hrcw","s":null},{"n":"Tutorial 2.10","t":"Week 02 - Tutorial 10","v":"liFQ6XE3yjM","s":null},{"n":"Tutorial 2.11","t":"Week 02 - Tutorial 11","v":"158cd3s0F8k","s":null},{"n":"Tutorial 2.12","t":"Week 02 - Tutorial 12","v":"dUAoCjc3rTQ","s":null},{"n":"Tutorial 2.13","t":"Week 02 - Tutorial 13","v":"qEmKQwJtJGE","s":null},{"n":"Tutorial 2.14","t":"Week 02 - Tutorial 14","v":"naHjpSVM3FU","s":null},{"n":"Tutorial 2.15","t":"Week 02 - Tutorial 15","v":"EJ-xQkbr8mU","s":null},{"n":"Tutorial 2.16","t":"Week 02 - Tutorial 16","v":"J3rs7MaSR1M","s":null},{"n":"Tutorial 2.17","t":"Week 02 - Tutorial 17","v":"j1KP8QmJB9k","s":null},{"n":"Additional Lecture 1","t":"Week 02 - Additional Lecture 01","v":"wGoHykE6OeM","s":null},{"n":"Additional Lecture 2","t":"Week 02 - Additional Lecture 02","v":"HorfaKBnghw","s":null},{"n":"Additional Lecture 3","t":"Week 02 - Additional Lecture 03","v":"YPQiTLElYEU","s":null},{"n":"Additional Lecture 4","t":"Week 02 - Additional Lecture 04","v":"cDEa9jgcSyc","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Quadratic functions","v":"U4gr4zMosMk","s":null},{"n":"3.2","t":"Examples of Quadratic functions","v":"dvJKbgIPG8Q","s":null},{"n":"3.3","t":"Slope of a quadratic function","v":"1_Y2cZMrcfY","s":null},{"n":"3.4","t":"Solution of quadratic equation using graph","v":"RzIBZbGov4w","s":null},{"n":"3.5","t":"Slope: Line and Parabola","v":"kaByg1VQxqk","s":null},{"n":"3.6","t":"Summary lecture (Quadratic Functions)","v":"JkbFTVFw1yQ","s":null},{"n":"3.7","t":"Solution of a quadratic equation using Factorization","v":"ZRXWkzFSZzU","s":null},{"n":"3.8","t":"Solution of a quadratic equation using Square method","v":"qvUX-jgtogg","s":null},{"n":"3.9","t":"Quadratic formula","v":"1shGS3xfmwc","s":null},{"n":"3.1","t":"Summary Lecture","v":"J8uQvJN_UWY","s":null},{"n":"Additional Lecture 1","t":"Week 03 - Additional lecture","v":"rfj8d3FrEU4","s":null},{"n":"Additional Lecture 2","t":"Week 03 - Surface of Revolution","v":"nS5csm4GRNo","s":null},{"n":"Tutorial 3.1","t":"Week 03 - Tutorial 01","v":"XKsxb2aRdiQ","s":null},{"n":"Tutorial 3.2","t":"Week 03 - Tutorial 02","v":"GLe86OGBSCo","s":null},{"n":"Tutorial 3.3","t":"Week 03 - Tutorial 03","v":"R9f0je9RMNg","s":null},{"n":"Tutorial 3.4","t":"Week 03 - Tutorial 04","v":"TZlrhtinZwM","s":null},{"n":"Tutorial 3.5","t":"Week 03 - Tutorial 05","v":"dMwQWGyS2pA","s":null},{"n":"Tutorial 3.6","t":"Week 03 - Tutorial 06","v":"FGoZgOBiGc0","s":null},{"n":"Tutorial 3.7","t":"Week 03 - Tutorial 07","v":"vAflUyD4LWw","s":null},{"n":"Tutorial 3.8","t":"Week 03 - Tutorial 08","v":"qva4TSPBA4g","s":null},{"n":"Tutorial 3.9","t":"Week 03 - Tutorial 09","v":"YHkQPGXbmNU","s":null},{"n":"Tutorial 3.10","t":"Week 03 - Tutorial 10","v":"oUZx4cYIpdk","s":null},{"n":"Tutorial 3.11","t":"Week 03 - Tutorial 11","v":"4AY5bW0hwNk","s":null},{"n":"Tutorial 3.12","t":"Week 03 - Tutorial 12","v":"x7hweo9BhxY","s":null},{"n":"Tutorial 3.13","t":"Week 03 - Tutorial 13","v":"hPBoJmRnmuE","s":null},{"n":"Tutorial 3.14","t":"Week 03 - Tutorial 14","v":"yZLfnTv0Uy8","s":null},{"n":"Tutorial 3.15","t":"Week 03 - Tutorial 15","v":"McFL8K7SvUk","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Polynomials","v":"2PTcxG8e6os","s":null},{"n":"4.2","t":"Degree of Polynomials","v":"s9zDRWmgsb4","s":null},{"n":"4.3","t":"Algebra of Polynomials: Addition and Subtraction","v":"KJXkTzKAZ6k","s":null},{"n":"4.4","t":"Algebra of Polynomials: Multiplication","v":"WOqISzw8jYs","s":null},{"n":"4.5","t":"Algebra of Polynomials: Division","v":"2eWP19N8wn4","s":null},{"n":"4.6","t":"Division Algorithm","v":"Y1_T6augNFo","s":null},{"n":"4.7","t":"Graphs of Polynomials: Identification and Characterization","v":"5M_oX0EjiEk","s":null},{"n":"4.8","t":"Zeroes of Polynomial Functions","v":"-E21FQ567F8","s":null},{"n":"4.9","t":"Graphs of Polynomials: Multiplicities","v":"-flkMRCNTPE","s":null},{"n":"4.1","t":"Graphs of Polynomials: Behavior at X-intercepts","v":"1t4-35dKUno","s":null},{"n":"4.11","t":"Graphs of Polynomials: End behavior","v":"cggv0rx2yBo","s":null},{"n":"4.12","t":"Graphs of Polynomials: Turning points","v":"8a--SspXSXU","s":null},{"n":"4.13","t":"Graphs of Polynomials: Graphing and Polynomial creation","v":"6IVf5Af1nO0","s":null},{"n":"Tutorial 4.1","t":"Week 04 - Tutorial 01","v":"Z6_zN6hHYzM","s":null},{"n":"Tutorial 4.2","t":"Week 04 - Tutorial 02","v":"aA3is7Mx0rU","s":null},{"n":"Tutorial 4.3","t":"Week 04 - Tutorial 03","v":"Z3v7rqHV24w","s":null},{"n":"Tutorial 4.4","t":"Week 04 - Tutorial 04","v":"S5LzOq6JRJQ","s":null},{"n":"Tutorial 4.5","t":"Week 04 - Tutorial 05","v":"liH472du-VE","s":null},{"n":"Tutorial 4.6","t":"Week 04 - Tutorial 06","v":"syQeX4aKpBQ","s":null},{"n":"Tutorial 4.7","t":"Week 04 - Tutorial 07","v":"NbZve1-mp0E","s":null},{"n":"Tutorial 4.8","t":"Week 04 - Tutorial 08","v":"tpfN1ZhK8VM","s":null},{"n":"Tutorial 4.9","t":"Week 04 - Tutorial 09","v":"4H49WeX1AF8","s":null},{"n":"Tutorial 4.10","t":"Week 04 - Tutorial 10","v":"fmhDfVJapVQ","s":null},{"n":"Tutorial 4.11","t":"Week 04 - Tutorial 11","v":"XEHEEW7Nt0E","s":null},{"n":"Tutorial 4.12","t":"Week 04 - Tutorial 12","v":"2HW6asEXWEU","s":null},{"n":"Tutorial 4.13","t":"Week 04 - Tutorial 13","v":"X75oDymTpj8","s":null},{"n":"Tutorial 4.14","t":"Week 04 - Tutorial 14","v":"dbyOtQhdIXg","s":null},{"n":"Tutorial 4.15","t":"Week 04 - Tutorial 15","v":"hFgUTj5ZbJg","s":null},{"n":"Tutorial 4.16","t":"Week 04 - Tutorial 16","v":"vLrbA0Lfqeg","s":null},{"n":"Tutorial 4.17","t":"Week 04 - Tutorial 17","v":"cM895dEB2xA","s":null},{"n":"Additonal Lecture 1","t":"Week 04 - Summary","v":"fbvj1w_NI9c","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"One-to-One Function: Definition and Tests","v":"CiZrP2-cpGM","s":null},{"n":"5.2","t":"One-to-One Function: Examples and Theorems","v":"em8Lw7g776M","s":null},{"n":"5.3","t":"Exponential Functions: Definitions","v":"0l47NHJy-f4","s":null},{"n":"5.4","t":"Exponential Functions: Graphing","v":"dMvBjIeJe80","s":null},{"n":"5.5","t":"Natural Exponential Function","v":"d_LJM7F33uo","s":null},{"n":"5.6","t":"Composite Functions","v":"T4Q2bg0jQZ8","s":null},{"n":"5.7","t":"Composite Functions: Examples","v":"QfO-gh-Fpts","s":null},{"n":"5.8","t":"Composite Functions: Domain","v":"5u1OlsxuJnw","s":null},{"n":"5.9","t":"Inverse Functions","v":"BpoWKCrLm14","s":null},{"n":"Additional Lecture 1","t":"Week 05 - Additional lecture - Inverse Function","v":"tVoe7VtZXK8","s":null},{"n":"Tutorial 5.1","t":"Week 05 - Tutorial 01","v":"K0aMjD527Mw","s":null},{"n":"Tutorial 5.2","t":"Week 05 - Tutorial 02","v":"hfEr9yWtO1E","s":null},{"n":"Tutorial 5.3","t":"Week 05 - Tutorial 03","v":"oEQrfi85nqo","s":null},{"n":"Tutorial 5.4","t":"Week 05 - Tutorial 04","v":"CVVQqNBtYFw","s":null},{"n":"Tutorial 5.5","t":"Week 05 - Tutorial 05","v":"8GJzLNcsWVA","s":null},{"n":"Tutorial 5.6","t":"Week 05 - Tutorial 06","v":"ODzZ9p6vtlY","s":null},{"n":"Tutorial 5.7","t":"Week 05 - Tutorial 07","v":"zI5K04KiJOc","s":null},{"n":"Tutorial 5.8","t":"Week 05 - Tutorial 08","v":"AzbVvbgz5zU","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Logarithmic Functions","v":"G5A7imv2Otc","s":null},{"n":"6.2","t":"Logarithmic Functions : Graphs","v":"NL8MlTO-Yf8","s":null},{"n":"6.3","t":"Solving Exponential Equations","v":"Q5ef_uFX7ug","s":null},{"n":"6.4","t":"Logarithmic Functions: Properties - 1","v":"0WQFcv-wjiI","s":null},{"n":"6.5","t":"Logarithmic Functions : Applications","v":"XSJ1QZ0MHOs","s":null},{"n":"6.6","t":"Logarithmic Functions: Properties - 2","v":"eMt8xq0Fuww","s":null},{"n":"6.7","t":"Logarithmic Equations","v":"bB1um2s0NDE","s":null},{"n":"Tutorial 6.1","t":"Week 06 - Tutorial 01","v":"2jFIeTvKg1E","s":null},{"n":"Tutorial 6.2","t":"Week 06 - Tutorial 02","v":"jk2Laj0L5YI","s":null},{"n":"Tutorial 6.3","t":"Week 06 - Tutorial 03","v":"UNhLOmnDoMY","s":null},{"n":"Tutorial 6.4","t":"Week 06 - Tutorial 04","v":"YG5pvyZI6JM","s":null},{"n":"Tutorial 6.5","t":"Week 06 - Tutorial 05","v":"8-EHrKfs1CI","s":null},{"n":"Tutorial 6.6","t":"Week 06 - Tutorial 06","v":"HfED70SLiNo","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Some topics from Maths 1","v":"0WHixZdnxTQ","s":null},{"n":"7.2","t":"Functions of one variable","v":"G69JB5310vA","s":null},{"n":"7.3","t":"Graphs and tangents of functions of one variable","v":"EIwT-ibJ7bA","s":null},{"n":"7.4","t":"Limits for sequences","v":"1uySBjXUR1k","s":null},{"n":"7.5","t":"Limits for functions of one variable","v":"wXPoDGuv1wM","s":null},{"n":"Additional Lecture 1","t":"Week 7 - Revision","v":"tRJTkQpIU9Y","s":null},{"n":"Tutorial 7.1","t":"Week 07 - Tutorial 01","v":"MsWKI3AlurM","s":null},{"n":"Tutorial 7.2","t":"Week 07 - Tutorial 02","v":"xG7Ii18HMm8","s":null},{"n":"Tutorial 7.3","t":"Week 07 - Tutorial 03","v":"pEpeKw8acfs","s":null},{"n":"Tutorial 7.4","t":"Week 07 - Tutorial 04","v":"qtwwkVuWmPQ","s":null},{"n":"Tutorial 7.5","t":"Week 07 - Tutorial 05","v":"jrfIGJqESro","s":null},{"n":"Tutorial 7.6","t":"Week 07 - Tutorial 06","v":"KIZq6N-1ewI","s":null},{"n":"Tutorial 7.7","t":"Week 07 - Tutorial 07","v":"g7C2O4P7yjM","s":null},{"n":"Tutorial 7.8","t":"Week 07 - Tutorial 08","v":"KK1cbakBHCE","s":null},{"n":"Tutorial 7.9","t":"Week 07 - Tutorial 09","v":"3d36ENBUoig","s":null},{"n":"Tutorial 7.10","t":"Week 07 - Tutorial 10","v":"RPwqUgCbNA8","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Limits and continuity","v":"do-iDBxQCpw","s":null},{"n":"8.2","t":"Differentiability and the derivative","v":"w8R2RdS6xQ4","s":null},{"n":"8.3","t":"Computing derivatives and L\u0027H\u00f4pital\u0027s rule","v":"Ah3laZhgHus","s":null},{"n":"8.4","t":"Derivatives, tangents and linear approximation","v":"4IpVR6QpBok","s":null},{"n":"Tutorial 8.1","t":"Week 08 - Tutorial 01","v":"Th5VUAdbSy0","s":null},{"n":"Tutorial 8.2","t":"Week 08 - Tutorial 02","v":"dYQlotGp5QE","s":null},{"n":"Tutorial 8.3","t":"Week 08 - Tutorial 03","v":"jTB5dWOLo9s","s":null},{"n":"Tutorial 8.4","t":"Week 08 - Tutorial 04","v":"sRK1ZSWUX3w","s":null},{"n":"Tutorial 8.5","t":"Week 08 - Tutorial 05","v":"-IFBgN_qkzA","s":null},{"n":"Tutorial 8.6","t":"Week 08 - Tutorial 06","v":"qwL-g1j3fqU","s":null},{"n":"Tutorial 8.7","t":"Week 08 - Tutorial 07","v":"RSlIwizbMkQ","s":null},{"n":"Additional Lecture 1","t":"Revision session- Week 8","v":"8H0EyejZ3zI","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"Critical points: local maxima and minima","v":"wUPkaBwF1-Y","s":null},{"n":"9.2","t":"Examples : Computing Maxima and Minima","v":"LvCh7GTke2E","s":null},{"n":"9.3","t":"Computing areas","v":"ZehrWVYoJ_s","s":null},{"n":"9.4","t":"Riemann sums and the integral","v":"qEZiq3QQBok","s":null},{"n":"9.5","t":"Integrals as anti-derivatives","v":"EeE-4Tp2yGA","s":null},{"n":"9.6","t":"Computing areas using Integrals","v":"79YBSjrg19w","s":null},{"n":"Tutorial 9.1","t":"Week 09 - Tutorial 01","v":"r_QsjHqSNcs","s":null},{"n":"Tutorial 9.2","t":"Week 09 - Tutorial 02","v":"kc6GgdK_VHg","s":null},{"n":"Tutorial 9.3","t":"Week 09 - Tutorial 03","v":"XlN-3VnaFJU","s":null},{"n":"Tutorial 9.4","t":"Week 09 - Tutorial 04","v":"KS5ybCJSLUI","s":null},{"n":"Tutorial 9.5","t":"Week 09 - Tutorial 05","v":"_Y96gfJPwpg","s":null},{"n":"Tutorial 9.6","t":"Week 09 - Tutorial 06","v":"jMeTX1yoLgo","s":null},{"n":"Tutorial 9.7","t":"Week 09 - Tutorial 07","v":"WpJVYsPy29E","s":null},{"n":"Tutorial 9.8","t":"Week 09 - Tutorial 08","v":"vDsKyLgLLzA","s":null},{"n":"Tutorial 9.9","t":"Week 09 - Tutorial 09","v":"4_O4g5qY8go","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Introduction to Graphs","v":"wtQ6RtTwCVk","s":null},{"n":"10.2","t":"Some general graph problems","v":"4K2wZkFKqIY","s":null},{"n":"10.3","t":"Representation of graphs","v":"4M-1F4DORps","s":null},{"n":"10.4","t":"Breadth-first search","v":"WPaX9PFJY_4","s":null},{"n":"10.5","t":"Depth-first search","v":"1BvUzBkyD_o","s":null},{"n":"10.6","t":"Applications of BFS and DFS - 1","v":"l56BfAgi5LA","s":null},{"n":"10.7","t":"Applications of BFS and DFS - 2","v":"yD4mk9nD_-s","s":null},{"n":"10.8","t":"Complexity of BFS and DFS","v":"rCiV-4ceYRU","s":null},{"n":"10.9","t":"Directed Acyclic Graphs","v":"-VKVovlBnwE","s":null},{"n":"10.1","t":"Topological Sorting","v":"Rax3k-rCYkY","s":null},{"n":"Tutorial 10.1","t":"W10 - Tutorial 1","v":"voQeqd7W4-U","s":null},{"n":"Tutorial 10.2","t":"W10 - Tutorial 2","v":"mAysETm0IAM","s":null},{"n":"Tutorial 10.3","t":"W10 - Tutorial 3","v":"27CmZi3ImTY","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Longest Paths in DAGs","v":"934a17SB5NY","s":null},{"n":"11.2","t":"Transitive Closure","v":"6Ax9K7gSuJE","s":null},{"n":"11.3","t":"Matrix Multiplication","v":"N_PvNrQXUg4","s":null},{"n":"11.4","t":"Shortest Paths in Weighted Graphs","v":"4l_g6IQz6Go","s":null},{"n":"11.5","t":"Single Source Shortest paths","v":"XXFcZyP2KlM","s":null},{"n":"11.6","t":"Single Source Shortest Paths with Negative Weights","v":"FGGMybRD4O4","s":null},{"n":"11.7","t":"All-Pairs Shortest Paths","v":"Rhm-0SD-NfE","s":null},{"n":"11.8","t":"Minimum cost Spanning Trees","v":"3GwJAstzzBk","s":null},{"n":"11.9","t":"Minimum cost Spanning Trees: Prim\u2019s Algorithm","v":"btr8zJBgaQg","s":null},{"n":"11.1","t":"Minimum cost Spanning Trees: Kruskal\u0027s Algorithm","v":"-0diRWTGgk8","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"Revision lecture on Set Theory","v":"n514TARtjyA","s":null},{"n":"12.2","t":"Revision lecture on Relations","v":"7YA4CwJeUNw","s":null},{"n":"12.3","t":"Revision lecture on polynomial graphing","v":"PBqfqFqnvpw","s":null},{"n":"12.4","t":"Revision lecture on Logarithmic Functions","v":"9jbRtJjuNiY","s":null},{"n":"12.5","t":"Revision lecture on Functions","v":"sHPX4vwNplo","s":null},{"n":"12.6","t":"Revision lecture on Graph theory basics","v":"jCe_9qtCv7k","s":null},{"n":"12.7","t":"Revision lecture on Exponential and Composite Function","v":"3B63uAVzs08","s":null}]}];
 
   const navSection = document.getElementById('lecture-nav');
   const navDashboard = document.getElementById('nav-dashboard');
@@ -724,22 +830,22 @@
     btn.setAttribute('data-bs-target', `#${collapseId}`);
     btn.setAttribute('aria-expanded', isFirst ? 'true' : 'false');
     btn.setAttribute('aria-controls', collapseId);
-    btn.innerHTML = `<span>${week.w}</span><span class="chev">›</span>`;
+    btn.innerHTML = `<span>${week.w}</span><span class="chev">›</span><i class="wbar"></i>`;
     h.appendChild(btn);
     group.appendChild(h);
 
     const collapseWrap = document.createElement('div');
     collapseWrap.id = collapseId;
     collapseWrap.className = 'accordion-collapse collapse' + (isFirst ? ' show' : '');
-    collapseWrap.setAttribute('data-bs-parent', '#lecture-nav');
 
     const body = document.createElement('div');
     body.className = 'accordion-body';
+    body.innerHTML = '<div class="wk-actions"><button type="button" class="sb-link wk-act"></button></div>';
     week.items.forEach((item, ii) => {
       const row = document.createElement('div');
-      row.className = 'lecture-item';
+      row.className = 'lecture-item' + (item.v ? '' : ' novid');
       row.dataset.w = wi; row.dataset.i = ii;
-      row.innerHTML = `<span class="lnum">${item.n}</span><span class="ltitle">${item.t}</span>`;
+      row.innerHTML = `<span class="lnum">${item.n}</span><span class="ltitle">${item.t}</span><button type="button" class="lcheck" role="checkbox" aria-checked="false" aria-label="Watched" title="Mark as watched or not watched"></button>`;
       body.appendChild(row);
     });
     collapseWrap.appendChild(body);
@@ -747,12 +853,32 @@
     navSection.appendChild(group);
   });
 
-  function openWeek(wi){
-    const el = document.getElementById(`week-collapse-${wi}`);
-    if (el) bootstrap.Collapse.getOrCreateInstance(el, { toggle: false }).show();
+  // Weeks open and close instantly here (several can be open at once). Bootstrap's own click handling
+  // still animates a click on the week heading; it reads the same "show" class, so the two agree.
+  function setWeek(wi, open){
+    const el = document.getElementById('week-collapse-' + wi); if (!el) return;
+    el.classList.toggle('show', open);
+    const btn = navSection.querySelector('.week-group[data-w="' + wi + '"] .week-title');
+    if (btn) { btn.classList.toggle('collapsed', !open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  }
+  const openWeek = wi => setWeek(wi, true);
+  const isOpen = wi => { const el = document.getElementById('week-collapse-' + wi); return !!el && el.classList.contains('show'); };
+  function revealRow(wi, ii){
+    const row = navSection.querySelector('.lecture-item[data-w="' + wi + '"][data-i="' + ii + '"]');
+    if (!row || row.classList.contains('is-hid')) return;
+    const r = row.getBoundingClientRect(), b = navSection.getBoundingClientRect();
+    if (r.top < b.top + 8 || r.bottom > b.bottom - 8) navSection.scrollTop += (r.top - b.top) - navSection.clientHeight / 3;
   }
 
+  // The address bar remembers where you are (#week-1/1.4, #syllabus, #tab-...) so a reload or a shared
+  // link lands on the same lecture instead of the Dashboard.
+  function setHash(h){
+    try { history.replaceState(null, '', h ? '#' + h : location.pathname + location.search); } catch (e) {}
+  }
+  const slug = key => key.toLowerCase().replace(/\s+/g, '-').replace(/\|/g, '/').replace(/#/g, '~');
+
   function showDashboard(){
+    setHash('');
     curLec = null; updateStep();
     mHere.textContent = 'Dashboard';
     clearExtras();
@@ -766,6 +892,7 @@
   }
 
   function showSyllabus(){
+    setHash('syllabus');
     curLec = null; updateStep();
     mHere.textContent = 'Syllabus';
     clearExtras();
@@ -779,6 +906,7 @@
   }
 
   function showExtra(id){
+    setHash('tab-' + id);
     clearExtras();
     navDashboard.classList.remove('active');
     navSyllabus.classList.remove('active');
@@ -798,10 +926,121 @@
     window.scrollTo(0, 0);
   }
 
+  // ---- progress: watched lectures are remembered in this browser only ----
+  const PKEY = 'companion-progress-MA1001';
+  let prog = { done: {}, last: null };
+  try { const r = JSON.parse(localStorage.getItem(PKEY) || 'null'); if (r && r.done) prog = r; } catch (e) {}
+  function saveProg(){ try { localStorage.setItem(PKEY, JSON.stringify(prog)); } catch (e) {} }
   // previous / next lecture, across weeks
   const FLAT = [];
   WEEKS_DATA.forEach((wk, wi) => wk.items.forEach((it, ii) => FLAT.push({ wi: wi, ii: ii, t: it.t, n: it.n })));
   let curLec = null;
+  const POS = {};
+  FLAT.forEach((f, i) => {
+    f.idx = i;
+    const seen = FLAT.slice(0, i).filter(g => g.wi === f.wi && g.n === f.n).length;
+    f.key = WEEKS_DATA[f.wi].w + '|' + f.n + (seen ? '#' + seen : '');
+    POS[f.wi + '.' + f.ii] = f;
+  });
+  const isDone = f => !!prog.done[f.key];
+  function setDone(f, v){
+    if (v) prog.done[f.key] = 1; else delete prog.done[f.key];
+    saveProg(); renderProgress();
+  }
+  const lecDone = document.getElementById('lec-done');
+  const resumeBox = document.getElementById('resume'), rsGo = document.getElementById('rs-go'), rsReset = document.getElementById('rs-reset');
+  let resumeF = null, resumeFresh = true;
+  const sbCont = document.getElementById('sb-continue');
+  function renderProgress(){
+    navSection.querySelectorAll('.lecture-item').forEach(el => {
+      const on = isDone(POS[el.dataset.w + '.' + el.dataset.i]);
+      el.classList.toggle('done', on);
+      el.querySelector('.lcheck').setAttribute('aria-checked', on ? 'true' : 'false');
+    });
+    navSection.querySelectorAll('.week-group').forEach(g => {
+      const wi = +g.dataset.w, items = FLAT.filter(f => f.wi === wi);
+      const n = items.filter(isDone).length;
+      g.querySelector('.week-title').title = n ? n + ' of ' + items.length + ' watched' : '';   // the heading's fill shows progress; the count is a tooltip
+      g.querySelector('.wbar').style.width = items.length ? (n / items.length * 100) + '%' : '0';
+      g.classList.toggle('complete', n > 0 && n === items.length);
+      g.querySelector('.wk-act').textContent = n === items.length ? 'Clear this week' : 'Mark week watched';
+    });
+    if (curLec) {
+      const on = isDone(POS[curLec.wi + '.' + curLec.ii]);
+      lecDone.classList.toggle('is-done', on);
+      lecDone.setAttribute('aria-pressed', on ? 'true' : 'false');
+      lecDone.querySelector('.lbl').textContent = on ? 'Watched' : 'Mark watched';
+    }
+    // dashboard card
+    if (!FLAT.length) { resumeBox.hidden = true; sbCont.hidden = true; return; }
+    resumeBox.hidden = false;
+    const total = FLAT.length, count = FLAT.filter(isDone).length;
+    const last = prog.last ? FLAT.filter(f => f.key === prog.last)[0] : null;
+    const firstUndone = FLAT.filter(f => !isDone(f))[0] || null;
+    const target = last ? (isDone(last) ? FLAT[last.idx + 1] || firstUndone : last) : (firstUndone || FLAT[0]);
+    resumeF = target;
+    const fresh = !last && count === 0;
+    resumeFresh = fresh;
+    document.getElementById('rs-k').textContent = fresh ? 'Start here' : count === total ? 'All done' : 'Continue where you left off';
+    document.getElementById('rs-title').textContent = target ? WEEKS_DATA[target.wi].w + ' · ' + target.n + '  ' + target.t : 'You have watched every lecture.';
+    document.getElementById('rs-fill').style.width = (count / total * 100) + '%';
+    document.getElementById('rs-n').textContent = count + ' of ' + total + ' lectures watched';
+    rsReset.hidden = count === 0 && !last;
+    rsGo.hidden = !target;
+    rsGo.innerHTML = '<span>' + (fresh ? 'Start' : 'Continue') + '</span>' + ARROW.right;
+    // sidebar card
+    sbCont.hidden = false;
+    document.getElementById('sc-k').textContent = fresh ? 'Start here' : count === total ? 'All done' : 'Continue';
+    document.getElementById('sc-t').textContent = target ? target.n + '  ' + target.t : 'You have watched every lecture';
+    document.getElementById('sc-fill').style.width = (count / total * 100) + '%';
+    document.getElementById('sc-n').textContent = count + ' of ' + total + ' watched';
+    sbCont.disabled = !target;
+    applyFilter();
+  }
+  rsGo.addEventListener('click', () => { if (resumeF) selectLecture(resumeF.wi, resumeF.ii); });
+  sbCont.addEventListener('click', () => { if (resumeF) selectLecture(resumeF.wi, resumeF.ii); });
+
+  // ---- find a lecture / unwatched only ----
+  const searchEl = document.getElementById('lec-search'), onlyBtn = document.getElementById('f-unwatched'), emptyEl = document.getElementById('sb-empty');
+  let savedOpen = null;
+  function applyFilter(){
+    const q = searchEl.value.trim().toLowerCase(), only = onlyBtn.getAttribute('aria-pressed') === 'true';
+    const filtering = !!q || only, tokens = q.split(/\s+/).filter(Boolean);
+    if (filtering && !savedOpen) savedOpen = WEEKS_DATA.map((_, wi) => isOpen(wi));
+    let shown = 0;
+    WEEKS_DATA.forEach((wk, wi) => {
+      let cnt = 0;
+      navSection.querySelectorAll('.lecture-item[data-w="' + wi + '"]').forEach(row => {
+        const f = POS[wi + '.' + row.dataset.i], hay = (f.n + ' ' + f.t).toLowerCase();
+        const keepOpenRow = row.classList.contains('active');
+        const ok = tokens.every(t => hay.indexOf(t) >= 0) && !(only && isDone(f) && !keepOpenRow);
+        row.classList.toggle('is-hid', !ok);
+        if (ok) cnt++;
+      });
+      shown += cnt;
+      navSection.querySelector('.week-group[data-w="' + wi + '"]').classList.toggle('is-hid', filtering && cnt === 0);
+      if (filtering) setWeek(wi, cnt > 0);
+    });
+    if (!filtering && savedOpen) { savedOpen.forEach((o, wi) => setWeek(wi, o)); savedOpen = null; }
+    emptyEl.hidden = !(filtering && shown === 0);
+  }
+  searchEl.addEventListener('input', applyFilter);
+  searchEl.addEventListener('keydown', e => { if (e.key === 'Escape' && searchEl.value) { searchEl.value = ''; applyFilter(); e.stopPropagation(); } });
+  onlyBtn.addEventListener('click', () => { onlyBtn.setAttribute('aria-pressed', onlyBtn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); applyFilter(); });
+  document.getElementById('wk-expand').addEventListener('click', () => WEEKS_DATA.forEach((_, wi) => { if (!navSection.querySelector('.week-group[data-w="' + wi + '"]').classList.contains('is-hid')) setWeek(wi, true); }));
+  document.getElementById('wk-collapse').addEventListener('click', () => WEEKS_DATA.forEach((_, wi) => setWeek(wi, false)));
+  let resetTimer;
+  rsReset.addEventListener('click', () => {
+    if (rsReset.dataset.sure) {
+      prog = { done: {}, last: null }; saveProg();
+      delete rsReset.dataset.sure; rsReset.textContent = 'Reset'; clearTimeout(resetTimer);
+      renderProgress();
+    } else {
+      rsReset.dataset.sure = '1'; rsReset.textContent = 'Click again to clear your progress';
+      resetTimer = setTimeout(() => { delete rsReset.dataset.sure; rsReset.textContent = 'Reset'; }, 4000);
+    }
+  });
+  lecDone.addEventListener('click', () => { if (curLec) { const f = POS[curLec.wi + '.' + curLec.ii]; setDone(f, !isDone(f)); } });
   const lecPrev = document.getElementById('lec-prev'), lecNext = document.getElementById('lec-next'), mNext = document.getElementById('m-next');
   const ARROW = {
     left: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>',
@@ -819,19 +1058,34 @@
     const next = idx >= 0 ? FLAT[idx + 1] || null : FLAT[0] || null;
     stepLabel(lecPrev, 'Previous', prev, 'left');
     stepLabel(lecNext, 'Next', next, 'right');
-    if (next) { mNext.hidden = false; mNext.innerHTML = (idx >= 0 ? 'Next' : 'Start') + ARROW.right; mNext.setAttribute('aria-label', (idx >= 0 ? 'Next lecture: ' : 'Start with ') + next.t); }
-    else mNext.hidden = true;
+    renderProgress();
+    const goal = idx >= 0 ? next : resumeF;
+    if (goal) {
+      mNext.hidden = false;
+      mNext.innerHTML = (idx >= 0 ? 'Next' : resumeFresh ? 'Start' : 'Continue') + ARROW.right;
+      mNext.setAttribute('aria-label', (idx >= 0 ? 'Next lecture: ' : resumeFresh ? 'Start with ' : 'Continue with ') + goal.t);
+    } else mNext.hidden = true;
   }
   function goStep(d) {
     const idx = curLec ? FLAT.findIndex(f => f.wi === curLec.wi && f.ii === curLec.ii) : -1;
     const t = FLAT[idx + d] || (idx < 0 && d > 0 ? FLAT[0] : null);
+    if (t && d > 0 && curLec) { prog.done[POS[curLec.wi + '.' + curLec.ii].key] = 1; saveProg(); }   // moving on counts as watched
     if (t) selectLecture(t.wi, t.ii);
   }
+  document.addEventListener('keydown', e => {
+    if (!panelLecture.classList.contains('active') || document.body.classList.contains('nav-open')) return;
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); goStep(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); goStep(-1); }
+  });
   lecPrev.addEventListener('click', () => goStep(-1));
   lecNext.addEventListener('click', () => goStep(1));
-  mNext.addEventListener('click', () => goStep(1));
+  mNext.addEventListener('click', () => { if (curLec) goStep(1); else if (resumeF) selectLecture(resumeF.wi, resumeF.ii); });
 
   function selectLecture(wi, ii){
+    prog.last = POS[wi + '.' + ii].key; saveProg();
+    setHash(slug(prog.last));
     curLec = { wi: wi, ii: ii }; updateStep();
     const item = WEEKS_DATA[wi].items[ii];
     clearExtras();
@@ -841,7 +1095,9 @@
     navSection.querySelectorAll('.lecture-item').forEach(el => {
       el.classList.toggle('active', +el.dataset.w === wi && +el.dataset.i === ii);
     });
+    applyFilter();
     openWeek(wi);
+    revealRow(wi, ii);
     panelDashboard.classList.remove('active');
     panelLecture.classList.add('active');
     window.scrollTo(0, 0);
@@ -859,7 +1115,7 @@
       emptyOverlay.style.display = '';
     }
     let html = '';
-    if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">View slide ↗</a>`;
+    if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">Slides ↗</a>`;
     if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
     actions.innerHTML = html;
   }
@@ -890,6 +1146,7 @@
   mScrim.addEventListener('click', () => setNav(false));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setNav(false); });
   document.getElementById('sidebar').addEventListener('click', e => {
+    if (e.target.closest('.lcheck')) return;
     if (e.target.closest('.nav-item') || e.target.closest('.lecture-item')) setNav(false);
   });
   window.matchMedia('(min-width:821px)').addEventListener('change', () => setNav(false));
@@ -899,13 +1156,54 @@
   extraNavs.forEach(el => el.addEventListener('click', () => showExtra(el.dataset.extra)));
   navSection.addEventListener('click', e => {
     // Week-title clicks are handled natively by Bootstrap's collapse (data-bs-toggle above);
-    // this only needs to react to an actual lecture row being picked.
+    // this only needs to react to a lecture row, a tick, or a week's "mark watched" link.
+    const wk = e.target.closest('.wk-act');
+    if (wk) {
+      const wi = +wk.closest('.week-group').dataset.w, items = FLAT.filter(f => f.wi === wi);
+      const all = items.every(isDone);
+      items.forEach(f => { if (all) delete prog.done[f.key]; else prog.done[f.key] = 1; });
+      saveProg(); renderProgress();
+      return;
+    }
     const row = e.target.closest('.lecture-item'); if (!row) return;
+    if (e.target.closest('.lcheck')) {   // the tick toggles watched / not watched without opening the lecture
+      const f = POS[row.dataset.w + '.' + row.dataset.i];
+      setDone(f, !isDone(f));
+      return;
+    }
     selectLecture(+row.dataset.w, +row.dataset.i);
   });
 
-  // Land on the Dashboard by default (every week's accordion item starts collapsed).
-  showDashboard();
+  // Open whatever the address says; otherwise land on the Dashboard (every week's accordion starts collapsed).
+  (function route(){
+    let h = '';
+    try { h = decodeURIComponent(location.hash.slice(1)); } catch (e) {}
+    if (h === 'syllabus') return showSyllabus();
+    if (h.indexOf('tab-') === 0 && document.getElementById('nav-x-' + h.slice(4))) return showExtra(h.slice(4));
+    const f = h && FLAT.filter(g => slug(g.key) === h)[0];
+    if (f) return selectLecture(f.wi, f.ii);
+    showDashboard();
+    // on the Dashboard, still open the week you were last in so the list is ready
+    const last = prog.last && FLAT.filter(g => g.key === prog.last)[0];
+    if (last) { setWeek(last.wi, true); revealRow(last.wi, last.ii); }
+  })();
+
+  // ---- drag the sidebar edge to resize it (laptops); double-click resets ----
+  (function(){
+    const grip = document.getElementById('sb-resize');
+    const setW = px => document.documentElement.style.setProperty('--sb-w', Math.max(240, Math.min(520, Math.round(px))) + 'px');
+    const move = e => setW(e.clientX);
+    const stop = () => {
+      window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', stop); window.removeEventListener('pointercancel', stop);
+      document.body.classList.remove('sb-dragging');
+      try { localStorage.setItem('companion-sb-w', parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sb-w'), 10) || 300); } catch (err) {}
+    };
+    grip.addEventListener('pointerdown', e => {
+      e.preventDefault(); document.body.classList.add('sb-dragging');
+      window.addEventListener('pointermove', move); window.addEventListener('pointerup', stop); window.addEventListener('pointercancel', stop);
+    });
+    grip.addEventListener('dblclick', () => { document.documentElement.style.removeProperty('--sb-w'); try { localStorage.removeItem('companion-sb-w'); } catch (err) {} });
+  })();
 </script>
 <script src="../assets/theme.js?v=8e860dc4"></script>
 </body>
