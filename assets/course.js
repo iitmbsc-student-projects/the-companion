@@ -94,15 +94,23 @@ WEEKS_DATA.forEach((week, wi) => {
   navSection.appendChild(group);
 });
 
-// Weeks open and close instantly here (several can be open at once). Bootstrap's own click handling
-// still animates a click on the week heading; it reads the same "show" class, so the two agree.
+// Weeks open and close instantly here. Bootstrap's own click handling still animates a click on the week
+// heading; it reads the same "show" class, so the two agree.
 function setWeek(wi, open){
   const el = document.getElementById('week-collapse-' + wi); if (!el) return;
   el.classList.toggle('show', open);
   const btn = navSection.querySelector('.week-group[data-w="' + wi + '"] .week-title');
   if (btn) { btn.classList.toggle('collapsed', !open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
 }
-const openWeek = wi => setWeek(wi, true);
+// Accordion: opening a week closes the others, as it always did. Two things switch that off on purpose:
+// "Expand all" (you asked for many open) and a search or the Unwatched filter (every matching week shows).
+let multiOpen = false;
+const isFiltering = () => !!(searchEl.value.trim() || onlyBtn.getAttribute('aria-pressed') === 'true');
+function closeOthers(wi){
+  if (multiOpen || isFiltering()) return;
+  WEEKS_DATA.forEach((_, w) => { if (w !== wi) setWeek(w, false); });
+}
+const openWeek = wi => { closeOthers(wi); setWeek(wi, true); };
 const isOpen = wi => { const el = document.getElementById('week-collapse-' + wi); return !!el && el.classList.contains('show'); };
 function revealRow(wi, ii){
   const row = navSection.querySelector('.lecture-item[data-w="' + wi + '"][data-i="' + ii + '"]');
@@ -268,8 +276,10 @@ function applyFilter(){
 searchEl.addEventListener('input', applyFilter);
 searchEl.addEventListener('keydown', e => { if (e.key === 'Escape' && searchEl.value) { searchEl.value = ''; applyFilter(); e.stopPropagation(); } });
 onlyBtn.addEventListener('click', () => { onlyBtn.setAttribute('aria-pressed', onlyBtn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); applyFilter(); });
-document.getElementById('wk-expand').addEventListener('click', () => WEEKS_DATA.forEach((_, wi) => { if (!navSection.querySelector('.week-group[data-w="' + wi + '"]').classList.contains('is-hid')) setWeek(wi, true); }));
-document.getElementById('wk-collapse').addEventListener('click', () => WEEKS_DATA.forEach((_, wi) => setWeek(wi, false)));
+document.getElementById('wk-expand').addEventListener('click', () => { multiOpen = true; WEEKS_DATA.forEach((_, wi) => { if (!navSection.querySelector('.week-group[data-w="' + wi + '"]').classList.contains('is-hid')) setWeek(wi, true); }); });
+document.getElementById('wk-collapse').addEventListener('click', () => { multiOpen = false; WEEKS_DATA.forEach((_, wi) => setWeek(wi, false)); });
+// A click on a week heading is opened by Bootstrap; just before it shows, close the other weeks.
+navSection.addEventListener('show.bs.collapse', e => closeOthers(+e.target.id.replace('week-collapse-', '')));
 let resetTimer;
 rsReset.addEventListener('click', () => {
   if (rsReset.dataset.sure) {
@@ -426,7 +436,7 @@ navSection.addEventListener('click', e => {
   showDashboard();
   // on the Dashboard, still open the week you were last in so the list is ready
   const last = prog.last && FLAT.filter(g => g.key === prog.last)[0];
-  if (last) { setWeek(last.wi, true); revealRow(last.wi, last.ii); }
+  if (last) { openWeek(last.wi); revealRow(last.wi, last.ii); }
 })();
 
 // ---- drag the sidebar edge to resize it (laptops); double-click resets ----
