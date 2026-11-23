@@ -377,8 +377,8 @@ def _platform(url):
 
 def _footer_nav(current):
     items = (("index.html", "Home", "home"), ("courses.html", "Courses", "courses"),
-             ("links.html", "Important links", "links"), ("contributors.html", "Contributors", "contributors"),
-             ("scam-alert.html", "Scam alert", "scam"), ("calculator.html", "Grade calculator", "calculator"),
+             ("links.html", "Important links", "links"), ("scam-alert.html", "Scam alert", "scam"),
+             ("calculator.html", "Grade calculator", "calculator"), ("contributors.html", "Contributors", "contributors"),
              ("updates.html", "Updates", "updates"))
     return "".join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if k == current else "", t) for h, t, k in items)
 
