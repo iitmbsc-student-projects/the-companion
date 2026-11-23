@@ -11,6 +11,24 @@
  "prereq": "CS2003",
  "resources": [
   {
+   "label": "Degree question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1ndm0pg3620crYW1yyUigW6NPE5cvHLk65IvHErEv7f4/edit?gid=1189182592#gid=1189182592",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Fetch PYQs",
+   "url": "https://script.google.com/a/macros/ds.study.iitm.ac.in/s/AKfycbzs7K5NYNosmnKhjI4nZMbS3_ZWLd0b6ZFIk5wZTNwxF9mBndt5cIZuCK9JG0i2ldA/exec",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
    "label": "QuizPractice papers",
    "url": "https://quizpractice.space/",
    "group": "Previous year questions",
