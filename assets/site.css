@@ -591,3 +591,8 @@ body[data-page="courses"] .level-head h2{font-size:22px}
 
 /* the top bar holds seven items: give it a little more room than the 920px content column, the same on every page */
 @media(min-width:1101px){ .topbar .topbar-in{max-width:1110px} }
+
+/* ---- 404 page ---- */
+body[data-page="notfound"] .nf-cards{margin-top:4px}
+.nf-help{margin:18px 0 0;color:var(--ink-2);font-size:15px}
+.nf-help a{color:var(--accent)}

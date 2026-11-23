@@ -5,6 +5,16 @@
   {
    "date": "2026-11-23",
    "kind": "res",
+   "title": "PG Diploma Research Project and MTech Project pages filled in",
+   "text": "The MTech Project page now explains eligibility, the letters you need and the three stages, with the official project documents. Both pages link the PG Diploma and MTech upgrade path and two Students' Corner guides.",
+   "courses": [
+    "da6006",
+    "da6901"
+   ]
+  },
+  {
+   "date": "2026-11-23",
+   "kind": "res",
    "title": "Project guides from IITM BS Students' Corner",
    "text": "Scope, grading, planning and portfolio guides on all five diploma project pages, from the IITM BS Students' Corner blog.",
    "courses": [

@@ -140,7 +140,7 @@ def stamp_assets(html):
 
 def restamp_pages():
     """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
-    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html", "updates.html"):
+    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html", "updates.html", "404.html"):
         path = os.path.join(SITE_ROOT, name)
         if os.path.exists(path):
             old = open(path, encoding="utf-8").read()
@@ -634,11 +634,35 @@ def generate_updates():
             open(INDEX_PAGE, "w", encoding="utf-8").write(html)
     return UPDATES_PAGE
 
+
+SITE_URL = "https://iitmbsc-student-projects.github.io/the-companion/"
+NOTFOUND_PAGE = os.path.join(SITE_ROOT, "404.html")
+NOTFOUND_TEMPLATE_PATH = os.path.join(TEMPLATES_DIR, "404.html.tpl")
+SITEMAP_PATH = os.path.join(SITE_ROOT, "sitemap.xml")
+
+
+def generate_404():
+    """404.html: GitHub Pages serves it for any missing path, so its links resolve through a <base> tag."""
+    page = open(NOTFOUND_TEMPLATE_PATH, encoding="utf-8").read().replace("{{FOOTNAV}}", _footer_nav(""))
+    open(NOTFOUND_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    return NOTFOUND_PAGE
+
+
+def generate_sitemap():
+    """sitemap.xml: every public page, for search engines (submit it once in Google Search Console)."""
+    pages = ["", "courses.html", "links.html", "updates.html", "contributors.html", "scam-alert.html", "calculator.html"]
+    pages += ["courses/%s.html" % s for s in all_stems()]
+    urls = "".join("  <url><loc>%s%s</loc></url>\n" % (SITE_URL, p) for p in pages)
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls
+    open(SITEMAP_PATH, "w", encoding="utf-8").write(xml)
+    return SITEMAP_PATH
+
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_404() if stem == "404" else generate_sitemap() if stem == "sitemap" else generate_course(stem))
     else:
         # the shared pages first: they rewrite assets/menu-data.js, whose ?v= stamp the course pages then pick up
         generate_links()
@@ -646,5 +670,7 @@ if __name__ == "__main__":
         generate_scam_alert()
         generate_calculator()
         generate_updates()
+        generate_404()
+        generate_sitemap()
         paths = generate_all()
         print(f"generated {len(paths)} pages into {COURSES_DIR}")
