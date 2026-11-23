@@ -76,7 +76,7 @@
 </main>
 
 <footer class="site-end wrap">
-  <span class="se-name">The Companion</span>
+  <span class="se-brand"><span class="se-name">The Companion</span><span class="se-by">Built and kept by Vikash</span></span>
   <nav class="se-nav" aria-label="Site">{{FOOTNAV}}</nav>
   <div class="theme-foot" id="theme-foot"></div>
 </footer>
