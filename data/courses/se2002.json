@@ -11,6 +11,14 @@
  "prereq": "CS1002",
  "resources": [
   {
+   "label": "Diploma question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1MNgNju8Lr7Nbuy2TMDTxBcFREEqFSHInLWQ3hhJgXlU/edit?gid=17317205#gid=17317205",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers (forenoon and afternoon), one tab for each term from Sep 2021. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "added": "2026-11-23"
+  },
+  {
    "label": "QuizPractice papers",
    "url": "https://quizpractice.space/",
    "group": "Previous year questions",
