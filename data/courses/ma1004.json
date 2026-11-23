@@ -86,6 +86,12 @@
    "desc": "Past quizzes and end term papers with answer keys, for all foundation courses.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "Quiz Space question papers",
+   "url": "https://quizspacee.com/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM."
   }
  ],
  "resources_note": "",

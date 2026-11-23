@@ -87,6 +87,13 @@
    "by_url": "https://github.com/cheriangeorge"
   },
   {
+   "label": "System Commands book",
+   "url": "https://ammar-iitm.github.io/system-commands-book/",
+   "group": "Notes",
+   "desc": "A course book on Linux and shell commands, for System Commands and Linux and Programming.",
+   "by": "Ammar Hashmi"
+  },
+  {
    "label": "Navigating Linux, in-house reference book",
    "url": "https://drive.google.com/drive/folders/1NZBmJYwtCreV-HCminQGxUZTYxa6zRKv?usp=drive_link",
    "group": "Books",
@@ -223,6 +230,12 @@
    "group": "Previous year questions",
    "desc": "Discussion of the Quiz 1 paper from 24T1.",
    "by": "Sayan Ghosh"
+  },
+  {
+   "label": "Quiz Space question papers",
+   "url": "https://quizspacee.com/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM."
   }
  ],
  "resources_note": "",

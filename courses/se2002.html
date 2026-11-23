@@ -9,7 +9,7 @@
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
@@ -39,7 +39,7 @@
   .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
   .sb-head .back-link:hover svg{transform:translateX(-2px)}
   .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sb-head .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
+  .sb-head .brand-code{font-family:'Spectral',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
   .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
   .nav-item{cursor:pointer;user-select:none}
@@ -53,7 +53,7 @@
   .sb-continue:hover{border-color:var(--accent)}
   .sb-continue[hidden]{display:none}
   .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .sc-t{display:block;margin:2px 0 7px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;line-height:1.3;
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
   .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
@@ -128,7 +128,7 @@
   .lecture-item.novid .ltitle{opacity:.62}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
-    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
   .lecture-item:hover{background:var(--tint)}
   .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
@@ -162,10 +162,10 @@
   .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
   .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:42px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
-    font-variation-settings:"opsz" 144}
-  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+    }
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
     color:var(--ink-2);max-width:70ch;margin:0}
   .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
     display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'JetBrains Mono',monospace;
@@ -181,13 +181,13 @@
 
   section.chapter{margin:26px 0}
   section.chapter:first-of-type{margin-top:0}
-  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:16px;line-height:1.55;max-width:70ch}
+  .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
   #panel-syllabus section.chapter{margin:20px 0}
@@ -212,7 +212,7 @@
   table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
-  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
   /* 16:9 box that never grows taller than the screen: width is capped by the content width,
      by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
@@ -226,14 +226,14 @@
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
-  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
   /* Live sessions: collapsible video indexes */
   details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
   details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
   details.sess summary::-webkit-details-marker{display:none}
   details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
   details.sess[open] summary::before{transform:rotate(90deg)}
-  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
   .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
   .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
   .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
@@ -263,7 +263,7 @@
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
   .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
   .res-main::after{content:"";position:absolute;inset:0}
   .res-main:hover{color:var(--accent)}
   .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
@@ -278,11 +278,11 @@
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
   .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
-  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+  .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
   .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
@@ -347,7 +347,7 @@
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
   .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .rs-t{margin:3px 0 9px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-t{margin:3px 0 9px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
   .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
@@ -362,9 +362,9 @@
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
     font-size:13.5px;line-height:1.55;color:var(--ink-2)}
   footer.colophon .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
-    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Fraunces',serif}
+    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
-  footer.colophon .co-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--ink)}
+  footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
   footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
   footer.colophon .co-nav a{color:var(--ink-2);border:none}
@@ -384,7 +384,7 @@
       border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .m-code{font-family:'Fraunces',serif;font-weight:700;font-size:16px;flex:none}
+    .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
     .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
       border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-step[hidden]{display:none}
@@ -633,7 +633,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=6b763595"></script>
 <script>window.COURSE = {code: "SE2002", weeks: [{"w":"Week 1","items":[{"n":"1.0","t":"Discover the problem 1 Case study","v":"wxU5evDz3gI","s":null},{"n":"2.0","t":"Discover the problem 2 Examples","v":"HvbobFIOHIw","s":null},{"n":"3.0","t":"Get the Data Introduction","v":"1LyblMkJzOo","s":null},{"n":"4.0","t":"Get the data  Nominatim   Open Street Maps","v":"f0PZ-pphAXE","s":null},{"n":"5.0","t":"Get the data  BBC Weather location service","v":"IafLrvnamAw","s":null},{"n":"6.0","t":"Get the data  Scraping with Excel","v":"OCl6UdpmzRQ","s":null},{"n":"7.0","t":"Get the data  Scraping with Python","v":"TTzcXj92zaw","s":null},{"n":"8.0","t":"Get the data WIkimedia","v":"b6puvm-QEY0","s":null},{"n":"9.0","t":"Get the data  Scrape BBC weather with Python","v":"Uc4DgQJDRoI","s":null},{"n":"10.0","t":"Get the data  Scraping PDFs","v":"3Xw9YGh00aM","s":null},{"n":"11.0","t":"Prepare the Data","v":"dF3zchJJKqk","s":null},{"n":"12.0","t":"Prepare the data: Data Aggregation","v":"NkpT0dDU8Y4","s":null},{"n":"13.0","t":"Prepare the data: Cleaning with Excel","v":"2n1qqEidxe0","s":null},{"n":"14.0","t":"Prepare the data: Image Labelling","v":"9b5ZvIRFCek","s":null},{"n":"15.0","t":"Data Transformation: Excel","v":"gR2IY5Naja0","s":null},{"n":"16.0","t":"Prepare the data: Data Profiling","v":"CDwZPie29QQ","s":null},{"n":"17.0","t":"Prepare the data: Cleaning with OpenRefine","v":"cX_2MkShlJk","s":null},{"n":"18.0","t":"Prepare the data: Cleaning with OpenRefine2","v":"zguYP_cUC6g","s":null},{"n":"19.0","t":"Model the data: Correlation with Excel","v":"lXHCyhO7DmY","s":null},{"n":"20.0","t":"Model the data: Regression with Excel","v":"AERQBMIHwXA","s":null},{"n":"21.0","t":"Model the data: Forecasting with Python","v":"aedA2javxvE","s":null},{"n":"22.0","t":"Model the data: Classification with Python","v":"XsOihX38Bg0","s":null},{"n":"23.0","t":"Model the Data","v":"CRSljunxjnk","s":null},{"n":"24.0","t":"Model the data: Clustering with Python","v":"lcMWH67TiWE","s":null},{"n":"25.0","t":"Model the data: Image classification using Keras","v":"l81xLqR8tjg","s":null},{"n":"26.0","t":"Model the data: Image classification using Google AutoML","v":"hC47vWauvfk","s":null},{"n":"27.0","t":"Model the data: Pycaret","v":"WMUt7NOJGbo","s":null},{"n":"28.0","t":"Design the output","v":"XkxRDql00UU","s":null},{"n":"29.0","t":"Excel Forecasting Visualization","v":"judFpVgfsV4","s":null},{"n":"30.0","t":"Modern tools to simplify deep learning models: Sentiment Analysis with Excel","v":"wkbYLFEBCJg","s":null},{"n":"31.0","t":"Modern tools to simplify deep learning models: Text classification with Python","v":"A9WX7HaS1eU","s":null},{"n":"32.0","t":"Modern tools to simplify deep learning models: Geospatial Analysis with Python","v":"m_qayAJt-yE","s":null},{"n":"33.0","t":"Getting Started","v":"aPeswvGEI2k","s":null},{"n":"34.0","t":"Multiple Data source","v":"Ec1Puv54Pxo","s":null},{"n":"35.0","t":"Dynamic dashboard","v":"DxDCA4UU34I","s":null},{"n":"36.0","t":"Design your output- Tools for specialized visualizations- network of actors","v":"OndB17bigkc","s":null},{"n":"37.0","t":"Modern tools to simplify deep learning models- Cluster the network of actors","v":"uPL3VuRqOy4","s":null},{"n":"38.0","t":"Design your output- Geospatial Analysis- Creating shapefiles with QGIS","v":"tJhehs0o-ik","s":null},{"n":"39.0","t":"Narrate a story","v":"tALHKo26X_A","s":null},{"n":"40.0","t":"Narrate your story : Narratives with excel","v":"CRNJerr3pI4","s":null},{"n":"41.0","t":"Narrate your story : Smart Narratives with Power BI","v":"eHmvCNhZiWg","s":null},{"n":"42.0","t":"Narrate your story : Narratives with Quill on Tableau","v":"b_Qojb9gLzA","s":null},{"n":"43.0","t":"Narrate your story : Comic narratives with Google Sheets \u0026 Comicgen","v":"HZDqCQBpHGI","s":null},{"n":"44.0","t":"Get the data- Text to columns using Excel","v":"JvU8jfwwfsY","s":null},{"n":"45.0","t":"Deploy the Results","v":"w8WW_DZIEbk","s":null},{"n":"46.0","t":"Streamlit","v":"iT5sS1dWMcc","s":null},{"n":"47.0","t":"Heroku","v":"V5dl7zkKXC0","s":null},{"n":"48.0","t":"Hosting Comparison","v":"227VXdpgTYM","s":null},{"n":"49.0","t":"Discover the Data - Introduction","v":"3OeMOb7gByE","s":null},{"n":"50.0","t":"Sources of Data","v":"GY5l_5RpVZM","s":null},{"n":"51.0","t":"Types of Datasets","v":"u8PIxqsi1kk","s":null},{"n":"52.0","t":"Types of Values","v":"HlsqT0r9wAM","s":null},{"n":"53.0","t":"Discover the Data - Summary","v":"NNiFxgANu8Y","s":null},{"n":"54.0","t":"Clean up data in Excel","v":"7du7xkqeu4s","s":null},{"n":"55.0","t":"Convert text to columns in Excel","v":"fQeADnqiOAg","s":null},{"n":"56.0","t":"Discover the data profile with Python","v":"kFVxdBhLa_A","s":null},{"n":"57.0","t":"Cleaning data with Open Refine","v":"zxEtfHseE84","s":null},{"n":"58.0","t":"Image labeling with chess pieces","v":"OTRamjRb7P4","s":null},{"n":"59.0","t":"Outlier detection with Excel","v":"sUTJb0F9eBw","s":null},{"n":"60.0","t":"Image classification with Python (Keras)","v":"59u3XMiSyro","s":null},{"n":"61.0","t":"Image auto classification with Google Cloud Vision","v":"z4MUpn4FRTw","s":null},{"n":"62.0","t":"Get the data Scraping PDFs","v":"yDoKlKyxClQ","s":null},{"n":"63.0","t":"Narrate a Story","v":"aF93i6zVVQg","s":null},{"n":"64.0","t":"Deploy the results","v":"YSGZjCxhIkk","s":null},{"n":"65.0","t":"Podcast","v":"DH0Q4LiSgkE","s":null},{"n":"66.0","t":"TDS - Activities","v":"isipUVKESJw","s":null}]}]};</script>
-<script src="../assets/course.js?v=2022f9cb"></script>
+<script src="../assets/course.js?v=09436d74"></script>
 <script src="../assets/theme.js?v=8e860dc4"></script>
 </body>
 </html>

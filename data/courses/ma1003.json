@@ -192,6 +192,12 @@
    "url": "https://docs.google.com/spreadsheets/d/1x5KAXRlvZLvRjrRfIxFWuNpc8wwboLc21PpYKn8Fv90/edit",
    "group": "Previous year questions",
    "desc": "A sheet that links to past papers."
+  },
+  {
+   "label": "Quiz Space question papers",
+   "url": "https://quizspacee.com/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM."
   }
  ],
  "resources_note": "",

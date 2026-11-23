@@ -60,6 +60,13 @@
    "by_url": "https://medium.com/@prathambhalla7"
   },
   {
+   "label": "MLF lecture notebook, typeset",
+   "url": "https://ammar-iitm.github.io/machine-learning-foundations/",
+   "group": "Notes",
+   "desc": "Weeks 1 to 12 with worked examples and a short self-check each week. Typeset by Ammar Hashmi from handwritten notes. Personal study material, not official.",
+   "by": "Kshitij Maheshwari"
+  },
+  {
    "label": "MLF weekwise and quizwise papers",
    "url": "https://23f3004032.github.io/MLF/",
    "group": "Previous year questions",

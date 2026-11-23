@@ -60,6 +60,12 @@
    "desc": "Video lectures playlist.",
    "by": "Shrikrishna Pandey",
    "by_url": "https://github.com/shrikrishna97"
+  },
+  {
+   "label": "Quiz Space question papers",
+   "url": "https://quizspacee.com/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM."
   }
  ],
  "resources_note": "",

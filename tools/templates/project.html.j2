@@ -9,7 +9,7 @@
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#f4efe6; --paper-2:#ebe4d5;
@@ -32,10 +32,10 @@
   .course-head{padding:38px 0 24px;border-bottom:1px solid var(--rule)}
   .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:40px;
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:40px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
-    font-variation-settings:"opsz" 144}
-  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+    }
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
     color:var(--ink-2);max-width:60ch;margin:0}
   .meta-line{margin-top:18px;padding-top:14px;border-top:1px dotted var(--rule);
     display:flex;flex-wrap:wrap;gap:22px;font-family:'JetBrains Mono',monospace;
@@ -47,7 +47,7 @@
   .toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
   .toc ol{list-style:none;padding:0;margin:0;column-count:2;column-gap:30px}
-  .toc li{padding:5px 0;font-family:'Fraunces',serif;font-size:15px;
+  .toc li{padding:5px 0;font-family:'Spectral',serif;font-size:15px;
     display:flex;justify-content:space-between;align-items:baseline;
     border-bottom:1px dotted var(--rule)}
   .toc a{color:var(--ink);border:none}
@@ -56,13 +56,13 @@
   @media(max-width:640px){ .toc ol{column-count:1} .course-head h1{font-size:30px} }
 
   section.chapter{margin:44px 0}
-  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:17px;line-height:1.7;max-width:62ch}
+  .syllabus-body{font-family:'Spectral',serif;font-size:17px;line-height:1.7;max-width:62ch}
   .syllabus-body p{margin:0 0 14px}
 
   ul.dates{list-style:none;padding:0;margin:0}
@@ -84,7 +84,7 @@
   table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
-  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
   .week{padding:18px 0;border-bottom:1px solid var(--rule)}
   .week:last-child{border-bottom:none}
@@ -92,7 +92,7 @@
   .week summary::-webkit-details-marker{display:none}
   .week .wnum{font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.15em;color:var(--accent);min-width:60px}
-  .week .wtitle{font-family:'Fraunces',serif;font-size:19px;font-weight:600;flex:1;
+  .week .wtitle{font-family:'Spectral',serif;font-size:19px;font-weight:600;flex:1;
     letter-spacing:-0.005em}
   .week .wicon{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-2);
     transition:transform .15s}
@@ -113,7 +113,7 @@
   .link-list{margin:0;padding:0;list-style:none}
   .link-list li{padding:6px 0;font-size:15px}
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
-  .placeholder{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .placeholder{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
 
 {% include "_colophon_css.j2" %}
   footer.colophon .co-in{max-width:820px}
