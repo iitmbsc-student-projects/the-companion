@@ -148,8 +148,8 @@
   .lnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
-  .main-content{margin-left:var(--sb-w,300px);padding:40px 56px 60px}
-  @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
+  .main-content{margin-left:var(--sb-w,300px);padding:26px 48px 36px}
+  @media(max-width:900px){ .main-content{padding:24px 24px 32px} }
 
   /* ---- collapsible sidebar: body.sidebar-collapsed slides the sidebar off-screen and lets the
      content take the full width. The toggle button is fixed so it is always reachable. ---- */
@@ -166,20 +166,20 @@
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
   body.sidebar-collapsed .sidebar-toggle{left:14px;background:var(--paper)}
-  body.sidebar-collapsed .main-content{padding-top:64px}
+  body.sidebar-collapsed .main-content{padding-top:56px}
 
   .panel{display:none}
   .panel.active{display:block}
 
-  .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
+  .course-head{padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:14px}
   .course-head .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:42px;
-    line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:36px;
+    line-height:1.05;letter-spacing:-0.02em;margin:0 0 8px;
     }
-  .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:17px;line-height:1.4;
     color:var(--ink-2);max-width:70ch;margin:0}
-  .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
+  .meta-line{margin-top:9px;padding-top:7px;line-height:1.4;border-top:1px dotted var(--rule);
     display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .site-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;border-radius:999px;
@@ -191,10 +191,10 @@
   .meta-line span{margin:0}
   .meta-line b{color:var(--ink);font-weight:500}
 
-  section.chapter{margin:26px 0}
+  section.chapter{margin:18px 0}
   section.chapter:first-of-type{margin-top:0}
-  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
-    letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:23px;
+    letter-spacing:-0.01em;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
@@ -202,11 +202,11 @@
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
-  #panel-syllabus section.chapter{margin:20px 0}
+  #panel-syllabus section.chapter{margin:14px 0}
   #panel-syllabus .tbd-note{margin:0}
 
   ul.dates{list-style:none;padding:0;margin:0;max-width:640px}
-  ul.dates li{display:flex;align-items:baseline;padding:6px 0;
+  ul.dates li{display:flex;align-items:baseline;padding:4px 0;
     border-bottom:1px dotted var(--rule);font-size:15px}
   ul.dates li .what{flex:1}
   ul.dates li .when{font-family:'IBM Plex Mono',monospace;font-size:12px;
@@ -264,13 +264,13 @@
   /* Resources: grouped cards */
   /* resources: small cards of one size in a tidy grid. Long descriptions stop at two lines
      (the full text is in the tooltip and is still read by screen readers), so rows stay even. */
-  .res-group{margin-top:22px}
+  .res-group{margin-top:14px}
   .res-group:first-of-type{margin-top:6px}
-  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'IBM Plex Mono',monospace;
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 7px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
   .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
   .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
-  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
   .res-card{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;padding:8px 12px 8px;background:var(--paper-2);
     border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
@@ -362,15 +362,15 @@
   .lec-nav .ls-done{padding:0 13px 0 11px}
   .lec-nav .ls-done.is-done{border-color:var(--accent);color:var(--accent);background:var(--tint)}
   @media(max-width:520px){ .lec-nav .ls-done .lbl{display:none} .lec-nav .ls-done{padding:0 11px} }
-  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:0 0 26px;padding:14px 18px;
+  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 16px;padding:10px 16px;
     border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
   .rs-k{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .rs-t{margin:3px 0 9px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-t{margin:2px 0 6px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
-  .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
+  .rs-n{margin-top:5px;font-size:12.5px;color:var(--ink-2)}
   .rs-reset{margin-left:10px;padding:0;border:0;background:none;color:var(--ink-2);font:inherit;text-decoration:underline;cursor:pointer}
   .rs-reset:hover{color:var(--accent)}
 
@@ -423,10 +423,10 @@
       display:block;transition:opacity .22s ease}
     body.nav-open .m-scrim{opacity:1;pointer-events:auto}
     body.nav-open{overflow:hidden}
-    .main-content,body.sidebar-collapsed .main-content{margin-left:0;padding:74px 18px 40px}
+    .main-content,body.sidebar-collapsed .main-content{margin-left:0;padding:68px 18px 28px}
     footer.colophon,body.sidebar-collapsed footer.colophon{margin-left:0}
     footer.colophon .co-in{padding-left:18px;padding-right:18px}
-    .course-head h1{font-size:28px}
+    .course-head h1{font-size:26px}
     .course-head .kicker{letter-spacing:.14em}
     .sb-resize{display:none}
     .sb-tabs .nav-item{padding:10px 15px;font-size:14px}
