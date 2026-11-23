@@ -38,11 +38,13 @@
   </header>
 
   <section class="quick hm-quick" aria-labelledby="hm-quick-h">
-    <span class="quick-label" id="hm-quick-h">Most used</span>
+    <span class="quick-label" id="hm-quick-h">Useful resources</span>
     <div class="quick-grid">
 {{QUICK}}
     </div>
   </section>
+
+{{SHARE}}
 
   <p class="no-results" id="no-results" role="status" hidden>No course matches that. Try a code such as CS1001, or a word such as “maths”.</p>
 
@@ -79,7 +81,6 @@
     </div>
   </section>
 
-{{SHARE}}
 
   <section class="hm-levels" aria-label="Search results">
     <div class="hm-level-grid">
