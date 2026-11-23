@@ -664,11 +664,12 @@ def generate_home():
     esc = html_lib.escape
     catalog = open(os.path.join(SITE_ROOT, "courses.html"), encoding="utf-8").read()
     li_re = re.compile(r'<li( class="project")?><span class="code">([^<]+)</span><span class="name"><a href="([^"]+)">(.*?)</a></span>', re.S)
-    cards, home = [], {}
+    cards, home, groups = [], {}, {}
     for m in re.finditer(r'<section id="([^"]+)" class="level">\s*<div class="level-head">\s*<span class="roman">(.*?)</span>\s*<h2>(.*?)</h2>(.*?)</section>', catalog, re.S):
         sid, roman, title, body = m.groups()
         chips = []
         rows = li_re.findall(body)
+        groups[sid] = {re.search(r"courses/(.*?)\.html", r[2]).group(1) for r in rows}
         for proj, code, href, name in rows:
             chips.append('        <li><a class="chip%s" href="%s">%s<span class="vh"> %s</span></a></li>'
                          % (" project" if proj else "", href, code, name))
@@ -684,6 +685,12 @@ def generate_home():
                      '        <div class="hl-head"><span class="hl-roman">%s</span><h3 id="lv-%s-h">%s</h3><span class="hl-n">%d</span></div>\n'
                      '        <ul class="chips">\n%s\n        </ul>\n      </section>'
                      % (sid, sid, roman, sid, title, len(rows), "\n".join(chips)))
+    tiles = []
+    for label, ids in (("Foundation", ("foundation",)), ("Diploma", ("diploma-p", "diploma-ds")),
+                       ("Degree", ("bsc", "bs")), ("PG Diploma and MTech", ("pgd", "mtech"))):
+        stems = set().union(*(groups.get(i, set()) for i in ids))
+        tiles.append('      <a class="hm-tile" href="courses.html#%s"><span class="ht-t">%s</span><span class="ht-n">%d courses</span></a>'
+                     % (ids[0], label, len(stems)))
     dates = json.load(open(DATES_PATH, encoding="utf-8"))
     drows = []
     for e in sorted(dates["items"], key=lambda e: (e["date"], e.get("end", ""))):
@@ -694,7 +701,7 @@ def generate_home():
     tpl = open(HOME_TEMPLATE_PATH, encoding="utf-8").read()
     page = (tpl.replace("{{TOPBAR}}", topbar).replace("{{COURSE_COUNT}}", str(len(home)))
             .replace("{{TERM}}", esc(dates["term"])).replace("{{DATES}}", "\n".join(drows))
-            .replace("{{DATES_SRC}}", esc(dates["source"])).replace("{{LEVELS}}", "\n".join(cards))
+            .replace("{{DATES_SRC}}", esc(dates["source"])).replace("{{LEVELS}}", "\n".join(cards)).replace("{{TILES}}", "\n".join(tiles))
             .replace("{{FOOTNAV}}", _footer_nav("home"))
             .replace("{{HOME_DATA}}", json.dumps(home, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")))
     open(INDEX_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
