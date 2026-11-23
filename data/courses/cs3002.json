@@ -5,11 +5,26 @@
  "title": "Software Testing",
  "program": "BSc / BS",
  "credits": 4,
- "standfirst": "Unit, integration and system testing — plus the theory of what testing can and cannot guarantee.",
+ "standfirst": "Unit, integration and system testing, plus the theory of what testing can and cannot guarantee.",
  "instructor": "Prof. Meenakshi D'Souza",
  "term": "Every term",
  "prereq": "CS3001",
  "resources": [
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/1n1SnBCS08Zh8LRbcRf7FBiVvHulBvhRa?usp=drive_link",
    "label": "Drive folder",
@@ -35,6 +50,22 @@
    "desc": "Notes for several degree courses collected on one page. Look for this course's section.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=2",
+   "group": "Notes",
+   "desc": "Notes, e-books, quiz handbooks and solved Quiz 2 and end term papers. Shared on MauryaHub.",
+   "by": "Ashish Maurya and other students",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub course videos",
+   "url": "https://mauryahub.onrender.com/course/25",
+   "group": "Video solutions",
+   "desc": "Theory videos for weeks 1 to 4.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

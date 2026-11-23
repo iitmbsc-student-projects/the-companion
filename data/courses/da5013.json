@@ -5,11 +5,26 @@
  "title": "Deep Learning Practice",
  "program": "BS elective",
  "credits": 4,
- "standfirst": "Applied deep learning — training tricks, debugging, transfer learning and shipping a model to production.",
+ "standfirst": "Applied deep learning: training tricks, debugging, transfer learning and shipping a model to production.",
  "instructor": "Prof. Mitesh Khapra, Prof. S. Umesh &amp; Prof. Kaushik Mitra",
  "term": "As offered",
  "prereq": "CS3004",
  "resources": [
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/1Jcq6QqjfhWgZqFQaLj2K5WDlFNTSvQMg?usp=sharing",
    "label": "Drive folder",
@@ -27,6 +42,14 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=9",
+   "group": "Notes",
+   "desc": "Notes shared by students. Shared on MauryaHub.",
+   "by": "Ashish Maurya and other students",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

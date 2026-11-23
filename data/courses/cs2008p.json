@@ -2,7 +2,7 @@
  "stem": "cs2008p",
  "code": "CS2008P",
  "kind": "project",
- "title": "ML Practice — Project",
+ "title": "ML Practice Project",
  "program": "Diploma / Data Science",
  "credits": 2,
  "standfirst": "A machine-learning project taken from problem statement to deployable notebook, defended in a review session.",
@@ -12,5 +12,381 @@
  "syllabus_body_html": "<p>The purpose of a machine learning project is to apply learned ML models to real-world data, develop effective predictive models, uncover patterns, and generate insights to answer business questions, analyse trends, and solve problems.</p>\n      <p><b>Co-requisite:</b> BSCS2008:  Machine Learning Practice</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Ashish Tendulkar, Google Research (Visiting Asst. Professor, Department of Computer Science and Engineering, IIT Madras)</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The MLP project is conducted on the Kaggle platform.</li><li>Classical machine learning project (regression or classification); Implementation on Kaggle notebooks; Structured workflow including EDA, feature engineering, model training, evaluation, and testing.</li><li>The project runs for 12-15  weeks and is structured into multiple milestones that break the ML lifecycle into manageable steps, ensuring steady and consistent progress.</li><li>The viva voce is conducted after acceptance of the final submission and consists of two rounds, L1 and L2. The L2 round is conducted by an industry expert and contributes to the final project grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2008P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
  "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
  "pyq": [],
- "sessions": []
+ "sessions": [],
+ "weeks_data": [
+  {
+   "w": "Sep 2026 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "DouuXyXBI5k",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Viva orientation",
+     "v": "O8YCSpEL-t0",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "May 2026 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "njgjHkHr6pw",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Viva briefing",
+     "v": "WyztGhNsiUc",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2026 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "LSAKxJbOPSM",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Kaggle assignment intro",
+     "v": "f8qO23AKTgk",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Sep 2025 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Getting started with Kaggle",
+     "v": "qTRsE4SR1z0",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Orientation",
+     "v": "pub4OSL_z5U",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "Tlw-LwubViQ",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Kaggle assignment intro",
+     "v": "0QdNYxoNzGI",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "May 2025 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "ugatJgYAlC0",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "GVMRU_j3k5A",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "wCXCbaFHjWY",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "cXQtnCagmeY",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Kaggle assignment intro",
+     "v": "OYXVNKLyS8M",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "kMM0RN5IiKY",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2025 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "1c3IrH3hNaM",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "uzsh4ncp7hk",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "QSe9XssKF8g",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Intro to Kaggle",
+     "v": "HyXTVPIMgeE",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "HqOIUbQxU2o",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Sep 2024 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "RloHwRdFi2U",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "E64IAqYgvdQ",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "May 2024 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "MX2o-uc6d-U",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "-pLfBEyLk9Q",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "Swzu1CnU42I",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2024 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "5b1A5El3XO8",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Working with text data",
+     "v": "_l2VDS5J1mI",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "osrRMwQUPyQ",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "RbwTp2tZYcA",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "CmCWxQkJd30",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Sep 2023 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "_MBusfYCfts",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "-_KCgijnXHU",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "becbaKzcMGE",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "d8ig-IW5uQ0",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "M5gf95eRbog",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "May 2023 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Session 1",
+     "v": "MKaMsHlak88",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "0OTMIokZ-Vk",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "t8xUkIqObJM",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "UGkQbf7ICEw",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "FoeWkKY5yYI",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Extra session",
+     "v": "Yvx_zkVQvaY",
+     "s": null
+    },
+    {
+     "n": "7",
+     "t": "Extension session",
+     "v": "Hcw4t0_lcps",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2023 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "oCJHtHzBVxw",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "juQb3oD2IVY",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "FU6lxXDzJbs",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "G6yvrL8h2L4",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "pRk3gRkbRvQ",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "JqqtCUeObzs",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Sep 2022 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Project discussion",
+     "v": "itjvAvfgAoo",
+     "s": null
+    }
+   ]
+  }
+ ],
+ "hide_lectures": false,
+ "resources": [
+  {
+   "label": "MLP YouTube channel",
+   "url": "https://www.youtube.com/@MachineLearningPractice/playlists",
+   "group": "Recordings",
+   "desc": "Course and project live sessions, by term."
+  }
+ ]
 }

@@ -5,14 +5,37 @@
  "title": "Compiler Design",
  "program": "BS elective",
  "credits": 4,
- "standfirst": "Lexing, parsing, semantic analysis and code generation — how a high-level language becomes machine code.",
+ "standfirst": "Lexing, parsing, semantic analysis and code generation: how a high-level language becomes machine code.",
  "instructor": "Prof. Partha Pratim Das",
  "term": "As offered",
  "prereq": "CS3021",
  "resources": [
   {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
+  {
    "url": "https://drive.google.com/drive/folders/12cnlNszTKHoEEFBZHC9IlcXawbr5BJBV?usp=sharing",
    "label": "Drive folder"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=17",
+   "group": "Notes",
+   "desc": "A complete guide to the course. Shared on MauryaHub.",
+   "by": "Ashish Maurya and other students",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

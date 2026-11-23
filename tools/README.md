@@ -108,3 +108,9 @@ tools/dashboard/playlist_import.py   Playlist parsing/import + the WEEKS_DATA te
 `assets/term-syllabus.js` (the shared quiz/end-term calendar data) is separate
 from all of this — it's still hand-edited directly, once per term, exactly as
 before.
+
+## Where the course-page code lives
+
+`assets/course.js` holds the behaviour for every course page. The template
+(`tools/templates/lecture.html.j2`) only adds each course's own data (`window.COURSE`), so a
+fix to `course.js` reaches all courses without regenerating them.

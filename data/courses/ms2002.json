@@ -5,11 +5,26 @@
  "title": "Business Analytics",
  "program": "Diploma / Data Science",
  "credits": 4,
- "standfirst": "Descriptive, predictive and prescriptive analytics for business questions — with the case studies that motivate each.",
+ "standfirst": "Descriptive, predictive and prescriptive analytics for business questions, with the case studies that motivate each.",
  "instructor": "Prof. Rahul R Marathe",
  "term": "Every term",
  "prereq": "MS2001",
  "resources": [
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/1pgmtT5R21zcZWIGUXt222-ArHUPJCs0m?usp=share_link",
    "label": "Supplementary content (Drive folder)",
@@ -44,6 +59,14 @@
    "desc": "Written notes for the Business Analytics course.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MauryaHub course videos",
+   "url": "https://mauryahub.onrender.com/course/1",
+   "group": "Video solutions",
+   "desc": "Videos on each week's theory, practice assignments and questions, plus quiz papers.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

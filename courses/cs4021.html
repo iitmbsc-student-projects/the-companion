@@ -4,12 +4,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Advanced Algorithms — The Companion</title>
-<link rel="stylesheet" href="../assets/theme.css?v=a714491e">
+<title>CS4021 Advanced Algorithms | The Companion</title>
+<meta name="description" content="Beyond the classics: approximation, randomised, online, and parameterised algorithms.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Companion">
+<meta property="og:title" content="CS4021 Advanced Algorithms">
+<meta property="og:description" content="Beyond the classics: approximation, randomised, online, and parameterised algorithms.">
+<meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs4021.html">
+<meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/theme.css?v=19250950">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
@@ -19,7 +29,7 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
-    font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
@@ -44,7 +54,7 @@
   .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
   .nav-item{cursor:pointer;user-select:none}
   .sb-tabs .nav-item{padding:7px 13px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);
-    font:600 13px 'Inter',sans-serif;color:var(--ink);transition:background .15s,border-color .15s}
+    font:600 13px 'IBM Plex Sans',sans-serif;color:var(--ink);line-height:1.5;transition:background .15s,border-color .15s}
   .sb-tabs .nav-item:hover{border-color:var(--accent)}
   .sb-tabs .nav-item.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
 
@@ -52,7 +62,7 @@
     border:1px solid var(--rule);border-radius:10px;background:var(--paper);transition:border-color .15s}
   .sb-continue:hover{border-color:var(--accent)}
   .sb-continue[hidden]{display:none}
-  .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .sc-k{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
   .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
@@ -63,15 +73,15 @@
   .sb-tools[hidden]{display:none}
   #lec-search{width:100%;box-sizing:border-box;padding:8px 10px 8px 31px;border:1px solid var(--rule);border-radius:8px;
     background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='4.5'/%3E%3Cpath d='m10.5 10.5 3 3'/%3E%3C/svg%3E") 10px center/14px no-repeat;
-    color:var(--ink);font:500 13.5px 'Inter',sans-serif}
+    color:var(--ink);font:500 13.5px 'IBM Plex Sans',sans-serif}
   #lec-search:focus{outline:2px solid var(--accent);outline-offset:1px}
   .sb-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
   .sb-spacer{flex:1}
   .sb-chip{padding:5px 11px;border:1px solid var(--rule);border-radius:999px;background:none;color:var(--ink-2);
-    font:600 11.5px 'Inter',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+    font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
   .sb-chip:hover{border-color:var(--accent);color:var(--ink)}
   .sb-chip[aria-pressed="true"]{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
-  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'Inter',sans-serif;cursor:pointer}
+  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer}
   .sb-link:hover{color:var(--accent)}
   .sb-chip:focus-visible,.sb-link:focus-visible,.sb-continue:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -105,17 +115,18 @@
   .week-group{border-top:1px solid var(--rule)}
   .sb-scroll > .week-group:first-child{border-top:none}
   .week-group.is-hid,.lecture-item.is-hid{display:none}
-  .week-title{position:relative;padding:9px 20px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  .week-title{position:relative;padding:9px 20px 7px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
     border-bottom:1px solid var(--rule);cursor:pointer;box-shadow:none;border-radius:0;
     display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none}
   .week-title:hover{color:var(--ink)}
   .week-title:focus{box-shadow:none}
+  .week-title:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
   /* Bootstrap's own :not(.collapsed) active-state rule outranks a plain .week-title rule on
      specificity alone, so this needs the compound selector to actually win. */
   .week-title.accordion-button:not(.collapsed){background:var(--paper-2);color:var(--ink-2);box-shadow:none}
   .week-title.accordion-button::after{display:none}
-  .week-title .chev{font-family:'JetBrains Mono',monospace;font-size:12px;
+  .week-title .chev{font-family:'IBM Plex Mono',monospace;font-size:12px;
     transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
   .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
   .accordion-body{padding:0}
@@ -125,7 +136,8 @@
   .week-title > span{position:relative;z-index:1}
   .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
   .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
-  .lecture-item.novid .ltitle{opacity:.62}
+  .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
+  .lecture-item.active .ltitle{color:inherit}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
     cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
@@ -133,7 +145,7 @@
   .lecture-item:hover{background:var(--tint)}
   .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
   .lecture-item.active .lnum{color:var(--on-fill-2)}
-  .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
+  .lnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
   .main-content{margin-left:var(--sb-w,300px);padding:40px 56px 60px}
@@ -160,19 +172,19 @@
   .panel.active{display:block}
 
   .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
-  .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .course-head .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
   .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:42px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
     }
   .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
     color:var(--ink-2);max-width:70ch;margin:0}
   .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
-    display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'JetBrains Mono',monospace;
+    display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .site-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;border-radius:999px;
     background:var(--ink);color:var(--paper);border:1px solid var(--ink);text-decoration:none;
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
     transition:background .15s,border-color .15s,color .15s}
   .site-btn:hover{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
   .site-btn svg{width:13px;height:13px}
@@ -184,8 +196,8 @@
   section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
-  section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
-    color:var(--accent);letter-spacing:.2em;font-weight:500}
+  section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:.14em;font-weight:500}
 
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
@@ -197,7 +209,7 @@
   ul.dates li{display:flex;align-items:baseline;padding:6px 0;
     border-bottom:1px dotted var(--rule);font-size:15px}
   ul.dates li .what{flex:1}
-  ul.dates li .when{font-family:'JetBrains Mono',monospace;font-size:12px;
+  ul.dates li .when{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--ink-2);letter-spacing:.05em}
   ul.dates li .marker{width:8px;height:8px;border-radius:50%;background:var(--accent);
     margin-right:12px;flex-shrink:0}
@@ -205,11 +217,11 @@
   ul.dates li.exam .what{font-weight:600}
 
   table.papers{width:100%;max-width:900px;border-collapse:collapse;font-size:14px}
-  table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
-    font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
+  table.papers th{text-align:left;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
     padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
   table.papers td{padding:10px;border-bottom:1px dotted var(--rule);vertical-align:baseline}
-  table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
+  table.papers td:first-child{font-family:'IBM Plex Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
   table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
@@ -234,58 +246,65 @@
   details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
   details.sess[open] summary::before{transform:rotate(90deg)}
   .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
-  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-count{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
   .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
-  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
   .sess-watch::after{content:" \2197"}
   ul.topics{list-style:none;margin:0;padding:0}
   ul.topics li{border-bottom:1px dotted var(--rule)}
   ul.topics li:last-child{border-bottom:none}
   ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
   ul.topics a:hover{background:var(--tint)}
-  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-time{flex:none;width:64px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent)}
   .tp-label{flex:1;font-size:15px}
-  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
-  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+  .tp-end{flex:none;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;
     color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
   @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
   /* Resources: grouped cards */
-  .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
+  /* resources: small cards of one size in a tidy grid. Long descriptions stop at two lines
+     (the full text is in the tooltip and is still read by screen readers), so rows stay even. */
   .res-group{margin-top:22px}
   .res-group:first-of-type{margin-top:6px}
-  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
-    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
   .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
   .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
-  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;padding:8px 12px 8px;background:var(--paper-2);
     border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
-  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:7px;right:9px;font-size:12px;color:var(--accent-2)}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:15px;line-height:1.3;color:var(--ink);border:none;padding-right:14px;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
   .res-main::after{content:"";position:absolute;inset:0}
   .res-main:hover{color:var(--accent)}
-  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
-  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
-  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
-  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
-  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+  .res-main:focus-visible{outline:none}
+  .res-card:has(.res-main:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+  .res-desc{margin:0;color:var(--ink-2);font-size:13px;line-height:1.4;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+  .res-foot{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin-top:auto;padding-top:3px;min-width:0}
+  .res-host{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2);letter-spacing:.02em;
+    max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-by{color:var(--ink-2);font-size:12px;font-style:italic;min-width:0}
+  .res-foot .res-by{position:relative;z-index:1;max-width:100%;padding-right:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-badge{flex:none;margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:0 6px;
     border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
   .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
-  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  @media(max-width:640px){ .res-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))} }
   .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
-  .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
   .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
-  .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
+  .current-actions a{font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.1em;text-transform:uppercase}
 
   /* lecture stage: a small title line, the video taking all the room that fits on screen, then Previous / Next */
@@ -302,14 +321,15 @@
   }
   .lec-stage .video{width:100%;min-width:0}
   .lec-id{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px;margin-bottom:6px}
-  .lec-id .current-eyebrow{margin:0;font-size:10.5px}
+  .lec-id .current-eyebrow{margin:0;font-size:11.5px}
   .lec-id .current-title{margin:0;font-size:16px}
   .lec-nav{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
   .lec-nav button,.rs-go{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:0 14px 0 11px;border:1px solid var(--rule);
-    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;white-space:nowrap;
+    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;white-space:nowrap;
     transition:border-color .15s,background .15s,transform .1s,filter .15s}
   .lec-nav button svg,.m-step svg,.rs-go svg{width:15px;height:15px;flex:none;transition:transform .15s}
-  .lec-nav .ls-n{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.06em;opacity:.65}
+  .lec-nav .ls-n{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;opacity:.8}
+  .lec-nav .ls-next .ls-n{opacity:1}
   .lec-nav button:hover:not([disabled]){border-color:var(--accent)}
   .lec-nav button:active:not([disabled]){transform:scale(.97)}
   .lec-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -323,15 +343,15 @@
   .lec-id .current-actions{margin-left:auto;gap:8px}
   .lec-id .current-actions:empty{display:none}
   .lec-id .current-actions a{display:inline-flex;align-items:center;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;
-    background:var(--paper-2);color:var(--accent);font-size:10.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
+    background:var(--paper-2);color:var(--accent);font-size:11.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
   .lec-id .current-actions a:hover{border-color:var(--accent);background:var(--tint)}
   .lec-id .current-actions .tbd-note{font-size:12px;color:var(--ink-2)}
   .m-step{display:none}
 
   /* watched ticks and the resume card */
-  .lecture-item .ltitle{flex:1;min-width:0}
+  .lecture-item .ltitle{flex:1;min-width:0;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
   .lcheck{flex:none;align-self:center;margin:-6px -10px -6px 0;padding:6px 10px;border:0;background:none;cursor:pointer;color:inherit;line-height:0}
-  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.55;
+  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.85;
     transition:background .12s,border-color .12s,opacity .12s}
   .lcheck:hover::before{opacity:1;border-color:var(--accent)}
   .lcheck:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
@@ -346,7 +366,7 @@
     border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
-  .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .rs-k{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
   .rs-t{margin:3px 0 9px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
@@ -356,7 +376,7 @@
 
   footer.colophon{margin-left:var(--sb-w,300px)}
   /* ---- page footer ---- */
-  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'Inter',sans-serif;font-style:normal}
+  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'IBM Plex Sans',sans-serif;font-style:normal}
   footer.colophon .co-in{max-width:900px;margin:0 auto;padding:22px 28px 30px}
   footer.colophon .co-note{display:flex;align-items:flex-start;gap:12px;margin:0 0 20px;padding:12px 16px;
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
@@ -365,9 +385,10 @@
     background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
   footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
-  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:0 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
-  footer.colophon .co-nav a{color:var(--ink-2);border:none}
+  footer.colophon .co-nav a{display:inline-block;padding:7px 0;color:var(--ink-2);border:none}
+  footer.colophon .theme-foot{margin-top:14px}
   footer.colophon .co-nav a:hover{color:var(--accent)}
   footer.colophon .co-in{max-width:none;padding-left:56px;padding-right:56px}
   @media(max-width:900px){ footer.colophon .co-in{padding-left:28px;padding-right:28px} }
@@ -381,12 +402,12 @@
     .m-bar{display:flex;align-items:center;gap:10px;position:fixed;top:0;left:0;right:0;height:54px;padding:0 12px;
       background:var(--paper);border-bottom:1px solid var(--rule);z-index:20}
     .m-menu{display:flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--rule);
-      border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
+      border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
     .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
-      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
+      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
     .m-step[hidden]{display:none}
     .m-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .m-here{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;
@@ -412,9 +433,18 @@
     .week-title{padding-top:14px;padding-bottom:12px}
     .lecture-item{padding-top:11px;padding-bottom:11px}
   }
+  /* project pages: a link back to the main course */
+  .parent-link{display:inline-block;margin:4px 0 6px;padding:6px 12px;border:1px solid var(--rule);border-radius:14px;line-height:1.45;
+    background:var(--paper-2);color:var(--ink-2);font-size:13.5px}
+  .parent-link b{color:var(--ink);font-weight:600}
+  .parent-link::after{content:"\2192";color:var(--accent);margin-left:6px}
+  .parent-link:hover{border-color:var(--accent)}
+  .sb-tabs .nav-item[hidden]{display:none}
+  .sb-bottom{margin-top:auto}   /* keep the theme dots at the foot of the sidebar even when there is no lecture list */
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <script>
   // Restore the sidebar state before first paint so the page doesn't flash open then shut.
   try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
@@ -438,8 +468,8 @@
         <span class="brand-code">CS4021</span>
       </div>
       <div class="sb-tabs">
-        <div class="nav-item active" id="nav-dashboard">Dashboard</div>
-        <div class="nav-item" id="nav-syllabus">Syllabus</div>
+        <button type="button" class="nav-item active" id="nav-dashboard" aria-current="page">Dashboard</button>
+        <button type="button" class="nav-item" id="nav-syllabus">Syllabus</button>
       </div>
       <button type="button" class="sb-continue" id="sb-continue" hidden>
         <span class="sc-k" id="sc-k"></span>
@@ -465,14 +495,14 @@
     <div class="sb-resize" id="sb-resize" aria-hidden="true" title="Drag to resize. Double-click to reset."></div>
   </nav>
 
-  <main class="main-content">
+  <main class="main-content" id="main" tabindex="-1">
 
     <section class="panel active" id="panel-dashboard">
 
       <div class="course-head">
         <div class="kicker">CS4021 · BS elective · 4 credits</div>
         <h1>Advanced Algorithms</h1>
-        <p class="standfirst">Beyond the classics — approximation, randomised, online, and parameterised algorithms.</p>
+        <p class="standfirst">Beyond the classics: approximation, randomised, online, and parameterised algorithms.</p>
         <div class="meta-line">
           <span><b>Instructor</b> Prof. Neeldhara Misra</span>
           <span><b>Term</b> As offered</span>
@@ -489,45 +519,56 @@
         </div>
         <button type="button" class="rs-go" id="rs-go"></button>
       </div>
-
       <section class="chapter" id="calendar">
-        <h2><span class="num">§ 1</span>Calendar</h2>
-        <ul class="dates">
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when">—</span></li>
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when">—</span></li>
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when">—</span></li>
+        <h2><span class="num" aria-hidden="true">§ 1</span>Calendar</h2>
+        <ul class="dates" id="cal-list" hidden>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when"></span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when"></span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when"></span></li>
         </ul>
         <p class="tbd-note" id="calendar-term-note" style="margin-top:10px"></p>
       </section>
 
       <section class="chapter" id="pyq">
-        <h2><span class="num">§ 2</span>Previous Year Questions</h2>
-        <p class="tbd-note">No papers uploaded yet.</p>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Previous Year Questions</h2>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card" title="QuizPractice papers: Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan. (quizpractice.space)">
+              <a class="res-main" href="https://quizpractice.space/" target="_blank" rel="noopener">QuizPractice papers</a>
+              <p class="res-desc">Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.</p>
+            </li>
+            <li class="res-card" title="MauryaHub papers: Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM. (mauryahub.in)">
+              <a class="res-main" href="https://www.mauryahub.in/" target="_blank" rel="noopener">MauryaHub papers</a>
+              <p class="res-desc">Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.</p>
+              <div class="res-foot"><span class="res-by">by Ashish Maurya</span></div>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="chapter" id="resources">
-        <h2><span class="num">§ 3</span>Resources</h2>
+        <h2><span class="num" aria-hidden="true">§ 3</span>Resources</h2>
 
         <div class="res-group">
           <h3 class="res-group-title">Course material<span class="res-count">2</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="Drive folder (drive.google.com)">
               <a class="res-main" href="https://drive.google.com/drive/folders/1VOCoUeQkwd5MWDDJIBQgamyi-4YBNJKU?usp=drive_link" target="_blank" rel="noopener">Drive folder</a>
-              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+              <div class="res-foot"><span class="res-badge" title="IITM login required">IITM login</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="Course YouTube channel (youtube.com)">
               <a class="res-main" href="https://www.youtube.com/@AdvancedAlgorithms-gy3hd" target="_blank" rel="noopener">Course YouTube channel</a>
-              <div class="res-foot"><span class="res-host">youtube.com</span></div>
             </li>
           </ul>
         </div>
         <div class="res-group">
           <h3 class="res-group-title">Notes<span class="res-count">1</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="Topic-wise notes: Topic-wise notes on ML Study Hub. (degreedost.com)">
               <a class="res-main" href="https://degreedost.com/#notes/advalgo" target="_blank" rel="noopener">Topic-wise notes</a>
               <p class="res-desc">Topic-wise notes on ML Study Hub.</p>
-              <div class="res-foot"><span class="res-host">degreedost.com</span><span class="res-by">by <a href="https://degreedost.com/" target="_blank" rel="noopener">ML Study Hub</a></span></div>
+              <div class="res-foot"><span class="res-by">by <a href="https://degreedost.com/" target="_blank" rel="noopener">ML Study Hub</a></span></div>
             </li>
           </ul>
         </div>
@@ -544,7 +585,7 @@
       </div>
 
       <section class="chapter" id="syllabus-description">
-        <h2><span class="num">§ 1</span>Course Description</h2>
+        <h2><span class="num" aria-hidden="true">§ 1</span>Course Description</h2>
         <div class="syllabus-body">
           <p>To introduce advanced ideas in design of algorithms; To study the performance guarantees of algorithms; To introduce methods for coping with NP-hard problems.</p>
           <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
@@ -552,14 +593,14 @@
       </section>
 
       <section class="chapter" id="syllabus-faculty">
-        <h2><span class="num">§ 2</span>Faculty</h2>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Faculty</h2>
         <ul class="link-list">
           <li>Prof. Neeldhara Misra, Department of Computer Science and Engineering, IIT Gandhinagar</li>
         </ul>
       </section>
 
       <section class="chapter" id="syllabus-weeks">
-        <h2><span class="num">§ 3</span>Week-by-week</h2>
+        <h2><span class="num" aria-hidden="true">§ 3</span>Week-by-week</h2>
         <div class="syllabus-body">
           <p><b>Week 1:</b> Greedy algorithms; Interval scheduling and file storage problems; Stable matching.</p>
           <p><b>Week 2:</b> Matroids and greedy optimization; Matroid properties and examples; Scheduling with deadlines.</p>
@@ -582,11 +623,11 @@
       <div class="lec-stage">
         <div class="lec-id">
           <div class="current-eyebrow" id="current-eyebrow"></div>
-          <h3 class="current-title" id="current-title"></h3>
+          <h1 class="current-title" id="current-title"></h1>
           <div class="current-actions" id="current-actions"></div>
         </div>
         <div class="video" id="video-box">
-          <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
+          <iframe id="video-frame" title="Lecture video" src="" allowfullscreen loading="lazy"></iframe>
           <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet. Try the slide link above.</div>
         </div>
         <div class="lec-nav">
@@ -605,15 +646,16 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-name">The Companion</span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../contributors.html">Contributors</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../contributors.html">Contributors</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../updates.html">Updates</a></nav>
     </div>
+    <div class="theme-foot" id="theme-foot"></div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/term-syllabus.js?v=6b763595"></script>
-<script>window.COURSE = {code: "CS4021", weeks: [{"w":"Week 1","items":[{"n":"1","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 2","items":[{"n":"2","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 3","items":[{"n":"3","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 4","items":[{"n":"4","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 5","items":[{"n":"5","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 6","items":[{"n":"6","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 7","items":[{"n":"7","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 8","items":[{"n":"8","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 9","items":[{"n":"9","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 10","items":[{"n":"10","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 11","items":[{"n":"11","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 12","items":[{"n":"12","t":"No lecture linked yet","v":null,"s":null}]}]};</script>
-<script src="../assets/course.js?v=09436d74"></script>
-<script src="../assets/theme.js?v=8e860dc4"></script>
+<script src="../assets/term-syllabus.js?v=ae229617"></script>
+<script>window.COURSE = {code: "CS4021", weeks: [{"w":"Week 1","items":[{"n":"1","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 2","items":[{"n":"2","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 3","items":[{"n":"3","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 4","items":[{"n":"4","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 5","items":[{"n":"5","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 6","items":[{"n":"6","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 7","items":[{"n":"7","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 8","items":[{"n":"8","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 9","items":[{"n":"9","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 10","items":[{"n":"10","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 11","items":[{"n":"11","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 12","items":[{"n":"12","t":"No lecture linked yet","v":null,"s":null}]}], item: "lecture"};</script>
+<script src="../assets/course.js?v=38e9cc52"></script>
+<script src="../assets/theme.js?v=f608d0e2"></script>
 </body>
 </html>

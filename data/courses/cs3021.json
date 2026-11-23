@@ -11,6 +11,21 @@
  "prereq": "MA2001",
  "resources": [
   {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
+  {
    "url": "https://drive.google.com/drive/folders/1bkHffS0gQ8sfesGUcg93j-eJLuK0AmsW?usp=sharing",
    "label": "Drive folder"
   },

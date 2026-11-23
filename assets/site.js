@@ -4,27 +4,31 @@
 
   /* ---------- Top-bar menus (built from assets/menu-data.js) ---------- */
   var MENU = window.COMPANION_MENU || { courses: { total: 0, items: [] }, links: { total: 0, items: [] } };
+  var BASE = document.body.getAttribute('data-base') || '';   // "../" on pages inside courses/
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function item(href, roman, title, count) {
     return '<a href="' + href + '">' + (roman ? '<span class="mi-roman">' + esc(roman) + '</span>' : '') +
       '<span class="mi-title">' + esc(title) + '</span><span class="mi-count">' + count + '</span></a>';
   }
   var mc = document.getElementById('menu-courses');
-  if (mc) mc.innerHTML = '<a class="menu-all" href="courses.html"><span class="mi-title">All courses</span><span class="mi-count">' +
+  if (mc) mc.innerHTML = '<a class="menu-all" href="' + BASE + 'courses.html"><span class="mi-title">All courses</span><span class="mi-count">' +
     MENU.courses.total + '</span></a>' +
-    MENU.courses.items.map(function (i) { return item('courses.html#' + i.id, i.roman, i.title, i.count); }).join('');
+    MENU.courses.items.map(function (i) { return item(BASE + 'courses.html#' + i.id, i.roman, i.title, i.count); }).join('');
   var ml = document.getElementById('menu-links');
-  if (ml) ml.innerHTML = '<a class="menu-all" href="links.html"><span class="mi-title">All links</span><span class="mi-count">' +
+  if (ml) ml.innerHTML = '<a class="menu-all" href="' + BASE + 'links.html"><span class="mi-title">All links</span><span class="mi-count">' +
     MENU.links.total + '</span></a>' +
-    MENU.links.items.map(function (i) { return item('links.html#links-' + i.id, '', i.title, i.count); }).join('');
+    MENU.links.items.map(function (i) { return item(BASE + 'links.html#links-' + i.id, '', i.title, i.count); }).join('');
 
-  if (ml) ml.innerHTML += '<a class="menu-more menu-more-first" href="calculator.html"><span class="mi-title">Grade calculator</span></a>' +
-    '<a class="menu-more" href="contributors.html"><span class="mi-title">Contributors</span></a>' +
-    '<a class="menu-more" href="scam-alert.html"><span class="mi-title">Scam alert</span></a>';
+
+  // phones: the second top-bar row scrolls sideways; keep the current page's link in view
+  var more = document.querySelector('.tb-more'), cur = more && more.querySelector('.current');
+  if (more && cur && more.scrollWidth > more.clientWidth) more.scrollLeft = cur.offsetLeft - more.clientWidth / 2 + cur.offsetWidth / 2;
 
   var jump = document.getElementById('level-jump');
+  var SHORT = { foundation: 'Foundation', 'diploma-p': 'Diploma: Programming', 'diploma-ds': 'Diploma: Data Science',
+    bsc: 'BSc Degree', bs: 'Electives', pgd: 'PG Diploma' };
   if (jump) jump.innerHTML = MENU.courses.items.map(function (i) {
-    return '<a href="#' + i.id + '">' + esc(i.title) + ' <span class="jump-n">' + i.count + '</span></a>';
+    return '<a href="#' + i.id + '" title="' + esc(i.title) + '">' + esc(SHORT[i.id] || i.title) + '</a>';
   }).join('');
 
   var navItems = document.querySelectorAll('.nav-item');
@@ -144,6 +148,43 @@
     box.addEventListener('input', function () { filter(box.value); });
     filter('');
   }
+
+  /* ---------- top bar height, for things that stick just below it ---------- */
+  var bar = document.querySelector('.topbar');
+  function setBar() { if (bar) document.documentElement.style.setProperty('--tbh', bar.offsetHeight + 'px'); }
+  setBar(); window.addEventListener('resize', setBar);
+
+  /* ---------- Important links: highlight the group in view in the side list ---------- */
+  function spy(side, groups) {
+    if (!side || !groups.length) return;
+    var marks = Array.prototype.slice.call(side.querySelectorAll('a')), ticking = false;
+    function update() {
+      ticking = false;
+      // the group whose top has passed just below the top bar and the sticky chips is the one you are reading
+      var line = (bar ? bar.offsetHeight : 0) + (getComputedStyle(side).position === 'sticky' ? side.offsetHeight : 0) + 24;
+      var cur = null;
+      Array.prototype.forEach.call(groups, function (g) { if (g.offsetParent !== null && g.getBoundingClientRect().top <= line) cur = g; });
+      if (!cur) cur = groups[0];
+      // at the very bottom the last groups can never reach the line: trust the chip you clicked, else the last group
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        var h = location.hash && document.getElementById(location.hash.slice(1));
+        cur = (h && Array.prototype.indexOf.call(groups, h) !== -1) ? h : groups[groups.length - 1];
+      }
+      marks.forEach(function (a) {
+        if (a.getAttribute('href') === '#' + cur.id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('hashchange', update);
+    // how tall the sticky chip row is, so a group you jump to lands just below it
+    function setJump() { document.documentElement.style.setProperty('--jh', (getComputedStyle(side).position === 'sticky' ? side.offsetHeight : 0) + 'px'); }
+    setJump(); window.addEventListener('resize', setJump);
+    update();
+  }
+  spy(document.querySelector('.links-layout .links-jump'), document.querySelectorAll('.links-groups .link-group'));
+  spy(document.getElementById('level-jump'), document.querySelectorAll('main section.level'));
+  spy(document.getElementById('proj-jump'), document.querySelectorAll('main section.chapter'));
 
   /* ---------- Back to top ---------- */
   var up = document.getElementById('back-to-top');
