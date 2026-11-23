@@ -383,6 +383,30 @@
  "hide_lectures": false,
  "resources": [
   {
+   "label": "MLP project: scope and tips",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-machine-learning-practice-project-bscs2008p",
+   "group": "Guides",
+   "desc": "The Kaggle project, how it is graded and how to plan it.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "How projects are graded",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-project-grading",
+   "group": "Guides",
+   "desc": "L1 and L2 vivas, the cutoffs and project improvement rules.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "Build a portfolio from your projects",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-portfolio-projects",
+   "group": "Guides",
+   "desc": "Show your project on GitHub and your CV without copying.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
    "label": "MLP YouTube channel",
    "url": "https://www.youtube.com/@MachineLearningPractice/playlists",
    "group": "Recordings",

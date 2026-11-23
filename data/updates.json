@@ -5,6 +5,19 @@
   {
    "date": "2026-11-23",
    "kind": "res",
+   "title": "Project guides from IITM BS Students' Corner",
+   "text": "Scope, grading, planning and portfolio guides on all five diploma project pages, from the IITM BS Students' Corner blog.",
+   "courses": [
+    "cs2003p",
+    "cs2006p",
+    "cs2008p",
+    "da2001p",
+    "ms2001p"
+   ]
+  },
+  {
+   "date": "2026-11-23",
+   "kind": "res",
    "title": "Project bootcamp code and the DL GenAI project site",
    "text": "MAD II project session code from Santhana Krishnan S, bootcamp demo code from Nandan Reddy Parnapalli and Shubham, and the DL & GenAI project course site.",
    "courses": [

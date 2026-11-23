@@ -329,6 +329,30 @@
  "hide_lectures": false,
  "resources": [
   {
+   "label": "BDM project: guide and tips",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-business-data-management-project-bsms2001p",
+   "group": "Guides",
+   "desc": "Project stages, viva, planning and academic integrity.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "How projects are graded",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-project-grading",
+   "group": "Guides",
+   "desc": "L1 and L2 vivas, the cutoffs and project improvement rules.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "Build a portfolio from your projects",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-portfolio-projects",
+   "group": "Guides",
+   "desc": "Show your project on GitHub and your CV without copying.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
    "label": "BDM project sessions",
    "url": "https://www.youtube.com/playlist?list=PLNmlFfYWEPbQivebUOOlYudty1PIqlXHP",
    "group": "Recordings",

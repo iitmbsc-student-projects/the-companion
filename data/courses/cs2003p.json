@@ -86,6 +86,38 @@
    "group": "Project help",
    "desc": "A day-by-day plan over ten days.",
    "by": "Shrikrishna Pandey"
+  },
+  {
+   "label": "MAD 1 project: scope and tips",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-modern-application-development-i-project-bscs2003p",
+   "group": "Guides",
+   "desc": "Scope, grading, a plan for the term and what happens if you do not finish.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "MAD projects: scope and common mistakes",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-mad-projects",
+   "group": "Guides",
+   "desc": "What to build first, mistakes to avoid and viva preparation.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "How projects are graded",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-project-grading",
+   "group": "Guides",
+   "desc": "L1 and L2 vivas, the cutoffs and project improvement rules.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "Build a portfolio from your projects",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-portfolio-projects",
+   "group": "Guides",
+   "desc": "Show your project on GitHub and your CV without copying.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
   }
  ],
  "weeks_data": [
