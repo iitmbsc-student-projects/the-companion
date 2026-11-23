@@ -82,6 +82,46 @@
    "group": "Project help",
    "desc": "This term: setup guides for backend, frontend, security and WSL, plus day-wise material.",
    "by": "Shrikrishna Pandey"
+  },
+  {
+   "label": "Project session agenda and code",
+   "url": "https://github.com/hashkrish/mad-2-project-sessions",
+   "group": "Project help",
+   "desc": "Week-by-week agenda for the MAD II project sessions, with backend code and a Vue example app.",
+   "by": "Santhana Krishnan S",
+   "by_url": "https://github.com/hashkrish"
+  },
+  {
+   "label": "Bootcamp demo code, Oct 2026",
+   "url": "https://github.com/nandypi/MADcamp2-OctMorning",
+   "group": "Bootcamp code",
+   "desc": "Latest MAD2 bootcamp demo: Flask, Vue, Celery and Redis, with setup steps.",
+   "by": "Nandan Reddy Parnapalli",
+   "by_url": "https://github.com/nandypi"
+  },
+  {
+   "label": "Bootcamp demo code, Jun 2026",
+   "url": "https://github.com/nandypi/MAD2camp1-11AM",
+   "group": "Bootcamp code",
+   "desc": "MAD2 bootcamp demo with Redis and MailHog, with setup steps.",
+   "by": "Nandan Reddy Parnapalli",
+   "by_url": "https://github.com/nandypi"
+  },
+  {
+   "label": "Earlier bootcamps, Jul 2025 to Jan 2026",
+   "url": "https://github.com/nandyiitm?tab=repositories",
+   "group": "Bootcamp code",
+   "desc": "Eight more MAD2 bootcamp repos, online and offline batches.",
+   "by": "Nandan Reddy Parnapalli",
+   "by_url": "https://github.com/nandyiitm"
+  },
+  {
+   "label": "Bootcamp code, Jul 2025",
+   "url": "https://github.com/webwizardsh/MAD2_Bootcamp_july_2025",
+   "group": "Bootcamp code",
+   "desc": "MAD2 bootcamp code. Earlier bootcamps from 2024 and 2025 are on the author's GitHub.",
+   "by": "Shubham",
+   "by_url": "https://github.com/webwizardsh?tab=repositories"
   }
  ],
  "weeks_data": [
