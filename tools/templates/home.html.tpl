@@ -37,6 +37,13 @@
     <p class="hm-hint">{{COURSE_COUNT}} courses and projects. Press <kbd>/</kbd> to search, <kbd>Enter</kbd> to open the first match.</p>
   </header>
 
+  <section class="quick hm-quick" aria-labelledby="hm-quick-h">
+    <span class="quick-label" id="hm-quick-h">Most used</span>
+    <div class="quick-grid">
+{{QUICK}}
+    </div>
+  </section>
+
   <p class="no-results" id="no-results" role="status" hidden>No course matches that. Try a code such as CS1001, or a word such as “maths”.</p>
 
   <section class="hm-resume" id="hm-resume" aria-labelledby="hm-resume-h" hidden>

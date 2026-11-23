@@ -686,11 +686,19 @@ def generate_home():
                      '        <ul class="chips">\n%s\n        </ul>\n      </section>'
                      % (sid, sid, roman, sid, title, len(rows), "\n".join(chips)))
     tiles = []
-    for label, ids in (("Foundation", ("foundation",)), ("Diploma", ("diploma-p", "diploma-ds")),
-                       ("Degree", ("bsc", "bs")), ("PG Diploma and MTech", ("pgd", "mtech"))):
+    for label, kicker, desc, ids in (
+            ("Foundation", "Part I", "Maths, statistics, computational thinking, Python and English", ("foundation",)),
+            ("Diploma", "Part II", "Programming, databases, machine learning and business data, with the projects", ("diploma-p", "diploma-ds")),
+            ("Degree", "Part III", "The core courses and electives across data, AI and business", ("bsc", "bs")),
+            ("Postgraduate", "Parts IV and V", "The PG Diploma in AI and ML, and the MTech project", ("pgd", "mtech"))):
         stems = set().union(*(groups.get(i, set()) for i in ids))
-        tiles.append('      <a class="hm-tile" href="courses.html#%s"><span class="ht-t">%s</span><span class="ht-n">%d courses</span></a>'
-                     % (ids[0], label, len(stems)))
+        tiles.append('      <a class="hm-tile" href="courses.html#%s"><span class="ht-k">%s</span><span class="ht-t">%s</span>'
+                     '<span class="ht-d">%s</span><span class="ht-n">%d courses</span></a>'
+                     % (ids[0], kicker, label, esc(desc), len(stems)))
+    links = json.load(open(LINKS_PATH, encoding="utf-8"))
+    quick = sorted((it for grp in links["groups"] for it in grp["items"] if it.get("home")), key=lambda it: it["home"].get("order", 99))
+    quick_html = "\n".join('        <a class="quick-card" href="%s" target="_blank" rel="noopener"><span class="qc-title">%s</span><span class="qc-tag">%s</span></a>'
+                           % (esc(it["links"][0]["url"]), esc(it["home"]["title"]), esc(it["home"]["tag"])) for it in quick)
     dates = json.load(open(DATES_PATH, encoding="utf-8"))
     drows = []
     for e in sorted(dates["items"], key=lambda e: (e["date"], e.get("end", ""))):
@@ -701,7 +709,7 @@ def generate_home():
     tpl = open(HOME_TEMPLATE_PATH, encoding="utf-8").read()
     page = (tpl.replace("{{TOPBAR}}", topbar).replace("{{COURSE_COUNT}}", str(len(home)))
             .replace("{{TERM}}", esc(dates["term"])).replace("{{DATES}}", "\n".join(drows))
-            .replace("{{DATES_SRC}}", esc(dates["source"])).replace("{{LEVELS}}", "\n".join(cards)).replace("{{TILES}}", "\n".join(tiles))
+            .replace("{{DATES_SRC}}", esc(dates["source"])).replace("{{LEVELS}}", "\n".join(cards)).replace("{{TILES}}", "\n".join(tiles)).replace("{{QUICK}}", quick_html)
             .replace("{{FOOTNAV}}", _footer_nav("home"))
             .replace("{{HOME_DATA}}", json.dumps(home, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")))
     open(INDEX_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
