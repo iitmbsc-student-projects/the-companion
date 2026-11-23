@@ -36,7 +36,12 @@
       "tag": "Sep 2026",
       "order": 2
      },
-     "src": "official"
+     "src": "official",
+     "home": {
+      "title": "Grading doc",
+      "tag": "Sep 2026",
+      "order": 2
+     }
     },
     {
      "title": "Scheduled online exam links",
@@ -69,7 +74,12 @@
       "tag": "Your marks",
       "order": 5
      },
-     "src": "official"
+     "src": "official",
+     "home": {
+      "title": "Score checker",
+      "tag": "Your marks, IITM login",
+      "order": 3
+     }
     },
     {
      "title": "Data Studio",
@@ -81,7 +91,12 @@
       }
      ],
      "auth": "iitm",
-     "src": "official"
+     "src": "official",
+     "home": {
+      "title": "Data Studio",
+      "tag": "Rank and credits, IITM login",
+      "order": 4
+     }
     },
     {
      "title": "Academic malpractices",
@@ -137,7 +152,12 @@
       "tag": "Rules and policies",
       "order": 1
      },
-     "src": "official"
+     "src": "official",
+     "home": {
+      "title": "Handbook",
+      "tag": "Rules and policies",
+      "order": 1
+     }
     },
     {
      "title": "Student dashboard",
@@ -413,7 +433,12 @@
        "url": "https://quizpractice.space/"
       }
      ],
-     "src": "student"
+     "src": "student",
+     "home": {
+      "title": "QuizPractice",
+      "tag": "Past papers in exam mode",
+      "order": 5
+     }
     },
     {
      "title": "Quiz Space",

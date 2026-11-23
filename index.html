@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=eeb477fb">
+<link rel="stylesheet" href="assets/site.css?v=697d80f8">
 <link rel="stylesheet" href="assets/theme.css?v=19250950">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
@@ -62,6 +62,17 @@
     <p class="hm-hint">72 courses and projects. Press <kbd>/</kbd> to search, <kbd>Enter</kbd> to open the first match.</p>
   </header>
 
+  <section class="quick hm-quick" aria-labelledby="hm-quick-h">
+    <span class="quick-label" id="hm-quick-h">Most used</span>
+    <div class="quick-grid">
+        <a class="quick-card" href="https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub" target="_blank" rel="noopener"><span class="qc-title">Handbook</span><span class="qc-tag">Rules and policies</span></a>
+        <a class="quick-card" href="https://docs.google.com/document/d/e/2PACX-1vT_FeqnTq0Br4sUaN7OYAmj1B9MwjchyTEed1Bh5FkZvi5NyIMeAvvkuttostVsJBPjZcs3SjjEfiho/pub" target="_blank" rel="noopener"><span class="qc-title">Grading doc</span><span class="qc-tag">Sep 2026</span></a>
+        <a class="quick-card" href="https://study.iitm.ac.in/score-checker" target="_blank" rel="noopener"><span class="qc-title">Score checker</span><span class="qc-tag">Your marks, IITM login</span></a>
+        <a class="quick-card" href="https://datastudio.google.com/s/k3kRC9kDo54" target="_blank" rel="noopener"><span class="qc-title">Data Studio</span><span class="qc-tag">Rank and credits, IITM login</span></a>
+        <a class="quick-card" href="https://quizpractice.space/" target="_blank" rel="noopener"><span class="qc-title">QuizPractice</span><span class="qc-tag">Past papers in exam mode</span></a>
+    </div>
+  </section>
+
   <p class="no-results" id="no-results" role="status" hidden>No course matches that. Try a code such as CS1001, or a word such as “maths”.</p>
 
   <section class="hm-resume" id="hm-resume" aria-labelledby="hm-resume-h" hidden>
@@ -103,10 +114,10 @@
       <a class="hm-quiet" href="courses.html">All courses</a>
     </div>
     <div class="hm-tile-grid">
-      <a class="hm-tile" href="courses.html#foundation"><span class="ht-t">Foundation</span><span class="ht-n">8 courses</span></a>
-      <a class="hm-tile" href="courses.html#diploma-p"><span class="ht-t">Diploma</span><span class="ht-n">18 courses</span></a>
-      <a class="hm-tile" href="courses.html#bsc"><span class="ht-t">Degree</span><span class="ht-n">39 courses</span></a>
-      <a class="hm-tile" href="courses.html#pgd"><span class="ht-t">PG Diploma and MTech</span><span class="ht-n">15 courses</span></a>
+      <a class="hm-tile" href="courses.html#foundation"><span class="ht-k">Part I</span><span class="ht-t">Foundation</span><span class="ht-d">Maths, statistics, computational thinking, Python and English</span><span class="ht-n">8 courses</span></a>
+      <a class="hm-tile" href="courses.html#diploma-p"><span class="ht-k">Part II</span><span class="ht-t">Diploma</span><span class="ht-d">Programming, databases, machine learning and business data, with the projects</span><span class="ht-n">18 courses</span></a>
+      <a class="hm-tile" href="courses.html#bsc"><span class="ht-k">Part III</span><span class="ht-t">Degree</span><span class="ht-d">The core courses and electives across data, AI and business</span><span class="ht-n">39 courses</span></a>
+      <a class="hm-tile" href="courses.html#pgd"><span class="ht-k">Parts IV and V</span><span class="ht-t">Postgraduate</span><span class="ht-d">The PG Diploma in AI and ML, and the MTech project</span><span class="ht-n">15 courses</span></a>
     </div>
   </section>
 
