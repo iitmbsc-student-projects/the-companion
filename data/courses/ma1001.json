@@ -179,6 +179,14 @@
    "auth": "iitm"
   },
   {
+   "label": "Foundation question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1nVp8p_B2h3pjD9gR4zg--jMTH16BFZMw3VngkU7End4/edit?gid=1767887380#gid=1767887380",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz 1, quiz 2 and end term papers (forenoon and afternoon), one tab for each term from Jan 2021. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "added": "2026-11-23"
+  },
+  {
    "label": "Foundation previous term papers",
    "url": "https://medium.com/@prathambhalla7/iit-madras-bs-foundational-courses-previous-term-question-papers-with-answer-key-f5fe7b909b04",
    "group": "Previous year questions",
