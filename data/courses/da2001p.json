@@ -80,6 +80,14 @@
  "hide_lectures": false,
  "resources": [
   {
+   "label": "DL & GenAI project course site",
+   "url": "https://jimmi-kr.github.io/Deep-Learning-GenAI-Project/",
+   "group": "Project help",
+   "desc": "Registration, milestones, grading, viva and FAQ for the project.",
+   "by": "Jimmi (instructor)",
+   "by_url": "https://github.com/Jimmi-Kr"
+  },
+  {
    "label": "DL GenAI YouTube channel",
    "url": "https://www.youtube.com/@IntrotoDLGenAI/playlists",
    "group": "Recordings",
