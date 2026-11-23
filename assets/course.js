@@ -193,6 +193,11 @@ const PKEY = 'companion-progress-' + window.COURSE.code;
 let prog = { done: {}, last: null };
 try { const r = JSON.parse(localStorage.getItem(PKEY) || 'null'); if (r && r.done) prog = r; } catch (e) {}
 function saveProg(){ try { localStorage.setItem(PKEY, JSON.stringify(prog)); } catch (e) {} }
+// remember which courses were opened, for "Continue where you left off" on the home page (this browser only)
+try {
+  const R = JSON.parse(localStorage.getItem('companion-recent') || '[]'), cc = window.COURSE.code;
+  localStorage.setItem('companion-recent', JSON.stringify([cc].concat((Array.isArray(R) ? R : []).filter(x => x !== cc)).slice(0, 6)));
+} catch (e) {}
 // previous / next lecture, across weeks
 const FLAT = [];
 WEEKS_DATA.forEach((wk, wi) => wk.items.forEach((it, ii) => FLAT.push({ wi: wi, ii: ii, t: it.t, n: it.n })));

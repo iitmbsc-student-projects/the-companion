@@ -5,6 +5,12 @@
   {
    "date": "2026-11-23",
    "kind": "site",
+   "title": "New home page",
+   "text": "Search every course from the front page, see the next quiz and exam dates, pick up where you left off, and browse courses by level."
+  },
+  {
+   "date": "2026-11-23",
+   "kind": "site",
    "title": "Lectures for five more electives",
    "text": "Operating Systems, Data Visualization Design, Corporate Finance, Financial Forensics and Game Theory now list their lectures week by week, from the official IITM BS playlists.",
    "courses": [

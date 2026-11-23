@@ -94,7 +94,7 @@
       while ((n = w.nextNode())) out.push(n.nodeValue);
       return out.join(' ');
     }
-    var rows = Array.prototype.slice.call(document.querySelectorAll('ol.courses li, ul.links-grid li'));
+    var rows = Array.prototype.slice.call(document.querySelectorAll('ol.courses li, ul.links-grid li, ul.chips li'));
     var index = rows.map(function (li) {
       var text = norm(textOf(li)), words = text.split(' ');
       return {
@@ -135,8 +135,8 @@
         ix.li.style.display = ok ? '' : 'none';
         if (ok) shown++;
       });
-      document.querySelectorAll('section.level').forEach(function (sec) {
-        var lis = sec.querySelectorAll('ol.courses li');
+      document.querySelectorAll('section.level, section.hl-card').forEach(function (sec) {
+        var lis = sec.querySelectorAll('ol.courses li, ul.chips li');
         if (!lis.length) return;
         sec.style.display = Array.prototype.some.call(lis, function (li) { return li.style.display !== 'none'; }) ? '' : 'none';
       });

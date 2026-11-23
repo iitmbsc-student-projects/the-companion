@@ -4,7 +4,7 @@ course's JSON turns into a page — the dashboard (dashboard/app.py) calls into
 this module on every save; it's never edited by hand once shipped.
 
 Layout this expects (site root = the folder holding index.html):
-  index.html                   <- landing page (hand-written)
+  index.html                   <- home page, generated from templates/home.html.tpl
   courses.html                 <- course listing, rows kept in sync here
   links.html                   <- Important links page, generated from data/links.json
   assets/site.css, site.js     <- shared styles and behaviour
@@ -124,7 +124,7 @@ def load_all():
 
 # Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
 # stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
-ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js))(?:\?v=[0-9a-f]+)?')
+ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js))(?:\?v=[0-9a-f]+)?')
 
 
 def _asset_ver(rel):
@@ -627,12 +627,79 @@ def generate_updates():
         html = open(INDEX_PAGE, encoding="utf-8").read()
         a, b = html.find("<!-- updates:start -->"), html.find("<!-- updates:end -->")
         if a != -1 and b != -1:
-            news = "".join('<li><a href="updates.html#u-%s">%s</a></li>' % (e["date"], esc(_short_update(e))) for e in items[:3])
-            block = ('<!-- updates:start -->\n  <nav class="land-news" aria-label="What\'s new"><span class="ln-k">What\'s new</span>'
-                     '<ul>%s</ul><a class="ln-all" href="updates.html">All updates</a></nav>\n  ' % news)
+            news = "".join('<li><a href="updates.html#u-%s"><span class="hn-d">%s</span><span class="hn-t">%s</span></a></li>'
+                           % (e["date"], _short_date(e["date"]), esc(_short_update(e))) for e in items[:3])
+            block = ('<!-- updates:start -->\n    <nav class="hm-card hm-news" aria-labelledby="hm-news-h"><h2 class="hm-h" id="hm-news-h">What\'s new</h2>'
+                     '<ul>%s</ul><a class="hm-more" href="updates.html">All updates</a></nav>\n    ' % news)
             html = html[:a] + block + html[b:]
             open(INDEX_PAGE, "w", encoding="utf-8").write(html)
     return UPDATES_PAGE
+
+
+def _short_date(iso):
+    import datetime as dt
+    d = dt.date.fromisoformat(iso)
+    return "%d %s" % (d.day, d.strftime("%b"))
+
+
+HOME_TEMPLATE_PATH = os.path.join(TEMPLATES_DIR, "home.html.tpl")
+DATES_PATH = os.path.join(os.path.dirname(DATA_DIR), "dates.json")
+
+
+def _date_label(a, b):
+    import datetime as dt
+    d1 = dt.date.fromisoformat(a)
+    d2 = dt.date.fromisoformat(b) if b else d1
+    mon = lambda d: d.strftime("%b")
+    if d2 == d1:
+        return "%d %s" % (d1.day, mon(d1))
+    if (d1.year, d1.month) == (d2.year, d2.month):
+        return "%d to %d %s" % (d1.day, d2.day, mon(d1))
+    return "%d %s to %d %s" % (d1.day, mon(d1), d2.day, mon(d2))
+
+
+def generate_home():
+    """index.html: search, upcoming dates, what's new and the course list by level.
+    The course list is read from courses.html, the dates from data/dates.json."""
+    esc = html_lib.escape
+    catalog = open(os.path.join(SITE_ROOT, "courses.html"), encoding="utf-8").read()
+    li_re = re.compile(r'<li( class="project")?><span class="code">([^<]+)</span><span class="name"><a href="([^"]+)">(.*?)</a></span>', re.S)
+    cards, home = [], {}
+    for m in re.finditer(r'<section id="([^"]+)" class="level">\s*<div class="level-head">\s*<span class="roman">(.*?)</span>\s*<h2>(.*?)</h2>(.*?)</section>', catalog, re.S):
+        sid, roman, title, body = m.groups()
+        chips = []
+        rows = li_re.findall(body)
+        for proj, code, href, name in rows:
+            chips.append('        <li><a class="chip%s" href="%s">%s<span class="vh"> %s</span></a></li>'
+                         % (" project" if proj else "", href, code, name))
+            stem = re.search(r"courses/(.*?)\.html", href).group(1)
+            if code not in home:
+                n, item = 0, "lecture"
+                if os.path.exists(data_path(stem)):
+                    d = json.load(open(data_path(stem), encoding="utf-8"))
+                    n = sum(1 for w in (d.get("weeks_data") or []) for it in w["items"] if it.get("v") or it.get("dv"))
+                    item = "session" if d.get("kind") == "project" else "lecture"
+                home[code] = {"t": html_lib.unescape(name), "u": href, "n": n, "i": item}
+        cards.append('      <section class="hl-card" id="lv-%s" aria-labelledby="lv-%s-h">\n'
+                     '        <div class="hl-head"><span class="hl-roman">%s</span><h3 id="lv-%s-h">%s</h3><span class="hl-n">%d</span></div>\n'
+                     '        <ul class="chips">\n%s\n        </ul>\n      </section>'
+                     % (sid, sid, roman, sid, title, len(rows), "\n".join(chips)))
+    dates = json.load(open(DATES_PATH, encoding="utf-8"))
+    drows = []
+    for e in sorted(dates["items"], key=lambda e: (e["date"], e.get("end", ""))):
+        drows.append('        <li data-start="%s" data-end="%s"><time class="hm-d" datetime="%s">%s</time><span class="hm-t">%s</span><span class="hm-when"></span></li>'
+                     % (e["date"], e.get("end", ""), e["date"], _date_label(e["date"], e.get("end")), esc(e["title"])))
+    topbar = re.search(r'<nav class="topbar".*?</nav>', open(UPDATES_TEMPLATE_PATH, encoding="utf-8").read(), re.S).group(0)
+    topbar = topbar.replace('class="tb-link current"', 'class="tb-link"')
+    tpl = open(HOME_TEMPLATE_PATH, encoding="utf-8").read()
+    page = (tpl.replace("{{TOPBAR}}", topbar).replace("{{COURSE_COUNT}}", str(len(home)))
+            .replace("{{TERM}}", esc(dates["term"])).replace("{{DATES}}", "\n".join(drows))
+            .replace("{{DATES_SRC}}", esc(dates["source"])).replace("{{LEVELS}}", "\n".join(cards))
+            .replace("{{FOOTNAV}}", _footer_nav("home"))
+            .replace("{{HOME_DATA}}", json.dumps(home, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")))
+    open(INDEX_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    generate_updates()   # fills the "What's new" card between the markers and rewrites updates.html
+    return INDEX_PAGE
 
 
 SITE_URL = "https://iitmbsc-student-projects.github.io/the-companion/"
@@ -662,14 +729,14 @@ if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_404() if stem == "404" else generate_sitemap() if stem == "sitemap" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_home() if stem == "home" else generate_404() if stem == "404" else generate_sitemap() if stem == "sitemap" else generate_course(stem))
     else:
         # the shared pages first: they rewrite assets/menu-data.js, whose ?v= stamp the course pages then pick up
         generate_links()
         generate_contributors()
         generate_scam_alert()
         generate_calculator()
-        generate_updates()
+        generate_home()   # also rewrites updates.html
         generate_404()
         generate_sitemap()
         paths = generate_all()

@@ -17,48 +17,230 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=46e522df">
+<link rel="stylesheet" href="assets/site.css?v=e7fd1f1b">
 <link rel="stylesheet" href="assets/theme.css?v=19250950">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
-<body class="landing">
+<body class="home" data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
 
-<main class="wrap land" id="main" tabindex="-1">
-  <p class="land-kicker">By students, for students</p>
-  <h1 class="land-title">The Companion</h1>
-  <p class="land-sub">A study companion for the IIT Madras BS in Data Science &amp; Applications.</p>
+<nav class="topbar" aria-label="Main">
+  <div class="wrap topbar-in">
+    <a class="tb-brand" href="index.html" aria-label="The Companion, home">
+      <span class="tb-mark" aria-hidden="true">C</span><span class="tb-name">The Companion</span>
+    </a>
+    <div class="tb-nav">
+      <div class="nav-item" data-tab="courses">
+        <a class="nav-main" href="courses.html">Courses</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-courses" aria-label="Show course levels">&#9662;</button>
+        <div class="menu" id="menu-courses"></div>
+      </div>
+      <div class="nav-item" data-tab="links">
+        <a class="nav-main" href="links.html">Important links</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Show link groups">&#9662;</button>
+        <div class="menu" id="menu-links"></div>
+      </div>
+    </div>
+    <div class="tb-more">
+      <a class="tb-link" href="scam-alert.html">Scam alert</a>
+      <a class="tb-link" href="calculator.html">Grade calculator</a>
+      <a class="tb-link" href="contributors.html">Contributors</a>
+      <a class="tb-link" href="updates.html">Updates</a>
+    </div>
+    <span id="theme-slot" data-float-narrow></span>
+  </div>
+</nav>
 
-  <div class="land-cards">
-    <a class="land-card primary" href="courses.html">
-      <span class="lc-title">Courses</span>
-      <span class="lc-sub">Syllabus, lectures, resources</span>
-    </a>
-    <a class="land-card" href="links.html">
-      <span class="lc-title">Important links</span>
-      <span class="lc-sub">Handbook, calendar, score checker</span>
-    </a>
-    <a class="land-card" href="scam-alert.html">
-      <span class="lc-title">Scam alert</span>
-      <span class="lc-sub">Fake internship offers to watch out for</span>
-    </a>
-    <a class="land-card" href="calculator.html">
-      <span class="lc-title">Grade calculator</span>
-      <span class="lc-sub">Work out your final course score</span>
-    </a>
-    <a class="land-card" href="contributors.html">
-      <span class="lc-title">Contributors</span>
-      <span class="lc-sub">The people behind the notes and resources</span>
-    </a>
+<main class="wrap" id="main" tabindex="-1">
+  <header class="hm-hero">
+    <p class="hm-kicker">By students, for students</p>
+    <h1 class="hm-title">The Companion</h1>
+    <p class="hm-sub">A study companion for the IIT Madras BS in Data Science &amp; Applications.</p>
+    <div class="search hm-search">
+      <input type="search" id="search-box" placeholder="Search a course, try “maths”, “MLT”, “databases”, “NLP”…" aria-label="Search courses" autocomplete="off">
+    </div>
+    <p class="hm-hint">72 courses and projects. Press <kbd>/</kbd> to search, <kbd>Enter</kbd> to open the first match.</p>
+  </header>
+
+  <p class="no-results" id="no-results" role="status" hidden>No course matches that. Try a code such as CS1001, or a word such as “maths”.</p>
+
+  <section class="hm-resume" id="hm-resume" aria-labelledby="hm-resume-h" hidden>
+    <div class="hm-head">
+      <h2 class="hm-h" id="hm-resume-h">Continue where you left off</h2>
+      <button type="button" class="hm-quiet" id="hm-forget" title="Kept only in this browser">Forget recent</button>
+    </div>
+    <div class="hm-rc-grid" id="hm-resume-list"></div>
+  </section>
+
+  <div class="hm-two">
+    <section class="hm-card hm-dates" aria-labelledby="hm-dates-h">
+      <h2 class="hm-h" id="hm-dates-h">Coming up</h2>
+      <p class="hm-note">Sep 2026 term, from the official academic calendar.</p>
+      <ol id="hm-dates">
+        <li data-start="2026-11-15" data-end=""><time class="hm-d" datetime="2026-11-15">15 Nov</time><span class="hm-t">Quiz 1</span><span class="hm-when"></span></li>
+        <li data-start="2026-11-21" data-end="2026-11-22"><time class="hm-d" datetime="2026-11-21">21 to 22 Nov</time><span class="hm-t">Programming quiz 1</span><span class="hm-when"></span></li>
+        <li data-start="2026-11-23" data-end=""><time class="hm-d" datetime="2026-11-23">23 Nov</time><span class="hm-t">Quiz 1 results published</span><span class="hm-when"></span></li>
+        <li data-start="2026-11-26" data-end="2026-12-01"><time class="hm-d" datetime="2026-11-26">26 Nov to 1 Dec</time><span class="hm-t">OPPE 1 results released</span><span class="hm-when"></span></li>
+        <li data-start="2026-12-05" data-end=""><time class="hm-d" datetime="2026-12-05">5 Dec</time><span class="hm-t">Quiz 2</span><span class="hm-when"></span></li>
+        <li data-start="2026-12-13" data-end=""><time class="hm-d" datetime="2026-12-13">13 Dec</time><span class="hm-t">Quiz 2 results published</span><span class="hm-when"></span></li>
+        <li data-start="2026-12-19" data-end="2026-12-20"><time class="hm-d" datetime="2026-12-19">19 to 20 Dec</time><span class="hm-t">Programming quiz 2, days 1 and 2</span><span class="hm-when"></span></li>
+        <li data-start="2027-01-02" data-end="2027-01-03"><time class="hm-d" datetime="2027-01-02">2 to 3 Jan</time><span class="hm-t">Programming quiz 2, days 3 and 4</span><span class="hm-when"></span></li>
+        <li data-start="2027-01-07" data-end="2027-01-12"><time class="hm-d" datetime="2027-01-07">7 to 12 Jan</time><span class="hm-t">OPPE 2 results released</span><span class="hm-when"></span></li>
+        <li data-start="2027-01-10" data-end=""><time class="hm-d" datetime="2027-01-10">10 Jan</time><span class="hm-t">End term exam</span><span class="hm-when"></span></li>
+        <li data-start="2027-01-18" data-end="2027-01-23"><time class="hm-d" datetime="2027-01-18">18 to 23 Jan</time><span class="hm-t">End term results published</span><span class="hm-when"></span></li>
+      </ol>
+      <p class="hm-empty" id="hm-dates-empty" hidden>Nothing else is listed for this term. The official calendar has the next one.</p>
+      <a class="hm-more" href="https://study.iitm.ac.in/ds/academic_calendar.html" target="_blank" rel="noopener">Full academic calendar</a>
+    </section>
+    <!-- updates:start -->
+    <nav class="hm-card hm-news" aria-labelledby="hm-news-h"><h2 class="hm-h" id="hm-news-h">What's new</h2><ul><li><a href="updates.html#u-2026-11-23"><span class="hn-d">23 Nov</span><span class="hn-t">QuizPractice papers in 65 courses</span></a></li><li><a href="updates.html#u-2026-11-23"><span class="hn-d">23 Nov</span><span class="hn-t">MauryaHub papers in 65 courses</span></a></li><li><a href="updates.html#u-2026-11-23"><span class="hn-d">23 Nov</span><span class="hn-t">Quiz Space question papers in 15 courses</span></a></li></ul><a class="hm-more" href="updates.html">All updates</a></nav>
+    <!-- updates:end -->
   </div>
 
-  <!-- updates:start -->
-  <nav class="land-news" aria-label="What's new"><span class="ln-k">What's new</span><ul><li><a href="updates.html#u-2026-11-23">QuizPractice papers in 65 courses</a></li><li><a href="updates.html#u-2026-11-23">MauryaHub papers in 65 courses</a></li><li><a href="updates.html#u-2026-11-23">Quiz Space question papers in 15 courses</a></li></ul><a class="ln-all" href="updates.html">All updates</a></nav>
-  <!-- updates:end -->
-  <p class="land-foot">Kept by students who took these courses. <a href="contributors.html#contribute">Want to contribute?</a></p>
-  <div class="theme-foot land-theme" id="theme-foot"></div>
+  <section class="hm-levels" aria-labelledby="hm-levels-h">
+    <div class="hm-head">
+      <h2 class="hm-h" id="hm-levels-h">Courses by level</h2>
+      <a class="hm-quiet" href="courses.html">Open the full list</a>
+    </div>
+    <div class="hm-level-grid">
+      <section class="hl-card" id="lv-foundation" aria-labelledby="lv-foundation-h">
+        <div class="hl-head"><span class="hl-roman">Part I</span><h3 id="lv-foundation-h">Foundation Level</h3><span class="hl-n">8</span></div>
+        <ul class="chips">
+        <li><a class="chip" href="courses/ma1001.html">MA1001<span class="vh"> Mathematics for Data Science I</span></a></li>
+        <li><a class="chip" href="courses/ma1002.html">MA1002<span class="vh"> Statistics for Data Science I</span></a></li>
+        <li><a class="chip" href="courses/cs1001.html">CS1001<span class="vh"> Computational Thinking</span></a></li>
+        <li><a class="chip" href="courses/hs1001.html">HS1001<span class="vh"> English I</span></a></li>
+        <li><a class="chip" href="courses/ma1003.html">MA1003<span class="vh"> Mathematics for Data Science II</span></a></li>
+        <li><a class="chip" href="courses/ma1004.html">MA1004<span class="vh"> Statistics for Data Science II</span></a></li>
+        <li><a class="chip" href="courses/cs1002.html">CS1002<span class="vh"> Programming in Python</span></a></li>
+        <li><a class="chip" href="courses/hs1002.html">HS1002<span class="vh"> English II</span></a></li>
+        </ul>
+      </section>
+      <section class="hl-card" id="lv-diploma-p" aria-labelledby="lv-diploma-p-h">
+        <div class="hl-head"><span class="hl-roman">Part II · a</span><h3 id="lv-diploma-p-h">Diploma in Programming</h3><span class="hl-n">8</span></div>
+        <ul class="chips">
+        <li><a class="chip" href="courses/cs2001.html">CS2001<span class="vh"> Database Management Systems</span></a></li>
+        <li><a class="chip" href="courses/cs2002.html">CS2002<span class="vh"> Programming, Data Structures &amp; Algorithms using Python</span></a></li>
+        <li><a class="chip" href="courses/cs2003.html">CS2003<span class="vh"> Modern Application Development I</span></a></li>
+        <li><a class="chip project" href="courses/cs2003p.html">CS2003P<span class="vh"> MAD I Project</span></a></li>
+        <li><a class="chip" href="courses/cs2005.html">CS2005<span class="vh"> Programming Concepts using Java</span></a></li>
+        <li><a class="chip" href="courses/cs2006.html">CS2006<span class="vh"> Modern Application Development II</span></a></li>
+        <li><a class="chip project" href="courses/cs2006p.html">CS2006P<span class="vh"> MAD II Project</span></a></li>
+        <li><a class="chip" href="courses/se2001.html">SE2001<span class="vh"> System Commands</span></a></li>
+        </ul>
+      </section>
+      <section class="hl-card" id="lv-diploma-ds" aria-labelledby="lv-diploma-ds-h">
+        <div class="hl-head"><span class="hl-roman">Part II · b</span><h3 id="lv-diploma-ds-h">Diploma in Data Science</h3><span class="hl-n">10</span></div>
+        <ul class="chips">
+        <li><a class="chip" href="courses/cs2004.html">CS2004<span class="vh"> Machine Learning Foundations</span></a></li>
+        <li><a class="chip" href="courses/ms2001.html">MS2001<span class="vh"> Business Data Management</span></a></li>
+        <li><a class="chip" href="courses/cs2007.html">CS2007<span class="vh"> Machine Learning Techniques</span></a></li>
+        <li><a class="chip" href="courses/cs2008.html">CS2008<span class="vh"> Machine Learning Practice</span></a></li>
+        <li><a class="chip project" href="courses/cs2008p.html">CS2008P<span class="vh"> ML Practice Project</span></a></li>
+        <li><a class="chip" href="courses/se2002.html">SE2002<span class="vh"> Tools in Data Science</span></a></li>
+        <li><a class="chip" href="courses/ms2002.html">MS2002<span class="vh"> Business Analytics</span></a></li>
+        <li><a class="chip project" href="courses/ms2001p.html">MS2001P<span class="vh"> Business Data Management Project</span></a></li>
+        <li><a class="chip" href="courses/da2001.html">DA2001<span class="vh"> Introduction to Deep Learning and Generative AI</span></a></li>
+        <li><a class="chip project" href="courses/da2001p.html">DA2001P<span class="vh"> Deep Learning &amp; GenAI Project</span></a></li>
+        </ul>
+      </section>
+      <section class="hl-card" id="lv-bsc" aria-labelledby="lv-bsc-h">
+        <div class="hl-head"><span class="hl-roman">Part III · a</span><h3 id="lv-bsc-h">BSc Degree Level</h3><span class="hl-n">5</span></div>
+        <ul class="chips">
+        <li><a class="chip" href="courses/cs3001.html">CS3001<span class="vh"> Software Engineering</span></a></li>
+        <li><a class="chip" href="courses/cs3002.html">CS3002<span class="vh"> Software Testing</span></a></li>
+        <li><a class="chip" href="courses/cs3003.html">CS3003<span class="vh"> AI: Search Methods for Problem Solving</span></a></li>
+        <li><a class="chip" href="courses/cs3004.html">CS3004<span class="vh"> Deep Learning</span></a></li>
+        <li><a class="chip" href="courses/gn3001.html">GN3001<span class="vh"> Strategies for Professional Growth</span></a></li>
+        </ul>
+      </section>
+      <section class="hl-card" id="lv-bs" aria-labelledby="lv-bs-h">
+        <div class="hl-head"><span class="hl-roman">Part III · b</span><h3 id="lv-bs-h">BS Degree · Electives</h3><span class="hl-n">34</span></div>
+        <ul class="chips">
+        <li><a class="chip" href="courses/bt4001.html">BT4001<span class="vh"> Algorithmic Thinking in Bioinformatics</span></a></li>
+        <li><a class="chip" href="courses/bt4002.html">BT4002<span class="vh"> Big Data &amp; Biological Networks</span></a></li>
+        <li><a class="chip" href="courses/cs4001.html">CS4001<span class="vh"> Data Visualization Design</span></a></li>
+        <li><a class="chip" href="courses/ee4001.html">EE4001<span class="vh"> Speech Technology</span></a></li>
+        <li><a class="chip" href="courses/ms4002.html">MS4002<span class="vh"> Design Thinking for Data-Driven App Development</span></a></li>
+        <li><a class="chip" href="courses/ms4001.html">MS4001<span class="vh"> Industry 4.0</span></a></li>
+        <li><a class="chip" href="courses/ms3002.html">MS3002<span class="vh"> Market Research</span></a></li>
+        <li><a class="chip" href="courses/cs4003.html">CS4003<span class="vh"> Privacy &amp; Security in Online Social Media</span></a></li>
+        <li><a class="chip" href="courses/da5001.html">DA5001<span class="vh"> Introduction to Big Data</span></a></li>
+        <li><a class="chip" href="courses/ms4003.html">MS4003<span class="vh"> Financial Forensics</span></a></li>
+        <li><a class="chip" href="courses/ma3012.html">MA3012<span class="vh"> Linear Statistical Models</span></a></li>
+        <li><a class="chip" href="courses/cs4021.html">CS4021<span class="vh"> Advanced Algorithms</span></a></li>
+        <li><a class="chip" href="courses/ma3014.html">MA3014<span class="vh"> Statistical Computing</span></a></li>
+        <li><a class="chip" href="courses/cs3031.html">CS3031<span class="vh"> Computer Systems Design</span></a></li>
+        <li><a class="chip" href="courses/cs3005.html">CS3005<span class="vh"> Programming in C</span></a></li>
+        <li><a class="chip" href="courses/ma2001.html">MA2001<span class="vh"> Mathematical Thinking</span></a></li>
+        <li><a class="chip" href="courses/da5004.html">DA5004<span class="vh"> Large Language Models</span></a></li>
+        <li><a class="chip" href="courses/da5005.html">DA5005<span class="vh"> Introduction to Natural Language Processing (i-NLP)</span></a></li>
+        <li><a class="chip" href="courses/da5006.html">DA5006<span class="vh"> Deep Learning for Computer Vision</span></a></li>
+        <li><a class="chip" href="courses/ms3033.html">MS3033<span class="vh"> Managerial Economics</span></a></li>
+        <li><a class="chip" href="courses/ms4023.html">MS4023<span class="vh"> Game Theory and Strategy</span></a></li>
+        <li><a class="chip" href="courses/ms3034.html">MS3034<span class="vh"> Corporate Finance</span></a></li>
+        <li><a class="chip" href="courses/da5013.html">DA5013<span class="vh"> Deep Learning Practice</span></a></li>
+        <li><a class="chip" href="courses/cs4022.html">CS4022<span class="vh"> Operating Systems</span></a></li>
+        <li><a class="chip" href="courses/da5002.html">DA5002<span class="vh"> Mathematical Foundations of Generative AI</span></a></li>
+        <li><a class="chip" href="courses/da5003.html">DA5003<span class="vh"> Algorithms for Data Science</span></a></li>
+        <li><a class="chip" href="courses/da4001.html">DA4001<span class="vh"> Data Science and AI Lab</span></a></li>
+        <li><a class="chip" href="courses/cs4010.html">CS4010<span class="vh"> Application Development Lab</span></a></li>
+        <li><a class="chip" href="courses/cs4024.html">CS4024<span class="vh"> Computer Networks</span></a></li>
+        <li><a class="chip" href="courses/cs3021.html">CS3021<span class="vh"> Theory of Computation</span></a></li>
+        <li><a class="chip" href="courses/da5007.html">DA5007<span class="vh"> Reinforcement Learning</span></a></li>
+        <li><a class="chip" href="courses/cs4032.html">CS4032<span class="vh"> Compiler Design</span></a></li>
+        <li><a class="chip" href="courses/ma3001.html">MA3001<span class="vh"> Discrete Mathematics</span></a></li>
+        <li><a class="chip" href="courses/da6004.html">DA6004<span class="vh"> Sequential Decision Making</span></a></li>
+        </ul>
+      </section>
+      <section class="hl-card" id="lv-pgd" aria-labelledby="lv-pgd-h">
+        <div class="hl-head"><span class="hl-roman">Part IV</span><h3 id="lv-pgd-h">PG Diploma in AI &amp; ML</h3><span class="hl-n">14</span></div>
+        <ul class="chips">
+        <li><a class="chip" href="courses/da5014.html">DA5014<span class="vh"> MLOps</span></a></li>
+        <li><a class="chip" href="courses/da5002.html">DA5002<span class="vh"> Generative AI</span></a></li>
+        <li><a class="chip" href="courses/da5003.html">DA5003<span class="vh"> Algorithms for Data Science</span></a></li>
+        <li><a class="chip" href="courses/da5004.html">DA5004<span class="vh"> Large Language Models</span></a></li>
+        <li><a class="chip" href="courses/da5005.html">DA5005<span class="vh"> Introduction to Natural Language Processing</span></a></li>
+        <li><a class="chip" href="courses/da5006.html">DA5006<span class="vh"> Deep Learning for Computer Vision</span></a></li>
+        <li><a class="chip" href="courses/da5007.html">DA5007<span class="vh"> Reinforcement Learning</span></a></li>
+        <li><a class="chip" href="courses/da6001.html">DA6001<span class="vh"> Responsible AI</span></a></li>
+        <li><a class="chip" href="courses/da6002.html">DA6002<span class="vh"> Statistical Learning Theory</span></a></li>
+        <li><a class="chip" href="courses/da6003.html">DA6003<span class="vh"> Deployability Aspects of AI</span></a></li>
+        <li><a class="chip" href="courses/da6004.html">DA6004<span class="vh"> Sequential Decision Making</span></a></li>
+        <li><a class="chip" href="courses/da6005.html">DA6005<span class="vh"> Information Theory and Learning</span></a></li>
+        <li><a class="chip" href="courses/ee4001.html">EE4001<span class="vh"> Speech Technology</span></a></li>
+        <li><a class="chip" href="courses/da6006.html">DA6006<span class="vh"> Research Project</span></a></li>
+        </ul>
+      </section>
+      <section class="hl-card" id="lv-mtech" aria-labelledby="lv-mtech-h">
+        <div class="hl-head"><span class="hl-roman">Part V</span><h3 id="lv-mtech-h">MTech Level</h3><span class="hl-n">1</span></div>
+        <ul class="chips">
+        <li><a class="chip" href="courses/da6901.html">DA6901<span class="vh"> MTech Project</span></a></li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="hm-tools" aria-label="More">
+    <a class="tool-card" href="links.html"><span class="lc-title">Important links</span><span class="lc-sub">Handbook, calendar, score checker</span></a>
+    <a class="tool-card" href="calculator.html"><span class="lc-title">Grade calculator</span><span class="lc-sub">Work out your final course score</span></a>
+    <a class="tool-card" href="scam-alert.html"><span class="lc-title">Scam alert</span><span class="lc-sub">Fake internship offers to watch out for</span></a>
+    <a class="tool-card" href="contributors.html"><span class="lc-title">Contributors</span><span class="lc-sub">The people behind the notes and resources</span></a>
+  </section>
 </main>
 
+<footer class="site-end wrap">
+  <span class="se-name">The Companion</span>
+  <nav class="se-nav" aria-label="Site"><a href="index.html" aria-current="page">Home</a><a href="courses.html">Courses</a><a href="links.html">Important links</a><a href="scam-alert.html">Scam alert</a><a href="calculator.html">Grade calculator</a><a href="contributors.html">Contributors</a><a href="updates.html">Updates</a></nav>
+  <div class="theme-foot" id="theme-foot"></div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+<script>window.HOME_COURSES = {"MA1001":{"t":"Mathematics for Data Science I","u":"courses/ma1001.html","n":212,"i":"lecture"},"MA1002":{"t":"Statistics for Data Science I","u":"courses/ma1002.html","n":136,"i":"lecture"},"CS1001":{"t":"Computational Thinking","u":"courses/cs1001.html","n":105,"i":"lecture"},"HS1001":{"t":"English I","u":"courses/hs1001.html","n":73,"i":"lecture"},"MA1003":{"t":"Mathematics for Data Science II","u":"courses/ma1003.html","n":115,"i":"lecture"},"MA1004":{"t":"Statistics for Data Science II","u":"courses/ma1004.html","n":97,"i":"lecture"},"CS1002":{"t":"Programming in Python","u":"courses/cs1002.html","n":88,"i":"lecture"},"HS1002":{"t":"English II","u":"courses/hs1002.html","n":73,"i":"lecture"},"CS2001":{"t":"Database Management Systems","u":"courses/cs2001.html","n":65,"i":"lecture"},"CS2002":{"t":"Programming, Data Structures & Algorithms using Python","u":"courses/cs2002.html","n":84,"i":"lecture"},"CS2003":{"t":"Modern Application Development I","u":"courses/cs2003.html","n":65,"i":"lecture"},"CS2003P":{"t":"MAD I Project","u":"courses/cs2003p.html","n":69,"i":"session"},"CS2005":{"t":"Programming Concepts using Java","u":"courses/cs2005.html","n":69,"i":"lecture"},"CS2006":{"t":"Modern Application Development II","u":"courses/cs2006.html","n":63,"i":"lecture"},"CS2006P":{"t":"MAD II Project","u":"courses/cs2006p.html","n":62,"i":"session"},"SE2001":{"t":"System Commands","u":"courses/se2001.html","n":33,"i":"lecture"},"CS2004":{"t":"Machine Learning Foundations","u":"courses/cs2004.html","n":90,"i":"lecture"},"MS2001":{"t":"Business Data Management","u":"courses/ms2001.html","n":60,"i":"lecture"},"CS2007":{"t":"Machine Learning Techniques","u":"courses/cs2007.html","n":84,"i":"lecture"},"CS2008":{"t":"Machine Learning Practice","u":"courses/cs2008.html","n":112,"i":"lecture"},"CS2008P":{"t":"ML Practice Project","u":"courses/cs2008p.html","n":50,"i":"session"},"SE2002":{"t":"Tools in Data Science","u":"courses/se2002.html","n":66,"i":"lecture"},"MS2002":{"t":"Business Analytics","u":"courses/ms2002.html","n":64,"i":"lecture"},"MS2001P":{"t":"Business Data Management Project","u":"courses/ms2001p.html","n":41,"i":"session"},"DA2001":{"t":"Introduction to Deep Learning and Generative AI","u":"courses/da2001.html","n":118,"i":"lecture"},"DA2001P":{"t":"Deep Learning & GenAI Project","u":"courses/da2001p.html","n":7,"i":"session"},"CS3001":{"t":"Software Engineering","u":"courses/cs3001.html","n":56,"i":"lecture"},"CS3002":{"t":"Software Testing","u":"courses/cs3002.html","n":59,"i":"lecture"},"CS3003":{"t":"AI: Search Methods for Problem Solving","u":"courses/cs3003.html","n":75,"i":"lecture"},"CS3004":{"t":"Deep Learning","u":"courses/cs3004.html","n":107,"i":"lecture"},"GN3001":{"t":"Strategies for Professional Growth","u":"courses/gn3001.html","n":93,"i":"lecture"},"BT4001":{"t":"Algorithmic Thinking in Bioinformatics","u":"courses/bt4001.html","n":63,"i":"lecture"},"BT4002":{"t":"Big Data & Biological Networks","u":"courses/bt4002.html","n":105,"i":"lecture"},"CS4001":{"t":"Data Visualization Design","u":"courses/cs4001.html","n":26,"i":"lecture"},"EE4001":{"t":"Speech Technology","u":"courses/ee4001.html","n":73,"i":"lecture"},"MS4002":{"t":"Design Thinking for Data-Driven App Development","u":"courses/ms4002.html","n":73,"i":"lecture"},"MS4001":{"t":"Industry 4.0","u":"courses/ms4001.html","n":0,"i":"lecture"},"MS3002":{"t":"Market Research","u":"courses/ms3002.html","n":0,"i":"lecture"},"CS4003":{"t":"Privacy & Security in Online Social Media","u":"courses/cs4003.html","n":0,"i":"lecture"},"DA5001":{"t":"Introduction to Big Data","u":"courses/da5001.html","n":60,"i":"lecture"},"MS4003":{"t":"Financial Forensics","u":"courses/ms4003.html","n":54,"i":"lecture"},"MA3012":{"t":"Linear Statistical Models","u":"courses/ma3012.html","n":0,"i":"lecture"},"CS4021":{"t":"Advanced Algorithms","u":"courses/cs4021.html","n":0,"i":"lecture"},"MA3014":{"t":"Statistical Computing","u":"courses/ma3014.html","n":57,"i":"lecture"},"CS3031":{"t":"Computer Systems Design","u":"courses/cs3031.html","n":0,"i":"lecture"},"CS3005":{"t":"Programming in C","u":"courses/cs3005.html","n":60,"i":"lecture"},"MA2001":{"t":"Mathematical Thinking","u":"courses/ma2001.html","n":0,"i":"lecture"},"DA5004":{"t":"Large Language Models","u":"courses/da5004.html","n":55,"i":"lecture"},"DA5005":{"t":"Introduction to Natural Language Processing (i-NLP)","u":"courses/da5005.html","n":0,"i":"lecture"},"DA5006":{"t":"Deep Learning for Computer Vision","u":"courses/da5006.html","n":64,"i":"lecture"},"MS3033":{"t":"Managerial Economics","u":"courses/ms3033.html","n":54,"i":"lecture"},"MS4023":{"t":"Game Theory and Strategy","u":"courses/ms4023.html","n":95,"i":"lecture"},"MS3034":{"t":"Corporate Finance","u":"courses/ms3034.html","n":75,"i":"lecture"},"DA5013":{"t":"Deep Learning Practice","u":"courses/da5013.html","n":67,"i":"lecture"},"CS4022":{"t":"Operating Systems","u":"courses/cs4022.html","n":50,"i":"lecture"},"DA5002":{"t":"Mathematical Foundations of Generative AI","u":"courses/da5002.html","n":73,"i":"lecture"},"DA5003":{"t":"Algorithms for Data Science","u":"courses/da5003.html","n":50,"i":"lecture"},"DA4001":{"t":"Data Science and AI Lab","u":"courses/da4001.html","n":0,"i":"lecture"},"CS4010":{"t":"Application Development Lab","u":"courses/cs4010.html","n":0,"i":"lecture"},"CS4024":{"t":"Computer Networks","u":"courses/cs4024.html","n":0,"i":"lecture"},"CS3021":{"t":"Theory of Computation","u":"courses/cs3021.html","n":0,"i":"lecture"},"DA5007":{"t":"Reinforcement Learning","u":"courses/da5007.html","n":44,"i":"lecture"},"CS4032":{"t":"Compiler Design","u":"courses/cs4032.html","n":0,"i":"lecture"},"MA3001":{"t":"Discrete Mathematics","u":"courses/ma3001.html","n":0,"i":"lecture"},"DA6004":{"t":"Sequential Decision Making","u":"courses/da6004.html","n":0,"i":"lecture"},"DA5014":{"t":"MLOps","u":"courses/da5014.html","n":0,"i":"lecture"},"DA6001":{"t":"Responsible AI","u":"courses/da6001.html","n":0,"i":"lecture"},"DA6002":{"t":"Statistical Learning Theory","u":"courses/da6002.html","n":0,"i":"lecture"},"DA6003":{"t":"Deployability Aspects of AI","u":"courses/da6003.html","n":0,"i":"lecture"},"DA6005":{"t":"Information Theory and Learning","u":"courses/da6005.html","n":0,"i":"lecture"},"DA6006":{"t":"Research Project","u":"courses/da6006.html","n":0,"i":"session"},"DA6901":{"t":"MTech Project","u":"courses/da6901.html","n":0,"i":"session"}};</script>
+<script src="assets/menu-data.js?v=7b74f1b3"></script>
+<script src="assets/site.js?v=44790c47"></script>
 <script src="assets/theme.js?v=f608d0e2"></script>
+<script src="assets/home.js?v=c91e9616"></script>
 </body>
 </html>
