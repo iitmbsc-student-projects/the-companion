@@ -5,11 +5,26 @@
  "title": "AI: Search Methods for Problem Solving",
  "program": "BSc / BS",
  "credits": 4,
- "standfirst": "The classical AI toolkit — state-space search, heuristics, adversarial games, and constraint satisfaction.",
+ "standfirst": "The classical AI toolkit: state-space search, heuristics, adversarial games, and constraint satisfaction.",
  "instructor": "Prof. Deepak Khemani",
  "term": "Every term",
  "prereq": "CS2004",
  "resources": [
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/1S_UE6iYg-mk5Icc18oNxIroM2iiskTPF?usp=drive_link",
    "label": "Drive folder",
@@ -43,6 +58,14 @@
    "desc": "Notes for several degree courses collected on one page. Look for this course's section.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=5",
+   "group": "Notes",
+   "desc": "Notes, e-books, visual guides and solved Quiz 1 and Quiz 2 PYQs. Shared on MauryaHub.",
+   "by": "Ashish Maurya and other students",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

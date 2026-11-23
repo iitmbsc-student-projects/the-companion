@@ -5,7 +5,7 @@
  "title": "Modern Application Development I",
  "program": "Diploma / Programming",
  "credits": 4,
- "standfirst": "Building web applications from the ground up — HTML, CSS, Python, Flask, SQL and the mechanics of how the web actually works.",
+ "standfirst": "Building web applications from the ground up: HTML, CSS, Python, Flask, SQL and the mechanics of how the web actually works.",
  "instructor": "Prof. Nitin Chandrachoodan &amp; Mr. Thejesh GN",
  "term": "Every term",
  "prereq": "CS1002",
@@ -39,6 +39,13 @@
    "auth": "iitm"
   },
   {
+   "label": "Open session videos",
+   "url": "https://www.youtube.com/playlist?list=PL3o3mRooP_7pbVDSZRhyPr8B3r6WUQieP",
+   "group": "Live sessions",
+   "desc": "Week-wise open session recordings.",
+   "by": "Shrikrishna Pandey"
+  },
+  {
    "label": "MAD 1 weekwise PYQs",
    "url": "https://discourse.onlinedegree.iitm.ac.in/t/mad1-weekwise-pyqs/205835",
    "group": "Previous year questions",
@@ -49,7 +56,23 @@
    "label": "Quiz Space question papers",
    "url": "https://quizspacee.com/",
    "group": "Previous year questions",
-   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM."
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   },
   {
    "label": "MAD 1 notes",
@@ -91,12 +114,61 @@
    "by_url": "https://github.com/shrikrishna97"
   },
   {
-   "label": "Setup guides",
+   "label": "App Dev resources home",
    "url": "https://shrikrishna97.github.io/Resources-App-Dev/",
    "group": "Notes and guides",
-   "desc": "GitHub, VS Code, WSL, Python virtual environments and installation help, linked from the home page.",
+   "desc": "All of Shrikrishna's MAD I and MAD II material in one place.",
    "by": "Shrikrishna Pandey",
    "by_url": "https://github.com/shrikrishna97"
+  },
+  {
+   "label": "MAD1 week-wise notes (GitHub)",
+   "url": "https://github.com/23f2001665/mad1-notes-mine",
+   "desc": "Notes for weeks 0 to 12, practice code from live and TA sessions, and a two-hour revision session with solved previous year questions.",
+   "group": "Notes and guides",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Review of weeks 1 to 4",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/App-Dev-1/week-5/review1-4.html",
+   "group": "Revision",
+   "desc": "A recap of weeks 1 to 4 before Quiz 1.",
+   "by": "Shrikrishna Pandey"
+  },
+  {
+   "label": "Review of weeks 5 to 8",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/App-Dev-1/review5-8.html",
+   "group": "Revision",
+   "desc": "A recap of weeks 5 to 8 before Quiz 2.",
+   "by": "Shrikrishna Pandey"
+  },
+  {
+   "label": "Mock Quiz 1 (PDF)",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/App-Dev-1/week-5/Mock%20-%20Quiz%201_MAD1.pdf",
+   "group": "Revision",
+   "desc": "A practice paper in the Quiz 1 pattern.",
+   "by": "Shrikrishna Pandey"
+  },
+  {
+   "label": "Week 8 practice questions",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/App-Dev-1/Week-8/PQ.html",
+   "group": "Revision",
+   "desc": "Practice questions with explanations.",
+   "by": "Shrikrishna Pandey"
+  },
+  {
+   "label": "Git, GitHub and VS Code setup",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/docs/github_tutorial.html",
+   "group": "Setup guides",
+   "desc": "Install VS Code, Git and WSL, push your first commit and add collaborators.",
+   "by": "Shrikrishna Pandey"
+  },
+  {
+   "label": "Python virtual environments",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/docs/Virtual_env_activation.html",
+   "group": "Setup guides",
+   "desc": "Create and activate a venv on Mac, Linux and Windows.",
+   "by": "Shrikrishna Pandey"
   }
  ],
  "resources_note": "",

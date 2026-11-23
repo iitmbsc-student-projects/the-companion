@@ -2,46 +2,46 @@
  "stem": "cs2006p",
  "code": "CS2006P",
  "kind": "project",
- "title": "MAD II — Project",
+ "title": "MAD II Project",
  "program": "Diploma / Programming",
  "credits": 2,
  "standfirst": "A full front-end + back-end application built to a real specification, delivered as the MAD II capstone.",
  "instructor": "Prof. Nitin Chandrachoodan &amp; Mr. Thejesh GN",
  "term": "Every term",
  "prereq": "CS2006",
- "syllabus_body_html": "<p>This project is an advanced course that builds on the foundations of \"Modern Application Development - I,\" focusing on creating dynamic web applications using Vue.js. It covers key concepts such as token-based authentication, asynchronous task execution with Celery and Redis, caching techniques, and essential security practices including CORS, enabling students to develop scalable and secure applications. This Project provides hands-on experience in building end-to-end web applications using technologies such as HTML, CSS, JavaScript, Flask, APIs, and SQLite. It focuses on developing secure, efficient, and deployable applications while applying core web development concepts.</p>\n      <p><b>Co-requisite:</b> BSCS2003:  Modern Application Development I</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Nitin Chandrachoodan, Department of Electrical Engineering, IIT Madras</li><li>Mr. Thejesh GN, Independent Technologist, Multiple Affiliations</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The objective of this project is to provide hands-on experience in developing a web application using Vue.js and related technologies.</li><li>Students build a functional web application featuring interactive front-end components, state management with Vuex, token-based authentication, and asynchronous task execution using Celery and Redis.</li><li>The project reinforces concepts from \"Modern Application Development - I\" and introduces advanced web development techniques.</li><li>The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2006P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>\n    <ul class=\"link-list\" style=\"margin-top:14px\"><li><a href=\"https://thejeshgn.com/projects/modern-application-development-2/\" target=\"_blank\" rel=\"noopener\">Screencasts by Thejesh GN</a></li></ul>",
+ "syllabus_body_html": "<p>This project is an advanced course that builds on the foundations of \"Modern Application Development - I,\" focusing on creating dynamic web applications using Vue.js. It covers key concepts such as token-based authentication, asynchronous task execution with Celery and Redis, caching techniques, and essential security practices including CORS, enabling students to develop scalable and secure applications.</p>\n      <p><b>Co-requisite:</b> BSCS2003:  Modern Application Development I</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Nitin Chandrachoodan, Department of Electrical Engineering, IIT Madras</li><li>Mr. Thejesh GN, Independent Technologist, Multiple Affiliations</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The objective of this project is to provide hands-on experience in developing a web application using Vue.js and related technologies.</li><li>Students build a functional web application featuring interactive front-end components, state management with Vuex, token-based authentication, and asynchronous task execution using Celery and Redis.</li><li>The project reinforces concepts from \"Modern Application Development - I\" and introduces advanced web development techniques.</li><li>The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2006P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>\n    <ul class=\"link-list\" style=\"margin-top:14px\"><li><a href=\"https://thejeshgn.com/projects/modern-application-development-2/\" target=\"_blank\" rel=\"noopener\">Screencasts by Thejesh GN</a></li></ul>",
  "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
  "pyq": [],
  "sessions": [
   {
    "term": "24T1",
    "url": "https://youtube.com/playlist?list=PLZVf4uJM87Nqc4R7fYwNZH7ngfQHrAHi3&si=_OV7x8XJn5Y250IY",
-   "label": "MAD II — Jan 2024 — Project"
+   "label": "MAD II Project, Jan 2024"
   },
   {
    "term": "24T2",
    "url": "https://youtube.com/playlist?list=PLZVf4uJM87NpJsK7BaSBPNbvAaRmiWN4v&si=ybaTctA0Y-_CHpJI",
-   "label": "MAD II — Project Live Sessions — May 2024"
+   "label": "MAD II Project live sessions, May 2024"
   },
   {
    "term": "24T3",
    "url": "https://youtube.com/playlist?list=PLZVf4uJM87NrbT9Fr2g5_oiXbgOShgHXU&si=6j4MrwN5f2VN53n2",
-   "label": "MAD II — Project Sessions — Sept 2024"
+   "label": "MAD II Project sessions, Sept 2024"
   },
   {
    "term": "25T1",
    "url": "https://youtube.com/playlist?list=PLZVf4uJM87Nr1mpdESa4du9uRWO5etYj9&si=MFDmfzyhN6tcGN8W",
-   "label": "MAD 2 Project Sessions — Jan 2025"
+   "label": "MAD 2 Project sessions, Jan 2025"
   },
   {
    "term": "25T2",
    "url": "https://youtube.com/playlist?list=PLZVf4uJM87NpFy8ih8uZbTMEl6AmVedP5&si=Q1Rvk9B1rEqHmDVP",
-   "label": "MAD 2 Project Sessions — May 2025"
+   "label": "MAD 2 Project sessions, May 2025"
   },
   {
    "term": "25T3",
    "url": "https://youtube.com/playlist?list=PLZVf4uJM87NpoEVQtoSuwipenoKZVN1b_&si=2VZ1jJsYRaR6EMhf",
-   "label": "MAD 2 Project Sessions — Sep 2025"
+   "label": "MAD 2 Project sessions, Sep 2025"
   }
  ],
  "resources": [
@@ -60,6 +60,298 @@
    "desc": "Recorded project sessions.",
    "by": "Shrikrishna Pandey",
    "by_url": "https://github.com/shrikrishna97"
+  },
+  {
+   "label": "Sep 2026 project guide",
+   "url": "https://shrikrishna97.github.io/Resources-App-Dev/App-Dev-2-Project/Sep-26/Day-0/INDEX.html",
+   "group": "Project help",
+   "desc": "This term: setup guides for backend, frontend, security and WSL, plus day-wise material.",
+   "by": "Shrikrishna Pandey"
   }
- ]
+ ],
+ "weeks_data": [
+  {
+   "w": "Sep 2025 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "wmNw-bZIQmY",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "0qGZlgnFeT8",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "lrhLJq7kIvE",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "d7BQ4-5rsNY",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "IoYAKqMilUc",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "qBoFR0rJmOA",
+     "s": null
+    },
+    {
+     "n": "7",
+     "t": "Session 7",
+     "v": "k6hq-cQMTvg",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "May 2025 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "o7oAx0RIY7E",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "HKNPNJQOSlc",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "hHhrF1gqsl4",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "OU7ZX8UWO78",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "Ta85U6sH57I",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "hWQzbgmXYVs",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2025 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "0Ua2SKRV_qg",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "uiHh_tE_2Uc",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "U7q2cgEYKzs",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "TT-d_r_j3t8",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "vm0bPSeNHMs",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "ojLjuIBa3yg",
+     "s": null
+    },
+    {
+     "n": "7",
+     "t": "Session 7",
+     "v": "P4I2Ef0HaDA",
+     "s": null
+    },
+    {
+     "n": "8",
+     "t": "Session 8",
+     "v": "sXlAGaDhBEw",
+     "s": null
+    },
+    {
+     "n": "9",
+     "t": "Session 9",
+     "v": "wJux-5OV2SI",
+     "s": null
+    },
+    {
+     "n": "10",
+     "t": "Session 10",
+     "v": "dS9gqEXlKes",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Sep 2024 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "q72Iqe3eFWo",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Setup and RBAC",
+     "v": "jW3ZXQlDIzE",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Token Auth & Flask-Restful",
+     "v": "mOFIHXTQ3os",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Frontend, Vue Router and Vuex",
+     "v": "wSyrG-jMoXU",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Caching & Celery",
+     "v": "iI2WUKrQoBA",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Scheduling using Celery Beat",
+     "v": "qvy5loL5YLs",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "May 2024 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Mentorship and bootcamp",
+     "v": "WMOumxogulM",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Offline bootcamp orientation",
+     "v": "ii0ydCM7uWc",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Project Statement",
+     "v": "OofeWQXHG2U",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Backend Setup",
+     "v": "uNDtqqmImKg",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Frontend Integration and API",
+     "v": "2wLU3Mfk1Ps",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Flask Restful and Vuex",
+     "v": "kC9ZoTo-mD4",
+     "s": null
+    },
+    {
+     "n": "7",
+     "t": "Flask security",
+     "v": "_r6PbrBj4LU",
+     "s": null
+    },
+    {
+     "n": "8",
+     "t": "Navigation Guards and Caching",
+     "v": "4oMdJaliqJ0",
+     "s": null
+    },
+    {
+     "n": "9",
+     "t": "Celery and Scheduling",
+     "v": "n_nBJ1gSN_A",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2024 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "CrGLprUj4b0",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Flask",
+     "v": "cN7WPhOYDGg",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Vue3: Basics, Components, Authentication, Routing, Store",
+     "v": "sv82opcyNzI",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Git, Project design",
+     "v": "DUCorgeTs9Q",
+     "s": null
+    }
+   ]
+  }
+ ],
+ "hide_lectures": false
 }

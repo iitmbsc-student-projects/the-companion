@@ -5,14 +5,24 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Important links | The Companion</title>
 <meta name="description" content="The links IIT Madras BS students use most: handbook, grading document, calendar, score checker, resources and more.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Companion">
+<meta property="og:title" content="Important links">
+<meta property="og:description" content="The links IIT Madras BS students use most: handbook, grading document, calendar, score checker, resources and more.">
+<meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/links.html">
+<meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=4e45548a">
-<link rel="stylesheet" href="assets/theme.css?v=a714491e">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=117278da">
+<link rel="stylesheet" href="assets/theme.css?v=19250950">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body data-page="links">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="topbar" aria-label="Main">
   <div class="wrap topbar-in">
@@ -30,9 +40,12 @@
         <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Show link groups">&#9662;</button>
         <div class="menu" id="menu-links"></div>
       </div>
+    </div>
+    <div class="tb-more">
       <a class="tb-link" href="contributors.html">Contributors</a>
       <a class="tb-link" href="scam-alert.html">Scam alert</a>
       <a class="tb-link" href="calculator.html">Grade calculator</a>
+      <a class="tb-link" href="updates.html">Updates</a>
     </div>
     <span id="theme-slot" data-float-narrow></span>
   </div>
@@ -49,121 +62,118 @@
       <span class="quick-label">Most used</span>
       <div class="quick-grid">
         <!-- QUICK:START -->
-        <a class="quick-card" href="https://tiny.cc/IITM-SH" target="_blank" rel="noopener"><span class="qc-title">Student handbook</span><span class="qc-tag">Rules and policies</span></a>
-        <a class="quick-card" href="https://tiny.cc/IITM-GD" target="_blank" rel="noopener"><span class="qc-title">Grading document</span><span class="qc-tag">Sep 2026</span></a>
-        <a class="quick-card" href="https://study.iitm.ac.in/ds/academic_calendar.html" target="_blank" rel="noopener"><span class="qc-title">Academic calendar</span><span class="qc-tag">Quiz and exam dates</span></a>
-        <a class="quick-card" href="https://ds.study.iitm.ac.in/auth/login" target="_blank" rel="noopener"><span class="qc-title">Student dashboard</span><span class="qc-tag">Courses and updates</span></a>
-        <a class="quick-card" href="https://study.iitm.ac.in/score-checker" target="_blank" rel="noopener"><span class="qc-title">Score checker</span><span class="qc-tag">Check your marks</span></a>
+        <a class="quick-card" href="https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub" target="_blank" rel="noopener"><span class="qc-title">Handbook</span><span class="qc-tag">Rules and policies</span></a>
+        <a class="quick-card" href="https://docs.google.com/document/d/e/2PACX-1vT_FeqnTq0Br4sUaN7OYAmj1B9MwjchyTEed1Bh5FkZvi5NyIMeAvvkuttostVsJBPjZcs3SjjEfiho/pub" target="_blank" rel="noopener"><span class="qc-title">Grading doc</span><span class="qc-tag">Sep 2026</span></a>
+        <a class="quick-card" href="https://study.iitm.ac.in/ds/academic_calendar.html" target="_blank" rel="noopener"><span class="qc-title">Calendar</span><span class="qc-tag">Quiz and exam dates</span></a>
+        <a class="quick-card" href="https://ds.study.iitm.ac.in/auth/login" target="_blank" rel="noopener"><span class="qc-title">Dashboard</span><span class="qc-tag">Your courses</span></a>
+        <a class="quick-card" href="https://study.iitm.ac.in/score-checker" target="_blank" rel="noopener"><span class="qc-title">Score checker</span><span class="qc-tag">Your marks</span></a>
+        <a class="quick-card" href="https://study.iitm.ac.in/ds/exam.html" target="_blank" rel="noopener"><span class="qc-title">OPPE exams</span><span class="qc-tag">Exam links</span></a>
         <!-- QUICK:END -->
       </div>
     </div>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
   <section id="links" class="links-wrap">
       <!-- LINKS:START -->
-      <p class="links-intro">Broken or missing link? Tell us on the Discourse thread or open a GitHub issue.</p>
-      <nav class="links-jump" aria-label="Jump to a group">
-        <a href="#links-official">Official, start here</a>
-        <a href="#links-collections">Resource collections</a>
-        <a href="#links-rules">Rules and malpractice</a>
-        <a href="#links-courses">Courses and credits</a>
-        <a href="#links-student-made">Made by students</a>
-        <a href="#links-higher-studies">Higher studies</a>
-        <a href="#links-placements">Placements and internships</a>
-        <a href="#links-community">Community and perks</a>
-      </nav>
-      <div class="link-group" id="links-official">
-        <div class="group-head"><h3>Official, start here</h3><span class="group-count">13</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/" target="_blank" rel="noopener">Official BS website</a></h4><p class="lk-desc">The degree's main website on the IITM study portal.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://tiny.cc/IITM-SH" target="_blank" rel="noopener">Student handbook</a></h4><p class="lk-desc">Everything about the degree in detail. Read it once fully.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://tiny.cc/IITM-GD" target="_blank" rel="noopener">Grading document, Sep 2026</a></h4><p class="lk-desc">How grades are calculated, who is eligible, and the rules for every course this term.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/academic_calendar.html" target="_blank" rel="noopener">Academic calendar</a></h4><p class="lk-desc">Quiz, end term and OPPE dates for the current term.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/exam.html" target="_blank" rel="noopener">Scheduled online exam links</a></h4><p class="lk-desc">Links for the online proctored programming exams (OPPE).</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://ds.study.iitm.ac.in/auth/login" target="_blank" rel="noopener">Student dashboard</a></h4><p class="lk-desc">Official dashboard with your courses, documents and updates.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/score-checker" target="_blank" rel="noopener">Score checker</a></h4><p class="lk-desc">Check your scores on the IITM study portal.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title">Support tickets</h4><p class="lk-desc">Raise a query or concern with student support.</p><div class="lk-more"><a href="https://study-supportdesk.freshdesk.com/" target="_blank" rel="noopener">Support desk</a><a href="https://docs.google.com/document/d/e/2PACX-1vS7Vl-jl7usTsyXDES33uwCa57mD3fV031wb0KUVOkl3LxeNIcnGxRp_KSI09WLHtqD2zT1pnxEMYrZ/pub" target="_blank" rel="noopener">How to raise a ticket</a></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://datastudio.google.com/s/k3kRC9kDo54" target="_blank" rel="noopener">Data Studio</a></h4><p class="lk-desc">Your class rank, credits earned and other live details.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://study.iitm.ac.in/ds/archive.html" target="_blank" rel="noopener">Document archive</a></h4><p class="lk-desc">Official documents such as medium of instruction and fee structure.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vQnn2cFan5BqTTAByCoqtue-0XSmFXQPT91bADDL_i33tHMh8C0ZJepvFBwze4E5zJbGiBMdQa59VeT/pub" target="_blank" rel="noopener">Official documents</a></h4><p class="lk-desc">How to apply for a bonafide certificate, NOC, transcript, WES report and similar documents.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/" target="_blank" rel="noopener">Discourse forum</a></h4><p class="lk-desc">The official place to post academic queries.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://iitmbs.org/" target="_blank" rel="noopener">Student activities portal</a></h4><p class="lk-desc">Official portal for student activities.</p></li>
+      <div class="links-layout">
+      <nav class="links-jump" aria-label="Jump to a group"><div class="lj-in">
+        <a href="#links-exams" title="Exams and grades"><span class="lj-s">Exams</span><span class="lj-f">Exams and grades</span></a>
+        <a href="#links-admin" title="Account and admin"><span class="lj-s">Admin</span><span class="lj-f">Account and admin</span></a>
+        <a href="#links-planning" title="Courses and planning"><span class="lj-s">Planning</span><span class="lj-f">Courses and planning</span></a>
+        <a href="#links-study" title="Study material"><span class="lj-s">Study material</span><span class="lj-f">Study material</span></a>
+        <a href="#links-practice" title="Past papers and practice"><span class="lj-s">Past papers</span><span class="lj-f">Past papers and practice</span></a>
+        <a href="#links-careers" title="Careers and higher studies"><span class="lj-s">Careers</span><span class="lj-f">Careers and higher studies</span></a>
+        <a href="#links-community" title="Community and perks"><span class="lj-s">Community</span><span class="lj-f">Community and perks</span></a>
+        <span class="lk-legend"><span class="lk-dot official"></span>Official <span class="lk-dot student"></span>Student-made</span>
+      </div></nav>
+      <div class="links-groups">
+      <div class="link-group" id="links-exams">
+        <div class="group-head"><h2>Exams and grades</h2><span class="group-count">7</span></div>
+        <ul class="links-grid compact">
+          <li class="lk-card" title="Academic calendar: Quiz, end term and OPPE dates."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://study.iitm.ac.in/ds/academic_calendar.html" target="_blank" rel="noopener">Academic calendar</a></h3><p class="lk-desc">Quiz, end term and OPPE dates.</p></li>
+          <li class="lk-card" title="Grading document, Sep 2026: How grades and eligibility work."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/d/e/2PACX-1vT_FeqnTq0Br4sUaN7OYAmj1B9MwjchyTEed1Bh5FkZvi5NyIMeAvvkuttostVsJBPjZcs3SjjEfiho/pub" target="_blank" rel="noopener">Grading document, Sep 2026</a></h3><p class="lk-desc">How grades and eligibility work.</p></li>
+          <li class="lk-card" title="Scheduled online exam links: Links for OPPE exams."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://study.iitm.ac.in/ds/exam.html" target="_blank" rel="noopener">Scheduled online exam links</a></h3><p class="lk-desc">Links for OPPE exams.</p></li>
+          <li class="lk-card" title="Score checker: Check your scores."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://study.iitm.ac.in/score-checker" target="_blank" rel="noopener">Score checker</a></h3><p class="lk-desc">Check your scores.</p><div class="lk-foot"><span class="lk-badge iitm" title="IITM login required">IITM login</span></div></li>
+          <li class="lk-card" title="Data Studio: Class rank and credits earned."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://datastudio.google.com/s/k3kRC9kDo54" target="_blank" rel="noopener">Data Studio</a></h3><p class="lk-desc">Class rank and credits earned.</p><div class="lk-foot"><span class="lk-badge iitm" title="IITM login required">IITM login</span></div></li>
+          <li class="lk-card" title="Academic malpractices: What counts as academic malpractice."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/d/e/2PACX-1vTt6ndMAI1-Y7Okm3HXmv0OFhFliUJPzkrUkQuX4InovMYewy_CWmFzmE4mUOAl_TjWlSrZNYWUOnG7/pub" target="_blank" rel="noopener">Academic malpractices</a></h3><p class="lk-desc">What counts as academic malpractice.</p></li>
+          <li class="lk-card" title="Non-academic malpractices: What counts as non-academic malpractice."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/d/e/2PACX-1vS3kG688sVzBil9uEFa9mXrnpuMAqE0LU1FpH1-TMDCHZF0XjC1265GmhVePdYvrc0_5qyq8OXwIZUb/pub" target="_blank" rel="noopener">Non-academic malpractices</a></h3><p class="lk-desc">What counts as non-academic malpractice.</p></li>
         </ul>
       </div>
-      <div class="link-group" id="links-collections">
-        <div class="group-head"><h3>Resource collections</h3><span class="group-count">9</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/important-resource-for-degree-level-courses/85946" target="_blank" rel="noopener">Degree level course resources</a></h4><p class="lk-desc">Playlists, slides, books and extra material, listed course by course for the degree level.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/important-resources-for-diploma-level/75823" target="_blank" rel="noopener">Diploma level course resources</a></h4><p class="lk-desc">The same course-by-course list of playlists, slides and books for the diploma level.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/foundation-level-resource/154274" target="_blank" rel="noopener">Foundation level course resources</a></h4><p class="lk-desc">Playlists, slides and supporting material for the foundation courses.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/links-to-almost-all-resources-at-one-place/88809" target="_blank" rel="noopener">Student link library</a></h4><p class="lk-desc">A long, community-kept list of useful links. This tab is a shortlist drawn from it.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/question-paper-repository-we-need-your-help/202463" target="_blank" rel="noopener">Share and find past papers</a></h4><p class="lk-desc">A community drive to collect previous year question papers. Add the ones you have.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://www.iitmbsdegree.in/" target="_blank" rel="noopener">IITM BS Students' Corner</a></h4><p class="lk-desc">Notes and study material for most courses, foundation to degree level.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://degreedost.com/" target="_blank" rel="noopener">ML Study Hub</a></h4><p class="lk-desc">Topic-wise notes for many courses, kept by students.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://ammar-iitm.github.io/system-commands-book/" target="_blank" rel="noopener">System Commands book</a></h4><p class="lk-desc">A course book on Linux and shell commands, by Ammar Hashmi.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">Pratham Bhalla on Medium</a></h4><p class="lk-desc">Written notes for the foundation courses, plus past term papers with answer keys.</p></li>
+      <div class="link-group" id="links-admin">
+        <div class="group-head"><h2>Account and admin</h2><span class="group-count">7</span></div>
+        <ul class="links-grid compact">
+          <li class="lk-card" title="Official BS website: The degree's main website."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://study.iitm.ac.in/ds/" target="_blank" rel="noopener">Official BS website</a></h3><p class="lk-desc">The degree's main website.</p></li>
+          <li class="lk-card" title="Student handbook: All rules and policies. Read once."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub" target="_blank" rel="noopener">Student handbook</a></h3><p class="lk-desc">All rules and policies. Read once.</p></li>
+          <li class="lk-card" title="Student dashboard: Your courses, documents and updates."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://ds.study.iitm.ac.in/auth/login" target="_blank" rel="noopener">Student dashboard</a></h3><p class="lk-desc">Your courses, documents and updates.</p><div class="lk-foot"><span class="lk-badge iitm" title="IITM login required">IITM login</span></div></li>
+          <li class="lk-card" title="Support tickets: Raise a query with support."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span>Support tickets</h3><p class="lk-desc">Raise a query with support.</p><div class="lk-foot"><a class="lk-alt" href="https://study-supportdesk.freshdesk.com/" target="_blank" rel="noopener">Support desk</a><a class="lk-alt" href="https://docs.google.com/document/d/e/2PACX-1vS7Vl-jl7usTsyXDES33uwCa57mD3fV031wb0KUVOkl3LxeNIcnGxRp_KSI09WLHtqD2zT1pnxEMYrZ/pub" target="_blank" rel="noopener">How to raise a ticket</a></div></li>
+          <li class="lk-card" title="Official documents: Certificates, transcripts and how to apply."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span>Official documents</h3><p class="lk-desc">Certificates, transcripts and how to apply.</p><div class="lk-foot"><a class="lk-alt" href="https://study.iitm.ac.in/ds/archive.html" target="_blank" rel="noopener">Document archive</a><a class="lk-alt" href="https://docs.google.com/document/u/1/d/e/2PACX-1vQnn2cFan5BqTTAByCoqtue-0XSmFXQPT91bADDL_i33tHMh8C0ZJepvFBwze4E5zJbGiBMdQa59VeT/pub" target="_blank" rel="noopener">How to apply</a></div></li>
+          <li class="lk-card" title="Discourse forum: Post academic queries."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/" target="_blank" rel="noopener">Discourse forum</a></h3><p class="lk-desc">Post academic queries.</p><div class="lk-foot"><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="Student activities portal: Student activities and events."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://iitmbs.org/" target="_blank" rel="noopener">Student activities portal</a></h3><p class="lk-desc">Student activities and events.</p></li>
         </ul>
       </div>
-      <div class="link-group" id="links-rules">
-        <div class="group-head"><h3>Rules and malpractice</h3><span class="group-count">2</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/d/e/2PACX-1vTt6ndMAI1-Y7Okm3HXmv0OFhFliUJPzkrUkQuX4InovMYewy_CWmFzmE4mUOAl_TjWlSrZNYWUOnG7/pub" target="_blank" rel="noopener">Academic malpractices</a></h4><p class="lk-desc">What counts as academic malpractice. Must read.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/d/e/2PACX-1vS3kG688sVzBil9uEFa9mXrnpuMAqE0LU1FpH1-TMDCHZF0XjC1265GmhVePdYvrc0_5qyq8OXwIZUb/pub" target="_blank" rel="noopener">Non-academic malpractices</a></h4><p class="lk-desc">What counts as non-academic malpractice. Must read.</p></li>
+      <div class="link-group" id="links-planning">
+        <div class="group-head"><h2>Courses and planning</h2><span class="group-count">6</span></div>
+        <ul class="links-grid compact">
+          <li class="lk-card" title="Course planner: Plan your coming terms."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://course-planner-140256174016.asia-south1.run.app/login" target="_blank" rel="noopener">Course planner</a></h3><p class="lk-desc">Plan your coming terms.</p><div class="lk-foot"><span class="lk-badge iitm" title="IITM login required">IITM login</span></div></li>
+          <li class="lk-card" title="Course syllabus: Week-wise syllabus for every course."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vSWW4TMd2ujKYOeSay5iCIyTGLtJgM1KWC-Ernu_JdhugLtB0dXV9i966Z-ZaPZ9qAAI1_QtWa3o3br/pub#h.64f8davxbp1d" target="_blank" rel="noopener">Course syllabus</a></h3><p class="lk-desc">Week-wise syllabus for every course.</p></li>
+          <li class="lk-card" title="Course calendars: Add course calendars to yours."><h3 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/course-tip-stay-on-top-of-your-term-with-calendar/44947" target="_blank" rel="noopener">Course calendars</a></h3><p class="lk-desc">Add course calendars to yours.</p><div class="lk-foot"><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="Course videos: Course channels and lecture playlists."><h3 class="lk-title">Course videos</h3><p class="lk-desc">Course channels and lecture playlists.</p><div class="lk-foot"><a class="lk-alt" href="https://discourse.onlinedegree.iitm.ac.in/t/course-yt-channel-list-data-science-and-applications/115619" target="_blank" rel="noopener">YouTube channels</a><a class="lk-alt" href="https://discourse.onlinedegree.iitm.ac.in/t/iitm-bs-course-playlist-youtube/101319" target="_blank" rel="noopener">Lecture playlists</a><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="Apprenticeship programme: Counts for up to 12 degree credits."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vQ_ZCTw1_PzVDBJ7u-wX18KUgl-IK1POIYRvyjAYsj_A-tS99K7ARRuNVKk0tp34B1woqclNxvY_0Lc/pub" target="_blank" rel="noopener">Apprenticeship programme</a></h3><p class="lk-desc">Counts for up to 12 degree credits.</p></li>
+          <li class="lk-card" title="MTech upgrade: Upgrade to MTech, or exit with a PG Diploma."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vRrtiiHlurfHtFnJnDwtNZ0NHAci8PQ7pHsiX3V3SZKmbSmALDk4whCO5La6efs4MSmBLVTH2ZfGJNL/pub" target="_blank" rel="noopener">MTech upgrade</a></h3><p class="lk-desc">Upgrade to MTech, or exit with a PG Diploma.</p></li>
         </ul>
       </div>
-      <div class="link-group" id="links-courses">
-        <div class="group-head"><h3>Courses and credits</h3><span class="group-count">7</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://course-planner-140256174016.asia-south1.run.app/login" target="_blank" rel="noopener">Course planner</a></h4><p class="lk-desc">Plan which courses to take in the coming terms.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vSWW4TMd2ujKYOeSay5iCIyTGLtJgM1KWC-Ernu_JdhugLtB0dXV9i966Z-ZaPZ9qAAI1_QtWa3o3br/pub#h.64f8davxbp1d" target="_blank" rel="noopener">Course syllabus</a></h4><p class="lk-desc">Week-wise syllabus for every course in the degree.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/course-tip-stay-on-top-of-your-term-with-calendar/44947" target="_blank" rel="noopener">Course calendars</a></h4><p class="lk-desc">Add each course's calendar to stay on top of the term.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/course-yt-channel-list-data-science-and-applications/115619" target="_blank" rel="noopener">Course YouTube channels</a></h4><p class="lk-desc">Each course's channel, with recordings of past live sessions.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/iitm-bs-course-playlist-youtube/101319" target="_blank" rel="noopener">Course playlists</a></h4><p class="lk-desc">Lecture playlists for all courses.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vQ_ZCTw1_PzVDBJ7u-wX18KUgl-IK1POIYRvyjAYsj_A-tS99K7ARRuNVKk0tp34B1woqclNxvY_0Lc/pub" target="_blank" rel="noopener">Apprenticeship programme</a></h4><p class="lk-desc">Apprenticeship can count for up to 12 credits at the degree level.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/u/1/d/e/2PACX-1vRrtiiHlurfHtFnJnDwtNZ0NHAci8PQ7pHsiX3V3SZKmbSmALDk4whCO5La6efs4MSmBLVTH2ZfGJNL/pub" target="_blank" rel="noopener">MTech upgrade</a></h4><p class="lk-desc">Policy for upgrading the BS degree to the MTech in AI and ML, and the PG Diploma exit option.</p></li>
+      <div class="link-group" id="links-study">
+        <div class="group-head"><h2>Study material</h2><span class="group-count">6</span></div>
+        <ul class="links-grid compact">
+          <li class="lk-card" title="Course resources by level: Course-wise playlists, slides and books."><h3 class="lk-title">Course resources by level</h3><p class="lk-desc">Course-wise playlists, slides and books.</p><div class="lk-foot"><a class="lk-alt" href="https://discourse.onlinedegree.iitm.ac.in/t/foundation-level-resource/154274" target="_blank" rel="noopener">Foundation</a><a class="lk-alt" href="https://discourse.onlinedegree.iitm.ac.in/t/important-resources-for-diploma-level/75823" target="_blank" rel="noopener">Diploma</a><a class="lk-alt" href="https://discourse.onlinedegree.iitm.ac.in/t/important-resource-for-degree-level-courses/85946" target="_blank" rel="noopener">Degree</a><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="Student link library: A big community-kept list of links."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/links-to-almost-all-resources-at-one-place/88809" target="_blank" rel="noopener">Student link library</a></h3><p class="lk-desc">A big community-kept list of links.</p><div class="lk-foot"><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="IITM BS Students' Corner: Notes for most courses."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://www.iitmbsdegree.in/" target="_blank" rel="noopener">IITM BS Students' Corner</a></h3><p class="lk-desc">Notes for most courses.</p></li>
+          <li class="lk-card" title="ML Study Hub: Topic-wise notes for many courses."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://degreedost.com/" target="_blank" rel="noopener">ML Study Hub</a></h3><p class="lk-desc">Topic-wise notes for many courses.</p></li>
+          <li class="lk-card" title="Pratham Bhalla on Medium: Foundation notes and past papers."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">Pratham Bhalla on Medium</a></h3><p class="lk-desc">Foundation notes and past papers.</p></li>
+          <li class="lk-card" title="AceGrade: Lectures, notes, papers and a quiz checker."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://acegrade.in/" target="_blank" rel="noopener">AceGrade</a></h3><p class="lk-desc">Lectures, notes, papers and a quiz checker.</p></li>
         </ul>
       </div>
-      <div class="link-group" id="links-student-made">
-        <div class="group-head"><h3>Made by students</h3><span class="group-count">5</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://acegrade.in/" target="_blank" rel="noopener">AceGrade</a></h4><p class="lk-desc">Lectures, notes and past papers, plus a quiz evaluator that scores you against the answer key.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://quizpractice.space/" target="_blank" rel="noopener">QuizPractice</a></h4><p class="lk-desc">Attempt previous year papers in an exam-like format.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://quizspacee.com/" target="_blank" rel="noopener">Quiz Space</a></h4><p class="lk-desc">Past question papers for quizzes, end terms and OPPE, sorted by course.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://oppe.rangalabs.cloud" target="_blank" rel="noopener">OPPE practice</a></h4><p class="lk-desc">Practise real OPPE questions and retry until they pass.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://www.youtube.com/channel/UCw8-ZEkw9gVXEBw5P96kDjw" target="_blank" rel="noopener">Degree level revision sessions</a></h4><p class="lk-desc">Revision videos for several degree level courses, on Lalit Kumar's YouTube channel.</p></li>
+      <div class="link-group" id="links-practice">
+        <div class="group-head"><h2>Past papers and practice</h2><span class="group-count">7</span></div>
+        <ul class="links-grid compact">
+          <li class="lk-card" title="Share and find past papers: A community collection of past papers."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/question-paper-repository-we-need-your-help/202463" target="_blank" rel="noopener">Share and find past papers</a></h3><p class="lk-desc">A community collection of past papers.</p><div class="lk-foot"><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="QuizPractice: Past papers in exam mode."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://quizpractice.space/" target="_blank" rel="noopener">QuizPractice</a></h3><p class="lk-desc">Past papers in exam mode.</p></li>
+          <li class="lk-card" title="Quiz Space: Past quiz, end term and OPPE papers."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://quizspacee.com/" target="_blank" rel="noopener">Quiz Space</a></h3><p class="lk-desc">Past quiz, end term and OPPE papers.</p></li>
+          <li class="lk-card" title="MauryaHub: Past papers, notes and videos."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span>MauryaHub</h3><p class="lk-desc">Past papers, notes and videos.</p><div class="lk-foot"><a class="lk-alt" href="https://www.mauryahub.in/" target="_blank" rel="noopener">Practice papers</a><a class="lk-alt" href="https://mauryahub.onrender.com/" target="_blank" rel="noopener">Notes and videos</a></div></li>
+          <li class="lk-card" title="OPPE practice: Real OPPE questions, retry till they pass."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://oppe.rangalabs.cloud" target="_blank" rel="noopener">OPPE practice</a></h3><p class="lk-desc">Real OPPE questions, retry till they pass.</p></li>
+          <li class="lk-card" title="Custodia: OPPE practice with instant grading."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://custodia-beta.vercel.app/" target="_blank" rel="noopener">Custodia</a></h3><p class="lk-desc">OPPE practice with instant grading.</p></li>
+          <li class="lk-card" title="Degree level revision sessions: Revision videos by Lalit Kumar."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://www.youtube.com/channel/UCw8-ZEkw9gVXEBw5P96kDjw" target="_blank" rel="noopener">Degree level revision sessions</a></h3><p class="lk-desc">Revision videos by Lalit Kumar.</p></li>
         </ul>
       </div>
-      <div class="link-group" id="links-higher-studies">
-        <div class="group-head"><h3>Higher studies</h3><span class="group-count">2</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://iitmbsc-student-projects.github.io/gate-da" target="_blank" rel="noopener">GATE DA question bank</a></h4><p class="lk-desc">Practice questions for the GATE DA paper, made by IITM BS instructors.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://gate2027.iitm.ac.in/" target="_blank" rel="noopener">GATE 2027</a></h4><p class="lk-desc">Official GATE 2027 website.</p></li>
-        </ul>
-      </div>
-      <div class="link-group" id="links-placements">
-        <div class="group-head"><h3>Placements and internships</h3><span class="group-count">6</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://placements.study.iitm.ac.in/" target="_blank" rel="noopener">IITM BS placements portal</a></h4><p class="lk-desc">Placements and internships portal.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/d/e/2PACX-1vRGX3FY8zu6F1QxjwBQjdFrb9DvxXWedfv1PHHAhgyXqkZ9D-EbGB4VuNSSv_NHpA/pub" target="_blank" rel="noopener">Placement policy</a></h4><p class="lk-desc">Official policy document for internships and placements.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/u/6/d/e/2PACX-1vRDVdDmrDy4To6HUQfpvDOP90wtl_7oD1tLf9HYaKE-plZ7K8-il-ribk51WaI1sWXGTlUvs3IjV150/pub" target="_blank" rel="noopener">Student guide</a></h4><p class="lk-desc">Official student guide to internships and placements.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://docs.google.com/document/d/1wzhKEFjsz4m9b7Slhgfc-vDz4GszH3RplDxJpJ37Kqg" target="_blank" rel="noopener">Activity points</a></h4><p class="lk-desc">Activities to complete to be eligible for placement support.</p><div class="lk-foot"><span class="lk-badge iitm">IITM login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://drive.google.com/drive/folders/1DOYyu4qJJM8OXR2pOv9WuXMVjYAkoHid?usp=drive_link" target="_blank" rel="noopener">Resume templates</a></h4><p class="lk-desc">Resume templates from the placement cell.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/beware-of-fake-internship-providers/161512" target="_blank" rel="noopener">Fake internship providers</a></h4><p class="lk-desc">Check this list before applying anywhere.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
+      <div class="link-group" id="links-careers">
+        <div class="group-head"><h2>Careers and higher studies</h2><span class="group-count">8</span></div>
+        <ul class="links-grid compact">
+          <li class="lk-card" title="IITM BS placements portal: Placements and internships."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://placements.study.iitm.ac.in/" target="_blank" rel="noopener">IITM BS placements portal</a></h3><p class="lk-desc">Placements and internships.</p><div class="lk-foot"><span class="lk-badge iitm" title="IITM login required">IITM login</span></div></li>
+          <li class="lk-card" title="Placement policy: Official placement rules."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/d/e/2PACX-1vRGX3FY8zu6F1QxjwBQjdFrb9DvxXWedfv1PHHAhgyXqkZ9D-EbGB4VuNSSv_NHpA/pub" target="_blank" rel="noopener">Placement policy</a></h3><p class="lk-desc">Official placement rules.</p></li>
+          <li class="lk-card" title="Student guide: Guide to internships and placements."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/u/6/d/e/2PACX-1vRDVdDmrDy4To6HUQfpvDOP90wtl_7oD1tLf9HYaKE-plZ7K8-il-ribk51WaI1sWXGTlUvs3IjV150/pub" target="_blank" rel="noopener">Student guide</a></h3><p class="lk-desc">Guide to internships and placements.</p></li>
+          <li class="lk-card" title="Activity points: Needed for placement support."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://docs.google.com/document/d/1wzhKEFjsz4m9b7Slhgfc-vDz4GszH3RplDxJpJ37Kqg" target="_blank" rel="noopener">Activity points</a></h3><p class="lk-desc">Needed for placement support.</p><div class="lk-foot"><span class="lk-badge iitm" title="IITM login required">IITM login</span></div></li>
+          <li class="lk-card" title="Resume templates: From the placement cell."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://drive.google.com/drive/folders/1DOYyu4qJJM8OXR2pOv9WuXMVjYAkoHid?usp=drive_link" target="_blank" rel="noopener">Resume templates</a></h3><p class="lk-desc">From the placement cell.</p></li>
+          <li class="lk-card" title="Fake internship providers: Check before you apply."><h3 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/beware-of-fake-internship-providers/161512" target="_blank" rel="noopener">Fake internship providers</a></h3><p class="lk-desc">Check before you apply.</p><div class="lk-foot"><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="GATE DA question bank: GATE DA practice by IITM BS instructors."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://iitmbsc-student-projects.github.io/gate-da" target="_blank" rel="noopener">GATE DA question bank</a></h3><p class="lk-desc">GATE DA practice by IITM BS instructors.</p></li>
+          <li class="lk-card" title="GATE 2027: Official GATE 2027 site."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://gate2027.iitm.ac.in/" target="_blank" rel="noopener">GATE 2027</a></h3><p class="lk-desc">Official GATE 2027 site.</p></li>
         </ul>
       </div>
       <div class="link-group" id="links-community">
-        <div class="group-head"><h3>Community and perks</h3><span class="group-count">6</span></div>
-        <ul class="links-grid">
-          <li class="lk-card"><h4 class="lk-title">Unofficial course WhatsApp groups</h4><p class="lk-desc">Student-run groups for each course. The community site needs your IITM email to sign in; AceGrade is open to everyone.</p><div class="lk-more"><a href="https://sites.google.com/student.onlinedegree.iitm.ac.in/iitmbs-community" target="_blank" rel="noopener">IITM BS Community site</a><a href="https://www.acegrade.in/" target="_blank" rel="noopener">AceGrade</a></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discord.gg/iitm-bs-students-762774569827565569" target="_blank" rel="noopener">Student Discord (unofficial)</a></h4><p class="lk-desc">Student-run server for academic and general queries.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://linktr.ee/iitmbs_societies" target="_blank" rel="noopener">IITM BS societies</a></h4><p class="lk-desc">List of societies in the degree, with links.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://github.com/bsc-iitm" target="_blank" rel="noopener">IITM BS GitHub organisation</a></h4><p class="lk-desc">The official GitHub organisation of IITM BS.</p></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/github-student-and-github-copilot-for-students/103753" target="_blank" rel="noopener">GitHub Student Developer Pack</a></h4><p class="lk-desc">How to activate free GitHub Pro, Copilot and other student offers.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
-          <li class="lk-card"><h4 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/offers-based-on-student-email-id-master-list/159154" target="_blank" rel="noopener">Student benefits list</a></h4><p class="lk-desc">Offers available with your student email.</p><div class="lk-foot"><span class="lk-badge discourse">Discourse login required</span></div></li>
+        <div class="group-head"><h2>Community and perks</h2><span class="group-count">6</span></div>
+        <ul class="links-grid compact">
+          <li class="lk-card" title="Unofficial course WhatsApp groups: A student-run group for each course."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span>Unofficial course WhatsApp groups</h3><p class="lk-desc">A student-run group for each course.</p><div class="lk-foot"><a class="lk-alt" href="https://sites.google.com/student.onlinedegree.iitm.ac.in/iitmbs-community" target="_blank" rel="noopener">IITM BS Community site</a><a class="lk-alt" href="https://www.acegrade.in/" target="_blank" rel="noopener">AceGrade</a></div></li>
+          <li class="lk-card" title="Student Discord (unofficial): Student-run server for queries."><h3 class="lk-title"><span class="lk-dot student" title="Student-made"><span class="vh">Student-made: </span></span><a class="lk-main" href="https://discord.gg/iitm-bs-students-762774569827565569" target="_blank" rel="noopener">Student Discord (unofficial)</a></h3><p class="lk-desc">Student-run server for queries.</p></li>
+          <li class="lk-card" title="IITM BS societies: All societies, with links."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://linktr.ee/iitmbs_societies" target="_blank" rel="noopener">IITM BS societies</a></h3><p class="lk-desc">All societies, with links.</p></li>
+          <li class="lk-card" title="IITM BS GitHub organisation: The official IITM BS GitHub."><h3 class="lk-title"><span class="lk-dot official" title="Official"><span class="vh">Official: </span></span><a class="lk-main" href="https://github.com/bsc-iitm" target="_blank" rel="noopener">IITM BS GitHub organisation</a></h3><p class="lk-desc">The official IITM BS GitHub.</p></li>
+          <li class="lk-card" title="GitHub Student Developer Pack: Free GitHub Pro and Copilot."><h3 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/github-student-and-github-copilot-for-students/103753" target="_blank" rel="noopener">GitHub Student Developer Pack</a></h3><p class="lk-desc">Free GitHub Pro and Copilot.</p><div class="lk-foot"><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
+          <li class="lk-card" title="Student benefits list: Offers for your student email."><h3 class="lk-title"><a class="lk-main" href="https://discourse.onlinedegree.iitm.ac.in/t/offers-based-on-student-email-id-master-list/159154" target="_blank" rel="noopener">Student benefits list</a></h3><p class="lk-desc">Offers for your student email.</p><div class="lk-foot"><span class="lk-badge discourse" title="Discourse login required">Discourse login</span></div></li>
         </ul>
       </div>
+      </div>
+      </div>
+      <p class="links-intro links-end">Broken or missing link? Tell us on the Discourse thread or open a GitHub issue.</p>
       <!-- LINKS:END -->
   </section>
   <p class="no-results" id="no-results" hidden>No link matches that. Try a shorter word.</p>
@@ -171,14 +181,15 @@
 
 <footer class="site-end wrap">
   <span class="se-name">The Companion</span>
-  <nav class="se-nav" aria-label="Site"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="links.html" aria-current="page">Important links</a><a href="contributors.html">Contributors</a><a href="scam-alert.html">Scam alert</a><a href="calculator.html">Grade calculator</a></nav>
+  <nav class="se-nav" aria-label="Site"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="links.html" aria-current="page">Important links</a><a href="contributors.html">Contributors</a><a href="scam-alert.html">Scam alert</a><a href="calculator.html">Grade calculator</a><a href="updates.html">Updates</a></nav>
+  <div class="theme-foot" id="theme-foot"></div>
 </footer>
 
 
 <button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
 
-<script src="assets/menu-data.js?v=80f45085"></script>
-<script src="assets/site.js?v=b47fef43"></script>
-<script src="assets/theme.js?v=8e860dc4"></script>
+<script src="assets/menu-data.js?v=d920ed21"></script>
+<script src="assets/site.js?v=7ae64107"></script>
+<script src="assets/theme.js?v=f608d0e2"></script>
 </body>
 </html>

@@ -15,7 +15,8 @@ Layout this expects (site root = the folder holding index.html):
   tools/generate.py            <- this file
   tools/templates/*.j2
 """
-import json, os, glob, re
+import json
+import urllib.parse, os, glob, re
 from urllib.parse import urlparse
 import html as html_lib
 import hashlib
@@ -139,7 +140,7 @@ def stamp_assets(html):
 
 def restamp_pages():
     """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
-    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html"):
+    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html", "updates.html"):
         path = os.path.join(SITE_ROOT, name)
         if os.path.exists(path):
             old = open(path, encoding="utf-8").read()
@@ -149,7 +150,15 @@ def restamp_pages():
 
 
 def render_course(data):
-    tpl = TPL[data["kind"]]
+    tpl = TPL["lecture"]   # projects use the same sidebar layout; their "weeks" are terms and their items are recorded sessions
+    if data["kind"] == "project":
+        # a project belongs to a main course (CS2003P -> CS2003): link back to it
+        stem = re.sub(r"p$", "", data["stem"]) if data["stem"].endswith("p") else (data.get("prereq") or "").lower()
+        data = dict(data, parent=None, is_project=True, item_word="session", syllabus=data.get("syllabus") or {},
+                    weeks_data=data.get("weeks_data") or [], hide_lectures=not data.get("weeks_data"))
+        if os.path.exists(data_path(stem)) and stem != data["stem"]:
+            pd = load(stem)
+            data["parent"] = {"stem": stem, "code": pd["code"], "title": pd["title"]}
     return stamp_assets(tpl.render(**data) + "\n")
 
 
@@ -281,47 +290,57 @@ def _auth_of(item):
 
 
 def render_links(data):
+    """Important links: compact pills in task-based groups. On wide screens the jump chips become a sticky
+    list in the left margin (see site.css / site.js)."""
+    SRC = {"official": "Official", "student": "Student-made"}
     out = []
-    if data.get("intro"):
-        out.append(f'      <p class="links-intro">{_esc(data["intro"])}</p>')
-    out.append('      <nav class="links-jump" aria-label="Jump to a group">')
+    out.append('      <div class="links-layout">')
+    out.append('      <nav class="links-jump" aria-label="Jump to a group"><div class="lj-in">')
     for g in data["groups"]:
-        out.append(f'        <a href="#links-{_esc(g["id"])}">{_esc(g["title"])}</a>')
-    out.append('      </nav>')
+        short = g.get("short") or g["title"]   # chips use the short name; the wide-screen side list the full one
+        out.append(f'        <a href="#links-{_esc(g["id"])}" title="{_esc(g["title"])}"><span class="lj-s">{_esc(short)}</span><span class="lj-f">{_esc(g["title"])}</span></a>')
+    out.append('        <span class="lk-legend"><span class="lk-dot official"></span>Official <span class="lk-dot student"></span>Student-made</span>')
+    out.append('      </div></nav>')
+    out.append('      <div class="links-groups">')
     for g in data["groups"]:
         out.append(f'      <div class="link-group" id="links-{_esc(g["id"])}">')
-        out.append(f'        <div class="group-head"><h3>{_esc(g["title"])}</h3>'
+        out.append(f'        <div class="group-head"><h2>{_esc(g["title"])}</h2>'
                    f'<span class="group-count">{len(g["items"])}</span></div>')
-        out.append('        <ul class="links-grid">')
+        out.append('        <ul class="links-grid compact">')
         for it in g["items"]:
             auth = _auth_of(it)
-            badge = (f'<span class="lk-badge {auth}">{_esc(AUTH_BADGES[auth])}</span>'
+            badge = (f'<span class="lk-badge {auth}" title="{_esc(AUTH_BADGES[auth])}">{_esc(AUTH_BADGES[auth].replace(" required", "").replace("Login needed for full access", "Login"))}</span>'
                      if auth in AUTH_BADGES else "")
+            src = (f'<span class="lk-dot {it["src"]}" title="{SRC[it["src"]]}"><span class="vh">{SRC[it["src"]]}: </span></span>'
+                   if it.get("src") in SRC else "")
+            tip = _esc(it["title"] + ": " + it["desc"])
             if len(it["links"]) == 1:
                 url = _esc(it["links"][0]["url"])
                 title = f'<a class="lk-main" href="{url}" target="_blank" rel="noopener">{_esc(it["title"])}</a>'
                 more = ""
             else:
                 title = _esc(it["title"])
-                anchors = "".join(
-                    f'<a href="{_esc(l["url"])}" target="_blank" rel="noopener">{_esc(l["label"])}</a>'
+                more = "".join(
+                    f'<a class="lk-alt" href="{_esc(l["url"])}" target="_blank" rel="noopener">{_esc(l["label"])}</a>'
                     for l in it["links"])
-                more = f'<div class="lk-more">{anchors}</div>'
-            foot = f'<div class="lk-foot">{badge}</div>' if badge else ""
-            out.append(f'          <li class="lk-card"><h4 class="lk-title">{title}</h4>'
-                       f'<p class="lk-desc">{_esc(it["desc"])}</p>{more}{foot}</li>')
+            # one footer line: extra links (if any) and the login tag
+            foot = f'<div class="lk-foot">{more}{badge}</div>' if (more or badge) else ""
+            out.append(f'          <li class="lk-card" title="{tip}"><h3 class="lk-title">{src}{title}</h3>'
+                       f'<p class="lk-desc">{_esc(it["desc"])}</p>{foot}</li>')
         out.append('        </ul>')
         out.append('      </div>')
+    out.append('      </div>')
+    out.append('      </div>')
+    if data.get("intro"):   # "Broken or missing link?": a footnote, not something to read first
+        out.append(f'      <p class="links-intro links-end">{_esc(data["intro"])}</p>')
     return "\n".join(out)
 
 
 def render_quick(data):
     out = []
-    for g in data["groups"]:
-        for it in g["items"]:
-            pin = it.get("pin")
-            if not pin:
-                continue
+    pins = sorted((it for g in data["groups"] for it in g["items"] if it.get("pin")), key=lambda it: it["pin"].get("order", 99))
+    for it in pins:
+            pin = it["pin"]
             url = _esc(it["links"][0]["url"])
             out.append(f'        <a class="quick-card" href="{url}" target="_blank" rel="noopener">'
                        f'<span class="qc-title">{_esc(pin["title"])}</span>'
@@ -359,7 +378,8 @@ def _platform(url):
 def _footer_nav(current):
     items = (("index.html", "Home", "home"), ("courses.html", "Courses", "courses"),
              ("links.html", "Important links", "links"), ("contributors.html", "Contributors", "contributors"),
-             ("scam-alert.html", "Scam alert", "scam"), ("calculator.html", "Grade calculator", "calculator"))
+             ("scam-alert.html", "Scam alert", "scam"), ("calculator.html", "Grade calculator", "calculator"),
+             ("updates.html", "Updates", "updates"))
     return "".join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if k == current else "", t) for h, t, k in items)
 
 
@@ -373,13 +393,13 @@ def generate_contributors():
         cards = []
         for pr in g["people"]:
             if pr.get("url"):
-                cards.append('<li class="lk-card pp-card"><h4 class="lk-title"><a class="lk-main" href="%s" target="_blank" rel="noopener">%s</a></h4>'
+                cards.append('<li class="lk-card pp-card"><h3 class="lk-title"><a class="lk-main" href="%s" target="_blank" rel="noopener">%s</a></h3>'
                              '<p class="lk-desc">%s</p></li>' % (esc(pr["url"], quote=True), esc(pr["name"]), _platform(pr["url"])))
             else:
-                cards.append('<li class="lk-card pp-card plain"><h4 class="lk-title">%s</h4></li>' % esc(pr["name"]))
+                cards.append('<li class="lk-card pp-card plain"><h3 class="lk-title">%s</h3></li>' % esc(pr["name"]))
         jump.append('<a href="#c-%s">%s</a>' % (g["id"], esc(g["title"])))
         groups_html.append(
-            '      <div class="link-group" id="c-%s">\n        <div class="group-head"><h3>%s</h3><span class="group-count">%d</span></div>\n'
+            '      <div class="link-group" id="c-%s">\n        <div class="group-head"><h2>%s</h2><span class="group-count">%d</span></div>\n'
             '        <p class="group-intro">%s</p>\n        <ul class="links-grid people-grid">\n          %s\n        </ul>\n      </div>'
             % (g["id"], esc(g["title"]), len(g["people"]), esc(g.get("intro", "")), "\n          ".join(cards)))
     c = d.get("contribute")
@@ -390,10 +410,10 @@ def generate_contributors():
             if cd.get("url2"):
                 mail = cd["url2"].startswith("mailto:")
                 acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else " &#8599;")
-            cc.append('<li class="lk-card cta-card"><h4 class="lk-title">%s</h4><p class="lk-desc">%s</p><div class="cta-row">%s</div></li>'
+            cc.append('<li class="lk-card cta-card"><h3 class="lk-title">%s</h3><p class="lk-desc">%s</p><div class="cta-row">%s</div></li>'
                       % (esc(cd["title"]), esc(cd["text"]), acts))
         jump.append('<a href="#%s">%s</a>' % (c["id"], esc(c["title"])))
-        groups_html.append('      <div class="link-group" id="%s">\n        <div class="group-head"><h3>%s</h3></div>\n        <p class="group-intro">%s</p>\n'
+        groups_html.append('      <div class="link-group" id="%s">\n        <div class="group-head"><h2>%s</h2></div>\n        <p class="group-intro">%s</p>\n'
                            '        <ul class="links-grid cta-grid">\n          %s\n        </ul>\n      </div>'
                            % (c["id"], esc(c["title"]), esc(c["intro"]), "\n          ".join(cc)))
         ct = c.get("contact")
@@ -446,19 +466,19 @@ def generate_scam_alert():
     parts.append('      <div class="scam-intro">%s</div>\n      <div class="scam-callout"><strong>%s.</strong> %s</div>'
                  % (intro, esc(co["title"]), esc(co["text"])))
     for sec in d["sections"]:
-        head = ('      <div class="link-group" id="%s">\n        <div class="group-head"><h3>%s</h3>%s</div>\n        <p class="group-intro">%s</p>\n'
+        head = ('      <div class="link-group" id="%s">\n        <div class="group-head"><h2>%s</h2>%s</div>\n        <p class="group-intro">%s</p>\n'
                 % (sec["id"], esc(sec["title"]),
                    ('<span class="group-count">%d</span>' % len(sec["items"])) if sec["type"] == "providers" else "", esc(sec["intro"])))
         if sec["type"] == "cards":
             body = '        <ul class="links-grid scam-grid">\n          %s\n        </ul>' % "\n          ".join(
-                '<li class="lk-card warn-card"><h4 class="lk-title">%s</h4><p class="lk-desc">%s</p></li>' % (esc(c["title"]), esc(c["text"]))
+                '<li class="lk-card warn-card"><h3 class="lk-title">%s</h3><p class="lk-desc">%s</p></li>' % (esc(c["title"]), esc(c["text"]))
                 for c in sec["cards"])
         elif sec["type"] == "providers":
             cards = []
             for it in sec["items"]:
                 hosts = ("Names as hosts: %s" % esc(it["hosts"])) if it["hosts"] else "No host companies listed."
                 chips = "".join("<span>%s</span>" % esc(x) for x in it["platforms"])
-                cards.append('<li class="lk-card prov-card"><h4 class="lk-title">%s</h4><p class="lk-desc">%s</p><div class="plat-row">%s</div></li>'
+                cards.append('<li class="lk-card prov-card"><h3 class="lk-title">%s</h3><p class="lk-desc">%s</p><div class="plat-row">%s</div></li>'
                              % (esc(it["name"]), hosts, chips))
             body = '        <ul class="links-grid scam-grid">\n          %s\n        </ul>' % "\n          ".join(cards)
         else:
@@ -477,15 +497,149 @@ def generate_scam_alert():
     open(SCAM_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
     return SCAM_PAGE
 
+
+# ---------------------------------------------------------------- Updates page
+UPDATES_PATH = os.path.join(SITE_ROOT, "data", "updates.json")
+UPDATES_PAGE = os.path.join(SITE_ROOT, "updates.html")
+UPDATES_TEMPLATE_PATH = os.path.join(TEMPLATES_DIR, "updates.html.tpl")
+INDEX_PAGE = os.path.join(SITE_ROOT, "index.html")
+MONTHS = ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+
+def _long_date(iso):
+    y, m, d = iso.split("-")
+    return "%d %s %s" % (int(d), MONTHS[int(m) - 1], y)
+
+
+def collect_updates():
+    """Every dated update, newest first. A resource with an "added" date (YYYY-MM-DD) lists itself; the same
+    label added to many courses on one day becomes one entry. data/updates.json holds notes on site changes."""
+    notes = json.load(open(UPDATES_PATH, encoding="utf-8")) if os.path.exists(UPDATES_PATH) else {"notes": []}
+    overrides = notes.get("resource_notes", {})
+    groups = {}
+    for stem in all_stems():
+        data = load(stem)
+        for r in data.get("resources") or []:
+            if not r.get("added") or not r.get("url"):
+                continue
+            key = (r["added"], r["label"], r.get("by", ""))
+            g = groups.setdefault(key, {"kind": "res", "date": r["added"], "title": r["label"], "urls": [], "descs": [],
+                                        "by": r.get("by", ""), "courses": [], "links": None})
+            g["urls"].append(r["url"]); g["descs"].append(r.get("desc", ""))
+            if stem not in [c[0] for c in g["courses"]]:
+                g["courses"].append((stem, data["code"], data["title"]))
+    for g in groups.values():
+        urls, descs = g.pop("urls"), g.pop("descs")
+        if len(set(urls)) == 1:
+            g["url"] = urls[0]
+        else:   # one link per course (e.g. filtered to its subject): point at the shared page instead
+            parts = [urllib.parse.urlsplit(u) for u in urls]
+            same_path = len({(x.scheme, x.netloc, x.path) for x in parts}) == 1
+            g["url"] = "%s://%s%s" % (parts[0].scheme, parts[0].netloc, parts[0].path if same_path else "/")
+        ov = overrides.get(g["title"] + (" | " + g["by"] if g["by"] else "")) or overrides.get(g["title"])
+        g["desc"] = ov if ov else (descs[0] if len(set(descs)) == 1 else "")
+    links = json.load(open(LINKS_PATH, encoding="utf-8")) if os.path.exists(LINKS_PATH) else {"groups": []}
+    out = list(groups.values())
+    for grp in links.get("groups", []):
+        for it in grp.get("items", []):
+            if it.get("added"):
+                url = it["links"][0]["url"]
+                def _norm(u):
+                    x = urllib.parse.urlsplit(u)
+                    return x.netloc.replace("www.", "") + x.path.rstrip("/")
+                host = _norm(url)
+                twin = next((e for e in out if e["kind"] == "res" and e["date"] == it["added"] and not e["links"]
+                             and _norm(e["url"]) == host), None)
+                if twin:   # the same site, also added to course pages that day: one entry
+                    twin["links"] = (grp["id"], grp["title"])
+                else:
+                    out.append({"kind": "res", "date": it["added"], "title": it["title"], "url": url,
+                                "desc": it.get("desc", ""), "by": "", "courses": [], "links": (grp["id"], grp["title"])})
+    titles = {st: (load(st)["code"], load(st)["title"]) for st in {c for n in notes.get("notes", []) for c in n.get("courses", [])}}
+    for i, n in enumerate(notes.get("notes", [])):
+        # a note is a site change, or (kind "res") a batch of resources written up by hand, optionally naming its courses
+        out.append({"kind": n.get("kind", "site"), "date": n["date"], "title": n["title"], "desc": n.get("text", ""), "order": i,
+                    "url": n.get("url", ""), "by": "", "courses": [(c,) + titles[c] for c in n.get("courses", [])],
+                    "links": ("", "Important links") if n.get("links") else None})
+    # newest day first; within a day, resources reaching the most courses first, then site notes in file order
+    out.sort(key=lambda e: (e["date"], 1 if e["kind"] == "res" else 0, len(e.get("courses") or []), -e.get("order", 0)), reverse=True)
+    return out
+
+
+def _update_html(e):
+    esc = html_lib.escape
+    if e["kind"] == "site":
+        return ('          <li class="up-item" data-kind="site"><span class="up-tag site">Site</span>'
+                '<h3 class="up-title">%s</h3><p class="up-desc">%s</p></li>' % (esc(e["title"]), esc(e["desc"])))
+    head = (('<span class="up-tag">New resource</span><h3 class="up-title"><a href="%s" target="_blank" rel="noopener">%s</a></h3>'
+             % (esc(e["url"], quote=True), esc(e["title"]))) if e.get("url") else
+            '<span class="up-tag">New resources</span><h3 class="up-title">%s</h3>' % esc(e["title"]))
+    desc = ('<p class="up-desc">%s%s</p>' % (esc(e["desc"]), (' <span class="up-by">By %s.</span>' % esc(e["by"])) if e["by"] and e["by"] not in e["desc"] else "")) if (e["desc"] or e["by"]) else ""
+    where = ""
+    cs = sorted(e["courses"], key=lambda c: c[1])
+    chips = "".join('<a href="courses/%s.html" title="%s">%s</a>' % (st, esc(html_lib.unescape(t), quote=True), esc(code)) for st, code, t in cs)
+    if e["links"]:
+        chips += '<a href="links.html%s">Important links</a>' % (("#links-" + esc(e["links"][0], quote=True)) if e["links"][0] else "")
+    places = (("%d courses" % len(cs)) if len(cs) > 1 else "1 course" if cs else "")
+    if e["links"]:
+        places = (places + " and Important links") if places else "Important links"
+    if chips and len(cs) > 8:
+        where = '<details class="up-where"><summary>Added to %s</summary><span class="up-chips">%s</span></details>' % (places, chips)
+    elif chips:
+        where = '<p class="up-where">Added to <span class="up-chips">%s</span></p>' % chips
+    return '          <li class="up-item" data-kind="res">%s%s%s</li>' % (head, desc, where)
+
+
+def _short_update(e):
+    if e["kind"] == "site":
+        return e["title"]
+    if e["courses"]:
+        n = len(e["courses"])
+        return "%s in %s" % (e["title"], ("%d courses" % n) if n > 1 else e["courses"][0][1])
+    return "%s on Important links" % e["title"]
+
+
+def generate_updates():
+    esc = html_lib.escape
+    d = json.load(open(UPDATES_PATH, encoding="utf-8")) if os.path.exists(UPDATES_PATH) else {"title": "Updates", "sub": ""}
+    items = collect_updates()
+    days, body = [], []
+    for e in items:
+        if not days or days[-1][0] != e["date"]:
+            days.append((e["date"], []))
+        days[-1][1].append(e)
+    for date, es in days:
+        body.append('  <section class="up-day" id="u-%s">\n    <h2 class="up-date">%s</h2>\n    <ul class="up-list">\n%s\n    </ul>\n  </section>'
+                    % (date, _long_date(date), "\n".join(_update_html(e) for e in es)))
+    if not body:
+        body.append('  <p class="tbd-note">Nothing here yet.</p>')
+    tpl = open(UPDATES_TEMPLATE_PATH, encoding="utf-8").read()
+    page = tpl.replace("{{TITLE}}", esc(d.get("title", "Updates"))).replace("{{SUB}}", esc(d.get("sub", ""))) \
+        .replace("{{BODY}}", "\n".join(body)).replace("{{FOOTNAV}}", _footer_nav("updates"))
+    open(UPDATES_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    # the newest three, on the front page
+    if os.path.exists(INDEX_PAGE):
+        html = open(INDEX_PAGE, encoding="utf-8").read()
+        a, b = html.find("<!-- updates:start -->"), html.find("<!-- updates:end -->")
+        if a != -1 and b != -1:
+            news = "".join('<li><a href="updates.html#u-%s">%s</a></li>' % (e["date"], esc(_short_update(e))) for e in items[:3])
+            block = ('<!-- updates:start -->\n  <nav class="land-news" aria-label="What\'s new"><span class="ln-k">What\'s new</span>'
+                     '<ul>%s</ul><a class="ln-all" href="updates.html">All updates</a></nav>\n  ' % news)
+            html = html[:a] + block + html[b:]
+            open(INDEX_PAGE, "w", encoding="utf-8").write(html)
+    return UPDATES_PAGE
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_course(stem))
     else:
-        paths = generate_all()
-        print(f"generated {len(paths)} pages into {COURSES_DIR}")
+        # the shared pages first: they rewrite assets/menu-data.js, whose ?v= stamp the course pages then pick up
         generate_links()
         generate_contributors()
         generate_scam_alert()
         generate_calculator()
+        generate_updates()
+        paths = generate_all()
+        print(f"generated {len(paths)} pages into {COURSES_DIR}")

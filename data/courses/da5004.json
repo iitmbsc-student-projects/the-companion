@@ -5,11 +5,26 @@
  "title": "Large Language Models",
  "program": "BS elective",
  "credits": 4,
- "standfirst": "How transformers scaled into today's LLMs — pre-training, fine-tuning, alignment, and the practical realities.",
+ "standfirst": "How transformers scaled into today's LLMs: pre-training, fine-tuning, alignment, and the practical realities.",
  "instructor": "Prof. Mitesh Khapra",
  "term": "As offered",
  "prereq": "CS3004",
  "resources": [
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/15Uym7DC2f3BB66P_pP33w0u42j9l8UTQ?usp=sharing",
    "label": "Drive folder",
@@ -35,6 +50,14 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=7",
+   "group": "Notes",
+   "desc": "Week-wise notes, an e-book and Quiz 1 PYQ notes. Shared on MauryaHub.",
+   "by": "Ashish Maurya and other students",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

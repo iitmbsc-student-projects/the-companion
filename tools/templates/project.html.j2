@@ -4,12 +4,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ title }} — The Companion</title>
+<title>{{ code }} {{ title|replace(" — ", ": ") }} | The Companion</title>
+{%- set _desc = (standfirst|striptags|replace(" — ", ", ")|truncate(158, True, "…")) if standfirst else (code ~ " " ~ title ~ ": syllabus, lectures and resources.") %}
+<meta name="description" content="{{ _desc|e }}">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Companion">
+<meta property="og:title" content="{{ code }} {{ title|replace(" — ", ": ") }}">
+<meta property="og:description" content="{{ _desc|e }}">
+<meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/{{ stem }}.html">
+<meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/theme.css">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#f4efe6; --paper-2:#ebe4d5;
@@ -18,49 +30,49 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);
-    font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
   .wrap{max-width:820px;margin:0 auto;padding:0 28px}
 
-  header.top{border-bottom:1px solid var(--rule);padding:16px 0;font-family:'JetBrains Mono',monospace;
+  header.top{border-bottom:1px solid var(--rule);padding:16px 0;font-family:'IBM Plex Mono',monospace;
     font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2)}
   header.top .row{display:flex;justify-content:space-between;align-items:center}
   header.top a{color:var(--ink);border:none}
   header.top a:hover{color:var(--accent)}
 
   .course-head{padding:38px 0 24px;border-bottom:1px solid var(--rule)}
-  .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .course-head .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
   .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:40px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
     }
   .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
     color:var(--ink-2);max-width:60ch;margin:0}
   .meta-line{margin-top:18px;padding-top:14px;border-top:1px dotted var(--rule);
-    display:flex;flex-wrap:wrap;gap:22px;font-family:'JetBrains Mono',monospace;
+    display:flex;flex-wrap:wrap;gap:22px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .meta-line b{color:var(--ink);font-weight:500}
 
   .toc{margin:28px 0 40px;background:var(--paper-2);padding:18px 22px;
     border:1px solid var(--rule)}
-  .toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+  .toc-title{font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
   .toc ol{list-style:none;padding:0;margin:0;column-count:2;column-gap:30px}
   .toc li{padding:5px 0;font-family:'Spectral',serif;font-size:15px;
     display:flex;justify-content:space-between;align-items:baseline;
     border-bottom:1px dotted var(--rule)}
   .toc a{color:var(--ink);border:none}
   .toc a:hover{color:var(--accent)}
-  .toc .p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .toc .p{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2)}
   @media(max-width:640px){ .toc ol{column-count:1} .course-head h1{font-size:30px} }
 
   section.chapter{margin:44px 0}
   section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
-  section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
-    color:var(--accent);letter-spacing:.2em;font-weight:500}
+  section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:.14em;font-weight:500}
 
   .syllabus-body{font-family:'Spectral',serif;font-size:17px;line-height:1.7;max-width:62ch}
   .syllabus-body p{margin:0 0 14px}
@@ -69,7 +81,7 @@
   ul.dates li{display:flex;align-items:baseline;padding:8px 0;
     border-bottom:1px dotted var(--rule);font-size:15px}
   ul.dates li .what{flex:1}
-  ul.dates li .when{font-family:'JetBrains Mono',monospace;font-size:12px;
+  ul.dates li .when{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--ink-2);letter-spacing:.05em}
   ul.dates li .marker{width:8px;height:8px;border-radius:50%;background:var(--accent);
     margin-right:12px;flex-shrink:0}
@@ -77,11 +89,11 @@
   ul.dates li.exam .what{font-weight:600}
 
   table.papers{width:100%;border-collapse:collapse;font-size:14px}
-  table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
-    font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
+  table.papers th{text-align:left;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
     padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
   table.papers td{padding:10px;border-bottom:1px dotted var(--rule);vertical-align:baseline}
-  table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
+  table.papers td:first-child{font-family:'IBM Plex Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
   table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
@@ -90,11 +102,11 @@
   .week:last-child{border-bottom:none}
   .week summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px}
   .week summary::-webkit-details-marker{display:none}
-  .week .wnum{font-family:'JetBrains Mono',monospace;font-size:11px;
+  .week .wnum{font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.15em;color:var(--accent);min-width:60px}
   .week .wtitle{font-family:'Spectral',serif;font-size:19px;font-weight:600;flex:1;
     letter-spacing:-0.005em}
-  .week .wicon{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-2);
+  .week .wicon{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--ink-2);
     transition:transform .15s}
   .week[open] .wicon{transform:rotate(45deg);color:var(--accent)}
   .week .body{padding:16px 0 4px 76px}
@@ -102,7 +114,7 @@
 
   .tabs{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-bottom:16px}
   .tabs button{background:none;border:none;padding:8px 14px 10px;cursor:pointer;
-    font:12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;
+    font:12px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;
     color:var(--ink-2);border-bottom:2px solid transparent;margin-bottom:-1px}
   .tabs button.active{color:var(--accent);border-color:var(--accent)}
   .tab-panel{display:none}
@@ -118,18 +130,51 @@
 {% include "_colophon_css.j2" %}
   footer.colophon .co-in{max-width:820px}
 {% include "_reslist_css.j2" %}
+  /* redesigned project page: link back to the main course, section chips, compact sections */
+  .course-head{padding:28px 0 18px}
+  .course-head h1{font-size:34px}
+  .parent-link{display:inline-flex;align-items:center;gap:6px;margin:16px 0 0;padding:6px 12px;border:1px solid var(--rule);border-radius:999px;
+    background:var(--paper-2);color:var(--ink-2);font-size:13.5px}
+  .parent-link b{color:var(--ink);font-weight:600}
+  .parent-link::after{content:"\2192";color:var(--accent)}
+  .parent-link:hover{border-color:var(--accent)}
+  .level-jump{margin-top:16px}
+  section.chapter{margin:30px 0;scroll-margin-top:calc(var(--tbh,62px) + var(--jh,40px) + 12px)}
+  section.chapter h2{font-size:22px}
+  .proj-empty{margin:28px 0}
 </style>
 </head>
-<body>
+<body data-base="../">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="top">
-  <div class="wrap row">
-    <div><a href="../courses.html">← All courses</a></div>
-    <div>{{ program }} · {{ code }}</div>
+<nav class="topbar" aria-label="Main">
+  <div class="wrap topbar-in">
+    <a class="tb-brand" href="../index.html" aria-label="The Companion, home">
+      <span class="tb-mark" aria-hidden="true">C</span><span class="tb-name">The Companion</span>
+    </a>
+    <div class="tb-nav">
+      <div class="nav-item current" data-tab="courses">
+        <a class="nav-main" href="../courses.html">Courses</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-courses" aria-label="Show course levels">&#9662;</button>
+        <div class="menu" id="menu-courses"></div>
+      </div>
+      <div class="nav-item" data-tab="links">
+        <a class="nav-main" href="../links.html">Important links</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Show link groups">&#9662;</button>
+        <div class="menu" id="menu-links"></div>
+      </div>
+    </div>
+    <div class="tb-more">
+      <a class="tb-link" href="../contributors.html">Contributors</a>
+      <a class="tb-link" href="../scam-alert.html">Scam alert</a>
+      <a class="tb-link" href="../calculator.html">Grade calculator</a>
+      <a class="tb-link" href="../updates.html">Updates</a>
+    </div>
+    <span id="theme-slot" data-float-narrow></span>
   </div>
-</header>
+</nav>
 
-<div class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 
   <div class="course-head">
     <div class="kicker">{{ code }} · {{ program }} · {{ credits }} credits</div>
@@ -142,74 +187,69 @@
     </div>
   </div>
 
-  <div class="toc">
-    <div class="toc-title">In this chapter</div>
-    <ol>
-      <li><a href="#syllabus">Syllabus</a><span class="p">§ 1</span></li>
-      <li><a href="#milestones">Milestones</a><span class="p">§ 2</span></li>
-      <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
-      <li><a href="#sessions">Project Sessions</a><span class="p">§ 4</span></li>
-{%- if resources %}
-      <li><a href="#resources">Resources</a><span class="p">§ 5</span></li>
+{%- set has_syl = syllabus_body_html and 'class="placeholder"' not in syllabus_body_html %}
+{%- set has_ms = milestones_html and 'class="placeholder"' not in milestones_html %}
+{%- set secs = [] %}
+{%- if has_syl %}{% set _ = secs.append(("syllabus", "About the project")) %}{% endif %}
+{%- if has_ms %}{% set _ = secs.append(("milestones", "Milestones")) %}{% endif %}
+{%- if sessions %}{% set _ = secs.append(("sessions", "Project sessions")) %}{% endif %}
+{%- if resources %}{% set _ = secs.append(("resources", "Resources")) %}{% endif %}
+{%- if parent %}
+
+  <a class="parent-link" href="{{ parent.stem }}.html">Main course: <b>{{ parent.code }} {{ parent.title }}</b></a>
 {%- endif %}
-    </ol>
-  </div>
+{%- if secs|length > 1 %}
+
+  <nav class="links-jump level-jump" id="proj-jump" aria-label="Jump to a section">
+{%- for id, name in secs %}<a href="#{{ id }}">{{ name }}</a>{% endfor %}</nav>
+{%- endif %}
+{%- if has_syl %}
 
   <section class="chapter" id="syllabus">
-    <h2><span class="num">§ 1</span>Syllabus</h2>
+    <h2>About the project</h2>
     <div class="syllabus-body">
 {{ syllabus_body_html|safe }}
     </div>
   </section>
+{%- endif %}
+{%- if has_ms %}
 
   <section class="chapter" id="milestones">
-    <h2><span class="num">§ 2</span>Milestones</h2>
+    <h2>Milestones</h2>
 {{ milestones_html|safe }}
   </section>
-
-  <section class="chapter" id="pyq">
-    <h2><span class="num">§ 3</span>Previous Year Questions</h2>
-    <table class="papers">
-      <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
-      <tbody>
-{%- if pyq %}
-{%- for row in pyq %}
-        <tr><td>{{ row.term }}</td><td>{% if row.paper_url %}<a href="{{ row.paper_url }}" target="_blank" rel="noopener">{{ row.paper_label }}</a>{% endif %}</td><td>{% if row.solutions_url %}<a href="{{ row.solutions_url }}" target="_blank" rel="noopener">{{ row.solutions_label }}</a>{% endif %}</td><td>{{ row.notes }}</td></tr>
-{%- endfor %}
-{%- else %}
-        <tr><td colspan="4" class="empty">No papers uploaded yet.</td></tr>
 {%- endif %}
-      </tbody>
-    </table>
-  </section>
+{%- if sessions %}
 
   <section class="chapter" id="sessions">
-    <h2><span class="num">§ 4</span>Project Sessions</h2>
-    <table class="papers">
-      <thead><tr><th>Term</th><th>Session playlist</th></tr></thead>
-      <tbody>
-{%- if sessions %}
+    <h2>Project sessions</h2>
+        <div class="res-group">
+          <ul class="res-grid">
 {%- for s in sessions %}
-        <tr><td>{{ s.term }}</td><td>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>{% else %}{{ s.label }}{% endif %}</td></tr>
+            <li class="res-card"{% if s.term %} title="{{ s.term }}"{% endif %}>{% if s.url %}<a class="res-main" href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>{% else %}<span class="res-main">{{ s.label }}</span>{% endif %}{% if s.term %}<p class="res-desc">{{ s.term }} term</p>{% endif %}</li>
 {%- endfor %}
-{%- else %}
-        <tr><td colspan="2" class="empty">No project-session playlists catalogued yet for this course.</td></tr>
-{%- endif %}
-      </tbody>
-    </table>
+          </ul>
+        </div>
   </section>
+{%- endif %}
 {%- if resources %}
 
   <section class="chapter" id="resources">
-    <h2><span class="num">§ 5</span>Resources</h2>
+    <h2>Resources</h2>
 {{ reslist(resources) }}
   </section>
 {%- endif %}
-</div>
+{%- if not secs %}
+
+  <p class="placeholder proj-empty">Details for this project have not been added yet. Check the course page on the IITM portal.</p>
+{%- endif %}
+</main>
 
 {% include "_colophon.j2" %}
 
 
+<script src="../assets/menu-data.js"></script>
+<script src="../assets/site.js"></script>
 <script src="../assets/theme.js"></script>
 </body>
 </html>

@@ -4,12 +4,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Research Project — The Companion</title>
-<link rel="stylesheet" href="../assets/theme.css?v=a714491e">
+<title>DA6006 Research Project | The Companion</title>
+<meta name="description" content="A supervised research project: problem framing, literature, method, results and a short paper.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Companion">
+<meta property="og:title" content="DA6006 Research Project">
+<meta property="og:description" content="A supervised research project: problem framing, literature, method, results and a short paper.">
+<meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/da6006.html">
+<meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/theme.css?v=19250950">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
     --paper:#f4efe6; --paper-2:#ebe4d5;
@@ -17,106 +28,355 @@
     --accent:#7a1e28; --accent-2:#b8642a;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--paper);color:var(--ink);
-    font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
+    font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
-  .wrap{max-width:820px;margin:0 auto;padding:0 28px}
 
-  header.top{border-bottom:1px solid var(--rule);padding:16px 0;font-family:'JetBrains Mono',monospace;
-    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2)}
-  header.top .row{display:flex;justify-content:space-between;align-items:center}
-  header.top a{color:var(--ink);border:none}
-  header.top a:hover{color:var(--accent)}
+  /* ---- app shell: sidebar is fixed to the viewport (always full height, top to bottom),
+     main content is simply offset by its width. This is decoupled on purpose so neither
+     column's length can create dead space next to the other.
+     (Note: this one stays plain CSS rather than Bootstrap's position/vh utilities, since
+     those ship as !important and would fight the mobile override in the media query below.) ---- */
+  .sidebar{position:fixed;top:0;left:0;width:var(--sb-w,300px);height:100vh;display:flex;flex-direction:column;overflow:hidden;
+    background:var(--paper-2);border-right:1px solid var(--rule);z-index:10}
+  .sb-top{flex:none;display:flex;flex-direction:column;gap:10px;padding:14px 16px 12px;max-height:62vh;overflow-y:auto;
+    border-bottom:1px solid var(--rule)}
+  .sb-head{display:flex;align-items:center;gap:12px;min-height:34px;padding-right:44px}   /* room on the right for the collapse button */
+  .sb-head .back-link{flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--rule);background:var(--paper);color:var(--ink-2);transition:color .15s,border-color .15s,background .15s}
+  .sb-head .back-link svg{width:15px;height:15px;transition:transform .15s}
+  .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
+  .sb-head .back-link:hover svg{transform:translateX(-2px)}
+  .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .sb-head .brand-code{font-family:'Spectral',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
-  .course-head{padding:38px 0 24px;border-bottom:1px solid var(--rule)}
-  .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:40px;
+  .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
+  .nav-item{cursor:pointer;user-select:none}
+  .sb-tabs .nav-item{padding:7px 13px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);
+    font:600 13px 'IBM Plex Sans',sans-serif;color:var(--ink);line-height:1.5;transition:background .15s,border-color .15s}
+  .sb-tabs .nav-item:hover{border-color:var(--accent)}
+  .sb-tabs .nav-item.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+
+  .sb-continue{display:block;width:100%;padding:9px 11px 10px;text-align:left;cursor:pointer;color:var(--ink);
+    border:1px solid var(--rule);border-radius:10px;background:var(--paper);transition:border-color .15s}
+  .sb-continue:hover{border-color:var(--accent)}
+  .sb-continue[hidden]{display:none}
+  .sc-k{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
+  .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
+  .sc-n{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-2)}
+
+  .sb-tools{display:flex;flex-direction:column;gap:8px}
+  .sb-tools[hidden]{display:none}
+  #lec-search{width:100%;box-sizing:border-box;padding:8px 10px 8px 31px;border:1px solid var(--rule);border-radius:8px;
+    background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='4.5'/%3E%3Cpath d='m10.5 10.5 3 3'/%3E%3C/svg%3E") 10px center/14px no-repeat;
+    color:var(--ink);font:500 13.5px 'IBM Plex Sans',sans-serif}
+  #lec-search:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .sb-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+  .sb-spacer{flex:1}
+  .sb-chip{padding:5px 11px;border:1px solid var(--rule);border-radius:999px;background:none;color:var(--ink-2);
+    font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+  .sb-chip:hover{border-color:var(--accent);color:var(--ink)}
+  .sb-chip[aria-pressed="true"]{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer}
+  .sb-link:hover{color:var(--accent)}
+  .sb-chip:focus-visible,.sb-link:focus-visible,.sb-continue:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .sb-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+  .sb-empty{margin:0;padding:18px 20px;font-size:13px;color:var(--ink-2)}
+  .sb-empty[hidden]{display:none}
+  .sb-bottom{flex:none;padding:4px 16px;border-top:1px solid var(--rule)}
+  /* short screens (phone held sideways): give the lecture list the room */
+  @media(max-height:560px){
+    .sb-top{gap:6px;padding:8px 12px}
+    .sb-head .brand-code{font-size:20px}
+    .sb-continue{display:none}
+    .sb-bottom{padding:6px 12px}
+  }
+  .sb-resize{position:absolute;top:0;right:0;width:6px;height:100%;cursor:col-resize;z-index:5;touch-action:none}
+  .sb-resize:hover,body.sb-dragging .sb-resize{background:var(--accent);opacity:.3}
+  body.sb-dragging{user-select:none;cursor:col-resize}
+  body.sb-dragging iframe{pointer-events:none}   /* an iframe under the pointer would swallow the drag */
+  body.sb-dragging .sidebar,body.sb-dragging .main-content,body.sb-dragging footer.colophon,body.sb-dragging .sidebar-toggle{transition:none}
+
+  /* Weekly lectures run on Bootstrap's real Accordion/Collapse component now (data-bs-toggle,
+     data-bs-parent, the .collapse/.show classes and its built-in expand animation) instead of
+     hand-rolled show/hide JS. These rules just strip Bootstrap's own accordion skin back down
+     to the paper theme so the look is unchanged. */
+  /* Bootstrap paints its own text and surface colours; point them at the theme variables so every theme reads. */
+  :root{--bs-body-color:var(--ink);--bs-body-bg:var(--paper);--bs-border-color:var(--rule);--bs-link-color:var(--accent)}
+  .accordion{--bs-accordion-color:var(--ink);--bs-accordion-bg:transparent;--bs-accordion-border-color:var(--rule);
+    --bs-accordion-btn-color:var(--ink-2);--bs-accordion-btn-bg:var(--paper-2);
+    --bs-accordion-active-color:var(--ink-2);--bs-accordion-active-bg:var(--paper-2)}
+  .accordion-item{background:transparent;border:none}
+  .week-group{border-top:1px solid var(--rule)}
+  .sb-scroll > .week-group:first-child{border-top:none}
+  .week-group.is-hid,.lecture-item.is-hid{display:none}
+  .week-title{position:relative;padding:9px 20px 7px;font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
+    border-bottom:1px solid var(--rule);cursor:pointer;box-shadow:none;border-radius:0;
+    display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none}
+  .week-title:hover{color:var(--ink)}
+  .week-title:focus{box-shadow:none}
+  .week-title:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+  /* Bootstrap's own :not(.collapsed) active-state rule outranks a plain .week-title rule on
+     specificity alone, so this needs the compound selector to actually win. */
+  .week-title.accordion-button:not(.collapsed){background:var(--paper-2);color:var(--ink-2);box-shadow:none}
+  .week-title.accordion-button::after{display:none}
+  .week-title .chev{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
+  .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
+  .accordion-body{padding:0}
+  /* the week heading fills from the left as you watch its lectures */
+  .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
+    background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
+  .week-title > span{position:relative;z-index:1}
+  .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
+  .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
+  .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
+  .lecture-item.active .ltitle{color:inherit}
+  .sidebar-theme.theme-slot{margin-right:0}
+  .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
+    cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
+    border-bottom:1px dotted var(--rule)}
+  .lecture-item:hover{background:var(--tint)}
+  .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
+  .lecture-item.active .lnum{color:var(--on-fill-2)}
+  .lnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);
+    flex-shrink:0;min-width:38px}
+
+  .main-content{margin-left:var(--sb-w,300px);padding:40px 56px 60px}
+  @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
+
+  /* ---- collapsible sidebar: body.sidebar-collapsed slides the sidebar off-screen and lets the
+     content take the full width. The toggle button is fixed so it is always reachable. ---- */
+  .sidebar{transition:transform .22s ease}
+  .main-content,footer.colophon{transition:margin-left .22s ease}
+  .sidebar-toggle{position:fixed;top:14px;left:calc(var(--sb-w,300px) - 46px);z-index:20;width:32px;height:32px;
+    display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
+    background:var(--paper-2);color:var(--ink-2);border:1px solid var(--rule);border-radius:50%;
+    transition:left .22s ease,background .15s ease,color .15s,border-color .15s,transform .15s}
+  .sidebar-toggle svg{width:16px;height:16px}
+  .sidebar-toggle:hover{background:var(--accent-fill);color:var(--on-fill);border-color:var(--accent-fill)}
+  .sidebar-toggle:active{transform:scale(.92)}
+  .sidebar-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
+  body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
+  body.sidebar-collapsed .sidebar-toggle{left:14px;background:var(--paper)}
+  body.sidebar-collapsed .main-content{padding-top:64px}
+
+  .panel{display:none}
+  .panel.active{display:block}
+
+  .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
+  .course-head .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:42px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
     }
   .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
-    color:var(--ink-2);max-width:60ch;margin:0}
-  .meta-line{margin-top:18px;padding-top:14px;border-top:1px dotted var(--rule);
-    display:flex;flex-wrap:wrap;gap:22px;font-family:'JetBrains Mono',monospace;
+    color:var(--ink-2);max-width:70ch;margin:0}
+  .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
+    display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+  .site-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;border-radius:999px;
+    background:var(--ink);color:var(--paper);border:1px solid var(--ink);text-decoration:none;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    transition:background .15s,border-color .15s,color .15s}
+  .site-btn:hover{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+  .site-btn svg{width:13px;height:13px}
+  .meta-line span{margin:0}
   .meta-line b{color:var(--ink);font-weight:500}
 
-  .toc{margin:28px 0 40px;background:var(--paper-2);padding:18px 22px;
-    border:1px solid var(--rule)}
-  .toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
-  .toc ol{list-style:none;padding:0;margin:0;column-count:2;column-gap:30px}
-  .toc li{padding:5px 0;font-family:'Spectral',serif;font-size:15px;
-    display:flex;justify-content:space-between;align-items:baseline;
-    border-bottom:1px dotted var(--rule)}
-  .toc a{color:var(--ink);border:none}
-  .toc a:hover{color:var(--accent)}
-  .toc .p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
-  @media(max-width:640px){ .toc ol{column-count:1} .course-head h1{font-size:30px} }
-
-  section.chapter{margin:44px 0}
+  section.chapter{margin:26px 0}
+  section.chapter:first-of-type{margin-top:0}
   section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
-    letter-spacing:-0.01em;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--rule);
+    letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
-  section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
-    color:var(--accent);letter-spacing:.2em;font-weight:500}
+  section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:.14em;font-weight:500}
 
-  .syllabus-body{font-family:'Spectral',serif;font-size:17px;line-height:1.7;max-width:62ch}
-  .syllabus-body p{margin:0 0 14px}
+  .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
+  .syllabus-body p{margin:0 0 8px}
+  #panel-syllabus .link-list li{padding:2px 0}
+  #panel-syllabus section.chapter{margin:20px 0}
+  #panel-syllabus .tbd-note{margin:0}
 
-  ul.dates{list-style:none;padding:0;margin:0}
-  ul.dates li{display:flex;align-items:baseline;padding:8px 0;
+  ul.dates{list-style:none;padding:0;margin:0;max-width:640px}
+  ul.dates li{display:flex;align-items:baseline;padding:6px 0;
     border-bottom:1px dotted var(--rule);font-size:15px}
   ul.dates li .what{flex:1}
-  ul.dates li .when{font-family:'JetBrains Mono',monospace;font-size:12px;
+  ul.dates li .when{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--ink-2);letter-spacing:.05em}
   ul.dates li .marker{width:8px;height:8px;border-radius:50%;background:var(--accent);
     margin-right:12px;flex-shrink:0}
   ul.dates li.exam .marker{background:var(--accent-2)}
   ul.dates li.exam .what{font-weight:600}
 
-  table.papers{width:100%;border-collapse:collapse;font-size:14px}
-  table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
-    font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
+  table.papers{width:100%;max-width:900px;border-collapse:collapse;font-size:14px}
+  table.papers th{text-align:left;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
     padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
   table.papers td{padding:10px;border-bottom:1px dotted var(--rule);vertical-align:baseline}
-  table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
+  table.papers td:first-child{font-family:'IBM Plex Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
   table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
-  .week{padding:18px 0;border-bottom:1px solid var(--rule)}
-  .week:last-child{border-bottom:none}
-  .week summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px}
-  .week summary::-webkit-details-marker{display:none}
-  .week .wnum{font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:.15em;color:var(--accent);min-width:60px}
-  .week .wtitle{font-family:'Spectral',serif;font-size:19px;font-weight:600;flex:1;
-    letter-spacing:-0.005em}
-  .week .wicon{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-2);
-    transition:transform .15s}
-  .week[open] .wicon{transform:rotate(45deg);color:var(--accent)}
-  .week .body{padding:16px 0 4px 76px}
-  @media(max-width:640px){ .week .body{padding-left:0} }
-
-  .tabs{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-bottom:16px}
-  .tabs button{background:none;border:none;padding:8px 14px 10px;cursor:pointer;
-    font:12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--ink-2);border-bottom:2px solid transparent;margin-bottom:-1px}
-  .tabs button.active{color:var(--accent);border-color:var(--accent)}
-  .tab-panel{display:none}
-  .tab-panel.active{display:block}
-  .video{position:relative;padding-top:56.25%;background:#111;overflow:hidden;
-    border:1px solid var(--rule)}
+  /* 16:9 box that never grows taller than the screen: width is capped by the content width,
+     by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
+     (The old padding-top trick took its % from the container, not the video, so it went too
+     tall once the content area was wider than 1000px, e.g. with the sidebar collapsed.) */
+  .video{position:relative;width:min(100%,1200px,calc((100vh - 210px)*16/9));min-width:min(100%,480px);
+    aspect-ratio:16/9;background:#111;overflow:hidden;border:1px solid var(--rule)}
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .link-list{margin:0;padding:0;list-style:none}
   .link-list li{padding:6px 0;font-size:15px}
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
-  .placeholder{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
+  /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
+     loading-skeleton component (a solid gray bar) */
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
+  /* Live sessions: collapsible video indexes */
+  details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
+  details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
+  details.sess summary::-webkit-details-marker{display:none}
+  details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
+  details.sess[open] summary::before{transform:rotate(90deg)}
+  .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch::after{content:" \2197"}
+  ul.topics{list-style:none;margin:0;padding:0}
+  ul.topics li{border-bottom:1px dotted var(--rule)}
+  ul.topics li:last-child{border-bottom:none}
+  ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
+  ul.topics a:hover{background:var(--tint)}
+  .tp-time{flex:none;width:64px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-label{flex:1;font-size:15px}
+  .tp-end{flex:none;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
+  @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
+  /* Resources: grouped cards */
+  /* resources: small cards of one size in a tidy grid. Long descriptions stop at two lines
+     (the full text is in the tooltip and is still read by screen readers), so rows stay even. */
+  .res-group{margin-top:22px}
+  .res-group:first-of-type{margin-top:6px}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
+  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;padding:8px 12px 8px;background:var(--paper-2);
+    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
+    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:7px;right:9px;font-size:12px;color:var(--accent-2)}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:15px;line-height:1.3;color:var(--ink);border:none;padding-right:14px;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  .res-main::after{content:"";position:absolute;inset:0}
+  .res-main:hover{color:var(--accent)}
+  .res-main:focus-visible{outline:none}
+  .res-card:has(.res-main:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+  .res-desc{margin:0;color:var(--ink-2);font-size:13px;line-height:1.4;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+  .res-foot{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin-top:auto;padding-top:3px;min-width:0}
+  .res-host{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2);letter-spacing:.02em;
+    max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-by{color:var(--ink-2);font-size:12px;font-style:italic;min-width:0}
+  .res-foot .res-by{position:relative;z-index:1;max-width:100%;padding-right:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-badge{flex:none;margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:0 6px;
+    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
+  @media(max-width:640px){ .res-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))} }
+  .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
+  .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
+  .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
+    color:var(--ink-2);background:var(--paper-2)}
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
+  .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+    max-width:1000px}
+  .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
+  .current-actions a{font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase}
+
+  /* lecture stage: a small title line, the video taking all the room that fits on screen, then Previous / Next */
+  /* while a lecture is open, trim the page padding so the video can be as large as the screen allows */
+  body:has(#panel-lecture.active) .main-content,
+  body:has(#panel-lecture.active).sidebar-collapsed .main-content{padding:14px 24px}
+  body:has(#panel-lecture.active).sidebar-collapsed .lec-id{padding-left:46px}
+  .lec-stage{width:min(100%,calc((100vh - 112px)*16/9))}
+  @media(max-width:820px){
+    body:has(#panel-lecture.active) .main-content,
+    body:has(#panel-lecture.active).sidebar-collapsed .main-content{padding:64px 12px 24px}
+    body:has(#panel-lecture.active).sidebar-collapsed .lec-id{padding-left:0}
+    .lec-stage{width:min(100%,calc((100vh - 150px)*16/9))}
+  }
+  .lec-stage .video{width:100%;min-width:0}
+  .lec-id{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px;margin-bottom:6px}
+  .lec-id .current-eyebrow{margin:0;font-size:11.5px}
+  .lec-id .current-title{margin:0;font-size:16px}
+  .lec-nav{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
+  .lec-nav button,.rs-go{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:0 14px 0 11px;border:1px solid var(--rule);
+    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;white-space:nowrap;
+    transition:border-color .15s,background .15s,transform .1s,filter .15s}
+  .lec-nav button svg,.m-step svg,.rs-go svg{width:15px;height:15px;flex:none;transition:transform .15s}
+  .lec-nav .ls-n{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;opacity:.8}
+  .lec-nav .ls-next .ls-n{opacity:1}
+  .lec-nav button:hover:not([disabled]){border-color:var(--accent)}
+  .lec-nav button:active:not([disabled]){transform:scale(.97)}
+  .lec-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .lec-nav button[disabled]{opacity:.35;cursor:default;border-style:dashed}
+  .lec-nav #lec-prev:hover:not([disabled]) svg{transform:translateX(-3px)}
+  .lec-nav .ls-next,.rs-go{padding:0 11px 0 14px;background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+  .lec-nav .ls-next:hover:not([disabled]),.rs-go:hover{border-color:var(--accent-fill);filter:brightness(1.1)}
+  .lec-nav .ls-next:hover:not([disabled]) svg,.rs-go:hover svg{transform:translateX(3px)}
+  .rs-go:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  /* slide link sits on the title line, pushed to the right */
+  .lec-id .current-actions{margin-left:auto;gap:8px}
+  .lec-id .current-actions:empty{display:none}
+  .lec-id .current-actions a{display:inline-flex;align-items:center;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;
+    background:var(--paper-2);color:var(--accent);font-size:11.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
+  .lec-id .current-actions a:hover{border-color:var(--accent);background:var(--tint)}
+  .lec-id .current-actions .tbd-note{font-size:12px;color:var(--ink-2)}
+  .m-step{display:none}
+
+  /* watched ticks and the resume card */
+  .lecture-item .ltitle{flex:1;min-width:0;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+  .lcheck{flex:none;align-self:center;margin:-6px -10px -6px 0;padding:6px 10px;border:0;background:none;cursor:pointer;color:inherit;line-height:0}
+  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.85;
+    transition:background .12s,border-color .12s,opacity .12s}
+  .lcheck:hover::before{opacity:1;border-color:var(--accent)}
+  .lcheck:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
+  .lecture-item.done .lcheck::before{opacity:1;border-color:var(--accent);background:var(--accent)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3.5 8.5 3 3 6-6.5'/%3E%3C/svg%3E") center/11px no-repeat}
+  .lecture-item.active .lcheck::before{border-color:var(--on-fill)}
+  .lecture-item.active.done .lcheck::before{background-color:var(--on-fill);border-color:var(--on-fill)}
+  .lec-nav .ls-done{padding:0 13px 0 11px}
+  .lec-nav .ls-done.is-done{border-color:var(--accent);color:var(--accent);background:var(--tint)}
+  @media(max-width:520px){ .lec-nav .ls-done .lbl{display:none} .lec-nav .ls-done{padding:0 11px} }
+  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:0 0 26px;padding:14px 18px;
+    border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
+  .resume[hidden]{display:none}
+  .rs-text{flex:1 1 280px;min-width:0}
+  .rs-k{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .rs-t{margin:3px 0 9px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
+  .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
+  .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
+  .rs-reset{margin-left:10px;padding:0;border:0;background:none;color:var(--ink-2);font:inherit;text-decoration:underline;cursor:pointer}
+  .rs-reset:hover{color:var(--accent)}
+
+  footer.colophon{margin-left:var(--sb-w,300px)}
   /* ---- page footer ---- */
-  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'Inter',sans-serif;font-style:normal}
+  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'IBM Plex Sans',sans-serif;font-style:normal}
   footer.colophon .co-in{max-width:900px;margin:0 auto;padding:22px 28px 30px}
   footer.colophon .co-note{display:flex;align-items:flex-start;gap:12px;margin:0 0 20px;padding:12px 16px;
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
@@ -125,101 +385,186 @@
     background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
   footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
-  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:0 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
-  footer.colophon .co-nav a{color:var(--ink-2);border:none}
+  footer.colophon .co-nav a{display:inline-block;padding:7px 0;color:var(--ink-2);border:none}
+  footer.colophon .theme-foot{margin-top:14px}
   footer.colophon .co-nav a:hover{color:var(--accent)}
-  footer.colophon .co-in{max-width:820px}
-  .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .res-group{margin-top:22px}
-  .res-group:first-of-type{margin-top:6px}
-  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
-    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
-  .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
-  .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
-  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
-    border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
-    transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
-  .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
-  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
-  .res-main::after{content:"";position:absolute;inset:0}
-  .res-main:hover{color:var(--accent)}
-  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
-  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
-  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
-  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
-  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
-    border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
-  .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
-  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  footer.colophon .co-in{max-width:none;padding-left:56px;padding-right:56px}
+  @media(max-width:900px){ footer.colophon .co-in{padding-left:28px;padding-right:28px} }
+
+  /* ---- phones and small tablets: the sidebar becomes a slide-in drawer opened from a slim top bar,
+     so the course content is the first thing you see instead of a tall menu block ---- */
+  .m-bar,.m-scrim{display:none}
+  @media(max-width:430px){ .m-code{display:none} }
+  @media(max-width:820px){
+    .sidebar-toggle{display:none}
+    .m-bar{display:flex;align-items:center;gap:10px;position:fixed;top:0;left:0;right:0;height:54px;padding:0 12px;
+      background:var(--paper);border-bottom:1px solid var(--rule);z-index:20}
+    .m-menu{display:flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--rule);
+      border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
+    .m-menu svg{width:16px;height:16px}
+    .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
+    .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
+      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
+    .m-step[hidden]{display:none}
+    .m-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .m-here{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;
+      font-size:12.5px;color:var(--ink-2)}
+    .sidebar,body.sidebar-collapsed .sidebar{display:flex;position:fixed;top:0;left:0;bottom:0;width:min(88vw,340px);
+      height:100%;max-height:none;z-index:40;transform:translateX(-104%);visibility:hidden;
+      transition:transform .22s ease,visibility .22s}
+    body.nav-open .sidebar,body.nav-open.sidebar-collapsed .sidebar{transform:none;visibility:visible;
+      box-shadow:0 0 40px rgba(0,0,0,.28)}
+    .m-scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:30;opacity:0;pointer-events:none;
+      display:block;transition:opacity .22s ease}
+    body.nav-open .m-scrim{opacity:1;pointer-events:auto}
+    body.nav-open{overflow:hidden}
+    .main-content,body.sidebar-collapsed .main-content{margin-left:0;padding:74px 18px 40px}
+    footer.colophon,body.sidebar-collapsed footer.colophon{margin-left:0}
+    footer.colophon .co-in{padding-left:18px;padding-right:18px}
+    .course-head h1{font-size:28px}
+    .course-head .kicker{letter-spacing:.14em}
+    .sb-resize{display:none}
+    .sb-tabs .nav-item{padding:10px 15px;font-size:14px}
+    #lec-search{font-size:16px;padding-top:11px;padding-bottom:11px}
+    .sb-chip,.sb-link{padding-top:9px;padding-bottom:9px}
+    .week-title{padding-top:14px;padding-bottom:12px}
+    .lecture-item{padding-top:11px;padding-bottom:11px}
+  }
+  /* project pages: a link back to the main course */
+  .parent-link{display:inline-block;margin:4px 0 6px;padding:6px 12px;border:1px solid var(--rule);border-radius:14px;line-height:1.45;
+    background:var(--paper-2);color:var(--ink-2);font-size:13.5px}
+  .parent-link b{color:var(--ink);font-weight:600}
+  .parent-link::after{content:"\2192";color:var(--accent);margin-left:6px}
+  .parent-link:hover{border-color:var(--accent)}
+  .sb-tabs .nav-item[hidden]{display:none}
+  .sb-bottom{margin-top:auto}   /* keep the theme dots at the foot of the sidebar even when there is no lecture list */
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<script>
+  // Restore the sidebar state before first paint so the page doesn't flash open then shut.
+  try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
+  try { var w = parseInt(localStorage.getItem('companion-sb-w'), 10); if (w >= 240 && w <= 520) document.documentElement.style.setProperty('--sb-w', w + 'px'); } catch (e) {}
+</script>
+<button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="true" aria-label="Hide sidebar" title="Hide sidebar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
 
-<header class="top">
-  <div class="wrap row">
-    <div><a href="../courses.html">← All courses</a></div>
-    <div>PG Diploma · DA6006</div>
-  </div>
-</header>
+<div class="m-bar">
+  <button type="button" class="m-menu" id="m-menu" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg>Menu</button>
+  <span class="m-code">DA6006</span>
+  <span class="m-here" id="m-here">Dashboard</span>
+  <button type="button" class="m-step" id="m-next" hidden></button>
+</div>
+<div class="m-scrim" id="m-scrim"></div>
 
-<div class="wrap">
-
-  <div class="course-head">
-    <div class="kicker">DA6006 · PG Diploma · 4 credits</div>
-    <h1>Research Project</h1>
-    <p class="standfirst">A supervised research project — problem framing, literature, method, results and a short paper.</p>
-    <div class="meta-line">
-      <span><b>Instructor</b> to be listed</span>
-      <span><b>Term</b> As offered</span>
-      <span><b>Prereq</b> instructor consent</span>
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="sb-top">
+      <div class="sb-head">
+        <a class="back-link" href="../courses.html" aria-label="All courses" title="All courses"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg></a>
+        <span class="brand-code">DA6006</span>
+      </div>
+      <div class="sb-tabs">
+        <button type="button" class="nav-item active" id="nav-dashboard" aria-current="page">Dashboard</button>
+        <button type="button" class="nav-item" id="nav-syllabus">Syllabus</button>
+      </div>
+      <button type="button" class="sb-continue" id="sb-continue" hidden>
+        <span class="sc-k" id="sc-k"></span>
+        <span class="sc-t" id="sc-t"></span>
+        <span class="sc-bar"><i id="sc-fill"></i></span>
+        <span class="sc-n" id="sc-n"></span>
+      </button>
+      <div class="sb-tools" id="sb-tools" hidden>
+        <input type="search" id="lec-search" placeholder="Find a session" aria-label="Find a session" autocomplete="off">
+        <div class="sb-row">
+          <button type="button" class="sb-chip" id="f-unwatched" aria-pressed="false" title="Show only the sessions you have not watched">Unwatched</button>
+          <span class="sb-spacer"></span>
+          <button type="button" class="sb-link" id="wk-expand">Expand all</button>
+          <button type="button" class="sb-link" id="wk-collapse">Collapse all</button>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="toc">
-    <div class="toc-title">In this chapter</div>
-    <ol>
-      <li><a href="#syllabus">Syllabus</a><span class="p">§ 1</span></li>
-      <li><a href="#milestones">Milestones</a><span class="p">§ 2</span></li>
-      <li><a href="#pyq">Previous Year Questions</a><span class="p">§ 3</span></li>
-      <li><a href="#sessions">Project Sessions</a><span class="p">§ 4</span></li>
-    </ol>
-  </div>
+    <div class="sb-scroll accordion accordion-flush" id="lecture-nav" style="display:none"></div>
+    <p class="sb-empty" id="sb-empty" hidden>No sessions match.</p>
 
-  <section class="chapter" id="syllabus">
-    <h2><span class="num">§ 1</span>Syllabus</h2>
-    <div class="syllabus-body">
-<p class="placeholder">Syllabus not yet transcribed. Contributions welcome.</p>
+    <div class="sb-bottom"><div id="theme-slot" class="sidebar-theme" data-collapsible="sidebar"></div></div>
+    <div class="sb-resize" id="sb-resize" aria-hidden="true" title="Drag to resize. Double-click to reset."></div>
+  </nav>
+
+  <main class="main-content" id="main" tabindex="-1">
+
+    <section class="panel active" id="panel-dashboard">
+
+      <div class="course-head">
+        <div class="kicker">DA6006 · PG Diploma · 4 credits</div>
+        <h1>Research Project</h1>
+        <p class="standfirst">A supervised research project: problem framing, literature, method, results and a short paper.</p>
+        <div class="meta-line">
+          <span><b>Instructor</b> to be listed</span>
+          <span><b>Term</b> As offered</span>
+          <span><b>Prereq</b> instructor consent</span>
+        </div>
+      </div>
+
+      <div class="resume" id="resume" hidden>
+        <div class="rs-text">
+          <div class="rs-k" id="rs-k">Your progress</div>
+          <div class="rs-t" id="rs-title"></div>
+          <div class="rs-bar"><span id="rs-fill"></span></div>
+          <div class="rs-n"><span id="rs-n"></span><button type="button" class="rs-reset" id="rs-reset" hidden>Reset</button></div>
+        </div>
+        <button type="button" class="rs-go" id="rs-go"></button>
+      </div>
+
+      <section class="chapter" id="resources">
+        <h2><span class="num" aria-hidden="true">§ 1</span>Resources</h2>
+        <p class="tbd-note">No resources located yet for this project.</p>
+      </section>
+
+    </section>
+
+    <section class="panel" id="panel-syllabus">
+
+      <div class="course-head">
+        <div class="kicker">DA6006 · PG Diploma · 4 credits</div>
+        <h1>Syllabus</h1>
+        <p class="standfirst">The project brief and faculty, transcribed from the official IITM course page.</p>
+      </div>
+
+      <section class="chapter" id="syllabus-about">
+        <h2><span class="num" aria-hidden="true">§ 1</span>About the project</h2>
+        <div class="syllabus-body">
+<p class="tbd-note">Syllabus not yet transcribed. Contributions welcome.</p>
       <p><a href="https://study.iitm.ac.in/ds/course_pages/BSDA6006.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
-    </div>
-  </section>
+        </div>
+      </section>
 
-  <section class="chapter" id="milestones">
-    <h2><span class="num">§ 2</span>Milestones</h2>
-<p class="placeholder">Milestone dates and submission deadlines not yet added.</p>
-  </section>
+    </section>
 
-  <section class="chapter" id="pyq">
-    <h2><span class="num">§ 3</span>Previous Year Questions</h2>
-    <table class="papers">
-      <thead><tr><th>Term</th><th>Paper</th><th>Solutions</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td colspan="4" class="empty">No papers uploaded yet.</td></tr>
-      </tbody>
-    </table>
-  </section>
+    <section class="panel" id="panel-lecture">
+      <div class="lec-stage">
+        <div class="lec-id">
+          <div class="current-eyebrow" id="current-eyebrow"></div>
+          <h1 class="current-title" id="current-title"></h1>
+          <div class="current-actions" id="current-actions"></div>
+        </div>
+        <div class="video" id="video-box">
+          <iframe id="video-frame" title="Session video" src="" allowfullscreen loading="lazy"></iframe>
+          <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet. Try the slide link above.</div>
+        </div>
+        <div class="lec-nav">
+          <button type="button" id="lec-prev"></button>
+          <button type="button" id="lec-done" class="ls-done" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.2 3.2L13 4.8"/></svg><span class="lbl">Mark watched</span></button>
+          <button type="button" id="lec-next" class="ls-next"></button>
+        </div>
+      </div>
+    </section>
 
-  <section class="chapter" id="sessions">
-    <h2><span class="num">§ 4</span>Project Sessions</h2>
-    <table class="papers">
-      <thead><tr><th>Term</th><th>Session playlist</th></tr></thead>
-      <tbody>
-        <tr><td colspan="2" class="empty">No project-session playlists catalogued yet for this course.</td></tr>
-      </tbody>
-    </table>
-  </section>
+  </main>
 </div>
 
 <footer class="colophon">
@@ -227,12 +572,16 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-name">The Companion</span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../contributors.html">Contributors</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../contributors.html">Contributors</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../updates.html">Updates</a></nav>
     </div>
+    <div class="theme-foot" id="theme-foot"></div>
   </div>
 </footer>
 
-
-<script src="../assets/theme.js?v=8e860dc4"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/term-syllabus.js?v=ae229617"></script>
+<script>window.COURSE = {code: "DA6006", weeks: [], item: "session"};</script>
+<script src="../assets/course.js?v=38e9cc52"></script>
+<script src="../assets/theme.js?v=f608d0e2"></script>
 </body>
 </html>
