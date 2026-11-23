@@ -197,6 +197,8 @@ function saveProg(){ try { localStorage.setItem(PKEY, JSON.stringify(prog)); } c
 try {
   const R = JSON.parse(localStorage.getItem('companion-recent') || '[]'), cc = window.COURSE.code;
   localStorage.setItem('companion-recent', JSON.stringify([cc].concat((Array.isArray(R) ? R : []).filter(x => x !== cc)).slice(0, 6)));
+  const H = JSON.parse(localStorage.getItem('companion-home-hide') || '[]');   // opening a course brings it back to the home page
+  if (Array.isArray(H) && H.indexOf(cc) !== -1) localStorage.setItem('companion-home-hide', JSON.stringify(H.filter(x => x !== cc)));
 } catch (e) {}
 // previous / next lecture, across weeks
 const FLAT = [];
