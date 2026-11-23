@@ -117,133 +117,276 @@
  },
  "weeks_data": [
   {
-   "w": "Week 1",
+   "w": "Lectures",
    "items": [
     {
      "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Introduction and Overview",
+     "v": "hfJ3bw4FTE8",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 2",
-   "items": [
+    },
     {
      "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Finite Automata (FA) / Finite State machine (FSM)",
+     "v": "S7a5NUZyYhM",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 3",
-   "items": [
+    },
     {
      "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Deterministic and Non-deterministic Finite Automata (NFA)",
+     "v": "mtRwB8hL8Fc",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 4",
-   "items": [
+    },
     {
      "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Equivalence of DFA and NFA: Theorem and Algorithm",
+     "v": "psUXw0wbJzI",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 5",
-   "items": [
+    },
     {
      "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Equivalence of DFA and NFA: Working with Examples",
+     "v": "kh9MVTSWOyw",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 6",
-   "items": [
+    },
     {
      "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Grammars & Languages",
+     "v": "w1ZwNkM06qA",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 7",
-   "items": [
+    },
     {
      "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Recognizers and Regular Languages",
+     "v": "RrrSLzLcBFc",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 8",
-   "items": [
+    },
     {
      "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Closure Properties of Regular Languages",
+     "v": "Unoss3BQbBs",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 9",
-   "items": [
+    },
     {
      "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Regular Expressions (Regex or RE)",
+     "v": "NTE9eRZ4EaY",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 10",
-   "items": [
+    },
     {
      "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Equivalence of Finite Automata and Regex",
+     "v": "tT5i8mEHA3c",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 11",
-   "items": [
+    },
     {
      "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Finite Automata to Regex by State Elimination",
+     "v": "Zl1sdeqbebI",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 12",
-   "items": [
+    },
     {
      "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Pumping Lemma: Properties of Regular Languages: 1",
+     "v": "XptwDnMdn9k",
+     "s": null
+    },
+    {
+     "n": "13",
+     "t": "Pumping Lemma: Properties of Regular Languages: 2",
+     "v": "0jlpxwsAKB4",
+     "s": null
+    },
+    {
+     "n": "14",
+     "t": "Characterization of DFAs",
+     "v": "kyWNh583M9A",
+     "s": null
+    },
+    {
+     "n": "15",
+     "t": "Minimization of DFAs",
+     "v": "GxU9Ge6OlUE",
+     "s": null
+    },
+    {
+     "n": "16",
+     "t": "Context Free Grammars and Languages (CFG & CFL)",
+     "v": "owGoSE5l8Hc",
+     "s": null
+    },
+    {
+     "n": "17",
+     "t": "Parse Trees",
+     "v": "mjT01VpDyho",
+     "s": null
+    },
+    {
+     "n": "18",
+     "t": "Ambiguity of CFGs and CFLs",
+     "v": "X7sS2wmKshQ",
+     "s": null
+    },
+    {
+     "n": "19",
+     "t": "Simplification of CFGs and Normal Forms",
+     "v": "Fa99vpcYEjw",
+     "s": null
+    },
+    {
+     "n": "20",
+     "t": "Operations on CFGs and Closures",
+     "v": "hF6CvT0plyk",
+     "s": null
+    },
+    {
+     "n": "21",
+     "t": "PDA - Motivation",
+     "v": "J4NA8P9X2eo",
+     "s": null
+    },
+    {
+     "n": "22",
+     "t": "PDA - Definition",
+     "v": "ja3BNKZqDR4",
+     "s": null
+    },
+    {
+     "n": "23",
+     "t": "Acceptance & Non-determinism",
+     "v": "M4wcKh18CEQ",
+     "s": null
+    },
+    {
+     "n": "24",
+     "t": "PDA - CFG2PDA",
+     "v": "NsIopKNxuvQ",
+     "s": null
+    },
+    {
+     "n": "25",
+     "t": "PDA - PDA2CFG",
+     "v": "dIrvb5TqAY8",
+     "s": null
+    },
+    {
+     "n": "26",
+     "t": "Pumping Lemma for CFLs",
+     "v": "AgXOSovgZyE",
+     "s": null
+    },
+    {
+     "n": "27",
+     "t": "Decidability of CFLs",
+     "v": "4vPhLru_sMc",
+     "s": null
+    },
+    {
+     "n": "28",
+     "t": "Context Sensitive Grammars and Languages (CSG & CSL)",
+     "v": "F7RTI1OWkas",
+     "s": null
+    },
+    {
+     "n": "29",
+     "t": "Undecidability",
+     "v": "ssrENJhbIyI",
+     "s": null
+    },
+    {
+     "n": "30",
+     "t": "Turing Machine",
+     "v": "rNks1nKTIvg",
+     "s": null
+    },
+    {
+     "n": "31",
+     "t": "Variants of Turing Machines (Part 1)",
+     "v": "Of9uhFX2mfc",
+     "s": null
+    },
+    {
+     "n": "32",
+     "t": "Variants of Turing Machine (Part 2)",
+     "v": "VcB6k9SGN4s",
+     "s": null
+    },
+    {
+     "n": "33",
+     "t": "Variants of Turing Machine (Part 3)",
+     "v": "Be1ZJOkFK-Q",
+     "s": null
+    },
+    {
+     "n": "34",
+     "t": "Problem Solving using Variants of Turing Machine",
+     "v": "4Bx6QL8FPjY",
+     "s": null
+    },
+    {
+     "n": "35",
+     "t": "Turing Equivalent Non-Turing Computational Models",
+     "v": "Mcis4EfG-bU",
+     "s": null
+    },
+    {
+     "n": "36",
+     "t": "Universal Turing Machine & Church-Turing Thesis",
+     "v": "pV7Y7d7CG_c",
+     "s": null
+    },
+    {
+     "n": "37",
+     "t": "Linear Bounded Automata",
+     "v": "KjkQyGJJFqA",
+     "s": null
+    },
+    {
+     "n": "38",
+     "t": "Recursive & Recursively Enumerable Languages",
+     "v": "oN3pBJgMfpI",
+     "s": null
+    },
+    {
+     "n": "39",
+     "t": "Decidable and Undecidable Problems",
+     "v": "mb-35pND3iA",
+     "s": null
+    },
+    {
+     "n": "40",
+     "t": "Post Correspondence Problem (PCP) & Modified PCP (MPCP)",
+     "v": "RHn4Da2YWTo",
+     "s": null
+    },
+    {
+     "n": "41",
+     "t": "Foundations of Reduction",
+     "v": "fsgowhmOvc0",
+     "s": null
+    },
+    {
+     "n": "42",
+     "t": "Undecidable Turing Machine Problems",
+     "v": "8E9QNIwZniw",
+     "s": null
+    },
+    {
+     "n": "43",
+     "t": "PCP & MPCP Equivalence and Undecidability",
+     "v": "lq9nVW5aq_c",
+     "s": null
+    },
+    {
+     "n": "44",
+     "t": "Rice’s Theorem",
+     "v": "8K0njPRNFLo",
+     "s": null
+    },
+    {
+     "n": "45",
+     "t": "Compendium of Reductions for Undecidable Problems",
+     "v": "BePZnIKHx9U",
      "s": null
     }
    ]

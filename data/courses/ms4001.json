@@ -422,6 +422,116 @@
      "s": null
     }
    ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
+    {
+     "n": "9.1",
+     "t": "Logistics and Distribution Management - Introduction and Concepts",
+     "v": "kKTHRW_ucig",
+     "s": null
+    },
+    {
+     "n": "9.2",
+     "t": "Logistics and Distribution Management - Performance and Relationship",
+     "v": "p3-JiamZALw",
+     "s": null
+    },
+    {
+     "n": "9.3",
+     "t": "Logistics and Distribution Management - Mode Selection",
+     "v": "JQCdCw55pss",
+     "s": null
+    },
+    {
+     "n": "9.4",
+     "t": "Logistics and Distribution Management - Travelling Salesman Problem",
+     "v": "5YnJnQ4DJW8",
+     "s": null
+    },
+    {
+     "n": "9.5",
+     "t": "Logistics and Distribution Management - Vehicle Routing Problem",
+     "v": "o5HH7KPlFus",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
+    {
+     "n": "10.1",
+     "t": "Digitization, Digitalization and Digital Transformation",
+     "v": "AlrEK4_NEn8",
+     "s": null
+    },
+    {
+     "n": "10.2",
+     "t": "Digitalization in Manufacturing Industry",
+     "v": "nd3w_0YgGEo",
+     "s": null
+    },
+    {
+     "n": "10.3",
+     "t": "Industry 4.0 in Product Management",
+     "v": "Wu6mADEtCv0",
+     "s": null
+    },
+    {
+     "n": "10.4",
+     "t": "Simulation and ERP - An Introduction",
+     "v": "EKqYxlVYoas",
+     "s": null
+    },
+    {
+     "n": "10.5",
+     "t": "Digital Twins - Concepts and principles",
+     "v": "4B7geeh6KxQ",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
+    {
+     "n": "11.1",
+     "t": "Pricing",
+     "v": "k2QzWV7cDAg",
+     "s": null
+    },
+    {
+     "n": "11.2",
+     "t": "Capacity Allocation",
+     "v": "dTmAtlh1_fc",
+     "s": null
+    },
+    {
+     "n": "11.3",
+     "t": "Littlewood's approximation",
+     "v": "4MkSLp9HwMw",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
+    {
+     "n": "12.1",
+     "t": "AI in Manufacturing - Part 1",
+     "v": "gxn263lzgkI",
+     "s": null
+    },
+    {
+     "n": "12.2",
+     "t": "AI in Manufacturing - Part 2",
+     "v": "q5W01ofAvGo",
+     "s": null
+    }
+   ]
   }
  ]
 }

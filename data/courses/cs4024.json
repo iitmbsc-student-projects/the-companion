@@ -118,8 +118,20 @@
    "items": [
     {
      "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Functions of a computer network",
+     "v": "5c0bnGCDFaw",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Demo: bottlenecks within the internet infrastructure",
+     "v": "kCW571j7LUQ",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Resource sharing within a network: network architecture and switching",
+     "v": "YiY9_PqYIUs",
      "s": null
     }
    ]
@@ -128,119 +140,194 @@
    "w": "Week 2",
    "items": [
     {
-     "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 3",
-   "items": [
-    {
-     "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
-     "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 4",
-   "items": [
-    {
      "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Circuit switching",
+     "v": "bqOUDdgbCYA",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 5",
-   "items": [
+    },
     {
      "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Packet switching",
+     "v": "DLILyFWdU_g",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 6",
-   "items": [
+    },
     {
      "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Layering & protocols",
+     "v": "FlQ1wbppyiU",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 7",
-   "items": [
+    },
     {
      "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Key concepts in packet and network communication",
+     "v": "kH6NGd-nz30",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 8",
-   "items": [
+    },
     {
      "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Network performance metrics: delay components and Little’s law",
+     "v": "kClw1Sm905w",
      "s": null
     }
    ]
   },
   {
-   "w": "Week 9",
+   "w": "Later lectures",
    "items": [
     {
      "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "User Datagram Protocol",
+     "v": "qurBAfFR8iw",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 10",
-   "items": [
+    },
     {
      "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "UDP: Error Detection",
+     "v": "qzpzD-8fw6M",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 11",
-   "items": [
+    },
     {
      "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Transport Layer & TCP",
+     "v": "TcBk0wi2Duo",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 12",
-   "items": [
+    },
     {
      "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Achieving Reliability at Transport layer",
+     "v": "_aUUfC5AoRc",
+     "s": null
+    },
+    {
+     "n": "13",
+     "t": "Sliding Window Protocol (Go-Back-N)",
+     "v": "KZtnOujhPVk",
+     "s": null
+    },
+    {
+     "n": "14",
+     "t": "TCP Selective Repeat and In-Order Data Delivery",
+     "v": "gD4fI5DteW0",
+     "s": null
+    },
+    {
+     "n": "15",
+     "t": "TCP Flow Control: Matching Sender and Receiver Speeds",
+     "v": "ssObS7uBXsM",
+     "s": null
+    },
+    {
+     "n": "16",
+     "t": "TCP Congestion Control",
+     "v": "O_RY8JN97Qs",
+     "s": null
+    },
+    {
+     "n": "17",
+     "t": "TCP Congestion Control: Slow Start and Congestion Avoidance",
+     "v": "AKMxB_eFjhs",
+     "s": null
+    },
+    {
+     "n": "18",
+     "t": "Two TCP Congestion Control Algorithms: NewReno vs BBR",
+     "v": "xzrAZblkKA4",
+     "s": null
+    },
+    {
+     "n": "19",
+     "t": "TCP Congestion Control: Detecting Packet Loss & Fast Retransmit Strategies",
+     "v": "CYI9IV4DK_M",
+     "s": null
+    },
+    {
+     "n": "20",
+     "t": "TCP Congestion Control: AIMD, Efficiency, Fairness, and Jain’s Fairness Index",
+     "v": "VIcwVL1mRus",
+     "s": null
+    },
+    {
+     "n": "21",
+     "t": "Hands-On Network Packet Analysis: Lecture 1",
+     "v": "LosxwfTPdek",
+     "s": null
+    },
+    {
+     "n": "22",
+     "t": "Hands-On Network Packet Analysis: Lecture 2",
+     "v": "n5DilmHr6FM",
+     "s": null
+    },
+    {
+     "n": "23",
+     "t": "Hands-On Network Packet Analysis: Lecture 3",
+     "v": "7CJjPdiI8I0",
+     "s": null
+    },
+    {
+     "n": "24",
+     "t": "Network Layer: IPv4 Addressing, CIDR and Subnet Masks",
+     "v": "PAtQHRkQZEs",
+     "s": null
+    },
+    {
+     "n": "25",
+     "t": "Network Layer: Network Address Translation (NAT) Protocol",
+     "v": "Zl9tI866_1k",
+     "s": null
+    },
+    {
+     "n": "26",
+     "t": "Network Layer: IPv4 Datagram Format, ICMP ping and traceroute",
+     "v": "qoVZltcrKqA",
+     "s": null
+    },
+    {
+     "n": "27",
+     "t": "Network Layer: Routing Protocols Overview",
+     "v": "kLE_VzFV8ug",
+     "s": null
+    },
+    {
+     "n": "28",
+     "t": "Network Layer: Link State Routing Protocols",
+     "v": "Q_5Jv789Yf8",
+     "s": null
+    },
+    {
+     "n": "29",
+     "t": "Network Layer: Distance Vector Routing Protocols",
+     "v": "dXp4m5eySlk",
+     "s": null
+    },
+    {
+     "n": "30",
+     "t": "Hands-On Demo: Dijkstra Algorithm",
+     "v": "4YHqIrxFZHw",
+     "s": null
+    },
+    {
+     "n": "31",
+     "t": "Network Layer: Routers, Route Lookups, Switching Fabric, Routing and LPM",
+     "v": "O617YuuketY",
+     "s": null
+    },
+    {
+     "n": "32",
+     "t": "Hands-On Socket Programming: Lecture 1",
+     "v": "Czl5U8OMeZQ",
+     "s": null
+    },
+    {
+     "n": "33",
+     "t": "Hands-On Socket Programming: Lecture 2",
+     "v": "XwyPXDld924",
+     "s": null
+    },
+    {
+     "n": "34",
+     "t": "Hands-On: Building a Simple HTTP Web Server Using TCP Sockets",
+     "v": "iU3C_FZd7QM",
      "s": null
     }
    ]
