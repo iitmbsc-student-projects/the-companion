@@ -50,6 +50,14 @@
    "desc": "Notes shared by students. Shared on MauryaHub.",
    "by": "Ashish Maurya and other students",
    "added": "2026-11-23"
+  },
+  {
+   "label": "Deep Learning Practice notes (PDF)",
+   "url": "https://github.com/Risdorn/Learning-Archive/blob/main/IITM-Programming-Data-Science/Deep%20Learning%20Practice/Deep-Learning-Practice.pdf",
+   "group": "Notes",
+   "desc": "A student's full course notes, written in LaTeX.",
+   "by": "Rishabh Indoria",
+   "by_url": "https://github.com/Risdorn"
   }
  ],
  "resources_note": "",

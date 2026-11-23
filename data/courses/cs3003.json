@@ -66,6 +66,14 @@
    "desc": "Notes, e-books, visual guides and solved Quiz 1 and Quiz 2 PYQs. Shared on MauryaHub.",
    "by": "Ashish Maurya and other students",
    "added": "2026-11-23"
+  },
+  {
+   "label": "AI Search Methods notes (PDF)",
+   "url": "https://github.com/Risdorn/Learning-Archive/blob/main/IITM-Programming-Data-Science/AI%20Search%20Methods/Artificial_Intelligence.pdf",
+   "group": "Notes",
+   "desc": "A student's full course notes, written in LaTeX.",
+   "by": "Rishabh Indoria",
+   "by_url": "https://github.com/Risdorn"
   }
  ],
  "resources_note": "",

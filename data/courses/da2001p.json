@@ -77,7 +77,7 @@
  "resources": [
   {
    "label": "DL & GenAI project course site",
-   "url": "https://jimmi-kr.github.io/Deep-Learning-GenAI-Project/",
+   "url": "https://bsc-iitm.github.io/Deep-Learning-GenAI-Project/",
    "group": "Project help",
    "desc": "Registration, milestones, grading, viva and FAQ for the project.",
    "by": "Jimmi (instructor)",

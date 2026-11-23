@@ -60,6 +60,14 @@
    "added": "2026-11-23"
   },
   {
+   "label": "Deep Learning notes (PDF)",
+   "url": "https://github.com/Risdorn/Learning-Archive/blob/main/IITM-Programming-Data-Science/Deep%20Learning/Deep_Learning.pdf",
+   "group": "Notes",
+   "desc": "A student's full course notes, written in LaTeX.",
+   "by": "Rishabh Indoria",
+   "by_url": "https://github.com/Risdorn"
+  },
+  {
    "label": "MauryaHub course videos",
    "url": "https://mauryahub.onrender.com/course/20",
    "group": "Video solutions",

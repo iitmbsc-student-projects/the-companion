@@ -67,6 +67,14 @@
    "desc": "What the instructor and TA live sessions covered, week by week."
   },
   {
+   "label": "Python Companion",
+   "url": "https://bsc-iitm.github.io/python/",
+   "group": "Course material",
+   "desc": "Practice assignments, OPPE help, how-tos and FAQs for the course.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
+  },
+  {
    "label": "Course notes",
    "url": "https://www.iitmbsdegree.in/notes/python",
    "desc": "Notes and study material for this course.",

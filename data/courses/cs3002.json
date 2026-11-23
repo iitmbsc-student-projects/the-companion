@@ -60,6 +60,14 @@
    "added": "2026-11-23"
   },
   {
+   "label": "Software Testing notes (PDF)",
+   "url": "https://github.com/Risdorn/Learning-Archive/blob/main/IITM-Programming-Data-Science/Software%20Testing/Software_Testing.pdf",
+   "group": "Notes",
+   "desc": "A student's full course notes, written in LaTeX.",
+   "by": "Rishabh Indoria",
+   "by_url": "https://github.com/Risdorn"
+  },
+  {
    "label": "MauryaHub course videos",
    "url": "https://mauryahub.onrender.com/course/25",
    "group": "Video solutions",
