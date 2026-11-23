@@ -25,22 +25,26 @@
 
   /* continue where you left off: remembered in this browser only */
   var sec = document.getElementById('hm-resume'), grid = document.getElementById('hm-resume-list');
-  function render() {
-    if (!sec || !grid) return;
-    var recent = get('companion-recent', []), codes = [];
+  function candidates() {
+    var recent = get('companion-recent', []), hide = get('companion-home-hide', []), codes = [];
     if (!Array.isArray(recent)) recent = [];
-    recent.forEach(function (c) { if (C[c] && codes.indexOf(c) < 0) codes.push(c); });
+    if (!Array.isArray(hide)) hide = [];
+    recent.forEach(function (c) { if (C[c] && codes.indexOf(c) < 0 && hide.indexOf(c) < 0) codes.push(c); });
     try {
       for (var i = 0; i < localStorage.length; i++) {
         var k = localStorage.key(i);
         if (k && k.indexOf('companion-progress-') === 0) {
           var c = k.slice('companion-progress-'.length);
           var p = get(k, null);
-          if (C[c] && p && p.done && Object.keys(p.done).length && codes.indexOf(c) < 0) codes.push(c);
+          if (C[c] && p && p.done && Object.keys(p.done).length && codes.indexOf(c) < 0 && hide.indexOf(c) < 0) codes.push(c);
         }
       }
     } catch (e) {}
-    codes = codes.slice(0, 3);
+    return codes;
+  }
+  function render() {
+    if (!sec || !grid) return;
+    var codes = candidates().slice(0, 3);
     grid.textContent = '';
     codes.forEach(function (code) {
       var c = C[code], p = get('companion-progress-' + code, null);
@@ -66,9 +70,17 @@
     sec.hidden = codes.length === 0;
   }
   render();
+  /* "Clear list" hides every course in it from this page; watched ticks on the course pages are not touched,
+     and opening a course again brings it back */
   var clr = document.getElementById('hm-forget');
   if (clr) clr.addEventListener('click', function () {
-    try { localStorage.removeItem('companion-recent'); } catch (e) {}
+    var hide = get('companion-home-hide', []);
+    if (!Array.isArray(hide)) hide = [];
+    candidates().forEach(function (c) { if (hide.indexOf(c) < 0) hide.push(c); });
+    try {
+      localStorage.setItem('companion-home-hide', JSON.stringify(hide));
+      localStorage.removeItem('companion-recent');
+    } catch (e) {}
     render();
   });
 

@@ -42,7 +42,7 @@
   <section class="hm-resume" id="hm-resume" aria-labelledby="hm-resume-h" hidden>
     <div class="hm-head">
       <h2 class="hm-h" id="hm-resume-h">Continue where you left off</h2>
-      <button type="button" class="hm-quiet" id="hm-forget" title="Kept only in this browser">Forget recent</button>
+      <button type="button" class="hm-quiet" id="hm-forget" title="Hides these here. Your watched ticks stay on the course pages.">Clear list</button>
     </div>
     <div class="hm-rc-grid" id="hm-resume-list"></div>
   </section>
