@@ -86,8 +86,8 @@ def _login_badge(r):
 
 env.filters.update(group_resources=_group_resources, host=_host, login_badge=_login_badge)
 
-TPL = {"lecture": env.get_template("lecture.html.j2"),
-       "project": env.get_template("project.html.j2")}
+TPL = {"lecture": env.get_template("lecture.html.j2")}
+PLACEHOLDER_LECTURE = "No lecture linked yet"
 
 SECTION_MAP = {
     "Foundation": "foundation",
@@ -159,6 +159,11 @@ def render_course(data):
         if os.path.exists(data_path(stem)) and stem != data["stem"]:
             pd = load(stem)
             data["parent"] = {"stem": stem, "code": pd["code"], "title": pd["title"]}
+    else:
+        # a course whose lecture list is only "No lecture linked yet" rows shows no list until real lectures are added
+        items = [it for w in data.get("weeks_data") or [] for it in w.get("items", [])]
+        if items and all(it.get("t") == PLACEHOLDER_LECTURE and not (it.get("v") or it.get("dv") or it.get("s")) for it in items):
+            data = dict(data, weeks_data=[], hide_lectures=True)
     return stamp_assets(tpl.render(**data) + "\n")
 
 

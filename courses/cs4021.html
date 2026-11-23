@@ -477,7 +477,7 @@
         <span class="sc-bar"><i id="sc-fill"></i></span>
         <span class="sc-n" id="sc-n"></span>
       </button>
-      <div class="sb-tools" id="sb-tools">
+      <div class="sb-tools" id="sb-tools" hidden>
         <input type="search" id="lec-search" placeholder="Find a lecture" aria-label="Find a lecture" autocomplete="off">
         <div class="sb-row">
           <button type="button" class="sb-chip" id="f-unwatched" aria-pressed="false" title="Show only the lectures you have not watched">Unwatched</button>
@@ -488,7 +488,7 @@
       </div>
     </div>
 
-    <div class="sb-scroll accordion accordion-flush" id="lecture-nav"></div>
+    <div class="sb-scroll accordion accordion-flush" id="lecture-nav" style="display:none"></div>
     <p class="sb-empty" id="sb-empty" hidden>No lectures match.</p>
 
     <div class="sb-bottom"><div id="theme-slot" class="sidebar-theme" data-collapsible="sidebar"></div></div>
@@ -654,7 +654,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
-<script>window.COURSE = {code: "CS4021", weeks: [{"w":"Week 1","items":[{"n":"1","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 2","items":[{"n":"2","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 3","items":[{"n":"3","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 4","items":[{"n":"4","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 5","items":[{"n":"5","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 6","items":[{"n":"6","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 7","items":[{"n":"7","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 8","items":[{"n":"8","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 9","items":[{"n":"9","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 10","items":[{"n":"10","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 11","items":[{"n":"11","t":"No lecture linked yet","v":null,"s":null}]},{"w":"Week 12","items":[{"n":"12","t":"No lecture linked yet","v":null,"s":null}]}], item: "lecture"};</script>
+<script>window.COURSE = {code: "CS4021", weeks: [], item: "lecture"};</script>
 <script src="../assets/course.js?v=38e9cc52"></script>
 <script src="../assets/theme.js?v=f608d0e2"></script>
 </body>
