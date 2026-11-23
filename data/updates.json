@@ -5,10 +5,12 @@
   {
    "date": "2026-11-23",
    "kind": "site",
-   "title": "Lectures for 11 more electives",
-   "text": "Industry 4.0 (weeks 1 to 8), Computer Systems Design, Privacy & Security in Online Social Media, App Development Lab, Advanced Algorithms, Introduction to NLP, Data Science and AI Lab, MLOps, Mathematical Thinking, Linear Statistical Models and Market Research now list their lectures from the official IITM BS playlists.",
+   "title": "Lectures for 13 more electives",
+   "text": "Industry 4.0, Theory of Computation, Computer Networks, Computer Systems Design, Privacy & Security in Online Social Media, App Development Lab, Advanced Algorithms, Introduction to NLP, Data Science and AI Lab, MLOps, Mathematical Thinking, Linear Statistical Models and Market Research now list their lectures from the official IITM BS playlists.",
    "courses": [
     "ms4001",
+    "cs3021",
+    "cs4024",
     "cs3031",
     "cs4003",
     "cs4010",
