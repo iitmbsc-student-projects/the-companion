@@ -14,6 +14,11 @@
  "pyq": [],
  "sessions": [
   {
+   "term": "23T1",
+   "url": "https://www.youtube.com/playlist?list=PLAhdwKzwjRu1O021beNh6d5rWleA3L7uZ",
+   "label": "MAD I Jan 2023 Project Sessions"
+  },
+  {
    "term": "24T1",
    "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu1BzXUWL_Gtx4lYjhgoa5ed&si=Li7yVhLyfNSQ7Qii",
    "label": "MAD I Jan 2024 Project Sessions"
@@ -42,6 +47,21 @@
    "term": "25T3",
    "url": "https://youtube.com/playlist?list=PLAhdwKzwjRu3mzNqBDtxctv1OlgqFGkaT&si=GmKtiSfVerYGVBOB",
    "label": "MAD I Sept 2025 Project Sessions"
+  },
+  {
+   "term": "26T1",
+   "url": "https://www.youtube.com/playlist?list=PLAhdwKzwjRu0-bx2Ij4YTHCstr_5Qxsh8",
+   "label": "MAD I Jan 2026 Project Sessions"
+  },
+  {
+   "term": "26T2",
+   "url": "https://www.youtube.com/playlist?list=PLAhdwKzwjRu37eacuD87ocIiwBl7jY-Vr",
+   "label": "MAD I May 2026 Project Sessions"
+  },
+  {
+   "term": "26T3",
+   "url": "https://www.youtube.com/playlist?list=PLVZ72_p9d-Pw",
+   "label": "MAD I Sept 2026 Project Sessions"
   }
  ],
  "resources": [
@@ -69,6 +89,141 @@
   }
  ],
  "weeks_data": [
+  {
+   "w": "Sep 2026 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "hL7ictgd3Ag",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "RvbucfOZg6g",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "TU41UVIm9Z8",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "kuOpCQ-78pg",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "4qvRZejwljI",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "l_-zaqyx0Qo",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "May 2026 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "owB94EVoWL8",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "bDrLmNgpHWg",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "xAefZoKQ_8c",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "F05tMZGqO0Y",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "V5G09tNORvU",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "WqfzrX7aBxU",
+     "s": null
+    },
+    {
+     "n": "7",
+     "t": "Session 7",
+     "v": "U0NLhXnIGME",
+     "s": null
+    },
+    {
+     "n": "8",
+     "t": "Session 8",
+     "v": "BebO7tulGas",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2026 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Orientation",
+     "v": "qTTeM9kaug4",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "63pmyv2AsEw",
+     "s": null
+    },
+    {
+     "n": "3",
+     "t": "Session 3",
+     "v": "Ix5AtsRm6qg",
+     "s": null
+    },
+    {
+     "n": "4",
+     "t": "Session 4",
+     "v": "1S_ig4KXNJY",
+     "s": null
+    },
+    {
+     "n": "5",
+     "t": "Session 5",
+     "v": "84xsxeM76g0",
+     "s": null
+    },
+    {
+     "n": "6",
+     "t": "Session 6",
+     "v": "01vHRtE2NSE",
+     "s": null
+    }
+   ]
+  },
   {
    "w": "Sep 2025 term",
    "items": [
@@ -377,6 +532,23 @@
      "n": "11",
      "t": "Session 11",
      "v": "7ALQKRF59W4",
+     "s": null
+    }
+   ]
+  },
+  {
+   "w": "Jan 2023 term",
+   "items": [
+    {
+     "n": "1",
+     "t": "Session 1",
+     "v": "BbMysuTLEw0",
+     "s": null
+    },
+    {
+     "n": "2",
+     "t": "Session 2",
+     "v": "2IgrSv1oSwc",
      "s": null
     }
    ]
