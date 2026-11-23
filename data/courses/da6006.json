@@ -5,10 +5,44 @@
  "title": "Research Project",
  "program": "PG Diploma",
  "credits": 4,
- "standfirst": "A supervised research project: problem framing, literature, method, results and a short paper.",
+ "standfirst": "An elective in the PG Diploma in AI and ML. IITM has not published a syllabus for it yet.",
  "instructor": "to be listed",
  "term": "As offered",
- "prereq": "instructor consent",
- "syllabus_body_html": "<p class=\"placeholder\">Syllabus not yet transcribed. Contributions welcome.</p>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA6006.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
- "weeks_data": []
+ "prereq": "PG Diploma upgrade",
+ "syllabus_body_html": "<p>Research Project (DA6006) is one of the elective courses in the PG Diploma in AI and ML, worth 4 credits. The official course page says it is coming soon, and no syllabus has been published yet.</p>\n      <p><b>Who can take it:</b> students who have upgraded to the PG Diploma. The upgrade needs a CGPA of 8.0 when you apply, and PG Diploma credits can only be earned after you finish the BS (142 credits).</p>\n      <p><b>Where it fits:</b> the PG Diploma is 20 credits, made of 3 core courses (MLOps, Generative AI, Algorithms for Data Science) and 2 electives. The list of electives can change each term.</p>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA6006.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "weeks_data": [],
+ "resources": [
+  {
+   "label": "PG Diploma and MTech upgrade path",
+   "url": "https://docs.google.com/document/d/e/2PACX-1vRrtiiHlurfHtFnJnDwtNZ0NHAci8PQ7pHsiX3V3SZKmbSmALDk4whCO5La6efs4MSmBLVTH2ZfGJNL/pub",
+   "group": "Official documents",
+   "desc": "Eligibility, course list, electives, fees and FAQ for the upgrade.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub"
+  },
+  {
+   "label": "PGD and MTech introduction meeting",
+   "url": "https://www.youtube.com/watch?v=_Y3RBxlAe-0",
+   "group": "Official documents",
+   "desc": "Recorded session introducing the PG Diploma and MTech upgrade.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub"
+  },
+  {
+   "label": "Online PG Diploma or MTech after the BS",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-pg-diploma-mtech-online",
+   "group": "Guides",
+   "desc": "Who can opt in and when, and where to find the official documents.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "Is the PG Diploma or MTech upgrade worth it?",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-pgd-mtech-worth-it",
+   "group": "Guides",
+   "desc": "Costs, what the handbook recommends, and the upgrade against a campus MTech.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  }
+ ]
 }
