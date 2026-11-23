@@ -262,6 +262,12 @@
   .ht-n{margin-top:auto;padding-top:10px;font-size:13px;font-weight:500;color:var(--accent)}
   .ht-n::after{content:"\2192";display:inline-block;margin-left:6px;transition:transform .18s ease}
   .hm-tile:hover .ht-n::after{transform:translateX(4px)}
+  .hm-share{margin-top:44px;display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;
+    padding:20px 24px;background:var(--tint);border-left:3px solid var(--accent);border-radius:4px}
+  .hm-share .hs-text{flex:1 1 360px;min-width:0}
+  .hm-share p{margin:4px 0 0;font-size:14.5px;color:var(--ink-2);max-width:60ch}
+  .hm-share .cta-row{margin-top:0}
+  body.searching .hm-share{display:none}
   .hm-levels{display:none}
   body.searching .hm-levels{display:block}
   body.searching .hm-tiles{display:none}

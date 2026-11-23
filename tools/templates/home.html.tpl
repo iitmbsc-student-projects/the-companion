@@ -79,6 +79,8 @@
     </div>
   </section>
 
+{{SHARE}}
+
   <section class="hm-levels" aria-label="Search results">
     <div class="hm-level-grid">
 {{LEVELS}}

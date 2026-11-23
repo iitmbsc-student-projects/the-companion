@@ -658,6 +658,18 @@ def _date_label(a, b):
     return "%d %s to %d %s" % (d1.day, mon(d1), d2.day, mon(d2))
 
 
+def _home_share():
+    """Slim 'Share a resource' band for the home page, from the first card in data/contributors.json."""
+    esc = html_lib.escape
+    cd = json.load(open(CONTRIB_PATH, encoding="utf-8"))["contribute"]["cards"][0]
+    acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
+    if cd.get("url2"):
+        mail = cd["url2"].startswith("mailto:")
+        acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else " &#8599;")
+    return ('  <section class="hm-share" aria-labelledby="hm-share-h">\n    <div class="hs-text"><h2 class="hm-h" id="hm-share-h">%s</h2><p>%s</p></div>\n'
+            '    <div class="cta-row">%s</div>\n  </section>' % (esc(cd["title"]), esc(cd["text"]), acts))
+
+
 def generate_home():
     """index.html: search, upcoming dates, what's new and the course list by level.
     The course list is read from courses.html, the dates from data/dates.json."""
@@ -710,6 +722,7 @@ def generate_home():
     page = (tpl.replace("{{TOPBAR}}", topbar).replace("{{COURSE_COUNT}}", str(len(home)))
             .replace("{{TERM}}", esc(dates["term"])).replace("{{DATES}}", "\n".join(drows))
             .replace("{{DATES_SRC}}", esc(dates["source"])).replace("{{LEVELS}}", "\n".join(cards)).replace("{{TILES}}", "\n".join(tiles)).replace("{{QUICK}}", quick_html)
+            .replace("{{SHARE}}", _home_share())
             .replace("{{FOOTNAV}}", _footer_nav("home"))
             .replace("{{HOME_DATA}}", json.dumps(home, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")))
     open(INDEX_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
