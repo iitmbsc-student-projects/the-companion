@@ -62,21 +62,20 @@
     <!-- updates:end -->
   </div>
 
-  <section class="hm-levels" aria-labelledby="hm-levels-h">
+  <section class="hm-tiles" aria-labelledby="hm-levels-h">
     <div class="hm-head">
-      <h2 class="hm-h" id="hm-levels-h">Courses by level</h2>
-      <a class="hm-quiet" href="courses.html">Open the full list</a>
+      <h2 class="hm-h" id="hm-levels-h">Browse by level</h2>
+      <a class="hm-quiet" href="courses.html">All courses</a>
     </div>
-    <div class="hm-level-grid">
-{{LEVELS}}
+    <div class="hm-tile-grid">
+{{TILES}}
     </div>
   </section>
 
-  <section class="hm-tools" aria-label="More">
-    <a class="tool-card" href="links.html"><span class="lc-title">Important links</span><span class="lc-sub">Handbook, calendar, score checker</span></a>
-    <a class="tool-card" href="calculator.html"><span class="lc-title">Grade calculator</span><span class="lc-sub">Work out your final course score</span></a>
-    <a class="tool-card" href="scam-alert.html"><span class="lc-title">Scam alert</span><span class="lc-sub">Fake internship offers to watch out for</span></a>
-    <a class="tool-card" href="contributors.html"><span class="lc-title">Contributors</span><span class="lc-sub">The people behind the notes and resources</span></a>
+  <section class="hm-levels" aria-label="Search results">
+    <div class="hm-level-grid">
+{{LEVELS}}
+    </div>
   </section>
 </main>
 
