@@ -9,7 +9,7 @@
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
@@ -39,7 +39,7 @@
   .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
   .sb-head .back-link:hover svg{transform:translateX(-2px)}
   .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sb-head .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
+  .sb-head .brand-code{font-family:'Spectral',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
   .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
   .nav-item{cursor:pointer;user-select:none}
@@ -53,7 +53,7 @@
   .sb-continue:hover{border-color:var(--accent)}
   .sb-continue[hidden]{display:none}
   .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .sc-t{display:block;margin:2px 0 7px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;line-height:1.3;
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
   .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
@@ -128,7 +128,7 @@
   .lecture-item.novid .ltitle{opacity:.62}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
-    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
   .lecture-item:hover{background:var(--tint)}
   .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
@@ -162,10 +162,10 @@
   .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
   .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:42px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
-    font-variation-settings:"opsz" 144}
-  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+    }
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
     color:var(--ink-2);max-width:70ch;margin:0}
   .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
     display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'JetBrains Mono',monospace;
@@ -181,13 +181,13 @@
 
   section.chapter{margin:26px 0}
   section.chapter:first-of-type{margin-top:0}
-  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:16px;line-height:1.55;max-width:70ch}
+  .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
   #panel-syllabus section.chapter{margin:20px 0}
@@ -212,7 +212,7 @@
   table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
-  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
   /* 16:9 box that never grows taller than the screen: width is capped by the content width,
      by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
@@ -226,14 +226,14 @@
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
-  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
   /* Live sessions: collapsible video indexes */
   details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
   details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
   details.sess summary::-webkit-details-marker{display:none}
   details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
   details.sess[open] summary::before{transform:rotate(90deg)}
-  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
   .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
   .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
   .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
@@ -263,7 +263,7 @@
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
   .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
   .res-main::after{content:"";position:absolute;inset:0}
   .res-main:hover{color:var(--accent)}
   .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
@@ -278,11 +278,11 @@
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
   .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
-  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+  .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
   .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
@@ -347,7 +347,7 @@
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
   .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .rs-t{margin:3px 0 9px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-t{margin:3px 0 9px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
   .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
@@ -362,9 +362,9 @@
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
     font-size:13.5px;line-height:1.55;color:var(--ink-2)}
   footer.colophon .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
-    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Fraunces',serif}
+    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
-  footer.colophon .co-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--ink)}
+  footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
   footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
   footer.colophon .co-nav a{color:var(--ink-2);border:none}
@@ -384,7 +384,7 @@
       border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .m-code{font-family:'Fraunces',serif;font-weight:700;font-size:16px;flex:none}
+    .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
     .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
       border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-step[hidden]{display:none}
@@ -610,7 +610,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=6b763595"></script>
 <script>window.COURSE = {code: "DA5003", weeks: [{"w":"Week 1","items":[{"n":"1","t":"Introduction to Algorithms for Data Science","v":"BSQs_6sQDWY","s":"https://drive.google.com/file/d/1HHla-zpop83vUHW5cjQnTPFoyNGEIxn8/view?usp=sharing"},{"n":"2","t":"Concentration Inequalities: Markov\u0027s Inequality","v":"4QP6xNM_17k","s":null},{"n":"3","t":"Concentration Inequalities: Chebyshev\u0027s Inequality","v":"wII0SwgzDJQ","s":null},{"n":"4","t":"Concentration Inequalities: Hoeffding\u0027s Inequality","v":"lsYovAtX0QA","s":null},{"n":"5","t":"Useful Inequalities in Probability","v":"aiLiqtksdm8","s":null},{"n":"6","t":"Johnson-Lindenstrauss Lemma: Introduction","v":"QNmBund3UXk","s":null},{"n":"7","t":"JL Lemma, Part-1, No Isometry Exists","v":"stxUeOzB-wY","s":null},{"n":"8","t":"JL Lemma, Part-2, Approximate Isometry","v":"Ihm-1PWi3y0","s":null},{"n":"9","t":"JL Lemma, Part-3, Goodness of Estimate","v":"e49ryFUmy3M","s":null}]},{"w":"Week 2","items":[{"n":"10","t":"JL Lemma, Part-4, Towards the Final Bound","v":"ZSbDqEFC1tk","s":"https://drive.google.com/file/d/1vma54E6Oka93DxWKhi30kWur0iLc1_oo/view?usp=sharing"},{"n":"11","t":"JL Lemma, Part-5, Final Bound","v":"HCvbAWlF124","s":null},{"n":"12","t":"JL Lemma: Linear Algebra Interpretation","v":"R_W-QXUPiY8","s":null}]},{"w":"Week 3","items":[{"n":"13","t":"Approximate Nearest Neighbours","v":"X1wZsCJtVvQ","s":"https://drive.google.com/file/d/1Ol50Uzk9kTwxrdaHUWOCZUAPnUj4gHad/view?usp=sharing"},{"n":"14","t":"Locality Sensitive Hashing: Introduction","v":"ye1x8bm0tlY","s":null},{"n":"15","t":"LSH: Hash Family","v":"vkYeeKT202g","s":null},{"n":"16","t":"LSH: Collision Analysis","v":"xhhPPJ2MJ6Q","s":null},{"n":"17","t":"LSH: True Positive Rate and False Positive Rate","v":"SeZgJkCT7ls","s":null},{"n":"18","t":"LSH: Reducing FPR with \"AND\"","v":"rSxunqQg0lY","s":null},{"n":"19","t":"LSH: Increasing TPR with \"OR\"","v":"ZbHGrG7NY64","s":null},{"n":"20","t":"LSH: Summary and Analysis","v":"heQv6xZ_xQI","s":null}]},{"w":"Week 4","items":[{"n":"21","t":"SVD: Recap and Applications","v":"oouveJlZn74","s":"https://drive.google.com/file/d/1xlsy8KFjVZ7rx1kowTLAqtUKcucm8XHf/view?usp=sharing"},{"n":"22","t":"From Naive SVD to Fast SVD","v":"TlKYUfjoivs","s":null},{"n":"23","t":"Randomized SVD: Part-1","v":"JYxW1xT-SyU","s":null},{"n":"24","t":"Randomized SVD: Part-2","v":"Og3M1u3j7Wg","s":null},{"n":"25","t":"Randomized SVD: Part-3","v":"tr5m5w3uaf8","s":null}]},{"w":"Week 5","items":[{"n":"26","t":"Clustering: Recap","v":"p1i3wxizHBs","s":"https://drive.google.com/file/d/1Lhu_QDP1xM6rp4O4whow24VbmLExKF8v/view?usp=sharing"},{"n":"27","t":"Spectral Clustering: Graph Cuts","v":"TCEQ11UQixs","s":null},{"n":"28","t":"Spectral Clustering: MinCut","v":"vx3jmm6NVWg","s":null}]},{"w":"Week 6","items":[{"n":"29","t":"Spectral Clustering: Algorithm","v":"upJIsWzuTY8","s":"https://drive.google.com/file/d/1cGG3shf3e8aHEmsT5v5hHMar4Pt-e3Dr/view?usp=sharing"},{"n":"30","t":"Spectral Clustering at Scale: Spectral Sparsification, Part-1","v":"7GzE3XFm_mk","s":null},{"n":"31","t":"Spectral Clustering at Scale: Spectral Sparsification, Part-2","v":"pqxuszhHVD8","s":null},{"n":"32","t":"Spectral Clustering at Scale: Summary","v":"ZlTHIH-rQSY","s":null}]},{"w":"Week 7","items":[{"n":"33","t":"Statistical Learning Theory: Underlying Distribution","v":"2hluBDWak7Q","s":"https://drive.google.com/file/d/1nKjjanoA7mWLEYuzbBfSRzSb1iBRScII/view?usp=sharing"},{"n":"34","t":"Statistical Learning Theory: Test Error and Bayes Classifier","v":"pAveo7_p0m8","s":null},{"n":"35","t":"Statistical Learning Theory: Error Decomposition","v":"dh_vcG0EAjI","s":null}]},{"w":"Week 8","items":[{"n":"36","t":"Statistical Learning Theory: Generalization Error, Sample Complexity, Part-1","v":"y9hNEdtvOVQ","s":"https://drive.google.com/file/d/1nKjjanoA7mWLEYuzbBfSRzSb1iBRScII/view"},{"n":"37","t":"Statistical Learning Theory: Generalization Error, Sample Complexity, Part-2","v":"uSHzwGELaxI","s":null}]},{"w":"Week 9","items":[{"n":"38","t":"Infinite Hypothesis Classes and Labelings","v":"FzlJ25QeWBE","s":"https://drive.google.com/file/d/1d6hpJ9r6-WFoxnwFLGwWkuKXIQoV3RJx/view?usp=sharing"},{"n":"39","t":"VC Dimension - Introduction","v":"B95QdcDePH4","s":null},{"n":"40","t":"VC Dimension - Axis Parallel Rectangles Hypothesis Class","v":"fpGpeTe2HTU","s":null},{"n":"41","t":"Finite VC Dimension and Uniform Convergence","v":"N9xxJPUv8Gc","s":null},{"n":"42","t":"VC Dimension - Linear Hypothesis Class","v":"4xNBR2uJ0fI","s":null}]},{"w":"Week 10","items":[{"n":"43","t":"Generalization Error - Recap","v":"SbU6x3oym_o","s":"https://drive.google.com/file/d/1i0r3zln3uoU15WZM5aDjs4dFet-7egVn/view?usp=sharing"},{"n":"44","t":"Estimation Error and ERM","v":"9pkoGZYBGFk","s":null},{"n":"45","t":"Approximation Error and SRM","v":"i3OGT2oOAqg","s":null},{"n":"46","t":"Sample Compression","v":"rhc5nTaVKmE","s":null}]},{"w":"Week 11","items":[{"n":"47","t":"Data Privacy","v":"etOgdDVr3mk","s":"https://drive.google.com/file/d/1rbhvWmAqi9S2phX_22FqwoaPlIXCOPLy/view?usp=sharing"},{"n":"48","t":"Differential Privacy","v":"cBU6545k-v0","s":null}]},{"w":"Week 12","items":[{"n":"49","t":"Approximate Differential Privacy","v":"G_pn8G09-KI","s":"https://drive.google.com/file/d/1zkLnE8z1eYZo4oKyaFedIy2-7itz4Tdt/view?usp=sharing"},{"n":"50","t":"Exponential Mechanism","v":"Ir_wOyCFohs","s":null}]}]};</script>
-<script src="../assets/course.js?v=2022f9cb"></script>
+<script src="../assets/course.js?v=09436d74"></script>
 <script src="../assets/theme.js?v=8e860dc4"></script>
 </body>
 </html>

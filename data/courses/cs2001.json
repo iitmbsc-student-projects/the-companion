@@ -31,6 +31,12 @@
    "by": "Preethy Parthasarathy"
   },
   {
+   "label": "Quiz Space question papers",
+   "url": "https://quizspacee.com/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM."
+  },
+  {
    "label": "DBMS notes",
    "url": "https://medium.com/@prathambhalla7/iit-madras-diploma-in-programming-database-management-system-dbms-notes-cbb75181361a",
    "group": "Notes",

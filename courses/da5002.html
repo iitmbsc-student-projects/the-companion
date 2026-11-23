@@ -9,7 +9,7 @@
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
@@ -39,7 +39,7 @@
   .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
   .sb-head .back-link:hover svg{transform:translateX(-2px)}
   .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sb-head .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
+  .sb-head .brand-code{font-family:'Spectral',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
   .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
   .nav-item{cursor:pointer;user-select:none}
@@ -53,7 +53,7 @@
   .sb-continue:hover{border-color:var(--accent)}
   .sb-continue[hidden]{display:none}
   .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .sc-t{display:block;margin:2px 0 7px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;line-height:1.3;
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
   .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
@@ -128,7 +128,7 @@
   .lecture-item.novid .ltitle{opacity:.62}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
-    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
   .lecture-item:hover{background:var(--tint)}
   .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
@@ -162,10 +162,10 @@
   .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
   .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:42px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
-    font-variation-settings:"opsz" 144}
-  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+    }
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
     color:var(--ink-2);max-width:70ch;margin:0}
   .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
     display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'JetBrains Mono',monospace;
@@ -181,13 +181,13 @@
 
   section.chapter{margin:26px 0}
   section.chapter:first-of-type{margin-top:0}
-  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:16px;line-height:1.55;max-width:70ch}
+  .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
   #panel-syllabus section.chapter{margin:20px 0}
@@ -212,7 +212,7 @@
   table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
-  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
   /* 16:9 box that never grows taller than the screen: width is capped by the content width,
      by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
@@ -226,14 +226,14 @@
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
-  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
   /* Live sessions: collapsible video indexes */
   details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
   details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
   details.sess summary::-webkit-details-marker{display:none}
   details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
   details.sess[open] summary::before{transform:rotate(90deg)}
-  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
   .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
   .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
   .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
@@ -263,7 +263,7 @@
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
   .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
   .res-main::after{content:"";position:absolute;inset:0}
   .res-main:hover{color:var(--accent)}
   .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
@@ -278,11 +278,11 @@
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
   .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
-  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+  .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
   .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
@@ -347,7 +347,7 @@
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
   .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .rs-t{margin:3px 0 9px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-t{margin:3px 0 9px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
   .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
@@ -362,9 +362,9 @@
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
     font-size:13.5px;line-height:1.55;color:var(--ink-2)}
   footer.colophon .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
-    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Fraunces',serif}
+    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
-  footer.colophon .co-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--ink)}
+  footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
   footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
   footer.colophon .co-nav a{color:var(--ink-2);border:none}
@@ -384,7 +384,7 @@
       border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .m-code{font-family:'Fraunces',serif;font-weight:700;font-size:16px;flex:none}
+    .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
     .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
       border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-step[hidden]{display:none}
@@ -617,7 +617,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=6b763595"></script>
 <script>window.COURSE = {code: "DA5002", weeks: [{"w":"Week 1","items":[{"n":"1","t":"W1L1: Course Outline","v":"skWhn8W9P_Y","s":"https://drive.google.com/file/d/1GkZcsIPXjJBTDrLKSbFE0yHf5Pf6WbYQ/view?usp=sharing"},{"n":"2","t":"W1L2: Introduction and Problem setting","v":"HUunmwZfGzc","s":null},{"n":"3","t":"W1L3: f-Divergence","v":"nfZQYopzv20","s":null},{"n":"4","t":"W1L4: Variational divergence minimization","v":"VxRIqenOoQw","s":null},{"n":"5","t":"W1T1: Tutorial: Forward pass and backpropagation","v":"stZC0Zk5KYo","s":null},{"n":"6","t":"W1T2: Tutorial: Introduction to Pytorch: Tensors","v":"rHnrALMCyIQ","s":null},{"n":"7","t":"W1T3: Tutorial: Introduction to Pytorch: Datasets and DataLoaders","v":"L5n4rNrLZ_8","s":null},{"n":"8","t":"W1T4: Tutorial: Introduction to Pytorch: Model Building","v":"h1hEddM0aVE","s":null}]},{"w":"Week 2","items":[{"n":"9","t":"W2L5: Generative Modelling via variational Divergence Minimization","v":"c2gN3TK3U74","s":"https://drive.google.com/file/d/1bdeMMzACdWV1dGU0s1hNHD81KtRo9sRR/view?usp=sharing"},{"n":"10","t":"W2L6: Generative Adversarial Networks: Introduction","v":"EHhURRwMEPo","s":null},{"n":"11","t":"W2L7: Generative Adversarial Networks: Formulation","v":"pLD5Q5cS4kI","s":null},{"n":"12","t":"W2T5: Tutorial: Implementation of GAN","v":"iOb8vmlJd8o","s":null}]},{"w":"Week 3","items":[{"n":"13","t":"W3L8: GANs as classifier-guided generative sampler","v":"ga8VOW6pPeA","s":"https://drive.google.com/file/d/14l10sADt7aSDNaI3juN7QgCBTRZHZ5WT/view?usp=sharing"},{"n":"14","t":"W3L9: Deep Convolution GANs and Conditional GANs","v":"CFymHrr5iQw","s":null},{"n":"15","t":"W3T6: Tutorial: Implementation of DC-GAN","v":"4-o6d8EyxCU","s":null}]},{"w":"Week 4","items":[{"n":"16","t":"W4L10: Saturation of GAN training","v":"2RMeQ5YxIxI","s":"https://drive.google.com/file/d/1WHyxsqikZkQ5Qk5HKvxLIU9nfvdB-IuS/view?usp=sharing"},{"n":"17","t":"W4L11: Wasserstein GANs","v":"_IBfVkrvqAI","s":null},{"n":"18","t":"W4L12: Inversion with GANs","v":"S84MmiEr-6o","s":null},{"n":"19","t":"W4L13: Bi-directional GANs","v":"9av__QKR_xk","s":null},{"n":"20","t":"W4L14: GAN inversion via latent regression","v":"gkMIerCn8n0","s":null},{"n":"21","t":"W4L15: Domain Adversarial Networks","v":"rWk04R1VH8Q","s":null},{"n":"22","t":"W4L16: Evaluation of Generative Models","v":"5Mchnh2xedI","s":null},{"n":"23","t":"W4T7: Tutorial: Implementation of Bi-GAN","v":"eH9skKyqjJM","s":null},{"n":"24","t":"W4T8: Tutorial: Implementation of UDA","v":"kD708wpM14c","s":null},{"n":"25","t":"W4T9: Tutorial: Implementation of WGAN","v":"ZApQpSKjazs","s":null}]},{"w":"Week 5","items":[{"n":"26","t":"W5L17: Introduction to latent variable models","v":"UAnp6yU8K0A","s":"https://drive.google.com/file/d/1dFGn2QRuH3_mpVIzfgL-wkgKWtMDGHPk/view?usp=sharing"},{"n":"27","t":"W5L18: Evidence Lower Bound (ELBO)","v":"d9fDDUcQqq4","s":null},{"n":"28","t":"W5L19: Gaussian Mixture Models: Expectation-Maximization Algorithm","v":"zUJNypPc-Vo","s":null},{"n":"29","t":"W5L20: Variational Autoencoder (VAE)","v":"RN3_gkjlYoA","s":null},{"n":"30","t":"W5T10: Proof of Jensen\u0027s inequality","v":"br7oydgTero","s":null},{"n":"31","t":"W5T11: GMM","v":"VB0E_tzwuxI","s":null}]},{"w":"Week 6","items":[{"n":"32","t":"W6L21: Training VAE: Reparameterization methods","v":"blh_AnhwIpw","s":"https://drive.google.com/file/d/1uo99CIsfJbcixLRNSaaQiIRbdRD3TDHq/view?usp=sharing"},{"n":"33","t":"W6L22: Training VAE","v":"dAQVTNnRrEg","s":null},{"n":"34","t":"W6L23: Inference with a trained VAE","v":"x85aw6DXX0w","s":null},{"n":"35","t":"W6L24: Beta-VAE","v":"6ZBvXaVgAGA","s":null},{"n":"36","t":"W6L25: Vector Quantized VAE (VQ-VAE)","v":"8UbwFtDJEG0","s":null},{"n":"37","t":"W6T12: Implementation of VAE","v":"ZJh_Jv0hxZM","s":null},{"n":"38","t":"W6T13: Implementation of VQ-VAE","v":"o2Nc6_kcgEw","s":null}]},{"w":"Week 7","items":[{"n":"39","t":"W7L26: Denoising Diffusion Probabilistic Models (DDPMs)","v":"N0OOnTKMYJE","s":"https://drive.google.com/file/d/1zdLbiyoaAuKuWWA6Td22eYCrewiP9Z6l/view?usp=sharing"},{"n":"40","t":"W7L27: DDPM: Formulation","v":"P8AiIW0Gg0s","s":null},{"n":"41","t":"W7T14: U-Net","v":"-sOaKgKAmaM","s":null}]},{"w":"Week 8","items":[{"n":"42","t":"W8L28: ELBO for DDPM : Part 1","v":"AnWitwNPnN4","s":"https://drive.google.com/file/d/1lLPgjGpgeb6FNJyesDjwUSQCP62-03X2/view?usp=sharing"},{"n":"43","t":"W8L29: ELBO for DDPM : Part 2","v":"wPx64rVy2c4","s":null},{"n":"44","t":"W8L30: Optimization of DDPM loss","v":"yzU0ueuABLw","s":null},{"n":"45","t":"W8L31: ELBO Equivalence","v":"j-xrjqvSKhU","s":null},{"n":"46","t":"W8L32: Training of DDPM","v":"47TD4eSLVMI","s":null},{"n":"47","t":"W8L33: Inference in DDPM","v":"0p7T-3WiPnQ","s":null},{"n":"48","t":"W8T15: Implementation of DDPM","v":"au-7zLxcP1k","s":null},{"n":"49","t":"W8T16: Proofs","v":"rNxtbFa8J-s","s":null}]},{"w":"Week 9","items":[{"n":"50","t":"W9L34: alternate interpretations of DDPMs","v":"30fSjB8oGN0","s":"https://drive.google.com/file/d/1PAb6TmgCydlui2VB1LHDCdLLcwquJaiY/view?usp=sharing"},{"n":"51","t":"W9L35: DDPMs as score-predictors","v":"2Sp0BqAWWXY","s":null},{"n":"52","t":"W9L36: Guided Difusion Models","v":"kJCgO7rwo3Y","s":null},{"n":"53","t":"W9L37: Latent Diffusion Models","v":"qkinkLtwSyc","s":null},{"n":"54","t":"W9L38: Denoising Difusion Implicit Models (DDIMs)","v":"qiMJBB8chzI","s":null},{"n":"55","t":"W9L39: Inference in DDIM","v":"3KQWN9SS7L0","s":null},{"n":"56","t":"W9T17: Implementation of DDPM Noise estimation","v":"cmMm8Jgm3hI","s":null},{"n":"57","t":"W9T18: Implementation of DDIM","v":"kT-PCHIayS0","s":null},{"n":"58","t":"W9T19: Implementation of Guided DDPM","v":"BKqUPihkNmY","s":null}]},{"w":"Week 10","items":[{"n":"59","t":"W10L40: Auto-Regressive Models","v":"PtDFqdTbQUY","s":"https://drive.google.com/file/d/1CpurLn4oZcAizgNw42AJyWuWzMu3KJM7/view?usp=sharing"},{"n":"60","t":"W10L41: Attention Mechanism","v":"LoO0zQvmArE","s":null},{"n":"61","t":"W10L42: Transformers for Auto-Regressive Models","v":"uOb-dRc8yrA","s":null},{"n":"62","t":"W10L43: Transformers architecture","v":"NAWe0F0PmRU","s":null},{"n":"63","t":"W10L44: Transformers: Skip Connections and Normalization","v":"ZtGkl72SZPo","s":null},{"n":"64","t":"W10L45: Transformers: Position Embeddings","v":"_k1vd1DaMzQ","s":null},{"n":"65","t":"W10L46: Transformers: Training and Inference","v":"RJmTsB7mnUk","s":null}]},{"w":"Week 11","items":[{"n":"66","t":"W11L47: An overview of Reinforcement Learning","v":"4NZ6DLFF2DY","s":"https://drive.google.com/file/d/15vlap9A5bYlSv4bZTUoKb2W6XgCQj6iY/view?usp=sharing"},{"n":"67","t":"W11L48: Policy Gradient Theorem","v":"5FOz4agFl4M","s":null},{"n":"68","t":"W11L49: Expressing an AR-LM as RL policy","v":"Y2KZ_zDGhKw","s":null},{"n":"69","t":"W11L50: Proximal Policy Optimization (PPO)","v":"mvANXESrhqc","s":null},{"n":"70","t":"W11L51: Trust Region Policy Optimization (TRPO)","v":"9MJkL3XiCsk","s":null}]},{"w":"Week 12","items":[{"n":"71","t":"W12L52: Reward-Modelling","v":"kCwdMhKO0x8","s":"https://drive.google.com/file/d/1Y73cCHNfw_wAbeLvrWlHgdfXKSCW8I1p/view?usp=sharing"},{"n":"72","t":"W12L53: Direct Preference Optimization (DPO)","v":"P4Tm0FURBFU","s":null},{"n":"73","t":"W12L54: State-space-Models","v":"A7iAmVr0QE4","s":null}]}]};</script>
-<script src="../assets/course.js?v=2022f9cb"></script>
+<script src="../assets/course.js?v=09436d74"></script>
 <script src="../assets/theme.js?v=8e860dc4"></script>
 </body>
 </html>

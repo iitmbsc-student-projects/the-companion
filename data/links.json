@@ -239,6 +239,16 @@
      ]
     },
     {
+     "title": "System Commands book",
+     "desc": "A course book on Linux and shell commands, by Ammar Hashmi.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://ammar-iitm.github.io/system-commands-book/"
+      }
+     ]
+    },
+    {
      "title": "Pratham Bhalla on Medium",
      "desc": "Written notes for the foundation courses, plus past term papers with answer keys.",
      "links": [
@@ -374,6 +384,16 @@
       {
        "label": "Open",
        "url": "https://quizpractice.space/"
+      }
+     ]
+    },
+    {
+     "title": "Quiz Space",
+     "desc": "Past question papers for quizzes, end terms and OPPE, sorted by course.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://quizspacee.com/"
       }
      ]
     },

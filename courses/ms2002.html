@@ -9,7 +9,7 @@
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
@@ -39,7 +39,7 @@
   .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
   .sb-head .back-link:hover svg{transform:translateX(-2px)}
   .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sb-head .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
+  .sb-head .brand-code{font-family:'Spectral',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
   .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
   .nav-item{cursor:pointer;user-select:none}
@@ -53,7 +53,7 @@
   .sb-continue:hover{border-color:var(--accent)}
   .sb-continue[hidden]{display:none}
   .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .sc-t{display:block;margin:2px 0 7px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;line-height:1.3;
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
   .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
@@ -128,7 +128,7 @@
   .lecture-item.novid .ltitle{opacity:.62}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
-    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
   .lecture-item:hover{background:var(--tint)}
   .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
@@ -162,10 +162,10 @@
   .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
   .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
     letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:42px;
     line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
-    font-variation-settings:"opsz" 144}
-  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+    }
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:19px;line-height:1.5;
     color:var(--ink-2);max-width:70ch;margin:0}
   .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
     display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'JetBrains Mono',monospace;
@@ -181,13 +181,13 @@
 
   section.chapter{margin:26px 0}
   section.chapter:first-of-type{margin-top:0}
-  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
     letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
   section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.2em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:16px;line-height:1.55;max-width:70ch}
+  .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
   #panel-syllabus section.chapter{margin:20px 0}
@@ -212,7 +212,7 @@
   table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
-  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
   /* 16:9 box that never grows taller than the screen: width is capped by the content width,
      by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
@@ -226,14 +226,14 @@
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
-  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
   /* Live sessions: collapsible video indexes */
   details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
   details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
   details.sess summary::-webkit-details-marker{display:none}
   details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
   details.sess[open] summary::before{transform:rotate(90deg)}
-  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
+  .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
   .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
   .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
   .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
@@ -263,7 +263,7 @@
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
   .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
   .res-main::after{content:"";position:absolute;inset:0}
   .res-main:hover{color:var(--accent)}
   .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
@@ -278,11 +278,11 @@
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
   .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
-  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+  .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
   .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
@@ -347,7 +347,7 @@
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
   .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .rs-t{margin:3px 0 9px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-t{margin:3px 0 9px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
   .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
@@ -362,9 +362,9 @@
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
     font-size:13.5px;line-height:1.55;color:var(--ink-2)}
   footer.colophon .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
-    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Fraunces',serif}
+    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
-  footer.colophon .co-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--ink)}
+  footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
   footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
   footer.colophon .co-nav a{color:var(--ink-2);border:none}
@@ -384,7 +384,7 @@
       border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .m-code{font-family:'Fraunces',serif;font-weight:700;font-size:16px;flex:none}
+    .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
     .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
       border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
     .m-step[hidden]{display:none}
@@ -623,7 +623,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=6b763595"></script>
 <script>window.COURSE = {code: "MS2002", weeks: [{"w":"Week 1","items":[{"n":"1.1","t":"Introduction to Data Visualization","v":"_0z2c-Awpt0","s":null},{"n":"1.2","t":"Defining the Message","v":"1zWJyhv6j_g","s":null},{"n":"1.3","t":"Creating Designs","v":"lLvRWjclPus","s":null},{"n":"1.4","t":"Tutorial 1.1: Misleading visuals","v":"iRdCG6Xg0AY","s":null},{"n":"1.5","t":"Tutorial 1.2: Building a simple dashboard","v":"Nhf5VyNwY9U","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Probability Distributions","v":"yMFsKaMRqdw","s":null},{"n":"2.2","t":"Business Example","v":"ePqGFuLnVFM","s":null},{"n":"2.3","t":"Guessing the Distribution","v":"UM-3E8fsCgA","s":null},{"n":"2.4","t":"Guessing the Distribution of Dataset 1","v":"rPHT7w1jfck","s":null},{"n":"2.5","t":"Guessing the Distribution of Dataset 2","v":"C60v18OuTgo","s":null},{"n":"2.6","t":"Guessing the Distribution of Dataset 3","v":"aSDOGXBLZhc","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Determining Association Between Categorical Variables","v":"wWFK-N7RTKU","s":null},{"n":"3.2","t":"Bayes\u0027 Rule","v":"O1-fspYUq6g","s":null},{"n":"3.3","t":"Inferring Association Between Categorical Variabes - Chi-Squared Test of Independence","v":"obVldwZBm0c","s":null},{"n":"3.4","t":"Chi-Squared Test of Independence -  Implementation in Python","v":"8eeRkqA1YO4","s":null},{"n":"3.5","t":"Chi-Squared Test of Independence - Implementation in Spreadsheets","v":"IFLk64kNdSE","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Demand Response Curve","v":"vTl1tQklAQo","s":null},{"n":"4.2","t":"Elasticity","v":"0I-SMGZqd6c","s":null},{"n":"4.3","t":"Linear Response Curve","v":"3nqzbvKIibU","s":null},{"n":"4.4","t":"Estimation Problem in Demand Response Curves","v":"pIHBxiSDjAw","s":null},{"n":"4.5","t":"Analyzing Linear Demand Response Curve using Simple Linear Regression","v":"ZA2DJUgdYGs","s":null},{"n":"4.6","t":"Building a Simple Linear Regression model on Python","v":"OwMmB3DR24s","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Non-linear Demand Response Curve","v":"rvLLuwQZt9E","s":null},{"n":"5.2","t":"Analyzing Constant Elasticity Model using Simple Linear Regression","v":"HhhHpi5eBQw","s":null},{"n":"5.3","t":"Implementing Constant Elasticity Model using Simple Linear Regression","v":"s8fqKYRp3_8","s":null},{"n":"5.4","t":"Optimal Pricing - Revenue Maximization","v":"tSD817fSgK0","s":null},{"n":"5.5","t":"Optimal Pricing - Profit Maximization","v":"86oTBGl1rnk","s":null},{"n":"5.6","t":"Revenue Maximization versus Profit Maximization","v":"axYhp4su404","s":null},{"n":"5.7","t":"Operations Research: Linear Programming and Duality in Spreadsheets and Python","v":"go7XAevdV3k","s":null},{"n":"5.8","t":"Implementing Constant Elasticity Model using Simple Linear Regression in Python","v":"GglB29ahQDM","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Multiple Linear Regression","v":"mYrEsnuZ_l8","s":null},{"n":"6.2","t":"Multiple Linear Regression - Example","v":"tM17U6PFsrs","s":null},{"n":"6.3","t":"Multiple Linear Regression - Path Diagram","v":"ZZ6YwLPLC4g","s":null},{"n":"6.4","t":"Multiple Linear Regression - Variance Inflation Factor - Part 1","v":"UtC-BNbj0aU","s":null},{"n":"6.5","t":"Multiple Linear Regression - Variance Inflation Factor - Part 2","v":"YSFOixgqOJY","s":null},{"n":"6.6","t":"Multiple Linear Regression - Implementation in Python","v":"dM3CnXrlr9k","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"Logistic Regression - Predicting the Placements","v":"3s8XyTUflKM","s":null},{"n":"7.2","t":"Logistic Regression - Working with data","v":"KibI60XYRn0","s":null},{"n":"7.3","t":"Logistic Regression - Model Building","v":"Q8VntgpklI8","s":null},{"n":"7.4","t":"Logistic Regression - Model Evaluation","v":"9bS6Ss6ysUA","s":null},{"n":"7.5","t":"Logistic Regression - Interpretation of the Coefficients","v":"IRLp6eAErSk","s":null},{"n":"7.6","t":"Tutorial- Logistic Regression in Python","v":"-FvQIVCyWOU","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Measuring the Efficiency of a Business Unit","v":"PF495KZF5wk","s":null},{"n":"8.2","t":"Efficiency Comparison - Graphical Method","v":"J_Kh1CJBgMA","s":null},{"n":"8.3","t":"Optimization Method - Data Envelopment Analysis","v":"ArRb7nxuq6U","s":null},{"n":"8.4","t":"Data Envelopment Analysis - Example with one output and two inputs","v":"aBSyGyNit3U","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"Data Envelopment Analysis - Example with two outputs and one input","v":"AgooIkOyYGw","s":null},{"n":"9.2","t":"Data Envelopment Analysis - Example with multiple inputs and multiple outputs","v":"GnP4eFV82nw","s":null},{"n":"9.3","t":"Data Envelopment Analysis - Prescription for inefficient units (One output and two inputs case)","v":"LiXo81ihZUg","s":null},{"n":"9.4","t":"Data Envelopment Analysis - Prescription for inefficient units (Two outputs and one input case)","v":"VPgukzBKRUk","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Consumer Choice Models","v":"_98BG7VHr9Y","s":null},{"n":"10.2","t":"Forms of Conjoint Analysis","v":"DOIhSW38P-Q","s":null},{"n":"10.3","t":"Conjoint Problem","v":"xdydJgWuUKo","s":null},{"n":"10.4","t":"Optimization Formulation of Conjoint Problem","v":"5h0G4G_hiXE","s":null},{"n":"10.5","t":"Problem Specific Notations","v":"wYT2SH00VBw","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"Conjoint Problem Formulation Using Linear Programming","v":"xG8tRstRfWM","s":null},{"n":"11.2","t":"Solving the Conjoint Problem","v":"Br1ZPQhSW0M","s":null},{"n":"11.3","t":"Conjoint Analysis using a Statistical Method","v":"5XccUTnc8zg","s":null},{"n":"11.4","t":"Regression Method for Conjoint Analysis","v":"6LSpK1ybs6M","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"Epilogue","v":"SRHnDZFNgm8","s":null},{"n":"12.2","t":"Epilogue- Continuation","v":"T2-nUf1BjWA","s":null}]},{"w":"Supplementary Contents","items":[{"n":"SUPP_01","t":"Part-1 - Overview of Chisquare GOF","v":"17EQ8wzoExQ","s":null},{"n":"SUPP_02","t":"Part-2 - Tutorial on performing Chisquare GOF for a Uniform Distribution","v":"ShDPBmYr3n4","s":null},{"n":"SUPP_03","t":"Part-3 - Tutorial on performing Chisquare GOF for a Poisson distribution","v":"VRd2sMymf1c","s":null}]}]};</script>
-<script src="../assets/course.js?v=2022f9cb"></script>
+<script src="../assets/course.js?v=09436d74"></script>
 <script src="../assets/theme.js?v=8e860dc4"></script>
 </body>
 </html>

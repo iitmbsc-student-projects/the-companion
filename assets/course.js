@@ -110,7 +110,16 @@ function closeOthers(wi){
   if (multiOpen || isFiltering()) return;
   WEEKS_DATA.forEach((_, w) => { if (w !== wi) setWeek(w, false); });
 }
-const openWeek = wi => { closeOthers(wi); setWeek(wi, true); };
+// A week that has just opened is scrolled so its heading, and with it the first lecture, sits at the top of the list.
+function alignWeek(wi){
+  const g = navSection.querySelector('.week-group[data-w="' + wi + '"]'); if (!g) return;
+  navSection.scrollTop += g.getBoundingClientRect().top - navSection.getBoundingClientRect().top;
+}
+const openWeek = wi => {
+  const was = isOpen(wi);
+  closeOthers(wi); setWeek(wi, true);
+  if (!was && !multiOpen && !isFiltering()) alignWeek(wi);
+};
 const isOpen = wi => { const el = document.getElementById('week-collapse-' + wi); return !!el && el.classList.contains('show'); };
 function revealRow(wi, ii){
   const row = navSection.querySelector('.lecture-item[data-w="' + wi + '"][data-i="' + ii + '"]');
@@ -279,7 +288,21 @@ onlyBtn.addEventListener('click', () => { onlyBtn.setAttribute('aria-pressed', o
 document.getElementById('wk-expand').addEventListener('click', () => { multiOpen = true; WEEKS_DATA.forEach((_, wi) => { if (!navSection.querySelector('.week-group[data-w="' + wi + '"]').classList.contains('is-hid')) setWeek(wi, true); }); });
 document.getElementById('wk-collapse').addEventListener('click', () => { multiOpen = false; WEEKS_DATA.forEach((_, wi) => setWeek(wi, false)); });
 // A click on a week heading is opened by Bootstrap; just before it shows, close the other weeks.
-navSection.addEventListener('show.bs.collapse', e => closeOthers(+e.target.id.replace('week-collapse-', '')));
+// While Bootstrap grows the week, keep its heading at the top of the list (the list is too short to scroll
+// that far until the week has opened, so a single scroll at the start would be clamped).
+let alignRun = 0;
+navSection.addEventListener('show.bs.collapse', e => {
+  const wi = +e.target.id.replace('week-collapse-', '');
+  closeOthers(wi);
+  if (multiOpen || isFiltering()) return;
+  const run = ++alignRun, t0 = performance.now();
+  (function step(){
+    if (run !== alignRun || performance.now() - t0 > 900) return;
+    alignWeek(wi);
+    requestAnimationFrame(step);
+  })();
+});
+navSection.addEventListener('shown.bs.collapse', e => { alignRun++; if (!multiOpen && !isFiltering()) alignWeek(+e.target.id.replace('week-collapse-', '')); });
 let resetTimer;
 rsReset.addEventListener('click', () => {
   if (rsReset.dataset.sure) {
