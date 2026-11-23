@@ -363,6 +363,28 @@
       }
      ],
      "src": "student"
+    },
+    {
+     "title": "Recommended books",
+     "desc": "Books suggested by every course, in one place.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://bsc-iitm.github.io/books/"
+      }
+     ],
+     "src": "official"
+    },
+    {
+     "title": "LITEPODS",
+     "desc": "Links to everything in the programme.",
+     "links": [
+      {
+       "label": "Open",
+       "url": "https://bsc-iitm.github.io/litepods/"
+      }
+     ],
+     "src": "official"
     }
    ]
   },

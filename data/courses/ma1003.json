@@ -85,6 +85,14 @@
    "by": "Course team"
   },
   {
+   "label": "Linear Algebra companion",
+   "url": "https://bsc-iitm.github.io/linearalgebra/",
+   "group": "Notes",
+   "desc": "Notes and problems on linear algebra for Maths 2 and MLF.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
+  },
+  {
    "label": "Week-wise question bank",
    "url": "https://drive.google.com/drive/folders/16vvboLqwnOxT0vHpSZlGWRG-owv8qjim",
    "group": "Practice",

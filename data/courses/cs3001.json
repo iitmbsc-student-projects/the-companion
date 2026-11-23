@@ -58,6 +58,14 @@
    "desc": "Notes, study guides for weeks 1 to 12, quiz revision sheets and solved Quiz 2 papers. Shared on MauryaHub.",
    "by": "Ashish Maurya and other students",
    "added": "2026-11-23"
+  },
+  {
+   "label": "Software Engineering notes (PDF)",
+   "url": "https://github.com/Risdorn/Learning-Archive/blob/main/IITM-Programming-Data-Science/Software%20Engineering/Software_Engineering.pdf",
+   "group": "Notes",
+   "desc": "A student's full course notes, written in LaTeX.",
+   "by": "Rishabh Indoria",
+   "by_url": "https://github.com/Risdorn"
   }
  ],
  "resources_note": "",

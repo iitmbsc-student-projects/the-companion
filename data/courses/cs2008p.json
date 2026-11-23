@@ -379,6 +379,14 @@
  ],
  "resources": [
   {
+   "label": "MLP project guidelines",
+   "url": "https://bsc-iitm.github.io/mlp-project/",
+   "group": "Project help",
+   "desc": "Essentials, viva policy, milestones, resources and FAQ for the project.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
+  },
+  {
    "label": "MLP project: scope and tips",
    "url": "https://www.iitmbsdegree.in/blog/iitm-bs-machine-learning-practice-project-bscs2008p",
    "group": "Guides",

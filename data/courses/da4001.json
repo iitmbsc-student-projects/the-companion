@@ -32,6 +32,22 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "DSAI Lab project docs",
+   "url": "https://bsc-iitm.github.io/dsai-lab-project/",
+   "group": "Course material",
+   "desc": "Guidelines, milestones, references and the AI usage policy for the group project.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
+  },
+  {
+   "label": "Data Science Lab course site",
+   "url": "https://bsc-iitm.github.io/data-science-lab/",
+   "group": "Course material",
+   "desc": "Course content for the Data Science and AI Lab.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
   }
  ],
  "resources_note": "",

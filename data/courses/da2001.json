@@ -37,6 +37,14 @@
    "group": "Course material"
   },
   {
+   "label": "NumPy and Matplotlib",
+   "url": "https://bsc-iitm.github.io/numpy-matplotlib/",
+   "group": "Course material",
+   "desc": "A short introduction to the two libraries the course uses from week 0.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
+  },
+  {
    "label": "Topic-wise notes",
    "url": "https://degreedost.com/#notes/dlgenai",
    "desc": "Topic-wise notes on ML Study Hub.",

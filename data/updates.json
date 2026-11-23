@@ -4,6 +4,41 @@
  "notes": [
   {
    "date": "2026-11-23",
+   "kind": "site",
+   "title": "Lectures for five more electives",
+   "text": "Operating Systems, Data Visualization Design, Corporate Finance, Financial Forensics and Game Theory now list their lectures week by week, from the official IITM BS playlists.",
+   "courses": [
+    "cs4022",
+    "cs4001",
+    "ms3034",
+    "ms4003",
+    "ms4023"
+   ]
+  },
+  {
+   "date": "2026-11-23",
+   "kind": "res",
+   "title": "IITM BS GitHub sites and degree-level notes",
+   "text": "Project and course sites from the IITM BS GitHub (MLP project, DSAI Lab, NumPy and Matplotlib, ML Handbook, Linear Algebra, Python Companion, recommended books, LITEPODS) and full course notes from Rishabh Indoria for seven degree courses.",
+   "courses": [
+    "cs2008p",
+    "da4001",
+    "da2001",
+    "cs2008",
+    "ma1003",
+    "cs2004",
+    "cs1002",
+    "cs3003",
+    "cs3004",
+    "da5013",
+    "da5004",
+    "da5007",
+    "cs3001",
+    "cs3002"
+   ]
+  },
+  {
+   "date": "2026-11-23",
    "kind": "res",
    "title": "PG Diploma Research Project and MTech Project pages filled in",
    "text": "The MTech Project page now explains eligibility, the letters you need and the three stages, with the official project documents. Both pages link the PG Diploma and MTech upgrade path and two Students' Corner guides.",

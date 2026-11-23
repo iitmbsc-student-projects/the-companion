@@ -69,6 +69,14 @@
    "added": "2026-11-23"
   },
   {
+   "label": "ML Handbook",
+   "url": "https://bsc-iitm.github.io/ML_Handbook/",
+   "group": "Notes",
+   "desc": "Preprocessing, scaling, visualization and evaluation metrics with examples.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
+  },
+  {
    "label": "Custodia OPPE practice",
    "url": "https://custodia-beta.vercel.app/",
    "desc": "Browser-based OPPE practice with testcases and instant grading. Needs Google sign-in. A student-run site, not run by IITM.",
