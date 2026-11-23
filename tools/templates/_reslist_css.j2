@@ -1,12 +1,12 @@
   /* resources: small cards of one size in a tidy grid. Long descriptions stop at two lines
      (the full text is in the tooltip and is still read by screen readers), so rows stay even. */
-  .res-group{margin-top:22px}
+  .res-group{margin-top:14px}
   .res-group:first-of-type{margin-top:6px}
-  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'IBM Plex Mono',monospace;
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 7px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
   .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
   .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
-  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
   .res-card{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;padding:8px 12px 8px;background:var(--paper-2);
     border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
