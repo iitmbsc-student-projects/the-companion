@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css?v=e196bd30">
 <link rel="stylesheet" href="assets/theme.css?v=225b80af">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body data-page="calculator">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -39,6 +39,11 @@
         <a class="nav-main" href="links.html">Important links</a>
         <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Show link groups">&#9662;</button>
         <div class="menu" id="menu-links"></div>
+      </div>
+      <div class="nav-item" data-tab="nptel">
+        <a class="nav-main" href="nptel.html">NPTEL</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-nptel" aria-label="Show NPTEL lists">&#9662;</button>
+        <div class="menu" id="menu-nptel"></div>
       </div>
     </div>
     <div class="tb-more">

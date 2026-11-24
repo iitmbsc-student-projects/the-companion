@@ -1,4 +1,4 @@
-/* Colour themes: Paper (warm paper, default; data-theme key "current"), Light, Dark, Pink.
+/* Colour themes: Paper (warm paper, default; data-theme key "current"), Light, Dark, Pink, Sky.
    The pages use the variables below; html[data-theme] swaps them. Set by assets/theme.js. */
 :root{--surface:#fbf8f1;--topbar:rgba(244,239,230,.92);--tint:rgba(122,30,40,.08);--tint-2:rgba(122,30,40,.12);
   --link-ul:rgba(122,30,40,.25);--accent-line:rgba(122,30,40,.4);--shadow:rgba(28,26,23,.14);--shadow-soft:rgba(28,26,23,.04);
@@ -79,6 +79,33 @@ html[data-theme="pink"]{--paper:#fff3f7;
   --on-accent-2:#f7d4e1;
   color-scheme:light}
 
+html[data-theme="sky"]{--paper:#f5f2ea;
+  --paper-2:#ebe7db;
+  --ink:#16202c;
+  --ink-2:#4a5360;
+  --rule:#d3cdbd;
+  --accent:#1f3a5f;
+  --accent-2:#7a5a35;
+  --accent-fill:#1f3a5f;
+  --on-fill:#ffffff;
+  --on-fill-2:#d6e0ee;
+  --surface:#fbf9f4;
+  --topbar:rgba(245,242,234,.92);
+  --tint:rgba(31,58,95,.07);
+  --tint-2:rgba(31,58,95,.12);
+  --link-ul:rgba(31,58,95,.3);
+  --accent-line:rgba(31,58,95,.4);
+  --shadow:rgba(22,32,44,.14);
+  --shadow-soft:rgba(22,32,44,.05);
+  --warn-bg:rgba(184,100,42,.11);
+  --warn-line:rgba(184,100,42,.42);
+  --warn-ink:#7a4a12;
+  --muted-bg:rgba(74,83,96,.09);
+  --muted-line:rgba(74,83,96,.33);
+  --on-accent:#fff;
+  --on-accent-2:#d6e0ee;
+  color-scheme:light}
+
 /* ---- Theme switcher: one swatch per theme ---- */
 .theme-switch{display:inline-flex;align-items:center;gap:2px;padding:1px 3px;border:1px solid var(--rule);
   border-radius:999px;background:var(--paper-2)}
@@ -93,6 +120,7 @@ html[data-theme="pink"]{--paper:#fff3f7;
 .theme-switch button[data-theme-set="light"] .sw{background:#ffffff}
 .theme-switch button[data-theme-set="dark"] .sw{background:#14151a}
 .theme-switch button[data-theme-set="pink"] .sw{background:#FA9EBC}
+.theme-switch button[data-theme-set="sky"] .sw{background:linear-gradient(135deg,#f5f2ea 50%,#1f3a5f 50%)}
 .theme-switch.floating{position:fixed;top:12px;right:14px;z-index:80;box-shadow:0 2px 10px var(--shadow)}
 #theme-slot{display:flex;margin-right:8px}
 .sidebar-theme{margin-right:0 !important}

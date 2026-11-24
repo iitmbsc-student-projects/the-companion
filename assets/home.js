@@ -26,6 +26,45 @@
     }
   });
 
+  /* NPTEL courses in the same search: word-start matches, the best few here, the rest on the NPTEL page */
+  var NP = window.NPTEL_INDEX, npBox = document.getElementById('lv-nptel'), npList = document.getElementById('lv-nptel-list');
+  var npAll = document.getElementById('lv-nptel-all'), npN = document.getElementById('lv-nptel-n'), none = document.getElementById('no-results');
+  function normq(s) { return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
+  function npSearch() {
+    if (!NP || !npBox || !box) return;
+    var tokens = normq(box.value).split(' ').filter(Boolean), found = [];
+    npList.textContent = '';
+    if (tokens.length && tokens.join('').length >= 2) {
+      NP.rows.forEach(function (r) {
+        var w = (' ' + r.q).split(' ');
+        if (tokens.every(function (t) { return w.some(function (x) { return x.indexOf(t) === 0; }); })) {
+          var nw = r.n.toLowerCase().split(/[^a-z0-9]+/);
+          found.push({ r: r, s: tokens.every(function (t) { return nw.some(function (x) { return x.indexOf(t) === 0; }); }) ? 0 : 1 });
+        }
+      });
+      found.sort(function (a, b) { return a.s - b.s; });   // matches in the course name first; the sort is stable
+    }
+    found.slice(0, 8).forEach(function (f) {
+      var r = f.r, li = document.createElement('li'), a = document.createElement('a');
+      a.className = 'np-r'; a.href = 'nptel.html?q=' + encodeURIComponent(r.i) + '#table-' + r.t;
+      var c = document.createElement('span'); c.className = 'np-r-c'; c.textContent = r.i;
+      var b = document.createElement('span'); b.className = 'np-r-b';
+      var n = document.createElement('span'); n.className = 'np-r-n'; n.textContent = r.n;
+      var m = document.createElement('span'); m.className = 'np-r-m';
+      m.textContent = (r.p ? r.p + ' \u00b7 ' : '') + 'Table ' + r.t + ' \u00b7 ' + (r.o ? 'Open ' + NP.term : 'Not open this term');
+      b.appendChild(n); b.appendChild(m); a.appendChild(c); a.appendChild(b); li.appendChild(a); npList.appendChild(li);
+    });
+    npBox.hidden = found.length === 0;
+    npN.textContent = found.length ? String(found.length) : '';
+    if (npAll) {
+      npAll.hidden = found.length <= 8;
+      npAll.textContent = 'See all ' + found.length + ' on the NPTEL page';
+      npAll.href = 'nptel.html?q=' + encodeURIComponent(box.value.trim());
+    }
+    if (found.length && none) none.hidden = true;   // the course search shows "no match" when it finds none
+  }
+  if (box) { box.addEventListener('input', npSearch); npSearch(); }
+
   /* continue where you left off: remembered in this browser only */
   var sec = document.getElementById('hm-resume'), grid = document.getElementById('hm-resume-list');
   function candidates() {

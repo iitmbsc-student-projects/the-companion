@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs4022.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=19250950">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/theme.css?v=aa30fb9a">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -201,6 +201,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -560,7 +570,6 @@
           </ul>
         </div>
       </section>
-
       <section class="chapter" id="resources">
         <h2><span class="num" aria-hidden="true">§ 3</span>Resources</h2>
 
@@ -660,7 +669,7 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
     <div class="theme-foot" id="theme-foot"></div>
   </div>
@@ -669,11 +678,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "CS4022", weeks: [{"w":"Week 1","items":[{"n":"1.1","t":"Operating systems: introduction","v":"77MBPrXmD_g","s":null},{"n":"1.2","t":"Overview: OS basics","v":"vfMhunwu2yY","s":null},{"n":"1.3","t":"Overview: OS concepts and OS structure","v":"alRoyfVRbKU","s":null},{"n":"1.4","t":"System organization","v":"gecXkyykHjA","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Booting: introduction to QEMU \u0026 xv6","v":"z5SyhFM2tqU","s":null},{"n":"2.2","t":"Powering up xv6 on QEMU","v":"u4qmvvw_P4I","s":null},{"n":"2.3","t":"Memory management: virtual memory","v":"WdLSMzXeVTc","s":null},{"n":"2.4","t":"Demand paging","v":"_LeKFdKLIaM","s":null},{"n":"2.5","t":"Page translation","v":"4dHyYaHkYwM","s":null},{"n":"2.6","t":"Page table in xv6","v":"xAvFlTE1KAM","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Memory mapping in QEMU","v":"JqHcLh683R0","s":null},{"n":"3.2","t":"Memory initialization in xv6","v":"HCsWfg6c01E","s":null},{"n":"3.3","t":"Processes","v":"szMU2jaJ-TQ","s":null},{"n":"3.4","t":"Process control block in xv6","v":"I35lpxMnzRY","s":null},{"n":"3.5","t":"Executing apps (process), registers \u0026 function invocation in xv6","v":"OYtE--5IVpg","s":null},{"n":"3.6","t":"Trapframe \u0026 system calls","v":"0HRc7WHjzcU","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Creating child processes: fork and exec","v":"6jC5gAyukmU","s":null},{"n":"4.2","t":"The first process, process tree, zombie \u0026 orphan","v":"zHLyI6fgXso","s":null},{"n":"4.3","t":"First process in xv6","v":"r6lnLAqx830","s":null},{"n":"4.4","t":"Shifting from kernel to initcode","v":"za5X5NXuIsA","s":null},{"n":"4.5","t":"Kernel to initcode: xv6 walkthrough","v":"35r9dsB5yu8","s":null},{"n":"4.6","t":"Fork system call in xv6","v":"9RKGLqFhI4U","s":null},{"n":"4.7","t":"Exit and wait system call in xv6","v":"xKu4f9u4NGw","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Exec system call","v":"KZcvie4wUWI","s":null},{"n":"5.2","t":"ELF format of executables: linker view and executable view","v":"lRoVslwJvZ0","s":null},{"n":"5.3","t":"Exec implementation in xv6","v":"TYCJhEb1PSU","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"OS events: interrupts and exceptions","v":"QTKhAMCIAnI","s":null},{"n":"6.2","t":"Interrupts and interrupt handling in RISCV","v":"cOAXqM3ZfHw","s":null},{"n":"6.3","t":"Hardware interrupts","v":"Zwf6Q7OM81A","s":null},{"n":"6.4","t":"Handling hardware interrupts","v":"lhBi2DFDQ14","s":null},{"n":"6.5","t":"Timer interrupts","v":"q0LVJQ6PaI4","s":null},{"n":"6.6","t":"Context switching","v":"TlvrQ8gXtqE","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"Introduction to storage and file system","v":"gei1Fgs6Shg","s":null},{"n":"10.2","t":"Reading data from hard disks","v":"MRGwltu5CgU","s":null},{"n":"10.3","t":"Disk scheduling","v":"d43SYrbrmpo","s":null},{"n":"10.4","t":"Application view of File system","v":"-pW60_7TSk8","s":null},{"n":"10.5","t":"File system organization","v":"QyILvmRBngA","s":null},{"n":"10.6","t":"Implementing a file system","v":"46ED1U-ZsXQ","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"System crashes","v":"GbbyDoeA29w","s":null},{"n":"11.2","t":"Xv6 file system layers - 1","v":"A3YuhMj1Ngc","s":null},{"n":"11.3","t":"Xv6 file system layers - 2","v":"ZJzfOySAgZc","s":null},{"n":"11.4","t":"Introduction to operating system security","v":"aHGP00Gf6y8","s":null},{"n":"11.5","t":"Access control","v":"96y4HECS1IM","s":null},{"n":"11.6","t":"Unix security mechanism","v":"rV5nvGAYeAI","s":null},{"n":"11.7","t":"Problems with unix access control","v":"Nwo5X7woDm8","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"System software vulnerabilities","v":"2e38_psdpIA","s":null},{"n":"12.2","t":"Micro-architectural attacks","v":"1vk0EY_KrlQ","s":null},{"n":"12.3","t":"Counter measures","v":"iedzeuf93M0","s":null},{"n":"12.4","t":"Trusted execution environment","v":"MMAwlEAhCV0","s":null},{"n":"12.5","t":"Securing data in storage","v":"mqVLo2tziis","s":null}]}], item: "lecture"};</script>
-<script src="../assets/course.js?v=88272958"></script>
-<script src="../assets/theme.js?v=f608d0e2"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
-<script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
+<script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

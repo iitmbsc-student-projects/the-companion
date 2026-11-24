@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/theme.css">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body class="home" data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -95,6 +95,11 @@
   <section class="hm-levels" aria-label="Search results">
     <div class="hm-level-grid">
 {{LEVELS}}
+      <section class="hl-card" id="lv-nptel" aria-labelledby="lv-nptel-h" hidden>
+        <div class="hl-head"><h3 id="lv-nptel-h">NPTEL</h3><span class="hl-n" id="lv-nptel-n"></span></div>
+        <ul class="np-res" id="lv-nptel-list"></ul>
+        <a class="hm-more" id="lv-nptel-all" href="nptel.html" hidden></a>
+      </section>
     </div>
   </section>
 </main>
@@ -115,6 +120,7 @@
 <script src="assets/account.js"></script>
 <script src="assets/sync.js"></script>
 <script src="assets/term-syllabus.js"></script>
+<script src="assets/nptel-index.js"></script>
 <script src="assets/home.js"></script>
 <script src="assets/search.js"></script>
 </body>

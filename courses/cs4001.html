@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs4001.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=19250950">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/theme.css?v=aa30fb9a">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -201,6 +201,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -560,7 +570,6 @@
           </ul>
         </div>
       </section>
-
       <section class="chapter" id="resources">
         <h2><span class="num" aria-hidden="true">§ 3</span>Resources</h2>
 
@@ -655,7 +664,7 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
     <div class="theme-foot" id="theme-foot"></div>
   </div>
@@ -664,11 +673,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "CS4001", weeks: [{"w":"Week 1","items":[{"n":"1.0","t":"Introduction to Data Visualization","v":"EjiMVQibki0","s":null},{"n":"1.1","t":"Introduction to data visualization part - 1","v":"Ca-jniIPpsM","s":null},{"n":"1.2","t":"Introduction to data visualization - part 2","v":"KYLVu9mbv_U","s":null},{"n":"1.3","t":"Introduction to data visualization - part 3","v":"BtWJyolQ_OQ","s":null},{"n":"1.4","t":"Introduction to data visualization - part 4","v":"VKqPe24SLOM","s":null},{"n":"1.5","t":"Introduction to data visualization - part 5","v":"YsSggVNlVDI","s":null},{"n":"1.6","t":"Introduction to data visualization - part 6","v":"RWMBTZs59Xo","s":null},{"n":"1.7","t":"Introduction to data visualization - part 7","v":"l3QhKB_Cg38","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Visualization typology - part 1","v":"wYsyajFAqzE","s":null},{"n":"2.2","t":"Visualization typology - part 2","v":"kliINZEx5pI","s":null},{"n":"2.3","t":"Visualization typology - part 3","v":"RuU6w2kR93s","s":null},{"n":"2.4","t":"Visualization typology - part 4","v":"qP773NORjsk","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Geo visualization part - 1","v":"RfHju4JGhJk","s":null},{"n":"3.2","t":"Geo visualization part - 2","v":"fZJTH3NKkoY","s":null},{"n":"3.3","t":"Geo visualization part - 3","v":"sQ-kL57HHQk","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"Data part - 1","v":"0_ShZRKEf2A","s":null},{"n":"4.2","t":"Data part - 2","v":"MasDJhwkPPY","s":null},{"n":"4.3","t":"Data part - 3","v":"_Qng70gB458","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Visualization design part - 1","v":"pJq3ynZZBFk","s":null},{"n":"5.2","t":"Visualization design part - 2","v":"WJihZFbR9M0","s":null},{"n":"5.3","t":"Visualization design part - 3","v":"i0QSlGJ3jGU","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Data analysis and insights finding part - 1","v":"G6bJ5IUFXFE","s":null},{"n":"6.2","t":"Data analysis and insights finding part - 2","v":"SWK1ivOGO10","s":null},{"n":"6.3","t":"Data analysis and insights finding part - 3","v":"i-7stBqBir4","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Design principles (heuristics) - part 1","v":"PBF5IZObzcc","s":null},{"n":"8.2","t":"Design principles (heuristics) - part 2","v":"_5b7Xs24YCU","s":null}]}], item: "lecture"};</script>
-<script src="../assets/course.js?v=88272958"></script>
-<script src="../assets/theme.js?v=f608d0e2"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
-<script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
+<script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

@@ -419,7 +419,7 @@ function selectLecture(wi, ii){
     emptyOverlay.style.display = '';
   }
   let html = '';
-  if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">Slides ↗</a>`;
+  if (item.s) html += `<a href="${item.s}" target="_blank" rel="noopener">Slides</a>`;
   if (!item.v && !item.s) html = '<span class="tbd-note">Nothing linked yet for this one.</span>';
   actions.innerHTML = html;
 }

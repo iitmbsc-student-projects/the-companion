@@ -9,7 +9,7 @@
  "instructor": "Prof. Balaji Srinivasan &amp; Prof. Ganapathy",
  "term": "Every term",
  "prereq": "DA2001",
- "syllabus_body_html": "<p>This project provides hands-on experience in end-to-end deep learning and generative AI workflows, including data handling, model development, evaluation, and deployment. It focuses on applying deep learning techniques to real-world problems, building multiple models, and generating insights through systematic experimentation and analysis.</p>\n      <p><b>Pre-requisite:</b> BSCS2007:  Machine Learning Techniques</p>\n          <p><b>Co-requisite:</b> BSCS2008 :  Machine Learning Practice BSDA2001 :  Introduction to DL and GenA</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Balaji Srinivasan, Wadhwani School of Data Science, IIT Madras</li><li>Prof. Ganapathy, Wadhwani School of Data Science, IIT Madras</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The project is conducted using platforms such as Kaggle, GitHub, and Weights &amp; Biases, with optional deployment on Hugging Face.</li><li>End-to-end deep learning workflow including data exploration, feature extraction, model building (classical ML, neural networks, and transformer-based models), training, evaluation, and benchmarking.</li><li>The project runs for approximately 8 weeks and is structured into milestones covering dataset understanding, baseline models, neural networks, sequential models, and fine-tuning pre-trained transformers, ensuring steady progress.</li><li>Students are required to build multiple models (including one from scratch and one pre-trained), track experiments, and maintain reproducible code and reports.</li><li>Evaluation is based on Kaggle performance, code quality, report, milestones, and viva. The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA2001P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "syllabus_body_html": "<p>This project provides hands-on experience in end-to-end deep learning and generative AI workflows, including data handling, model development, evaluation, and deployment. It focuses on applying deep learning techniques to real-world problems, building multiple models, and generating insights through systematic experimentation and analysis.</p>\n      <p><b>Pre-requisite:</b> BSCS2007:  Machine Learning Techniques</p>\n          <p><b>Co-requisite:</b> BSCS2008 :  Machine Learning Practice BSDA2001 :  Introduction to DL and GenA</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Balaji Srinivasan, Wadhwani School of Data Science, IIT Madras</li><li>Prof. Ganapathy, Wadhwani School of Data Science, IIT Madras</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The project is conducted using platforms such as Kaggle, GitHub, and Weights &amp; Biases, with optional deployment on Hugging Face.</li><li>End-to-end deep learning workflow including data exploration, feature extraction, model building (classical ML, neural networks, and transformer-based models), training, evaluation, and benchmarking.</li><li>The project runs for approximately 8 weeks and is structured into milestones covering dataset understanding, baseline models, neural networks, sequential models, and fine-tuning pre-trained transformers, ensuring steady progress.</li><li>Students are required to build multiple models (including one from scratch and one pre-trained), track experiments, and maintain reproducible code and reports.</li><li>Evaluation is based on Kaggle performance, code quality, report, milestones, and viva. The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA2001P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal</a></p>",
  "weeks_data": [
   {
    "w": "Sep 2026 term",
@@ -112,6 +112,54 @@
    "url": "https://www.youtube.com/@IntrotoDLGenAI/playlists",
    "group": "Recordings",
    "desc": "Course and project mentoring sessions, by term."
+  }
+ ],
+ "tips_note": "From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.",
+ "tips": [
+  {
+   "q": "Looker Studio shows \"No data\" or registration failed.",
+   "a": "Two common causes: the registration form response was not received, or the Kaggle part failed because you did not submit from your notebook or did not add the project collaborator to it. Keep the validation email as proof. If you filled the form twice with different email spellings, the script read the first.",
+   "t": 219433
+  },
+  {
+   "q": "The viva slot form will not accept my email.",
+   "a": "Check for spaces before or after the address. Slots also open in batches, so if you became eligible after a batch opened, wait for the next one.",
+   "t": 219841
+  },
+  {
+   "q": "How should I book Level 1 and Level 2?",
+   "a": "Mentors advise doing both in Batch 1. Splitting Level 1 in Batch 1 and Level 2 in Batch 2 is not recommended, and you may not be considered.",
+   "t": 220255
+  },
+  {
+   "q": "I failed Level 1. What now?",
+   "a": "Only Batch 1 gets a reattempt, with separate slots. Contact viva@study.iitm.ac.in to book it. If you pass in the reattempt, you get Level 2 as well, and the team handles the calendar mismatch.",
+   "t": 220444
+  },
+  {
+   "q": "When do I get my Level 1 result?",
+   "a": "Results go out straight away for those who clear it. The rest hear after the cycle ends.",
+   "t": 220371
+  },
+  {
+   "q": "What is the last date for Level 2?",
+   "a": "Level 2 vivas run until 22 December after a small extension. Staff suggest finishing by 18 December, since Level 2 slots are fewer.",
+   "t": 220336
+  },
+  {
+   "q": "Do I give anyone access to my GitHub repository?",
+   "a": "No. The PAT you gave is enough. If it expired, a form is coming to submit a new one that expires on 11 January 2027.",
+   "t": 220439
+  },
+  {
+   "q": "Can I use headphones in the viva?",
+   "a": "Staff discourage them, because they can be used for malpractice. Use speakers and a mic if you can.",
+   "t": 220138
+  },
+  {
+   "q": "Are submission deadlines the same as the Kaggle deadline?",
+   "a": "No. The competition was extended to 30 November, but the cutoff deadline stayed at 18 November.",
+   "t": 219831
   }
  ]
 }
