@@ -81,25 +81,25 @@
   .link-group{scroll-margin-top:78px}
 
   /* Section headers */
-  .level{margin:30px 0 8px}
+  .level{margin:22px 0 4px}
   .level-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
-  .level-head h2{font-family:'Spectral',serif;font-weight:600;font-size:26px;
-    margin:0;letter-spacing:-0.01em}
+  .level-head h2{font-family:'Spectral',serif;font-weight:700;font-size:28px;
+    margin:0;letter-spacing:-0.015em}
   .level-head .roman{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;text-transform:uppercase;font-weight:500}
   .level-head::after{content:"";flex:1;border-bottom:1px solid var(--rule);
     margin-bottom:8px;margin-left:6px}
-  .level-subhead{font-family:'IBM Plex Mono',monospace;font-size:11px;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
-    margin:18px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--rule)}
+  .level-subhead{font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--ink);
+    margin:12px 0 2px;padding-bottom:3px;border-bottom:2px solid var(--ink)}
 
   /* Course list */
   ol.courses{list-style:none;margin:0;padding:0}
-  ol.courses li{padding:6px 0;border-bottom:1px dotted var(--rule);
-    display:grid;grid-template-columns:78px 1fr auto;gap:10px;
-    align-items:baseline;font-size:15px}
+  ol.courses li{padding:3px 0;border-bottom:1px dotted var(--rule);
+    display:grid;grid-template-columns:70px 1fr auto;gap:8px;
+    align-items:baseline;font-size:14.5px;font-weight:500}
   ol.courses li .code{font-family:'IBM Plex Mono',monospace;font-size:11px;
-    color:var(--accent);font-weight:500;letter-spacing:.02em}
+    color:var(--accent);font-weight:600;letter-spacing:.02em}
   ol.courses li .name a{color:var(--ink);border:none}
   ol.courses li .name a:hover{color:var(--accent)}
   ol.courses li .credits{font-family:'IBM Plex Mono',monospace;font-size:11px;
