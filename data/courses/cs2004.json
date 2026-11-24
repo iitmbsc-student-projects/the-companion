@@ -5,7 +5,7 @@
  "title": "Machine Learning Foundations",
  "program": "Diploma / Data Science",
  "credits": 4,
- "standfirst": "Linear algebra, probability and optimisation lenses on machine learning — the mathematical foundations before the algorithms.",
+ "standfirst": "Linear algebra, probability and optimisation lenses on machine learning: the mathematical foundations before the algorithms.",
  "instructor": "Prof. Harish G. Ramaswamy, Prof. Arun Rajkumar &amp; Prof. Prashanth LA",
  "term": "Every term",
  "prereq": "MFDS + Stats",
@@ -39,7 +39,7 @@
   },
   {
    "label": "MLF notes (Karthik's site)",
-   "url": "http://notes.karthikthiagu.com/mlf/",
+   "url": "https://notes.karthikthiagu.com/mlf/",
    "group": "Notes",
    "desc": "Full course notes.",
    "by": "Karthik Thiagarajan"
@@ -60,11 +60,42 @@
    "by_url": "https://medium.com/@prathambhalla7"
   },
   {
+   "label": "MLF lecture notebook, typeset",
+   "url": "https://ammar-iitm.github.io/machine-learning-foundations/",
+   "group": "Notes",
+   "desc": "Weeks 1 to 12 with worked examples, redrawn diagrams and a self-check each week. Typeset edition by Ammar Hashmi. Not official.",
+   "by": "Kshitij Maheshwari",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Diploma question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1MNgNju8Lr7Nbuy2TMDTxBcFREEqFSHInLWQ3hhJgXlU/edit?gid=17317205#gid=17317205",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers (forenoon and afternoon), one tab for each term from Sep 2021. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "added": "2026-11-23"
+  },
+  {
    "label": "MLF weekwise and quizwise papers",
    "url": "https://23f3004032.github.io/MLF/",
    "group": "Previous year questions",
    "desc": "Past papers sorted by week and by quiz, May 2022 to Sep 2025.",
    "by": "Ankit Kumar"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   },
   {
    "label": "MLF textbook",
@@ -117,6 +148,30 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=diploma",
+   "group": "Notes",
+   "desc": "Study resources for MLF, MLT, MLP, DL GenAI and Java, shared by Kailash.",
+   "by": "Kailash",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Linear Algebra companion",
+   "url": "https://bsc-iitm.github.io/linearalgebra/",
+   "group": "Notes",
+   "desc": "Notes and problems on linear algebra for Maths 2 and MLF.",
+   "by": "IITM BS GitHub",
+   "by_url": "https://github.com/bsc-iitm"
+  },
+  {
+   "label": "MauryaHub course videos",
+   "url": "https://mauryahub.onrender.com/course/3",
+   "group": "Video solutions",
+   "desc": "Videos solving the weekly activity questions and past Quiz 1 papers.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

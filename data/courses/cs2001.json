@@ -24,11 +24,41 @@
    "desc": "All lecture videos."
   },
   {
+   "label": "Diploma question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1MNgNju8Lr7Nbuy2TMDTxBcFREEqFSHInLWQ3hhJgXlU/edit?gid=17317205#gid=17317205",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers (forenoon and afternoon), one tab for each term from Sep 2021. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "added": "2026-11-23"
+  },
+  {
    "label": "DBMS weekwise PYQs",
    "url": "https://discourse.onlinedegree.iitm.ac.in/t/dbms-weekwise-pyqs/205837",
    "group": "Previous year questions",
    "desc": "Past questions sorted by week.",
    "by": "Preethy Parthasarathy"
+  },
+  {
+   "label": "Quiz Space question papers",
+   "url": "https://quizspacee.com/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   },
   {
    "label": "DBMS notes",
@@ -69,6 +99,13 @@
    "desc": "Practice queries in the browser."
   },
   {
+   "label": "Custodia OPPE practice",
+   "url": "https://custodia-beta.vercel.app/",
+   "desc": "Browser-based OPPE practice with testcases and instant grading. Needs Google sign-in. A student-run site, not run by IITM.",
+   "group": "Extra SQL practice",
+   "added": "2026-11-23"
+  },
+  {
    "label": "Course notes",
    "url": "https://www.iitmbsdegree.in/notes/dbms",
    "desc": "Notes and study material for this course.",
@@ -83,6 +120,21 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "DBMS course website",
+   "url": "https://cs2001-dbms.github.io/",
+   "desc": "Week-wise notes for weeks 1 to 12, with an SQL playground, a Python-DB playground and a downloadable PDF.",
+   "group": "Notes",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub course videos",
+   "url": "https://mauryahub.onrender.com/course/9",
+   "group": "Video solutions",
+   "desc": "Week-wise one-shot revision videos and OPPE PYQ playlists.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

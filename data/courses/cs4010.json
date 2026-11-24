@@ -11,6 +11,39 @@
  "prereq": "CS2006",
  "resources": [
   {
+   "label": "Degree question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1ndm0pg3620crYW1yyUigW6NPE5cvHLk65IvHErEv7f4/edit?gid=1189182592#gid=1189182592",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Fetch PYQs",
+   "url": "https://script.google.com/a/macros/ds.study.iitm.ac.in/s/AKfycbzs7K5NYNosmnKhjI4nZMbS3_ZWLd0b6ZFIk5wZTNwxF9mBndt5cIZuCK9JG0i2ldA/exec",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
+  {
    "url": "https://drive.google.com/drive/folders/1HJ2qny42mzuO5QrdTZTOe21PMYDPA5Wi?usp=sharing",
    "label": "Drive folder"
   }
@@ -80,133 +113,342 @@
  },
  "weeks_data": [
   {
-   "w": "Week 1",
+   "w": "Lectures",
    "items": [
     {
      "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Course Overview App Development Lab",
+     "v": "mXJ-OhISusg",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 2",
-   "items": [
+    },
     {
      "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Efficiency & Complexity Analysis",
+     "v": "ro6Z0XJ9LlI",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 3",
-   "items": [
+    },
     {
      "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Data Structures Array and Strings",
+     "v": "u1PcLvHmGak",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 4",
-   "items": [
+    },
     {
      "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Data Structures Object, Map and Sets",
+     "v": "7qtwoo02jbY",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 5",
-   "items": [
+    },
     {
      "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Data Structures Linked List, Stack and Queue",
+     "v": "c-VcODXTPU4",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 6",
-   "items": [
+    },
     {
      "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Data Structures: Tree, Heap and Graph",
+     "v": "i6Q9nruoirA",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 7",
-   "items": [
+    },
     {
      "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Algorithms and Problem Solving",
+     "v": "q-wIdXDopKY",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 8",
-   "items": [
+    },
     {
      "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "js syntax",
+     "v": "4R785r4EPFg",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 9",
-   "items": [
+    },
     {
      "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Execution Context",
+     "v": "izJvnLeXg80",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 10",
-   "items": [
+    },
     {
      "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Hoisting",
+     "v": "iDyqB6hfe8s",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 11",
-   "items": [
+    },
     {
      "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Objects",
+     "v": "JS8LNkLLIqE",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 12",
-   "items": [
+    },
     {
      "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Closures",
+     "v": "M2QWZnF9dPQ",
+     "s": null
+    },
+    {
+     "n": "13",
+     "t": "Functions and this binding",
+     "v": "QZAyBrraSWQ",
+     "s": null
+    },
+    {
+     "n": "14",
+     "t": "Hands on Challenge DOM",
+     "v": "_BhV5vLPvY8",
+     "s": null
+    },
+    {
+     "n": "15",
+     "t": "How the Web Works",
+     "v": "lRmNDZRP3Yg",
+     "s": null
+    },
+    {
+     "n": "16",
+     "t": "Introduction to Git and GitHub GitLab",
+     "v": "A1QwcJvsg-g",
+     "s": null
+    },
+    {
+     "n": "17",
+     "t": "Git workflow and branching",
+     "v": "LQ8o35ORRZE",
+     "s": null
+    },
+    {
+     "n": "18",
+     "t": "npm, package json",
+     "v": "e0HEbfEDoYE",
+     "s": null
+    },
+    {
+     "n": "19",
+     "t": "Git workflow and npm Hands on",
+     "v": "QMVVE10Bx18",
+     "s": null
+    },
+    {
+     "n": "20",
+     "t": "Introduction to NodeJS",
+     "v": "VYWLeGrTM3s",
+     "s": null
+    },
+    {
+     "n": "21",
+     "t": "Modules in NodeJS",
+     "v": "YBEATOqkOzU",
+     "s": null
+    },
+    {
+     "n": "22",
+     "t": "How NodeJS Works",
+     "v": "mTdk4JfahiQ",
+     "s": null
+    },
+    {
+     "n": "23",
+     "t": "Introduction to TypeScript - I",
+     "v": "kZsPf5-RzVk",
+     "s": null
+    },
+    {
+     "n": "24",
+     "t": "Introduction to TypeScript II",
+     "v": "nAO-YrKi3xI",
+     "s": null
+    },
+    {
+     "n": "25",
+     "t": "Introduction to ExpressJS",
+     "v": "xa9Jj4LeTF8",
+     "s": null
+    },
+    {
+     "n": "26",
+     "t": "Setup ExpressJS with TypeScript",
+     "v": "pdvxYYgB7lU",
+     "s": null
+    },
+    {
+     "n": "27",
+     "t": "Middlewares & Error Handling in ExpressJS",
+     "v": "wupF1vdaVuc",
+     "s": null
+    },
+    {
+     "n": "28",
+     "t": "Building a Task Manager Backend with ExpressJS & TypeScript",
+     "v": "uVTcJ7vWAQY",
+     "s": null
+    },
+    {
+     "n": "29",
+     "t": "ExpressJS Project Structure",
+     "v": "HiKsn-75Ffk",
+     "s": null
+    },
+    {
+     "n": "30",
+     "t": "Tutorial: Datatypes and constraints in SQL",
+     "v": "bqxuZC_X1Cc",
+     "s": null
+    },
+    {
+     "n": "31",
+     "t": "Tutorial: Data Definition Language (DDL) Commands",
+     "v": "jWPmUIkiVMY",
+     "s": null
+    },
+    {
+     "n": "32",
+     "t": "Joins in SQL",
+     "v": "87oIQ_7i-nE",
+     "s": null
+    },
+    {
+     "n": "33",
+     "t": "Pagination in SQL",
+     "v": "AIJkCvu_phI",
+     "s": null
+    },
+    {
+     "n": "34",
+     "t": "SQL Code Execution",
+     "v": "9mUi_UNYoxI",
+     "s": null
+    },
+    {
+     "n": "35",
+     "t": "Introduction To TypeORM",
+     "v": "DHrFJTXWRWs",
+     "s": null
+    },
+    {
+     "n": "36",
+     "t": "Integrate Postgres with ExpressJS using TypeORM",
+     "v": "O92fVVjtDXA",
+     "s": null
+    },
+    {
+     "n": "37",
+     "t": "Task Manager CRUD Operations with Data Persistence",
+     "v": "38ppN7GtWIk",
+     "s": null
+    },
+    {
+     "n": "38",
+     "t": "Set Up Express Backend Job Portal Project",
+     "v": "XnhwWEfYNOc",
+     "s": null
+    },
+    {
+     "n": "39",
+     "t": "Register & Login Flow for Job Portal",
+     "v": "Hlspzlqfoho",
+     "s": null
+    },
+    {
+     "n": "40",
+     "t": "Integrate JWT Based Authentication",
+     "v": "nu6uUm1eHiw",
+     "s": null
+    },
+    {
+     "n": "41",
+     "t": "Job Portal Implementation Part I",
+     "v": "6UvSTRFIl-8",
+     "s": null
+    },
+    {
+     "n": "42",
+     "t": "Job Portal Implementation Part I2",
+     "v": "85SvNBkjBv0",
+     "s": null
+    },
+    {
+     "n": "43",
+     "t": "What is React? Understanding Virtual DOM",
+     "v": "Hjk-xMfqjhM",
+     "s": null
+    },
+    {
+     "n": "44",
+     "t": "JSX & Component-Based Architecture",
+     "v": "aYcHqwI0mPw",
+     "s": null
+    },
+    {
+     "n": "45",
+     "t": "JSX & Component-Based Architecture",
+     "v": "mHJRPIkkrkU",
+     "s": null
+    },
+    {
+     "n": "46",
+     "t": "Functional Components & Props",
+     "v": "oLW7cKYRU_o",
+     "s": null
+    },
+    {
+     "n": "47",
+     "t": "Hands on Building Simple UI Components",
+     "v": "qa4cRI4EjIE",
+     "s": null
+    },
+    {
+     "n": "48",
+     "t": "Understanding State & useState Hook",
+     "v": "XgjK0hdhhfc",
+     "s": null
+    },
+    {
+     "n": "49",
+     "t": "Handling User Input, Events & Conditional Rendering",
+     "v": "QvzXagQa4bQ",
+     "s": null
+    },
+    {
+     "n": "50",
+     "t": "Rendering Lists & Keys in React",
+     "v": "znhAcGUI3A0",
+     "s": null
+    },
+    {
+     "n": "51",
+     "t": "Side Effects & useEffect Hook",
+     "v": "JyGbK0N6zlk",
+     "s": null
+    },
+    {
+     "n": "52",
+     "t": "Routing Essentials",
+     "v": "JmQrb0shNvs",
+     "s": null
+    },
+    {
+     "n": "53",
+     "t": "Dynamic Routing",
+     "v": "sfAFFiRVc6I",
+     "s": null
+    },
+    {
+     "n": "54",
+     "t": "Navigation Guards",
+     "v": "BTlV9zbpsMM",
+     "s": null
+    },
+    {
+     "n": "55",
+     "t": "Hands on React Router",
+     "v": "RdYe-QlYDRU",
+     "s": null
+    },
+    {
+     "n": "56",
+     "t": "Hands on API Integration",
+     "v": "mlQRj9u5vl0",
      "s": null
     }
    ]

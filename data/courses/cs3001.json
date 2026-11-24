@@ -5,11 +5,44 @@
  "title": "Software Engineering",
  "program": "BSc / BS",
  "credits": 4,
- "standfirst": "How real software is planned, built and maintained by teams — requirements, design, version control, testing, delivery.",
+ "standfirst": "How real software is planned, built and maintained by teams: requirements, design, version control, testing, delivery.",
  "instructor": "Prof. Sridhar Iyer &amp; Dr. Prajish Prasad",
  "term": "Every term",
  "prereq": "CS2003",
  "resources": [
+  {
+   "label": "Degree question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1ndm0pg3620crYW1yyUigW6NPE5cvHLk65IvHErEv7f4/edit?gid=1189182592#gid=1189182592",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Fetch PYQs",
+   "url": "https://script.google.com/a/macros/ds.study.iitm.ac.in/s/AKfycbzs7K5NYNosmnKhjI4nZMbS3_ZWLd0b6ZFIk5wZTNwxF9mBndt5cIZuCK9JG0i2ldA/exec",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/1UhvR4z6DJgL2V22T9MXGhGFVYWCTS4i2?usp=drive_link",
    "label": "Drive folder",
@@ -35,6 +68,22 @@
    "desc": "Notes for several degree courses collected on one page. Look for this course's section.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=3",
+   "group": "Notes",
+   "desc": "Notes, study guides for weeks 1 to 12, quiz revision sheets and solved Quiz 2 papers. Shared on MauryaHub. Notes by Ashish Maurya, Anmol Kansal, Alok Tripathi and others.",
+   "by": "Ashish Maurya, Anmol Kansal and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Software Engineering notes (PDF)",
+   "url": "https://github.com/Risdorn/Learning-Archive/blob/main/IITM-Programming-Data-Science/Software%20Engineering/Software_Engineering.pdf",
+   "group": "Notes",
+   "desc": "A student's full course notes, written in LaTeX.",
+   "by": "Rishabh Indoria",
+   "by_url": "https://github.com/Risdorn"
   }
  ],
  "resources_note": "",

@@ -5,12 +5,77 @@
  "title": "MTech Project",
  "program": "MTech",
  "credits": 20,
- "standfirst": "A year-long research or engineering project taken end-to-end, supervised, and defended in a viva.",
+ "standfirst": "A 20 credit project in machine learning and AI, usually done at your workplace, from proposal to final report.",
  "instructor": "to be announced",
  "term": "As offered",
- "prereq": "MTech admission",
- "syllabus_body_html": "<p>A project in the broad area of machine learning and AI, completed after finishing the PG Diploma core courses.</p>\n      <p><b>Credits:</b> 20</p>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n        <li>The project will be in the broad area of machine learning and AI.</li><li>It could be done in a company or a research lab.</li><li>It will be executed and evaluated similarly to web MTech programs.</li><li>Students can start the project after completing the core courses of the PG Diploma.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA6901.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
- "milestones_html": "<p class=\"placeholder\">Milestone dates and submission deadlines not yet added.</p>",
- "pyq": [],
- "sessions": []
+ "prereq": "PG Diploma core courses",
+ "syllabus_body_html": "<p>The MTech Project (DA6901) is the last step of the MTech in AI and ML. It is a 20 credit project in the broad area of machine learning and AI, done in a company or a research lab and evaluated the same way as IIT Madras web MTech programmes.</p>\n      <p><b>When you can start:</b> after 154 credits, with all BS degree requirements and the 3 core PG Diploma courses complete. The MTech must be finished within 8 years of starting the programme.</p>\n      <p><b>Before you start:</b></p>\n      <ul class=\"link-list\">\n        <li>A no objection letter from HR at the company where you work.</li><li>A letter from an internal guide at the company, with at least 5 years of experience and preferably your reporting manager.</li><li>If you run a family business or work in a partnership or proprietorship firm, the project is done at a premier institute such as an IIT or IISc instead.</li>\n      </ul>\n      <p><b>The three stages:</b></p>\n      <ul class=\"link-list\">\n        <li>Proposal: slides presented to a committee of IITM professors. It can be part of your daily work, but it needs a clear research component. You get up to three attempts.</li><li>Mid-term report: about 4 months after the proposal.</li><li>Final report and presentation: 8 to 12 months after the proposal, depending on the work.</li>\n      </ul>\n      <p>IITM faculty evaluate the progress; the project itself is shaped by you and your internal guide. Any IP stays with the company.</p>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSDA6901.html\" target=\"_blank\" rel=\"noopener\">Official course page on the IITM study portal →</a></p>",
+ "weeks_data": [],
+ "resources": [
+  {
+   "label": "MTech project details",
+   "url": "https://docs.google.com/document/d/e/2PACX-1vR_zDL_DjjRps7aCMu6AKD6mhjyRYtD90UBHWDr1Alwu1RKUvJCoFRxWi5E1a_wF5dN1W8SDp1VQmUc/pub",
+   "group": "Official documents",
+   "desc": "Eligibility, letters you need, the three stages, fees and IP rules.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub"
+  },
+  {
+   "label": "Project proposal slides",
+   "url": "https://docs.google.com/presentation/d/e/2PACX-1vTSgFZQi1DhdWkVULS-IwNxRNRD9ZsSTKd3NnUMG4ycyr7fdq9w6lAR3A4LxC4nlw/pub",
+   "group": "Official documents",
+   "desc": "The slide format for your MTech project proposal.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub"
+  },
+  {
+   "label": "MTech project timeline",
+   "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZM2jXnnPnI4PoGUYTavks6F2cPgjkSPejq3ZDF4cSY7Q5SDSooUJuTCqnsavInWUsSmw-azzYDSOU/pubhtml",
+   "group": "Official documents",
+   "desc": "Dates for registration, proposal, mid-term and final reports.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub"
+  },
+  {
+   "label": "MTech project discussion (Sep 2025)",
+   "url": "https://drive.google.com/file/d/1bwr9F7fhk0kbt0pVlyYHt3gjW2jEtYbD/view",
+   "group": "Official documents",
+   "desc": "Recorded meeting on how the MTech project works.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub",
+   "auth": "public"
+  },
+  {
+   "label": "PG Diploma and MTech upgrade path",
+   "url": "https://docs.google.com/document/d/e/2PACX-1vRrtiiHlurfHtFnJnDwtNZ0NHAci8PQ7pHsiX3V3SZKmbSmALDk4whCO5La6efs4MSmBLVTH2ZfGJNL/pub",
+   "group": "Official documents",
+   "desc": "Eligibility, course list, electives, fees and FAQ for the upgrade.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub"
+  },
+  {
+   "label": "PGD and MTech introduction meeting",
+   "url": "https://www.youtube.com/watch?v=_Y3RBxlAe-0",
+   "group": "Official documents",
+   "desc": "Recorded session introducing the PG Diploma and MTech upgrade.",
+   "by": "IIT Madras",
+   "by_url": "https://docs.google.com/document/u/2/d/e/2PACX-1vRxGnnDCVAO3KX2CGtMIcJQuDrAasVk2JHbDxkjsGrTP5ShhZK8N6ZSPX89lexKx86QPAUswSzGLsOA/pub"
+  },
+  {
+   "label": "Online PG Diploma or MTech after the BS",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-pg-diploma-mtech-online",
+   "group": "Guides",
+   "desc": "Who can opt in and when, and where to find the official documents.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  },
+  {
+   "label": "Is the PG Diploma or MTech upgrade worth it?",
+   "url": "https://www.iitmbsdegree.in/blog/iitm-bs-pgd-mtech-worth-it",
+   "group": "Guides",
+   "desc": "Costs, what the handbook recommends, and the upgrade against a campus MTech.",
+   "by": "IITM BS Students' Corner",
+   "by_url": "https://www.iitmbsdegree.in/blog"
+  }
+ ]
 }
