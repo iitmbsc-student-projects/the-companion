@@ -4,12 +4,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Machine Learning Foundations — The Companion</title>
-<link rel="stylesheet" href="../assets/theme.css?v=a714491e">
+<title>CS2004 Machine Learning Foundations | The Companion</title>
+<meta name="description" content="Linear algebra, probability and optimisation lenses on machine learning: the mathematical foundations before the algorithms.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Companion">
+<meta property="og:title" content="CS2004 Machine Learning Foundations">
+<meta property="og:description" content="Linear algebra, probability and optimisation lenses on machine learning: the mathematical foundations before the algorithms.">
+<meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs2004.html">
+<meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/theme.css?v=19250950">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
@@ -19,7 +29,7 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
-    font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
@@ -39,12 +49,12 @@
   .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
   .sb-head .back-link:hover svg{transform:translateX(-2px)}
   .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sb-head .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
+  .sb-head .brand-code{font-family:'Spectral',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
   .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
   .nav-item{cursor:pointer;user-select:none}
   .sb-tabs .nav-item{padding:7px 13px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);
-    font:600 13px 'Inter',sans-serif;color:var(--ink);transition:background .15s,border-color .15s}
+    font:600 13px 'IBM Plex Sans',sans-serif;color:var(--ink);line-height:1.5;transition:background .15s,border-color .15s}
   .sb-tabs .nav-item:hover{border-color:var(--accent)}
   .sb-tabs .nav-item.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
 
@@ -52,8 +62,8 @@
     border:1px solid var(--rule);border-radius:10px;background:var(--paper);transition:border-color .15s}
   .sb-continue:hover{border-color:var(--accent)}
   .sb-continue[hidden]{display:none}
-  .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .sc-t{display:block;margin:2px 0 7px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;line-height:1.3;
+  .sc-k{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
   .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
@@ -63,15 +73,15 @@
   .sb-tools[hidden]{display:none}
   #lec-search{width:100%;box-sizing:border-box;padding:8px 10px 8px 31px;border:1px solid var(--rule);border-radius:8px;
     background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='4.5'/%3E%3Cpath d='m10.5 10.5 3 3'/%3E%3C/svg%3E") 10px center/14px no-repeat;
-    color:var(--ink);font:500 13.5px 'Inter',sans-serif}
+    color:var(--ink);font:500 13.5px 'IBM Plex Sans',sans-serif}
   #lec-search:focus{outline:2px solid var(--accent);outline-offset:1px}
   .sb-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
   .sb-spacer{flex:1}
   .sb-chip{padding:5px 11px;border:1px solid var(--rule);border-radius:999px;background:none;color:var(--ink-2);
-    font:600 11.5px 'Inter',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+    font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
   .sb-chip:hover{border-color:var(--accent);color:var(--ink)}
   .sb-chip[aria-pressed="true"]{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
-  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'Inter',sans-serif;cursor:pointer}
+  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer}
   .sb-link:hover{color:var(--accent)}
   .sb-chip:focus-visible,.sb-link:focus-visible,.sb-continue:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -105,17 +115,18 @@
   .week-group{border-top:1px solid var(--rule)}
   .sb-scroll > .week-group:first-child{border-top:none}
   .week-group.is-hid,.lecture-item.is-hid{display:none}
-  .week-title{position:relative;padding:9px 20px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  .week-title{position:relative;padding:9px 20px 7px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
     border-bottom:1px solid var(--rule);cursor:pointer;box-shadow:none;border-radius:0;
     display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none}
   .week-title:hover{color:var(--ink)}
   .week-title:focus{box-shadow:none}
+  .week-title:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
   /* Bootstrap's own :not(.collapsed) active-state rule outranks a plain .week-title rule on
      specificity alone, so this needs the compound selector to actually win. */
   .week-title.accordion-button:not(.collapsed){background:var(--paper-2);color:var(--ink-2);box-shadow:none}
   .week-title.accordion-button::after{display:none}
-  .week-title .chev{font-family:'JetBrains Mono',monospace;font-size:12px;
+  .week-title .chev{font-family:'IBM Plex Mono',monospace;font-size:12px;
     transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
   .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
   .accordion-body{padding:0}
@@ -123,21 +134,24 @@
   .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
     background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
   .week-title > span{position:relative;z-index:1}
+  .week-title .wdur{font-style:normal;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0;
+    text-transform:none;font-family:'IBM Plex Sans',sans-serif;font-size:11px}
   .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
   .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
-  .lecture-item.novid .ltitle{opacity:.62}
+  .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
+  .lecture-item.active .ltitle{color:inherit}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
-    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
   .lecture-item:hover{background:var(--tint)}
   .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
   .lecture-item.active .lnum{color:var(--on-fill-2)}
-  .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
+  .lnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
-  .main-content{margin-left:var(--sb-w,300px);padding:40px 56px 60px}
-  @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
+  .main-content{margin-left:var(--sb-w,300px);padding:26px 48px 36px}
+  @media(max-width:900px){ .main-content{padding:24px 24px 32px} }
 
   /* ---- collapsible sidebar: body.sidebar-collapsed slides the sidebar off-screen and lets the
      content take the full width. The toggle button is fixed so it is always reachable. ---- */
@@ -154,50 +168,50 @@
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
   body.sidebar-collapsed .sidebar-toggle{left:14px;background:var(--paper)}
-  body.sidebar-collapsed .main-content{padding-top:64px}
+  body.sidebar-collapsed .main-content{padding-top:56px}
 
   .panel{display:none}
   .panel.active{display:block}
 
-  .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
-  .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
-    line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
-    font-variation-settings:"opsz" 144}
-  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+  .course-head{padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:14px}
+  .course-head .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:36px;
+    line-height:1.05;letter-spacing:-0.02em;margin:0 0 8px;
+    }
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:17px;line-height:1.4;
     color:var(--ink-2);max-width:70ch;margin:0}
-  .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
-    display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'JetBrains Mono',monospace;
+  .meta-line{margin-top:9px;padding-top:7px;line-height:1.4;border-top:1px dotted var(--rule);
+    display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .site-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;border-radius:999px;
     background:var(--ink);color:var(--paper);border:1px solid var(--ink);text-decoration:none;
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
     transition:background .15s,border-color .15s,color .15s}
   .site-btn:hover{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
   .site-btn svg{width:13px;height:13px}
   .meta-line span{margin:0}
   .meta-line b{color:var(--ink);font-weight:500}
 
-  section.chapter{margin:26px 0}
+  section.chapter{margin:18px 0}
   section.chapter:first-of-type{margin-top:0}
-  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
-    letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:23px;
+    letter-spacing:-0.01em;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
-  section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
-    color:var(--accent);letter-spacing:.2em;font-weight:500}
+  section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:.14em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:16px;line-height:1.55;max-width:70ch}
+  .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
-  #panel-syllabus section.chapter{margin:20px 0}
+  #panel-syllabus section.chapter{margin:14px 0}
   #panel-syllabus .tbd-note{margin:0}
 
   ul.dates{list-style:none;padding:0;margin:0;max-width:640px}
-  ul.dates li{display:flex;align-items:baseline;padding:6px 0;
+  ul.dates li{display:flex;align-items:baseline;padding:4px 0;
     border-bottom:1px dotted var(--rule);font-size:15px}
   ul.dates li .what{flex:1}
-  ul.dates li .when{font-family:'JetBrains Mono',monospace;font-size:12px;
+  ul.dates li .when{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--ink-2);letter-spacing:.05em}
   ul.dates li .marker{width:8px;height:8px;border-radius:50%;background:var(--accent);
     margin-right:12px;flex-shrink:0}
@@ -205,14 +219,14 @@
   ul.dates li.exam .what{font-weight:600}
 
   table.papers{width:100%;max-width:900px;border-collapse:collapse;font-size:14px}
-  table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
-    font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
+  table.papers th{text-align:left;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
     padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
   table.papers td{padding:10px;border-bottom:1px dotted var(--rule);vertical-align:baseline}
-  table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
+  table.papers td:first-child{font-family:'IBM Plex Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
-  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
   /* 16:9 box that never grows taller than the screen: width is capped by the content width,
      by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
@@ -226,66 +240,73 @@
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
-  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
   /* Live sessions: collapsible video indexes */
   details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
   details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
   details.sess summary::-webkit-details-marker{display:none}
   details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
   details.sess[open] summary::before{transform:rotate(90deg)}
-  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
-  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
   .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
-  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
   .sess-watch::after{content:" \2197"}
   ul.topics{list-style:none;margin:0;padding:0}
   ul.topics li{border-bottom:1px dotted var(--rule)}
   ul.topics li:last-child{border-bottom:none}
   ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
   ul.topics a:hover{background:var(--tint)}
-  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-time{flex:none;width:64px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent)}
   .tp-label{flex:1;font-size:15px}
-  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
-  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+  .tp-end{flex:none;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;
     color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
   @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
   /* Resources: grouped cards */
-  .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .res-group{margin-top:22px}
+  /* resources: small cards of one size in a tidy grid. Long descriptions stop at two lines
+     (the full text is in the tooltip and is still read by screen readers), so rows stay even. */
+  .res-group{margin-top:14px}
   .res-group:first-of-type{margin-top:6px}
-  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
-    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 7px;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
   .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
   .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
-  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;padding:8px 12px 8px;background:var(--paper-2);
     border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
-  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:7px;right:9px;font-size:12px;color:var(--accent-2)}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:15px;line-height:1.3;color:var(--ink);border:none;padding-right:14px;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
   .res-main::after{content:"";position:absolute;inset:0}
   .res-main:hover{color:var(--accent)}
-  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
-  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
-  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
-  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
-  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+  .res-main:focus-visible{outline:none}
+  .res-card:has(.res-main:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+  .res-desc{margin:0;color:var(--ink-2);font-size:13px;line-height:1.4;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+  .res-foot{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin-top:auto;padding-top:3px;min-width:0}
+  .res-host{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2);letter-spacing:.02em;
+    max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-by{color:var(--ink-2);font-size:12px;font-style:italic;min-width:0}
+  .res-foot .res-by{position:relative;z-index:1;max-width:100%;padding-right:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-badge{flex:none;margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:0 6px;
     border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
   .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
-  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  @media(max-width:640px){ .res-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))} }
   .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
-  .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
-  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+  .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
-  .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
+  .current-actions a{font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.1em;text-transform:uppercase}
 
   /* lecture stage: a small title line, the video taking all the room that fits on screen, then Previous / Next */
@@ -302,14 +323,15 @@
   }
   .lec-stage .video{width:100%;min-width:0}
   .lec-id{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px;margin-bottom:6px}
-  .lec-id .current-eyebrow{margin:0;font-size:10.5px}
+  .lec-id .current-eyebrow{margin:0;font-size:11.5px}
   .lec-id .current-title{margin:0;font-size:16px}
   .lec-nav{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
   .lec-nav button,.rs-go{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:0 14px 0 11px;border:1px solid var(--rule);
-    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;white-space:nowrap;
+    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;white-space:nowrap;
     transition:border-color .15s,background .15s,transform .1s,filter .15s}
   .lec-nav button svg,.m-step svg,.rs-go svg{width:15px;height:15px;flex:none;transition:transform .15s}
-  .lec-nav .ls-n{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.06em;opacity:.65}
+  .lec-nav .ls-n{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;opacity:.8}
+  .lec-nav .ls-next .ls-n{opacity:1}
   .lec-nav button:hover:not([disabled]){border-color:var(--accent)}
   .lec-nav button:active:not([disabled]){transform:scale(.97)}
   .lec-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -323,15 +345,15 @@
   .lec-id .current-actions{margin-left:auto;gap:8px}
   .lec-id .current-actions:empty{display:none}
   .lec-id .current-actions a{display:inline-flex;align-items:center;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;
-    background:var(--paper-2);color:var(--accent);font-size:10.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
+    background:var(--paper-2);color:var(--accent);font-size:11.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
   .lec-id .current-actions a:hover{border-color:var(--accent);background:var(--tint)}
   .lec-id .current-actions .tbd-note{font-size:12px;color:var(--ink-2)}
   .m-step{display:none}
 
   /* watched ticks and the resume card */
-  .lecture-item .ltitle{flex:1;min-width:0}
+  .lecture-item .ltitle{flex:1;min-width:0;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
   .lcheck{flex:none;align-self:center;margin:-6px -10px -6px 0;padding:6px 10px;border:0;background:none;cursor:pointer;color:inherit;line-height:0}
-  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.55;
+  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.85;
     transition:background .12s,border-color .12s,opacity .12s}
   .lcheck:hover::before{opacity:1;border-color:var(--accent)}
   .lcheck:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
@@ -342,32 +364,35 @@
   .lec-nav .ls-done{padding:0 13px 0 11px}
   .lec-nav .ls-done.is-done{border-color:var(--accent);color:var(--accent);background:var(--tint)}
   @media(max-width:520px){ .lec-nav .ls-done .lbl{display:none} .lec-nav .ls-done{padding:0 11px} }
-  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:0 0 26px;padding:14px 18px;
+  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 16px;padding:10px 16px;
     border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
-  .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .rs-t{margin:3px 0 9px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-k{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .rs-t{margin:2px 0 6px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
-  .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
+  .rs-n{margin-top:5px;font-size:12.5px;color:var(--ink-2)}
   .rs-reset{margin-left:10px;padding:0;border:0;background:none;color:var(--ink-2);font:inherit;text-decoration:underline;cursor:pointer}
   .rs-reset:hover{color:var(--accent)}
 
   footer.colophon{margin-left:var(--sb-w,300px)}
   /* ---- page footer ---- */
-  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'Inter',sans-serif;font-style:normal}
-  footer.colophon .co-in{max-width:900px;margin:0 auto;padding:22px 28px 30px}
+  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'IBM Plex Sans',sans-serif;font-style:normal}
+  footer.colophon .co-in{max-width:900px;margin:0 auto;padding:20px 28px 20px}
   footer.colophon .co-note{display:flex;align-items:flex-start;gap:12px;margin:0 0 20px;padding:12px 16px;
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
     font-size:13.5px;line-height:1.55;color:var(--ink-2)}
   footer.colophon .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
-    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Fraunces',serif}
+    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
-  footer.colophon .co-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--ink)}
-  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  footer.colophon .co-brand{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px}
+  footer.colophon .co-by{font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+  footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
+  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:0 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
-  footer.colophon .co-nav a{color:var(--ink-2);border:none}
+  footer.colophon .co-nav a{display:inline-block;padding:7px 0;color:var(--ink-2);border:none}
+  footer.colophon .theme-foot{margin-top:14px}
   footer.colophon .co-nav a:hover{color:var(--accent)}
   footer.colophon .co-in{max-width:none;padding-left:56px;padding-right:56px}
   @media(max-width:900px){ footer.colophon .co-in{padding-left:28px;padding-right:28px} }
@@ -381,12 +406,12 @@
     .m-bar{display:flex;align-items:center;gap:10px;position:fixed;top:0;left:0;right:0;height:54px;padding:0 12px;
       background:var(--paper);border-bottom:1px solid var(--rule);z-index:20}
     .m-menu{display:flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--rule);
-      border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
+      border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .m-code{font-family:'Fraunces',serif;font-weight:700;font-size:16px;flex:none}
+    .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
     .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
-      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
+      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
     .m-step[hidden]{display:none}
     .m-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .m-here{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;
@@ -400,10 +425,10 @@
       display:block;transition:opacity .22s ease}
     body.nav-open .m-scrim{opacity:1;pointer-events:auto}
     body.nav-open{overflow:hidden}
-    .main-content,body.sidebar-collapsed .main-content{margin-left:0;padding:74px 18px 40px}
+    .main-content,body.sidebar-collapsed .main-content{margin-left:0;padding:68px 18px 28px}
     footer.colophon,body.sidebar-collapsed footer.colophon{margin-left:0}
     footer.colophon .co-in{padding-left:18px;padding-right:18px}
-    .course-head h1{font-size:28px}
+    .course-head h1{font-size:26px}
     .course-head .kicker{letter-spacing:.14em}
     .sb-resize{display:none}
     .sb-tabs .nav-item{padding:10px 15px;font-size:14px}
@@ -412,9 +437,18 @@
     .week-title{padding-top:14px;padding-bottom:12px}
     .lecture-item{padding-top:11px;padding-bottom:11px}
   }
+  /* project pages: a link back to the main course */
+  .parent-link{display:inline-block;margin:4px 0 6px;padding:6px 12px;border:1px solid var(--rule);border-radius:14px;line-height:1.45;
+    background:var(--paper-2);color:var(--ink-2);font-size:13.5px}
+  .parent-link b{color:var(--ink);font-weight:600}
+  .parent-link::after{content:"\2192";color:var(--accent);margin-left:6px}
+  .parent-link:hover{border-color:var(--accent)}
+  .sb-tabs .nav-item[hidden]{display:none}
+  .sb-bottom{margin-top:auto}   /* keep the theme dots at the foot of the sidebar even when there is no lecture list */
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <script>
   // Restore the sidebar state before first paint so the page doesn't flash open then shut.
   try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
@@ -438,8 +472,8 @@
         <span class="brand-code">CS2004</span>
       </div>
       <div class="sb-tabs">
-        <div class="nav-item active" id="nav-dashboard">Dashboard</div>
-        <div class="nav-item" id="nav-syllabus">Syllabus</div>
+        <button type="button" class="nav-item active" id="nav-dashboard" aria-current="page">Dashboard</button>
+        <button type="button" class="nav-item" id="nav-syllabus">Syllabus</button>
       </div>
       <button type="button" class="sb-continue" id="sb-continue" hidden>
         <span class="sc-k" id="sc-k"></span>
@@ -465,14 +499,14 @@
     <div class="sb-resize" id="sb-resize" aria-hidden="true" title="Drag to resize. Double-click to reset."></div>
   </nav>
 
-  <main class="main-content">
+  <main class="main-content" id="main" tabindex="-1">
 
     <section class="panel active" id="panel-dashboard">
 
       <div class="course-head">
         <div class="kicker">CS2004 · Diploma / Data Science · 4 credits</div>
         <h1>Machine Learning Foundations</h1>
-        <p class="standfirst">Linear algebra, probability and optimisation lenses on machine learning — the mathematical foundations before the algorithms.</p>
+        <p class="standfirst">Linear algebra, probability and optimisation lenses on machine learning: the mathematical foundations before the algorithms.</p>
         <div class="meta-line">
           <span><b>Instructor</b> Prof. Harish G. Ramaswamy, Prof. Arun Rajkumar &amp; Prof. Prashanth LA</span>
           <span><b>Term</b> Every term</span>
@@ -489,121 +523,158 @@
         </div>
         <button type="button" class="rs-go" id="rs-go"></button>
       </div>
-
       <section class="chapter" id="calendar">
-        <h2><span class="num">§ 1</span>Calendar</h2>
-        <ul class="dates">
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when">—</span></li>
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when">—</span></li>
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when">—</span></li>
+        <h2><span class="num" aria-hidden="true">§ 1</span>Calendar</h2>
+        <ul class="dates" id="cal-list" hidden>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when"></span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when"></span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when"></span></li>
         </ul>
         <p class="tbd-note" id="calendar-term-note" style="margin-top:10px"></p>
       </section>
 
       <section class="chapter" id="pyq">
-        <h2><span class="num">§ 2</span>Previous Year Questions</h2>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Previous Year Questions</h2>
 
         <div class="res-group">
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="Diploma question paper repository: Past quiz and end term papers (forenoon and afternoon), one tab for each term from Sep 2021. Open a term and find this course in the list. A sheet kept by IITM BS students. (docs.google.com)">
+              <a class="res-main" href="https://docs.google.com/spreadsheets/d/1MNgNju8Lr7Nbuy2TMDTxBcFREEqFSHInLWQ3hhJgXlU/edit?gid=17317205#gid=17317205" target="_blank" rel="noopener">Diploma question paper repository</a>
+              <p class="res-desc">Past quiz and end term papers (forenoon and afternoon), one tab for each term from Sep 2021. Open a term and find this course in the list. A sheet kept by IITM BS students.</p>
+              <div class="res-foot"><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
+            </li>
+            <li class="res-card" title="MLF weekwise and quizwise papers: Past papers sorted by week and by quiz, May 2022 to Sep 2025. (23f3004032.github.io)">
               <a class="res-main" href="https://23f3004032.github.io/MLF/" target="_blank" rel="noopener">MLF weekwise and quizwise papers</a>
               <p class="res-desc">Past papers sorted by week and by quiz, May 2022 to Sep 2025.</p>
-              <div class="res-foot"><span class="res-host">23f3004032.github.io</span><span class="res-by">by Ankit Kumar</span></div>
+              <div class="res-foot"><span class="res-by">by Ankit Kumar</span></div>
+            </li>
+            <li class="res-card" title="QuizPractice papers: Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan. (quizpractice.space)">
+              <a class="res-main" href="https://quizpractice.space/" target="_blank" rel="noopener">QuizPractice papers</a>
+              <p class="res-desc">Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.</p>
+            </li>
+            <li class="res-card" title="MauryaHub papers: Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM. (mauryahub.in)">
+              <a class="res-main" href="https://www.mauryahub.in/" target="_blank" rel="noopener">MauryaHub papers</a>
+              <p class="res-desc">Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.</p>
+              <div class="res-foot"><span class="res-by">by Ashish Maurya</span></div>
             </li>
           </ul>
         </div>
       </section>
 
       <section class="chapter" id="resources">
-        <h2><span class="num">§ 3</span>Resources</h2>
+        <h2><span class="num" aria-hidden="true">§ 3</span>Resources</h2>
 
         <div class="res-group">
           <h3 class="res-group-title">Course material<span class="res-count">2</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="Supplementary content: Extra material shared on Google Drive. (drive.google.com)">
               <a class="res-main" href="https://drive.google.com/drive/folders/1CPbqMrs-gYovtLlH-JMIjvW3oscE6f8J?usp=share_link" target="_blank" rel="noopener">Supplementary content</a>
               <p class="res-desc">Extra material shared on Google Drive.</p>
-              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+              <div class="res-foot"><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="Course YouTube channel: All lecture videos. (youtube.com)">
               <a class="res-main" href="https://www.youtube.com/@mlf-iitm" target="_blank" rel="noopener">Course YouTube channel</a>
               <p class="res-desc">All lecture videos.</p>
-              <div class="res-foot"><span class="res-host">youtube.com</span></div>
             </li>
           </ul>
         </div>
         <div class="res-group">
-          <h3 class="res-group-title">Notes<span class="res-count">7</span></h3>
+          <h3 class="res-group-title">Notes<span class="res-count">10</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="MLF weekwise notes: Week-by-week notes for the whole course. (giri-subrahmanya.github.io)">
               <a class="res-main" href="https://giri-subrahmanya.github.io/MLF-Notes/" target="_blank" rel="noopener">MLF weekwise notes</a>
               <p class="res-desc">Week-by-week notes for the whole course.</p>
-              <div class="res-foot"><span class="res-host">giri-subrahmanya.github.io</span><span class="res-by">by B R Giri Subrahmanya</span></div>
+              <div class="res-foot"><span class="res-by">by B R Giri Subrahmanya</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="MLF weekwise summary: Short weekly summaries written by a TA. (22f3001517.github.io)">
               <a class="res-main" href="https://22f3001517.github.io/mlf-ta-notes/index.html" target="_blank" rel="noopener">MLF weekwise summary</a>
               <p class="res-desc">Short weekly summaries written by a TA.</p>
-              <div class="res-foot"><span class="res-host">22f3001517.github.io</span><span class="res-by">by Anant Kumar</span></div>
+              <div class="res-foot"><span class="res-by">by Anant Kumar</span></div>
             </li>
-            <li class="res-card">
-              <a class="res-main" href="http://notes.karthikthiagu.com/mlf/" target="_blank" rel="noopener">MLF notes (Karthik's site)</a>
+            <li class="res-card" title="MLF notes (Karthik&#39;s site): Full course notes. (notes.karthikthiagu.com)">
+              <a class="res-main" href="https://notes.karthikthiagu.com/mlf/" target="_blank" rel="noopener">MLF notes (Karthik's site)</a>
               <p class="res-desc">Full course notes.</p>
-              <div class="res-foot"><span class="res-host">notes.karthikthiagu.com</span><span class="res-by">by Karthik Thiagarajan</span></div>
+              <div class="res-foot"><span class="res-by">by Karthik Thiagarajan</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="MLF notes (course site): A second set of full course notes. (bsc-iitm.github.io)">
               <a class="res-main" href="https://bsc-iitm.github.io/machine-learning-foundations/site/" target="_blank" rel="noopener">MLF notes (course site)</a>
               <p class="res-desc">A second set of full course notes.</p>
-              <div class="res-foot"><span class="res-host">bsc-iitm.github.io</span><span class="res-by">by Karthik Thiagarajan</span></div>
+              <div class="res-foot"><span class="res-by">by Karthik Thiagarajan</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="MLF notes on Medium: Written notes for the Diploma MLF course. (medium.com)">
               <a class="res-main" href="https://medium.com/@prathambhalla7/iit-madras-diploma-in-data-science-machine-learning-foundation-mlf-notes-0310493445fe" target="_blank" rel="noopener">MLF notes on Medium</a>
               <p class="res-desc">Written notes for the Diploma MLF course.</p>
-              <div class="res-foot"><span class="res-host">medium.com</span><span class="res-by">by <a href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">Pratham Bhalla</a></span></div>
+              <div class="res-foot"><span class="res-by">by <a href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">Pratham Bhalla</a></span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="MLF lecture notebook, typeset: Weeks 1 to 12 with worked examples, redrawn diagrams and a self-check each week. Typeset edition by Ammar Hashmi. Not official. (ammar-iitm.github.io)">
+              <a class="res-main" href="https://ammar-iitm.github.io/machine-learning-foundations/" target="_blank" rel="noopener">MLF lecture notebook, typeset</a>
+              <p class="res-desc">Weeks 1 to 12 with worked examples, redrawn diagrams and a self-check each week. Typeset edition by Ammar Hashmi. Not official.</p>
+              <div class="res-foot"><span class="res-by">by Kshitij Maheshwari</span></div>
+            </li>
+            <li class="res-card" title="Course notes: Notes and study material for this course. (iitmbsdegree.in)">
               <a class="res-main" href="https://www.iitmbsdegree.in/notes/mlf" target="_blank" rel="noopener">Course notes</a>
               <p class="res-desc">Notes and study material for this course.</p>
-              <div class="res-foot"><span class="res-host">iitmbsdegree.in</span><span class="res-by">by <a href="https://www.iitmbsdegree.in/" target="_blank" rel="noopener">IITM BS Students' Corner</a></span></div>
+              <div class="res-foot"><span class="res-by">by <a href="https://www.iitmbsdegree.in/" target="_blank" rel="noopener">IITM BS Students' Corner</a></span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="Topic-wise notes: Topic-wise notes on ML Study Hub. (degreedost.com)">
               <a class="res-main" href="https://degreedost.com/#notes/mlfoundations" target="_blank" rel="noopener">Topic-wise notes</a>
               <p class="res-desc">Topic-wise notes on ML Study Hub.</p>
-              <div class="res-foot"><span class="res-host">degreedost.com</span><span class="res-by">by <a href="https://degreedost.com/" target="_blank" rel="noopener">ML Study Hub</a></span></div>
+              <div class="res-foot"><span class="res-by">by <a href="https://degreedost.com/" target="_blank" rel="noopener">ML Study Hub</a></span></div>
+            </li>
+            <li class="res-card" title="MauryaHub student notes: Study resources for MLF, MLT, MLP, DL GenAI and Java, shared by Kailash. (mauryahub.onrender.com)">
+              <a class="res-main" href="https://mauryahub.onrender.com/resources?program=diploma" target="_blank" rel="noopener">MauryaHub student notes</a>
+              <p class="res-desc">Study resources for MLF, MLT, MLP, DL GenAI and Java, shared by Kailash.</p>
+              <div class="res-foot"><span class="res-by">by Kailash</span></div>
+            </li>
+            <li class="res-card" title="Linear Algebra companion: Notes and problems on linear algebra for Maths 2 and MLF. (bsc-iitm.github.io)">
+              <a class="res-main" href="https://bsc-iitm.github.io/linearalgebra/" target="_blank" rel="noopener">Linear Algebra companion</a>
+              <p class="res-desc">Notes and problems on linear algebra for Maths 2 and MLF.</p>
+              <div class="res-foot"><span class="res-by">by <a href="https://github.com/bsc-iitm" target="_blank" rel="noopener">IITM BS GitHub</a></span></div>
             </li>
           </ul>
         </div>
         <div class="res-group">
           <h3 class="res-group-title">Books<span class="res-count">2</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="MLF textbook: The course textbook as a PDF. (drive.google.com)">
               <a class="res-main" href="https://drive.google.com/file/d/1ivId77gPC20gYi22wAqTcyCn5SiOyVWd/view" target="_blank" rel="noopener">MLF textbook</a>
               <p class="res-desc">The course textbook as a PDF.</p>
-              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-by">by B R Giri Subrahmanya</span><span class="res-badge iitm">IITM login required</span></div>
+              <div class="res-foot"><span class="res-by">by B R Giri Subrahmanya</span><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="Books folder: Reference books for the course. (drive.google.com)">
               <a class="res-main" href="https://drive.google.com/drive/folders/1oMuPSEqbwgmI-u0ALZ5dTtcpw4jP_dFw?usp=drive_link" target="_blank" rel="noopener">Books folder</a>
               <p class="res-desc">Reference books for the course.</p>
-              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+              <div class="res-foot"><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
             </li>
           </ul>
         </div>
         <div class="res-group">
           <h3 class="res-group-title">TA resources<span class="res-count">3</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="Activity questions: Activity questions shared by the MLF TA team. (drive.google.com)">
               <a class="res-main" href="https://drive.google.com/drive/folders/15TxHlHTaCFxm_uP3MiboVGsbnCGyBhB0?usp=drive_link" target="_blank" rel="noopener">Activity questions</a>
               <p class="res-desc">Activity questions shared by the MLF TA team.</p>
-              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+              <div class="res-foot"><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="Maths 2 Linear Algebra recap: Quick revision of the linear algebra needed for MLF. (drive.google.com)">
               <a class="res-main" href="https://drive.google.com/file/d/1sllWUyiNDuibZRkcsQxmyG-ebF7oCUgc/view?usp=drivesdk" target="_blank" rel="noopener">Maths 2 Linear Algebra recap</a>
               <p class="res-desc">Quick revision of the linear algebra needed for MLF.</p>
-              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+              <div class="res-foot"><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="TA session recordings (Jan 2026 term): Sheet of TA sessions with dates, topics and recordings. (docs.google.com)">
               <a class="res-main" href="https://docs.google.com/spreadsheets/d/1wFkDZZJYgUQzj1SV6cqQtBdvkkQFJETeo2vro3mgjw0/edit?usp=sharing" target="_blank" rel="noopener">TA session recordings (Jan 2026 term)</a>
               <p class="res-desc">Sheet of TA sessions with dates, topics and recordings.</p>
-              <div class="res-foot"><span class="res-host">docs.google.com</span><span class="res-badge iitm">IITM login required</span></div>
+              <div class="res-foot"><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="res-group">
+          <h3 class="res-group-title">Video solutions<span class="res-count">1</span></h3>
+          <ul class="res-grid">
+            <li class="res-card" title="MauryaHub course videos: Videos solving the weekly activity questions and past Quiz 1 papers. (mauryahub.onrender.com)">
+              <a class="res-main" href="https://mauryahub.onrender.com/course/3" target="_blank" rel="noopener">MauryaHub course videos</a>
+              <p class="res-desc">Videos solving the weekly activity questions and past Quiz 1 papers.</p>
+              <div class="res-foot"><span class="res-by">by Ashish Maurya</span></div>
             </li>
           </ul>
         </div>
@@ -620,7 +691,7 @@
       </div>
 
       <section class="chapter" id="syllabus-description">
-        <h2><span class="num">§ 1</span>Course Description</h2>
+        <h2><span class="num" aria-hidden="true">§ 1</span>Course Description</h2>
         <div class="syllabus-body">
           <p>This course lays the foundation for subsequent machine learning courses by covering essential concepts that, while not strictly part of machine learning, are crucial for a comprehensive understanding of the field</p>
           <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
@@ -628,7 +699,7 @@
       </section>
 
       <section class="chapter" id="syllabus-faculty">
-        <h2><span class="num">§ 2</span>Faculty</h2>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Faculty</h2>
         <ul class="link-list">
           <li>Prof. Harish G. Ramaswamy, Wadhwani School of Data Science, IIT Madras</li>
           <li>Prof. Arun Rajkumar, Wadhwani School of Data Science, IIT Madras</li>
@@ -637,7 +708,7 @@
       </section>
 
       <section class="chapter" id="syllabus-weeks">
-        <h2><span class="num">§ 3</span>Week-by-week</h2>
+        <h2><span class="num" aria-hidden="true">§ 3</span>Week-by-week</h2>
         <div class="syllabus-body">
           <p><b>Week 1:</b> Introduction to ML - data, models, tasks; Supervised (regression, classification); Unsupervised (dimensionality reduction, density estimation); Applications.</p>
           <p><b>Week 2:</b> Sets and functions; Calculus - univariate (derivatives, applications), multivariate (lines, planes, approximations).</p>
@@ -660,11 +731,11 @@
       <div class="lec-stage">
         <div class="lec-id">
           <div class="current-eyebrow" id="current-eyebrow"></div>
-          <h3 class="current-title" id="current-title"></h3>
+          <h1 class="current-title" id="current-title"></h1>
           <div class="current-actions" id="current-actions"></div>
         </div>
         <div class="video" id="video-box">
-          <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
+          <iframe id="video-frame" title="Lecture video" src="" allowfullscreen loading="lazy"></iframe>
           <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet. Try the slide link above.</div>
         </div>
         <div class="lec-nav">
@@ -682,16 +753,21 @@
   <div class="co-in">
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
-      <span class="co-name">The Companion</span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../contributors.html">Contributors</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a></nav>
+      <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
+    <div class="theme-foot" id="theme-foot"></div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/term-syllabus.js?v=6b763595"></script>
-<script>window.COURSE = {code: "CS2004", weeks: [{"w":"Week 1","items":[{"n":"1.1","t":"What is Machine Learning?","v":"zuS1WZQGhAs","s":"https://drive.google.com/file/d/1HdPoRaA0LdJBZGxUa4JQDZKtcbVV4Dfo/view?usp=drive_link"},{"n":"1.2","t":"Data, Models and ML Task","v":"zssr9nOZlVg","s":"https://drive.google.com/file/d/1qQkMvrz5MZOudGoZXOUCOordCR8R8NsJ/view?usp=drive_link"},{"n":"1.3","t":"Supervised Learning: Regression","v":"iVcrCdEaJ7A","s":"https://drive.google.com/file/d/1GvfEaCrUKhNUbEyhj6V5OKyCoTnkdB6j/view?usp=drive_link"},{"n":"1.4","t":"Supervised Learning: Classification","v":"QtOrjs0Fzzc","s":"https://drive.google.com/file/d/1u6lUck4BZaCn2vQWNFxI_103MMpqW7dm/view?usp=drive_link"},{"n":"1.5","t":"Unsupervised Learning: Dimensionality Reduction","v":"EuNPsw9zA1k","s":"https://drive.google.com/file/d/10dvGcZA53hweTz8qym2Vft9n9Kg4uiDf/view?usp=drive_link"},{"n":"1.6","t":"Unsupervised Learning: Density Estimation","v":"Gj6-61UDeMs","s":"https://drive.google.com/file/d/1o8oOBRuRhKinrT4inPC57PnH4XatM84g/view?usp=drive_link"},{"n":"Tutorial 1.1","t":"To ML or not to ML","v":"5G4klfCCoIs","s":null},{"n":"Tutorial 1.2","t":"Illustration with a real world dataset","v":"T7vdFVC6DOo","s":null},{"n":"Tutorial 1.3","t":"Dimensionality Reduction and Density Estimation with Applications","v":"JG5Z9np4Tbs","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Sets and Functions","v":"Gi9nUcrZAJs","s":"https://drive.google.com/file/d/1dIuousxigsyCTtjyMGRMqFVOWlKIrHWd/view?usp=drive_link"},{"n":"2.2","t":"Univariate Calculus: Continuity and Differentiability","v":"yvaPORg2w9c","s":"https://drive.google.com/file/d/1_wVOgrX9VrjjxB9Y33jKzUeF7iQqd1eR/view?usp=drive_link"},{"n":"2.3","t":"Univariate Calculus: Derivatives and Linear Approximations","v":"AG2fQvxEpbE","s":"https://drive.google.com/file/d/1c0GcXiuyzgOYG820NyU9n1v5r5ZhvoK5/view?usp=drive_link"},{"n":"2.4","t":"Univariate Calculus: applications and advanced rules","v":"En15LA59Fsw","s":"https://drive.google.com/file/d/1IDn0SSgPmK0qpmpcgTPZLOS1Qs5SCar-/view?usp=drive_link"},{"n":"2.5","t":"Multivariate Calculus: Lines and planes in higher dimensional space","v":"O5jrvVi05wA","s":"https://drive.google.com/file/d/1A0KkK9NvVQKskitYlsrYXHQYTuHET95x/view?usp=drive_link"},{"n":"2.6","t":"Multivariate Calculus: Linear approximation and applications","v":"dLLbl0vucCc","s":"https://drive.google.com/file/d/1YVgUQvXbe-z4Cn3OtkFIcM9EHHynoNOl/view?usp=drive_link"},{"n":"Tutorial 2.1","t":"Tutorial - Week 2","v":"YNJMUyNlqFQ","s":"https://drive.google.com/file/d/17gShgHsDjhKYDBnZ19Mcf8w2evyQL-cm/view?usp=drive_link"}]},{"w":"Week 3","items":[{"n":"3.1","t":"Four Fundamental Subspaces","v":"9Ynm5oJRjxY","s":"https://drive.google.com/file/d/1OA7PbKW1wkG3maKi3s3g6sob_gE0lhIJ/view?usp=drive_link"},{"n":"3.2","t":"Orthogonal Vectors and Subspaces","v":"pDVywF7yLaM","s":"https://drive.google.com/file/d/1xMFer5WM9yakyHELZHLINGbz6evarmsL/view?usp=drive_link"},{"n":"3.3","t":"Projections","v":"kVYR7II5KUA","s":"https://drive.google.com/file/d/1LaTAl1Ztyc0xE-1ahllSdzo5Tcxp5bou/view?usp=drive_link"},{"n":"3.4","t":"Least Squares and Projections onto a Subspace","v":"_QRlIQBwIk8","s":"https://drive.google.com/file/d/1Y1EczbQQcAMI2oLbgCfnr0ZtiYa8Rejt/view?usp=drive_link"},{"n":"3.5","t":"Example of Least Squares","v":"wZlwod57blE","s":"https://drive.google.com/file/d/1PBqocYnVNe-JLEFdGvrV1SA0DaV5DsCj/view?usp=drive_link"},{"n":"Tutorial 3.1","t":"Four fundamental vector subspaces","v":"rbBiDiFC584","s":"https://drive.google.com/file/d/1dkxYpctG4_fGoDBJtVpOBDDqbQjL7DVy/view?usp=drive_link"},{"n":"Tutorial 3.2","t":"Row space computation using reduced row echelon form and Solution to Ax = b","v":"kRJIiQXiOqU","s":"https://drive.google.com/file/d/1b0sjNSvT4JxqRIeI2CCquklEY2sbY3Ct/view?usp=drive_link"},{"n":"Tutorial 3.3","t":"Orthogonality, projections and least squares method","v":"Ijn-HGlVifU","s":"https://drive.google.com/file/d/155KHEYD1ByxLj0d-JaBwXTQiyKSnke3s/view?usp=drive_link"}]},{"w":"Week 4","items":[{"n":"4.1","t":"Linear and Polynomial Regression","v":"x7UJYkGHVJw","s":"https://drive.google.com/file/d/14D0GmV2EzbVb4HBQHtpX6-n5bTfoCTdK/view?usp=drive_link"},{"n":"4.2","t":"Eigenvalues and Eigenvectors","v":"GA6m_T4d_d0","s":"https://drive.google.com/file/d/19vlj67zX0IwhBz9yHjbrrDxHcJJi7bGK/view?usp=drive_link"},{"n":"4.3","t":"Diagonalization of a matrix","v":"WKZUxnrLmRk","s":"https://drive.google.com/file/d/163HyorE-cYX5_b5SEo8UfROkW8YGAv2-/view?usp=drive_link"},{"n":"4.4","t":"Solving Fibonacci Sequence using diagonalization","v":"ISB87lDKOVE","s":"https://drive.google.com/file/d/1D6hFFKKBOpmrBBMzhetVU23i9R-HH9EK/view?usp=drive_link"},{"n":"4.5","t":"Orthogonally diagonalizable matrices","v":"f0hVL9xhL94","s":"https://drive.google.com/file/d/1tqa_Zx31HJrg8kAEBOWma06Le75dbiXo/view?usp=drive_link"},{"n":"Tutorial 4.1","t":"Polynomial Regression","v":"EF85-fHy-m0","s":"https://drive.google.com/file/d/15Pyt_g5gUzDNGNa6pnDrd4uEiitV40Td/view?usp=drive_link"},{"n":"Tutorial 4.2","t":"Eigenvalues and Eigenvectors","v":"SPF2ovt7uYg","s":"https://drive.google.com/file/d/1Xqrth8MLK0T-K5SdANm3pKzuKzIGk4-M/view?usp=drive_link"}]},{"w":"Week 5","items":[{"n":"5.1","t":"Complex Matrices","v":"G6A3PDivChQ","s":"https://drive.google.com/file/d/14H-vhJxpS5TMYEMj_Md3SGXjkqzPO5r_/view?usp=drive_link"},{"n":"5.2","t":"Hermitian Matrices","v":"aHykfDdjDiw","s":"https://drive.google.com/file/d/1ywOwYK0WlG_N8EzyX7_mZgC6VZtUBjwM/view?usp=drive_link"},{"n":"5.3","t":"Unitary Matrices","v":"2DAG0I1NKiI","s":"https://drive.google.com/file/d/18s90eCmzCv0cLVzjUgton6aDCofBjhCw/view?usp=drive_link"},{"n":"5.4","t":"Diagonalization of Hermitian Matrices (Part 1)","v":"qG1tlEa2Zn0","s":"https://drive.google.com/file/d/1oaLp_jSTM2cGg7Gb6sUDuuBXeheXK2cZ/view?usp=drive_link"},{"n":"5.5","t":"Diagonalization of Hermitian Matrices (part 2)","v":"u9uFJNrCL0E","s":"https://drive.google.com/file/d/1RVxfH7Q6symPi2s9zwN3gD1ONvFenDrv/view?usp=drive_link"},{"n":"Tutorial 5.1","t":"Some Problems to think and solve","v":"__TUd8Sq-wU","s":"https://drive.google.com/file/d/1yS4ks7acZKRuNNVmj5RW8KI0pN2OHqBX/view?usp=drive_link"}]},{"w":"Week 6","items":[{"n":"6.1","t":"Singular Value Decomposition","v":"fTErMgNIKHQ","s":"https://drive.google.com/file/d/17qIJNLkYVhpGz5RkbHUwDae_fuIVzYLQ/view?usp=drive_link"},{"n":"6.2","t":"Example of SVD","v":"lP1UKRK4h5k","s":"https://drive.google.com/file/d/1ZyIk3trTGVSIWJ1Ykw12S3ka_yHjDsMn/view?usp=drive_link"},{"n":"6.3","t":"Positive Definiteness","v":"HspdIGCore0","s":"https://drive.google.com/file/d/1QtaXhjYafFey0JnnKgytAB3vIA1dIbpE/view?usp=drive_link"},{"n":"6.4","t":"Positive Definite Matrices","v":"N-iBr_r9jic","s":"https://drive.google.com/file/d/1L6-pkpR7JvCCPyQkKuC7FRLFlx3jCVLP/view?usp=drive_link"},{"n":"Tutorial 6.1","t":"Real world Application of SVD","v":"SYFGwuf-v9k","s":null},{"n":"Tutorial 6.2","t":"Geometric Interpretation of SVD","v":"BHIpHagNcgw","s":null},{"n":"Tutorial 6.3","t":"Positive Definite Functions and Matrices","v":"0vb0c-0waik","s":"https://drive.google.com/file/d/1iEHikH6tU9F0bsZy1Am97vHMpzF3pqAu/view?usp=drive_link"}]},{"w":"Week 7","items":[{"n":"7.1","t":"Principal Component Analysis","v":"K5vOOARxVyU","s":"https://drive.google.com/file/d/17pIxretMr3qP7ddQZXGQ9E2t8tqto-QQ/view?usp=drive_link"},{"n":"7.2","t":"Principal Component Analysis (Contd.)","v":"TDlSb1-QhhA","s":"https://drive.google.com/file/d/1_L2NFH_x8CvMkXAkbknZ4FL0za1JMgUh/view?usp=drive_link"},{"n":"7.3","t":"PCA as maximizing variance","v":"BHovu_rftQA","s":"https://drive.google.com/file/d/1Pvd1dVItqvj_26wCFYwFU18lhhYNEVPT/view?usp=drive_link"},{"n":"7.4","t":"PCA in higher dimensions","v":"d0Ch0S1hAs8","s":"https://drive.google.com/file/d/10UDnXvfJef05ROuvofon9uA9vfpISxLi/view?usp=drive_link"}]},{"w":"Week 8","items":[{"n":"8.1","t":"Pillars of machine learning","v":"LYZPWUppGGc","s":"https://drive.google.com/file/d/137ooKnDKcLqAGwYjNKnrjknsVxQ9p2jR/view?usp=drive_link"},{"n":"8.2","t":"Introduction to Optimization","v":"-2bXHwSNwTc","s":"https://drive.google.com/file/d/1tQq6ZSVMoAkPGwk6t9wZ-JTl6rAv1rk1/view?usp=drive_link"},{"n":"8.3","t":"Solving an unconstrained optimization problem (Part 1)","v":"CkxFp_ZPqAw","s":"https://drive.google.com/file/d/1yMGtJ_PeniNHXNww_HUkWm2trtTf9Rqe/view?usp=drive_link"},{"n":"8.4","t":"Solving an unconstrained optimization problem (Part 2)","v":"-bXrog1dbrM","s":"https://drive.google.com/file/d/11EzaiMlSnlVLjHmZ4AZIvIZyJx7gd8Jo/view?usp=drive_link"},{"n":"8.5","t":"Basic algorithm for unconstrained optimization: Gradient Descent","v":"3rxDd68TE3o","s":"https://drive.google.com/file/d/1i6t5PFNPnTfobNXR9HtTGudZUmQloeV2/view?usp=drive_link"},{"n":"8.6","t":"Gradient Descent and Taylor Series","v":"X35txJMlYsc","s":"https://drive.google.com/file/d/12AzjUj_YYF8E9LqIUaPJwjxAp5vfH0xO/view?usp=drive_link"},{"n":"8.7","t":"Gradient Descent for multivariate functions","v":"DLYQu-r7TKI","s":"https://drive.google.com/file/d/19sNV66jj48QIGlpp82ePKdkXauGhYb1Y/view?usp=drive_link"},{"n":"8.8","t":"Taylor series in Higher dimensions","v":"ohQfHMpjTlQ","s":"https://drive.google.com/file/d/1nXptrJXnBqvs8TMrQQxChjECOSl_-imb/view?usp=drive_link"},{"n":"Tutorial 8.1","t":"Tutorial  ","v":"tywEGBtZTu0","s":"https://drive.google.com/file/d/1uA--RcBbQQIB4sy52fKvSZTVsFemrfdf/view?usp=drive_link"}]},{"w":"Week 9","items":[{"n":"9.1","t":"Constrained Optimization (Part -1)","v":"fFJHsQBo6NE","s":"https://drive.google.com/file/d/12iT6t2YRHTXyK6mhiCKiyLpLZDeFyQmU/view?usp=drive_link"},{"n":"9.2","t":"Constrained Optimization (Part -2)","v":"q9JJc3Zj_js","s":"https://drive.google.com/file/d/1a6TM9xMpXM4Qzy2kC4gQXU7JT5C0Bt6L/view?usp=drive_link"},{"n":"9.3","t":"Method of Lagrange Multiplier, Projected Gradient Descent","v":"PoAPXmDlk4U","s":"https://drive.google.com/file/d/1a6TM9xMpXM4Qzy2kC4gQXU7JT5C0Bt6L/view?usp=drive_link"},{"n":"9.4","t":"Introduction to Convexity","v":"_qlBaMTiVXk","s":"https://drive.google.com/file/d/1TQxEv7x3_zx2moxuV9ZCixfuTgCpjygK/view?usp=drive_link"},{"n":"9.5","t":"Properties of Convex Sets","v":"PfDvKJ2UTPg","s":"https://drive.google.com/file/d/1NE44eiVSST5AmqcBby0vmB5oXeUzgGhI/view?usp=drive_link"},{"n":"9.6","t":"Convex Functions","v":"xExRalp3eY8","s":"https://drive.google.com/file/d/1N7GQDE0qae1KgQj7P6Mmtn6on26hqvAH/view?usp=drive_link"},{"n":"9.7","t":"Properties of Convex Functions","v":"gqUwsig0geA","s":"https://drive.google.com/file/d/1Jt-lTtAoAKJLzXpbyR2pcnyHCfkScwdw/view?usp=drive_link"},{"n":"Tutorial 9.1","t":"Constrained Optimisation, Lagrange Multipliers, Convex Sets and Convex Functions","v":"TQc50S0alsA","s":"https://drive.google.com/file/d/12D3imetiKVwy8AG_R8Pro6U3VVAwIA0N/view?usp=drive_link"}]},{"w":"Week 10","items":[{"n":"10.1","t":"Properties of Convex Functions","v":"c9LZ0Uw9wpE","s":"https://drive.google.com/file/d/1L1kuHZuEEsWl2ey-3Qhz9XLejPuzSWGv/view?usp=drive_link"},{"n":"10.2","t":"Applications of Optimization in Machine Learning","v":"4jN8XhwGa48","s":"https://drive.google.com/file/d/13KttBLHkYHCJCQl7udu4ber0fgRKIhtB/view?usp=drive_link"},{"n":"10.3","t":"Revisiting Constrained Optimization","v":"eM17jHQwrOY","s":"https://drive.google.com/file/d/1doqXBGOmWoDwDddNtYrCY851070nT8BG/view?usp=drive_link"},{"n":"10.4","t":"Relation between Primal and Dual Problem, KKT Conditions","v":"JiHrrqdMWAM","s":"https://drive.google.com/file/d/1Ox6mnkOF5GdZyt5XwLvYw7btpL_ceLv_/view?usp=drive_link"},{"n":"10.5","t":"KKT conditions continued","v":"SItUaM_X4C4","s":"https://drive.google.com/file/d/1NtbVqDwHJDx2D3dRexV1sYI2xZ7C3wS2/view?usp=drive_link"},{"n":"Tutorial 10.1","t":"Linear Programming, KKT Conditions, Relationship between primal and dual problem","v":"M2qvsHZxlI0","s":"https://drive.google.com/file/d/1SRBelsi8aAB1hUgZCesZw2olYJUiO-Nx/view?usp=drive_link"}]},{"w":"Week 11","items":[{"n":"11.1","t":"Continuous random variables","v":"K1-JKrms2SU","s":"https://drive.google.com/file/d/1BOlUyDtE6GxSOPL6hTYoP2u66gXXmus6/view?usp=drive_link"},{"n":"11.2","t":"Conditional pdf","v":"cjCJIUOCwAs","s":"https://drive.google.com/file/d/1qHb-gk_mz1J_KwMq35_Nb9yi0RFHCcOh/view?usp=drive_link"},{"n":"11.3","t":"Expectation","v":"XFYz9KyPU48","s":"https://drive.google.com/file/d/1A_JeIm64Tn6cgpQrHaw3X5dMWRL5vFxm/view?usp=drive_link"},{"n":"11.4","t":"Multiple random variables","v":"KV5WOeqtbgs","s":"https://drive.google.com/file/d/1XgkTUV7ubvOsk8t6iS7MKteztwHvDQQr/view?usp=drive_link"},{"n":"11.5","t":"Independent random variables","v":"734WLw-fb5Y","s":"https://drive.google.com/file/d/1shIGq4VITWRi8PM5Y124Hx5xoKDvpH2Y/view?usp=drive_link"},{"n":"11.6","t":"Transformed random variables","v":"aWbs8AGk5zM","s":"https://drive.google.com/file/d/1QhgPsTk374LmgkIvYi4P7_sZ30eB5Sne/view?usp=drive_link"},{"n":"11.7","t":"Uniform, Exponential, Normal","v":"vo3f56Gc1i8","s":"https://drive.google.com/file/d/12xmOc2eLxebbjZIPDFtSu7R8ze8gJmhJ/view?usp=drive_link"},{"n":"Tutorial 11.1","t":"Solved examples","v":"sBT-TWoCMj4","s":"https://drive.google.com/file/d/1ejckyuWA_07CSDpwujvmUu8nZUVYpw-o/view?usp=drive_link"}]},{"w":"Week 12","items":[{"n":"12.1","t":"Bivariate and multivariate normal","v":"yNPMeKXjISQ","s":"https://drive.google.com/file/d/1FoEoobPtvwrU_J4iFT5s2JYoQySvCyRv/view?usp=drive_link"},{"n":"12.2","t":"Estimation of parameters using ML","v":"gbqYl44DdX0","s":"https://drive.google.com/file/d/11Ql0prmBY3eohH0QwprG1aN7uMLQpZYW/view?usp=drive_link"},{"n":"12.3","t":"Gaussian Mixture Models and Expectation Maximisation","v":"6Zk77RKcI2Q","s":"https://drive.google.com/file/d/1aiyCzpQzqjFY9oGMbHbS-xkXl-PHBzjy/view?usp=drive_link"},{"n":"12.4","t":"Laws of large numbers: Markov, Chebyshev, Hoeffding, Central limit","v":"iwidPQHOe_I","s":"https://drive.google.com/file/d/19yXz98bKWDBTZR1Q8ifWsjLU2pv0CyGV/view?usp=drive_link"},{"n":"Tutorial 12.1","t":"Solved examples","v":"UExuNuc8IKo","s":"https://drive.google.com/file/d/1mMXp8GU-tSDdZTMm0wWNjhhmJLwqr7mJ/view?usp=drive_link"}]},{"w":"Extra Lectures","items":[{"n":"EXTRA_01","t":"Probability space","v":"DpYlIh_3ttY","s":"https://drive.google.com/file/d/1To8amjTM2yNmEuvZoYWxKL-1MVTcQqCG/view?usp=drive_link"},{"n":"EXTRA_02","t":"Conditioning","v":"mDPni6P0uAQ","s":"https://drive.google.com/file/d/1D_1qEcvhnGXG_4-r9sJX561PimRSSVsc/view?usp=drive_link"},{"n":"EXTRA_03","t":"Random variables","v":"nYC6DPjbuDM","s":"https://drive.google.com/file/d/1NbvEXw-0g1z_b_cI5W9fHh_0gPA_bGTt/view?usp=drive_link"},{"n":"EXTRA_04","t":"Expectation:definition and properties","v":"J8X2DDu_ue0","s":"https://drive.google.com/file/d/1zSh_26pH8zMpY6CRVoEZZ-agraEOvfY8/view?usp=drive_link"},{"n":"EXTRA_05","t":"Bernoulli, Binomial, Poisson and Geometric random variables","v":"n1rrbgWwY6I","s":"https://drive.google.com/file/d/1vu-4_yE0kmGDkEyVx1lMuk1ARZY7TKzB/view?usp=drive_link"},{"n":"EXTRA_06","t":"Constrained Optimization, Lagrange Multpliers, Convex sets and Convex Functions","v":"TQc50S0alsA","s":null}]}]};</script>
-<script src="../assets/course.js?v=2022f9cb"></script>
-<script src="../assets/theme.js?v=8e860dc4"></script>
+<script src="../assets/term-syllabus.js?v=ae229617"></script>
+<script>window.COURSE = {code: "CS2004", weeks: [{"w":"Week 1","items":[{"n":"1.1","t":"What is Machine Learning?","v":"zuS1WZQGhAs","s":"https://drive.google.com/file/d/1HdPoRaA0LdJBZGxUa4JQDZKtcbVV4Dfo/view?usp=drive_link"},{"n":"1.2","t":"Data, Models and ML Task","v":"zssr9nOZlVg","s":"https://drive.google.com/file/d/1qQkMvrz5MZOudGoZXOUCOordCR8R8NsJ/view?usp=drive_link"},{"n":"1.3","t":"Supervised Learning: Regression","v":"iVcrCdEaJ7A","s":"https://drive.google.com/file/d/1GvfEaCrUKhNUbEyhj6V5OKyCoTnkdB6j/view?usp=drive_link"},{"n":"1.4","t":"Supervised Learning: Classification","v":"QtOrjs0Fzzc","s":"https://drive.google.com/file/d/1u6lUck4BZaCn2vQWNFxI_103MMpqW7dm/view?usp=drive_link"},{"n":"1.5","t":"Unsupervised Learning: Dimensionality Reduction","v":"EuNPsw9zA1k","s":"https://drive.google.com/file/d/10dvGcZA53hweTz8qym2Vft9n9Kg4uiDf/view?usp=drive_link"},{"n":"1.6","t":"Unsupervised Learning: Density Estimation","v":"Gj6-61UDeMs","s":"https://drive.google.com/file/d/1o8oOBRuRhKinrT4inPC57PnH4XatM84g/view?usp=drive_link"},{"n":"Tutorial 1.1","t":"To ML or not to ML","v":"5G4klfCCoIs","s":null},{"n":"Tutorial 1.2","t":"Illustration with a real world dataset","v":"T7vdFVC6DOo","s":null},{"n":"Tutorial 1.3","t":"Dimensionality Reduction and Density Estimation with Applications","v":"JG5Z9np4Tbs","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Sets and Functions","v":"Gi9nUcrZAJs","s":"https://drive.google.com/file/d/1dIuousxigsyCTtjyMGRMqFVOWlKIrHWd/view?usp=drive_link"},{"n":"2.2","t":"Univariate Calculus: Continuity and Differentiability","v":"yvaPORg2w9c","s":"https://drive.google.com/file/d/1_wVOgrX9VrjjxB9Y33jKzUeF7iQqd1eR/view?usp=drive_link"},{"n":"2.3","t":"Univariate Calculus: Derivatives and Linear Approximations","v":"AG2fQvxEpbE","s":"https://drive.google.com/file/d/1c0GcXiuyzgOYG820NyU9n1v5r5ZhvoK5/view?usp=drive_link"},{"n":"2.4","t":"Univariate Calculus: applications and advanced rules","v":"En15LA59Fsw","s":"https://drive.google.com/file/d/1IDn0SSgPmK0qpmpcgTPZLOS1Qs5SCar-/view?usp=drive_link"},{"n":"2.5","t":"Multivariate Calculus: Lines and planes in higher dimensional space","v":"O5jrvVi05wA","s":"https://drive.google.com/file/d/1A0KkK9NvVQKskitYlsrYXHQYTuHET95x/view?usp=drive_link"},{"n":"2.6","t":"Multivariate Calculus: Linear approximation and applications","v":"dLLbl0vucCc","s":"https://drive.google.com/file/d/1YVgUQvXbe-z4Cn3OtkFIcM9EHHynoNOl/view?usp=drive_link"},{"n":"Tutorial 2.1","t":"Tutorial - Week 2","v":"YNJMUyNlqFQ","s":"https://drive.google.com/file/d/17gShgHsDjhKYDBnZ19Mcf8w2evyQL-cm/view?usp=drive_link"}]},{"w":"Week 3","items":[{"n":"3.1","t":"Four Fundamental Subspaces","v":"9Ynm5oJRjxY","s":"https://drive.google.com/file/d/1OA7PbKW1wkG3maKi3s3g6sob_gE0lhIJ/view?usp=drive_link"},{"n":"3.2","t":"Orthogonal Vectors and Subspaces","v":"pDVywF7yLaM","s":"https://drive.google.com/file/d/1xMFer5WM9yakyHELZHLINGbz6evarmsL/view?usp=drive_link"},{"n":"3.3","t":"Projections","v":"kVYR7II5KUA","s":"https://drive.google.com/file/d/1LaTAl1Ztyc0xE-1ahllSdzo5Tcxp5bou/view?usp=drive_link"},{"n":"3.4","t":"Least Squares and Projections onto a Subspace","v":"_QRlIQBwIk8","s":"https://drive.google.com/file/d/1Y1EczbQQcAMI2oLbgCfnr0ZtiYa8Rejt/view?usp=drive_link"},{"n":"3.5","t":"Example of Least Squares","v":"wZlwod57blE","s":"https://drive.google.com/file/d/1PBqocYnVNe-JLEFdGvrV1SA0DaV5DsCj/view?usp=drive_link"},{"n":"Tutorial 3.1","t":"Four fundamental vector subspaces","v":"rbBiDiFC584","s":"https://drive.google.com/file/d/1dkxYpctG4_fGoDBJtVpOBDDqbQjL7DVy/view?usp=drive_link"},{"n":"Tutorial 3.2","t":"Row space computation using reduced row echelon form and Solution to Ax = b","v":"kRJIiQXiOqU","s":"https://drive.google.com/file/d/1b0sjNSvT4JxqRIeI2CCquklEY2sbY3Ct/view?usp=drive_link"},{"n":"Tutorial 3.3","t":"Orthogonality, projections and least squares method","v":"Ijn-HGlVifU","s":"https://drive.google.com/file/d/155KHEYD1ByxLj0d-JaBwXTQiyKSnke3s/view?usp=drive_link"}]},{"w":"Week 4","items":[{"n":"4.1","t":"Linear and Polynomial Regression","v":"x7UJYkGHVJw","s":"https://drive.google.com/file/d/14D0GmV2EzbVb4HBQHtpX6-n5bTfoCTdK/view?usp=drive_link"},{"n":"4.2","t":"Eigenvalues and Eigenvectors","v":"GA6m_T4d_d0","s":"https://drive.google.com/file/d/19vlj67zX0IwhBz9yHjbrrDxHcJJi7bGK/view?usp=drive_link"},{"n":"4.3","t":"Diagonalization of a matrix","v":"WKZUxnrLmRk","s":"https://drive.google.com/file/d/163HyorE-cYX5_b5SEo8UfROkW8YGAv2-/view?usp=drive_link"},{"n":"4.4","t":"Solving Fibonacci Sequence using diagonalization","v":"ISB87lDKOVE","s":"https://drive.google.com/file/d/1D6hFFKKBOpmrBBMzhetVU23i9R-HH9EK/view?usp=drive_link"},{"n":"4.5","t":"Orthogonally diagonalizable matrices","v":"f0hVL9xhL94","s":"https://drive.google.com/file/d/1tqa_Zx31HJrg8kAEBOWma06Le75dbiXo/view?usp=drive_link"},{"n":"Tutorial 4.1","t":"Polynomial Regression","v":"EF85-fHy-m0","s":"https://drive.google.com/file/d/15Pyt_g5gUzDNGNa6pnDrd4uEiitV40Td/view?usp=drive_link"},{"n":"Tutorial 4.2","t":"Eigenvalues and Eigenvectors","v":"SPF2ovt7uYg","s":"https://drive.google.com/file/d/1Xqrth8MLK0T-K5SdANm3pKzuKzIGk4-M/view?usp=drive_link"}]},{"w":"Week 5","items":[{"n":"5.1","t":"Complex Matrices","v":"G6A3PDivChQ","s":"https://drive.google.com/file/d/14H-vhJxpS5TMYEMj_Md3SGXjkqzPO5r_/view?usp=drive_link"},{"n":"5.2","t":"Hermitian Matrices","v":"aHykfDdjDiw","s":"https://drive.google.com/file/d/1ywOwYK0WlG_N8EzyX7_mZgC6VZtUBjwM/view?usp=drive_link"},{"n":"5.3","t":"Unitary Matrices","v":"2DAG0I1NKiI","s":"https://drive.google.com/file/d/18s90eCmzCv0cLVzjUgton6aDCofBjhCw/view?usp=drive_link"},{"n":"5.4","t":"Diagonalization of Hermitian Matrices (Part 1)","v":"qG1tlEa2Zn0","s":"https://drive.google.com/file/d/1oaLp_jSTM2cGg7Gb6sUDuuBXeheXK2cZ/view?usp=drive_link"},{"n":"5.5","t":"Diagonalization of Hermitian Matrices (part 2)","v":"u9uFJNrCL0E","s":"https://drive.google.com/file/d/1RVxfH7Q6symPi2s9zwN3gD1ONvFenDrv/view?usp=drive_link"},{"n":"Tutorial 5.1","t":"Some Problems to think and solve","v":"__TUd8Sq-wU","s":"https://drive.google.com/file/d/1yS4ks7acZKRuNNVmj5RW8KI0pN2OHqBX/view?usp=drive_link"}]},{"w":"Week 6","items":[{"n":"6.1","t":"Singular Value Decomposition","v":"fTErMgNIKHQ","s":"https://drive.google.com/file/d/17qIJNLkYVhpGz5RkbHUwDae_fuIVzYLQ/view?usp=drive_link"},{"n":"6.2","t":"Example of SVD","v":"lP1UKRK4h5k","s":"https://drive.google.com/file/d/1ZyIk3trTGVSIWJ1Ykw12S3ka_yHjDsMn/view?usp=drive_link"},{"n":"6.3","t":"Positive Definiteness","v":"HspdIGCore0","s":"https://drive.google.com/file/d/1QtaXhjYafFey0JnnKgytAB3vIA1dIbpE/view?usp=drive_link"},{"n":"6.4","t":"Positive Definite Matrices","v":"N-iBr_r9jic","s":"https://drive.google.com/file/d/1L6-pkpR7JvCCPyQkKuC7FRLFlx3jCVLP/view?usp=drive_link"},{"n":"Tutorial 6.1","t":"Real world Application of SVD","v":"SYFGwuf-v9k","s":null},{"n":"Tutorial 6.2","t":"Geometric Interpretation of SVD","v":"BHIpHagNcgw","s":null},{"n":"Tutorial 6.3","t":"Positive Definite Functions and Matrices","v":"0vb0c-0waik","s":"https://drive.google.com/file/d/1iEHikH6tU9F0bsZy1Am97vHMpzF3pqAu/view?usp=drive_link"}]},{"w":"Week 7","items":[{"n":"7.1","t":"Principal Component Analysis","v":"K5vOOARxVyU","s":"https://drive.google.com/file/d/17pIxretMr3qP7ddQZXGQ9E2t8tqto-QQ/view?usp=drive_link"},{"n":"7.2","t":"Principal Component Analysis (Contd.)","v":"TDlSb1-QhhA","s":"https://drive.google.com/file/d/1_L2NFH_x8CvMkXAkbknZ4FL0za1JMgUh/view?usp=drive_link"},{"n":"7.3","t":"PCA as maximizing variance","v":"BHovu_rftQA","s":"https://drive.google.com/file/d/1Pvd1dVItqvj_26wCFYwFU18lhhYNEVPT/view?usp=drive_link"},{"n":"7.4","t":"PCA in higher dimensions","v":"d0Ch0S1hAs8","s":"https://drive.google.com/file/d/10UDnXvfJef05ROuvofon9uA9vfpISxLi/view?usp=drive_link"}]},{"w":"Week 8","items":[{"n":"8.1","t":"Pillars of machine learning","v":"LYZPWUppGGc","s":"https://drive.google.com/file/d/137ooKnDKcLqAGwYjNKnrjknsVxQ9p2jR/view?usp=drive_link"},{"n":"8.2","t":"Introduction to Optimization","v":"-2bXHwSNwTc","s":"https://drive.google.com/file/d/1tQq6ZSVMoAkPGwk6t9wZ-JTl6rAv1rk1/view?usp=drive_link"},{"n":"8.3","t":"Solving an unconstrained optimization problem (Part 1)","v":"CkxFp_ZPqAw","s":"https://drive.google.com/file/d/1yMGtJ_PeniNHXNww_HUkWm2trtTf9Rqe/view?usp=drive_link"},{"n":"8.4","t":"Solving an unconstrained optimization problem (Part 2)","v":"-bXrog1dbrM","s":"https://drive.google.com/file/d/11EzaiMlSnlVLjHmZ4AZIvIZyJx7gd8Jo/view?usp=drive_link"},{"n":"8.5","t":"Basic algorithm for unconstrained optimization: Gradient Descent","v":"3rxDd68TE3o","s":"https://drive.google.com/file/d/1i6t5PFNPnTfobNXR9HtTGudZUmQloeV2/view?usp=drive_link"},{"n":"8.6","t":"Gradient Descent and Taylor Series","v":"X35txJMlYsc","s":"https://drive.google.com/file/d/12AzjUj_YYF8E9LqIUaPJwjxAp5vfH0xO/view?usp=drive_link"},{"n":"8.7","t":"Gradient Descent for multivariate functions","v":"DLYQu-r7TKI","s":"https://drive.google.com/file/d/19sNV66jj48QIGlpp82ePKdkXauGhYb1Y/view?usp=drive_link"},{"n":"8.8","t":"Taylor series in Higher dimensions","v":"ohQfHMpjTlQ","s":"https://drive.google.com/file/d/1nXptrJXnBqvs8TMrQQxChjECOSl_-imb/view?usp=drive_link"},{"n":"Tutorial 8.1","t":"Tutorial  ","v":"tywEGBtZTu0","s":"https://drive.google.com/file/d/1uA--RcBbQQIB4sy52fKvSZTVsFemrfdf/view?usp=drive_link"}]},{"w":"Week 9","items":[{"n":"9.1","t":"Constrained Optimization (Part -1)","v":"fFJHsQBo6NE","s":"https://drive.google.com/file/d/12iT6t2YRHTXyK6mhiCKiyLpLZDeFyQmU/view?usp=drive_link"},{"n":"9.2","t":"Constrained Optimization (Part -2)","v":"q9JJc3Zj_js","s":"https://drive.google.com/file/d/1a6TM9xMpXM4Qzy2kC4gQXU7JT5C0Bt6L/view?usp=drive_link"},{"n":"9.3","t":"Method of Lagrange Multiplier, Projected Gradient Descent","v":"PoAPXmDlk4U","s":"https://drive.google.com/file/d/1a6TM9xMpXM4Qzy2kC4gQXU7JT5C0Bt6L/view?usp=drive_link"},{"n":"9.4","t":"Introduction to Convexity","v":"_qlBaMTiVXk","s":"https://drive.google.com/file/d/1TQxEv7x3_zx2moxuV9ZCixfuTgCpjygK/view?usp=drive_link"},{"n":"9.5","t":"Properties of Convex Sets","v":"PfDvKJ2UTPg","s":"https://drive.google.com/file/d/1NE44eiVSST5AmqcBby0vmB5oXeUzgGhI/view?usp=drive_link"},{"n":"9.6","t":"Convex Functions","v":"xExRalp3eY8","s":"https://drive.google.com/file/d/1N7GQDE0qae1KgQj7P6Mmtn6on26hqvAH/view?usp=drive_link"},{"n":"9.7","t":"Properties of Convex Functions","v":"gqUwsig0geA","s":"https://drive.google.com/file/d/1Jt-lTtAoAKJLzXpbyR2pcnyHCfkScwdw/view?usp=drive_link"},{"n":"Tutorial 9.1","t":"Constrained Optimisation, Lagrange Multipliers, Convex Sets and Convex Functions","v":"TQc50S0alsA","s":"https://drive.google.com/file/d/12D3imetiKVwy8AG_R8Pro6U3VVAwIA0N/view?usp=drive_link"}]},{"w":"Week 10","items":[{"n":"10.1","t":"Properties of Convex Functions","v":"c9LZ0Uw9wpE","s":"https://drive.google.com/file/d/1L1kuHZuEEsWl2ey-3Qhz9XLejPuzSWGv/view?usp=drive_link"},{"n":"10.2","t":"Applications of Optimization in Machine Learning","v":"4jN8XhwGa48","s":"https://drive.google.com/file/d/13KttBLHkYHCJCQl7udu4ber0fgRKIhtB/view?usp=drive_link"},{"n":"10.3","t":"Revisiting Constrained Optimization","v":"eM17jHQwrOY","s":"https://drive.google.com/file/d/1doqXBGOmWoDwDddNtYrCY851070nT8BG/view?usp=drive_link"},{"n":"10.4","t":"Relation between Primal and Dual Problem, KKT Conditions","v":"JiHrrqdMWAM","s":"https://drive.google.com/file/d/1Ox6mnkOF5GdZyt5XwLvYw7btpL_ceLv_/view?usp=drive_link"},{"n":"10.5","t":"KKT conditions continued","v":"SItUaM_X4C4","s":"https://drive.google.com/file/d/1NtbVqDwHJDx2D3dRexV1sYI2xZ7C3wS2/view?usp=drive_link"},{"n":"Tutorial 10.1","t":"Linear Programming, KKT Conditions, Relationship between primal and dual problem","v":"M2qvsHZxlI0","s":"https://drive.google.com/file/d/1SRBelsi8aAB1hUgZCesZw2olYJUiO-Nx/view?usp=drive_link"}]},{"w":"Week 11","items":[{"n":"11.1","t":"Continuous random variables","v":"K1-JKrms2SU","s":"https://drive.google.com/file/d/1BOlUyDtE6GxSOPL6hTYoP2u66gXXmus6/view?usp=drive_link"},{"n":"11.2","t":"Conditional pdf","v":"cjCJIUOCwAs","s":"https://drive.google.com/file/d/1qHb-gk_mz1J_KwMq35_Nb9yi0RFHCcOh/view?usp=drive_link"},{"n":"11.3","t":"Expectation","v":"XFYz9KyPU48","s":"https://drive.google.com/file/d/1A_JeIm64Tn6cgpQrHaw3X5dMWRL5vFxm/view?usp=drive_link"},{"n":"11.4","t":"Multiple random variables","v":"KV5WOeqtbgs","s":"https://drive.google.com/file/d/1XgkTUV7ubvOsk8t6iS7MKteztwHvDQQr/view?usp=drive_link"},{"n":"11.5","t":"Independent random variables","v":"734WLw-fb5Y","s":"https://drive.google.com/file/d/1shIGq4VITWRi8PM5Y124Hx5xoKDvpH2Y/view?usp=drive_link"},{"n":"11.6","t":"Transformed random variables","v":"aWbs8AGk5zM","s":"https://drive.google.com/file/d/1QhgPsTk374LmgkIvYi4P7_sZ30eB5Sne/view?usp=drive_link"},{"n":"11.7","t":"Uniform, Exponential, Normal","v":"vo3f56Gc1i8","s":"https://drive.google.com/file/d/12xmOc2eLxebbjZIPDFtSu7R8ze8gJmhJ/view?usp=drive_link"},{"n":"Tutorial 11.1","t":"Solved examples","v":"sBT-TWoCMj4","s":"https://drive.google.com/file/d/1ejckyuWA_07CSDpwujvmUu8nZUVYpw-o/view?usp=drive_link"}]},{"w":"Week 12","items":[{"n":"12.1","t":"Bivariate and multivariate normal","v":"yNPMeKXjISQ","s":"https://drive.google.com/file/d/1FoEoobPtvwrU_J4iFT5s2JYoQySvCyRv/view?usp=drive_link"},{"n":"12.2","t":"Estimation of parameters using ML","v":"gbqYl44DdX0","s":"https://drive.google.com/file/d/11Ql0prmBY3eohH0QwprG1aN7uMLQpZYW/view?usp=drive_link"},{"n":"12.3","t":"Gaussian Mixture Models and Expectation Maximisation","v":"6Zk77RKcI2Q","s":"https://drive.google.com/file/d/1aiyCzpQzqjFY9oGMbHbS-xkXl-PHBzjy/view?usp=drive_link"},{"n":"12.4","t":"Laws of large numbers: Markov, Chebyshev, Hoeffding, Central limit","v":"iwidPQHOe_I","s":"https://drive.google.com/file/d/19yXz98bKWDBTZR1Q8ifWsjLU2pv0CyGV/view?usp=drive_link"},{"n":"Tutorial 12.1","t":"Solved examples","v":"UExuNuc8IKo","s":"https://drive.google.com/file/d/1mMXp8GU-tSDdZTMm0wWNjhhmJLwqr7mJ/view?usp=drive_link"}]},{"w":"Extra Lectures","items":[{"n":"EXTRA_01","t":"Probability space","v":"DpYlIh_3ttY","s":"https://drive.google.com/file/d/1To8amjTM2yNmEuvZoYWxKL-1MVTcQqCG/view?usp=drive_link"},{"n":"EXTRA_02","t":"Conditioning","v":"mDPni6P0uAQ","s":"https://drive.google.com/file/d/1D_1qEcvhnGXG_4-r9sJX561PimRSSVsc/view?usp=drive_link"},{"n":"EXTRA_03","t":"Random variables","v":"nYC6DPjbuDM","s":"https://drive.google.com/file/d/1NbvEXw-0g1z_b_cI5W9fHh_0gPA_bGTt/view?usp=drive_link"},{"n":"EXTRA_04","t":"Expectation:definition and properties","v":"J8X2DDu_ue0","s":"https://drive.google.com/file/d/1zSh_26pH8zMpY6CRVoEZZ-agraEOvfY8/view?usp=drive_link"},{"n":"EXTRA_05","t":"Bernoulli, Binomial, Poisson and Geometric random variables","v":"n1rrbgWwY6I","s":"https://drive.google.com/file/d/1vu-4_yE0kmGDkEyVx1lMuk1ARZY7TKzB/view?usp=drive_link"},{"n":"EXTRA_06","t":"Constrained Optimization, Lagrange Multpliers, Convex sets and Convex Functions","v":"TQc50S0alsA","s":null}]}], item: "lecture"};</script>
+<script src="../assets/course.js?v=88272958"></script>
+<script src="../assets/theme.js?v=f608d0e2"></script>
+<script src="../assets/config.js?v=54927162"></script>
+<script src="../assets/account.js?v=56115e17"></script>
+<script src="../assets/sync.js?v=4fcd88f9"></script>
+<script src="../assets/suggest.js?v=516b3cad"></script>
 </body>
 </html>

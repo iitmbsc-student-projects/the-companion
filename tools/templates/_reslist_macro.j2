@@ -7,12 +7,15 @@
           <ul class="res-grid">
 {%- for r in g.rows %}
 {%- if r.url %}
-            <li class="res-card">
+{%- set badge = r|login_badge %}
+            <li class="res-card" title="{{ r.label|striptags|e }}{% if r.desc %}: {{ r.desc|striptags|e }}{% endif %} ({{ r.url|host }})">
               <a class="res-main" href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a>
 {%- if r.desc %}
               <p class="res-desc">{{ r.desc }}</p>
 {%- endif %}
-              <div class="res-foot"><span class="res-host">{{ r.url|host }}</span>{% if r.by %}<span class="res-by">by {% if r.by_url %}<a href="{{ r.by_url }}" target="_blank" rel="noopener">{{ r.by }}</a>{% else %}{{ r.by }}{% endif %}</span>{% endif %}{% if r|login_badge %}<span class="res-badge{% if r.auth == "iitm" %} iitm{% endif %}">{{ r|login_badge }}</span>{% endif %}</div>
+{%- if r.by or badge %}
+              <div class="res-foot">{% if r.by %}<span class="res-by">by {% if r.by_url %}<a href="{{ r.by_url }}" target="_blank" rel="noopener">{{ r.by }}</a>{% else %}{{ r.by }}{% endif %}</span>{% endif %}{% if badge %}<span class="res-badge{% if r.auth == "iitm" %} iitm{% endif %}" title="{{ badge }}">{{ badge|replace(" required", "")|replace("Login needed for full access", "Login") }}</span>{% endif %}</div>
+{%- endif %}
             </li>
 {%- else %}
             <li class="res-card"><p class="res-desc">{{ r.raw|safe }}</p></li>

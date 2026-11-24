@@ -28,13 +28,19 @@
   // Where the switcher lives:
   //  - top bar (wide screens) / floating bottom-left (phones: no room, and the bar's backdrop-filter would trap a fixed child)
   //  - course pages: inside the sidebar, or floating top-right while the sidebar is hidden
+  //  - phones: in the page footer (#theme-foot), so it never covers content
   var slot = document.getElementById('theme-slot');
-  var narrow = window.matchMedia('(max-width: 640px)');
+  var foot = document.getElementById('theme-foot');
+  var narrow = window.matchMedia('(max-width: 760px)');
+  var shell = document.createElement('aside');   // a floating switcher still sits inside a landmark
+  shell.className = 'theme-float'; shell.setAttribute('aria-label', 'Colour theme');
   function place() {
     var inSlot = slot && !(slot.hasAttribute('data-float-narrow') && narrow.matches) &&
       !(slot.dataset.collapsible === 'sidebar' && document.body.classList.contains('sidebar-collapsed'));
     if (inSlot) { box.classList.remove('floating'); slot.appendChild(box); }
-    else { box.classList.add('floating'); document.body.appendChild(box); }
+    else if (foot && narrow.matches) { box.classList.remove('floating'); foot.appendChild(box); }
+    else { box.classList.add('floating'); shell.appendChild(box); if (!shell.parentNode) document.body.appendChild(shell); }
+    if (box.parentNode !== shell && shell.parentNode) shell.parentNode.removeChild(shell);
   }
   place();
   if (narrow.addEventListener) narrow.addEventListener('change', place);
