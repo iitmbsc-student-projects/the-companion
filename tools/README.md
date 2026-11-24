@@ -103,8 +103,25 @@ tools/templates/*.j2          The two page templates (lecture course, project co
                               65 files by hand for one shared change.
 tools/dashboard/app.py         The CRUD dashboard described above.
 tools/dashboard/playlist_import.py   Playlist parsing/import + the WEEKS_DATA text format.
+tools/fetch_durations.py       Fills optional `d` (seconds) on every YouTube lecture via yt-dlp.
+tools/check_links.py           Probes resource URLs and video ids; updates a "Link health" issue.
+```
+
+Optional pages and indexes produced by the generator:
+
+```
+python generate.py search     # assets/search-index.json (home lecture search)
+python generate.py myterm     # my-term.html
+python generate.py planner    # planner.html (credits and CGPA; rules in data/degree.json)
+python generate.py home       # index.html (includes Your term card hooks)
 ```
 
 `assets/term-syllabus.js` (the shared quiz/end-term calendar data) is separate
 from all of this — it's still hand-edited directly, once per term, exactly as
 before.
+
+## Where the course-page code lives
+
+`assets/course.js` holds the behaviour for every course page. The template
+(`tools/templates/lecture.html.j2`) only adds each course's own data (`window.COURSE`), so a
+fix to `course.js` reaches all courses without regenerating them.
