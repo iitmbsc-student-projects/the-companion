@@ -63,6 +63,7 @@
     <div class="up-filter" role="group" aria-label="Show">
       <button type="button" data-f="all" aria-pressed="true">All <span>{{N_ALL}}</span></button><button type="button" data-f="res" aria-pressed="false">New resources <span>{{N_RES}}</span></button><button type="button" data-f="site" aria-pressed="false">Site changes <span>{{N_SITE}}</span></button>
     </div>
+    <button type="button" class="up-all" id="up-all">Expand all</button>
   </div>
 </header>
 
@@ -84,14 +85,39 @@
 <script>
 (function () {
   var btns = document.querySelectorAll('.up-filter button');
+  var days = document.querySelectorAll('.up-day');
+  var allBtn = document.getElementById('up-all');
+  function counts() {
+    days.forEach(function (d) {
+      var n = d.querySelectorAll('.up-item:not([hidden])').length;
+      d.hidden = !n;
+      d.querySelector('.ud-n').textContent = n + (n === 1 ? ' update' : ' updates');
+    });
+  }
+  function label() {
+    var vis = Array.prototype.filter.call(days, function (d) { return !d.hidden; });
+    allBtn.textContent = vis.length && vis.every(function (d) { return d.open; }) ? 'Collapse all' : 'Expand all';
+  }
   btns.forEach(function (b) {
     b.addEventListener('click', function () {
       var f = b.dataset.f;
       btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
       document.querySelectorAll('.up-item').forEach(function (li) { li.hidden = f !== 'all' && li.dataset.kind !== f; });
-      document.querySelectorAll('.up-day').forEach(function (d) { d.hidden = !d.querySelector('.up-item:not([hidden])'); });
+      counts(); label();
     });
   });
+  allBtn.addEventListener('click', function () {
+    var open = allBtn.textContent === 'Expand all';
+    days.forEach(function (d) { if (!d.hidden) d.open = open; });
+    label();
+  });
+  days.forEach(function (d) { d.addEventListener('toggle', label); });
+  function fromHash() {
+    var t = location.hash && document.getElementById(location.hash.slice(1));
+    if (t && t.classList.contains('up-day')) { t.open = true; t.scrollIntoView(); }
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash(); label();
 })();
 </script>
 </body>

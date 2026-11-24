@@ -853,3 +853,20 @@ body[data-page="calculator"] .ph-title{font-weight:700}
 .calc-formula[open] summary{border-bottom:1px solid var(--rule)}
 .calc-formula code,.calc-formula .calc-table{margin:10px 14px 12px}
 .calc-formula .calc-table{display:flex}
+
+/* Updates: collapsible days */
+.up-all{margin:12px 0 0;padding:0;border:0;background:none;color:var(--accent);font:600 13.5px 'IBM Plex Sans',sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.up-all:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.up-day{display:block;padding:0;border-bottom:1px solid var(--rule)}
+.up-day>summary.up-date{display:flex;align-items:center;gap:12px;margin:0;padding:14px 2px;position:static;list-style:none;cursor:pointer;font:700 16px 'IBM Plex Sans',sans-serif}
+.up-day>summary::-webkit-details-marker{display:none}
+.up-day>summary::marker{content:""}
+.up-day>summary::before{content:"";flex:none;width:8px;height:8px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(-45deg);transition:transform .15s;margin:0 4px 0 2px}
+.up-day[open]>summary::before{transform:rotate(45deg)}
+.up-day>summary:hover .ud-d{color:var(--accent)}
+.up-day>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.ud-n{font:600 11.5px 'IBM Plex Mono',monospace;padding:1px 9px;border-radius:99px;background:var(--tint);color:var(--accent)}
+.up-day .up-list{padding:0 0 16px 26px}
+.up-day[hidden]{display:none}
+@media(max-width:700px){.up-day .up-list{padding-left:2px}.up-day>summary.up-date{font-size:15px}}
+.up-day .ud-d{margin:0;font:inherit;color:inherit}

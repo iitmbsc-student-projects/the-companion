@@ -725,9 +725,10 @@ def generate_updates():
         if not days or days[-1][0] != e["date"]:
             days.append((e["date"], []))
         days[-1][1].append(e)
-    for date, es in days:
-        body.append('  <section class="up-day" id="u-%s">\n    <h2 class="up-date">%s</h2>\n    <ul class="up-list">\n%s\n    </ul>\n  </section>'
-                    % (date, _long_date(date), "\n".join(_update_html(e) for e in es)))
+    for i, (date, es) in enumerate(days):
+        n = len(es)
+        body.append('  <details class="up-day" id="u-%s"%s>\n    <summary class="up-date"><h2 class="ud-d">%s</h2><span class="ud-n" data-total="%d">%d %s</span></summary>\n    <ul class="up-list">\n%s\n    </ul>\n  </details>'
+                    % (date, " open" if i == 0 else "", _long_date(date), n, n, "update" if n == 1 else "updates", "\n".join(_update_html(e) for e in es)))
     if not body:
         body.append('  <p class="tbd-note">Nothing here yet.</p>')
     tpl = open(UPDATES_TEMPLATE_PATH, encoding="utf-8").read()
