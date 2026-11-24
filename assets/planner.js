@@ -242,8 +242,6 @@
     } else meta.appendChild(el('span', null, (c && c.t) || code));
     var sub = (c ? c.cr + ' cr' : '');
     if (note) sub += (sub ? ' · ' : '') + note;
-    var miss = c ? prereqsMet(code) : [];
-    if (miss.length && !isPass(code)) sub += (sub ? ' · ' : '') + 'after ' + miss.join(', ');
     if (sub) meta.appendChild(el('span', 'pl-sub', sub));
     row.appendChild(meta);
     row.appendChild(gradeSelect(code));
@@ -262,7 +260,7 @@
     var root = $('pl-root');
     root.textContent = '';
 
-    var summary = el('div', 'pl-summary');
+    var summary = el('div', 'pl-top');
     var cg = el('div', 'pl-stat');
     cg.appendChild(el('span', 'pl-stat-k', 'CGPA'));
     cg.appendChild(el('span', 'pl-stat-v', model.cgpa == null ? '—' : (Math.round(model.cgpa * 100) / 100).toFixed(2)));
@@ -281,8 +279,6 @@
     }
     cr.appendChild(el('span', 'pl-stat-s', stat));
     summary.appendChild(cr);
-    root.appendChild(summary);
-
     var miles = el('ol', 'pl-miles');
     (RULES.milestones || []).forEach(function (m) {
       var li = el('li', model.flags[m.id] ? 'is-on' : '');
@@ -290,47 +286,14 @@
       li.title = m.label + ', ' + m.credits + ' credits';
       miles.appendChild(li);
     });
-    root.appendChild(miles);
+    summary.appendChild(miles);
+    root.appendChild(summary);
 
     var nxt = nextUp(model);
-    var nextBox = el('div', 'pl-next');
-    nextBox.appendChild(el('h2', null, nxt.label === 'Done' ? 'Nothing left on this path' : 'Open next · ' + nxt.label));
-    if (nxt.label !== 'Done') {
-      var go = el('button', 'pl-step', 'Show this level');
-      go.type = 'button';
-      go.addEventListener('click', function () {
-        var L = levelForStage(nxt.label);
-        if (!L) return;
-        level = L.id; try { localStorage.setItem(LKEY, level); } catch (e) {}
-        render();
-        var pb = document.querySelector('.pl-bar'); if (pb) pb.scrollIntoView({ block: 'start' });
-      });
-      nextBox.appendChild(go);
-    }
-    if (nxt.codes.length) {
-      var ul = el('ul', 'pl-next-list');
-      nxt.codes.slice(0, 8).forEach(function (code) {
-        var c = CAT[code];
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = c.u; a.textContent = code + ' · ' + c.t;
-        li.appendChild(a);
-        ul.appendChild(li);
-      });
-      nextBox.appendChild(ul);
-    } else if (nxt.label === 'BSc electives' || nxt.label === 'BS electives') {
-      var gap = nxt.label === 'BSc electives'
-        ? RULES.bsc_elective_credits - model.bscEl.got - model.nptelBsc
-        : RULES.bs_elective_credits - model.bsEl.got - model.nptelBs - model.appBs;
-      nextBox.appendChild(el('p', null, Math.max(0, gap) + ' elective credits still to place. Any degree elective works; the first 8 count toward the BSc and the next 28 toward the BS.'));
-    } else if (nxt.label !== 'Done') {
-      nextBox.appendChild(el('p', null, 'Finish the course that unlocks the rest of this stage, or set a grade above.'));
-    }
     if (model.cgpa != null && model.flags.bs && RULES.pg_cgpa_min) {
-      var ok = model.cgpa >= RULES.pg_cgpa_min;
-      nextBox.appendChild(el('p', 'pl-detail', (ok ? 'CGPA is at or above ' : 'CGPA is under ') + RULES.pg_cgpa_min + ', the published line for applying to the PG Diploma.'));
+      var okc = model.cgpa >= RULES.pg_cgpa_min;
+      root.appendChild(el('p', 'pl-detail pl-cgpa-note', (okc ? 'CGPA is at or above ' : 'CGPA is under ') + RULES.pg_cgpa_min + ', the published line for applying to the PG Diploma.'));
     }
-    root.appendChild(nextBox);
 
     if (model.closed.length) {
       root.appendChild(el('p', 'pl-warn', 'Option 1 is selected, so ' + model.closed.join(' and ') + ' do not add credits. The academics page says that pair stays closed after Business Analytics.'));

@@ -1067,9 +1067,27 @@ body[data-page="planner"] .ph-title,body[data-page="my-term"] .ph-title,body[dat
 }
 
 /* Planner rows: code | bold course name, with credits and prerequisites on a quiet second line */
-.pl-c-meta{display:grid;grid-template-columns:62px minmax(0,1fr);gap:1px 8px;align-items:baseline}
+.pl-c-meta{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:1px 8px;align-items:baseline}
 .pl-c-meta .pl-code{grid-column:1;grid-row:1}
 .pl-c-meta > a,.pl-c-meta > span:not(.pl-code):not(.pl-sub){grid-column:2;grid-row:1;font-weight:600;font-size:14.5px;line-height:1.3;color:var(--ink);border:0}
 .pl-c-meta > a:hover{color:var(--accent)}
-.pl-c-meta .pl-sub{grid-column:2;grid-row:2;font-size:12.5px}
-.pl-course{padding:7px 0}
+.pl-c-meta .pl-sub{grid-column:3;grid-row:1;font-size:12.5px;white-space:nowrap}
+.pl-course{padding:6px 0}
+
+/* footer disclaimer on every page */
+.site-end .se-note{flex:1 1 100%;margin:4px 0 0;padding-top:12px;border-top:1px dotted var(--rule);font:400 12px/1.55 'IBM Plex Sans',sans-serif;letter-spacing:0;text-transform:none;color:var(--ink-2)}
+.site-end .se-note b{font-weight:600;color:var(--ink)}
+
+/* Planner: one compact strip for CGPA, credits and the milestones */
+.pl-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;margin:0 0 8px;padding:10px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
+.pl-top .pl-stat{padding:0;border:0;background:none;flex:0 1 auto;min-width:0}
+.pl-top .pl-stat-v{font-size:22px}
+.pl-top .pl-miles{flex:1 0 100%;margin:2px 0 0}
+.pl-intro{font-size:14px;margin:0 0 8px}
+.pl-cgpa-note{margin:0 0 8px}
+@media(min-width:760px){ .pl-top .pl-stat + .pl-stat{padding-left:22px;border-left:1px solid var(--rule)} }
+
+/* home: "Your tools" cards go to pages on this site, so they get an inward arrow */
+.quick-card.qc-in::after{content:"\2192"}
+.hm-tools{margin-top:16px}
+.hm-tools + .hm-quick{margin-top:14px}

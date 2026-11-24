@@ -39,6 +39,17 @@
     <ul class="hm-lec-results" id="hm-lec-results" hidden></ul>
   </header>
 
+  <section class="quick hm-quick hm-tools" aria-labelledby="hm-tools-h">
+    <span class="quick-label" id="hm-tools-h">Your tools</span>
+    <div class="quick-grid">
+      <a class="quick-card qc-in" href="my-term.html"><span class="qc-title">My Term</span><span class="qc-tag">Progress, exam dates, end-term marks</span></a>
+      <a class="quick-card qc-in" href="planner.html"><span class="qc-title">Degree planner</span><span class="qc-tag">Credits and CGPA, level by level</span></a>
+      <a class="quick-card qc-in" href="calculator.html"><span class="qc-title">Grade calculator</span><span class="qc-tag">What your marks add up to</span></a>
+      <a class="quick-card qc-in" href="nptel.html"><span class="qc-title">NPTEL</span><span class="qc-tag">Course lists and lectures</span></a>
+      <a class="quick-card qc-in" href="scam-alert.html"><span class="qc-title">Scam alert</span><span class="qc-tag">Spot fake offers and fees</span></a>
+    </div>
+  </section>
+
   <section class="quick hm-quick" aria-labelledby="hm-quick-h">
     <span class="quick-label" id="hm-quick-h">Useful resources</span>
     <div class="quick-grid">
@@ -108,6 +119,7 @@
   <span class="se-brand"><span class="se-name">The Companion</span><span class="se-by">Built and kept by Vikash</span></span>
   <nav class="se-nav" aria-label="Site">{{FOOTNAV}}</nav>
   <div class="theme-foot" id="theme-foot"></div>
+  <p class="se-note"><b>Disclaimer.</b> The Companion is an unofficial student project, not affiliated with or endorsed by IIT Madras. Course details may be outdated or incorrect; always check the official handbook and grading document on the IITM study portal.</p>
 </footer>
 
 <button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
