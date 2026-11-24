@@ -1,0 +1,214 @@
+/* The Companion: home page (recent courses, upcoming dates, search shortcuts) */
+(function () {
+  'use strict';
+  var C = window.HOME_COURSES || {};
+  var box = document.getElementById('search-box');
+
+  function get(k, d) {
+    try { var v = JSON.parse(localStorage.getItem(k) || 'null'); return v == null ? d : v; } catch (e) { return d; }
+  }
+
+  /* "/" jumps to the search box; Enter opens the first match */
+  document.addEventListener('keydown', function (e) {
+    var t = e.target && e.target.tagName;
+    if (e.key === '/' && box && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test(t || '')) {
+      e.preventDefault(); box.focus(); box.select();
+    }
+  });
+  if (box) box.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' || !box.value.trim()) return;
+    /* prefer a matching lecture (assets/search.js) when one is showing */
+    var lec = document.querySelector('#hm-lec-results:not([hidden]) a');
+    if (lec) { e.preventDefault(); location.href = lec.href; return; }
+    var rows = document.querySelectorAll('.hm-levels li');
+    for (var i = 0; i < rows.length; i++) {
+      if (rows[i].style.display !== 'none') { var a = rows[i].querySelector('a'); if (a) { e.preventDefault(); location.href = a.href; } return; }
+    }
+  });
+
+  /* continue where you left off: remembered in this browser only */
+  var sec = document.getElementById('hm-resume'), grid = document.getElementById('hm-resume-list');
+  function candidates() {
+    var recent = get('companion-recent', []), hide = get('companion-home-hide', []), codes = [];
+    if (!Array.isArray(recent)) recent = [];
+    if (!Array.isArray(hide)) hide = [];
+    recent.forEach(function (c) { if (C[c] && codes.indexOf(c) < 0 && hide.indexOf(c) < 0) codes.push(c); });
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf('companion-progress-') === 0) {
+          var c = k.slice('companion-progress-'.length);
+          var p = get(k, null);
+          if (C[c] && p && p.done && Object.keys(p.done).length && codes.indexOf(c) < 0 && hide.indexOf(c) < 0) codes.push(c);
+        }
+      }
+    } catch (e) {}
+    return codes;
+  }
+  function render() {
+    if (!sec || !grid) return;
+    var codes = candidates().slice(0, 3);
+    grid.textContent = '';
+    codes.forEach(function (code) {
+      var c = C[code], p = get('companion-progress-' + code, null);
+      var done = p && p.done ? Object.keys(p.done).length : 0;
+      var a = document.createElement('a'); a.className = 'hm-rc'; a.href = c.u;
+      var s1 = document.createElement('span'); s1.className = 'hm-rc-code'; s1.textContent = code;
+      var s2 = document.createElement('span'); s2.className = 'hm-rc-title'; s2.textContent = c.t;
+      var s3 = document.createElement('span'); s3.className = 'hm-rc-meta';
+      var word = c.i || 'lecture';
+      if (c.n && done) {
+        s3.textContent = Math.min(done, c.n) + ' of ' + c.n + ' ' + word + 's watched';
+      } else {
+        s3.textContent = 'Opened recently';
+      }
+      a.appendChild(s1); a.appendChild(s2); a.appendChild(s3);
+      if (c.n && done) {
+        var bar = document.createElement('span'); bar.className = 'hm-bar'; bar.setAttribute('aria-hidden', 'true');
+        var fill = document.createElement('i'); fill.style.width = Math.min(100, Math.round(done * 100 / c.n)) + '%';
+        bar.appendChild(fill); a.appendChild(bar);
+      }
+      grid.appendChild(a);
+    });
+    sec.hidden = codes.length === 0;
+  }
+  render();
+  /* "Clear list" hides every course in it from this page; watched ticks on the course pages are not touched,
+     and opening a course again brings it back */
+  var clr = document.getElementById('hm-forget');
+  if (clr) clr.addEventListener('click', function () {
+    var hide = get('companion-home-hide', []);
+    if (!Array.isArray(hide)) hide = [];
+    candidates().forEach(function (c) { if (hide.indexOf(c) < 0) hide.push(c); });
+    try {
+      localStorage.setItem('companion-home-hide', JSON.stringify(hide));
+      localStorage.removeItem('companion-recent');
+    } catch (e) {}
+    render();
+  });
+
+  /* "Your term": courses from my-term.html, with the next exam and the one furthest behind */
+  (function () {
+    var sec = document.getElementById('hm-term'), grid = document.getElementById('hm-term-list');
+    if (!sec || !grid) return;
+    var TS = window.TERM_SYLLABUS || { term: '', courses: {} };
+    var term = TS.term || '';
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    function pd(s) { var p = String(s).split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+    function examDates() {
+      var out = {};
+      var list = document.getElementById('hm-dates');
+      if (!list) return out;
+      [].slice.call(list.querySelectorAll('li')).forEach(function (li) {
+        var t = (li.querySelector('.hm-t') || {}).textContent || '';
+        var d = li.getAttribute('data-start');
+        if (t === 'Quiz 1') out.quiz1 = d;
+        else if (t === 'Quiz 2') out.quiz2 = d;
+        else if (t === 'End term exam') out.endterm = d;
+      });
+      return out;
+    }
+    function nextExamFor(code, exams) {
+      var t = TS.courses[code];
+      if (!t) return null;
+      var order = [['quiz1', 'Quiz 1'], ['quiz2', 'Quiz 2'], ['endterm', 'End term']];
+      for (var i = 0; i < order.length; i++) {
+        var key = order[i][0], part = t[key], iso = exams[key];
+        if (!part || !part.held || !iso) continue;
+        if (pd(iso) >= today) return { label: order[i][1], date: iso, weeks: part.weeks || '' };
+      }
+      return null;
+    }
+    function fmt(iso) {
+      var d = pd(iso);
+      return d.getDate() + ' ' + ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getMonth()];
+    }
+    function draw() {
+      var codes = get('companion-enroll-' + term, []);
+      if (!Array.isArray(codes) || !codes.length) { sec.hidden = true; return; }
+      var exams = examDates();
+      var rows = [];
+      codes.forEach(function (code) {
+        var c = C[code];
+        if (!c) return;
+        var p = get('companion-progress-' + code, null);
+        var done = p && p.done ? Object.keys(p.done).length : 0;
+        var total = c.n || 0;
+        var pct = total ? done / total : 1;
+        rows.push({ code: code, c: c, done: done, total: total, pct: pct, next: nextExamFor(code, exams) });
+      });
+      if (!rows.length) { sec.hidden = true; return; }
+      rows.sort(function (a, b) { return a.pct - b.pct || a.code.localeCompare(b.code); });
+
+      var head = sec.querySelector('.hm-head');
+      var tip = sec.querySelector('.hm-term-tip');
+      if (!tip) {
+        tip = document.createElement('p');
+        tip.className = 'hm-term-tip hm-note';
+        if (head && head.nextSibling) sec.insertBefore(tip, head.nextSibling);
+        else sec.insertBefore(tip, grid);
+      }
+      var soonest = null;
+      rows.forEach(function (r) {
+        if (!r.next) return;
+        if (!soonest || pd(r.next.date) < pd(soonest.date)) soonest = r.next;
+      });
+      var behind = rows[0];
+      var bits = [];
+      if (soonest) bits.push('Next exam: ' + soonest.label + ' on ' + fmt(soonest.date));
+      if (behind && behind.total && behind.pct < 1) {
+        bits.push('Furthest behind: ' + behind.code + ' (' + Math.min(behind.done, behind.total) + ' of ' + behind.total + ')');
+      }
+      tip.textContent = bits.join(' · ');
+      tip.hidden = !bits.length;
+
+      grid.textContent = '';
+      rows.slice(0, 6).forEach(function (r) {
+        var a = document.createElement('a'); a.className = 'hm-rc'; a.href = r.c.u;
+        var s1 = document.createElement('span'); s1.className = 'hm-rc-code'; s1.textContent = r.code;
+        var s2 = document.createElement('span'); s2.className = 'hm-rc-title'; s2.textContent = r.c.t;
+        var s3 = document.createElement('span'); s3.className = 'hm-rc-meta';
+        if (r.next) {
+          s3.textContent = r.next.label + ' · ' + fmt(r.next.date) +
+            (r.total ? ' · ' + Math.min(r.done, r.total) + ' of ' + r.total + ' watched' : '');
+        } else {
+          s3.textContent = r.total ? Math.min(r.done, r.total) + ' of ' + r.total + ' watched' : 'No lectures listed yet';
+        }
+        a.appendChild(s1); a.appendChild(s2); a.appendChild(s3);
+        if (r.total) {
+          var bar = document.createElement('span'); bar.className = 'hm-bar'; bar.setAttribute('aria-hidden', 'true');
+          var fill = document.createElement('i'); fill.style.width = Math.min(100, Math.round(r.done * 100 / r.total)) + '%';
+          bar.appendChild(fill); a.appendChild(bar);
+        }
+        grid.appendChild(a);
+      });
+      sec.hidden = !grid.children.length;
+    }
+    draw();
+    document.addEventListener('companion-sync-ready', draw);
+  })();
+
+  /* upcoming dates: hide what is over, label what is next */
+  var list = document.getElementById('hm-dates');
+  if (list) {
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var pd = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); };
+    var shown = 0, LIMIT = 5;
+    [].slice.call(list.querySelectorAll('li')).forEach(function (li) {
+      var s = pd(li.getAttribute('data-start')), e = li.getAttribute('data-end') ? pd(li.getAttribute('data-end')) : s;
+      var w = li.querySelector('.hm-when');
+      if (e < today || shown >= LIMIT) { li.hidden = true; return; }
+      shown++;
+      var d = Math.round((s - today) / 86400000), txt, soon = false;
+      if (s <= today) { txt = (+s === +today && +e === +s) ? 'Today' : 'On now'; soon = true; }
+      else if (d === 1) { txt = 'Tomorrow'; soon = true; }
+      else if (d <= 13) { txt = 'In ' + d + ' days'; soon = d <= 7; }
+      else if (d <= 60) { txt = 'In ' + Math.round(d / 7) + ' weeks'; }
+      else { txt = 'In ' + Math.round(d / 30) + ' months'; }
+      if (w) { w.textContent = txt; w.className = 'hm-when' + (soon ? ' soon' : ''); }
+    });
+    var empty = document.getElementById('hm-dates-empty');
+    if (empty) empty.hidden = shown > 0;
+    list.hidden = shown === 0;
+  }
+})();
