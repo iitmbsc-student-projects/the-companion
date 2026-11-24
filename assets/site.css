@@ -17,11 +17,9 @@
     -webkit-backdrop-filter:saturate(1.2) blur(10px);backdrop-filter:saturate(1.2) blur(10px);
     border-bottom:1px solid var(--rule)}
   .topbar-in{display:flex;align-items:center;gap:8px;height:62px}
-  .tb-brand{display:flex;align-items:center;gap:10px;border:none;color:var(--ink);margin-right:14px}
-  .tb-mark{width:32px;height:32px;border-radius:8px;background:var(--accent-fill);color:var(--on-fill);display:grid;
-    place-items:center;font-family:'Spectral',serif;font-weight:700;font-size:18px;line-height:1}
-  .tb-name{font-family:'Spectral',serif;font-weight:700;font-size:19px;letter-spacing:-0.01em;white-space:nowrap}
-  .tb-brand:hover .tb-name{color:var(--accent)}
+  .tb-brand{display:flex;align-items:center;border:none;color:var(--ink);margin-right:14px}
+  .tb-logo{height:52px;width:auto;display:block}
+  .tb-brand:hover{opacity:.86}
   .tb-nav{display:flex;align-items:center;gap:4px;flex:none}
   .tb-more{display:flex;align-items:center;gap:4px;flex:1}
   .nav-item{position:relative;display:flex;align-items:center}
@@ -72,7 +70,7 @@
     .level,.link-group{scroll-margin-top:112px}
   }
   @media(max-width:640px){
-    .tb-name{display:none}
+    .tb-logo{height:40px}
     .tb-brand{margin-right:6px}
     .nav-main{padding-left:6px;font-size:13.5px}
     .nav-caret{padding:9px 8px 9px 5px}
