@@ -1,0 +1,43 @@
+{
+  "source": "https://study.iitm.ac.in/ds/academics.html",
+  "as_of": "2026-11",
+  "note": "Credit rules follow the public IITM academics page. A course's credits count once. This is a planning aid, not an official audit — confirm against the current handbook before you rely on an exit.",
+  "pg_cgpa_min": 8,
+  "nptel_max": 8,
+  "apprenticeship_max": 12,
+  "milestones": [
+    {"id": "foundation", "label": "Foundation certificate", "credits": 32},
+    {"id": "one_diploma", "label": "Foundation + one diploma", "credits": 59},
+    {"id": "both_diplomas", "label": "Foundation + both diplomas", "credits": 86},
+    {"id": "bsc", "label": "BSc", "credits": 114},
+    {"id": "bs", "label": "BS", "credits": 142},
+    {"id": "pg", "label": "PG Diploma in AI & ML", "credits": 162},
+    {"id": "mtech", "label": "MTech in AI & ML", "credits": 182}
+  ],
+  "foundation": ["MA1001", "MA1002", "CS1001", "HS1001", "MA1003", "MA1004", "CS1002", "HS1002"],
+  "diploma_programming": ["CS2001", "CS2002", "CS2003", "CS2003P", "CS2005", "CS2006", "CS2006P", "SE2001"],
+  "diploma_ds": {
+    "mandatory": ["CS2004", "MS2001", "CS2007", "CS2008", "CS2008P", "SE2002"],
+    "tracks": [
+      {
+        "id": "ba",
+        "label": "Option 1 — Business Analytics",
+        "detail": "Business Analytics and the BDM project. Choosing this closes the Deep Learning & Generative AI pair at diploma level.",
+        "courses": ["MS2001P", "MS2002"]
+      },
+      {
+        "id": "dl",
+        "label": "Option 2 — Deep Learning & Generative AI",
+        "detail": "Introduction to Deep Learning & Generative AI and its project. The Business Analytics pair can still count later as degree electives.",
+        "courses": ["DA2001", "DA2001P"]
+      }
+    ]
+  },
+  "degree_core": ["CS3001", "CS3002", "CS3003", "CS3004", "GN3001"],
+  "bsc_elective_credits": 8,
+  "bs_elective_credits": 28,
+  "pg_core": ["DA5014", "DA5002", "DA5003"],
+  "pg_elective_credits": 8,
+  "pg_electives": ["DA5004", "DA5005", "DA5006", "DA5007", "DA6001", "DA6002", "DA6003", "DA6004", "DA6005", "EE4001", "DA6006"],
+  "mtech": ["DA6901"]
+}
