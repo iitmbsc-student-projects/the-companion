@@ -66,7 +66,9 @@
 
 <main class="wrap" id="main" tabindex="-1">
   <section class="mt-wrap">
-    <p class="mt-intro">Courses for the <b>{{TERM}}</b> term: progress, the next exam, and the end-term mark each grade needs. <span class="signin-hint"><a href="account.html">Sign in</a> to keep this on another device.</span></p>
+    <p class="mt-intro">Your <b>{{TERM}}</b> courses: lecture progress, the next exam and the end-term mark each grade needs. <span class="signin-hint"><a href="account.html">Sign in</a> to keep this on another device.</span></p>
+
+    <div class="mt-summary" id="mt-summary" hidden></div>
 
     <details class="mt-pick" id="mt-pick">
       <summary id="mt-pick-sum">Choose your courses</summary>
@@ -74,22 +76,16 @@
     </details>
 
     <p class="mt-empty" id="mt-empty">No courses picked yet. Open “Choose your courses” and tick the ones you are taking.</p>
-    <div class="mt-grid" id="mt-grid"></div>
+    <div class="mt-list" id="mt-grid"></div>
 
     <section class="mt-rev" id="mt-rev" hidden>
-      <h2 class="hm-h">What does the end term need?</h2>
-      <p class="mt-intro">Marks you already have, worked backwards to the end-term score for each grade. The <a href="calculator.html">grade calculator</a> has the full sum.</p>
-      <div class="calc-pick">
-        <div class="cp-group cp-course">
-          <label for="mt-rev-course">Course</label>
-          <select id="mt-rev-course"></select>
-        </div>
+      <div class="mt-rev-head">
+        <h2 class="mt-rev-h">What does the end term need?</h2>
+        <label class="mt-rev-course" for="mt-rev-course"><span class="pl-k">Course</span><select id="mt-rev-course"></select></label>
       </div>
-      <div class="calc-grid" id="mt-rev-inputs" style="margin:12px 0"></div>
-      <table class="mt-rev-table" id="mt-rev-table" hidden>
-        <thead><tr><th>Grade</th><th>End term needed</th><th></th></tr></thead>
-        <tbody></tbody>
-      </table>
+      <p class="mt-rev-sub">Type the marks you already have. Each grade shows the end-term score it needs. The <a href="calculator.html">grade calculator</a> has the full sum.</p>
+      <div class="calc-grid mt-rev-inputs" id="mt-rev-inputs"></div>
+      <div class="mt-chips" id="mt-rev-table" hidden></div>
       <p class="acct-note" id="mt-rev-note"></p>
     </section>
   </section>
