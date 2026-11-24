@@ -1052,3 +1052,16 @@ html[data-theme="dark"] .tb-logo{background:#f4efe6;border-radius:8px;padding:3p
 body[data-page="planner"] .page-head,body[data-page="my-term"] .page-head,body[data-page="account"] .page-head{padding-top:24px}
 body[data-page="planner"] .ph-title,body[data-page="my-term"] .ph-title,body[data-page="account"] .ph-title{font-size:clamp(30px,5vw,38px);margin-bottom:8px}
 .pl-next{margin:0 0 2px}
+
+/* Planner and My Term lists: two columns on wider screens so there is less to scroll */
+.pl-course{font-size:14.5px}
+.pl-course .pl-code{font-size:11.5px}
+@media(min-width:760px){
+  .pl-panel .pl-courses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
+  .pl-panel .pl-courses .pl-course[hidden]{display:none}
+  .pl-tracks{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
+  .pl-tracks > .pl-k{grid-column:1/-1}
+  .mt-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:0;align-content:start}
+  .mt-results .mt-none{grid-column:1/-1}
+  .mt-res:nth-child(odd){border-right:1px solid var(--rule)}
+}
