@@ -61,13 +61,6 @@
 
   <p class="no-results" id="no-results" role="status" hidden>No course matches that. Try a code such as CS1001, or a word such as “maths”.</p>
 
-  <section class="hm-term hm-resume" id="hm-term" aria-labelledby="hm-term-h" hidden>
-    <div class="hm-head">
-      <h2 class="hm-h" id="hm-term-h">Your term</h2>
-      <a class="hm-quiet" href="my-term.html">Open My Term</a>
-    </div>
-    <div class="hm-rc-grid" id="hm-term-list"></div>
-  </section>
 
   <section class="hm-resume" id="hm-resume" aria-labelledby="hm-resume-h" hidden>
     <div class="hm-head">
@@ -131,7 +124,6 @@
 <script src="assets/config.js"></script>
 <script src="assets/account.js"></script>
 <script src="assets/sync.js"></script>
-<script src="assets/term-syllabus.js"></script>
 <script src="assets/nptel-index.js"></script>
 <script src="assets/home.js"></script>
 <script src="assets/search.js"></script>
