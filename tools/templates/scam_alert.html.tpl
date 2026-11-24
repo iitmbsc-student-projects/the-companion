@@ -40,12 +40,16 @@
         <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Show link groups">&#9662;</button>
         <div class="menu" id="menu-links"></div>
       </div>
+      <div class="nav-item" data-tab="nptel">
+        <a class="nav-main" href="nptel.html">NPTEL</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-nptel" aria-label="Show NPTEL lists">&#9662;</button>
+        <div class="menu" id="menu-nptel"></div>
+      </div>
     </div>
     <div class="tb-more">
       <a class="tb-link current" href="scam-alert.html">Scam alert</a>
       <a class="tb-link" href="calculator.html">Grade calculator</a>
       <a class="tb-link" href="contributors.html">Contributors</a>
-      <a class="tb-link" href="nptel.html">NPTEL</a>
       <a class="tb-link" href="updates.html">Updates</a>
     </div>
     <span id="theme-slot" data-float-narrow></span>

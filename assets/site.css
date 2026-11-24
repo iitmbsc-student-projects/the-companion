@@ -52,7 +52,8 @@
   .menu .menu-all .mi-title{font-family:'Spectral',serif;font-size:15.5px}
 
 
-  @media(max-width:900px){ .menu{min-width:280px} }
+  #menu-nptel{min-width:380px}
+  @media(max-width:900px){ .menu,#menu-nptel{min-width:280px} }
   /* phones and narrow windows: two rows. Row 1 = brand + the two menus, row 2 = the other three pages.
      The colour switcher moves to the page footer (see theme.js). */
   @media(max-width:1100px){
@@ -639,7 +640,7 @@ body[data-page="notfound"] .nf-cards{margin-top:4px}
 .np-hb:hover{background:var(--accent)}
 .np-hb:hover .np-hb-t,.np-hb:hover .np-hb-s{color:var(--paper)}
 .np-hb:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.np-tabs{display:grid;grid-template-columns:1fr 1fr;margin:26px 0 0;border-bottom:2px solid var(--rule)}
+.np-tabs{scroll-margin-top:84px;display:grid;grid-template-columns:1fr 1fr;margin:26px 0 0;border-bottom:2px solid var(--rule)}
 .np-tab{display:grid;grid-template-columns:1fr auto;grid-template-areas:"t n" "s s";align-items:center;gap:3px 12px;text-align:left;
   padding:12px 6px 12px 2px;margin-bottom:-2px;border:none;border-bottom:4px solid transparent;background:none;color:var(--ink-2);cursor:pointer;font-family:'IBM Plex Sans',sans-serif}
 .np-tab + .np-tab{padding-left:18px}
