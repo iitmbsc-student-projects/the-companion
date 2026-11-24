@@ -86,9 +86,10 @@
 
     <section class="mt-rev" id="mt-rev" hidden>
       <div class="mt-rev-head">
-        <h2 class="mt-rev-h">What does the end term need?</h2>
+        <h2 class="mt-rev-h" id="mt-rev-h">What does the end term need?</h2>
         <label class="mt-rev-course" for="mt-rev-course"><span class="pl-k">Course</span><select id="mt-rev-course"></select></label>
       </div>
+      <p class="mt-rev-miss acct-note" id="mt-rev-miss" hidden></p>
       <p class="mt-rev-sub">Type the marks you already have. Each grade shows the end-term score it needs. The <a href="calculator.html">grade calculator</a> has the full sum.</p>
       <div class="calc-grid mt-rev-inputs" id="mt-rev-inputs"></div>
       <div class="mt-chips" id="mt-rev-table" hidden></div>
