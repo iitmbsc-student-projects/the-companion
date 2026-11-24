@@ -974,6 +974,11 @@ def generate_planner():
             "q": html_lib.unescape(data.get("prereq") or ""),
             "u": "courses/%s.html" % stem,
         })
+    have = {c["c"] for c in catalog}
+    for ex in rules.get("extra_courses") or []:   # degree electives that have no course page yet
+        if ex["c"] not in have:
+            catalog.append({"c": ex["c"], "t": ex["t"], "cr": ex.get("cr") or 0, "program": ex.get("program") or "",
+                            "q": ex.get("q") or "", "u": ""})
     grading = json.load(open(CALC_PATH, encoding="utf-8"))
     bands = {"bands": grading.get("bands") or [], "fail": grading.get("fail") or {"grade": "U", "gp": 0}}
     tpl = open(PLANNER_TEMPLATE_PATH, encoding="utf-8").read()
