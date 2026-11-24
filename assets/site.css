@@ -1065,3 +1065,11 @@ body[data-page="planner"] .ph-title,body[data-page="my-term"] .ph-title,body[dat
   .mt-results .mt-none{grid-column:1/-1}
   .mt-res:nth-child(odd){border-right:1px solid var(--rule)}
 }
+
+/* Planner rows: code | bold course name, with credits and prerequisites on a quiet second line */
+.pl-c-meta{display:grid;grid-template-columns:62px minmax(0,1fr);gap:1px 8px;align-items:baseline}
+.pl-c-meta .pl-code{grid-column:1;grid-row:1}
+.pl-c-meta > a,.pl-c-meta > span:not(.pl-code):not(.pl-sub){grid-column:2;grid-row:1;font-weight:600;font-size:14.5px;line-height:1.3;color:var(--ink);border:0}
+.pl-c-meta > a:hover{color:var(--accent)}
+.pl-c-meta .pl-sub{grid-column:2;grid-row:2;font-size:12.5px}
+.pl-course{padding:7px 0}
