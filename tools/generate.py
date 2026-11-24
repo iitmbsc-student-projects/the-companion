@@ -125,7 +125,7 @@ def load_all():
 
 # Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
 # stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
-ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js|nptel\.js|nptel-index\.js))(?:\?v=[0-9a-f]+)?')
+ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js|nptel\.js|nptel-index\.js|scam\.js))(?:\?v=[0-9a-f]+)?')
 
 
 def _asset_ver(rel):
@@ -472,38 +472,44 @@ def generate_scam_alert():
     tpl = open(SCAM_TEMPLATE_PATH, encoding="utf-8").read()
     esc = html_lib.escape
     parts, jump = [], []
-    intro = "".join("<p>%s</p>" % esc(t) for t in d["intro"])
-    co = d["callout"]
-    parts.append('      <div class="scam-intro">%s</div>\n      <div class="scam-callout"><strong>%s.</strong> %s</div>'
-                 % (intro, esc(co["title"]), esc(co["text"])))
-    for sec in d["sections"]:
+    co, pc = d["callout"], d["paid_callout"]
+    alerts = ('<div class="sc-alerts">\n      <div class="sc-alert"><strong>%s</strong><p>%s</p></div>\n'
+              '      <div class="sc-alert sc-urgent"><strong>%s</strong><p>%s</p><a class="sc-go" href="%s">%s</a></div>\n    </div>'
+              % (esc(co["title"]), esc(co["text"]), esc(pc["title"]), esc(pc["text"]), esc(pc["url"], quote=True), esc(pc["label"])))
+    parts.append('      <div class="scam-intro">%s</div>' % "".join("<p>%s</p>" % esc(t) for t in d["intro"]))
+    for n, sec in enumerate(d["sections"], 1):
+        count = ('<span class="group-count">%d</span>' % len(sec["items"])) if sec["type"] == "providers" else ""
         head = ('      <div class="link-group" id="%s">\n        <div class="group-head"><h2>%s</h2>%s</div>\n        <p class="group-intro">%s</p>\n'
-                % (sec["id"], esc(sec["title"]),
-                   ('<span class="group-count">%d</span>' % len(sec["items"])) if sec["type"] == "providers" else "", esc(sec["intro"])))
+                % (sec["id"], esc(sec["title"]), count, esc(sec["intro"])))
         if sec["type"] == "cards":
             body = '        <ul class="links-grid scam-grid">\n          %s\n        </ul>' % "\n          ".join(
                 '<li class="lk-card warn-card"><h3 class="lk-title">%s</h3><p class="lk-desc">%s</p></li>' % (esc(c["title"]), esc(c["text"]))
                 for c in sec["cards"])
         elif sec["type"] == "providers":
-            cards = []
+            rows = []
             for it in sec["items"]:
-                hosts = ("Names as hosts: %s" % esc(it["hosts"])) if it["hosts"] else "No host companies listed."
+                hosts = esc(it["hosts"]) if it["hosts"] else '<span class="pv-none">None listed</span>'
                 chips = "".join("<span>%s</span>" % esc(x) for x in it["platforms"])
-                cards.append('<li class="lk-card prov-card"><h3 class="lk-title">%s</h3><p class="lk-desc">%s</p><div class="plat-row">%s</div></li>'
-                             % (esc(it["name"]), hosts, chips))
-            body = '        <ul class="links-grid scam-grid">\n          %s\n        </ul>' % "\n          ".join(cards)
+                q = " ".join((it["name"], it["hosts"], " ".join(it["platforms"]))).casefold()
+                rows.append('<tr class="pv-row" data-q="%s"><th scope="row" data-l="Provider">%s</th><td data-l="Names as hosts">%s</td>'
+                            '<td data-l="Reaches you by"><div class="plat-row">%s</div></td></tr>' % (esc(q, quote=True), esc(it["name"]), hosts, chips))
+            body = ('        <div class="pv-tools"><input type="search" id="pv-search" class="np-search" placeholder="Search a company name" '
+                    'aria-label="Search the provider list" autocomplete="off" spellcheck="false"><p class="np-count" id="pv-count" role="status" aria-live="polite"></p></div>\n'
+                    '        <table class="pv-table"><thead><tr><th scope="col">Provider</th><th scope="col">Names as hosts</th><th scope="col">Reaches you by</th></tr></thead>\n'
+                    '          <tbody>\n          %s\n          </tbody></table>\n'
+                    '        <p class="pv-none-msg" id="pv-none" hidden>That name is not on the list. That does not make it safe: check it the way the steps above describe.</p>'
+                    % "\n          ".join(rows))
         else:
             body = '        <ol class="scam-steps">%s</ol>' % "".join("<li>%s</li>" % x for x in sec["steps"])
             if sec.get("actions"):
                 body += '\n        <div class="cta-row">%s</div>' % "".join(
-                    '<a class="cta-btn%s" href="%s"%s>%s%s</a>' % (
+                    '<a class="cta-btn%s" href="%s"%s>%s</a>' % (
                         "" if i == 0 else " ghost", esc(x["url"], quote=True),
-                        "" if x["url"].startswith("mailto:") else ' target="_blank" rel="noopener"',
-                        esc(x["label"]), "" if x["url"].startswith("mailto:") else "")
+                        "" if x["url"].startswith("mailto:") else ' target="_blank" rel="noopener"', esc(x["label"]))
                     for i, x in enumerate(sec["actions"]))
-        jump.append('<a href="#%s">%s</a>' % (sec["id"], esc(sec["title"])))
+        jump.append('<a href="#%s">%s</a>' % (sec["id"], esc(sec.get("short", sec["title"]))))
         parts.append(head + body + "\n      </div>")
-    page = tpl.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])) \
+    page = tpl.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])).replace("{{ALERTS}}", alerts) \
         .replace("{{JUMP}}", "".join(jump)).replace("{{GROUPS}}", "\n".join(parts)).replace("{{FOOTNAV}}", _footer_nav("scam"))
     open(SCAM_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
     return SCAM_PAGE

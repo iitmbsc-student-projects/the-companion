@@ -28,7 +28,37 @@
      "title": "3. The real goal",
      "text": "Money is the usual aim. Your resume, phone number and ID documents are also worth something, and so is your reach, since some ask you to recruit friends or share posts. Treat anything you send as gone for good."
     }
-   ]
+   ],
+   "short": "How it works"
+  },
+  {
+   "id": "recent",
+   "type": "cards",
+   "title": "Newer tricks students have reported",
+   "intro": "These came up on Discourse in October and November 2026.",
+   "cards": [
+    {
+     "title": "A \"mandatory\" course, project or registration",
+     "text": "Mails say a training programme, add-on project or subject registration is mandatory, often with a payment link. Foundation level has no projects, and nothing real asks you to register through a link mid-term. Real changes show on your dashboard and come from official addresses."
+    },
+    {
+     "title": "Mails from a student account, with no External tag",
+     "text": "Some are sent from another student's study.iitm.ac.in address, so there is no External tag. The sender being a student is the clue: students do not run registrations. Forward it to support and do not reply."
+    },
+    {
+     "title": "A payment link on a short timer",
+     "text": "A \"scholarship batch\", a total of ₹10,000 or more, a payment link and a note that the portal is valid for only ten minutes, followed by calls to make you pay. All of that is pressure so that you pay before you check."
+    },
+    {
+     "title": "Credits for sale",
+     "text": "A caller or mail offers IITM credits for a paid Python or AI course with placement training, sometimes for around ₹15,000. Outside providers cannot give you IITM credits. The only outside courses that count are the NPTEL courses in the handbook lists, which are on the NPTEL page of this site."
+    },
+    {
+     "title": "Other colleges and \"Skill India\" names",
+     "text": "Mails from another college's domain that praise IIT courses, or from companies that claim an NSDC or Skill India training is compulsory for every student. A \"mandatory for every student\" line repeated through the mail is a warning sign."
+    }
+   ],
+   "short": "New tricks"
   },
   {
    "id": "red-flags",
@@ -64,7 +94,8 @@
      "title": "A phone call that asks for your ID or password",
      "text": "Callers claim to be from IIT Madras, IIT Kharagpur or an \"official training partner\", then ask for your student ID, mail ID or even your password. No real office does. Hang up and do not call back."
     }
-   ]
+   ],
+   "short": "Red flags"
   },
   {
    "id": "verify",
@@ -78,7 +109,23 @@
     "Look up the company. India's Ministry of Corporate Affairs lets you search company master data for free, and a WHOIS lookup shows how old the website's domain is. A \"leading\" firm whose site is a few months old is suspicious.",
     "Search the provider's name together with \"scam\" or \"reviews\", and check the list on this page.",
     "If the offer reached your student mailbox, ask the IIC at <a href=\"mailto:iic@study.iitm.ac.in\">iic@study.iitm.ac.in</a> before you reply."
-   ]
+   ],
+   "short": "Check first"
+  },
+  {
+   "id": "paid",
+   "type": "steps",
+   "title": "If you already paid or shared details",
+   "intro": "Act quickly. Reports made soon after a payment have the best chance of stopping it.",
+   "steps": [
+    "Stop all contact, but keep every email, chat, receipt and payment screenshot as evidence.",
+    "Call the national cyber crime helpline <strong>1930</strong> and file a complaint at <a href=\"https://cybercrime.gov.in/\" target=\"_blank\" rel=\"noopener\">cybercrime.gov.in</a>. Do this in the first hours if you can.",
+    "Tell your bank or UPI app about the payment and ask them to block further debits.",
+    "If you sent ID documents, your student ID or a password, change the passwords at once, turn on 2-step verification and watch your accounts for misuse.",
+    "Never approve a UPI collect request or share an OTP to \"receive\" money. Receiving money never needs your PIN or OTP.",
+    "Tell the IIC and tell us, so that the provider can be added here for the next batch."
+   ],
+   "short": "Already paid"
   },
   {
    "id": "iitm",
@@ -106,49 +153,8 @@
      "title": "Check the hosts yourself",
      "text": "If a provider says it connects you with other companies, ask those companies whether the arrangement is real before you rely on it."
     }
-   ]
-  },
-  {
-   "id": "paid",
-   "type": "steps",
-   "title": "If you already paid or shared details",
-   "intro": "Act quickly. Reports made soon after a payment have the best chance of stopping it.",
-   "steps": [
-    "Stop all contact, but keep every email, chat, receipt and payment screenshot as evidence.",
-    "Call the national cyber crime helpline <strong>1930</strong> and file a complaint at <a href=\"https://cybercrime.gov.in/\" target=\"_blank\" rel=\"noopener\">cybercrime.gov.in</a>. Do this in the first hours if you can.",
-    "Tell your bank or UPI app about the payment and ask them to block further debits.",
-    "If you sent ID documents, your student ID or a password, change the passwords at once, turn on 2-step verification and watch your accounts for misuse.",
-    "Never approve a UPI collect request or share an OTP to \"receive\" money. Receiving money never needs your PIN or OTP.",
-    "Tell the IIC and tell us, so that the provider can be added here for the next batch."
-   ]
-  },
-  {
-   "id": "recent",
-   "type": "cards",
-   "title": "Newer tricks students have reported",
-   "intro": "These came up on Discourse in October and November 2026.",
-   "cards": [
-    {
-     "title": "A \"mandatory\" course, project or registration",
-     "text": "Mails say a training programme, add-on project or subject registration is mandatory, often with a payment link. Foundation level has no projects, and nothing real asks you to register through a link mid-term. Real changes show on your dashboard and come from official addresses."
-    },
-    {
-     "title": "Mails from a student account, with no External tag",
-     "text": "Some are sent from another student's study.iitm.ac.in address, so there is no External tag. The sender being a student is the clue: students do not run registrations. Forward it to support and do not reply."
-    },
-    {
-     "title": "A payment link on a short timer",
-     "text": "A \"scholarship batch\", a total of ₹10,000 or more, a payment link and a note that the portal is valid for only ten minutes, followed by calls to make you pay. All of that is pressure so that you pay before you check."
-    },
-    {
-     "title": "Credits for sale",
-     "text": "A caller or mail offers IITM credits for a paid Python or AI course with placement training, sometimes for around ₹15,000. Outside providers cannot give you IITM credits. The only outside courses that count are the NPTEL courses in the handbook lists, which are on the NPTEL page of this site."
-    },
-    {
-     "title": "Other colleges and \"Skill India\" names",
-     "text": "Mails from another college's domain that praise IIT courses, or from companies that claim an NSDC or Skill India training is compulsory for every student. A \"mandatory for every student\" line repeated through the mail is a warning sign."
-    }
-   ]
+   ],
+   "short": "What IITM says"
   },
   {
    "id": "providers",
@@ -316,7 +322,8 @@
       "Instagram"
      ]
     }
-   ]
+   ],
+   "short": "Providers"
   },
   {
    "id": "help",
@@ -340,7 +347,14 @@
      "label": "Email",
      "url": "mailto:vikash.iitmbs@gmail.com"
     }
-   ]
+   ],
+   "short": "Help"
   }
- ]
+ ],
+ "paid_callout": {
+  "title": "Already paid or shared details?",
+  "text": "Call the cyber crime helpline 1930 now, then tell your bank. Reports made within hours have the best chance of stopping a payment.",
+  "label": "What to do next",
+  "url": "#paid"
+ }
 }

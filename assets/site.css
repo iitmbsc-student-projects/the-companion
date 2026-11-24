@@ -745,3 +745,56 @@ body.searching .chip{padding:3px 6px}
 .np-r-m{font-size:12.5px;color:var(--ink-2);line-height:1.3}
 @media(max-width:520px){.np-r{flex-direction:column;gap:0}.np-r-c{width:auto}}
 .hm-more[hidden]{display:none}
+
+/* ---------- Scam alert page: tighter, bolder ---------- */
+body[data-page="scam"] .page-head{padding-bottom:0}
+.sc-alerts{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;margin:16px 0 0}
+.sc-alert{padding:12px 16px 13px;border:2px solid var(--ink);border-radius:8px;background:var(--surface)}
+.sc-alert strong{display:block;font:700 17px 'Spectral',serif;line-height:1.2;margin-bottom:3px}
+.sc-alert p{margin:0;font-size:14px;line-height:1.5;color:var(--ink)}
+.sc-urgent{border-color:var(--accent);background:var(--tint)}
+.sc-urgent strong{color:var(--accent)}
+.sc-go{display:inline-block;margin-top:8px;padding:5px 14px;border:none;border-radius:99px;background:var(--accent);color:var(--paper);font:700 13px 'IBM Plex Sans',sans-serif}
+.sc-go:hover{background:var(--ink);color:var(--paper)}
+.sc-nav{position:sticky;top:var(--tbh,62px);z-index:20;display:flex;gap:2px;margin:18px 0 0;padding:0;background:var(--paper);border-bottom:2px solid var(--rule);overflow-x:auto;scrollbar-width:none}
+.sc-nav::-webkit-scrollbar{display:none}
+.sc-nav a{flex:none;padding:11px 14px 9px;margin-bottom:-2px;border:none;border-bottom:4px solid transparent;color:var(--ink-2);font:700 13.5px 'IBM Plex Sans',sans-serif;white-space:nowrap}
+.sc-nav a:hover{color:var(--ink)}
+.sc-nav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.scam-wrap{margin-top:0}
+.scam-intro{margin-top:18px;max-width:760px}
+.scam-intro p{margin:0 0 10px;font-size:15.5px;line-height:1.55}
+main .scam-wrap .link-group{margin-top:30px;scroll-margin-top:calc(var(--tbh,62px) + 58px)}
+.scam-wrap .group-head h2{font-weight:700;font-size:26px}
+.scam-wrap .group-head{margin-bottom:6px}
+.scam-wrap .group-intro{margin:0 0 12px;font-size:14.5px}
+ul.scam-grid{gap:10px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+li.warn-card{gap:4px;padding:11px 15px 12px;border-left-width:4px}
+li.warn-card .lk-title{font-weight:700;font-size:16.5px}
+li.warn-card .lk-desc{font-size:14px;line-height:1.5;color:var(--ink)}
+ol.scam-steps{list-style:none;counter-reset:st;padding:0;margin:0 0 12px}
+ol.scam-steps li{counter-increment:st;position:relative;margin:0;padding:8px 0 8px 40px;border-bottom:1px dotted var(--rule);font-size:15px;line-height:1.5}
+ol.scam-steps li::before{content:counter(st);position:absolute;left:0;top:7px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font:700 13px/26px 'IBM Plex Mono',monospace;text-align:center}
+.pv-tools{margin:0 0 8px}
+.pv-table{width:100%;border-collapse:collapse;font-size:14px}
+.pv-table thead th{position:sticky;top:calc(var(--tbh,62px) + 44px);background:var(--paper);text-align:left;font:700 12px 'IBM Plex Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:8px 12px 6px 0;border-bottom:2px solid var(--ink);z-index:2}
+.pv-table td,.pv-table tbody th{padding:8px 12px 8px 0;vertical-align:top;border-bottom:1px dotted var(--rule);text-align:left}
+.pv-table tbody th{width:20%;font:700 15px 'Spectral',serif}
+.pv-table td:nth-child(2){color:var(--ink-2);font-size:13px;line-height:1.45}
+.pv-table td:nth-child(3){width:34%}
+.pv-table .plat-row{gap:4px}
+.pv-table .plat-row span{padding:1px 7px;font-size:10.5px;letter-spacing:.04em}
+.pv-table .plat-row{margin:0}
+.pv-row:hover th,.pv-row:hover td{background:var(--tint)}
+.pv-none{color:var(--ink-2);font-style:italic}
+.pv-none-msg{margin:14px 0 0;color:var(--ink-2);font-family:'Spectral',serif;font-style:italic}
+.pv-none-msg[hidden]{display:none}
+@media(max-width:760px){
+  .sc-alerts{grid-template-columns:1fr}
+  .pv-table thead{position:absolute;left:-9999px}
+  .pv-table,.pv-table tbody,.pv-table tr,.pv-table td,.pv-table th{display:block}
+  .pv-table tbody th,.pv-table td:nth-child(3){width:auto}
+  .pv-table tr.pv-row{padding:8px 0;border-bottom:1px dotted var(--rule)}
+  .pv-table td,.pv-table tbody th{border:none;padding:1px 0;background:none}
+  .pv-row[hidden]{display:none}
+}
