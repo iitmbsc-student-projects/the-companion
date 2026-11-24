@@ -84,6 +84,11 @@
   <section class="hm-levels" aria-label="Search results">
     <div class="hm-level-grid">
 {{LEVELS}}
+      <section class="hl-card" id="lv-nptel" aria-labelledby="lv-nptel-h" hidden>
+        <div class="hl-head"><h3 id="lv-nptel-h">NPTEL</h3><span class="hl-n" id="lv-nptel-n"></span></div>
+        <ul class="np-res" id="lv-nptel-list"></ul>
+        <a class="hm-more" id="lv-nptel-all" href="nptel.html" hidden></a>
+      </section>
     </div>
   </section>
 </main>
@@ -100,6 +105,7 @@
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
+<script src="assets/nptel-index.js"></script>
 <script src="assets/home.js"></script>
 </body>
 </html>
