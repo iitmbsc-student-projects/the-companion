@@ -47,6 +47,8 @@
       </div>
     </div>
     <div class="tb-more">
+      <a class="tb-link" href="my-term.html">My Term</a>
+      <a class="tb-link" href="planner.html">Planner</a>
       <a class="tb-link" href="scam-alert.html">Scam alert</a>
       <a class="tb-link current" href="calculator.html">Grade calculator</a>
       <a class="tb-link" href="contributors.html">Contributors</a>
@@ -91,6 +93,9 @@
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
+<script src="assets/config.js"></script>
+<script src="assets/account.js"></script>
+<script src="assets/grading-engine.js"></script>
 <script src="assets/calculator.js?v=0"></script>
 </body>
 </html>

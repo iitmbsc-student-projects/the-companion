@@ -134,6 +134,8 @@
   .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
     background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
   .week-title > span{position:relative;z-index:1}
+  .week-title .wdur{font-style:normal;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0;
+    text-transform:none;font-family:'IBM Plex Sans',sans-serif;font-size:11px}
   .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
   .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
   .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
@@ -309,7 +311,8 @@
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
-  .current-eyebrow{font-size:13px;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
   .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
@@ -661,7 +664,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "CS4010", weeks: [{"w":"Lectures","items":[{"n":"1","t":"Course Overview App Development Lab","v":"mXJ-OhISusg","s":null},{"n":"2","t":"Efficiency \u0026 Complexity Analysis","v":"ro6Z0XJ9LlI","s":null},{"n":"3","t":"Data Structures Array and Strings","v":"u1PcLvHmGak","s":null},{"n":"4","t":"Data Structures Object, Map and Sets","v":"7qtwoo02jbY","s":null},{"n":"5","t":"Data Structures Linked List, Stack and Queue","v":"c-VcODXTPU4","s":null},{"n":"6","t":"Data Structures: Tree, Heap and Graph","v":"i6Q9nruoirA","s":null},{"n":"7","t":"Algorithms and Problem Solving","v":"q-wIdXDopKY","s":null},{"n":"8","t":"js syntax","v":"4R785r4EPFg","s":null},{"n":"9","t":"Execution Context","v":"izJvnLeXg80","s":null},{"n":"10","t":"Hoisting","v":"iDyqB6hfe8s","s":null},{"n":"11","t":"Objects","v":"JS8LNkLLIqE","s":null},{"n":"12","t":"Closures","v":"M2QWZnF9dPQ","s":null},{"n":"13","t":"Functions and this binding","v":"QZAyBrraSWQ","s":null},{"n":"14","t":"Hands on Challenge DOM","v":"_BhV5vLPvY8","s":null},{"n":"15","t":"How the Web Works","v":"lRmNDZRP3Yg","s":null},{"n":"16","t":"Introduction to Git and GitHub GitLab","v":"A1QwcJvsg-g","s":null},{"n":"17","t":"Git workflow and branching","v":"LQ8o35ORRZE","s":null},{"n":"18","t":"npm, package json","v":"e0HEbfEDoYE","s":null},{"n":"19","t":"Git workflow and npm Hands on","v":"QMVVE10Bx18","s":null},{"n":"20","t":"Introduction to NodeJS","v":"VYWLeGrTM3s","s":null},{"n":"21","t":"Modules in NodeJS","v":"YBEATOqkOzU","s":null},{"n":"22","t":"How NodeJS Works","v":"mTdk4JfahiQ","s":null},{"n":"23","t":"Introduction to TypeScript - I","v":"kZsPf5-RzVk","s":null},{"n":"24","t":"Introduction to TypeScript II","v":"nAO-YrKi3xI","s":null},{"n":"25","t":"Introduction to ExpressJS","v":"xa9Jj4LeTF8","s":null},{"n":"26","t":"Setup ExpressJS with TypeScript","v":"pdvxYYgB7lU","s":null},{"n":"27","t":"Middlewares \u0026 Error Handling in ExpressJS","v":"wupF1vdaVuc","s":null},{"n":"28","t":"Building a Task Manager Backend with ExpressJS \u0026 TypeScript","v":"uVTcJ7vWAQY","s":null},{"n":"29","t":"ExpressJS Project Structure","v":"HiKsn-75Ffk","s":null},{"n":"30","t":"Tutorial: Datatypes and constraints in SQL","v":"bqxuZC_X1Cc","s":null},{"n":"31","t":"Tutorial: Data Definition Language (DDL) Commands","v":"jWPmUIkiVMY","s":null},{"n":"32","t":"Joins in SQL","v":"87oIQ_7i-nE","s":null},{"n":"33","t":"Pagination in SQL","v":"AIJkCvu_phI","s":null},{"n":"34","t":"SQL Code Execution","v":"9mUi_UNYoxI","s":null},{"n":"35","t":"Introduction To TypeORM","v":"DHrFJTXWRWs","s":null},{"n":"36","t":"Integrate Postgres with ExpressJS using TypeORM","v":"O92fVVjtDXA","s":null},{"n":"37","t":"Task Manager CRUD Operations with Data Persistence","v":"38ppN7GtWIk","s":null},{"n":"38","t":"Set Up Express Backend Job Portal Project","v":"XnhwWEfYNOc","s":null},{"n":"39","t":"Register \u0026 Login Flow for Job Portal","v":"Hlspzlqfoho","s":null},{"n":"40","t":"Integrate JWT Based Authentication","v":"nu6uUm1eHiw","s":null},{"n":"41","t":"Job Portal Implementation Part I","v":"6UvSTRFIl-8","s":null},{"n":"42","t":"Job Portal Implementation Part I2","v":"85SvNBkjBv0","s":null},{"n":"43","t":"What is React? Understanding Virtual DOM","v":"Hjk-xMfqjhM","s":null},{"n":"44","t":"JSX \u0026 Component-Based Architecture","v":"aYcHqwI0mPw","s":null},{"n":"45","t":"JSX \u0026 Component-Based Architecture","v":"mHJRPIkkrkU","s":null},{"n":"46","t":"Functional Components \u0026 Props","v":"oLW7cKYRU_o","s":null},{"n":"47","t":"Hands on Building Simple UI Components","v":"qa4cRI4EjIE","s":null},{"n":"48","t":"Understanding State \u0026 useState Hook","v":"XgjK0hdhhfc","s":null},{"n":"49","t":"Handling User Input, Events \u0026 Conditional Rendering","v":"QvzXagQa4bQ","s":null},{"n":"50","t":"Rendering Lists \u0026 Keys in React","v":"znhAcGUI3A0","s":null},{"n":"51","t":"Side Effects \u0026 useEffect Hook","v":"JyGbK0N6zlk","s":null},{"n":"52","t":"Routing Essentials","v":"JmQrb0shNvs","s":null},{"n":"53","t":"Dynamic Routing","v":"sfAFFiRVc6I","s":null},{"n":"54","t":"Navigation Guards","v":"BTlV9zbpsMM","s":null},{"n":"55","t":"Hands on React Router","v":"RdYe-QlYDRU","s":null},{"n":"56","t":"Hands on API Integration","v":"mlQRj9u5vl0","s":null}]}], item: "lecture"};</script>
-<script src="../assets/course.js?v=15cef40a"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
 <script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

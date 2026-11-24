@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moderation | The Companion</title>
+<meta name="description" content="Review community resource suggestions. Moderators only.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=aa71b99c">
+<link rel="stylesheet" href="assets/theme.css?v=aa30fb9a">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body data-page="moderate">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="topbar" aria-label="Main">
+  <div class="wrap topbar-in">
+    <a class="tb-brand" href="index.html" aria-label="The Companion, home">
+      <span class="tb-mark" aria-hidden="true">C</span><span class="tb-name">The Companion</span>
+    </a>
+    <div class="tb-nav">
+      <div class="nav-item" data-tab="courses">
+        <a class="nav-main" href="courses.html">Courses</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-courses" aria-label="Show course levels">&#9662;</button>
+        <div class="menu" id="menu-courses"></div>
+      </div>
+      <div class="nav-item" data-tab="links">
+        <a class="nav-main" href="links.html">Important links</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Show link groups">&#9662;</button>
+        <div class="menu" id="menu-links"></div>
+      </div>
+      <div class="nav-item" data-tab="nptel">
+        <a class="nav-main" href="nptel.html">NPTEL</a>
+        <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-nptel" aria-label="Show NPTEL lists">&#9662;</button>
+        <div class="menu" id="menu-nptel"></div>
+      </div>
+    </div>
+    <div class="tb-more">
+      <a class="tb-link" href="my-term.html">My Term</a>
+      <a class="tb-link" href="planner.html">Planner</a>
+      <a class="tb-link" href="scam-alert.html">Scam alert</a>
+      <a class="tb-link" href="calculator.html">Grade calculator</a>
+      <a class="tb-link" href="contributors.html">Contributors</a>
+      <a class="tb-link" href="updates.html">Updates</a>
+    </div>
+    <span id="theme-slot" data-float-narrow></span>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <h1 class="ph-title">Suggestion queue</h1>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+  <section class="mod-wrap">
+    <p class="acct-note" id="mod-gate">Checking who you are…</p>
+    <div id="mod-ui" hidden>
+      <div class="mod-filter">
+        <select id="mod-status" class="sb-chip">
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+          <option value="">All</option>
+        </select>
+        <input type="search" id="mod-course" class="sb-chip" placeholder="Filter by course code" style="min-width:180px">
+      </div>
+      <div id="mod-list"></div>
+      <p class="acct-note" id="mod-empty" hidden>Nothing here.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-end wrap">
+  <span class="se-brand"><span class="se-name">The Companion</span><span class="se-by">Built and kept by Vikash</span></span>
+  <nav class="se-nav" aria-label="Site"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="links.html">Important links</a><a href="my-term.html">My Term</a><a href="planner.html">Planner</a><a href="account.html">Account</a></nav>
+  <div class="theme-foot" id="theme-foot"></div>
+</footer>
+
+<script src="assets/menu-data.js?v=1ed1405c"></script>
+<script src="assets/site.js?v=44be9619"></script>
+<script src="assets/theme.js?v=052e0235"></script>
+<script src="assets/config.js?v=aaa2b695"></script>
+<script src="assets/account.js?v=e1567107"></script>
+<script src="assets/moderate.js?v=82206ce5"></script>
+</body>
+</html>

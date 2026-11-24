@@ -28,6 +28,9 @@ desktop.ini
 __pycache__/
 *.pyc
 
+# Supabase CLI local state (project link, not the schema)
+supabase/.temp/
+
 # Misc
 *.log
 *.tmp

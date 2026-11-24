@@ -47,6 +47,8 @@
       </div>
     </div>
     <div class="tb-more">
+      <a class="tb-link" href="my-term.html">My Term</a>
+      <a class="tb-link" href="planner.html">Planner</a>
       <a class="tb-link" href="scam-alert.html">Scam alert</a>
       <a class="tb-link" href="calculator.html">Grade calculator</a>
       <a class="tb-link" href="contributors.html">Contributors</a>

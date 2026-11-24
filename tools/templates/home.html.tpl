@@ -28,12 +28,15 @@
 
 <main class="wrap" id="main" tabindex="-1">
   <header class="hm-hero">
+    <p class="hm-kicker">By students, for students</p>
     <h1 class="hm-title">The Companion</h1>
     <p class="hm-sub">A study companion for the IIT Madras BS in Data Science &amp; Applications.</p>
     <div class="search hm-search">
       <input type="search" id="search-box" placeholder="Search a course, try “maths”, “MLT”, “databases”, “NLP”…" aria-label="Search courses" autocomplete="off">
     </div>
     <p class="hm-hint">{{COURSE_COUNT}} courses and projects. Press <kbd>/</kbd> to search, <kbd>Enter</kbd> to open the first match.</p>
+    <p class="hm-lec-head" id="hm-lec-head" hidden>Matching lectures</p>
+    <ul class="hm-lec-results" id="hm-lec-results" hidden></ul>
   </header>
 
   <section class="quick hm-quick" aria-labelledby="hm-quick-h">
@@ -46,6 +49,14 @@
 {{SHARE}}
 
   <p class="no-results" id="no-results" role="status" hidden>No course matches that. Try a code such as CS1001, or a word such as “maths”.</p>
+
+  <section class="hm-term hm-resume" id="hm-term" aria-labelledby="hm-term-h" hidden>
+    <div class="hm-head">
+      <h2 class="hm-h" id="hm-term-h">Your term</h2>
+      <a class="hm-quiet" href="my-term.html">Open My Term</a>
+    </div>
+    <div class="hm-rc-grid" id="hm-term-list"></div>
+  </section>
 
   <section class="hm-resume" id="hm-resume" aria-labelledby="hm-resume-h" hidden>
     <div class="hm-head">
@@ -105,7 +116,12 @@
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
+<script src="assets/config.js"></script>
+<script src="assets/account.js"></script>
+<script src="assets/sync.js"></script>
+<script src="assets/term-syllabus.js"></script>
 <script src="assets/nptel-index.js"></script>
 <script src="assets/home.js"></script>
+<script src="assets/search.js"></script>
 </body>
 </html>

@@ -134,6 +134,8 @@
   .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
     background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
   .week-title > span{position:relative;z-index:1}
+  .week-title .wdur{font-style:normal;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0;
+    text-transform:none;font-family:'IBM Plex Sans',sans-serif;font-size:11px}
   .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
   .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
   .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
@@ -309,7 +311,8 @@
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
-  .current-eyebrow{font-size:13px;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
   .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
@@ -662,7 +665,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "CS4024", weeks: [{"w":"Week 1","items":[{"n":"1","t":"Functions of a computer network","v":"5c0bnGCDFaw","s":null},{"n":"2","t":"Demo: bottlenecks within the internet infrastructure","v":"kCW571j7LUQ","s":null},{"n":"3","t":"Resource sharing within a network: network architecture and switching","v":"YiY9_PqYIUs","s":null}]},{"w":"Week 2","items":[{"n":"4","t":"Circuit switching","v":"bqOUDdgbCYA","s":null},{"n":"5","t":"Packet switching","v":"DLILyFWdU_g","s":null},{"n":"6","t":"Layering \u0026 protocols","v":"FlQ1wbppyiU","s":null},{"n":"7","t":"Key concepts in packet and network communication","v":"kH6NGd-nz30","s":null},{"n":"8","t":"Network performance metrics: delay components and Little\u2019s law","v":"kClw1Sm905w","s":null}]},{"w":"Later lectures","items":[{"n":"9","t":"User Datagram Protocol","v":"qurBAfFR8iw","s":null},{"n":"10","t":"UDP: Error Detection","v":"qzpzD-8fw6M","s":null},{"n":"11","t":"Transport Layer \u0026 TCP","v":"TcBk0wi2Duo","s":null},{"n":"12","t":"Achieving Reliability at Transport layer","v":"_aUUfC5AoRc","s":null},{"n":"13","t":"Sliding Window Protocol (Go-Back-N)","v":"KZtnOujhPVk","s":null},{"n":"14","t":"TCP Selective Repeat and In-Order Data Delivery","v":"gD4fI5DteW0","s":null},{"n":"15","t":"TCP Flow Control: Matching Sender and Receiver Speeds","v":"ssObS7uBXsM","s":null},{"n":"16","t":"TCP Congestion Control","v":"O_RY8JN97Qs","s":null},{"n":"17","t":"TCP Congestion Control: Slow Start and Congestion Avoidance","v":"AKMxB_eFjhs","s":null},{"n":"18","t":"Two TCP Congestion Control Algorithms: NewReno vs BBR","v":"xzrAZblkKA4","s":null},{"n":"19","t":"TCP Congestion Control: Detecting Packet Loss \u0026 Fast Retransmit Strategies","v":"CYI9IV4DK_M","s":null},{"n":"20","t":"TCP Congestion Control: AIMD, Efficiency, Fairness, and Jain\u2019s Fairness Index","v":"VIcwVL1mRus","s":null},{"n":"21","t":"Hands-On Network Packet Analysis: Lecture 1","v":"LosxwfTPdek","s":null},{"n":"22","t":"Hands-On Network Packet Analysis: Lecture 2","v":"n5DilmHr6FM","s":null},{"n":"23","t":"Hands-On Network Packet Analysis: Lecture 3","v":"7CJjPdiI8I0","s":null},{"n":"24","t":"Network Layer: IPv4 Addressing, CIDR and Subnet Masks","v":"PAtQHRkQZEs","s":null},{"n":"25","t":"Network Layer: Network Address Translation (NAT) Protocol","v":"Zl9tI866_1k","s":null},{"n":"26","t":"Network Layer: IPv4 Datagram Format, ICMP ping and traceroute","v":"qoVZltcrKqA","s":null},{"n":"27","t":"Network Layer: Routing Protocols Overview","v":"kLE_VzFV8ug","s":null},{"n":"28","t":"Network Layer: Link State Routing Protocols","v":"Q_5Jv789Yf8","s":null},{"n":"29","t":"Network Layer: Distance Vector Routing Protocols","v":"dXp4m5eySlk","s":null},{"n":"30","t":"Hands-On Demo: Dijkstra Algorithm","v":"4YHqIrxFZHw","s":null},{"n":"31","t":"Network Layer: Routers, Route Lookups, Switching Fabric, Routing and LPM","v":"O617YuuketY","s":null},{"n":"32","t":"Hands-On Socket Programming: Lecture 1","v":"Czl5U8OMeZQ","s":null},{"n":"33","t":"Hands-On Socket Programming: Lecture 2","v":"XwyPXDld924","s":null},{"n":"34","t":"Hands-On: Building a Simple HTTP Web Server Using TCP Sockets","v":"iU3C_FZd7QM","s":null}]}], item: "lecture"};</script>
-<script src="../assets/course.js?v=15cef40a"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
 <script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

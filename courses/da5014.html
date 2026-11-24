@@ -134,6 +134,8 @@
   .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
     background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
   .week-title > span{position:relative;z-index:1}
+  .week-title .wdur{font-style:normal;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0;
+    text-transform:none;font-family:'IBM Plex Sans',sans-serif;font-size:11px}
   .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
   .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
   .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
@@ -309,7 +311,8 @@
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
-  .current-eyebrow{font-size:13px;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
   .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
@@ -711,7 +714,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "DA5014", weeks: [{"w":"Week 1","items":[{"n":"1.1","t":"Introduction to MLOps","v":"LNtSRp1reos","s":null},{"n":"1.2","t":"DevOps vs MLOps","v":"c8HdgyG4Shg","s":null},{"n":"1.3","t":"Landscape of MLOps","v":"5k485C-KPVQ","s":null},{"n":"1.4","t":"Hands-on: Introduction to Google Cloud, Vertex AI","v":"68YxDKlAdP4","s":null}]},{"w":"Week 2","items":[{"n":"2.1","t":"Data Management for ML","v":"r2_bgMgP580","s":null},{"n":"2.2","t":"Data Versioning","v":"7rW5OejBA28","s":null},{"n":"2.3","t":"Hands-on: DVC","v":"uweHNLtgxKg","s":null}]},{"w":"Week 3","items":[{"n":"3.1","t":"Motivation for Feature Store","v":"bBztTeXW3ME","s":null},{"n":"3.2","t":"Feature Store: Overview, Use Cases","v":"87owqZ481nc","s":null},{"n":"3.3","t":"Feast: Overview","v":"JtyLLJgvQKA","s":null},{"n":"3.4","t":"Hands-on: Feast","v":"fl6LKNr8gb4","s":null}]},{"w":"Week 4","items":[{"n":"4.1","t":"CI/CD for ML","v":"1PFfzJk2qCc","s":null},{"n":"4.2","t":"Git 101 for ML","v":"h-4IH6-qJWY","s":null},{"n":"4.3","t":"Github and best practices","v":"9EtdVdkdce8","s":null},{"n":"4.4","t":"Hands-on: CI for ML using CML","v":"sKWA2PGmg90","s":null}]},{"w":"Week 5","items":[{"n":"5.1","t":"Model Lifecycle Patterns","v":"_Kg-a7iOK8g","s":null},{"n":"5.2","t":"Execution Environments","v":"DILHZrfJYzs","s":null},{"n":"5.3","t":"Introduction to MLflow","v":"aSKi2_DixX4","s":null},{"n":"5.4","t":"Hyperparameter Tuning","v":"aTUsX2_GttA","s":null},{"n":"5.5","t":"HandsOn: MLflow on GCP","v":"35Pv2OJ1QxU","s":null}]},{"w":"Week 6","items":[{"n":"6.1","t":"Model Serving using FastAPI","v":"Qor7iGXVKOA","s":null},{"n":"6.2","t":"HandsOn: FastAPI","v":"LJNEr8XtU-s","s":null},{"n":"6.3","t":"Model Serving using Containers","v":"w3SabCLrkzM","s":null},{"n":"6.4","t":"HandsOn: Docker","v":"kV47H5b71Z8","s":null},{"n":"6.5","t":"Introduction to Kubernetes","v":"H_pMolfm6s4","s":null},{"n":"6.6","t":"HandsOn: Kubernetes","v":"J3dWDVG_YJc","s":null},{"n":"6.7","t":"Model Deployment, CI/CD for ML","v":"RJHQRKGixnY","s":null}]},{"w":"Week 7","items":[{"n":"7.1","t":"ML Systems Monitoring \u0026 Performance Tools","v":"83BSH01jWFw","s":null},{"n":"7.2","t":"Modern Observability Stack for ML","v":"IZsyl8wHrmQ","s":null},{"n":"7.3","t":"Response Options for ML Systems","v":"zafCZIDM9EM","s":null},{"n":"7.4","t":"Logging for ML Systems","v":"yYkQNSTISaA","s":null},{"n":"7.5","t":"HandsOn: Logging, Monitoring, Scaling using GCP-native tools","v":"Ixi12t0VKOw","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"Introduction to ML Security with Examples","v":"WJSTDenIqgs","s":null},{"n":"8.2","t":"Challenges in securing ML","v":"c_3s_QWonfs","s":null},{"n":"8.3","t":"MLSecOps","v":"4abLOEKaUn4","s":null},{"n":"8.4","t":"HandsOn: Security Demonstration","v":"TrnP2RnlWXc","s":null}]},{"w":"Week 9","items":[{"n":"9.1","t":"ML Governance and Regulation","v":"73bGDGzMtQw","s":null},{"n":"9.2","t":"Governance Failures and How to Mitigate them","v":"R_dMiAjAdAM","s":null},{"n":"9.3","t":"Drift Monitoring","v":"vL1XiVK9VPI","s":null},{"n":"9.4","t":"Detecting Bias in ML","v":"bV9cjMkkzc8","s":null},{"n":"9.5","t":"Explaining ML models","v":"DRe02jFW2FU","s":null},{"n":"9.6","t":"HandsOn: Governance Tools","v":"ab1hl2SH7q4","s":null}]},{"w":"Week 10","items":[{"n":"10.1","t":"LLMOps","v":"A3jFXa88a2k","s":null},{"n":"10.2","t":"LLMOps during Pretraining","v":"N50zCNg1aAs","s":null},{"n":"10.3","t":"Versioning \u0026 Testing in LLMs","v":"6RmfAyeAoYs","s":null},{"n":"10.4","t":"CI\u0026CD for LLMs","v":"twJ7gRs7Dnc","s":null},{"n":"10.5","t":"HandsOn: LLM Finetuning","v":"rCNNbpyULf0","s":null}]},{"w":"Week 11","items":[{"n":"11.1","t":"LLM Accuracy","v":"b7SQViYCcII","s":null},{"n":"11.2","t":"Proprietary LLMs","v":"xkOFdcnZcuE","s":null},{"n":"11.3","t":"LLM Serving, Cost Control","v":"wNM4Y39D__U","s":null},{"n":"11.4","t":"LLM Observability, Security, Governance \u0026 Best Practices","v":"I-Ju8sCARqo","s":null},{"n":"11.5","t":"HandsOn: LLM Usage and Security","v":"mEcY-CdAX1A","s":null}]},{"w":"Week 12","items":[{"n":"12.1","t":"MLOps Course Summary","v":"Ub9pCxSFfgQ","s":null},{"n":"12.2","t":"Additional Topics in MLOps","v":"vEBahj6fOjE","s":null},{"n":"12.3","t":"Closing Thoughts","v":"Eog1ssY-eLs","s":null}]}], item: "lecture"};</script>
-<script src="../assets/course.js?v=15cef40a"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
 <script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

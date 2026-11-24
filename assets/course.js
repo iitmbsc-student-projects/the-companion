@@ -74,7 +74,13 @@ WEEKS_DATA.forEach((week, wi) => {
   btn.setAttribute('data-bs-target', `#${collapseId}`);
   btn.setAttribute('aria-expanded', isFirst ? 'true' : 'false');
   btn.setAttribute('aria-controls', collapseId);
-  btn.innerHTML = `<span>${week.w}</span><span class="chev" aria-hidden="true">›</span><i class="wbar"></i>`;
+  const weekSecs = (week.items || []).reduce((s, it) => s + (it.d || 0), 0);
+  const weekDur = weekSecs
+    ? (weekSecs >= 3600
+        ? `${Math.round(weekSecs / 360) / 10} h`
+        : `${Math.max(1, Math.round(weekSecs / 60))} min`)
+    : '';
+  btn.innerHTML = `<span>${week.w}${weekDur ? ` <em class="wdur">${weekDur}</em>` : ''}</span><span class="chev" aria-hidden="true">›</span><i class="wbar"></i>`;
   h.appendChild(btn);
   group.appendChild(h);
 
@@ -188,11 +194,21 @@ function showExtra(id){
   window.scrollTo(0, 0);
 }
 
-// ---- progress: watched lectures are remembered in this browser only ----
+// ---- progress: watched lectures live in this browser; signed in, assets/sync.js mirrors them ----
 const PKEY = 'companion-progress-' + window.COURSE.code;
 let prog = { done: {}, last: null };
 try { const r = JSON.parse(localStorage.getItem(PKEY) || 'null'); if (r && r.done) prog = r; } catch (e) {}
-function saveProg(){ try { localStorage.setItem(PKEY, JSON.stringify(prog)); } catch (e) {} }
+function saveProg(){
+  try { localStorage.setItem(PKEY, JSON.stringify(prog)); } catch (e) {}
+  if (window.CompanionSync) window.CompanionSync.push(window.COURSE.code, prog);
+}
+// when the server pull finishes (sync.js), fold any newly-synced ticks into the view
+document.addEventListener('companion-sync-ready', () => {
+  try {
+    const r = JSON.parse(localStorage.getItem(PKEY) || 'null');
+    if (r && r.done) { prog.done = Object.assign({}, r.done, prog.done); renderProgress(); }
+  } catch (e) {}
+});
 // remember which courses were opened, for "Continue where you left off" on the home page (this browser only)
 try {
   const R = JSON.parse(localStorage.getItem('companion-recent') || '[]'), cc = window.COURSE.code;
