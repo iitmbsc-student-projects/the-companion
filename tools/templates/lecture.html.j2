@@ -200,6 +200,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -518,8 +528,22 @@
 
 {%- endif %}
 
+{%- if is_project and tips %}
+      <section class="chapter" id="tips">
+        <h2><span class="num" aria-hidden="true">§ 1</span>Common problems</h2>
+        <div class="tips">
+{%- for t in tips %}
+          <details class="tip"><summary>{{ t.q }}</summary><p>{{ t.a }}{% if t.t %} <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/{{ t.t }}" target="_blank" rel="noopener">Discourse thread</a>{% endif %}</p></details>
+{%- endfor %}
+        </div>
+{%- if tips_note %}
+        <p class="tbd-note" style="margin-top:8px">{{ tips_note }}</p>
+{%- endif %}
+      </section>
+
+{%- endif %}
       <section class="chapter" id="resources">
-        <h2><span class="num" aria-hidden="true">§ {{ 1 if is_project else 3 }}</span>Resources</h2>
+        <h2><span class="num" aria-hidden="true">§ {{ (2 if tips else 1) if is_project else 3 }}</span>Resources</h2>
         {%- if other_resources %}
 {{ reslist(other_resources) }}
 {%- else %}

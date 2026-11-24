@@ -517,5 +517,43 @@
     }
    ]
   }
+ ],
+ "tips_note": "From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.",
+ "tips": [
+  {
+   "q": "Can I reschedule my Level 1 viva?",
+   "a": "Staff said there is no provision and no reschedule form. Attend the slot you booked, and plan your timeline around it.",
+   "t": 220364
+  },
+  {
+   "q": "When do I get the Level 1 result?",
+   "a": "About a day after the viva. Book Level 1 early enough that the result arrives before the Level 2 booking window closes.",
+   "t": 220335
+  },
+  {
+   "q": "My project was flagged for high similarity.",
+   "a": "Submit the discrepancy form before the deadline. Staff then asked students to email appdev-project-query@study.iitm.ac.in with the case.",
+   "t": 220323
+  },
+  {
+   "q": "Plagiarism status shows pending.",
+   "a": "Check the project Gspace and your mail. Staff said the update arrives by email.",
+   "t": 220251
+  },
+  {
+   "q": "The validation status looks inconsistent.",
+   "a": "Staff said that if your application runs after you download it from the portal, it is fine.",
+   "t": 219955
+  },
+  {
+   "q": "Can the deadline be extended?",
+   "a": "Staff compared this term's schedule with last term's and kept it. They also pointed to the doubt-clearing session recording in the Gspace. Submit by the deadline.",
+   "t": 220023
+  },
+  {
+   "q": "I did not pass earlier. What is my deadline?",
+   "a": "10 December for students who did not get a passing grade before. It updates on the portal after 17 November.",
+   "t": 219184
+  }
  ]
 }

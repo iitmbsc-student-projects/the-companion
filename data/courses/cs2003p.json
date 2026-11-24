@@ -531,5 +531,43 @@
     }
    ]
   }
+ ],
+ "tips_note": "From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.",
+ "tips": [
+  {
+   "q": "Failed Level 1 viva. Is there a reattempt?",
+   "a": "Staff said this term that no reattempt is provided for the MAD I viva, so go in prepared.",
+   "t": 220465
+  },
+  {
+   "q": "How do I plan Level 1 and Level 2 viva slots?",
+   "a": "Each booking window is short and the Level 1 result comes about a day after the viva. Book Level 1 early enough to leave a few days to book Level 2 before its window closes.",
+   "t": 220454
+  },
+  {
+   "q": "I cannot make my booked slot. Can it be rescheduled?",
+   "a": "Plan around the slot you booked. For a serious reason, staff asked students to write to appdev-project-query@study.iitm.ac.in.",
+   "t": 220324
+  },
+  {
+   "q": "Plagiarism check shows pending and I cannot book a slot.",
+   "a": "Staff reply in the project Gspace and by mail. Check both before asking again.",
+   "t": 220251
+  },
+  {
+   "q": "I got confusing validation emails after submitting.",
+   "a": "Staff said that if you can download your submission from the portal and run it, it is fine.",
+   "t": 219955
+  },
+  {
+   "q": "Can the deadline be extended?",
+   "a": "Do not count on it. The portal accepted submissions until 6 pm on the last day, and staff pointed to the doubt-clearing session recording in the Gspace.",
+   "t": 220023
+  },
+  {
+   "q": "I did not pass theory earlier. What is my deadline?",
+   "a": "Students who have not passed in a previous term get 10 December. The portal may still show 17 November until it updates, so tell the staff if it does not change.",
+   "t": 219184
+  }
  ]
 }
