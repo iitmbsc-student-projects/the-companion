@@ -18,7 +18,7 @@
     border-bottom:1px solid var(--rule)}
   .topbar-in{display:flex;align-items:center;gap:8px;height:62px}
   .tb-brand{display:flex;align-items:center;border:none;color:var(--ink);margin-right:14px}
-  .tb-logo{height:52px;width:auto;display:block}
+  .tb-logo{height:44px;width:auto;display:block}
   .tb-brand:hover{opacity:.86}
   .tb-nav{display:flex;align-items:center;gap:4px;flex:none}
   .tb-more{display:flex;align-items:center;gap:4px;flex:1}
@@ -56,7 +56,7 @@
   /* phones and narrow windows: two rows. Row 1 = brand + the two menus, row 2 = the other three pages.
      The colour switcher moves to the page footer (see theme.js). */
   .topbar-in > .acct-ctl{margin-left:auto;flex:none}
-  @media(max-width:1100px){
+  @media(max-width:1320px){
     .topbar .topbar-in{flex-wrap:wrap;height:auto;gap:0 4px;padding:6px 12px 2px;position:relative}
     .nav-item.current::after{display:none}
     .nav-item.current .nav-main{color:var(--accent);font-weight:600}
@@ -623,7 +623,7 @@ body[data-page="courses"] .level-head h2{font-size:22px}
 .fineprint.fine-end{margin:34px 0 0}
 
 /* the top bar holds seven items: give it a little more room than the 920px content column, the same on every page */
-@media(min-width:1101px){ .topbar .topbar-in{max-width:1110px} }
+@media(min-width:1321px){ .topbar .topbar-in{max-width:none} }
 
 /* ---- 404 page ---- */
 /* its link cards (the same cards the old front page used) */
@@ -812,7 +812,7 @@ body[data-page="calculator"] .ph-title{font-weight:700}
 .calc-formula .calc-table{display:flex}
 
 /* five colour swatches: keep the top bar on one line */
-@media(min-width:1101px){ .tb-link{padding:9px 11px} .tb-brand{margin-right:8px} #theme-slot{margin-right:0} .theme-switch button{padding:4px} }
+@media(min-width:1321px){ .tb-link{padding:9px 11px} .tb-brand{margin-right:8px} #theme-slot{margin-right:0} .theme-switch button{padding:4px} }
 
 /* ---------------------------------------------------------------- accounts */
 .acct-ctl{display:inline-flex;align-items:center;flex:none}
@@ -946,7 +946,7 @@ body[data-page="calculator"] .ph-title{font-weight:700}
 .hm-more[hidden]{display:none}
 
 /* NPTEL dropdown, My Term, Planner and five colour dots: keep the top bar on one line */
-@media(min-width:1101px){
+@media(min-width:1321px){
   .tb-nav{gap:0}
   .nav-main{padding-left:10px}
   .nav-caret{padding-right:8px}
