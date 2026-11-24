@@ -1092,3 +1092,6 @@ body.home .quick-card::after,body.home .ht-n::after,body.home .hm-more::after{co
 body.home .qc-title{padding-right:0}
 .hm-tools{margin-top:16px}
 .hm-tools + .hm-quick{margin-top:14px}
+
+.mt-rev-miss{margin:8px 0 0}
+.mt-rev.no-calc .mt-rev-course,.mt-rev.no-calc .mt-rev-sub,.mt-rev.no-calc .mt-rev-inputs,.mt-rev.no-calc .mt-chips,.mt-rev.no-calc #mt-rev-note{display:none}

@@ -76,13 +76,30 @@
      Picked courses show as chips. "Add course" opens a small panel: search by
      code or name, narrow by level, click a course to add or remove it. */
   var picked = [];
-  var LEVELS = ['Foundation', 'Diploma', 'Degree', 'BSc', 'BS', 'PG Diploma'];
+  var LEVELS = ['Foundation', 'Diploma', 'Degree', 'BSc', 'BS', 'PG Diploma', 'MTech'];
+  /* a course page's "program" -> the level shown in the picker (for courses outside the quiz circular) */
+  var PROGRAM_LEVEL = { 'Foundation': 'Foundation', 'Diploma / Programming': 'Diploma', 'Diploma / Data Science': 'Diploma',
+    'BSc / BS': 'Degree', 'BS elective': 'Degree', 'PG Diploma': 'PG Diploma', 'MTech': 'MTech' };
+  /* every course a student here could pick: each course page, plus circular courses that have grading data.
+     (The circular also lists Electronic Systems, Aerospace and Management courses with no page here: left out.) */
+  function pickable() {
+    var seen = {};
+    Object.keys(MT).forEach(function (c) { seen[c] = 1; });
+    Object.keys(TS.courses).forEach(function (c) { if (GC[c]) seen[c] = 1; });
+    return Object.keys(seen);
+  }
+  function levelOf(code) {
+    var c = TS.courses[code];
+    if (c && c.level && !/^(ES|AE|MG) /.test(c.level)) return c.level;
+    if (MT[code] && PROGRAM_LEVEL[MT[code].p]) return PROGRAM_LEVEL[MT[code].p];
+    return GC[code] ? 'Degree' : 'Other';
+  }
   function levelRank(l) { var i = LEVELS.indexOf(l); return i < 0 ? LEVELS.length : i; }
   var panelOpen = false, query = '', levelFilter = 'All';
 
   function courseName(code) {
     var c = TS.courses[code];
-    return (c && c.name) || (MT[code] && MT[code].t) || code;
+    return (c && c.name) || (MT[code] && MT[code].t) || (GC[code] && GC[code].title) || code;
   }
   function togglePick(code) {
     var i = picked.indexOf(code);
@@ -121,7 +138,7 @@
     var wrap = $('mt-levels');
     wrap.textContent = '';
     var seen = {};
-    Object.keys(TS.courses).forEach(function (c) { seen[TS.courses[c].level] = 1; });
+    pickable().forEach(function (c) { seen[levelOf(c)] = 1; });
     ['All'].concat(Object.keys(seen).sort(function (a, b) { return levelRank(a) - levelRank(b); })).forEach(function (l) {
       var b = el('button', 'mt-lv' + (l === levelFilter ? ' is-on' : ''), l);
       b.type = 'button';
@@ -136,12 +153,11 @@
     var top = box.scrollTop;
     box.textContent = '';
     var q = query.trim().toLowerCase();
-    var codes = Object.keys(TS.courses).filter(function (code) {
-      var c = TS.courses[code];
-      if (levelFilter !== 'All' && c.level !== levelFilter) return false;
+    var codes = pickable().filter(function (code) {
+      if (levelFilter !== 'All' && levelOf(code) !== levelFilter) return false;
       return !q || (code + ' ' + courseName(code)).toLowerCase().indexOf(q) >= 0;
     }).sort(function (a, b) {
-      var la = levelRank(TS.courses[a].level), lb = levelRank(TS.courses[b].level);
+      var la = levelRank(levelOf(a)), lb = levelRank(levelOf(b));
       return la - lb || a.localeCompare(b);
     });
     if (!codes.length) box.appendChild(el('p', 'mt-none', 'No course matches that.'));
@@ -311,9 +327,22 @@
   var revState = { code: null, vals: {}, timer: null };
 
   function renderReverse() {
-    var sec = $('mt-rev'), sel = $('mt-rev-course');
+    var sec = $('mt-rev'), sel = $('mt-rev-course'), miss = $('mt-rev-miss');
     var codes = picked.filter(function (c) { return GC[c]; });
-    sec.hidden = codes.length === 0;
+    var missing = picked.filter(function (c) { return !GC[c]; });
+    sec.hidden = picked.length === 0;
+    sec.classList.toggle('no-calc', codes.length === 0);
+    miss.textContent = '';
+    miss.hidden = missing.length === 0;
+    if (missing.length) {
+      miss.appendChild(document.createTextNode('No grading formula on this site yet for ' + missing.join(', ') +
+        ' (project and lab courses are often graded separately). Check the '));
+      var a = document.createElement('a');
+      a.href = (G.source && G.source.url) || '#'; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = 'official grading document';
+      miss.appendChild(a);
+      miss.appendChild(document.createTextNode(' for how it is graded.'));
+    }
     if (!codes.length) return;
     var keep = revState.code && codes.indexOf(revState.code) >= 0 ? revState.code : codes[0];
     sel.innerHTML = '';
@@ -332,6 +361,9 @@
     revState.vals = {};
     var course = GC[code];
     var endId = ENGINE.endTermId(course);
+    var endIn = course.inputs.filter(function (i) { return i.id === endId; })[0];
+    var isEnd = endIn && (endIn.id === 'F' || /end\s*term/i.test(endIn.label || ''));
+    $('mt-rev-h').textContent = isEnd || !endIn ? 'What does the end term need?' : 'What do you need in ' + endIn.label + '?';
     var box = $('mt-rev-inputs');
     box.innerHTML = '';
     var fields = {};

@@ -940,7 +940,8 @@ def generate_my_term():
             weeks.append({"w": w["w"], "n": len(items),
                           "d": sum(it.get("d") or 0 for it in items)})
         myterm[data["code"]] = {"t": html_lib.unescape(data["title"]),
-                                "u": f"courses/{stem}.html", "weeks": weeks}
+                                "u": f"courses/{stem}.html", "weeks": weeks,
+                                "p": data.get("program") or ""}
     grading = json.load(open(CALC_PATH, encoding="utf-8"))
     dates = json.load(open(DATES_PATH, encoding="utf-8"))
     tpl = open(MYTERM_TEMPLATE_PATH, encoding="utf-8").read()
