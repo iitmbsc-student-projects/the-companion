@@ -11,6 +11,7 @@
   var DATES = JSON.parse((document.getElementById('dates-data') || { textContent: '{}' }).textContent);
   var ENGINE = window.GradingEngine;
   var S = window.CompanionSync;
+  var soonestEx = null;
   var term = TS.term || (DATES && DATES.term) || '';
 
   var $ = function (id) { return document.getElementById(id); };
@@ -131,32 +132,35 @@
     else try { localStorage.setItem('companion-enroll-' + term, JSON.stringify(picked)); } catch (e) {}
   }
 
-  /* ------------------------------- the cards ------------------------------- */
+  /* ------------------------------- the course rows ------------------------------- */
+  function daysUntil(iso) { return Math.round((parseDay(iso) - today) / 86400000); }
+  function inDays(n) { return n <= 0 ? 'today' : n === 1 ? 'tomorrow' : 'in ' + n + ' days'; }
+
+  function stat(k, v, sub) {
+    var t = el('div', 'mt-stat');
+    t.appendChild(el('span', 'mt-stat-k', k));
+    t.appendChild(el('span', 'mt-stat-v', v));
+    if (sub) t.appendChild(el('span', 'mt-stat-s', sub));
+    return t;
+  }
+
   function render() {
     var grid = $('mt-grid');
     grid.textContent = '';
     $('mt-empty').hidden = picked.length > 0;
     if (picked.length) $('mt-pick').open = false;
     $('mt-pick-sum').textContent = picked.length
-      ? 'Your courses (' + picked.length + ') — change'
+      ? 'Your courses (' + picked.length + ') · change'
       : 'Choose your courses';
+
+    var rowsData = [];
+    var soonest = null, soonestCodes = [], leftAll = 0, watchedAll = 0, totalAll = 0;
 
     picked.forEach(function (code) {
       var mt = MT[code], ts = TS.courses[code];
-      var card = el('div', 'mt-card');
-      card.appendChild(el('span', 'mt-code', code));
-      var title = el('span', 'mt-title');
-      if (mt && mt.u) {
-        var a = document.createElement('a'); a.href = mt.u;
-        a.textContent = (mt && mt.t) || (ts && ts.name) || code;
-        title.appendChild(a);
-      } else title.textContent = (ts && ts.name) || code;
-      card.appendChild(title);
-
       var done = progressOf(code);
       var weeks = (mt && mt.weeks) || [];
-      var total = 0, watched = 0;
-      var byWeek = {};
+      var total = 0, watched = 0, byWeek = {};
       weeks.forEach(function (w) {
         total += w.n;
         var dn = Object.keys(done).filter(function (k) { return k.indexOf(w.w + '|') === 0; }).length;
@@ -165,57 +169,99 @@
         var num = weekNum(w.w);
         if (num != null) byWeek[num] = { n: w.n, done: dn, d: w.d || 0 };
       });
-      if (total) {
+      totalAll += total; watchedAll += watched;
+      var ex = nextExam(code);
+      var days = ex ? Math.max(0, daysUntil(ex.date)) : null;
+      var left = null, covTotal = 0, secLeft = 0, cov = ex ? parseCoverage(ex.weeks) : null;
+      if (cov && total) {
+        left = 0;
+        for (var wnum = cov[0]; wnum <= cov[1]; wnum++) {
+          var w = byWeek[wnum];
+          if (!w) continue;
+          covTotal += w.n; left += w.n - w.done;
+          if (w.d && w.n) secLeft += (w.n - w.done) * (w.d / w.n);
+        }
+        leftAll += left;
+      }
+      if (ex) {
+        if (soonest == null || days < soonest) { soonest = days; soonestCodes = [code]; soonestEx = ex; }
+        else if (days === soonest) soonestCodes.push(code);
+      }
+      rowsData.push({ code: code, mt: mt, ts: ts, total: total, watched: watched, ex: ex, days: days,
+        left: left, covTotal: covTotal, secLeft: secLeft });
+    });
+
+    rowsData.sort(function (a, b) {
+      var da = a.days == null ? 9999 : a.days, db = b.days == null ? 9999 : b.days;
+      return da - db;
+    });
+
+    /* summary tiles */
+    var sum = $('mt-summary');
+    sum.textContent = '';
+    sum.hidden = picked.length === 0;
+    if (picked.length) {
+      sum.appendChild(stat('Courses', String(picked.length), term + ' term'));
+      if (soonest != null) {
+        sum.appendChild(stat('Next exam', soonestEx.label + ' · ' + fmtDate(soonestEx.date),
+          inDays(soonest) + ' · ' + (soonestCodes.length > 2 ? soonestCodes.slice(0, 2).join(', ') + ' +' + (soonestCodes.length - 2) + ' more' : soonestCodes.join(', '))));
+        sum.appendChild(stat('Lectures to catch up', String(leftAll), 'before the next exams'));
+      } else {
+        sum.appendChild(stat('Next exam', 'None left', 'for these courses this term'));
+      }
+      sum.appendChild(stat('Watched', totalAll ? Math.round(watchedAll * 100 / totalAll) + '%' : '—',
+        totalAll ? watchedAll + ' of ' + totalAll + ' lectures' : 'no lecture lists yet'));
+    }
+
+    rowsData.forEach(function (r) {
+      var row = el('div', 'mt-row');
+      var main = el('div', 'mt-r-main');
+      main.appendChild(el('span', 'mt-code', r.code));
+      var title = el('span', 'mt-title');
+      if (r.mt && r.mt.u) {
+        var a = document.createElement('a'); a.href = r.mt.u;
+        a.textContent = (r.mt && r.mt.t) || (r.ts && r.ts.name) || r.code;
+        title.appendChild(a);
+      } else title.textContent = (r.ts && r.ts.name) || r.code;
+      main.appendChild(title);
+      row.appendChild(main);
+
+      var prog = el('div', 'mt-r-prog');
+      if (r.total) {
         var bar = el('span', 'mt-bar');
         var fill = document.createElement('i');
-        fill.style.width = Math.min(100, Math.round(watched * 100 / total)) + '%';
+        fill.style.width = Math.min(100, Math.round(r.watched * 100 / r.total)) + '%';
         bar.appendChild(fill);
-        card.appendChild(bar);
-        card.appendChild(el('span', 'mt-meta', watched + ' of ' + total + ' lectures watched'));
-      } else {
-        card.appendChild(el('span', 'mt-meta', 'No lecture list on the site yet.'));
-      }
+        prog.appendChild(bar);
+        prog.appendChild(el('span', 'mt-meta', r.watched + ' of ' + r.total + ' lectures watched'));
+      } else prog.appendChild(el('span', 'mt-meta', 'No lecture list on the site yet.'));
+      row.appendChild(prog);
 
-      var ex = nextExam(code);
-      if (ex) {
-        var exLine = el('span', 'mt-exam');
-        var b = el('b', null, ex.label + ' · ' + fmtDate(ex.date));
-        exLine.appendChild(b);
-        if (ex.weeks) exLine.appendChild(document.createTextNode(' · covers ' + ex.weeks));
-        card.appendChild(exLine);
+      var exBox = el('div', 'mt-r-exam');
+      if (r.ex) {
+        exBox.appendChild(el('b', null, r.ex.label + ' · ' + fmtDate(r.ex.date)));
+        exBox.appendChild(el('span', 'mt-meta', inDays(r.days) + (r.ex.weeks ? ' · ' + r.ex.weeks : '')));
+      } else if (r.ts) exBox.appendChild(el('span', 'mt-meta', 'No exam left this term.'));
+      else exBox.appendChild(el('span', 'mt-meta', 'Not in the ' + term + ' quiz circular.'));
+      row.appendChild(exBox);
 
-        var cov = parseCoverage(ex.weeks);
-        if (cov && total) {
-          var left = 0, covTotal = 0, secLeft = 0;
-          for (var wnum = cov[0]; wnum <= cov[1]; wnum++) {
-            var w = byWeek[wnum];
-            if (!w) continue;
-            covTotal += w.n;
-            left += w.n - w.done;
-            if (w.d && w.n) secLeft += (w.n - w.done) * (w.d / w.n);
-          }
-          var days = Math.max(1, Math.round((parseDay(ex.date) - today) / 86400000));
-          var pace = el('span', 'mt-pace');
-          if (!covTotal) {
-            pace.textContent = 'Covered weeks are not in the lecture list yet.';
-          } else if (!left) {
-            pace.textContent = 'All ' + covTotal + ' covered lectures watched. Revision time.';
-          } else {
-            var perDay = left / days;
-            var hrs = secLeft ? ', about ' + (Math.round(secLeft / 360) / 10) + ' h' : '';
-            pace.textContent = left + ' of ' + covTotal + ' covered lectures left' + hrs +
-              ' · ' + days + (days === 1 ? ' day' : ' days') + ' to go · ' +
-              (perDay <= 1 ? 'about 1 a day' : 'about ' + Math.ceil(perDay) + ' a day');
-            if (perDay > 3 || days <= 3) pace.className = 'mt-pace soon';
-          }
-          card.appendChild(pace);
+      if (r.ex && r.total) {
+        var pace = el('span', 'mt-pace');
+        if (r.left == null || !r.covTotal) {
+          pace.textContent = 'Covered weeks are not in the lecture list yet.';
+        } else if (!r.left) {
+          pace.textContent = 'All ' + r.covTotal + ' covered lectures watched. Revision time.';
+        } else {
+          var days = Math.max(1, r.days);
+          var perDay = r.left / days;
+          var hrs = r.secLeft ? ', about ' + (Math.round(r.secLeft / 360) / 10) + ' h' : '';
+          pace.textContent = r.left + ' of ' + r.covTotal + ' covered lectures left' + hrs + ' · ' +
+            (perDay <= 1 ? 'about 1 a day' : 'about ' + Math.ceil(perDay) + ' a day');
+          if (perDay > 3 || days <= 3) pace.className = 'mt-pace soon';
         }
-      } else if (ts) {
-        card.appendChild(el('span', 'mt-pace', 'No exam left this term for this course.'));
-      } else {
-        card.appendChild(el('span', 'mt-pace', 'Not in the ' + term + ' quiz circular.'));
+        row.appendChild(pace);
       }
-      grid.appendChild(card);
+      grid.appendChild(row);
     });
 
     renderReverse();
@@ -283,30 +329,32 @@
   }
 
   function solve(course, endId) {
-    var table = $('mt-rev-table'), body = table.querySelector('tbody');
+    var chips = $('mt-rev-table');
     var note = $('mt-rev-note');
-    body.innerHTML = '';
+    chips.textContent = '';
     if (!endId) {
-      table.hidden = true;
+      chips.hidden = true;
       note.textContent = 'This course has no single end-term input, so it cannot be worked backwards here.';
       return;
     }
-    table.hidden = false;
+    chips.hidden = false;
     (G.bands || []).forEach(function (band) {
       var need = ENGINE.neededFinal(course, revState.vals, band.min, endId);
-      var tr = document.createElement('tr');
-      tr.appendChild(el('td', null, band.grade));
+      var chip = el('div', 'mt-chip');
+      chip.appendChild(el('span', 'mt-chip-g', band.grade));
       if (need == null) {
-        tr.appendChild(el('td', 'no', 'Not reachable'));
-        tr.appendChild(el('td', 'no', 'even with 100 in the end term'));
+        chip.classList.add('is-no');
+        chip.appendChild(el('span', 'mt-chip-v', '—'));
+        chip.appendChild(el('span', 'mt-chip-s', 'not reachable'));
       } else if (need === 0) {
-        tr.appendChild(el('td', 'ok', 'Already secured'));
-        tr.appendChild(el('td', null, 'any end-term score keeps it'));
+        chip.classList.add('is-ok');
+        chip.appendChild(el('span', 'mt-chip-v', 'Secured'));
+        chip.appendChild(el('span', 'mt-chip-s', 'any score'));
       } else {
-        tr.appendChild(el('td', 'ok', String(Math.round(need * 10) / 10)));
-        tr.appendChild(el('td', null, 'or more in the end term'));
+        chip.appendChild(el('span', 'mt-chip-v', String(Math.round(need * 10) / 10)));
+        chip.appendChild(el('span', 'mt-chip-s', 'or more'));
       }
-      body.appendChild(tr);
+      chips.appendChild(chip);
     });
     var notes = (course.notes || []).slice();
     if (course.elig) notes.unshift('Eligibility: average of your best ' + course.elig.best + ' of ' + course.elig.of + ' ' + (course.elig.label || 'weekly assignments') + ' must be 40 or more to sit the end term.');
