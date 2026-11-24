@@ -124,7 +124,7 @@ def load_all():
 
 # Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
 # stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
-ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js))(?:\?v=[0-9a-f]+)?')
+ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js|nptel\.js))(?:\?v=[0-9a-f]+)?')
 
 
 def _asset_ver(rel):
@@ -140,7 +140,7 @@ def stamp_assets(html):
 
 def restamp_pages():
     """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
-    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html", "updates.html", "404.html"):
+    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html", "nptel.html", "updates.html", "404.html"):
         path = os.path.join(SITE_ROOT, name)
         if os.path.exists(path):
             old = open(path, encoding="utf-8").read()
@@ -384,6 +384,7 @@ def _footer_nav(current):
     items = (("index.html", "Home", "home"), ("courses.html", "Courses", "courses"),
              ("links.html", "Important links", "links"), ("scam-alert.html", "Scam alert", "scam"),
              ("calculator.html", "Grade calculator", "calculator"), ("contributors.html", "Contributors", "contributors"),
+             ("nptel.html", "NPTEL", "nptel"),
              ("updates.html", "Updates", "updates"))
     return "".join('<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if k == current else "", t) for h, t, k in items)
 
@@ -501,6 +502,52 @@ def generate_scam_alert():
         .replace("{{JUMP}}", "".join(jump)).replace("{{GROUPS}}", "\n".join(parts)).replace("{{FOOTNAV}}", _footer_nav("scam"))
     open(SCAM_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
     return SCAM_PAGE
+
+
+# ---------------------------------------------------------------- NPTEL page
+NPTEL_PATH = os.path.join(SITE_ROOT, "data", "nptel.json")
+NPTEL_PAGE = os.path.join(SITE_ROOT, "nptel.html")
+NPTEL_TEMPLATE_PATH = os.path.join(TEMPLATES_DIR, "nptel.html.tpl")
+
+
+def generate_nptel():
+    """nptel.html is generated whole from data/nptel.json (the handbook's NPTEL tables 2 and 3)."""
+    d = json.load(open(NPTEL_PATH, encoding="utf-8"))
+    tpl = open(NPTEL_TEMPLATE_PATH, encoding="utf-8").read()
+    esc = html_lib.escape
+    jump, parts = [], []
+    for sec in d["sections"]:
+        rows = []
+        for c in sorted(sec["courses"], key=lambda x: x["name"].casefold()):
+            by = ", ".join(x for x in (c["by"], c["inst"]) if x)
+            wk = c["weeks"] if c["weeks"] else ""
+            cr = c["credits"]
+            meta = ""
+            if wk:
+                meta += '<span class="np-wk">%s weeks</span>' % esc(wk)
+            if cr:
+                meta += '<span class="np-cr-n">%s credit%s</span>' % (esc(cr), "" if cr == "1" else "s")
+            if c["swayam"]:
+                act = '<a class="np-join" href="%s" target="_blank" rel="noopener">Join on SWAYAM</a>' % esc(c["swayam"], quote=True)
+            else:
+                act = '<span class="np-closed">Not open this term</span>'
+            note = '<p class="np-note">%s</p>' % esc(c["note"]) if c.get("note") else ""
+            hay = " ".join((c["name"], c["by"], c["inst"], c["id"]))
+            rows.append(
+                '<li class="np-row" data-open="%d" data-cr="%s" data-q="%s"><div class="np-main"><h3 class="np-name"><a href="https://nptel.ac.in/courses/%s" target="_blank" rel="noopener">%s</a></h3>'
+                '<p class="np-by">%s</p>%s</div><div class="np-meta">%s</div><div class="np-act">%s</div></li>'
+                % (1 if c["swayam"] else 0, esc(cr), esc(hay.casefold(), quote=True), esc(c["id"]), esc(c["name"]), esc(by), note, meta, act))
+        parts.append('  <section class="np-sec" id="%s" aria-labelledby="%s-h">\n    <div class="group-head"><h2 id="%s-h">%s</h2><span class="group-count" data-total="%d">%d</span></div>\n'
+                     '    <p class="group-intro">%s</p>\n    <ul class="np-list">\n      %s\n    </ul>\n  </section>'
+                     % (sec["id"], sec["id"], sec["id"], esc(sec["title"]), len(rows), len(rows), esc(sec["intro"]), "\n      ".join(rows)))
+        jump.append('<a href="#%s">%s<span class="jump-n">%d</span></a>' % (sec["id"], esc(sec["title"]), len(rows)))
+    rules = '  <div class="np-rules"><h2>Before you enrol</h2><ul>%s</ul><p><a href="%s" target="_blank" rel="noopener">Student Handbook</a>, section 9.1 and Tables 2 and 3.</p></div>' % (
+        "".join("<li>%s</li>" % esc(r) for r in d["rules"]), esc(d["handbook"], quote=True))
+    page = tpl.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])).replace("{{JUMP}}", "".join(jump)) \
+        .replace("{{RULES}}", rules).replace("{{TERM}}", esc(d["term"])).replace("{{SECTIONS}}", "\n".join(parts)) \
+        .replace("{{FOOTNAV}}", _footer_nav("nptel"))
+    open(NPTEL_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    return NPTEL_PAGE
 
 
 # ---------------------------------------------------------------- Updates page
@@ -746,7 +793,7 @@ def generate_404():
 
 def generate_sitemap():
     """sitemap.xml: every public page, for search engines (submit it once in Google Search Console)."""
-    pages = ["", "courses.html", "links.html", "updates.html", "contributors.html", "scam-alert.html", "calculator.html"]
+    pages = ["", "courses.html", "links.html", "updates.html", "contributors.html", "scam-alert.html", "calculator.html", "nptel.html"]
     pages += ["courses/%s.html" % s for s in all_stems()]
     urls = "".join("  <url><loc>%s%s</loc></url>\n" % (SITE_URL, p) for p in pages)
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls
@@ -758,12 +805,13 @@ if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_home() if stem == "home" else generate_404() if stem == "404" else generate_sitemap() if stem == "sitemap" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_nptel() if stem == "nptel" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_home() if stem == "home" else generate_404() if stem == "404" else generate_sitemap() if stem == "sitemap" else generate_course(stem))
     else:
         # the shared pages first: they rewrite assets/menu-data.js, whose ?v= stamp the course pages then pick up
         generate_links()
         generate_contributors()
         generate_scam_alert()
+        generate_nptel()
         generate_calculator()
         generate_home()   # also rewrites updates.html
         generate_404()

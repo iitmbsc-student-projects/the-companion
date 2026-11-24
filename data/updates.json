@@ -5,6 +5,13 @@
   {
    "date": "2026-11-24",
    "kind": "site",
+   "title": "New NPTEL section",
+   "text": "A new NPTEL page lists the 289 NPTEL courses the BS programme accepts for credit, from the handbook's Tables 2 and 3, with search, a filter for courses open this term, and links to NPTEL and SWAYAM.",
+   "courses": []
+  },
+  {
+   "date": "2026-11-24",
+   "kind": "site",
    "title": "Degree electives grouped by area",
    "text": "The BS electives on the Courses page are now split into Data Science, CS and Programming, Science and Engineering, Humanities and Management, and the mixed areas. Searching a group name, such as management, shows that group.",
    "courses": []

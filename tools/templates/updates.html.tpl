@@ -45,6 +45,7 @@
       <a class="tb-link" href="scam-alert.html">Scam alert</a>
       <a class="tb-link" href="calculator.html">Grade calculator</a>
       <a class="tb-link" href="contributors.html">Contributors</a>
+      <a class="tb-link" href="nptel.html">NPTEL</a>
       <a class="tb-link current" href="updates.html">Updates</a>
     </div>
     <span id="theme-slot" data-float-narrow></span>
