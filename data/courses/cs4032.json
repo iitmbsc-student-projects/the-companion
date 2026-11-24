@@ -121,133 +121,240 @@
  },
  "weeks_data": [
   {
-   "w": "Week 1",
+   "w": "Lectures",
    "items": [
     {
      "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Introduction to Compilers",
+     "v": "plHDNr3gbNQ",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 2",
-   "items": [
+    },
     {
      "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Phases of a Compiler (Front End)",
+     "v": "9yjkJ8BC0r0",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 3",
-   "items": [
+    },
     {
      "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Phases of a Compiler (Back End)",
+     "v": "0E6NdsmSVfw",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 4",
-   "items": [
+    },
     {
      "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Compilation Environment, Build Pipeline and Compiler Cousins",
+     "v": "FX3nDYiHiMY",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 5",
-   "items": [
+    },
     {
      "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Runtime Environment and Function Call",
+     "v": "d4ANUybHk_E",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 6",
-   "items": [
+    },
     {
      "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Lexical Analysis",
+     "v": "LnXRozAC-2s",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 7",
-   "items": [
+    },
     {
      "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Token Specification by Regular Expression",
+     "v": "O2tR1HecL9Q",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 8",
-   "items": [
+    },
     {
      "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Token Recognition by Transition Diagram",
+     "v": "Vj3YVvPsMgg",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 9",
-   "items": [
+    },
     {
      "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Finite Automata: DFA and NFA",
+     "v": "z6Pra_Cmvbg",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 10",
-   "items": [
+    },
     {
      "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Lex: The Lexical Analyzer Generator",
+     "v": "ERQXSX--Pes",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 11",
-   "items": [
+    },
     {
      "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Formal Languages 1",
+     "v": "G-TAvwjaSao",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 12",
-   "items": [
+    },
     {
      "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Formal Languages 2",
+     "v": "T0pTz_gsrJU",
+     "s": null
+    },
+    {
+     "n": "13",
+     "t": "Recursive Descent Parser",
+     "v": "QK3ElMaEbUg",
+     "s": null
+    },
+    {
+     "n": "14",
+     "t": "LL(1) Parser",
+     "v": "D-Ib7Q-2mlc",
+     "s": null
+    },
+    {
+     "n": "15",
+     "t": "Operator Precedence Parser",
+     "v": "rMfADCYT3Kw",
+     "s": null
+    },
+    {
+     "n": "16",
+     "t": "SR Parsers",
+     "v": "nRlaWo-9yNU",
+     "s": null
+    },
+    {
+     "n": "17",
+     "t": "LR Theory",
+     "v": "k27QtuALtrM",
+     "s": null
+    },
+    {
+     "n": "18",
+     "t": "SLR Parser",
+     "v": "i5T9rgOwIJA",
+     "s": null
+    },
+    {
+     "n": "19",
+     "t": "LR(1) and LALR(1) Parsers",
+     "v": "g2AqzW9rio4",
+     "s": null
+    },
+    {
+     "n": "20",
+     "t": "Bison",
+     "v": "umTzZWoWTbE",
+     "s": null
+    },
+    {
+     "n": "21",
+     "t": "Syntax Directed Translation",
+     "v": "Qf4esbYGx5o",
+     "s": null
+    },
+    {
+     "n": "22",
+     "t": "S-Attributed and L-Attributed Definitions",
+     "v": "bQ9C3WapWS8",
+     "s": null
+    },
+    {
+     "n": "23",
+     "t": "Type Checking in Compiler",
+     "v": "Aq900TZZWkE",
+     "s": null
+    },
+    {
+     "n": "24",
+     "t": "Type Systems and Type Checkers",
+     "v": "sRPaQIlk890",
+     "s": null
+    },
+    {
+     "n": "25",
+     "t": "Desktop Calculator Using Flex and Bison",
+     "v": "WMETsu23HrE",
+     "s": null
+    },
+    {
+     "n": "26",
+     "t": "Intermediate Representation (IR)",
+     "v": "8WtlnEYC-pg",
+     "s": null
+    },
+    {
+     "n": "27",
+     "t": "Translating Arithmetic Expressions",
+     "v": "GbMiriVPCrE",
+     "s": null
+    },
+    {
+     "n": "28",
+     "t": "Translating Arrays in Expressions",
+     "v": "TfRBsCzwtDc",
+     "s": null
+    },
+    {
+     "n": "29",
+     "t": "Translating Variable Declarations",
+     "v": "8uFMuZjTy3o",
+     "s": null
+    },
+    {
+     "n": "30",
+     "t": "Translating Boolean Expressions",
+     "v": "GKuMeK6rS5c",
+     "s": null
+    },
+    {
+     "n": "31",
+     "t": "Translating Branch Control",
+     "v": "-K-B6WpVDhY",
+     "s": null
+    },
+    {
+     "n": "32",
+     "t": "Translating Loop Control",
+     "v": "oBL_MlcqyFk",
+     "s": null
+    },
+    {
+     "n": "33",
+     "t": "Translating Functions",
+     "v": "ahMilCK1JnY",
+     "s": null
+    },
+    {
+     "n": "34",
+     "t": "Lexical Scope Management: Basic Notions",
+     "v": "ntM0b_GQMu0",
+     "s": null
+    },
+    {
+     "n": "35",
+     "t": "Lexical Scope Management: Algorithms",
+     "v": "pmmoKRnPb8Q",
+     "s": null
+    },
+    {
+     "n": "36",
+     "t": "NanoC Specification, Part 1: Language and Lexical Grammar",
+     "v": "XkOdWz9S_DY",
+     "s": null
+    },
+    {
+     "n": "37",
+     "t": "NanoC Specification, Part 2: Syntax and Programming Environment",
+     "v": "cVnOSuhPvYU",
+     "s": null
+    },
+    {
+     "n": "38",
+     "t": "MIC Optimization Overview",
+     "v": "43wI9cUpvTU",
+     "s": null
+    },
+    {
+     "n": "39",
+     "t": "MIC Optimization CFG",
+     "v": "T2psVvlj1VI",
      "s": null
     }
    ]
