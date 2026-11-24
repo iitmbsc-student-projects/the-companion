@@ -39,7 +39,7 @@
     var url = host + '/counter/' + encodeURIComponent(path) + '.json';
     if (!window.fetch) return;
     fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && d.count && d.count !== '0') show(d.count + ' views');
+      if (d && d.count && d.count !== '0') show(d.count + (d.count === '1' ? ' view' : ' views'));
     }).catch(function () {});
   }
   /* wait a moment so this visit is recorded before the number is read */
