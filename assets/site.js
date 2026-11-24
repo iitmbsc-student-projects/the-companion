@@ -24,11 +24,11 @@
     MENU.links.items.map(function (i) { return item(BASE + 'links.html#links-' + i.id, '', i.title, i.count); }).join('');
 
 
-  /* Daily tools stay in the bar. Scam alert, Contributors and Updates fold into More
+  /* Daily tools (My Term, Planner) stay in the bar. Grade calculator, Scam alert, Contributors and Updates fold into More
      so the bar is one quiet row instead of a second strip of equal links. */
   var more = document.querySelector('.tb-more');
   if (more) {
-    var KEEP = { 'my-term.html': 1, 'planner.html': 1, 'calculator.html': 1 };
+    var KEEP = { 'my-term.html': 1, 'planner.html': 1 };
     var extra = [];
     [].slice.call(more.querySelectorAll(':scope > a.tb-link')).forEach(function (a) {
       var file = (a.getAttribute('href') || '').split('/').pop().split('?')[0];
