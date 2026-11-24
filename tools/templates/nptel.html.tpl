@@ -56,7 +56,7 @@
   <div class="wrap">
     <h1 class="ph-title">{{TITLE}}</h1>
     <p class="ph-sub">{{SUB}}</p>
-    <nav class="links-jump" aria-label="Jump to a list">{{JUMP}}</nav>
+    <div class="np-tabs" role="tablist" aria-label="NPTEL lists">{{TABS}}</div>
   </div>
 </header>
 
@@ -66,9 +66,6 @@
     <input type="search" id="np-search" class="np-search" placeholder="Search a course, a professor or an institute" aria-label="Search NPTEL courses" autocomplete="off">
     <div class="np-filters" role="group" aria-label="Filters">
       <label class="np-chk"><input type="checkbox" id="np-open"> Open for {{TERM}}</label>
-      <button type="button" class="np-cr" data-cr="1" aria-pressed="false">1 credit</button>
-      <button type="button" class="np-cr" data-cr="2" aria-pressed="false">2 credits</button>
-      <button type="button" class="np-cr" data-cr="3" aria-pressed="false">3 credits</button>
     </div>
     <p class="np-count" id="np-count" role="status" aria-live="polite"></p>
   </div>

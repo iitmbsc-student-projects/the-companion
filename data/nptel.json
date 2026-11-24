@@ -14,7 +14,7 @@
   {
    "id": "dept",
    "title": "Department and free electives",
-   "intro": "Handbook Table 2. These can be credited at the BSc and BS levels.",
+   "intro": "Handbook Table 2. These can be credited at the BSc and BS levels. Rows in amber carry a date rule.",
    "courses": [
     {
      "id": "106102163",
@@ -25,7 +25,7 @@
      "credits": "2",
      "swayam": "",
      "type": "BP",
-     "note": "1 credit if completed in 2021, 2 credits from 2022"
+     "limit": "1 credit if completed from Jan 2021 to Dec 2021, 2 credits if completed from 2022"
     },
     {
      "id": "106106158",
@@ -86,7 +86,7 @@
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs119/preview",
      "type": "BP",
-     "note": "Can be credited if completed before Sep 2023"
+     "limit": "Can be credited if completed before Sep 2023"
     },
     {
      "id": "111104100",
@@ -127,7 +127,7 @@
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs121/preview",
      "type": "BP",
-     "note": "Can be credited if completed on or before Dec 2025"
+     "limit": "Can be credited if completed on or before Dec 2025"
     },
     {
      "id": "106106140",
@@ -158,7 +158,7 @@
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs93/preview",
      "type": "BD",
-     "note": "Can be credited if completed before Dec 2023"
+     "limit": "Can be credited if completed before Dec 2023"
     },
     {
      "id": "106105166",
@@ -179,7 +179,7 @@
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc26-cs45/preview",
      "type": "BD",
-     "note": "Can be credited if completed before Dec 2023"
+     "limit": "Can be credited if completed before Dec 2023"
     },
     {
      "id": "106106169",
@@ -199,7 +199,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs134/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106108237",
@@ -209,7 +211,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs128/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106248",
@@ -219,7 +223,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs116/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106103237",
@@ -229,7 +235,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs135/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106168",
@@ -239,7 +247,9 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs130/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106105239",
@@ -249,7 +259,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs139/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106101235",
@@ -259,7 +271,9 @@
      "weeks": "4",
      "credits": "1",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs82/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106229",
@@ -269,7 +283,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs115/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106105225",
@@ -279,7 +295,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs148/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106231",
@@ -289,7 +307,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc26_cs69/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106238",
@@ -299,7 +319,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs98/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106105165",
@@ -309,7 +331,9 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs155/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106101209",
@@ -319,7 +343,9 @@
      "weeks": "4",
      "credits": "1",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs125/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106183",
@@ -329,7 +355,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs105/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106103229",
@@ -339,7 +367,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs132/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106102237",
@@ -349,7 +379,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs84/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106239",
@@ -359,7 +391,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs100/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106103224",
@@ -369,7 +403,9 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs133/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106105223",
@@ -379,7 +415,9 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106210",
@@ -389,7 +427,9 @@
      "weeks": "4",
      "credits": "1",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs114/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106106230",
@@ -399,7 +439,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs96/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106105217",
@@ -409,7 +451,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs142/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106101237",
@@ -419,7 +463,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106108227",
@@ -429,7 +475,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs127/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106101238",
@@ -439,7 +487,9 @@
      "weeks": "4",
      "credits": "1",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs126/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106104149",
@@ -449,7 +499,9 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "SE"
+     "type": "SE",
+     "added": "January 2024",
+     "limit": "Can only be credited starting January 2024"
     },
     {
      "id": "106104228",
@@ -459,7 +511,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "106103183",
@@ -469,7 +523,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "106106232",
@@ -479,7 +535,9 @@
      "weeks": "4",
      "credits": "1",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "106101466",
@@ -489,7 +547,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs86/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "111106113",
@@ -499,7 +559,9 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_ma64/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "111105042",
@@ -509,7 +571,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_ma65/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "111106141",
@@ -519,7 +583,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_ma66/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "111106137",
@@ -529,7 +595,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_ma67/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "108108181",
@@ -539,7 +607,9 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "111104160",
@@ -549,7 +619,9 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_ma99/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "106106243",
@@ -559,7 +631,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106104170",
@@ -569,7 +642,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106106244",
@@ -579,7 +653,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2025"
     },
     {
      "id": "106105235",
@@ -589,7 +664,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2025"
     },
     {
      "id": "106106361",
@@ -599,7 +675,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2025"
     },
     {
      "id": "106104182",
@@ -609,7 +686,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105190",
@@ -619,7 +697,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105162",
@@ -629,7 +708,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106101234",
@@ -639,7 +719,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106103358",
@@ -649,7 +730,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106104449",
@@ -659,7 +741,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105193",
@@ -669,7 +752,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105159",
@@ -679,7 +763,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105241",
@@ -689,7 +774,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105220",
@@ -699,7 +785,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106106199",
@@ -709,7 +796,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "108102169",
@@ -719,7 +807,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105173",
@@ -729,7 +818,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106103359",
@@ -739,7 +829,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106106241",
@@ -749,7 +840,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106106234",
@@ -759,7 +851,8 @@
      "weeks": "4",
      "credits": "1",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106106242",
@@ -769,7 +862,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106103220",
@@ -779,7 +873,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105161",
@@ -789,7 +884,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106105160",
@@ -799,7 +895,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "January 2025"
     },
     {
      "id": "106104242",
@@ -809,7 +906,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2025"
     },
     {
      "id": "106104356",
@@ -819,7 +917,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs77/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "January 2025"
     },
     {
      "id": "106105470",
@@ -829,7 +928,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs152/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2025"
     },
     {
      "id": "106104467",
@@ -839,7 +939,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2025"
     },
     {
      "id": "106108468",
@@ -849,7 +950,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs124/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2025"
     },
     {
      "id": "106104189",
@@ -859,7 +961,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs131/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2025"
     },
     {
      "id": "106105164",
@@ -869,7 +972,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs150/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2025"
     },
     {
      "id": "106105471",
@@ -879,7 +983,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs153/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2025"
     },
     {
      "id": "106106472",
@@ -889,7 +994,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs118/preview",
-     "type": "BD"
+     "type": "BD",
+     "added": "May 2025"
     },
     {
      "id": "106105229",
@@ -899,7 +1005,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs156/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2025"
     },
     {
      "id": "106105218",
@@ -909,7 +1016,8 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/noc25_cs109/preview",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2025"
     },
     {
      "id": "106104221",
@@ -919,14 +1027,17 @@
      "weeks": "12",
      "credits": "3",
      "swayam": "https://onlinecourses.nptel.ac.in/e-learning/preview/noc26_cs148",
-     "type": "BP"
+     "type": "BP",
+     "added": "May 2026"
     }
-   ]
+   ],
+   "tab": "Department and free electives",
+   "table": "Table 2"
   },
   {
    "id": "hsmg",
    "title": "HS and Management electives",
-   "intro": "Handbook Table 3. Up to 4 credits can count under the HM category at the BS level, from NPTEL or from courses in the programme.",
+   "intro": "Handbook Table 3. Up to 4 credits can count under the HM category at the BS level, from NPTEL or from courses in the programme. Rows in amber carry a date rule.",
    "courses": [
     {
      "id": "109104093",
@@ -1313,7 +1424,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs54/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs54/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107121",
@@ -1322,7 +1435,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs159/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs159/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104107",
@@ -1331,7 +1446,9 @@
      "inst": "IITK",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs174/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs174/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110106141",
@@ -1340,7 +1457,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg81/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg81/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105083",
@@ -1349,7 +1468,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc26_mg41/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc26_mg41/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107195",
@@ -1358,7 +1479,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs160/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs160/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105148",
@@ -1367,7 +1490,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg133/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg133/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103186",
@@ -1376,7 +1501,9 @@
      "inst": "IITG",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs195/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs195/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105204",
@@ -1385,7 +1512,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs202/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs202/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107126",
@@ -1394,7 +1523,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg92/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg92/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107081",
@@ -1403,7 +1534,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg90/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg90/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107168",
@@ -1412,7 +1545,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg110/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg110/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105097",
@@ -1421,7 +1556,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc26_mg42/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc26_mg42/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105161",
@@ -1430,7 +1567,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "121105009",
@@ -1439,7 +1578,9 @@
      "inst": "IITKGP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs140/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs140/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105139",
@@ -1448,7 +1589,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg132/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg132/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105145",
@@ -1457,7 +1600,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg137/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg137/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107154",
@@ -1466,7 +1611,9 @@
      "inst": "IITR",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs161/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs161/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105121",
@@ -1475,7 +1622,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs210/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs210/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107161",
@@ -1484,7 +1633,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg96/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg96/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105118",
@@ -1493,7 +1644,9 @@
      "inst": "IITKGP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs61/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs61/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110101167",
@@ -1502,7 +1655,9 @@
      "inst": "IITB",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105122",
@@ -1511,7 +1666,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110101153",
@@ -1520,7 +1677,9 @@
      "inst": "IITB",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg124/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg124/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106402",
@@ -1529,7 +1688,9 @@
      "inst": "IITM",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs154/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs154/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107129",
@@ -1538,7 +1699,9 @@
      "inst": "IITR",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg88/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg88/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106138",
@@ -1547,7 +1710,9 @@
      "inst": "IIT M",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs126/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs126/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107094",
@@ -1556,7 +1721,9 @@
      "inst": "IITR",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg95/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg95/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107147",
@@ -1565,7 +1732,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105195",
@@ -1574,7 +1743,9 @@
      "inst": "IITKGP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs207/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs207/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105081",
@@ -1583,7 +1754,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg139/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg139/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110108161",
@@ -1592,7 +1765,9 @@
      "inst": "IISc",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg123/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg123/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103152",
@@ -1601,7 +1776,9 @@
      "inst": "IITG",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs193/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs193/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110106157",
@@ -1610,7 +1787,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg82/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg82/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105176",
@@ -1619,7 +1798,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs213/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs213/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106148",
@@ -1628,7 +1809,9 @@
      "inst": "IITM",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs131/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs131/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105140",
@@ -1637,7 +1820,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg143/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg143/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107167",
@@ -1646,7 +1831,9 @@
      "inst": "IITR",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg112/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg112/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104151",
@@ -1655,7 +1842,9 @@
      "inst": "IITK",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs176/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs176/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105154",
@@ -1664,7 +1853,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg136/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg136/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110104125",
@@ -1673,7 +1864,9 @@
      "inst": "IITK",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105073",
@@ -1682,7 +1875,9 @@
      "inst": "IITKGP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg140/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg140/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107132",
@@ -1691,7 +1886,9 @@
      "inst": "IITR",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs167/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs167/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106087",
@@ -1700,7 +1897,9 @@
      "inst": "IITM",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs119/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs119/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106176",
@@ -1709,7 +1908,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs125/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs125/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106185",
@@ -1718,7 +1919,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs133/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs133/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103187",
@@ -1727,7 +1930,9 @@
      "inst": "IITG",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs186/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs186/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105162",
@@ -1736,7 +1941,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg130/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg130/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106403",
@@ -1745,7 +1952,9 @@
      "inst": "IITM",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs155/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs155/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110104095",
@@ -1754,7 +1963,9 @@
      "inst": "Amrita Vishwa Vidyapeetham, Bangalore",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg114/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg114/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104197",
@@ -1763,7 +1974,9 @@
      "inst": "IIT (BHU) Varanasi",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs199/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs199/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107173",
@@ -1772,7 +1985,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs164/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs164/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105196",
@@ -1781,7 +1996,9 @@
      "inst": "IITKGP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs208/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs208/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107204",
@@ -1790,7 +2007,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs171/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs171/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103123",
@@ -1799,7 +2018,9 @@
      "inst": "IITG",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs192/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs192/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109102156",
@@ -1808,7 +2029,9 @@
      "inst": "IITD",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs146/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs146/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105094",
@@ -1817,7 +2040,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg142/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg142/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107142",
@@ -1826,7 +2051,9 @@
      "inst": "IITR",
      "weeks": "8 + 4",
      "credits": "",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104106",
@@ -1835,7 +2062,9 @@
      "inst": "IITK",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs201/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs201/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106190",
@@ -1844,7 +2073,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs80/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs80/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110106167",
@@ -1853,7 +2084,9 @@
      "inst": "IITH, VIT Chennai",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg107/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg107/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107163",
@@ -1862,7 +2095,9 @@
      "inst": "IITR",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg99/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg99/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110101131",
@@ -1871,7 +2106,9 @@
      "inst": "IITB",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg121/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg121/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107127",
@@ -1880,7 +2117,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg85/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg85/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107182",
@@ -1889,7 +2128,9 @@
      "inst": "IITR",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs163/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs163/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106188",
@@ -1898,7 +2139,9 @@
      "inst": "Gautam Buddha University",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110104065",
@@ -1907,7 +2150,9 @@
      "inst": "IITK",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg116/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg116/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107157",
@@ -1916,7 +2161,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg113/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg113/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104123",
@@ -1925,7 +2172,9 @@
      "inst": "IITK",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs178/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs178/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107130",
@@ -1934,7 +2183,9 @@
      "inst": "IITR",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg93/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg93/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110101132",
@@ -1943,7 +2194,9 @@
      "inst": "IITB",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg122/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg122/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104195",
@@ -1952,7 +2205,9 @@
      "inst": "IITK",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs179/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs179/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103153",
@@ -1961,7 +2216,9 @@
      "inst": "IITG",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs190/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs190/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105080",
@@ -1970,7 +2227,9 @@
      "inst": "IITKGP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg131/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg131/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103176",
@@ -1979,7 +2238,9 @@
      "inst": "IITG",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs188/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs188/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110106134",
@@ -1988,7 +2249,9 @@
      "inst": "Syracuse University",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg79/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg79/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107131",
@@ -1997,7 +2260,9 @@
      "inst": "IITR",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs170/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs170/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107205",
@@ -2006,7 +2271,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs166/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs166/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106100",
@@ -2015,7 +2282,9 @@
      "inst": "IITP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs151/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs151/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107093",
@@ -2024,7 +2293,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg86/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg86/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110104168",
@@ -2033,7 +2304,9 @@
      "inst": "IITK",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106406",
@@ -2042,7 +2315,9 @@
      "inst": "IITM",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs156/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs156/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106177",
@@ -2051,7 +2326,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs123/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs123/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103188",
@@ -2060,7 +2337,9 @@
      "inst": "IITG",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs187/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs187/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103121",
@@ -2069,7 +2348,9 @@
      "inst": "IITG",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs189/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs189/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105113",
@@ -2078,7 +2359,9 @@
      "inst": "IITKGP",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs211/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs211/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104126",
@@ -2087,7 +2370,9 @@
      "inst": "IITK",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs177/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs177/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110105155",
@@ -2096,7 +2381,9 @@
      "inst": "IITKGP",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg135/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg135/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104203",
@@ -2105,7 +2392,9 @@
      "inst": "University of Allahabad",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs221/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs221/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110101146",
@@ -2114,7 +2403,9 @@
      "inst": "IITB",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg103/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg103/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106407",
@@ -2123,7 +2414,9 @@
      "inst": "IITM",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs157/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs157/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106130",
@@ -2132,7 +2425,9 @@
      "inst": "IITM",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs130/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs130/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109105136",
@@ -2141,7 +2436,9 @@
      "inst": "IITKGP",
      "weeks": "4",
      "credits": "1",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs144/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs144/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110106045",
@@ -2150,7 +2447,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg105/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg105/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106204",
@@ -2159,7 +2458,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs153/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs153/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107139",
@@ -2168,7 +2469,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs162/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs162/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107196",
@@ -2177,7 +2480,9 @@
      "inst": "IITR",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs165/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs165/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109107203",
@@ -2186,7 +2491,9 @@
      "inst": "IITR",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109101203",
@@ -2195,7 +2502,9 @@
      "inst": "IITB",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs116/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs116/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109106180",
@@ -2204,7 +2513,9 @@
      "inst": "IITM",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs124/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs124/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104196",
@@ -2213,7 +2524,9 @@
      "inst": "IITK",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs180/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs180/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "110107153",
@@ -2222,7 +2535,9 @@
      "inst": "IITR",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg100/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_mg100/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109103185",
@@ -2231,7 +2546,9 @@
      "inst": "IITG",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs191/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs191/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109101195",
@@ -2240,7 +2557,9 @@
      "inst": "IITB",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs185/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs185/preview",
+     "added": "May 2024",
+     "limit": "Can only be credited starting May 2024"
     },
     {
      "id": "109104136",
@@ -2249,7 +2568,8 @@
      "inst": "University of Allahabad",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105190",
@@ -2258,7 +2578,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105191",
@@ -2267,7 +2588,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105144",
@@ -2276,7 +2598,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105112",
@@ -2285,7 +2608,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105098",
@@ -2294,7 +2618,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105198",
@@ -2303,7 +2628,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105127",
@@ -2312,7 +2638,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105192",
@@ -2321,7 +2648,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105189",
@@ -2330,7 +2658,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106191",
@@ -2339,7 +2668,8 @@
      "inst": "Ahmedabad University",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106182",
@@ -2348,7 +2678,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109103198",
@@ -2357,7 +2688,8 @@
      "inst": "IIT Guwahati",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107191",
@@ -2366,7 +2698,8 @@
      "inst": "IIT Roorkee",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "110103093",
@@ -2375,7 +2708,8 @@
      "inst": "IIT Guwahati",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107172",
@@ -2384,7 +2718,8 @@
      "inst": "IIT Roorkee",
      "weeks": "4 + 4",
      "credits": "",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109101171",
@@ -2393,7 +2728,8 @@
      "inst": "IIT Delhi",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106116",
@@ -2402,7 +2738,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107190",
@@ -2411,7 +2748,8 @@
      "inst": "IIT Roorkee",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106183",
@@ -2420,7 +2758,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107199",
@@ -2429,7 +2768,8 @@
      "inst": "IIT Roorkee",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106095",
@@ -2438,7 +2778,8 @@
      "inst": "NIE",
      "weeks": "8",
      "credits": "2",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs82/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc26_hs82/preview",
+     "added": "January 2025"
     },
     {
      "id": "109103171",
@@ -2447,7 +2788,8 @@
      "inst": "IIT Guwahati",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106199",
@@ -2456,7 +2798,8 @@
      "inst": "IIT Hyderabad",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107189",
@@ -2465,7 +2808,8 @@
      "inst": "IIT Roorkee",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109104117",
@@ -2474,7 +2818,8 @@
      "inst": "Visva Bharati University, Santiniketan",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109103134",
@@ -2483,7 +2828,8 @@
      "inst": "IIT Guwahati",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107171",
@@ -2492,7 +2838,8 @@
      "inst": "IIT Roorkee",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109103135",
@@ -2501,7 +2848,8 @@
      "inst": "IIT Guwahati",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109103141",
@@ -2510,7 +2858,8 @@
      "inst": "IIT Guwahati",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109104194",
@@ -2519,7 +2868,8 @@
      "inst": "IIT Kanpur",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109103189",
@@ -2528,7 +2878,8 @@
      "inst": "IIT Guwahati",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106171",
@@ -2537,7 +2888,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109104183",
@@ -2546,7 +2898,8 @@
      "inst": "IIT(BHU) Varanasi",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106189",
@@ -2555,7 +2908,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106173",
@@ -2564,7 +2918,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107198",
@@ -2573,7 +2928,8 @@
      "inst": "IIT Roorkee",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107394",
@@ -2582,7 +2938,8 @@
      "inst": "IIT Roorkee",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105396",
@@ -2591,7 +2948,8 @@
      "inst": "IIT-ISM Dhanbad",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109103183",
@@ -2600,7 +2958,8 @@
      "inst": "IIT Guwahati",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109104096",
@@ -2610,7 +2969,8 @@
      "weeks": "8",
      "credits": "2",
      "swayam": "",
-     "note": "Also covers https://nptel.ac.in/courses/109104108"
+     "limit": "Also covers https://nptel.ac.in/courses/109104108",
+     "added": "January 2025"
     },
     {
      "id": "109103182",
@@ -2619,7 +2979,8 @@
      "inst": "IIT Guwahati",
      "weeks": "12",
      "credits": "3",
-     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs68/preview"
+     "swayam": "https://onlinecourses.nptel.ac.in/noc25_hs68/preview",
+     "added": "January 2025"
     },
     {
      "id": "109102392",
@@ -2628,7 +2989,8 @@
      "inst": "IIT Delhi",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106404",
@@ -2637,7 +2999,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109105097",
@@ -2646,7 +3009,8 @@
      "inst": "IIT Kharagpur",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106186",
@@ -2655,7 +3019,8 @@
      "inst": "IIT Madras",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106200",
@@ -2664,7 +3029,8 @@
      "inst": "IIT Hyderabad",
      "weeks": "12",
      "credits": "3",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109107399",
@@ -2673,7 +3039,8 @@
      "inst": "IIT Roorkee",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109104115",
@@ -2682,7 +3049,8 @@
      "inst": "IIT Kanpur",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106405",
@@ -2691,7 +3059,8 @@
      "inst": "IIT Madras",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106408",
@@ -2700,7 +3069,8 @@
      "inst": "National Forensic Sciences University (INI)",
      "weeks": "4",
      "credits": "1",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109103142",
@@ -2709,7 +3079,8 @@
      "inst": "IIT Guwahati",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     },
     {
      "id": "109106401",
@@ -2718,9 +3089,12 @@
      "inst": "IIT Madras",
      "weeks": "8",
      "credits": "2",
-     "swayam": ""
+     "swayam": "",
+     "added": "January 2025"
     }
-   ]
+   ],
+   "tab": "HS and Management electives",
+   "table": "Table 3"
   }
  ]
 }
