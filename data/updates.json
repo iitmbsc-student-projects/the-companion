@@ -5,6 +5,13 @@
   {
    "date": "2026-11-24",
    "kind": "site",
+   "title": "Degree electives grouped by area",
+   "text": "The BS electives on the Courses page are now split into Data Science, CS and Programming, Science and Engineering, Humanities and Management, and the mixed areas. Searching a group name, such as management, shows that group.",
+   "courses": []
+  },
+  {
+   "date": "2026-11-24",
+   "kind": "site",
    "title": "Lectures for Compiler Design and Discrete Mathematics",
    "text": "Compiler Design (39 lectures) and Discrete Mathematics (58 lectures, weeks 1 to 12) now list their lectures from the official IITM BS playlists.",
    "courses": [

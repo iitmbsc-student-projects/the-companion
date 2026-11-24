@@ -97,14 +97,16 @@
     var rows = Array.prototype.slice.call(document.querySelectorAll('ol.courses li, ul.links-grid li, ul.chips li'));
     var index = rows.map(function (li) {
       var text = norm(textOf(li)), words = text.split(' ');
+      var grp = li.closest ? li.closest('.level-group') : null, gh = grp && grp.querySelector('.level-subhead');
       return {
-        li: li, words: words, compact: words.join(''),
+        li: li, words: words, compact: words.join(''), group: gh ? norm(gh.textContent) : '',
         initials: words.filter(function (w) { return !STOP[w]; }).map(function (w) { return w[0]; }).join('')
       };
     });
     function tokenMatches(t, ix) {
       var n = t.length;
       if (ix.compact.indexOf(t) !== -1) return true;               // substring, also across word breaks
+      if (n >= 4 && ix.group && ix.group.indexOf(t) !== -1) return true;   // the group heading, e.g. "management"
       if (n >= 2 && (n >= 3 ? ix.initials.indexOf(t) !== -1 : ix.initials.indexOf(t) === 0)) return true; // MLT, NLP, BDM
       var max = /[0-9]/.test(t) ? 0 : n >= 8 ? 2 : n >= 4 ? 1 : 0;   // codes must match exactly
       if (!max) return false;
@@ -139,6 +141,9 @@
         var lis = sec.querySelectorAll('ol.courses li, ul.chips li');
         if (!lis.length) return;
         sec.style.display = Array.prototype.some.call(lis, function (li) { return li.style.display !== 'none'; }) ? '' : 'none';
+      });
+      document.querySelectorAll('.level-group').forEach(function (g) {
+        g.style.display = Array.prototype.some.call(g.querySelectorAll('ol.courses li'), function (li) { return li.style.display !== 'none'; }) ? '' : 'none';
       });
       document.querySelectorAll('.link-group').forEach(function (g) {
         g.style.display = Array.prototype.some.call(g.querySelectorAll('li'), function (li) { return li.style.display !== 'none'; }) ? '' : 'none';
