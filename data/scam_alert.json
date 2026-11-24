@@ -1,6 +1,6 @@
 {
  "title": "Scam alert",
- "sub": "How fake internship offers work, how to spot them, and what to do if one reaches you.",
+ "sub": "How fake internship and training offers work, how to spot them, and what to do if one reaches you.",
  "intro": [
   "A student email ID is a useful target for a scammer. It lets the sender hint at a link with IIT Madras, and a message that lands in an institute mailbox looks more trustworthy than a random one. Soon after you get your ID, you may start receiving internship offers from EdTech companies that claim tie-ups with firms like Wipro and Microsoft, or with institutions like IIT Guwahati.",
   "These are rarely internships in the usual sense. They are products sold to students, and the company names are borrowed to make them look credible. The firms they name do not work with these providers and hire interns through their own channels. This page explains the pattern so that you can recognise the next one, including those that are not on the list below."
@@ -54,11 +54,15 @@
     },
     {
      "title": "Sloppy writing and the External tag",
-     "text": "Spelling and grammar mistakes, a generic greeting and a yellow External tag in your student mailbox are common. Large companies do not write like this."
+     "text": "Spelling and grammar mistakes, a generic greeting and a yellow External tag in your student mailbox are common. Large companies do not write like this. No tag does not mean safe: some of these mails are sent from other students' accounts."
     },
     {
      "title": "Contact only through chat apps or free email",
      "text": "A recruiter who insists on WhatsApp or Telegram, or writes from a free mail address while claiming to be from a big company, is a bad sign."
+    },
+    {
+     "title": "A phone call that asks for your ID or password",
+     "text": "Callers claim to be from IIT Madras, IIT Kharagpur or an \"official training partner\", then ask for your student ID, mail ID or even your password. No real office does. Hang up and do not call back."
     }
    ]
   },
@@ -92,7 +96,7 @@
     },
     {
      "title": "Mails from other students",
-     "text": "Sometimes another student forwards an internship offer. Do not engage with it, and check it the same way as any other offer."
+     "text": "Sometimes another student, or a student account, sends an internship, training or \"mandatory course\" offer. Such mails carry no External tag. Do not engage with them, and check them the same way as any other offer."
     },
     {
      "title": "Paid offers can still be traps",
@@ -113,9 +117,37 @@
     "Stop all contact, but keep every email, chat, receipt and payment screenshot as evidence.",
     "Call the national cyber crime helpline <strong>1930</strong> and file a complaint at <a href=\"https://cybercrime.gov.in/\" target=\"_blank\" rel=\"noopener\">cybercrime.gov.in</a>. Do this in the first hours if you can.",
     "Tell your bank or UPI app about the payment and ask them to block further debits.",
-    "If you sent ID documents or passwords, change the passwords at once and watch your accounts for misuse.",
+    "If you sent ID documents, your student ID or a password, change the passwords at once, turn on 2-step verification and watch your accounts for misuse.",
     "Never approve a UPI collect request or share an OTP to \"receive\" money. Receiving money never needs your PIN or OTP.",
     "Tell the IIC and tell us, so that the provider can be added here for the next batch."
+   ]
+  },
+  {
+   "id": "recent",
+   "type": "cards",
+   "title": "Newer tricks students have reported",
+   "intro": "These came up on Discourse in October and November 2026.",
+   "cards": [
+    {
+     "title": "A \"mandatory\" course, project or registration",
+     "text": "Mails say a training programme, add-on project or subject registration is mandatory, often with a payment link. Foundation level has no projects, and nothing real asks you to register through a link mid-term. Real changes show on your dashboard and come from official addresses."
+    },
+    {
+     "title": "Mails from a student account, with no External tag",
+     "text": "Some are sent from another student's study.iitm.ac.in address, so there is no External tag. The sender being a student is the clue: students do not run registrations. Forward it to support and do not reply."
+    },
+    {
+     "title": "A payment link on a short timer",
+     "text": "A \"scholarship batch\", a total of ₹10,000 or more, a payment link and a note that the portal is valid for only ten minutes, followed by calls to make you pay. All of that is pressure so that you pay before you check."
+    },
+    {
+     "title": "Credits for sale",
+     "text": "A caller or mail offers IITM credits for a paid Python or AI course with placement training, sometimes for around ₹15,000. Outside providers cannot give you IITM credits. The only outside courses that count are the NPTEL courses in the handbook lists, which are on the NPTEL page of this site."
+    },
+    {
+     "title": "Other colleges and \"Skill India\" names",
+     "text": "Mails from another college's domain that praise IIT courses, or from companies that claim an NSDC or Skill India training is compulsory for every student. A \"mandatory for every student\" line repeated through the mail is a warning sign."
+    }
    ]
   },
   {
@@ -144,8 +176,9 @@
     },
     {
      "name": "Corizo",
-     "hosts": "Wipro, Deloitte, KPMG, Amazon, IBM, Goldman Sachs; NIT, VIT, BIT, SRM, DYPU",
+     "hosts": "Wipro, Deloitte, KPMG, Amazon, IBM, Goldman Sachs, Growww, Boat, Zomato, Credly, Flipkart, Dream 11, Nykaa; NIT, VIT, BIT, SRM, DYPU",
      "platforms": [
+      "Calls",
       "Emails",
       "Website",
       "LinkedIn"
@@ -244,6 +277,42 @@
       "Emails (incl. student emails)",
       "Website",
       "LinkedIn",
+      "Instagram"
+     ]
+    },
+    {
+     "name": "SkillOrbit",
+     "hosts": "IBM, Wipro, Microsoft, Apple, Adobe, Cisco, HCLTech, Accenture, Deloitte, TCS; also claims IIT Kharagpur",
+     "platforms": [
+      "Calls",
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Internshala",
+      "Unstop",
+      "Instagram"
+     ]
+    },
+    {
+     "name": "Wayeva Innovations",
+     "hosts": "",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Internshala",
+      "Unstop",
+      "Instagram"
+     ]
+    },
+    {
+     "name": "Univox Academy",
+     "hosts": "IBM, Wipro, Microsoft, Apple, Adobe, Cisco, HCLTech, Accenture, Deloitte, TCS, OpenAI, AWS, Zerodha, Google, Figma, Autodesk, Procter & Gamble, JPMorgan Chase, VISA, Texas Instruments, AMD, Bosch, Palo Alto Networks, Crowdstrike, Fortinet",
+     "platforms": [
+      "Emails",
+      "Website",
+      "LinkedIn",
+      "Facebook",
       "Instagram"
      ]
     }
