@@ -66,7 +66,7 @@
 
 <main class="wrap" id="main" tabindex="-1">
   <section class="mt-wrap">
-    <p class="mt-intro">Courses for the <b>{{TERM}}</b> term: progress, the next exam, and the end-term mark each grade needs. <a href="account.html">Sign in</a> to keep this on another device.</p>
+    <p class="mt-intro">Courses for the <b>{{TERM}}</b> term: progress, the next exam, and the end-term mark each grade needs. <span class="signin-hint"><a href="account.html">Sign in</a> to keep this on another device.</span></p>
 
     <details class="mt-pick" id="mt-pick">
       <summary id="mt-pick-sum">Choose your courses</summary>

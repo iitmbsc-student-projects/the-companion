@@ -66,7 +66,7 @@
 
 <main class="wrap" id="main" tabindex="-1">
   <section class="pl-wrap">
-    <p class="pl-intro">Set a letter grade for each course you have finished. Credits and CGPA update as you go. <a href="account.html">Sign in</a> to keep them on another device. Rules follow the <a href="{{SOURCE}}" target="_blank" rel="noopener">academics page</a>; check the handbook before an exit.</p>
+    <p class="pl-intro">Set a letter grade for each course you have finished. Credits and CGPA update as you go. <span class="signin-hint"><a href="account.html">Sign in</a> to keep them on another device.</span> Rules follow the <a href="{{SOURCE}}" target="_blank" rel="noopener">academics page</a>; check the handbook before an exit.</p>
     <div id="pl-root"></div>
   </section>
 </main>

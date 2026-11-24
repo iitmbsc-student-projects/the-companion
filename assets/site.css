@@ -822,7 +822,7 @@ body[data-page="calculator"] .ph-title{font-weight:700}
   font:600 12.5px 'IBM Plex Sans',sans-serif;text-decoration:none;transition:border-color .15s,background .15s}
 .acct-btn:hover{border-color:var(--accent)}
 .acct-btn.is-in{min-width:28px;padding:3px 9px;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em}
-.acct-wrap{max-width:720px;margin:0 auto}
+.acct-wrap{max-width:720px;margin:20px 0 0}
 .acct-card{margin:0 0 16px;padding:16px 18px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
 .acct-card p{margin:6px 0 10px}
 .acct-note{font-size:13px;color:var(--ink-2)}
