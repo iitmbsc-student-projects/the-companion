@@ -1,0 +1,17 @@
+{
+ "term": "Sep 2026",
+ "source": "https://study.iitm.ac.in/ds/academic_calendar.html",
+ "items": [
+  {"date": "2026-11-15", "title": "Quiz 1"},
+  {"date": "2026-11-21", "end": "2026-11-22", "title": "Programming quiz 1"},
+  {"date": "2026-11-23", "title": "Quiz 1 results published"},
+  {"date": "2026-11-26", "end": "2026-12-01", "title": "OPPE 1 results released"},
+  {"date": "2026-12-05", "title": "Quiz 2"},
+  {"date": "2026-12-13", "title": "Quiz 2 results published"},
+  {"date": "2026-12-19", "end": "2026-12-20", "title": "Programming quiz 2, days 1 and 2"},
+  {"date": "2027-01-02", "end": "2027-01-03", "title": "Programming quiz 2, days 3 and 4"},
+  {"date": "2027-01-07", "end": "2027-01-12", "title": "OPPE 2 results released"},
+  {"date": "2027-01-10", "title": "End term exam"},
+  {"date": "2027-01-18", "end": "2027-01-23", "title": "End term results published"}
+ ]
+}
