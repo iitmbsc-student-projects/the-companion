@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs2003p.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=19250950">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/theme.css?v=aa30fb9a">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -201,6 +201,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -524,9 +534,21 @@
         <button type="button" class="rs-go" id="rs-go"></button>
       </div>
       <a class="parent-link" href="cs2003.html">Main course: <b>CS2003 Modern Application Development I</b></a>
-
+      <section class="chapter" id="tips">
+        <h2><span class="num" aria-hidden="true">§ 1</span>Common problems</h2>
+        <div class="tips">
+          <details class="tip"><summary>Failed Level 1 viva. Is there a reattempt?</summary><p>Staff said this term that no reattempt is provided for the MAD I viva, so go in prepared. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220465" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>How do I plan Level 1 and Level 2 viva slots?</summary><p>Each booking window is short and the Level 1 result comes about a day after the viva. Book Level 1 early enough to leave a few days to book Level 2 before its window closes. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220454" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>I cannot make my booked slot. Can it be rescheduled?</summary><p>Plan around the slot you booked. For a serious reason, staff asked students to write to appdev-project-query@study.iitm.ac.in. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220324" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Plagiarism check shows pending and I cannot book a slot.</summary><p>Staff reply in the project Gspace and by mail. Check both before asking again. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220251" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>I got confusing validation emails after submitting.</summary><p>Staff said that if you can download your submission from the portal and run it, it is fine. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219955" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Can the deadline be extended?</summary><p>Do not count on it. The portal accepted submissions until 6 pm on the last day, and staff pointed to the doubt-clearing session recording in the Gspace. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220023" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>I did not pass theory earlier. What is my deadline?</summary><p>Students who have not passed in a previous term get 10 December. The portal may still show 17 November until it updates, so tell the staff if it does not change. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219184" target="_blank" rel="noopener">Discourse thread</a></p></details>
+        </div>
+        <p class="tbd-note" style="margin-top:8px">From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.</p>
+      </section>
       <section class="chapter" id="resources">
-        <h2><span class="num" aria-hidden="true">§ 1</span>Resources</h2>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Resources</h2>
 
         <div class="res-group">
           <h3 class="res-group-title">Project help<span class="res-count">3</span></h3>
@@ -598,7 +620,7 @@
       <ul class="link-list">
           <li>The objective of this project is to provide hands-on experience in developing a web application from scratch by integrating technologies covered in the course.</li><li>Students apply their knowledge to build a functional web application incorporating secure authentication, efficient data management, and API integration.</li><li>The project reinforces key concepts, enhances problem-solving skills, and improves proficiency in web application development.</li><li>The viva consists of two levels, with the final round conducted by industry experts and contributing significantly to the final grade.</li>
       </ul>
-      <p><a href="https://study.iitm.ac.in/ds/course_pages/BSCS2003P.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
+      <p><a href="https://study.iitm.ac.in/ds/course_pages/BSCS2003P.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal</a></p>
     <ul class="link-list" style="margin-top:14px"><li><a href="https://thejeshgn.com/projects/modern-application-development-1/" target="_blank" rel="noopener">Screencasts by Thejesh GN</a></li></ul>
         </div>
       </section>
@@ -632,7 +654,7 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
     <div class="theme-foot" id="theme-foot"></div>
   </div>
@@ -641,11 +663,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "CS2003P", weeks: [{"w":"Sep 2026 term","items":[{"n":"1","t":"Orientation","v":"hL7ictgd3Ag","s":null},{"n":"2","t":"Session 2","v":"RvbucfOZg6g","s":null},{"n":"3","t":"Session 3","v":"TU41UVIm9Z8","s":null},{"n":"4","t":"Session 4","v":"kuOpCQ-78pg","s":null},{"n":"5","t":"Session 5","v":"4qvRZejwljI","s":null},{"n":"6","t":"Session 6","v":"l_-zaqyx0Qo","s":null}]},{"w":"May 2026 term","items":[{"n":"1","t":"Orientation","v":"owB94EVoWL8","s":null},{"n":"2","t":"Session 2","v":"bDrLmNgpHWg","s":null},{"n":"3","t":"Session 3","v":"xAefZoKQ_8c","s":null},{"n":"4","t":"Session 4","v":"F05tMZGqO0Y","s":null},{"n":"5","t":"Session 5","v":"V5G09tNORvU","s":null},{"n":"6","t":"Session 6","v":"WqfzrX7aBxU","s":null},{"n":"7","t":"Session 7","v":"U0NLhXnIGME","s":null},{"n":"8","t":"Session 8","v":"BebO7tulGas","s":null}]},{"w":"Jan 2026 term","items":[{"n":"1","t":"Orientation","v":"qTTeM9kaug4","s":null},{"n":"2","t":"Session 2","v":"63pmyv2AsEw","s":null},{"n":"3","t":"Session 3","v":"Ix5AtsRm6qg","s":null},{"n":"4","t":"Session 4","v":"1S_ig4KXNJY","s":null},{"n":"5","t":"Session 5","v":"84xsxeM76g0","s":null},{"n":"6","t":"Session 6","v":"01vHRtE2NSE","s":null}]},{"w":"Sep 2025 term","items":[{"n":"1","t":"Orientation","v":"_xk2sWQ55H4","s":null},{"n":"2","t":"Session 2","v":"fHu2DDHfHfA","s":null},{"n":"3","t":"Session 3","v":"Zig2FgFfbhk","s":null},{"n":"4","t":"Session 4","v":"-3yUnZ6WIlY","s":null},{"n":"5","t":"Session 5","v":"r6qnFaKNP7w","s":null},{"n":"6","t":"Session 6","v":"MQAElrgR_f0","s":null}]},{"w":"May 2025 term","items":[{"n":"1","t":"Orientation","v":"eFrjLFG7tOs","s":null},{"n":"2","t":"Session 2","v":"PFboiialkq8","s":null},{"n":"3","t":"Session 3","v":"7F6FMIznd0s","s":null},{"n":"4","t":"Session 4","v":"ussv0OE4vGc","s":null},{"n":"5","t":"Session 5","v":"VSds49es724","s":null},{"n":"6","t":"Session 6","v":"MuuYDtIFJz8","s":null}]},{"w":"Jan 2025 term","items":[{"n":"1","t":"Orientation","v":"K46nyE6qpl4","s":null},{"n":"2","t":"Session 2","v":"3I1QNJnFqO8","s":null},{"n":"3","t":"Session 3","v":"a8O7dOyOAo0","s":null},{"n":"4","t":"Session 4","v":"18yOfjyhyZ8","s":null},{"n":"5","t":"Session 5","v":"IZ2dSLciYo8","s":null},{"n":"6","t":"Session 6","v":"XA0nf9Yying","s":null},{"n":"7","t":"Session 7","v":"FaN6eXYsGyU","s":null},{"n":"8","t":"Session 8","v":"2ZVGr2LF3Go","s":null}]},{"w":"Sep 2024 term","items":[{"n":"1","t":"Session 1","v":"Nb7MdqKYulg","s":null},{"n":"2","t":"Session 2","v":"fTpz9X1Pydc","s":null},{"n":"3","t":"Session 3","v":"Hb-sqmAtYTQ","s":null},{"n":"4","t":"Session 4","v":"brsvSq-WqLE","s":null},{"n":"5","t":"Session 5","v":"DgnzWQjTRhQ","s":null},{"n":"6","t":"Session 6","v":"SdJQwGdS6yI","s":null},{"n":"7","t":"Session 7","v":"aRv9qSmn1r0","s":null}]},{"w":"May 2024 term","items":[{"n":"1","t":"Mentorship and bootcamp","v":"4T2N9sghgys","s":null},{"n":"2","t":"Session 2: Introduction","v":"u4EWLUgpAGU","s":null},{"n":"3","t":"Offline bootcamp orientation","v":"sVNECoDmj8g","s":null},{"n":"4","t":"Session 4","v":"yb1FKIcEMh0","s":null},{"n":"5","t":"Session 5","v":"qI4UT2TcIHI","s":null},{"n":"6","t":"Session 6","v":"pj9aaZZZ9zQ","s":null},{"n":"7","t":"Session 7","v":"1Ln7ms-t1m0","s":null},{"n":"8","t":"Session 8","v":"EHdojNtqffo","s":null},{"n":"9","t":"Session 9","v":"zbrIoYBTkjk","s":null}]},{"w":"Jan 2024 term","items":[{"n":"1","t":"Orientation","v":"k9rJGxyr1Ps","s":null},{"n":"2","t":"Mentorship and bootcamp","v":"GQHCVQz3j3M","s":null},{"n":"3","t":"Session 3","v":"1JwQ1DXTlJE","s":null},{"n":"4","t":"Session 4","v":"rX-R3s7Q_Qw","s":null},{"n":"5","t":"Session 5","v":"f5pW-fM0xjM","s":null},{"n":"6","t":"Session 6","v":"5q8JAO3JVO0","s":null},{"n":"7","t":"Session 7","v":"8a8D-1hZcMw","s":null},{"n":"8","t":"Session 8","v":"p385ezZgL5o","s":null},{"n":"9","t":"Session 9","v":"eL7nhSRAj94","s":null},{"n":"10","t":"Session 10","v":"ly9Q0RvemG4","s":null},{"n":"11","t":"Session 11","v":"7ALQKRF59W4","s":null}]},{"w":"Jan 2023 term","items":[{"n":"1","t":"Session 1","v":"BbMysuTLEw0","s":null},{"n":"2","t":"Session 2","v":"2IgrSv1oSwc","s":null}]}], item: "session"};</script>
-<script src="../assets/course.js?v=88272958"></script>
-<script src="../assets/theme.js?v=f608d0e2"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
-<script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
+<script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

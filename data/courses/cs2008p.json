@@ -9,7 +9,7 @@
  "instructor": "Prof. Ashish Tendulkar",
  "term": "Every term",
  "prereq": "CS2008",
- "syllabus_body_html": "<p>The purpose of a machine learning project is to apply learned ML models to real-world data, develop effective predictive models, uncover patterns, and generate insights to answer business questions, analyse trends, and solve problems.</p>\n      <p><b>Co-requisite:</b> BSCS2008:  Machine Learning Practice</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Ashish Tendulkar, Google Research (Visiting Asst. Professor, Department of Computer Science and Engineering, IIT Madras)</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The MLP project is conducted on the Kaggle platform.</li><li>Classical machine learning project (regression or classification); Implementation on Kaggle notebooks; Structured workflow including EDA, feature engineering, model training, evaluation, and testing.</li><li>The project runs for 12-15  weeks and is structured into multiple milestones that break the ML lifecycle into manageable steps, ensuring steady and consistent progress.</li><li>The viva voce is conducted after acceptance of the final submission and consists of two rounds, L1 and L2. The L2 round is conducted by an industry expert and contributes to the final project grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2008P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "syllabus_body_html": "<p>The purpose of a machine learning project is to apply learned ML models to real-world data, develop effective predictive models, uncover patterns, and generate insights to answer business questions, analyse trends, and solve problems.</p>\n      <p><b>Co-requisite:</b> BSCS2008:  Machine Learning Practice</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Ashish Tendulkar, Google Research (Visiting Asst. Professor, Department of Computer Science and Engineering, IIT Madras)</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>The MLP project is conducted on the Kaggle platform.</li><li>Classical machine learning project (regression or classification); Implementation on Kaggle notebooks; Structured workflow including EDA, feature engineering, model training, evaluation, and testing.</li><li>The project runs for 12-15  weeks and is structured into multiple milestones that break the ML lifecycle into manageable steps, ensuring steady and consistent progress.</li><li>The viva voce is conducted after acceptance of the final submission and consists of two rounds, L1 and L2. The L2 round is conducted by an industry expert and contributes to the final project grade.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSCS2008P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal</a></p>",
  "weeks_data": [
   {
    "w": "Sep 2026 term",
@@ -415,6 +415,29 @@
    "url": "https://www.youtube.com/@MachineLearningPractice/playlists",
    "group": "Recordings",
    "desc": "Course and project live sessions, by term."
+  }
+ ],
+ "tips_note": "From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.",
+ "tips": [
+  {
+   "q": "The dashboard says I am not eligible even though I passed the cutoff.",
+   "a": "Only a submission made from the registered notebook counts, and staff have repeated this several times. Make your final submissions from the notebook you registered.",
+   "t": 220377
+  },
+  {
+   "q": "Do I submit anything on the portal for the viva?",
+   "a": "No. If the Data Studio dashboard shows you as eligible, you can book a slot, and nothing else is needed.",
+   "t": 220362
+  },
+  {
+   "q": "I booked a slot. What happens next?",
+   "a": "The viva is held in the slot you booked. The viva team shares the meeting details a day before.",
+   "t": 220248
+  },
+  {
+   "q": "I was absent or ill in Batch 1.",
+   "a": "Absence in Batch 1 earns a reattempt. The viva team sends a form to book a new slot.",
+   "t": 220404
   }
  ]
 }

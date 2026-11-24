@@ -9,7 +9,7 @@
  "instructor": "Prof. Ashwin J. Baliga, Dr. Aaditya Chandel, Prof. G Venkatesh &amp; Dr. Milind Gandhe",
  "term": "Every term",
  "prereq": "MS2001",
- "syllabus_body_html": "<p>The BDM Capstone Project is an independent research project in which students engage with a business - either from organized sectors (e.g., manufacturing, IT, automobile) or unorganized sectors (e.g., small retail or vendors) - to identify real-world problems. Students collect and clean primary data, analyze it, and generate actionable insights to support decision-making.</p>\n      <p><b>Co-requisite:</b> BSMS2001:  Business Data Management</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Ashwin J. Baliga, IESEG School of Management</li><li>Dr. Aaditya Chandel, Research Scientist, IIT Madras</li><li>Prof. G Venkatesh, Director, School of Technology, Dhirubhai Ambani University</li><li>Dr. Milind Gandhe, Machine Intelligence and Robotics (MINRO) COE, IIIT Bangalore</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>In the proposal stage, students are expected to provide details about the organization and its background, clearly define the problem, outline its context, propose a justified problem-solving approach, specify timelines for completion, and describe the expected outcomes of the project.</li><li>In the midterm submission, students are required to include a short video interaction with the business owner or manager, supporting evidence such as photographs and field notes, details on metadata and descriptive statistics, and a preliminary analysis with interpretation of results and findings.</li><li>The final report is a comprehensive document that provides an in-depth account of the entire project, from initiation to completion.</li><li>The viva voce is conducted after acceptance of the final submission, for which the student must prepare a presentation of no more than 10 slides.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSMS2001P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal →</a></p>",
+ "syllabus_body_html": "<p>The BDM Capstone Project is an independent research project in which students engage with a business - either from organized sectors (e.g., manufacturing, IT, automobile) or unorganized sectors (e.g., small retail or vendors) - to identify real-world problems. Students collect and clean primary data, analyze it, and generate actionable insights to support decision-making.</p>\n      <p><b>Co-requisite:</b> BSMS2001:  Business Data Management</p>\n      <p><b>Faculty:</b></p>\n      <ul class=\"link-list\">\n          <li>Prof. Ashwin J. Baliga, IESEG School of Management</li><li>Dr. Aaditya Chandel, Research Scientist, IIT Madras</li><li>Prof. G Venkatesh, Director, School of Technology, Dhirubhai Ambani University</li><li>Dr. Milind Gandhe, Machine Intelligence and Robotics (MINRO) COE, IIIT Bangalore</li>\n      </ul>\n      <p><b>How the project runs:</b></p>\n      <ul class=\"link-list\">\n          <li>In the proposal stage, students are expected to provide details about the organization and its background, clearly define the problem, outline its context, propose a justified problem-solving approach, specify timelines for completion, and describe the expected outcomes of the project.</li><li>In the midterm submission, students are required to include a short video interaction with the business owner or manager, supporting evidence such as photographs and field notes, details on metadata and descriptive statistics, and a preliminary analysis with interpretation of results and findings.</li><li>The final report is a comprehensive document that provides an in-depth account of the entire project, from initiation to completion.</li><li>The viva voce is conducted after acceptance of the final submission, for which the student must prepare a presentation of no more than 10 slides.</li>\n      </ul>\n      <p><a href=\"https://study.iitm.ac.in/ds/course_pages/BSMS2001P.html\" target=\"_blank\" rel=\"noopener\">Official syllabus on the IITM study portal</a></p>",
  "weeks_data": [
   {
    "w": "Sep 2026 term",
@@ -353,6 +353,49 @@
    "url": "https://www.youtube.com/playlist?list=PLNmlFfYWEPbQivebUOOlYudty1PIqlXHP",
    "group": "Recordings",
    "desc": "Orientations and Sunday sessions on Dr. Aaditya Chandel's channel."
+  }
+ ],
+ "tips_note": "From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.",
+ "tips": [
+  {
+   "q": "My report was rejected or put on hold.",
+   "a": "If rejected, resubmit in the next cycle only. If put on hold, resubmit on the date given in the email. Address every point, and justify any you disagree with.",
+   "t": 219855
+  },
+  {
+   "q": "There is no extension if I miss a cycle.",
+   "a": "All timelines are announced well ahead, and a missed report goes to the next cycle. The final report and viva cycle for this term is in December.",
+   "t": 219198
+  },
+  {
+   "q": "Where are the sample reports?",
+   "a": "The portal has the \"Capstone Chronicles\" PDF with five sample reports. Use it with the rubrics and your TA feedback. The timelines are on page 3 of the primary rubrics.",
+   "t": 219728
+  },
+  {
+   "q": "The business owner will not record a video, or stopped replying.",
+   "a": "A report without the owner video is rejected. Raise a ticket to change to the secondary route, or to reset the portal if you stay on primary.",
+   "t": 219056
+  },
+  {
+   "q": "Can I add synthetic data?",
+   "a": "No. It is flagged for plagiarism. Use only the data you have, from any year.",
+   "t": 219069
+  },
+  {
+   "q": "Can I share my proposal or Drive link on Discourse?",
+   "a": "Please do not. Public links raise the chance of copying and plagiarism flags. Share your Drive folder with the TA when they ask.",
+   "t": 219451
+  },
+  {
+   "q": "Can I use Google Sheets and Google Forms?",
+   "a": "Yes. Share all sheets so they can be cross-checked, and a Form from your student ID is fine.",
+   "t": 218646
+  },
+  {
+   "q": "Portal is stuck or I cannot access it.",
+   "a": "Write to BS operations. Staff say only they can fix portal access.",
+   "t": 218063
   }
  ]
 }

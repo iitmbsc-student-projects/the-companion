@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/da5013.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=19250950">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/theme.css?v=aa30fb9a">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -201,6 +201,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -560,7 +570,6 @@
           </ul>
         </div>
       </section>
-
       <section class="chapter" id="resources">
         <h2><span class="num" aria-hidden="true">§ 3</span>Resources</h2>
 
@@ -673,7 +682,7 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
     <div class="theme-foot" id="theme-foot"></div>
   </div>
@@ -682,11 +691,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "DA5013", weeks: [{"w":"Week 1","items":[{"n":"1","t":"Intro to the course and recap of NN Models","v":"Z0RRq4ripbA","s":null},{"n":"2","t":"Why Hugging Face? and road Map to the course","v":"b056aoGbm94","s":null},{"n":"3","t":"HF: datasets module, loading datasets","v":"RVL6E2PDoNc","s":null},{"n":"4","t":"Accessing samples","v":"5hT6OPZLHko","s":null},{"n":"5","t":"Common Methods","v":"lX-nSWppOD4","s":null}]},{"w":"Week 2","items":[{"n":"6","t":"Tokenization","v":"M5UPDAaISHg","s":null},{"n":"7","t":"Byte Pair Encoding","v":null,"s":null},{"n":"8","t":"Word-Piece tokenizer","v":null,"s":null},{"n":"9","t":"Sentence-Piece Tokenizer","v":null,"s":null},{"n":"10","t":"HF Tokenizer","v":"qzSxuqO1Q28","s":null},{"n":"11","t":"Building adn Training a Tokenizer","v":"4VCUynKyFXM","s":null},{"n":"12","t":"Encdode and Decoder","v":"PeLUZUIRr7I","s":null},{"n":"13","t":"Wrap it with PreTrainedTokenizer","v":"2L5ec5o2PuM","s":null}]},{"w":"Week 3","items":[{"n":"14","t":"Introduction to LLMs","v":"FNl8E2wJS-s","s":null},{"n":"15","t":"Causal Language Modelling","v":null,"s":null},{"n":"16","t":"Generative Pre-Trained Transformer","v":null,"s":null},{"n":"17","t":"HF Transformers","v":"J4Tm6AbGnqQ","s":null},{"n":"18","t":"Training GPT-2: Hands-on","v":"o2pEmVjat9c","s":null}]},{"w":"Week 4","items":[{"n":"19","t":"Task specific fine tuning and its limitations","v":"cwSfU3g-9zs","s":null},{"n":"20","t":"Emerging abilities","v":"7v_gpajRRWc","s":null},{"n":"21","t":"Instruction and Preference tuning","v":"uhfJDLIBaNM","s":null},{"n":"22","t":"Continual Pre-training Demo: Introduction","v":"PBb1FLK1VJo","s":null},{"n":"23","t":"Continual Pre-training Demo: PEFT: LoRA","v":"sE7Fvyh4WYs","s":null},{"n":"24","t":"Continual Pre-training Demo: PEFT + Quantization","v":"Wp_TO8b96lU","s":null}]},{"w":"Week 5","items":[{"n":"25","t":"Introduction to Speech","v":"7qcO0PTyzjE","s":null},{"n":"26","t":"Language Identification - Intro","v":"zc0CvvuhKfo","s":null},{"n":"27","t":"Language Identification - Demo","v":"nm8gKPBnp9k","s":null}]},{"w":"Week 6","items":[{"n":"28","t":"Speaker Diarisation - Intro","v":"ue4YbBPkCiM","s":null},{"n":"29","t":"Speaker Identification","v":"rUVgZ4ua_zg","s":null},{"n":"30","t":"Clustering techniques","v":"_xM1jvleK5k","s":null},{"n":"31","t":"Speaker Diarisation, ASR, and STS - Demo","v":"EUa6UULOKT0","s":null}]},{"w":"Week 7","items":[{"n":"32","t":"Introduction to ASR and Handwriting Recognition","v":"dzbHcaEYxww","s":null},{"n":"33","t":"ASR Workflow and Components","v":"8X1nlJdG6L8","s":null},{"n":"34","t":"Hands-On: End-to-End ASR Demonstration","v":"-zZL4IC2ry0","s":null}]},{"w":"Week 8","items":[{"n":"35","t":"Recap of the Previous discussion","v":"yZPi-MZMX6Y","s":null},{"n":"36","t":"Introduction to TTS","v":"cr0Jq-4MYVc","s":null},{"n":"37","t":"History of TTS","v":"TFyEbLUnz7k","s":null},{"n":"38","t":"Analogus of ASR and TTS","v":"wQNweNdkjVM","s":null},{"n":"39","t":"Phoneme to text","v":"Rzc2Oh4mMYM","s":null},{"n":"40","t":"Demo for text to speech","v":"FfR5vbhivh0","s":null},{"n":"41","t":"Fine tuning TTS model demo","v":"zkcem8oNQpg","s":null},{"n":"42","t":"TTS demo from NLTM","v":"cf8IdNGWoHs","s":null}]},{"w":"Week 9","items":[{"n":"43","t":"Introduction to Computer Vision","v":"aKtiClqAXdA","s":null},{"n":"44","t":"Deep Learning for Computer Vision","v":"QHLNsuU9l-Q","s":null},{"n":"45","t":"Convolutional Neural Networks","v":"7-kwqxPRoHw","s":null},{"n":"46","t":"Introduction to Object Recognition","v":"Fsn32yAIXqw","s":null},{"n":"47","t":"Case Study: AlexNet \u0026 VGGNet","v":"cFmPJumZ_-M","s":null},{"n":"48","t":"Case Study: GoogleNet \u0026 ResNet","v":"9iXtCtuA-zA","s":null},{"n":"49","t":"Image Classification- Preprocessing and training","v":"pG0w9erUfvI","s":null},{"n":"50","t":"Image Classification- Evaluating a model","v":"db7i-h7Bca0","s":null},{"n":"51","t":"Vision Kaggle Contest-1","v":"DM71qVUpr6c","s":null}]},{"w":"Week 10","items":[{"n":"52","t":"Object Detection: Introduction","v":"aEAN55ld-io","s":null},{"n":"53","t":"Fast RCNN and Faster RCNN","v":"26-WEHXqZps","s":null},{"n":"54","t":"YOLO: You Only Look Once","v":"6O3c8jgN2Uc","s":null},{"n":"55","t":"Object Detection Metrics and Experimental Results","v":"5mcK76zqwOk","s":null},{"n":"56","t":"Tutorial: Faster RCNN","v":"o8qH3509PfI","s":null},{"n":"57","t":"Tutorial: YOLO","v":"bzM4JmMyZfA","s":null},{"n":"58","t":"Vision Kaggle Contest-2","v":"j-XKpOBTekk","s":null}]},{"w":"Week 11","items":[{"n":"59","t":"Depth Estimation: Introduction and Depth from Stereo","v":"xk3MP4z55RM","s":null},{"n":"60","t":"Monocular Depth Estimation: Multi-scale Deep Network","v":"ThZ_KnzqZZQ","s":null},{"n":"61","t":"Monocular Depth Estimation: UNET","v":"P7wUw6gCYzQ","s":null},{"n":"62","t":"Monocular Depth Estimation: Left-Right Inconsistency","v":"d-p9iQNo2JU","s":null},{"n":"63","t":"Introduction to UNET Model","v":"hQgYKKuUNjY","s":null},{"n":"64","t":"UNET Model Implementation","v":"hwdNT7e-W4M","s":null},{"n":"65","t":"Vision Kaggle Contest-3","v":"shMq_Svv2Hg","s":null}]},{"w":"Week 12","items":[{"n":"66","t":"Introduction to Image Denoising and MPRNet","v":"bD9kCHyWsIc","s":null},{"n":"67","t":"Super Resolution Introduction","v":"CUX_3GKXKYE","s":null},{"n":"68","t":"Super Resolution: GAN (SRGAN)","v":"6oCZF9YsnFA","s":null},{"n":"69","t":"Image Deblurring: Introduction and LAKDNet","v":"Y0598h8MV6Y","s":null},{"n":"70","t":"Image Deblurring","v":"uXyIea5PVj8","s":null},{"n":"71","t":"Super Resolution","v":"CNr9qJTKk1Q","s":null},{"n":"72","t":"Vision Kaggle Contest-4","v":"o8efEAwM3MM","s":null}]}], item: "lecture"};</script>
-<script src="../assets/course.js?v=88272958"></script>
-<script src="../assets/theme.js?v=f608d0e2"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
-<script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
+<script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

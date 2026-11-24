@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs4032.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=19250950">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/theme.css?v=aa30fb9a">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -201,6 +201,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -481,7 +491,7 @@
         <span class="sc-bar"><i id="sc-fill"></i></span>
         <span class="sc-n" id="sc-n"></span>
       </button>
-      <div class="sb-tools" id="sb-tools" hidden>
+      <div class="sb-tools" id="sb-tools">
         <input type="search" id="lec-search" placeholder="Find a lecture" aria-label="Find a lecture" autocomplete="off">
         <div class="sb-row">
           <button type="button" class="sb-chip" id="f-unwatched" aria-pressed="false" title="Show only the lectures you have not watched">Unwatched</button>
@@ -492,7 +502,7 @@
       </div>
     </div>
 
-    <div class="sb-scroll accordion accordion-flush" id="lecture-nav" style="display:none"></div>
+    <div class="sb-scroll accordion accordion-flush" id="lecture-nav"></div>
     <p class="sb-empty" id="sb-empty" hidden>No lectures match.</p>
 
     <div class="sb-bottom"><div id="theme-slot" class="sidebar-theme" data-collapsible="sidebar"></div></div>
@@ -560,7 +570,6 @@
           </ul>
         </div>
       </section>
-
       <section class="chapter" id="resources">
         <h2><span class="num" aria-hidden="true">§ 3</span>Resources</h2>
 
@@ -656,7 +665,7 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
     <div class="theme-foot" id="theme-foot"></div>
   </div>
@@ -664,12 +673,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
-<script>window.COURSE = {code: "CS4032", weeks: [], item: "lecture"};</script>
-<script src="../assets/course.js?v=88272958"></script>
-<script src="../assets/theme.js?v=f608d0e2"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
-<script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script>window.COURSE = {code: "CS4032", weeks: [{"w":"Lectures","items":[{"n":"1","t":"Introduction to Compilers","v":"plHDNr3gbNQ","s":null},{"n":"2","t":"Phases of a Compiler (Front End)","v":"9yjkJ8BC0r0","s":null},{"n":"3","t":"Phases of a Compiler (Back End)","v":"0E6NdsmSVfw","s":null},{"n":"4","t":"Compilation Environment, Build Pipeline and Compiler Cousins","v":"FX3nDYiHiMY","s":null},{"n":"5","t":"Runtime Environment and Function Call","v":"d4ANUybHk_E","s":null},{"n":"6","t":"Lexical Analysis","v":"LnXRozAC-2s","s":null},{"n":"7","t":"Token Specification by Regular Expression","v":"O2tR1HecL9Q","s":null},{"n":"8","t":"Token Recognition by Transition Diagram","v":"Vj3YVvPsMgg","s":null},{"n":"9","t":"Finite Automata: DFA and NFA","v":"z6Pra_Cmvbg","s":null},{"n":"10","t":"Lex: The Lexical Analyzer Generator","v":"ERQXSX--Pes","s":null},{"n":"11","t":"Formal Languages 1","v":"G-TAvwjaSao","s":null},{"n":"12","t":"Formal Languages 2","v":"T0pTz_gsrJU","s":null},{"n":"13","t":"Recursive Descent Parser","v":"QK3ElMaEbUg","s":null},{"n":"14","t":"LL(1) Parser","v":"D-Ib7Q-2mlc","s":null},{"n":"15","t":"Operator Precedence Parser","v":"rMfADCYT3Kw","s":null},{"n":"16","t":"SR Parsers","v":"nRlaWo-9yNU","s":null},{"n":"17","t":"LR Theory","v":"k27QtuALtrM","s":null},{"n":"18","t":"SLR Parser","v":"i5T9rgOwIJA","s":null},{"n":"19","t":"LR(1) and LALR(1) Parsers","v":"g2AqzW9rio4","s":null},{"n":"20","t":"Bison","v":"umTzZWoWTbE","s":null},{"n":"21","t":"Syntax Directed Translation","v":"Qf4esbYGx5o","s":null},{"n":"22","t":"S-Attributed and L-Attributed Definitions","v":"bQ9C3WapWS8","s":null},{"n":"23","t":"Type Checking in Compiler","v":"Aq900TZZWkE","s":null},{"n":"24","t":"Type Systems and Type Checkers","v":"sRPaQIlk890","s":null},{"n":"25","t":"Desktop Calculator Using Flex and Bison","v":"WMETsu23HrE","s":null},{"n":"26","t":"Intermediate Representation (IR)","v":"8WtlnEYC-pg","s":null},{"n":"27","t":"Translating Arithmetic Expressions","v":"GbMiriVPCrE","s":null},{"n":"28","t":"Translating Arrays in Expressions","v":"TfRBsCzwtDc","s":null},{"n":"29","t":"Translating Variable Declarations","v":"8uFMuZjTy3o","s":null},{"n":"30","t":"Translating Boolean Expressions","v":"GKuMeK6rS5c","s":null},{"n":"31","t":"Translating Branch Control","v":"-K-B6WpVDhY","s":null},{"n":"32","t":"Translating Loop Control","v":"oBL_MlcqyFk","s":null},{"n":"33","t":"Translating Functions","v":"ahMilCK1JnY","s":null},{"n":"34","t":"Lexical Scope Management: Basic Notions","v":"ntM0b_GQMu0","s":null},{"n":"35","t":"Lexical Scope Management: Algorithms","v":"pmmoKRnPb8Q","s":null},{"n":"36","t":"NanoC Specification, Part 1: Language and Lexical Grammar","v":"XkOdWz9S_DY","s":null},{"n":"37","t":"NanoC Specification, Part 2: Syntax and Programming Environment","v":"cVnOSuhPvYU","s":null},{"n":"38","t":"MIC Optimization Overview","v":"43wI9cUpvTU","s":null},{"n":"39","t":"MIC Optimization CFG","v":"T2psVvlj1VI","s":null}]}], item: "lecture"};</script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
+<script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>

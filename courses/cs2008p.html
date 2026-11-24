@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs2008p.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=19250950">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/theme.css?v=aa30fb9a">
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -201,6 +201,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -524,9 +534,18 @@
         <button type="button" class="rs-go" id="rs-go"></button>
       </div>
       <a class="parent-link" href="cs2008.html">Main course: <b>CS2008 Machine Learning Practice</b></a>
-
+      <section class="chapter" id="tips">
+        <h2><span class="num" aria-hidden="true">§ 1</span>Common problems</h2>
+        <div class="tips">
+          <details class="tip"><summary>The dashboard says I am not eligible even though I passed the cutoff.</summary><p>Only a submission made from the registered notebook counts, and staff have repeated this several times. Make your final submissions from the notebook you registered. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220377" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Do I submit anything on the portal for the viva?</summary><p>No. If the Data Studio dashboard shows you as eligible, you can book a slot, and nothing else is needed. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220362" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>I booked a slot. What happens next?</summary><p>The viva is held in the slot you booked. The viva team shares the meeting details a day before. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220248" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>I was absent or ill in Batch 1.</summary><p>Absence in Batch 1 earns a reattempt. The viva team sends a form to book a new slot. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/220404" target="_blank" rel="noopener">Discourse thread</a></p></details>
+        </div>
+        <p class="tbd-note" style="margin-top:8px">From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.</p>
+      </section>
       <section class="chapter" id="resources">
-        <h2><span class="num" aria-hidden="true">§ 1</span>Resources</h2>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Resources</h2>
 
         <div class="res-group">
           <h3 class="res-group-title">Project help<span class="res-count">1</span></h3>
@@ -592,7 +611,7 @@
       <ul class="link-list">
           <li>The MLP project is conducted on the Kaggle platform.</li><li>Classical machine learning project (regression or classification); Implementation on Kaggle notebooks; Structured workflow including EDA, feature engineering, model training, evaluation, and testing.</li><li>The project runs for 12-15  weeks and is structured into multiple milestones that break the ML lifecycle into manageable steps, ensuring steady and consistent progress.</li><li>The viva voce is conducted after acceptance of the final submission and consists of two rounds, L1 and L2. The L2 round is conducted by an industry expert and contributes to the final project grade.</li>
       </ul>
-      <p><a href="https://study.iitm.ac.in/ds/course_pages/BSCS2008P.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal →</a></p>
+      <p><a href="https://study.iitm.ac.in/ds/course_pages/BSCS2008P.html" target="_blank" rel="noopener">Official syllabus on the IITM study portal</a></p>
         </div>
       </section>
 
@@ -625,7 +644,7 @@
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
     <div class="theme-foot" id="theme-foot"></div>
   </div>
@@ -634,11 +653,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/term-syllabus.js?v=ae229617"></script>
 <script>window.COURSE = {code: "CS2008P", weeks: [{"w":"Sep 2026 term","items":[{"n":"1","t":"Orientation","v":"DouuXyXBI5k","s":null},{"n":"2","t":"Viva orientation","v":"O8YCSpEL-t0","s":null}]},{"w":"May 2026 term","items":[{"n":"1","t":"Orientation","v":"njgjHkHr6pw","s":null},{"n":"2","t":"Viva briefing","v":"WyztGhNsiUc","s":null}]},{"w":"Jan 2026 term","items":[{"n":"1","t":"Orientation","v":"LSAKxJbOPSM","s":null},{"n":"2","t":"Kaggle assignment intro","v":"f8qO23AKTgk","s":null}]},{"w":"Sep 2025 term","items":[{"n":"1","t":"Getting started with Kaggle","v":"qTRsE4SR1z0","s":null},{"n":"2","t":"Orientation","v":"pub4OSL_z5U","s":null},{"n":"3","t":"Session 3","v":"Tlw-LwubViQ","s":null},{"n":"4","t":"Kaggle assignment intro","v":"0QdNYxoNzGI","s":null}]},{"w":"May 2025 term","items":[{"n":"1","t":"Orientation","v":"ugatJgYAlC0","s":null},{"n":"2","t":"Session 2","v":"GVMRU_j3k5A","s":null},{"n":"3","t":"Session 3","v":"wCXCbaFHjWY","s":null},{"n":"4","t":"Session 4","v":"cXQtnCagmeY","s":null},{"n":"5","t":"Kaggle assignment intro","v":"OYXVNKLyS8M","s":null},{"n":"6","t":"Session 6","v":"kMM0RN5IiKY","s":null}]},{"w":"Jan 2025 term","items":[{"n":"1","t":"Orientation","v":"1c3IrH3hNaM","s":null},{"n":"2","t":"Session 2","v":"uzsh4ncp7hk","s":null},{"n":"3","t":"Session 3","v":"QSe9XssKF8g","s":null},{"n":"4","t":"Intro to Kaggle","v":"HyXTVPIMgeE","s":null},{"n":"5","t":"Session 5","v":"HqOIUbQxU2o","s":null}]},{"w":"Sep 2024 term","items":[{"n":"1","t":"Orientation","v":"RloHwRdFi2U","s":null},{"n":"2","t":"Session 2","v":"E64IAqYgvdQ","s":null}]},{"w":"May 2024 term","items":[{"n":"1","t":"Orientation","v":"MX2o-uc6d-U","s":null},{"n":"2","t":"Session 2","v":"-pLfBEyLk9Q","s":null},{"n":"3","t":"Session 3","v":"Swzu1CnU42I","s":null}]},{"w":"Jan 2024 term","items":[{"n":"1","t":"Orientation","v":"5b1A5El3XO8","s":null},{"n":"2","t":"Working with text data","v":"_l2VDS5J1mI","s":null},{"n":"3","t":"Session 3","v":"osrRMwQUPyQ","s":null},{"n":"4","t":"Session 4","v":"RbwTp2tZYcA","s":null},{"n":"5","t":"Session 5","v":"CmCWxQkJd30","s":null}]},{"w":"Sep 2023 term","items":[{"n":"1","t":"Orientation","v":"_MBusfYCfts","s":null},{"n":"2","t":"Session 2","v":"-_KCgijnXHU","s":null},{"n":"3","t":"Session 3","v":"becbaKzcMGE","s":null},{"n":"4","t":"Session 4","v":"d8ig-IW5uQ0","s":null},{"n":"5","t":"Session 5","v":"M5gf95eRbog","s":null}]},{"w":"May 2023 term","items":[{"n":"1","t":"Session 1","v":"MKaMsHlak88","s":null},{"n":"2","t":"Session 2","v":"0OTMIokZ-Vk","s":null},{"n":"3","t":"Session 3","v":"t8xUkIqObJM","s":null},{"n":"4","t":"Session 4","v":"UGkQbf7ICEw","s":null},{"n":"5","t":"Session 5","v":"FoeWkKY5yYI","s":null},{"n":"6","t":"Extra session","v":"Yvx_zkVQvaY","s":null},{"n":"7","t":"Extension session","v":"Hcw4t0_lcps","s":null}]},{"w":"Jan 2023 term","items":[{"n":"1","t":"Orientation","v":"oCJHtHzBVxw","s":null},{"n":"2","t":"Session 2","v":"juQb3oD2IVY","s":null},{"n":"3","t":"Session 3","v":"FU6lxXDzJbs","s":null},{"n":"4","t":"Session 4","v":"G6yvrL8h2L4","s":null},{"n":"5","t":"Session 5","v":"pRk3gRkbRvQ","s":null},{"n":"6","t":"Session 6","v":"JqqtCUeObzs","s":null}]},{"w":"Sep 2022 term","items":[{"n":"1","t":"Project discussion","v":"itjvAvfgAoo","s":null}]}], item: "session"};</script>
-<script src="../assets/course.js?v=88272958"></script>
-<script src="../assets/theme.js?v=f608d0e2"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
-<script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script src="../assets/course.js?v=cfc7d57b"></script>
+<script src="../assets/theme.js?v=052e0235"></script>
+<script src="../assets/config.js?v=aaa2b695"></script>
+<script src="../assets/account.js?v=e1567107"></script>
+<script src="../assets/sync.js?v=57c775e1"></script>
+<script src="../assets/suggest.js?v=8d07343f"></script>
 </body>
 </html>
