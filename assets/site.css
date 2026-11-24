@@ -705,3 +705,43 @@ body[data-page="notfound"] .nf-cards{margin-top:4px}
   .np-table td[data-l]::before{content:attr(data-l) ": ";font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2)}
   .np-table td[data-l="Course"]::before,.np-table td[data-l="Code"]::before{content:""}
 }
+
+/* ---------- Home: tighter and bolder, like the course list ---------- */
+.hm-h{font-weight:700;font-size:21px}
+.hm-resume,.hm-two,.hm-tiles{margin-top:22px}
+.hm-quick{margin-top:16px}
+.hm-two{gap:36px}
+.hm-card{border-top-width:3px;padding-top:9px}
+.hm-dates li{padding:4px 0}
+.hm-news li a{padding:4px 0}
+.hm-t,.hn-t{font-weight:500}
+.hm-d{font-weight:600}
+.hm-note{margin-bottom:6px}
+.hm-more{font-weight:600;margin-top:6px}
+.hm-head{margin-bottom:6px}
+.hm-tile-grid{gap:10px}
+.hm-tile{padding:10px 14px 9px;gap:2px}
+.ht-t{font-weight:700}
+.ht-d{font-size:12.5px;line-height:1.35}
+.ht-n{padding-top:3px;font-weight:600}
+.qc-title{font-weight:700}
+.hm-quick .quick-card{padding:8px 12px}
+.hm-share{margin-top:14px;padding:9px 16px}
+.hm-share .hm-h{font-size:17px}
+.hl-card{padding-top:10px}
+.hl-head{margin-bottom:8px}
+.hl-head h3{font-weight:700;font-size:19px}
+.hl-n{font-weight:600}
+.chips{gap:5px}
+.chip{padding:4px 8px;font-weight:600}
+body.searching .chips{gap:0}
+body.searching .chip{padding:3px 6px}
+.np-res{list-style:none;margin:0;padding:0}
+.np-r{display:flex;gap:10px;align-items:baseline;padding:4px 6px;border:none;border-radius:6px;color:var(--ink)}
+.np-r:hover,.np-r:focus-visible{background:var(--tint)}
+.np-r-c{flex:none;width:86px;font:600 12.5px 'IBM Plex Mono',monospace;color:var(--accent)}
+.np-r-b{display:flex;flex-direction:column;min-width:0}
+.np-r-n{font-weight:600;font-size:14.5px;line-height:1.3}
+.np-r-m{font-size:12.5px;color:var(--ink-2);line-height:1.3}
+@media(max-width:520px){.np-r{flex-direction:column;gap:0}.np-r-c{width:auto}}
+.hm-more[hidden]{display:none}
