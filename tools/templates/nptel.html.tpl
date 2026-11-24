@@ -63,14 +63,24 @@
 <main class="wrap" id="main" tabindex="-1">
 {{RULES}}
   <div class="np-tools" role="search">
-    <input type="search" id="np-search" class="np-search" placeholder="Search a course, a professor or an institute" aria-label="Search NPTEL courses" autocomplete="off">
+    <div class="np-sbox">
+      <input type="search" id="np-search" class="np-search" placeholder="Search by course, professor, institute or code" aria-label="Search NPTEL courses" autocomplete="off" spellcheck="false">
+      <button type="button" class="np-clear" id="np-clear" aria-label="Clear search" hidden>Clear</button>
+    </div>
     <div class="np-filters" role="group" aria-label="Filters">
       <label class="np-chk"><input type="checkbox" id="np-open"> Open for {{TERM}}</label>
+      <span class="np-seg" role="group" aria-label="Credits">
+        <button type="button" class="np-cr" data-g="" aria-pressed="true">All</button>
+        <button type="button" class="np-cr" data-g="0" aria-pressed="false">3 credits</button>
+        <button type="button" class="np-cr" data-g="1" aria-pressed="false">2 credits</button>
+        <button type="button" class="np-cr" data-g="2" aria-pressed="false">1 credit</button>
+      </span>
     </div>
     <p class="np-count" id="np-count" role="status" aria-live="polite"></p>
+    <p class="np-other" id="np-other" hidden></p>
   </div>
 {{SECTIONS}}
-  <p class="no-results" id="np-none" role="status" hidden>No course matches that. Try fewer words, or clear a filter.</p>
+  <p class="no-results" id="np-none" role="status" hidden>No course matches that. Try fewer or shorter words, or clear a filter.</p>
 </main>
 
 <footer class="site-end wrap">
