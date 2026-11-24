@@ -5,6 +5,13 @@
   {
    "date": "2026-11-24",
    "kind": "site",
+   "title": "Scam alert: new providers and tricks",
+   "text": "Three providers added to the Scam alert list (SkillOrbit, Wayeva Innovations and Univox Academy), Corizo's entry updated, and a new section on tricks students reported this term: mails from student accounts, \"mandatory\" courses with payment links, and calls asking for your ID or password.",
+   "courses": []
+  },
+  {
+   "date": "2026-11-24",
+   "kind": "site",
    "title": "New NPTEL section",
    "text": "A new NPTEL page lists the 289 NPTEL courses the BS programme accepts for credit, from the handbook's Tables 2 and 3, with search, a filter for courses open this term, and links to NPTEL and SWAYAM.",
    "courses": []
