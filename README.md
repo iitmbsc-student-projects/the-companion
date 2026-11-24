@@ -4,9 +4,23 @@ A student-run companion to the IIT Madras BS in Data Science & Applications prog
 
 Live site: https://iitmbsc-student-projects.github.io/the-companion/
 
+## Why this exists
+
+Study material for the IIT Madras BS programme is spread across the student portal, YouTube playlists, Discourse threads and many Drive folders. The aim of The Companion is to put the useful parts in one place, so a student can find what they need for a course without hunting for it, and avoid the common traps along the way.
+
+## What we have done so far
+
+- A page for each Foundation, Diploma and Degree course, with its syllabus, week-by-week lectures, past papers and student-made resources.
+- Project pages with answers to the problems students ask about most.
+- A collected set of important links for the programme.
+- The list of NPTEL courses that count for credit.
+- A scam alert page, kept up to date with what students report.
+- A grade calculator for estimating a course score.
+- Search across all of it, and a page listing what has been added recently.
+
 ## Working on it
 
-Each course is one file in `data/courses/`. The pages in `courses/` are generated from those files, so edit the data and not the HTML. See `tools/README.md` for the local dashboard and the generator.
+See `tools/README.md` for how the pages are built and edited.
 
 ## Copyright and content
 
