@@ -3,8 +3,8 @@
 // every course page pulls from it live via <script src="../assets/term-syllabus.js">,
 // so one edit here propagates to all course pages automatically.
 window.TERM_SYLLABUS = {
- "term": "May 2026",
- "source": "IITM May 2026 term quiz-syllabus circular (per-course quiz/end-term week coverage and exam mode)",
+ "term": "Sep 2026",
+ "source": "IITM quiz-syllabus circular, used for the Sep 2026 term (per-course quiz/end-term week coverage and exam mode)",
  "courses": {
   "CS1001": {
    "name": "Computational Thinking",
@@ -1115,7 +1115,7 @@ window.TERM_SYLLABUS = {
    "quiz1": {
     "held": true,
     "weeks": "Week 1–4",
-    "mode": "Computer Based"
+    "mode": "Computer + Pen & Paper"
    },
    "quiz2": {
     "held": true,
@@ -1235,7 +1235,7 @@ window.TERM_SYLLABUS = {
    "quiz1": {
     "held": true,
     "weeks": "Week 1–4",
-    "mode": "Computer Based"
+    "mode": "Computer + Pen & Paper"
    },
    "quiz2": {
     "held": true,
@@ -1300,7 +1300,7 @@ window.TERM_SYLLABUS = {
    "quiz2": {
     "held": true,
     "weeks": "Week 5–8",
-    "mode": "Computer Based"
+    "mode": "Pen & Paper"
    },
    "endterm": {
     "held": true,
