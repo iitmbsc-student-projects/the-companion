@@ -79,31 +79,31 @@ html[data-theme="pink"]{--paper:#fff3f7;
   --on-accent-2:#f7d4e1;
   color-scheme:light}
 
-html[data-theme="sky"]{--paper:#f7fafd;
-  --paper-2:#eaf2f8;
-  --ink:#0f1b2d;
-  --ink-2:#44566b;
-  --rule:#d3e0ec;
-  --accent:#1f5fa8;
-  --accent-2:#8a5a2b;
-  --accent-fill:#2c6cb0;
+html[data-theme="sky"]{--paper:#f5f2ea;
+  --paper-2:#ebe7db;
+  --ink:#16202c;
+  --ink-2:#4a5360;
+  --rule:#d3cdbd;
+  --accent:#1f3a5f;
+  --accent-2:#7a5a35;
+  --accent-fill:#1f3a5f;
   --on-fill:#ffffff;
-  --on-fill-2:#dbe9f6;
-  --surface:#ffffff;
-  --topbar:rgba(247,250,253,.92);
-  --tint:rgba(44,108,176,.08);
-  --tint-2:rgba(44,108,176,.14);
-  --link-ul:rgba(31,95,168,.3);
-  --accent-line:rgba(31,95,168,.4);
-  --shadow:rgba(15,27,45,.14);
-  --shadow-soft:rgba(15,27,45,.05);
-  --warn-bg:rgba(184,100,42,.1);
-  --warn-line:rgba(184,100,42,.4);
+  --on-fill-2:#d6e0ee;
+  --surface:#fbf9f4;
+  --topbar:rgba(245,242,234,.92);
+  --tint:rgba(31,58,95,.07);
+  --tint-2:rgba(31,58,95,.12);
+  --link-ul:rgba(31,58,95,.3);
+  --accent-line:rgba(31,58,95,.4);
+  --shadow:rgba(22,32,44,.14);
+  --shadow-soft:rgba(22,32,44,.05);
+  --warn-bg:rgba(184,100,42,.11);
+  --warn-line:rgba(184,100,42,.42);
   --warn-ink:#7a4a12;
-  --muted-bg:rgba(68,86,107,.09);
-  --muted-line:rgba(68,86,107,.33);
+  --muted-bg:rgba(74,83,96,.09);
+  --muted-line:rgba(74,83,96,.33);
   --on-accent:#fff;
-  --on-accent-2:#dbe9f6;
+  --on-accent-2:#d6e0ee;
   color-scheme:light}
 
 /* ---- Theme switcher: one swatch per theme ---- */
@@ -120,7 +120,7 @@ html[data-theme="sky"]{--paper:#f7fafd;
 .theme-switch button[data-theme-set="light"] .sw{background:#ffffff}
 .theme-switch button[data-theme-set="dark"] .sw{background:#14151a}
 .theme-switch button[data-theme-set="pink"] .sw{background:#FA9EBC}
-.theme-switch button[data-theme-set="sky"] .sw{background:#2c6cb0}
+.theme-switch button[data-theme-set="sky"] .sw{background:linear-gradient(135deg,#f5f2ea 50%,#1f3a5f 50%)}
 .theme-switch.floating{position:fixed;top:12px;right:14px;z-index:80;box-shadow:0 2px 10px var(--shadow)}
 #theme-slot{display:flex;margin-right:8px}
 .sidebar-theme{margin-right:0 !important}
