@@ -60,11 +60,12 @@
   <div class="wrap">
     <h1 class="ph-title">{{TITLE}}</h1>
     <p class="ph-sub">{{SUB}}</p>
-    <nav class="links-jump" aria-label="Jump to a group">{{JUMP}}</nav>
+    {{ALERTS}}
   </div>
 </header>
 
 <main class="wrap" id="main" tabindex="-1">
+  <nav class="sc-nav" id="sc-nav" aria-label="Sections on this page">{{JUMP}}</nav>
   <section class="links-wrap scam-wrap">
 {{GROUPS}}
   </section>
@@ -80,6 +81,7 @@
 
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/scam.js"></script>
 <script src="assets/theme.js"></script>
 </body>
 </html>
