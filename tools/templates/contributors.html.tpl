@@ -5,14 +5,24 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{TITLE}} | The Companion</title>
 <meta name="description" content="The students, TAs and instructors behind the notes and resources on The Companion.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Companion">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="The students, TAs and instructors behind the notes and resources on The Companion.">
+<meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/contributors.html">
+<meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css?v=e196bd30">
 <link rel="stylesheet" href="assets/theme.css?v=225b80af">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body data-page="contributors">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="topbar" aria-label="Main">
   <div class="wrap topbar-in">
@@ -30,9 +40,14 @@
         <button class="nav-caret" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Show link groups">&#9662;</button>
         <div class="menu" id="menu-links"></div>
       </div>
-      <a class="tb-link current" href="contributors.html">Contributors</a>
+    </div>
+    <div class="tb-more">
+      <a class="tb-link" href="my-term.html">My Term</a>
+      <a class="tb-link" href="planner.html">Planner</a>
       <a class="tb-link" href="scam-alert.html">Scam alert</a>
       <a class="tb-link" href="calculator.html">Grade calculator</a>
+      <a class="tb-link current" href="contributors.html">Contributors</a>
+      <a class="tb-link" href="updates.html">Updates</a>
     </div>
     <span id="theme-slot" data-float-narrow></span>
   </div>
@@ -46,15 +61,16 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
   <section class="links-wrap">
 {{GROUPS}}
   </section>
 </main>
 
 <footer class="site-end wrap">
-  <span class="se-name">The Companion</span>
+  <span class="se-brand"><span class="se-name">The Companion</span><span class="se-by">Built and kept by Vikash</span></span>
   <nav class="se-nav" aria-label="Site">{{FOOTNAV}}</nav>
+  <div class="theme-foot" id="theme-foot"></div>
 </footer>
 
 <button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>

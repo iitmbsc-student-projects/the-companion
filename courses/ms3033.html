@@ -4,12 +4,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Managerial Economics — The Companion</title>
-<link rel="stylesheet" href="../assets/theme.css?v=a714491e">
+<title>MS3033 Managerial Economics | The Companion</title>
+<meta name="description" content="The economic reasoning a manager uses: demand, cost, competition, pricing, and strategic decisions.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Companion">
+<meta property="og:title" content="MS3033 Managerial Economics">
+<meta property="og:description" content="The economic reasoning a manager uses: demand, cost, competition, pricing, and strategic decisions.">
+<meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/ms3033.html">
+<meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/theme.css?v=19250950">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   :root{
@@ -19,7 +29,7 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);height:100%;
-    font:16px/1.65 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-ul)}
   a:hover{border-bottom-color:var(--accent)}
 
@@ -39,12 +49,12 @@
   .sb-head .back-link:hover{color:var(--accent);border-color:var(--accent);background:var(--tint)}
   .sb-head .back-link:hover svg{transform:translateX(-2px)}
   .sb-head .back-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sb-head .brand-code{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
+  .sb-head .brand-code{font-family:'Spectral',serif;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1}
 
   .sb-tabs{display:flex;flex-wrap:wrap;gap:6px}
   .nav-item{cursor:pointer;user-select:none}
   .sb-tabs .nav-item{padding:7px 13px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);
-    font:600 13px 'Inter',sans-serif;color:var(--ink);transition:background .15s,border-color .15s}
+    font:600 13px 'IBM Plex Sans',sans-serif;color:var(--ink);line-height:1.5;transition:background .15s,border-color .15s}
   .sb-tabs .nav-item:hover{border-color:var(--accent)}
   .sb-tabs .nav-item.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
 
@@ -52,8 +62,8 @@
     border:1px solid var(--rule);border-radius:10px;background:var(--paper);transition:border-color .15s}
   .sb-continue:hover{border-color:var(--accent)}
   .sb-continue[hidden]{display:none}
-  .sc-k{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .sc-t{display:block;margin:2px 0 7px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;line-height:1.3;
+  .sc-k{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .sc-t{display:block;margin:2px 0 7px;font-family:'Spectral',serif;font-weight:600;font-size:14px;line-height:1.3;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sc-bar{display:block;height:4px;border-radius:99px;background:var(--rule);overflow:hidden}
   .sc-bar i{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s}
@@ -63,15 +73,15 @@
   .sb-tools[hidden]{display:none}
   #lec-search{width:100%;box-sizing:border-box;padding:8px 10px 8px 31px;border:1px solid var(--rule);border-radius:8px;
     background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='4.5'/%3E%3Cpath d='m10.5 10.5 3 3'/%3E%3C/svg%3E") 10px center/14px no-repeat;
-    color:var(--ink);font:500 13.5px 'Inter',sans-serif}
+    color:var(--ink);font:500 13.5px 'IBM Plex Sans',sans-serif}
   #lec-search:focus{outline:2px solid var(--accent);outline-offset:1px}
   .sb-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
   .sb-spacer{flex:1}
   .sb-chip{padding:5px 11px;border:1px solid var(--rule);border-radius:999px;background:none;color:var(--ink-2);
-    font:600 11.5px 'Inter',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+    font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
   .sb-chip:hover{border-color:var(--accent);color:var(--ink)}
   .sb-chip[aria-pressed="true"]{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
-  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'Inter',sans-serif;cursor:pointer}
+  .sb-link{padding:4px 2px;border:0;background:none;color:var(--ink-2);font:600 11.5px 'IBM Plex Sans',sans-serif;cursor:pointer}
   .sb-link:hover{color:var(--accent)}
   .sb-chip:focus-visible,.sb-link:focus-visible,.sb-continue:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -105,17 +115,18 @@
   .week-group{border-top:1px solid var(--rule)}
   .sb-scroll > .week-group:first-child{border-top:none}
   .week-group.is-hid,.lecture-item.is-hid{display:none}
-  .week-title{position:relative;padding:9px 20px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  .week-title{position:relative;padding:9px 20px 7px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
     border-bottom:1px solid var(--rule);cursor:pointer;box-shadow:none;border-radius:0;
     display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none}
   .week-title:hover{color:var(--ink)}
   .week-title:focus{box-shadow:none}
+  .week-title:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
   /* Bootstrap's own :not(.collapsed) active-state rule outranks a plain .week-title rule on
      specificity alone, so this needs the compound selector to actually win. */
   .week-title.accordion-button:not(.collapsed){background:var(--paper-2);color:var(--ink-2);box-shadow:none}
   .week-title.accordion-button::after{display:none}
-  .week-title .chev{font-family:'JetBrains Mono',monospace;font-size:12px;
+  .week-title .chev{font-family:'IBM Plex Mono',monospace;font-size:12px;
     transition:transform .15s ease;display:inline-block;color:var(--ink-2)}
   .week-title.accordion-button:not(.collapsed) .chev{transform:rotate(90deg)}
   .accordion-body{padding:0}
@@ -123,21 +134,24 @@
   .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
     background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
   .week-title > span{position:relative;z-index:1}
+  .week-title .wdur{font-style:normal;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0;
+    text-transform:none;font-family:'IBM Plex Sans',sans-serif;font-size:11px}
   .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
   .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
-  .lecture-item.novid .ltitle{opacity:.62}
+  .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
+  .lecture-item.active .ltitle{color:inherit}
   .sidebar-theme.theme-slot{margin-right:0}
   .lecture-item{display:flex;gap:10px;align-items:baseline;padding:8px 20px 8px 26px;
-    cursor:pointer;font-family:'Fraunces',serif;font-size:14px;line-height:1.35;
+    cursor:pointer;font-family:'Spectral',serif;font-size:14px;line-height:1.35;
     border-bottom:1px dotted var(--rule)}
   .lecture-item:hover{background:var(--tint)}
   .lecture-item.active{background:var(--accent-fill);color:var(--on-fill)}
   .lecture-item.active .lnum{color:var(--on-fill-2)}
-  .lnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
+  .lnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);
     flex-shrink:0;min-width:38px}
 
-  .main-content{margin-left:var(--sb-w,300px);padding:40px 56px 60px}
-  @media(max-width:900px){ .main-content{padding:32px 28px 48px} }
+  .main-content{margin-left:var(--sb-w,300px);padding:26px 48px 36px}
+  @media(max-width:900px){ .main-content{padding:24px 24px 32px} }
 
   /* ---- collapsible sidebar: body.sidebar-collapsed slides the sidebar off-screen and lets the
      content take the full width. The toggle button is fixed so it is always reachable. ---- */
@@ -154,50 +168,50 @@
   body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed .main-content,body.sidebar-collapsed footer.colophon{margin-left:0}
   body.sidebar-collapsed .sidebar-toggle{left:14px;background:var(--paper)}
-  body.sidebar-collapsed .main-content{padding-top:64px}
+  body.sidebar-collapsed .main-content{padding-top:56px}
 
   .panel{display:none}
   .panel.active{display:block}
 
-  .course-head{padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:22px}
-  .course-head .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .course-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:42px;
-    line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;
-    font-variation-settings:"opsz" 144}
-  .course-head .standfirst{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;
+  .course-head{padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:14px}
+  .course-head .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .course-head h1{font-family:'Spectral',serif;font-weight:700;font-size:36px;
+    line-height:1.05;letter-spacing:-0.02em;margin:0 0 8px;
+    }
+  .course-head .standfirst{font-family:'Spectral',serif;font-size:17px;line-height:1.4;
     color:var(--ink-2);max-width:70ch;margin:0}
-  .meta-line{margin-top:14px;padding-top:10px;line-height:1.4;border-top:1px dotted var(--rule);
-    display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'JetBrains Mono',monospace;
+  .meta-line{margin-top:9px;padding-top:7px;line-height:1.4;border-top:1px dotted var(--rule);
+    display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'IBM Plex Mono',monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .site-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;border-radius:999px;
     background:var(--ink);color:var(--paper);border:1px solid var(--ink);text-decoration:none;
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
     transition:background .15s,border-color .15s,color .15s}
   .site-btn:hover{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
   .site-btn svg{width:13px;height:13px}
   .meta-line span{margin:0}
   .meta-line b{color:var(--ink);font-weight:500}
 
-  section.chapter{margin:26px 0}
+  section.chapter{margin:18px 0}
   section.chapter:first-of-type{margin-top:0}
-  section.chapter h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;
-    letter-spacing:-0.01em;margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+  section.chapter h2{font-family:'Spectral',serif;font-weight:600;font-size:23px;
+    letter-spacing:-0.01em;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--rule);
     display:flex;align-items:baseline;gap:14px}
-  section.chapter h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;
-    color:var(--accent);letter-spacing:.2em;font-weight:500}
+  section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:.14em;font-weight:500}
 
-  .syllabus-body{font-family:'Fraunces',serif;font-size:16px;line-height:1.55;max-width:70ch}
+  .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
-  #panel-syllabus section.chapter{margin:20px 0}
+  #panel-syllabus section.chapter{margin:14px 0}
   #panel-syllabus .tbd-note{margin:0}
 
   ul.dates{list-style:none;padding:0;margin:0;max-width:640px}
-  ul.dates li{display:flex;align-items:baseline;padding:6px 0;
+  ul.dates li{display:flex;align-items:baseline;padding:4px 0;
     border-bottom:1px dotted var(--rule);font-size:15px}
   ul.dates li .what{flex:1}
-  ul.dates li .when{font-family:'JetBrains Mono',monospace;font-size:12px;
+  ul.dates li .when{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--ink-2);letter-spacing:.05em}
   ul.dates li .marker{width:8px;height:8px;border-radius:50%;background:var(--accent);
     margin-right:12px;flex-shrink:0}
@@ -205,14 +219,14 @@
   ul.dates li.exam .what{font-weight:600}
 
   table.papers{width:100%;max-width:900px;border-collapse:collapse;font-size:14px}
-  table.papers th{text-align:left;font-family:'JetBrains Mono',monospace;
-    font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
+  table.papers th{text-align:left;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);
     padding:8px 10px;border-bottom:1px solid var(--ink);font-weight:500}
   table.papers td{padding:10px;border-bottom:1px dotted var(--rule);vertical-align:baseline}
-  table.papers td:first-child{font-family:'JetBrains Mono',monospace;font-size:13px;
+  table.papers td:first-child{font-family:'IBM Plex Mono',monospace;font-size:13px;
     color:var(--ink);width:180px}
   table.papers a{margin-right:14px}
-  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif}
+  table.papers .empty{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif}
 
   /* 16:9 box that never grows taller than the screen: width is capped by the content width,
      by 1200px, and by what fits in the viewport height (the video always shows in full; the title and links may sit just below the fold).
@@ -226,66 +240,73 @@
   .link-list li::before{content:"§ ";color:var(--ink-2);font-family:serif}
   /* named .tbd-note, not .placeholder, since Bootstrap reserves .placeholder for its own
      loading-skeleton component (a solid gray bar) */
-  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Fraunces',serif;font-size:14px}
+  .tbd-note{color:var(--ink-2);font-style:italic;font-family:'Spectral',serif;font-size:14px}
   /* Live sessions: collapsible video indexes */
   details.sess{border:1px solid var(--rule);border-radius:3px;background:var(--paper-2);margin-bottom:10px}
   details.sess summary{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;list-style:none}
   details.sess summary::-webkit-details-marker{display:none}
   details.sess summary::before{content:"\25B8";color:var(--accent);transition:transform .15s ease}
   details.sess[open] summary::before{transform:rotate(90deg)}
-  .sess-title{flex:1;font-family:'Fraunces',serif;font-weight:600;font-size:16.5px}
-  .sess-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
+  .sess-title{flex:1;font-family:'Spectral',serif;font-weight:600;font-size:16.5px}
+  .sess-count{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 9px}
   .sess-body{padding:2px 16px 14px;border-top:1px dotted var(--rule)}
-  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .sess-watch{display:inline-block;margin:10px 0 6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
   .sess-watch::after{content:" \2197"}
   ul.topics{list-style:none;margin:0;padding:0}
   ul.topics li{border-bottom:1px dotted var(--rule)}
   ul.topics li:last-child{border-bottom:none}
   ul.topics a{display:flex;align-items:baseline;gap:14px;padding:7px 4px;border:none;color:var(--ink);border-radius:4px}
   ul.topics a:hover{background:var(--tint)}
-  .tp-time{flex:none;width:64px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+  .tp-time{flex:none;width:64px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent)}
   .tp-label{flex:1;font-size:15px}
-  .tp-end{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2)}
-  .tp-key{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+  .tp-end{flex:none;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2)}
+  .tp-key{margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;
     color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:999px;padding:1px 8px}
   @media(max-width:640px){ .tp-end{display:none} .tp-time{width:56px} }
   /* Resources: grouped cards */
-  .res-by{color:var(--ink-2);font-size:13px;font-style:italic}
-  .res-group{margin-top:22px}
+  /* resources: small cards of one size in a tidy grid. Long descriptions stop at two lines
+     (the full text is in the tooltip and is still read by screen readers), so rows stay even. */
+  .res-group{margin-top:14px}
   .res-group:first-of-type{margin-top:6px}
-  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-family:'JetBrains Mono',monospace;
-    font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .res-group-title{display:flex;align-items:center;gap:10px;margin:0 0 7px;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
   .res-group-title::after{content:"";flex:1;border-bottom:1px solid var(--rule)}
   .res-count{order:2;color:var(--accent);background:var(--tint);border-radius:999px;padding:0 8px;letter-spacing:.04em}
-  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-  .res-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:13px 16px 12px;background:var(--paper-2);
+  .res-grid{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
+  .res-card{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;padding:8px 12px 8px;background:var(--paper-2);
     border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;
     transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   .res-card:hover{border-left-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px var(--shadow)}
-  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:11px;right:14px;font-size:14px;color:var(--accent-2);opacity:.7}
-  .res-main{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);border:none;padding-right:18px}
+  .res-card:has(.res-main)::after{content:"\2197";position:absolute;top:7px;right:9px;font-size:12px;color:var(--accent-2)}
+  .res-main{font-family:'Spectral',serif;font-weight:600;font-size:15px;line-height:1.3;color:var(--ink);border:none;padding-right:14px;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
   .res-main::after{content:"";position:absolute;inset:0}
   .res-main:hover{color:var(--accent)}
-  .res-desc{margin:0;color:var(--ink-2);font-size:14px;line-height:1.5}
-  .res-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:2px}
-  .res-host{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:.02em;word-break:break-all}
-  .res-foot .res-by{position:relative;z-index:1;font-size:12.5px}
-  .res-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;
+  .res-main:focus-visible{outline:none}
+  .res-card:has(.res-main:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+  .res-desc{margin:0;color:var(--ink-2);font-size:13px;line-height:1.4;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+  .res-foot{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin-top:auto;padding-top:3px;min-width:0}
+  .res-host{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-2);letter-spacing:.02em;
+    max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-by{color:var(--ink-2);font-size:12px;font-style:italic;min-width:0}
+  .res-foot .res-by{position:relative;z-index:1;max-width:100%;padding-right:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .res-badge{flex:none;margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:0 6px;
     border-radius:999px;border:1px solid var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
   .res-badge.iitm{border-color:var(--accent-line);color:var(--accent);background:var(--tint)}
-  @media(max-width:640px){ .res-grid{grid-template-columns:1fr} }
+  @media(max-width:640px){ .res-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))} }
   .embed-wrap{border:1px solid var(--rule);background:var(--surface)}
   .embed-frame{display:block;width:100%;height:80vh;min-height:520px;border:0}
 
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
-  .current-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
-  .current-title{font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 14px;
+  .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
-  .current-actions a{font-family:'JetBrains Mono',monospace;font-size:11px;
+  .current-actions a{font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.1em;text-transform:uppercase}
 
   /* lecture stage: a small title line, the video taking all the room that fits on screen, then Previous / Next */
@@ -302,14 +323,15 @@
   }
   .lec-stage .video{width:100%;min-width:0}
   .lec-id{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px;margin-bottom:6px}
-  .lec-id .current-eyebrow{margin:0;font-size:10.5px}
+  .lec-id .current-eyebrow{margin:0;font-size:11.5px}
   .lec-id .current-title{margin:0;font-size:16px}
   .lec-nav{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
   .lec-nav button,.rs-go{display:inline-flex;align-items:center;gap:9px;min-height:38px;padding:0 14px 0 11px;border:1px solid var(--rule);
-    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;white-space:nowrap;
+    border-radius:10px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;white-space:nowrap;
     transition:border-color .15s,background .15s,transform .1s,filter .15s}
   .lec-nav button svg,.m-step svg,.rs-go svg{width:15px;height:15px;flex:none;transition:transform .15s}
-  .lec-nav .ls-n{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.06em;opacity:.65}
+  .lec-nav .ls-n{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;opacity:.8}
+  .lec-nav .ls-next .ls-n{opacity:1}
   .lec-nav button:hover:not([disabled]){border-color:var(--accent)}
   .lec-nav button:active:not([disabled]){transform:scale(.97)}
   .lec-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -323,15 +345,15 @@
   .lec-id .current-actions{margin-left:auto;gap:8px}
   .lec-id .current-actions:empty{display:none}
   .lec-id .current-actions a{display:inline-flex;align-items:center;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;
-    background:var(--paper-2);color:var(--accent);font-size:10.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
+    background:var(--paper-2);color:var(--accent);font-size:11.5px;letter-spacing:.08em;white-space:nowrap;transition:border-color .15s,background .15s}
   .lec-id .current-actions a:hover{border-color:var(--accent);background:var(--tint)}
   .lec-id .current-actions .tbd-note{font-size:12px;color:var(--ink-2)}
   .m-step{display:none}
 
   /* watched ticks and the resume card */
-  .lecture-item .ltitle{flex:1;min-width:0}
+  .lecture-item .ltitle{flex:1;min-width:0;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
   .lcheck{flex:none;align-self:center;margin:-6px -10px -6px 0;padding:6px 10px;border:0;background:none;cursor:pointer;color:inherit;line-height:0}
-  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.55;
+  .lcheck::before{content:"";display:block;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--ink-2);border-radius:50%;opacity:.85;
     transition:background .12s,border-color .12s,opacity .12s}
   .lcheck:hover::before{opacity:1;border-color:var(--accent)}
   .lcheck:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
@@ -342,32 +364,35 @@
   .lec-nav .ls-done{padding:0 13px 0 11px}
   .lec-nav .ls-done.is-done{border-color:var(--accent);color:var(--accent);background:var(--tint)}
   @media(max-width:520px){ .lec-nav .ls-done .lbl{display:none} .lec-nav .ls-done{padding:0 11px} }
-  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:0 0 26px;padding:14px 18px;
+  .resume{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 16px;padding:10px 16px;
     border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
   .resume[hidden]{display:none}
   .rs-text{flex:1 1 280px;min-width:0}
-  .rs-k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-  .rs-t{margin:3px 0 9px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.3}
+  .rs-k{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .rs-t{margin:2px 0 6px;font-family:'Spectral',serif;font-weight:600;font-size:18px;line-height:1.3}
   .rs-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
   .rs-bar span{display:block;height:100%;width:0;background:var(--accent-fill);transition:width .25s ease}
-  .rs-n{margin-top:7px;font-size:12.5px;color:var(--ink-2)}
+  .rs-n{margin-top:5px;font-size:12.5px;color:var(--ink-2)}
   .rs-reset{margin-left:10px;padding:0;border:0;background:none;color:var(--ink-2);font:inherit;text-decoration:underline;cursor:pointer}
   .rs-reset:hover{color:var(--accent)}
 
   footer.colophon{margin-left:var(--sb-w,300px)}
   /* ---- page footer ---- */
-  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'Inter',sans-serif;font-style:normal}
-  footer.colophon .co-in{max-width:900px;margin:0 auto;padding:22px 28px 30px}
+  footer.colophon{margin-top:40px;border-top:1px solid var(--rule);background:var(--paper-2);font-family:'IBM Plex Sans',sans-serif;font-style:normal}
+  footer.colophon .co-in{max-width:900px;margin:0 auto;padding:20px 28px 20px}
   footer.colophon .co-note{display:flex;align-items:flex-start;gap:12px;margin:0 0 20px;padding:12px 16px;
     border:1px solid var(--rule);border-left:3px solid var(--accent-2);border-radius:6px;background:var(--paper);
     font-size:13.5px;line-height:1.55;color:var(--ink-2)}
   footer.colophon .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
-    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Fraunces',serif}
+    background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
   footer.colophon .co-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
-  footer.colophon .co-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;color:var(--ink)}
-  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  footer.colophon .co-brand{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px}
+  footer.colophon .co-by{font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+  footer.colophon .co-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;color:var(--ink)}
+  footer.colophon .co-nav{display:flex;flex-wrap:wrap;gap:0 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;
     letter-spacing:.12em;text-transform:uppercase}
-  footer.colophon .co-nav a{color:var(--ink-2);border:none}
+  footer.colophon .co-nav a{display:inline-block;padding:7px 0;color:var(--ink-2);border:none}
+  footer.colophon .theme-foot{margin-top:14px}
   footer.colophon .co-nav a:hover{color:var(--accent)}
   footer.colophon .co-in{max-width:none;padding-left:56px;padding-right:56px}
   @media(max-width:900px){ footer.colophon .co-in{padding-left:28px;padding-right:28px} }
@@ -381,12 +406,12 @@
     .m-bar{display:flex;align-items:center;gap:10px;position:fixed;top:0;left:0;right:0;height:54px;padding:0 12px;
       background:var(--paper);border-bottom:1px solid var(--rule);z-index:20}
     .m-menu{display:flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--rule);
-      border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
+      border-radius:999px;background:var(--paper-2);color:var(--ink);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
     .m-menu svg{width:16px;height:16px}
     .m-menu:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-    .m-code{font-family:'Fraunces',serif;font-weight:700;font-size:16px;flex:none}
+    .m-code{font-family:'Spectral',serif;font-weight:700;font-size:16px;flex:none}
     .m-step{display:flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid var(--accent-fill);
-      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'Inter',sans-serif;cursor:pointer;flex:none}
+      border-radius:999px;background:var(--accent-fill);color:var(--on-fill);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;flex:none}
     .m-step[hidden]{display:none}
     .m-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .m-here{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;
@@ -400,10 +425,10 @@
       display:block;transition:opacity .22s ease}
     body.nav-open .m-scrim{opacity:1;pointer-events:auto}
     body.nav-open{overflow:hidden}
-    .main-content,body.sidebar-collapsed .main-content{margin-left:0;padding:74px 18px 40px}
+    .main-content,body.sidebar-collapsed .main-content{margin-left:0;padding:68px 18px 28px}
     footer.colophon,body.sidebar-collapsed footer.colophon{margin-left:0}
     footer.colophon .co-in{padding-left:18px;padding-right:18px}
-    .course-head h1{font-size:28px}
+    .course-head h1{font-size:26px}
     .course-head .kicker{letter-spacing:.14em}
     .sb-resize{display:none}
     .sb-tabs .nav-item{padding:10px 15px;font-size:14px}
@@ -412,9 +437,18 @@
     .week-title{padding-top:14px;padding-bottom:12px}
     .lecture-item{padding-top:11px;padding-bottom:11px}
   }
+  /* project pages: a link back to the main course */
+  .parent-link{display:inline-block;margin:4px 0 6px;padding:6px 12px;border:1px solid var(--rule);border-radius:14px;line-height:1.45;
+    background:var(--paper-2);color:var(--ink-2);font-size:13.5px}
+  .parent-link b{color:var(--ink);font-weight:600}
+  .parent-link::after{content:"\2192";color:var(--accent);margin-left:6px}
+  .parent-link:hover{border-color:var(--accent)}
+  .sb-tabs .nav-item[hidden]{display:none}
+  .sb-bottom{margin-top:auto}   /* keep the theme dots at the foot of the sidebar even when there is no lecture list */
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <script>
   // Restore the sidebar state before first paint so the page doesn't flash open then shut.
   try { if (localStorage.getItem('companion-sidebar') === 'collapsed') document.body.classList.add('sidebar-collapsed'); } catch (e) {}
@@ -438,8 +472,8 @@
         <span class="brand-code">MS3033</span>
       </div>
       <div class="sb-tabs">
-        <div class="nav-item active" id="nav-dashboard">Dashboard</div>
-        <div class="nav-item" id="nav-syllabus">Syllabus</div>
+        <button type="button" class="nav-item active" id="nav-dashboard" aria-current="page">Dashboard</button>
+        <button type="button" class="nav-item" id="nav-syllabus">Syllabus</button>
       </div>
       <button type="button" class="sb-continue" id="sb-continue" hidden>
         <span class="sc-k" id="sc-k"></span>
@@ -465,14 +499,14 @@
     <div class="sb-resize" id="sb-resize" aria-hidden="true" title="Drag to resize. Double-click to reset."></div>
   </nav>
 
-  <main class="main-content">
+  <main class="main-content" id="main" tabindex="-1">
 
     <section class="panel active" id="panel-dashboard">
 
       <div class="course-head">
         <div class="kicker">MS3033 · BS elective · 4 credits</div>
         <h1>Managerial Economics</h1>
-        <p class="standfirst">The economic reasoning a manager uses — demand, cost, competition, pricing, and strategic decisions.</p>
+        <p class="standfirst">The economic reasoning a manager uses: demand, cost, competition, pricing, and strategic decisions.</p>
         <div class="meta-line">
           <span><b>Instructor</b> Prof. Vimal Kumar</span>
           <span><b>Term</b> As offered</span>
@@ -489,46 +523,73 @@
         </div>
         <button type="button" class="rs-go" id="rs-go"></button>
       </div>
-
       <section class="chapter" id="calendar">
-        <h2><span class="num">§ 1</span>Calendar</h2>
-        <ul class="dates">
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when">—</span></li>
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when">—</span></li>
-          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when">—</span></li>
+        <h2><span class="num" aria-hidden="true">§ 1</span>Calendar</h2>
+        <ul class="dates" id="cal-list" hidden>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q1-what">Quiz 1</span><span class="when" id="cal-q1-when"></span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-q2-what">Quiz 2</span><span class="when" id="cal-q2-when"></span></li>
+          <li class="exam"><span class="marker"></span><span class="what" id="cal-et-what">End-term examination</span><span class="when" id="cal-et-when"></span></li>
         </ul>
         <p class="tbd-note" id="calendar-term-note" style="margin-top:10px"></p>
       </section>
 
       <section class="chapter" id="pyq">
-        <h2><span class="num">§ 2</span>Previous Year Questions</h2>
-        <p class="tbd-note">No papers uploaded yet.</p>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Previous Year Questions</h2>
+
+        <div class="res-group">
+          <ul class="res-grid">
+            <li class="res-card" title="Degree question paper repository: Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students. (docs.google.com)">
+              <a class="res-main" href="https://docs.google.com/spreadsheets/d/1ndm0pg3620crYW1yyUigW6NPE5cvHLk65IvHErEv7f4/edit?gid=1189182592#gid=1189182592" target="_blank" rel="noopener">Degree question paper repository</a>
+              <p class="res-desc">Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students.</p>
+              <div class="res-foot"><span class="res-by">by Vikash, Anupam Chandra and others</span><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
+            </li>
+            <li class="res-card" title="Fetch PYQs: Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing. (script.google.com)">
+              <a class="res-main" href="https://script.google.com/a/macros/ds.study.iitm.ac.in/s/AKfycbzs7K5NYNosmnKhjI4nZMbS3_ZWLd0b6ZFIk5wZTNwxF9mBndt5cIZuCK9JG0i2ldA/exec" target="_blank" rel="noopener">Fetch PYQs</a>
+              <p class="res-desc">Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing.</p>
+              <div class="res-foot"><span class="res-by">by Vikash, Anupam Chandra and others</span><span class="res-badge iitm" title="IITM login required">IITM login</span></div>
+            </li>
+            <li class="res-card" title="QuizPractice papers: Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan. (quizpractice.space)">
+              <a class="res-main" href="https://quizpractice.space/" target="_blank" rel="noopener">QuizPractice papers</a>
+              <p class="res-desc">Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.</p>
+            </li>
+            <li class="res-card" title="MauryaHub papers: Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM. (mauryahub.in)">
+              <a class="res-main" href="https://www.mauryahub.in/" target="_blank" rel="noopener">MauryaHub papers</a>
+              <p class="res-desc">Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.</p>
+              <div class="res-foot"><span class="res-by">by Ashish Maurya</span></div>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="chapter" id="resources">
-        <h2><span class="num">§ 3</span>Resources</h2>
+        <h2><span class="num" aria-hidden="true">§ 3</span>Resources</h2>
 
         <div class="res-group">
           <h3 class="res-group-title">Course material<span class="res-count">1</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="Drive folder (drive.google.com)">
               <a class="res-main" href="https://drive.google.com/drive/folders/1PjcSAYZcMcMVH9EAEAd7MGlglC4H2uxU?usp=sharing" target="_blank" rel="noopener">Drive folder</a>
-              <div class="res-foot"><span class="res-host">drive.google.com</span><span class="res-badge">IITM login required</span></div>
+              <div class="res-foot"><span class="res-badge" title="IITM login required">IITM login</span></div>
             </li>
           </ul>
         </div>
         <div class="res-group">
-          <h3 class="res-group-title">Notes<span class="res-count">2</span></h3>
+          <h3 class="res-group-title">Notes<span class="res-count">3</span></h3>
           <ul class="res-grid">
-            <li class="res-card">
+            <li class="res-card" title="Course notes: Notes and study material for this course. (iitmbsdegree.in)">
               <a class="res-main" href="https://www.iitmbsdegree.in/notes/managerial-economics" target="_blank" rel="noopener">Course notes</a>
               <p class="res-desc">Notes and study material for this course.</p>
-              <div class="res-foot"><span class="res-host">iitmbsdegree.in</span><span class="res-by">by <a href="https://www.iitmbsdegree.in/" target="_blank" rel="noopener">IITM BS Students' Corner</a></span></div>
+              <div class="res-foot"><span class="res-by">by <a href="https://www.iitmbsdegree.in/" target="_blank" rel="noopener">IITM BS Students' Corner</a></span></div>
             </li>
-            <li class="res-card">
+            <li class="res-card" title="Degree level notes on Medium: Notes for several degree courses collected on one page. Look for this course&#39;s section. (medium.com)">
               <a class="res-main" href="https://medium.com/@prathambhalla7/iit-madras-bsc-bs-degree-in-data-science-and-applications-notes-73f7a3dfb7e9" target="_blank" rel="noopener">Degree level notes on Medium</a>
               <p class="res-desc">Notes for several degree courses collected on one page. Look for this course's section.</p>
-              <div class="res-foot"><span class="res-host">medium.com</span><span class="res-by">by <a href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">Pratham Bhalla</a></span></div>
+              <div class="res-foot"><span class="res-by">by <a href="https://medium.com/@prathambhalla7" target="_blank" rel="noopener">Pratham Bhalla</a></span></div>
+            </li>
+            <li class="res-card" title="MauryaHub student notes: Week-wise notes, quiz cheatsheets, e-books and topic-wise end term PYQs. Shared on MauryaHub. Notes by Anmol Kansal, Ashish Maurya, Priyanshu Tiwari, Sanket Mishra, Abhay and others. (mauryahub.onrender.com)">
+              <a class="res-main" href="https://mauryahub.onrender.com/resources?program=degree&subject_id=6" target="_blank" rel="noopener">MauryaHub student notes</a>
+              <p class="res-desc">Week-wise notes, quiz cheatsheets, e-books and topic-wise end term PYQs. Shared on MauryaHub. Notes by Anmol Kansal, Ashish Maurya, Priyanshu Tiwari, Sanket Mishra, Abhay and others.</p>
+              <div class="res-foot"><span class="res-by">by Anmol Kansal, Ashish Maurya and others</span></div>
             </li>
           </ul>
         </div>
@@ -545,7 +606,7 @@
       </div>
 
       <section class="chapter" id="syllabus-description">
-        <h2><span class="num">§ 1</span>Course Description</h2>
+        <h2><span class="num" aria-hidden="true">§ 1</span>Course Description</h2>
         <div class="syllabus-body">
           <p>This course examines how markets function through demand and supply, consumer choice, production, costs, and profits. It explores different market structures, government regulation, and the business models of companies such as Amazon, Uber, Alibaba Group, and Apple Inc.</p>
           <p><b>Lectures-Tutorials-Practicals-Credits:</b> 4-0-0-4</p>
@@ -553,14 +614,14 @@
       </section>
 
       <section class="chapter" id="syllabus-faculty">
-        <h2><span class="num">§ 2</span>Faculty</h2>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Faculty</h2>
         <ul class="link-list">
           <li>Prof. Vimal Kumar, Department of Economic Science, IIT Kanpur</li>
         </ul>
       </section>
 
       <section class="chapter" id="syllabus-weeks">
-        <h2><span class="num">§ 3</span>Week-by-week</h2>
+        <h2><span class="num" aria-hidden="true">§ 3</span>Week-by-week</h2>
         <div class="syllabus-body">
           <p><b>Week 1:</b> Introduction to economics; Economic models and decision-making; Buyer and seller perspectives.</p>
           <p><b>Week 2:</b> Cost concepts (opportunity, sunk, fixed, variable); Firm behavior; Legal structures of firms; Marginal analysis.</p>
@@ -583,11 +644,11 @@
       <div class="lec-stage">
         <div class="lec-id">
           <div class="current-eyebrow" id="current-eyebrow"></div>
-          <h3 class="current-title" id="current-title"></h3>
+          <h1 class="current-title" id="current-title"></h1>
           <div class="current-actions" id="current-actions"></div>
         </div>
         <div class="video" id="video-box">
-          <iframe id="video-frame" src="" allowfullscreen loading="lazy"></iframe>
+          <iframe id="video-frame" title="Lecture video" src="" allowfullscreen loading="lazy"></iframe>
           <div class="novideo-overlay" id="video-empty" style="display:none">No video linked for this one yet. Try the slide link above.</div>
         </div>
         <div class="lec-nav">
@@ -605,16 +666,21 @@
   <div class="co-in">
     <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
-      <span class="co-name">The Companion</span>
-      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../contributors.html">Contributors</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a></nav>
+      <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
+      <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
     </div>
+    <div class="theme-foot" id="theme-foot"></div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/term-syllabus.js?v=6b763595"></script>
-<script>window.COURSE = {code: "MS3033", weeks: [{"w":"Week 1","items":[{"n":"1.1","t":"W1_L1: Introduction","v":"riPX7RQRaio","s":"https://drive.google.com/file/d/1yAdvAr0QxExnJ0vRPBCP_xQOYK6Ci_02/view?usp=drive_link"},{"n":"1.2","t":"W1_L2: Economic models \u0026 decision making","v":"bMNLyCgMwfo","s":"https://drive.google.com/file/d/1LH4lhalZWirDOKRGsvIROnnKW8ovvK60/view?usp=drive_link"},{"n":"1.3","t":"W1_L3: Problem solving \u0026 decision making buyers perspective","v":"NAhY4R7_Ii8","s":"https://drive.google.com/file/d/1o-8zoO03blK6vyP7AgMzuKq4YFNnVUGh/view?usp=drive_link"},{"n":"1.4","t":"W1_L4: Problem solving \u0026 decision making sellers perspective","v":"CHhKiWD6BgQ","s":"https://drive.google.com/file/d/1C4iQpM1BGMxhjaNms7NosgUyPh2tR6dt/view?usp=drive_link"}]},{"w":"Week 2","items":[{"n":"2.1","t":"W2_L1: Costs opportunity cost \u0026 sunk cost","v":"kO_0C0W87Fk","s":"https://drive.google.com/file/d/1o-kvxznfVYezC6tajDQQiQ46V01XEGcR/view?usp=drive_link"},{"n":"2.2","t":"W2_L2: Costs fixed cost \u0026 variable cost","v":"YDNWNM-P6Fg","s":"https://drive.google.com/file/d/15k5F_ZgvORfvPr-4FoGqDmnGExEIADXf/view?usp=drive_link"},{"n":"2.3","t":"W2_L3: Firm a simplified view","v":"xbKSNx75bb8","s":"https://drive.google.com/file/d/1F6qiFj7_Crp-2B1PTzo5CQJ_5m29U5NK/view?usp=drive_link"},{"n":"2.4","t":"W2_L4: Legal organization of firms in india","v":"Vr4B37UAABg","s":"https://drive.google.com/file/d/1e-fVFOsHj3iykDFIylYHo24t9tVh8QaS/view?usp=drive_link"},{"n":"2.5","t":"W2_L5: Marginal analysis through examples | part 1","v":"VDqzxIWuP54","s":"https://drive.google.com/file/d/16A16cxvW3VIYTPd-O2KHe9vJy9WCAkxI/view?usp=drive_link"},{"n":"2.6","t":"W2_L6: Marginal analysis through examples | part 2","v":"5lZudIHIuQg","s":"https://drive.google.com/file/d/1FypERSNw2nF2vrAK1e-jDjBj3TNLq5co/view?usp=drive_link"}]},{"w":"Week 3","items":[{"n":"3.1","t":"W3_L1: Marginal rate of technical substitution","v":"DBbAUeDdgRU","s":"https://drive.google.com/file/d/1-0t6dCDI47HgMUS0NjlRM30RIxzu1ASh/view?usp=drive_link"},{"n":"3.2","t":"W3_L2: Cost minimization | part 1","v":"wsTNNJ7-Y4A","s":"https://drive.google.com/file/d/1z41EpNVydTGHRKCwX52o0feABROj_G3D/view?usp=drive_link"},{"n":"3.3","t":"W3_L3: Cost minimization | part 2","v":"bTRvBCFXf3M","s":"https://drive.google.com/file/d/1GlOlwHUpbRw8gwe6Ba78fLNmSxIwlXP2/view?usp=drive_link"},{"n":"3.4","t":"W3_L4: Cost function","v":"I17UFua8C28","s":"https://drive.google.com/file/d/1AEYBExGNrlrIDIE9Jnm0rQyRvVFkTpxI/view?usp=drive_link"},{"n":"3.5","t":"W3_L5: Scale","v":"LGHoSxTA-yI","s":"https://drive.google.com/file/d/1OrpmJBboXKySGoRevNdpZ3PxmaFprfJo/view?usp=drive_link"},{"n":"3.6","t":"W3_L6: From cost curves to supply function","v":"4bTJnYEpNAE","s":"https://drive.google.com/file/d/1EIfCS3xxEJhodcMNETSgeE8aenYx_2gX/view?usp=drive_link"}]},{"w":"Week 4","items":[{"n":"4.1","t":"W4_L1: Cost curve iii","v":"OOQdKLz5vMs","s":"https://drive.google.com/file/d/1KCVRWl7Eem7EVTiA5ETa1ApMmyDCGyEl/view?usp=drive_link"},{"n":"4.2","t":"W4_L2: Consumer behavior building blocks \u0026 budget set","v":"gbJoo5zU40c","s":"https://drive.google.com/file/d/1OOjWdaHZ4Ca4UhvzHAbtOHdgt2jIe85W/view?usp=drive_link"},{"n":"4.3","t":"W4_L3: More on budget sets","v":"pTl_LXxJm9w","s":"https://drive.google.com/file/d/1duZgVx6mhQXTcAngr4mGzSL5_MfFTLsW/view?usp=drive_link"},{"n":"4.4","t":"W4_L4: Preferences I","v":"MMZPYKj-AKs","s":"https://drive.google.com/file/d/1RT6lQnJ0EfN3-cyJ7zh0_QqadHoVuoPv/view?usp=drive_link"},{"n":"4.5","t":"W4_L5: Preferences II","v":"w73H79TDRdQ","s":"https://drive.google.com/file/d/1qNq3PB-1xjUZ4-mCV35LT8gi0Aun-B3U/view?usp=drive_link"}]},{"w":"Week 5","items":[{"n":"5.1","t":"W5_L1: The consumer\u0027s problem","v":"-x3--jR-nAQ","s":"https://drive.google.com/file/d/16nPnC1WOJtOcXXirxVkR_Nv77isFqg_T/view?usp=drive_link"},{"n":"5.2","t":"W5_L2: Preferences \u0026 utility functions","v":"9HrzJ5YZwCk","s":"https://drive.google.com/file/d/1TUvqai8fofacVpyns75UbmfM33y4vQ8e/view?usp=drive_link"},{"n":"5.3","t":"W5_L3: Demand function","v":"bycB5APWdn4","s":"https://drive.google.com/file/d/1rtKancCCw_icbdnmi4FbPV7IwSwf7cqu/view?usp=drive_link"},{"n":"5.4","t":"W5_L4: Demand supply \u0026 market equilibrium","v":"k5zuo_HxU_Q","s":"https://drive.google.com/file/d/1s6CsvJzTV1tqyLhfMULt4aSji7L3xP2i/view?usp=drive_link"}]},{"w":"Week 6","items":[{"n":"6.1","t":"W6_L1: Elasticity","v":"HSWRiMGrI88","s":"https://drive.google.com/file/d/1hx4XLMQO6iPfqCnnx5wVdbpijDaQdBUZ/view?usp=drive_link"},{"n":"6.2","t":"W6_L2: Market intervention taxes","v":"sTuQalvMnIU","s":"https://drive.google.com/file/d/11p6ej6QRLMredM0egAa5x2lD4BAjdcQ6/view?usp=drive_link"},{"n":"6.3","t":"W6_L3: Market interventions to raise a price","v":"K6lPS3dVDSI","s":"https://drive.google.com/file/d/1eBtcaj4toPYp4osmFVmAhfWcSaLzvcbp/view?usp=drive_link"},{"n":"6.4","t":"W6_L4: Import tariffs \u0026 quotas","v":"tbE4SAvmBvM","s":"https://drive.google.com/file/d/1IdBMP8JPFSHHUoURY16Uz01T08MsaFAd/view?usp=drive_link"}]},{"w":"Week 7","items":[{"n":"7.1","t":"W7_L1: Obtaining the demand function","v":"Y8JWatr89W4","s":"https://drive.google.com/drive/folders/1SXy1h9ozuyO9-cHtIKhyf90JGH0ehcuO?usp=drive_link"},{"n":"7.2","t":"W7_L2: Monopoly I","v":"LB1FMcNm1Z8","s":null},{"n":"7.3","t":"W7_L3: Monopoly II","v":"LQmLjigIkkA","s":null},{"n":"7.4","t":"W7_L3: Monopoly II","v":"LQmLjigIkkA","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"W8_L1: Price discrimination","v":"kiA8a-HlQRo","s":"https://drive.google.com/file/d/1-9aAC3WEK7btkma0xmymZQT_Ud2EMZQ8/view?usp=drive_link"},{"n":"8.2","t":"W8_L2: Monopsony","v":"l9EV9uhpWQs","s":"https://drive.google.com/file/d/1SiphF-Dh2PFLObMaSfeww7D-lAN3bJ8v/view?usp=drive_link"},{"n":"8.3","t":"W8_L3: Imperfect competition","v":"xydyPTIcM48","s":"https://drive.google.com/file/d/13voezon_Vn5kXdgy6_S27PY7UvL22EmM/view?usp=drive_link"},{"n":"8.4","t":"W8_L4: Game theory I","v":"Es-P6W5xxEc","s":"https://drive.google.com/file/d/1bC5RoBBW3K_Ekhr1NVF7YAQPbC1v36Uv/view?usp=drive_link"}]},{"w":"Week 9","items":[{"n":"9.1","t":"W9_L1: Game theory II","v":"8jc7i09X0JA","s":"https://drive.google.com/file/d/1TN2F_uL1KsrIzfkCqryfgP1Zagrej9kX/view?usp=drive_link"},{"n":"9.2","t":"W9_L2: Oligopoly","v":"9VY7ZA_zvxw","s":"https://drive.google.com/file/d/1n7OTtUA5_F_0euCLcAKha4y6pQpKRu8E/view?usp=drive_link"},{"n":"9.3","t":"W9_L3: Monopolistic competition","v":"4AMLrIHJPA0","s":"https://drive.google.com/file/d/1rR5DFYZ0-D8cOFQN86m6J2lH46ZRpmfa/view?usp=drive_link"}]},{"w":"Week 10","items":[{"n":"10.1","t":"W10_L1: Advertisement","v":"9QhGix7K5JE","s":"https://drive.google.com/file/d/1DStR7SHN-rWzICUaxjrtmGAnPaFmSXAg/view?usp=drive_link"},{"n":"10.2","t":"W10_L2: Decisions under risk \u0026 uncertainty | part 1","v":"xFctL0jMzws","s":"https://drive.google.com/file/d/13laQu9uh9I7RcplLYtQHffucUpq1nTM1/view?usp=drive_link"},{"n":"10.3","t":"W10_L3: Decisions under risk \u0026 uncertainty | part 2","v":"myZVE90ZYao","s":"https://drive.google.com/file/d/1yqCiLliVDL_MQ0fqsYur2j7AtLsq9Igg/view?usp=drive_link"},{"n":"10.4","t":"W10_L4: Risk aversion risk loving risk neutrality","v":"9eQ8KUKNEBo","s":"https://drive.google.com/file/d/10Iv7zg5RaUcpsURl8iqlYIycb9URpu_h/view?usp=drive_link"},{"n":"10.5","t":"W10_L5: Risk aversion \u0026 insurance","v":"lXPME3GdP1g","s":"https://drive.google.com/file/d/1Y131BdomPjM3MHmkd4YI5hzehFDvORYR/view?usp=drive_link"},{"n":"10.6","t":"W10_L6: The market for insurance","v":"gYA6m7zg_Io","s":"https://drive.google.com/file/d/1G_dJTBY9KN2k2978zpw1PH4DC33a61DD/view?usp=drive_link"},{"n":"10.7","t":"W10_L7: Decisions under uncertainty","v":"_pKL4M1DjKs","s":"https://drive.google.com/file/d/1KgAIELbE9n7tBAFpjntg3VPQpozJA-dd/view?usp=drive_link"}]},{"w":"Week 11","items":[{"n":"11.1","t":"W11_L1: Asymmetric information | part 1","v":"MilgG6hmKPc","s":"https://drive.google.com/file/d/1x7EzOyHncsnfOMPaR8znk3Tc1KT0khcW/view?usp=drive_link"},{"n":"11.2","t":"W11_L2: Asymmetric information | part 2","v":"IeFobSbWoQQ","s":"https://drive.google.com/file/d/1hQnqK4EUaaAfaQHULIKlGDNP4jvMEy6l/view?usp=drive_link"},{"n":"11.3","t":"W11_L3: Asymmetric information | part 3","v":"ne7yKK9N5Nk","s":"https://drive.google.com/file/d/1zgsBSrJgMvc4ueFU9r_Fla3Lrk5ipUUZ/view?usp=drive_link"},{"n":"11.4","t":"W11_L4: Externalities","v":"bbffehslBpI","s":"https://drive.google.com/file/d/1bnB3gW9QVCLhoj55Ffu3YIsikODL61PT/view?usp=drive_link"}]},{"w":"Week 12","items":[{"n":"12.1","t":"W12_L1: Public goods","v":"9mSAESPgkVA","s":"https://drive.google.com/file/d/1cv6lgY09YRCKo3JcSWmxG3FsBHN1cBMT/view?usp=drive_link"},{"n":"12.2","t":"W12_L2: Platform economics | part 1","v":"ixJrJ9irHpo","s":"https://drive.google.com/file/d/1Mbuf_ADzZl3Tk3LQMlb2UIYpCJoUiIuv/view?usp=drive_link"},{"n":"12.3","t":"W12_L3: Platform economics | part 2","v":"wdqOynhQG1c","s":"https://drive.google.com/file/d/1VD6wEO0bfhtf8G1JbdXOj0kEyVCDGv39/view?usp=drive_link"}]}]};</script>
-<script src="../assets/course.js?v=2022f9cb"></script>
-<script src="../assets/theme.js?v=8e860dc4"></script>
+<script src="../assets/term-syllabus.js?v=ae229617"></script>
+<script>window.COURSE = {code: "MS3033", weeks: [{"w":"Week 1","items":[{"n":"1.1","t":"W1_L1: Introduction","v":"riPX7RQRaio","s":"https://drive.google.com/file/d/1yAdvAr0QxExnJ0vRPBCP_xQOYK6Ci_02/view?usp=drive_link"},{"n":"1.2","t":"W1_L2: Economic models \u0026 decision making","v":"bMNLyCgMwfo","s":"https://drive.google.com/file/d/1LH4lhalZWirDOKRGsvIROnnKW8ovvK60/view?usp=drive_link"},{"n":"1.3","t":"W1_L3: Problem solving \u0026 decision making buyers perspective","v":"NAhY4R7_Ii8","s":"https://drive.google.com/file/d/1o-8zoO03blK6vyP7AgMzuKq4YFNnVUGh/view?usp=drive_link"},{"n":"1.4","t":"W1_L4: Problem solving \u0026 decision making sellers perspective","v":"CHhKiWD6BgQ","s":"https://drive.google.com/file/d/1C4iQpM1BGMxhjaNms7NosgUyPh2tR6dt/view?usp=drive_link"}]},{"w":"Week 2","items":[{"n":"2.1","t":"W2_L1: Costs opportunity cost \u0026 sunk cost","v":"kO_0C0W87Fk","s":"https://drive.google.com/file/d/1o-kvxznfVYezC6tajDQQiQ46V01XEGcR/view?usp=drive_link"},{"n":"2.2","t":"W2_L2: Costs fixed cost \u0026 variable cost","v":"YDNWNM-P6Fg","s":"https://drive.google.com/file/d/15k5F_ZgvORfvPr-4FoGqDmnGExEIADXf/view?usp=drive_link"},{"n":"2.3","t":"W2_L3: Firm a simplified view","v":"xbKSNx75bb8","s":"https://drive.google.com/file/d/1F6qiFj7_Crp-2B1PTzo5CQJ_5m29U5NK/view?usp=drive_link"},{"n":"2.4","t":"W2_L4: Legal organization of firms in india","v":"Vr4B37UAABg","s":"https://drive.google.com/file/d/1e-fVFOsHj3iykDFIylYHo24t9tVh8QaS/view?usp=drive_link"},{"n":"2.5","t":"W2_L5: Marginal analysis through examples | part 1","v":"VDqzxIWuP54","s":"https://drive.google.com/file/d/16A16cxvW3VIYTPd-O2KHe9vJy9WCAkxI/view?usp=drive_link"},{"n":"2.6","t":"W2_L6: Marginal analysis through examples | part 2","v":"5lZudIHIuQg","s":"https://drive.google.com/file/d/1FypERSNw2nF2vrAK1e-jDjBj3TNLq5co/view?usp=drive_link"}]},{"w":"Week 3","items":[{"n":"3.1","t":"W3_L1: Marginal rate of technical substitution","v":"DBbAUeDdgRU","s":"https://drive.google.com/file/d/1-0t6dCDI47HgMUS0NjlRM30RIxzu1ASh/view?usp=drive_link"},{"n":"3.2","t":"W3_L2: Cost minimization | part 1","v":"wsTNNJ7-Y4A","s":"https://drive.google.com/file/d/1z41EpNVydTGHRKCwX52o0feABROj_G3D/view?usp=drive_link"},{"n":"3.3","t":"W3_L3: Cost minimization | part 2","v":"bTRvBCFXf3M","s":"https://drive.google.com/file/d/1GlOlwHUpbRw8gwe6Ba78fLNmSxIwlXP2/view?usp=drive_link"},{"n":"3.4","t":"W3_L4: Cost function","v":"I17UFua8C28","s":"https://drive.google.com/file/d/1AEYBExGNrlrIDIE9Jnm0rQyRvVFkTpxI/view?usp=drive_link"},{"n":"3.5","t":"W3_L5: Scale","v":"LGHoSxTA-yI","s":"https://drive.google.com/file/d/1OrpmJBboXKySGoRevNdpZ3PxmaFprfJo/view?usp=drive_link"},{"n":"3.6","t":"W3_L6: From cost curves to supply function","v":"4bTJnYEpNAE","s":"https://drive.google.com/file/d/1EIfCS3xxEJhodcMNETSgeE8aenYx_2gX/view?usp=drive_link"}]},{"w":"Week 4","items":[{"n":"4.1","t":"W4_L1: Cost curve iii","v":"OOQdKLz5vMs","s":"https://drive.google.com/file/d/1KCVRWl7Eem7EVTiA5ETa1ApMmyDCGyEl/view?usp=drive_link"},{"n":"4.2","t":"W4_L2: Consumer behavior building blocks \u0026 budget set","v":"gbJoo5zU40c","s":"https://drive.google.com/file/d/1OOjWdaHZ4Ca4UhvzHAbtOHdgt2jIe85W/view?usp=drive_link"},{"n":"4.3","t":"W4_L3: More on budget sets","v":"pTl_LXxJm9w","s":"https://drive.google.com/file/d/1duZgVx6mhQXTcAngr4mGzSL5_MfFTLsW/view?usp=drive_link"},{"n":"4.4","t":"W4_L4: Preferences I","v":"MMZPYKj-AKs","s":"https://drive.google.com/file/d/1RT6lQnJ0EfN3-cyJ7zh0_QqadHoVuoPv/view?usp=drive_link"},{"n":"4.5","t":"W4_L5: Preferences II","v":"w73H79TDRdQ","s":"https://drive.google.com/file/d/1qNq3PB-1xjUZ4-mCV35LT8gi0Aun-B3U/view?usp=drive_link"}]},{"w":"Week 5","items":[{"n":"5.1","t":"W5_L1: The consumer\u0027s problem","v":"-x3--jR-nAQ","s":"https://drive.google.com/file/d/16nPnC1WOJtOcXXirxVkR_Nv77isFqg_T/view?usp=drive_link"},{"n":"5.2","t":"W5_L2: Preferences \u0026 utility functions","v":"9HrzJ5YZwCk","s":"https://drive.google.com/file/d/1TUvqai8fofacVpyns75UbmfM33y4vQ8e/view?usp=drive_link"},{"n":"5.3","t":"W5_L3: Demand function","v":"bycB5APWdn4","s":"https://drive.google.com/file/d/1rtKancCCw_icbdnmi4FbPV7IwSwf7cqu/view?usp=drive_link"},{"n":"5.4","t":"W5_L4: Demand supply \u0026 market equilibrium","v":"k5zuo_HxU_Q","s":"https://drive.google.com/file/d/1s6CsvJzTV1tqyLhfMULt4aSji7L3xP2i/view?usp=drive_link"}]},{"w":"Week 6","items":[{"n":"6.1","t":"W6_L1: Elasticity","v":"HSWRiMGrI88","s":"https://drive.google.com/file/d/1hx4XLMQO6iPfqCnnx5wVdbpijDaQdBUZ/view?usp=drive_link"},{"n":"6.2","t":"W6_L2: Market intervention taxes","v":"sTuQalvMnIU","s":"https://drive.google.com/file/d/11p6ej6QRLMredM0egAa5x2lD4BAjdcQ6/view?usp=drive_link"},{"n":"6.3","t":"W6_L3: Market interventions to raise a price","v":"K6lPS3dVDSI","s":"https://drive.google.com/file/d/1eBtcaj4toPYp4osmFVmAhfWcSaLzvcbp/view?usp=drive_link"},{"n":"6.4","t":"W6_L4: Import tariffs \u0026 quotas","v":"tbE4SAvmBvM","s":"https://drive.google.com/file/d/1IdBMP8JPFSHHUoURY16Uz01T08MsaFAd/view?usp=drive_link"}]},{"w":"Week 7","items":[{"n":"7.1","t":"W7_L1: Obtaining the demand function","v":"Y8JWatr89W4","s":"https://drive.google.com/drive/folders/1SXy1h9ozuyO9-cHtIKhyf90JGH0ehcuO?usp=drive_link"},{"n":"7.2","t":"W7_L2: Monopoly I","v":"LB1FMcNm1Z8","s":null},{"n":"7.3","t":"W7_L3: Monopoly II","v":"LQmLjigIkkA","s":null},{"n":"7.4","t":"W7_L3: Monopoly II","v":"LQmLjigIkkA","s":null}]},{"w":"Week 8","items":[{"n":"8.1","t":"W8_L1: Price discrimination","v":"kiA8a-HlQRo","s":"https://drive.google.com/file/d/1-9aAC3WEK7btkma0xmymZQT_Ud2EMZQ8/view?usp=drive_link"},{"n":"8.2","t":"W8_L2: Monopsony","v":"l9EV9uhpWQs","s":"https://drive.google.com/file/d/1SiphF-Dh2PFLObMaSfeww7D-lAN3bJ8v/view?usp=drive_link"},{"n":"8.3","t":"W8_L3: Imperfect competition","v":"xydyPTIcM48","s":"https://drive.google.com/file/d/13voezon_Vn5kXdgy6_S27PY7UvL22EmM/view?usp=drive_link"},{"n":"8.4","t":"W8_L4: Game theory I","v":"Es-P6W5xxEc","s":"https://drive.google.com/file/d/1bC5RoBBW3K_Ekhr1NVF7YAQPbC1v36Uv/view?usp=drive_link"}]},{"w":"Week 9","items":[{"n":"9.1","t":"W9_L1: Game theory II","v":"8jc7i09X0JA","s":"https://drive.google.com/file/d/1TN2F_uL1KsrIzfkCqryfgP1Zagrej9kX/view?usp=drive_link"},{"n":"9.2","t":"W9_L2: Oligopoly","v":"9VY7ZA_zvxw","s":"https://drive.google.com/file/d/1n7OTtUA5_F_0euCLcAKha4y6pQpKRu8E/view?usp=drive_link"},{"n":"9.3","t":"W9_L3: Monopolistic competition","v":"4AMLrIHJPA0","s":"https://drive.google.com/file/d/1rR5DFYZ0-D8cOFQN86m6J2lH46ZRpmfa/view?usp=drive_link"}]},{"w":"Week 10","items":[{"n":"10.1","t":"W10_L1: Advertisement","v":"9QhGix7K5JE","s":"https://drive.google.com/file/d/1DStR7SHN-rWzICUaxjrtmGAnPaFmSXAg/view?usp=drive_link"},{"n":"10.2","t":"W10_L2: Decisions under risk \u0026 uncertainty | part 1","v":"xFctL0jMzws","s":"https://drive.google.com/file/d/13laQu9uh9I7RcplLYtQHffucUpq1nTM1/view?usp=drive_link"},{"n":"10.3","t":"W10_L3: Decisions under risk \u0026 uncertainty | part 2","v":"myZVE90ZYao","s":"https://drive.google.com/file/d/1yqCiLliVDL_MQ0fqsYur2j7AtLsq9Igg/view?usp=drive_link"},{"n":"10.4","t":"W10_L4: Risk aversion risk loving risk neutrality","v":"9eQ8KUKNEBo","s":"https://drive.google.com/file/d/10Iv7zg5RaUcpsURl8iqlYIycb9URpu_h/view?usp=drive_link"},{"n":"10.5","t":"W10_L5: Risk aversion \u0026 insurance","v":"lXPME3GdP1g","s":"https://drive.google.com/file/d/1Y131BdomPjM3MHmkd4YI5hzehFDvORYR/view?usp=drive_link"},{"n":"10.6","t":"W10_L6: The market for insurance","v":"gYA6m7zg_Io","s":"https://drive.google.com/file/d/1G_dJTBY9KN2k2978zpw1PH4DC33a61DD/view?usp=drive_link"},{"n":"10.7","t":"W10_L7: Decisions under uncertainty","v":"_pKL4M1DjKs","s":"https://drive.google.com/file/d/1KgAIELbE9n7tBAFpjntg3VPQpozJA-dd/view?usp=drive_link"}]},{"w":"Week 11","items":[{"n":"11.1","t":"W11_L1: Asymmetric information | part 1","v":"MilgG6hmKPc","s":"https://drive.google.com/file/d/1x7EzOyHncsnfOMPaR8znk3Tc1KT0khcW/view?usp=drive_link"},{"n":"11.2","t":"W11_L2: Asymmetric information | part 2","v":"IeFobSbWoQQ","s":"https://drive.google.com/file/d/1hQnqK4EUaaAfaQHULIKlGDNP4jvMEy6l/view?usp=drive_link"},{"n":"11.3","t":"W11_L3: Asymmetric information | part 3","v":"ne7yKK9N5Nk","s":"https://drive.google.com/file/d/1zgsBSrJgMvc4ueFU9r_Fla3Lrk5ipUUZ/view?usp=drive_link"},{"n":"11.4","t":"W11_L4: Externalities","v":"bbffehslBpI","s":"https://drive.google.com/file/d/1bnB3gW9QVCLhoj55Ffu3YIsikODL61PT/view?usp=drive_link"}]},{"w":"Week 12","items":[{"n":"12.1","t":"W12_L1: Public goods","v":"9mSAESPgkVA","s":"https://drive.google.com/file/d/1cv6lgY09YRCKo3JcSWmxG3FsBHN1cBMT/view?usp=drive_link"},{"n":"12.2","t":"W12_L2: Platform economics | part 1","v":"ixJrJ9irHpo","s":"https://drive.google.com/file/d/1Mbuf_ADzZl3Tk3LQMlb2UIYpCJoUiIuv/view?usp=drive_link"},{"n":"12.3","t":"W12_L3: Platform economics | part 2","v":"wdqOynhQG1c","s":"https://drive.google.com/file/d/1VD6wEO0bfhtf8G1JbdXOj0kEyVCDGv39/view?usp=drive_link"}]}], item: "lecture"};</script>
+<script src="../assets/course.js?v=88272958"></script>
+<script src="../assets/theme.js?v=f608d0e2"></script>
+<script src="../assets/config.js?v=54927162"></script>
+<script src="../assets/account.js?v=56115e17"></script>
+<script src="../assets/sync.js?v=4fcd88f9"></script>
+<script src="../assets/suggest.js?v=516b3cad"></script>
 </body>
 </html>

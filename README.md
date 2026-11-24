@@ -4,6 +4,13 @@ A student-run companion to the IIT Madras BS in Data Science & Applications prog
 
 Live site: https://iitmbsc-student-projects.github.io/the-companion/
 
+## What it does
+
+- Course pages: syllabus, week-by-week lectures, resources, past papers
+- Grade calculator, a reverse calculator on [My Term](my-term.html), and a [degree planner](planner.html) (credits toward each exit, and CGPA)
+- Home lecture search across every course, and a "Your term" card once you pick courses
+- Optional Google sign-in (Supabase) to sync watched lectures and term picks across devices, plus a community suggestion queue — see `supabase/README.md`. Leave `assets/config.js` empty and the site stays fully static.
+
 ## Working on it
 
 Each course is one file in `data/courses/`. The pages in `courses/` are generated from those files, so edit the data and not the HTML. See `tools/README.md` for the local dashboard and the generator.
