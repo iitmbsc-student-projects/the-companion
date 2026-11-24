@@ -5,6 +5,13 @@
   {
    "date": "2026-11-24",
    "kind": "site",
+   "title": "Common problems on the project pages",
+   "text": "The MAD I, MAD II, ML Practice, Business Data Management and Deep Learning & GenAI project pages now have a Common problems section: viva slot booking and reattempts, eligibility, deadlines, similarity flags and report rejections, with the answers course staff gave on Discourse this term.",
+   "courses": []
+  },
+  {
+   "date": "2026-11-24",
+   "kind": "site",
    "title": "Scam alert: new providers and tricks",
    "text": "Three providers added to the Scam alert list (SkillOrbit, Wayeva Innovations and Univox Academy), Corizo's entry updated, and a new section on tricks students reported this term: mails from student accounts, \"mandatory\" courses with payment links, and calls asking for your ID or password.",
    "courses": []

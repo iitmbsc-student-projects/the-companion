@@ -416,5 +416,28 @@
    "group": "Recordings",
    "desc": "Course and project live sessions, by term."
   }
+ ],
+ "tips_note": "From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.",
+ "tips": [
+  {
+   "q": "The dashboard says I am not eligible even though I passed the cutoff.",
+   "a": "Only a submission made from the registered notebook counts, and staff have repeated this several times. Make your final submissions from the notebook you registered.",
+   "t": 220377
+  },
+  {
+   "q": "Do I submit anything on the portal for the viva?",
+   "a": "No. If the Data Studio dashboard shows you as eligible, you can book a slot, and nothing else is needed.",
+   "t": 220362
+  },
+  {
+   "q": "I booked a slot. What happens next?",
+   "a": "The viva is held in the slot you booked. The viva team shares the meeting details a day before.",
+   "t": 220248
+  },
+  {
+   "q": "I was absent or ill in Batch 1.",
+   "a": "Absence in Batch 1 earns a reattempt. The viva team sends a form to book a new slot.",
+   "t": 220404
+  }
  ]
 }

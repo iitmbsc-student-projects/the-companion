@@ -199,6 +199,16 @@
   section.chapter h2 .num{font-family:'IBM Plex Mono',monospace;font-size:12px;
     color:var(--accent);letter-spacing:.14em;font-weight:500}
 
+  .tips{border-top:2px solid var(--ink)}
+  details.tip{border-bottom:1px solid var(--rule)}
+  details.tip summary{display:flex;gap:10px;align-items:baseline;padding:8px 2px;cursor:pointer;list-style:none;font-weight:600;font-size:15px;line-height:1.35}
+  details.tip summary::-webkit-details-marker{display:none}
+  details.tip summary::before{content:"+";flex:none;width:14px;font:700 15px 'IBM Plex Mono',monospace;color:var(--accent)}
+  details.tip[open] summary::before{content:"\2212"}
+  details.tip summary:hover{color:var(--accent)}
+  details.tip summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  details.tip p{margin:0;padding:0 2px 10px 24px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+  .tip-src{margin-left:6px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
   .syllabus-body{font-family:'Spectral',serif;font-size:16px;line-height:1.55;max-width:70ch}
   .syllabus-body p{margin:0 0 8px}
   #panel-syllabus .link-list li{padding:2px 0}
@@ -521,9 +531,22 @@
         <button type="button" class="rs-go" id="rs-go"></button>
       </div>
       <a class="parent-link" href="ms2001.html">Main course: <b>MS2001 Business Data Management</b></a>
-
+      <section class="chapter" id="tips">
+        <h2><span class="num" aria-hidden="true">§ 1</span>Common problems</h2>
+        <div class="tips">
+          <details class="tip"><summary>My report was rejected or put on hold.</summary><p>If rejected, resubmit in the next cycle only. If put on hold, resubmit on the date given in the email. Address every point, and justify any you disagree with. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219855" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>There is no extension if I miss a cycle.</summary><p>All timelines are announced well ahead, and a missed report goes to the next cycle. The final report and viva cycle for this term is in December. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219198" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Where are the sample reports?</summary><p>The portal has the "Capstone Chronicles" PDF with five sample reports. Use it with the rubrics and your TA feedback. The timelines are on page 3 of the primary rubrics. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219728" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>The business owner will not record a video, or stopped replying.</summary><p>A report without the owner video is rejected. Raise a ticket to change to the secondary route, or to reset the portal if you stay on primary. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219056" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Can I add synthetic data?</summary><p>No. It is flagged for plagiarism. Use only the data you have, from any year. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219069" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Can I share my proposal or Drive link on Discourse?</summary><p>Please do not. Public links raise the chance of copying and plagiarism flags. Share your Drive folder with the TA when they ask. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/219451" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Can I use Google Sheets and Google Forms?</summary><p>Yes. Share all sheets so they can be cross-checked, and a Form from your student ID is fine. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/218646" target="_blank" rel="noopener">Discourse thread</a></p></details>
+          <details class="tip"><summary>Portal is stuck or I cannot access it.</summary><p>Write to BS operations. Staff say only they can fix portal access. <a class="tip-src" href="https://discourse.onlinedegree.iitm.ac.in/t/218063" target="_blank" rel="noopener">Discourse thread</a></p></details>
+        </div>
+        <p class="tbd-note" style="margin-top:8px">From replies by course staff and TAs on Discourse, 24 Nov 2026. Rules and dates change, so the latest course announcement wins.</p>
+      </section>
       <section class="chapter" id="resources">
-        <h2><span class="num" aria-hidden="true">§ 1</span>Resources</h2>
+        <h2><span class="num" aria-hidden="true">§ 2</span>Resources</h2>
 
         <div class="res-group">
           <h3 class="res-group-title">Guides<span class="res-count">3</span></h3>
