@@ -14,6 +14,10 @@
   if (mc) mc.innerHTML = '<a class="menu-all" href="' + BASE + 'courses.html"><span class="mi-title">All courses</span><span class="mi-count">' +
     MENU.courses.total + '</span></a>' +
     MENU.courses.items.map(function (i) { return item(BASE + 'courses.html#' + i.id, i.roman, i.title, i.count); }).join('');
+  var mn = document.getElementById('menu-nptel');
+  if (mn && MENU.nptel) mn.innerHTML = '<a class="menu-all" href="' + BASE + 'nptel.html"><span class="mi-title">All NPTEL courses</span><span class="mi-count">' +
+    MENU.nptel.total + '</span></a>' +
+    MENU.nptel.items.map(function (i) { return item(BASE + 'nptel.html#' + i.id, i.roman, i.title, i.count); }).join('');
   var ml = document.getElementById('menu-links');
   if (ml) ml.innerHTML = '<a class="menu-all" href="' + BASE + 'links.html"><span class="mi-title">All links</span><span class="mi-count">' +
     MENU.links.total + '</span></a>' +

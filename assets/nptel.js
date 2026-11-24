@@ -167,7 +167,12 @@
     var start = panels.map(function (p) { return p.id; }).indexOf((location.hash || '').slice(1));
     if (start > -1) select(start, false, false);
   }
-  window.addEventListener('hashchange', fromHash);
+  /* a menu link to #table-3 while already on this page: switch the list and bring the tabs into view */
+  window.addEventListener('hashchange', function () {
+    fromHash();
+    var t = document.querySelector('.np-tabs');
+    if (t && t.scrollIntoView) t.scrollIntoView({ block: 'start' });
+  });
   var m = /[?&]q=([^&#]*)/.exec(location.search);
   if (m) { try { box.value = decodeURIComponent(m[1].replace(/\+/g, ' ')); } catch (e) {} }
   select(0, false, false);
