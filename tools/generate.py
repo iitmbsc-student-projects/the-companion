@@ -525,29 +525,23 @@ def generate_nptel():
     tpl = open(NPTEL_TEMPLATE_PATH, encoding="utf-8").read()
     esc = html_lib.escape
 
-    def li(c):
+    def row(c):
         by = ", ".join(x for x in (c["by"], c["inst"]) if x)
-        cr = c["credits"]
-        cr_txt = ("%s cr" % esc(cr)) if cr else ""
-        wk = c["weeks"]
-        info = []
-        if wk:
-            info.append("%s weeks" % esc(wk))
+        cm = ""
+        if c.get("limit"):
+            cm += '<span class="np-limit">%s</span>' % esc(c["limit"])
         if c.get("added"):
-            info.append("added %s" % esc(c["added"].replace("January", "Jan")))
+            cm += '<span class="np-added">Added %s</span>' % esc(c["added"].replace("January", "Jan"))
         if c["swayam"]:
-            info.append('<a class="np-join" href="%s" target="_blank" rel="noopener">Join on SWAYAM</a>' % esc(c["swayam"], quote=True))
+            av = '<a class="np-join" href="%s" target="_blank" rel="noopener">Yes, join</a>' % esc(c["swayam"], quote=True)
         else:
-            info.append('<span class="np-closed">not open this term</span>')
-        sub = '<span class="np-by">%s</span>' % esc(by) if by else ""
-        meta = '<span class="np-info">%s</span>' % " \u00b7 ".join(info)
-        limit = '<span class="np-limit">%s</span>' % esc(c["limit"]) if c.get("limit") else ""
+            av = '<span class="np-closed">No</span>'
         hay = " ".join((c["name"], c["by"], c["inst"], c["id"], c.get("limit", "")))
-        return ('<li data-open="%d" data-q="%s"><span class="code"><a href="https://nptel.ac.in/courses/%s" target="_blank" rel="noopener">%s</a></span>'
-                '<span class="name"><a href="https://nptel.ac.in/courses/%s" target="_blank" rel="noopener">%s</a>%s%s</span>%s'
-                '<span class="credits">%s</span></li>'
-                % (1 if c["swayam"] else 0, esc(hay.casefold(), quote=True), esc(c["id"]), esc(c["id"]),
-                   esc(c["id"]), esc(c["name"]), sub, limit, meta, cr_txt))
+        url = "https://nptel.ac.in/courses/%s" % esc(c["id"])
+        return ('<tr class="np-row" data-open="%d" data-q="%s"><td data-l="Code"><a class="np-code" href="%s" target="_blank" rel="noopener">%s</a></td>'
+                '<td data-l="Course"><a class="np-name" href="%s" target="_blank" rel="noopener">%s</a></td><td data-l="Professor">%s</td>'
+                '<td data-l="Open this term">%s</td><td data-l="Comment">%s</td></tr>'
+                % (1 if c["swayam"] else 0, esc(hay.casefold(), quote=True), url, esc(c["id"]), url, esc(c["name"]), esc(by), av, cm))
 
     tabs, panels = [], []
     for n, sec in enumerate(d["sections"]):
@@ -558,14 +552,15 @@ def generate_nptel():
         groups = [[] for _ in NP_GROUPS]
         for c in sorted(sec["courses"], key=lambda x: x["name"].casefold()):
             groups[_np_group(c)].append(c)
-        gh = []
+        bodies = []
         for label, items in zip(NP_GROUPS, groups):
-            if not items:
-                continue
-            ols = '    <ol class="courses">\n      %s\n    </ol>\n' % "\n      ".join(li(c) for c in items)
-            gh.append('    <div class="level-group">\n    <div class="level-subhead">%s</div>\n%s    </div>' % (esc(label), ols))
+            if items:
+                bodies.append('      <tbody class="level-group"><tr class="np-grp"><th colspan="5" scope="colgroup">%s</th></tr>\n        %s\n      </tbody>'
+                              % (esc(label), "\n        ".join(row(c) for c in items)))
+        table = ('    <table class="np-table">\n      <thead><tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Professor</th>'
+                 '<th scope="col">Open %s</th><th scope="col">Comment</th></tr></thead>\n%s\n    </table>' % (esc(d["term"]), "\n".join(bodies)))
         panels.append('  <section class="level np-panel" id="%s" role="tabpanel" aria-labelledby="tab-%s"%s>\n    <div class="level-head"><h2>%s</h2></div>\n    <p class="np-intro">%s</p>\n%s\n  </section>'
-                      % (tid, tid, "" if n == 0 else " hidden", esc(sec["tab"]), esc(sec["intro"]), "\n\n".join(gh)))
+                      % (tid, tid, "" if n == 0 else " hidden", esc(sec["tab"]), esc(sec["intro"]), table))
     rules = '  <div class="np-rules"><h2>Before you enrol</h2><ul>%s</ul><p><a href="%s" target="_blank" rel="noopener">Student Handbook</a>, section 9.1 and Tables 2 and 3.</p></div>' % (
         "".join("<li>%s</li>" % esc(r) for r in d["rules"]), esc(d["handbook"], quote=True))
     page = tpl.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])).replace("{{TABS}}", "".join(tabs)) \
