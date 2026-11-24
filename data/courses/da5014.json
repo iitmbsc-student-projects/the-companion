@@ -140,334 +140,389 @@
  },
  "weeks_data": [
   {
-   "w": "Lectures",
+   "w": "Week 1",
    "items": [
     {
-     "n": "1",
+     "n": "1.1",
      "t": "Introduction to MLOps",
      "v": "LNtSRp1reos",
      "s": null
     },
     {
-     "n": "2",
+     "n": "1.2",
      "t": "DevOps vs MLOps",
      "v": "c8HdgyG4Shg",
      "s": null
     },
     {
-     "n": "3",
+     "n": "1.3",
      "t": "Landscape of MLOps",
      "v": "5k485C-KPVQ",
      "s": null
     },
     {
-     "n": "4",
+     "n": "1.4",
      "t": "Hands-on: Introduction to Google Cloud, Vertex AI",
      "v": "68YxDKlAdP4",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 2",
+   "items": [
     {
-     "n": "5",
+     "n": "2.1",
      "t": "Data Management for ML",
      "v": "r2_bgMgP580",
      "s": null
     },
     {
-     "n": "6",
+     "n": "2.2",
      "t": "Data Versioning",
      "v": "7rW5OejBA28",
      "s": null
     },
     {
-     "n": "7",
+     "n": "2.3",
      "t": "Hands-on: DVC",
      "v": "uweHNLtgxKg",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 3",
+   "items": [
     {
-     "n": "8",
+     "n": "3.1",
      "t": "Motivation for Feature Store",
      "v": "bBztTeXW3ME",
      "s": null
     },
     {
-     "n": "9",
+     "n": "3.2",
      "t": "Feature Store: Overview, Use Cases",
      "v": "87owqZ481nc",
      "s": null
     },
     {
-     "n": "10",
+     "n": "3.3",
      "t": "Feast: Overview",
      "v": "JtyLLJgvQKA",
      "s": null
     },
     {
-     "n": "11",
+     "n": "3.4",
      "t": "Hands-on: Feast",
      "v": "fl6LKNr8gb4",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 4",
+   "items": [
     {
-     "n": "12",
+     "n": "4.1",
      "t": "CI/CD for ML",
      "v": "1PFfzJk2qCc",
      "s": null
     },
     {
-     "n": "13",
+     "n": "4.2",
      "t": "Git 101 for ML",
      "v": "h-4IH6-qJWY",
      "s": null
     },
     {
-     "n": "14",
+     "n": "4.3",
      "t": "Github and best practices",
      "v": "9EtdVdkdce8",
      "s": null
     },
     {
-     "n": "15",
+     "n": "4.4",
      "t": "Hands-on: CI for ML using CML",
      "v": "sKWA2PGmg90",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 5",
+   "items": [
     {
-     "n": "16",
+     "n": "5.1",
      "t": "Model Lifecycle Patterns",
      "v": "_Kg-a7iOK8g",
      "s": null
     },
     {
-     "n": "17",
+     "n": "5.2",
      "t": "Execution Environments",
      "v": "DILHZrfJYzs",
      "s": null
     },
     {
-     "n": "18",
+     "n": "5.3",
      "t": "Introduction to MLflow",
      "v": "aSKi2_DixX4",
      "s": null
     },
     {
-     "n": "19",
+     "n": "5.4",
      "t": "Hyperparameter Tuning",
      "v": "aTUsX2_GttA",
      "s": null
     },
     {
-     "n": "20",
+     "n": "5.5",
      "t": "HandsOn: MLflow on GCP",
      "v": "35Pv2OJ1QxU",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 6",
+   "items": [
     {
-     "n": "21",
+     "n": "6.1",
      "t": "Model Serving using FastAPI",
      "v": "Qor7iGXVKOA",
      "s": null
     },
     {
-     "n": "22",
+     "n": "6.2",
      "t": "HandsOn: FastAPI",
      "v": "LJNEr8XtU-s",
      "s": null
     },
     {
-     "n": "23",
+     "n": "6.3",
      "t": "Model Serving using Containers",
      "v": "w3SabCLrkzM",
      "s": null
     },
     {
-     "n": "24",
+     "n": "6.4",
      "t": "HandsOn: Docker",
      "v": "kV47H5b71Z8",
      "s": null
     },
     {
-     "n": "25",
+     "n": "6.5",
      "t": "Introduction to Kubernetes",
      "v": "H_pMolfm6s4",
      "s": null
     },
     {
-     "n": "26",
+     "n": "6.6",
      "t": "HandsOn: Kubernetes",
      "v": "J3dWDVG_YJc",
      "s": null
     },
     {
-     "n": "27",
+     "n": "6.7",
      "t": "Model Deployment, CI/CD for ML",
      "v": "RJHQRKGixnY",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 7",
+   "items": [
     {
-     "n": "28",
+     "n": "7.1",
      "t": "ML Systems Monitoring & Performance Tools",
      "v": "83BSH01jWFw",
      "s": null
     },
     {
-     "n": "29",
+     "n": "7.2",
      "t": "Modern Observability Stack for ML",
      "v": "IZsyl8wHrmQ",
      "s": null
     },
     {
-     "n": "30",
+     "n": "7.3",
      "t": "Response Options for ML Systems",
      "v": "zafCZIDM9EM",
      "s": null
     },
     {
-     "n": "31",
+     "n": "7.4",
      "t": "Logging for ML Systems",
      "v": "yYkQNSTISaA",
      "s": null
     },
     {
-     "n": "32",
+     "n": "7.5",
      "t": "HandsOn: Logging, Monitoring, Scaling using GCP-native tools",
      "v": "Ixi12t0VKOw",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 8",
+   "items": [
     {
-     "n": "33",
+     "n": "8.1",
      "t": "Introduction to ML Security with Examples",
      "v": "WJSTDenIqgs",
      "s": null
     },
     {
-     "n": "34",
+     "n": "8.2",
      "t": "Challenges in securing ML",
      "v": "c_3s_QWonfs",
      "s": null
     },
     {
-     "n": "35",
-     "t": "MLsecOps",
+     "n": "8.3",
+     "t": "MLSecOps",
      "v": "4abLOEKaUn4",
      "s": null
     },
     {
-     "n": "36",
+     "n": "8.4",
      "t": "HandsOn: Security Demonstration",
      "v": "TrnP2RnlWXc",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 9",
+   "items": [
     {
-     "n": "37",
+     "n": "9.1",
      "t": "ML Governance and Regulation",
      "v": "73bGDGzMtQw",
      "s": null
     },
     {
-     "n": "38",
+     "n": "9.2",
      "t": "Governance Failures and How to Mitigate them",
      "v": "R_dMiAjAdAM",
      "s": null
     },
     {
-     "n": "39",
+     "n": "9.3",
      "t": "Drift Monitoring",
      "v": "vL1XiVK9VPI",
      "s": null
     },
     {
-     "n": "40",
+     "n": "9.4",
      "t": "Detecting Bias in ML",
      "v": "bV9cjMkkzc8",
      "s": null
     },
     {
-     "n": "41",
+     "n": "9.5",
      "t": "Explaining ML models",
      "v": "DRe02jFW2FU",
      "s": null
     },
     {
-     "n": "42",
+     "n": "9.6",
      "t": "HandsOn: Governance Tools",
      "v": "ab1hl2SH7q4",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 10",
+   "items": [
     {
-     "n": "43",
+     "n": "10.1",
      "t": "LLMOps",
      "v": "A3jFXa88a2k",
      "s": null
     },
     {
-     "n": "44",
+     "n": "10.2",
      "t": "LLMOps during Pretraining",
      "v": "N50zCNg1aAs",
      "s": null
     },
     {
-     "n": "45",
+     "n": "10.3",
      "t": "Versioning & Testing in LLMs",
      "v": "6RmfAyeAoYs",
      "s": null
     },
     {
-     "n": "46",
+     "n": "10.4",
      "t": "CI&CD for LLMs",
      "v": "twJ7gRs7Dnc",
      "s": null
     },
     {
-     "n": "47",
+     "n": "10.5",
      "t": "HandsOn: LLM Finetuning",
      "v": "rCNNbpyULf0",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 11",
+   "items": [
     {
-     "n": "48",
+     "n": "11.1",
      "t": "LLM Accuracy",
      "v": "b7SQViYCcII",
      "s": null
     },
     {
-     "n": "49",
+     "n": "11.2",
      "t": "Proprietary LLMs",
      "v": "xkOFdcnZcuE",
      "s": null
     },
     {
-     "n": "50",
+     "n": "11.3",
      "t": "LLM Serving, Cost Control",
      "v": "wNM4Y39D__U",
      "s": null
     },
     {
-     "n": "51",
+     "n": "11.4",
      "t": "LLM Observability, Security, Governance & Best Practices",
      "v": "I-Ju8sCARqo",
      "s": null
     },
     {
-     "n": "52",
+     "n": "11.5",
      "t": "HandsOn: LLM Usage and Security",
      "v": "mEcY-CdAX1A",
      "s": null
-    },
+    }
+   ]
+  },
+  {
+   "w": "Week 12",
+   "items": [
     {
-     "n": "53",
+     "n": "12.1",
      "t": "MLOps Course Summary",
      "v": "Ub9pCxSFfgQ",
      "s": null
     },
     {
-     "n": "54",
+     "n": "12.2",
      "t": "Additional Topics in MLOps",
      "v": "vEBahj6fOjE",
      "s": null
     },
     {
-     "n": "55",
+     "n": "12.3",
      "t": "Closing Thoughts",
      "v": "Eog1ssY-eLs",
      "s": null
