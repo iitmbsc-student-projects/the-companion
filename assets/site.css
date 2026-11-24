@@ -56,7 +56,7 @@
   /* phones and narrow windows: two rows. Row 1 = brand + the two menus, row 2 = the other three pages.
      The colour switcher moves to the page footer (see theme.js). */
   .topbar-in > .acct-ctl{margin-left:auto;flex:none}
-  @media(max-width:1320px){
+  @media(max-width:960px){
     .topbar .topbar-in{flex-wrap:wrap;height:auto;gap:0 4px;padding:6px 12px 2px;position:relative}
     .nav-item.current::after{display:none}
     .nav-item.current .nav-main{color:var(--accent);font-weight:600}
@@ -623,7 +623,7 @@ body[data-page="courses"] .level-head h2{font-size:22px}
 .fineprint.fine-end{margin:34px 0 0}
 
 /* the top bar holds seven items: give it a little more room than the 920px content column, the same on every page */
-@media(min-width:1321px){ .topbar .topbar-in{max-width:none} }
+
 
 /* ---- 404 page ---- */
 /* its link cards (the same cards the old front page used) */
@@ -812,7 +812,7 @@ body[data-page="calculator"] .ph-title{font-weight:700}
 .calc-formula .calc-table{display:flex}
 
 /* five colour swatches: keep the top bar on one line */
-@media(min-width:1321px){ .tb-link{padding:9px 11px} .tb-brand{margin-right:8px} #theme-slot{margin-right:0} .theme-switch button{padding:4px} }
+
 
 /* ---------------------------------------------------------------- accounts */
 .acct-ctl{display:inline-flex;align-items:center;flex:none}
@@ -945,14 +945,40 @@ body[data-page="calculator"] .ph-title{font-weight:700}
 @media(max-width:520px){.np-r{flex-direction:column;gap:0}.np-r-c{width:auto}}
 .hm-more[hidden]{display:none}
 
-/* NPTEL dropdown, My Term, Planner and five colour dots: keep the top bar on one line */
-@media(min-width:1321px){
+/* ---- Top bar, one quiet row on laptops and desktops --------------------------
+   brand | Courses, Important links, NPTEL | My Term, Planner, More        theme, Sign in
+   Narrower than 960px it falls back to the two-row layout above. */
+@media(min-width:961px){
+  .topbar .wrap{max-width:1240px}
+  .topbar .topbar-in{flex-wrap:nowrap;height:64px;gap:0}
+  .tb-brand{margin-right:18px}
+  .tb-logo{height:42px}
   .tb-nav{gap:0}
-  .nav-main{padding-left:10px}
-  .nav-caret{padding-right:8px}
-  .tb-link{padding:9px 9px}
-  .tb-brand{margin-right:4px}
-  .tb-name{font-size:18px}
+  .tb-more{position:relative;gap:0;margin-left:10px;padding-left:14px;min-width:0}
+  .tb-more::before{content:"";position:absolute;left:0;top:50%;height:20px;border-left:1px solid var(--rule);transform:translateY(-50%)}
+  .nav-main{padding:8px 2px 8px 11px;font-size:14px;border-radius:8px 0 0 8px}
+  .nav-caret{padding:8px 9px 8px 5px;min-width:0;font-size:11px}
+  .tb-link{padding:8px 11px;font-size:14px}
+  .nav-item{border-radius:8px}
+  .nav-item:hover,.nav-item.open{background:var(--tint)}
+  #menu-more{min-width:210px}
+  .nav-item.open .nav-caret{transform:none}
+  .tb-link:hover{background:var(--tint);color:var(--ink)}
+  .nav-item::after{left:11px;right:11px;bottom:3px}
+  .tb-link.current::after{left:11px;right:11px;bottom:3px}
+  #theme-slot{margin:0 10px 0 8px}
+  .topbar .acct-btn:not(.is-in){min-height:34px;padding:6px 16px;font-size:13.5px;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .topbar .acct-btn:not(.is-in):hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent,#fff)}
+  .topbar .acct-btn.is-in{min-height:34px;min-width:34px}
+}
+@media(min-width:961px) and (max-width:1120px){
+  .tb-logo{height:38px}
+  .tb-brand{margin-right:10px}
+  .nav-main{padding-left:8px;font-size:13.5px}
+  .tb-link{padding:8px 8px;font-size:13.5px}
 }
 @media(min-width:761px){ .tb-overflow .menu{left:auto;right:0} }
 button.nav-main{background:none;border:0;cursor:pointer;font-family:inherit}
+
+/* the logo artwork is dark maroon: give it a light plate on the dark theme so it stays readable */
+html[data-theme="dark"] .tb-logo{background:#f4efe6;border-radius:8px;padding:3px 8px}
