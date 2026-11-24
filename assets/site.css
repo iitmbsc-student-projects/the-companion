@@ -206,8 +206,6 @@
   /* ---- Home page ---- */
   body.home{background-image:radial-gradient(900px 520px at 88% -8%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%);background-repeat:no-repeat}
   .hm-hero{padding:clamp(18px,3.5vh,32px) 0 2px}
-  .hm-kicker{margin:0 0 6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--accent)}
   .hm-title{margin:0;font-family:'Spectral',serif;font-weight:700;font-size:clamp(34px,5.6vw,50px);line-height:1;letter-spacing:-0.03em}
   .hm-sub{margin:8px 0 0;max-width:760px;font-family:'Spectral',serif;font-style:italic;
     font-size:clamp(15px,2vw,17px);line-height:1.35;color:var(--ink-2)}
@@ -303,7 +301,7 @@
     @keyframes landIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
   }
   @media(max-height:700px){
-    body.searching .hm-kicker,body.searching .hm-sub,body.searching .hm-hint{display:none}
+    body.searching .hm-sub,body.searching .hm-hint{display:none}
     body.searching .hm-title{font-size:34px}
     body.searching .hm-hero{padding-top:20px}
   }
