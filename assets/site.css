@@ -1087,7 +1087,8 @@ body[data-page="planner"] .ph-title,body[data-page="my-term"] .ph-title,body[dat
 .pl-cgpa-note{margin:0 0 8px}
 @media(min-width:760px){ .pl-top .pl-stat + .pl-stat{padding-left:22px;border-left:1px solid var(--rule)} }
 
-/* home: "Your tools" cards go to pages on this site, so they get an inward arrow */
-.quick-card.qc-in::after{content:"\2192"}
+/* home: cards and "see all" links are plain, with no arrows */
+body.home .quick-card::after,body.home .ht-n::after,body.home .hm-more::after{content:none;display:none}
+body.home .qc-title{padding-right:0}
 .hm-tools{margin-top:16px}
 .hm-tools + .hm-quick{margin-top:14px}
