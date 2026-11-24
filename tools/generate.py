@@ -578,10 +578,12 @@ def generate_nptel():
                               % (gi, esc(label), "\n        ".join(row(c, gi) for c in items)))
         table = ('    <table class="np-table">\n      <thead><tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Professor</th>'
                  '<th scope="col">Open %s</th><th scope="col">Comment</th></tr></thead>\n%s\n    </table>' % (esc(d["term"]), "\n".join(bodies)))
-        panels.append('  <section class="level np-panel" id="%s" role="tabpanel" aria-labelledby="tab-%s"%s>\n    <div class="level-head"><h2>%s</h2></div>\n    <p class="np-intro">%s</p>\n%s\n  </section>'
-                      % (tid, tid, "" if n == 0 else " hidden", esc(sec["tab"]), esc(sec["intro"]), table))
-    rules = '  <details class="np-rules"><summary>Before you enrol <span>%d things to know</span></summary><ul>%%s</ul><p><a href="%%s" target="_blank" rel="noopener">Student Handbook</a>, section 9.1 and Tables 2 and 3.</p></details>' % len(d["rules"]) % (
-        "".join("<li>%s</li>" % esc(r) for r in d["rules"]), esc(d["handbook"], quote=True))
+        panels.append('  <section class="level np-panel" id="%s" role="tabpanel" aria-labelledby="tab-%s"%s>\n    <p class="np-intro">%s</p>\n%s\n  </section>'
+                      % (tid, tid, "" if n == 0 else " hidden", esc(sec["intro"]), table))
+    rules = ('  <details class="np-rules" open><summary>Before you enrol <span>%d things to know</span></summary><ul>%s</ul>\n'
+             '    <a class="np-hb" href="%s" target="_blank" rel="noopener"><span class="np-hb-t">Student Handbook</span>'
+             '<span class="np-hb-s">Section 9.1 and Tables 2 and 3. The official source of these lists.</span></a></details>'
+             % (len(d["rules"]), "".join("<li>%s</li>" % esc(r) for r in d["rules"]), esc(d["handbook"], quote=True)))
     page = tpl.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])).replace("{{TABS}}", "".join(tabs)) \
         .replace("{{RULES}}", rules).replace("{{TERM}}", esc(d["term"])).replace("{{SECTIONS}}", "\n".join(panels)) \
         .replace("{{FOOTNAV}}", _footer_nav("nptel"))

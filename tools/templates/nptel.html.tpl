@@ -56,12 +56,12 @@
   <div class="wrap">
     <h1 class="ph-title">{{TITLE}}</h1>
     <p class="ph-sub">{{SUB}}</p>
-    <div class="np-tabs" role="tablist" aria-label="NPTEL lists">{{TABS}}</div>
   </div>
 </header>
 
 <main class="wrap" id="main" tabindex="-1">
 {{RULES}}
+  <div class="np-tabs" role="tablist" aria-label="NPTEL lists">{{TABS}}</div>
   <div class="np-tools" role="search">
     <div class="np-sbox">
       <input type="search" id="np-search" class="np-search" placeholder="Search by course, professor, institute or code" aria-label="Search NPTEL courses" autocomplete="off" spellcheck="false">
