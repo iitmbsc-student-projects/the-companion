@@ -7,7 +7,7 @@
   var count = document.getElementById('np-count'), none = document.getElementById('np-none');
   if (!tabs.length || !box) return;
   function norm(s) { return String(s).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim(); }
-  var rows = Array.prototype.slice.call(document.querySelectorAll('.np-panel ol.courses > li'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.np-panel tr.np-row'));
   var hay = rows.map(function (r) { return norm(r.getAttribute('data-q')); });
 
   function select(i, focus, hash) {
@@ -33,8 +33,8 @@
 
   function current() { for (var i = 0; i < tabs.length; i++) if (tabs[i].getAttribute('aria-selected') === 'true') return i; return 0; }
   function summary() {
-    var i = current(), p = panels[i], vis = p.querySelectorAll('ol.courses > li:not([hidden])').length;
-    var total = p.querySelectorAll('ol.courses > li').length;
+    var i = current(), p = panels[i], vis = p.querySelectorAll('tr.np-row:not([hidden])').length;
+    var total = p.querySelectorAll('tr.np-row').length;
     count.textContent = 'Showing ' + vis + ' of ' + total + ' courses in this list';
     none.hidden = vis > 0;
   }
@@ -47,9 +47,9 @@
     });
     panels.forEach(function (p, j) {
       p.querySelectorAll('.level-group').forEach(function (g) {
-        g.hidden = g.querySelectorAll('ol.courses > li:not([hidden])').length === 0;
+        g.hidden = g.querySelectorAll('tr.np-row:not([hidden])').length === 0;
       });
-      var n = p.querySelectorAll('ol.courses > li:not([hidden])').length, el = tabs[j].querySelector('.np-tab-n');
+      var n = p.querySelectorAll('tr.np-row:not([hidden])').length, el = tabs[j].querySelector('.np-tab-n');
       var total = +el.getAttribute('data-total');
       el.textContent = n === total ? total : n + '/' + total;
     });

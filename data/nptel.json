@@ -14,7 +14,7 @@
   {
    "id": "dept",
    "title": "Department and free electives",
-   "intro": "Handbook Table 2. These can be credited at the BSc and BS levels. Rows in amber carry a date rule.",
+   "intro": "Handbook Table 2. These can be credited at the BSc and BS levels. Amber comments are date rules.",
    "courses": [
     {
      "id": "106102163",
@@ -1037,7 +1037,7 @@
   {
    "id": "hsmg",
    "title": "HS and Management electives",
-   "intro": "Handbook Table 3. Up to 4 credits can count under the HM category at the BS level, from NPTEL or from courses in the programme. Rows in amber carry a date rule.",
+   "intro": "Handbook Table 3. Up to 4 credits can count under the HM category at the BS level, from NPTEL or from courses in the programme. Amber comments are date rules.",
    "courses": [
     {
      "id": "109104093",

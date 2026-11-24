@@ -645,16 +645,27 @@ body[data-page="notfound"] .nf-cards{margin-top:4px}
 .np-chk{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600}
 .np-count{margin:6px 0 0;font-size:13px;color:var(--ink-2)}
 .np-intro{margin:2px 0 0;font-size:14px;color:var(--ink-2)}
-.np-panel .level-subhead{margin-top:14px}
-.np-panel ol.courses li{align-items:start;padding:5px 0}
-.np-panel ol.courses li .code a{color:var(--accent);border:none}
-.np-panel ol.courses li .name{display:block;line-height:1.3}
-.np-panel .name>span{display:block}
-.np-panel ol.courses li{grid-template-columns:78px minmax(0,1fr) 300px 46px}
-.np-by{font-size:12.5px;font-weight:400;color:var(--ink-2)}
-.np-info{font-size:12.5px;font-weight:400;color:var(--ink-2);text-align:right;padding-top:2px;white-space:nowrap}
-@media(max-width:760px){.np-panel ol.courses li{grid-template-columns:70px minmax(0,1fr) auto}.np-panel ol.courses li .np-info{grid-column:2;grid-row:2;text-align:left;padding:0;white-space:normal}.np-panel ol.courses li .credits{grid-column:3;grid-row:1}}
-.np-limit{font-size:12.5px;font-weight:600;color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:3px;padding:1px 7px;margin-top:3px;width:fit-content}
-.np-panel ol.courses li .name a.np-join{color:var(--accent);font-weight:700}
-.np-closed{color:var(--ink-2);font-weight:400}
-.np-panel .level-head h2{font-size:26px}
+.np-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.np-table thead th{position:sticky;top:var(--tbh,64px);z-index:3;background:var(--paper);text-align:left;font:700 12px 'IBM Plex Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:8px 10px 6px 0;border-bottom:2px solid var(--ink)}
+.np-table .np-grp th{padding:16px 0 5px;text-align:left;font:700 13px 'IBM Plex Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--ink)}
+.np-table td{padding:6px 10px 6px 0;vertical-align:top;border-bottom:1px dotted var(--rule);line-height:1.35}
+.np-table td:first-child{width:92px}
+.np-table td:nth-child(2){width:30%}
+.np-table td:nth-child(4){width:110px}
+.np-table td:nth-child(5){width:210px}
+.np-code{font:600 12px 'IBM Plex Mono',monospace;color:var(--accent);border:none}
+.np-name{font-weight:600;color:var(--ink);border:none}
+.np-name:hover{color:var(--accent)}
+.np-table td:nth-child(3){font-size:13px;color:var(--ink-2)}
+.np-join{font-weight:700;color:var(--accent)}
+.np-closed{color:var(--ink-2)}
+.np-limit{display:block;font-size:12.5px;font-weight:600;color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:3px;padding:1px 7px;margin-bottom:3px;width:fit-content}
+.np-added{display:block;font-size:12.5px;color:var(--ink-2)}
+@media(max-width:760px){
+  .np-table thead{position:absolute;left:-9999px}
+  .np-table,.np-table tbody,.np-table tr,.np-table td,.np-table th{display:block}
+  .np-table td,.np-table td:first-child,.np-table td:nth-child(4),.np-table td:nth-child(5){width:auto;border:none;padding:1px 0}
+  .np-table tr.np-row{padding:8px 0;border-bottom:1px dotted var(--rule)}
+  .np-table td[data-l]::before{content:attr(data-l) ": ";font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2)}
+  .np-table td[data-l="Course"]::before,.np-table td[data-l="Code"]::before{content:""}
+}
