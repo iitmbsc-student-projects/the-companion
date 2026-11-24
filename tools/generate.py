@@ -411,10 +411,10 @@ def generate_contributors():
     if c:
         cc = []
         for cd in c["cards"]:
-            acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
+            acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
             if cd.get("url2"):
                 mail = cd["url2"].startswith("mailto:")
-                acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else " &#8599;")
+                acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else "")
             cc.append('<li class="lk-card cta-card"><h3 class="lk-title">%s</h3><p class="lk-desc">%s</p><div class="cta-row">%s</div></li>'
                       % (esc(cd["title"]), esc(cd["text"]), acts))
         jump.append('<a href="#%s">%s</a>' % (c["id"], esc(c["title"])))
@@ -431,7 +431,7 @@ def generate_contributors():
         btns = "".join('<a class="cta-btn%s" href="%s"%s>%s%s</a>' % (
             "" if i == 0 else " ghost", esc(x["url"], quote=True),
             "" if x["url"].startswith("mailto:") else ' target="_blank" rel="noopener"',
-            esc(x["label"]), "" if x["url"].startswith("mailto:") else " &#8599;") for i, x in enumerate(m["actions"]))
+            esc(x["label"]), "" if x["url"].startswith("mailto:") else "") for i, x in enumerate(m["actions"]))
         miss = ('\n      <div class="missing-note"><div><strong>%s</strong><p>%s</p></div><div class="cta-row">%s</div></div>'
                 % (esc(m["title"]), esc(m["text"]), btns))
     page = CONTRIB_TEMPLATE.replace("{{TITLE}}", esc(d["title"])).replace("{{SUB}}", esc(d["sub"])) \
@@ -493,7 +493,7 @@ def generate_scam_alert():
                     '<a class="cta-btn%s" href="%s"%s>%s%s</a>' % (
                         "" if i == 0 else " ghost", esc(x["url"], quote=True),
                         "" if x["url"].startswith("mailto:") else ' target="_blank" rel="noopener"',
-                        esc(x["label"]), "" if x["url"].startswith("mailto:") else " &#8599;")
+                        esc(x["label"]), "" if x["url"].startswith("mailto:") else "")
                     for i, x in enumerate(sec["actions"]))
         jump.append('<a href="#%s">%s</a>' % (sec["id"], esc(sec["title"])))
         parts.append(head + body + "\n      </div>")
@@ -662,10 +662,10 @@ def _home_share():
     """Slim 'Share a resource' band for the home page, from the first card in data/contributors.json."""
     esc = html_lib.escape
     cd = json.load(open(CONTRIB_PATH, encoding="utf-8"))["contribute"]["cards"][0]
-    acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
+    acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
     if cd.get("url2"):
         mail = cd["url2"].startswith("mailto:")
-        acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else " &#8599;")
+        acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else "")
     return ('  <section class="hm-share" aria-labelledby="hm-share-h">\n    <div class="hs-text"><h2 class="hm-h" id="hm-share-h">%s</h2><p>%s</p></div>\n'
             '    <div class="cta-row">%s</div>\n  </section>' % (esc(cd["title"]), esc(cd["text"]), acts))
 
@@ -677,8 +677,9 @@ def generate_home():
     catalog = open(os.path.join(SITE_ROOT, "courses.html"), encoding="utf-8").read()
     li_re = re.compile(r'<li( class="project")?><span class="code">([^<]+)</span><span class="name"><a href="([^"]+)">(.*?)</a></span>', re.S)
     cards, home, groups = [], {}, {}
-    for m in re.finditer(r'<section id="([^"]+)" class="level">\s*<div class="level-head">\s*<span class="roman">(.*?)</span>\s*<h2>(.*?)</h2>(.*?)</section>', catalog, re.S):
+    for m in re.finditer(r'<section id="([^"]+)" class="level">\s*<div class="level-head">\s*(?:<span class="roman">(.*?)</span>\s*)?<h2>(.*?)</h2>(.*?)</section>', catalog, re.S):
         sid, roman, title, body = m.groups()
+        roman = roman or ""
         chips = []
         rows = li_re.findall(body)
         groups[sid] = {re.search(r"courses/(.*?)\.html", r[2]).group(1) for r in rows}
@@ -694,9 +695,9 @@ def generate_home():
                     item = "session" if d.get("kind") == "project" else "lecture"
                 home[code] = {"t": html_lib.unescape(name), "u": href, "n": n, "i": item}
         cards.append('      <section class="hl-card" id="lv-%s" aria-labelledby="lv-%s-h">\n'
-                     '        <div class="hl-head"><span class="hl-roman">%s</span><h3 id="lv-%s-h">%s</h3><span class="hl-n">%d</span></div>\n'
+                     '        <div class="hl-head"><h3 id="lv-%s-h">%s</h3><span class="hl-n">%d</span></div>\n'
                      '        <ul class="chips">\n%s\n        </ul>\n      </section>'
-                     % (sid, sid, roman, sid, title, len(rows), "\n".join(chips)))
+                     % (sid, sid, sid, title, len(rows), "\n".join(chips)))
     tiles = []
     for label, kicker, desc, ids in (
             ("Foundation", "Part I", "Maths, statistics, computational thinking, Python and English", ("foundation",)),
@@ -704,9 +705,9 @@ def generate_home():
             ("Degree", "Part III", "The core courses and electives across data, AI and business", ("bsc", "bs")),
             ("Postgraduate", "Parts IV and V", "The PG Diploma in AI and ML, and the MTech project", ("pgd", "mtech"))):
         stems = set().union(*(groups.get(i, set()) for i in ids))
-        tiles.append('      <a class="hm-tile" href="courses.html#%s"><span class="ht-k">%s</span><span class="ht-t">%s</span>'
+        tiles.append('      <a class="hm-tile" href="courses.html#%s"><span class="ht-t">%s</span>'
                      '<span class="ht-d">%s</span><span class="ht-n">%d courses</span></a>'
-                     % (ids[0], kicker, label, esc(desc), len(stems)))
+                     % (ids[0], label, esc(desc), len(stems)))
     links = json.load(open(LINKS_PATH, encoding="utf-8"))
     quick = sorted((it for grp in links["groups"] for it in grp["items"] if it.get("home")), key=lambda it: it["home"].get("order", 99))
     quick_html = "\n".join('        <a class="quick-card" href="%s" target="_blank" rel="noopener"><span class="qc-title">%s</span><span class="qc-tag">%s</span></a>'
