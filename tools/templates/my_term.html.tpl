@@ -70,12 +70,18 @@
 
     <div class="mt-summary" id="mt-summary" hidden></div>
 
-    <details class="mt-pick" id="mt-pick">
-      <summary id="mt-pick-sum">Choose your courses</summary>
-      <div class="mt-pick-grid" id="mt-pick-grid"></div>
-    </details>
+    <div class="mt-pick" id="mt-pick">
+      <div class="mt-chosen" id="mt-chosen"></div>
+      <div class="mt-panel" id="mt-panel" hidden>
+        <div class="mt-panel-top">
+          <input type="search" id="mt-q" class="mt-filter" placeholder="Search by code or name" aria-label="Search courses" autocomplete="off">
+          <div class="mt-levels" id="mt-levels" role="group" aria-label="Level"></div>
+        </div>
+        <div class="mt-results" id="mt-pick-grid"></div>
+      </div>
+    </div>
 
-    <p class="mt-empty" id="mt-empty">No courses picked yet. Open “Choose your courses” and tick the ones you are taking.</p>
+    <p class="mt-empty" id="mt-empty">No courses picked yet. Click a course in the list above to add it; your progress and exam dates appear here.</p>
     <div class="mt-list" id="mt-grid"></div>
 
     <section class="mt-rev" id="mt-rev" hidden>

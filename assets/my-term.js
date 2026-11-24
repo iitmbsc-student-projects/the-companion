@@ -72,59 +72,102 @@
     return (p && p.done) || {};
   }
 
-  /* ---------------------------- the course picker ---------------------------- */
+  /* ---------------------------- the course picker ----------------------------
+     Picked courses show as chips. "Add course" opens a small panel: search by
+     code or name, narrow by level, click a course to add or remove it. */
   var picked = [];
   var LEVELS = ['Foundation', 'Diploma', 'Degree', 'BSc', 'BS', 'PG Diploma'];
   function levelRank(l) { var i = LEVELS.indexOf(l); return i < 0 ? LEVELS.length : i; }
+  var panelOpen = false, query = '', levelFilter = 'All';
 
-  function buildPicker() {
-    var grid = $('mt-pick-grid');
-    var pick = $('mt-pick');
-    if (pick && !pick.querySelector('.mt-filter')) {
-      var f = document.createElement('input');
-      f.type = 'search'; f.className = 'mt-filter'; f.placeholder = 'Filter courses';
-      f.setAttribute('aria-label', 'Filter courses');
-      f.addEventListener('input', function () {
-        var q = f.value.trim().toLowerCase();
-        [].forEach.call(grid.querySelectorAll('label'), function (lab) {
-          lab.hidden = !!(q && lab.textContent.toLowerCase().indexOf(q) < 0);
-        });
-        [].forEach.call(grid.querySelectorAll('.mt-level-h'), function (h) {
-          var n = h.nextElementSibling, any = false;
-          while (n && !n.classList.contains('mt-level-h')) {
-            if (n.tagName === 'LABEL' && !n.hidden) any = true;
-            n = n.nextElementSibling;
-          }
-          h.hidden = !any;
-        });
-      });
-      grid.parentNode.insertBefore(f, grid);
-    }
-    grid.textContent = '';
-    var codes = Object.keys(TS.courses).sort(function (a, b) {
+  function courseName(code) {
+    var c = TS.courses[code];
+    return (c && c.name) || (MT[code] && MT[code].t) || code;
+  }
+  function togglePick(code) {
+    var i = picked.indexOf(code);
+    if (i >= 0) picked.splice(i, 1); else picked.push(code);
+    save(); render(); buildResults();
+  }
+
+  function refreshChosen() {
+    var box = $('mt-chosen');
+    box.textContent = '';
+    picked.forEach(function (code) {
+      var chip = el('span', 'mt-pill');
+      chip.title = courseName(code);
+      chip.appendChild(el('span', 'mt-pill-c', code));
+      var x = el('button', 'mt-pill-x', '×');
+      x.type = 'button';
+      x.setAttribute('aria-label', 'Remove ' + code + ' ' + courseName(code));
+      x.addEventListener('click', function () { togglePick(code); });
+      chip.appendChild(x);
+      box.appendChild(chip);
+    });
+    var add = el('button', 'mt-add', panelOpen ? (picked.length ? 'Done' : 'Hide list') : (picked.length ? '+ Add or remove' : '+ Add your courses'));
+    add.type = 'button';
+    add.setAttribute('aria-expanded', panelOpen ? 'true' : 'false');
+    add.setAttribute('aria-controls', 'mt-panel');
+    add.addEventListener('click', function () {
+      panelOpen = !panelOpen;
+      $('mt-panel').hidden = !panelOpen;
+      refreshChosen();
+      if (panelOpen) $('mt-q').focus();
+    });
+    box.appendChild(add);
+  }
+
+  function buildLevels() {
+    var wrap = $('mt-levels');
+    wrap.textContent = '';
+    var seen = {};
+    Object.keys(TS.courses).forEach(function (c) { seen[TS.courses[c].level] = 1; });
+    ['All'].concat(Object.keys(seen).sort(function (a, b) { return levelRank(a) - levelRank(b); })).forEach(function (l) {
+      var b = el('button', 'mt-lv' + (l === levelFilter ? ' is-on' : ''), l);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', l === levelFilter ? 'true' : 'false');
+      b.addEventListener('click', function () { levelFilter = l; buildLevels(); buildResults(); });
+      wrap.appendChild(b);
+    });
+  }
+
+  function buildResults() {
+    var box = $('mt-pick-grid');
+    var top = box.scrollTop;
+    box.textContent = '';
+    var q = query.trim().toLowerCase();
+    var codes = Object.keys(TS.courses).filter(function (code) {
+      var c = TS.courses[code];
+      if (levelFilter !== 'All' && c.level !== levelFilter) return false;
+      return !q || (code + ' ' + courseName(code)).toLowerCase().indexOf(q) >= 0;
+    }).sort(function (a, b) {
       var la = levelRank(TS.courses[a].level), lb = levelRank(TS.courses[b].level);
       return la - lb || a.localeCompare(b);
     });
-    var lastLevel = null;
+    if (!codes.length) box.appendChild(el('p', 'mt-none', 'No course matches that.'));
     codes.forEach(function (code) {
-      var c = TS.courses[code];
-      if (c.level !== lastLevel) {
-        lastLevel = c.level;
-        grid.appendChild(el('span', 'mt-level-h', c.level));
-      }
-      var lab = el('label');
-      var cb = document.createElement('input');
-      cb.type = 'checkbox'; cb.value = code; cb.checked = picked.indexOf(code) >= 0;
-      cb.addEventListener('change', function () {
-        if (cb.checked) { if (picked.indexOf(code) < 0) picked.push(code); }
-        else picked = picked.filter(function (x) { return x !== code; });
-        save(); render();
-      });
-      lab.appendChild(cb);
-      lab.appendChild(el('span', 'code', code));
-      lab.appendChild(el('span', null, c.name || (MT[code] && MT[code].t) || code));
-      grid.appendChild(lab);
+      var on = picked.indexOf(code) >= 0;
+      var b = el('button', 'mt-res' + (on ? ' is-on' : ''));
+      b.type = 'button';
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.appendChild(el('span', 'code', code));
+      b.appendChild(el('span', 'nm', courseName(code)));
+      b.appendChild(el('span', 'st', on ? '✓ Added' : '+ Add'));
+      b.addEventListener('click', function () { togglePick(code); });
+      box.appendChild(b);
     });
+    box.scrollTop = top;
+  }
+
+  function buildPicker() {
+    var q = $('mt-q');
+    if (!q.dataset.bound) {
+      q.dataset.bound = '1';
+      q.addEventListener('input', function () { query = q.value; buildResults(); });
+    }
+    buildLevels();
+    buildResults();
+    refreshChosen();
   }
 
   function save() {
@@ -148,10 +191,7 @@
     var grid = $('mt-grid');
     grid.textContent = '';
     $('mt-empty').hidden = picked.length > 0;
-    if (picked.length) $('mt-pick').open = false;
-    $('mt-pick-sum').textContent = picked.length
-      ? 'Your courses (' + picked.length + ') · change'
-      : 'Choose your courses';
+    refreshChosen();
 
     var rowsData = [];
     var soonest = null, soonestCodes = [], leftAll = 0, watchedAll = 0, totalAll = 0;
@@ -367,6 +407,8 @@
                 : Promise.resolve(lsGet('companion-enroll-' + term, []));
   start.then(function (codes) {
     picked = Array.isArray(codes) ? codes.slice() : [];
+    panelOpen = picked.length === 0;
+    $('mt-panel').hidden = !panelOpen;
     buildPicker(); render();
   });
   document.addEventListener('companion-sync-ready', function () { render(); });
