@@ -982,3 +982,31 @@ button.nav-main{background:none;border:0;cursor:pointer;font-family:inherit}
 
 /* the logo artwork is dark maroon: give it a light plate on the dark theme so it stays readable */
 html[data-theme="dark"] .tb-logo{background:#f4efe6;border-radius:8px;padding:3px 8px}
+
+/* ---- Planner: pick a level, see only its courses ---- */
+.pl-bar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;justify-content:space-between;margin:18px 0 12px;
+  padding:14px 16px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
+.pl-lv{display:flex;flex-direction:column;gap:5px;flex:1 1 280px;min-width:0}
+.pl-select{width:100%;padding:9px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);
+  font:600 15px 'IBM Plex Sans',sans-serif;cursor:pointer}
+.pl-select:focus-visible,.pl-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pl-steps{display:flex;gap:8px}
+.pl-step{padding:8px 14px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--ink);
+  font:600 13px 'IBM Plex Sans',sans-serif;cursor:pointer}
+.pl-step:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.pl-step:disabled{opacity:.4;cursor:default}
+.pl-next .pl-step{margin:4px 0 2px}
+.pl-panel{margin:0 0 20px;padding:4px 2px 0}
+.pl-panel-t{font-family:'Spectral',serif;font-weight:600;font-size:24px;margin:6px 0 4px}
+.pl-prog-t{margin:0 0 6px;font-size:14px;color:var(--ink-2)}
+.pl-prog{height:8px;border-radius:999px;background:var(--tint-2);overflow:hidden;margin:0 0 12px}
+.pl-prog span{display:block;height:100%;border-radius:999px;background:var(--accent)}
+.pl-group{margin:14px 0 4px}
+.pl-group > .pl-k{display:block;margin:0 0 4px}
+.pl-panel .pl-courses{border-top:1px solid var(--rule)}
+.pl-panel .pl-filter{margin:10px 0 6px}
+.pl-next{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:0 0 4px}
+.pl-next h2{font-size:16px;margin:0}
+.pl-next .pl-step{margin:0;padding:5px 12px;font-size:12.5px}
+.pl-next .pl-next-list{display:flex;flex-wrap:wrap;gap:2px 14px;flex-basis:100%;margin:0;padding:0;list-style:none;font-size:14px}
+.pl-next > p{flex-basis:100%;margin:0}

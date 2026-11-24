@@ -194,7 +194,9 @@
   }
 
   var saveTimer;
-  var openStages = {};
+  var LKEY = 'companion-planner-level';
+  var level = '';
+  try { level = localStorage.getItem(LKEY) || ''; } catch (e) { level = ''; }
   var electiveQuery = '';
   function persist() {
     plan = clampPlan(plan);
@@ -254,18 +256,6 @@
     return n;
   }
 
-  function section(id, title, detail, body, startOpen) {
-    var box = el('details', 'pl-stage');
-    box.open = openStages[id] != null ? openStages[id] : !!startOpen;
-    box.addEventListener('toggle', function () { openStages[id] = box.open; });
-    var sum = el('summary');
-    sum.appendChild(el('span', 'pl-stage-t', title));
-    box.appendChild(sum);
-    if (detail) box.appendChild(el('p', 'pl-detail', detail));
-    body.forEach(function (n) { box.appendChild(n); });
-    return box;
-  }
-
   function render() {
     var y = window.scrollY;
     var model = compute();
@@ -305,6 +295,18 @@
     var nxt = nextUp(model);
     var nextBox = el('div', 'pl-next');
     nextBox.appendChild(el('h2', null, nxt.label === 'Done' ? 'Nothing left on this path' : 'Open next · ' + nxt.label));
+    if (nxt.label !== 'Done') {
+      var go = el('button', 'pl-step', 'Show this level');
+      go.type = 'button';
+      go.addEventListener('click', function () {
+        var L = levelForStage(nxt.label);
+        if (!L) return;
+        level = L.id; try { localStorage.setItem(LKEY, level); } catch (e) {}
+        render();
+        var pb = document.querySelector('.pl-bar'); if (pb) pb.scrollIntoView({ block: 'start' });
+      });
+      nextBox.appendChild(go);
+    }
     if (nxt.codes.length) {
       var ul = el('ul', 'pl-next-list');
       nxt.codes.slice(0, 8).forEach(function (code) {
@@ -334,95 +336,165 @@
       root.appendChild(el('p', 'pl-warn', 'Option 1 is selected, so ' + model.closed.join(' and ') + ' do not add credits. The academics page says that pair stays closed after Business Analytics.'));
     }
 
-    var trackBox = el('div', 'pl-tracks');
-    trackBox.appendChild(el('span', 'pl-k', 'Diploma in Data Science track'));
-    (RULES.diploma_ds.tracks || []).forEach(function (t) {
-      var lab = el('label', 'pl-track' + (plan.track === t.id ? ' is-on' : ''));
-      var inp = document.createElement('input');
-      inp.type = 'radio'; inp.name = 'ds-track'; inp.value = t.id; inp.checked = plan.track === t.id;
-      inp.addEventListener('change', function () {
-        plan.track = t.id; persist(); render();
-      });
-      lab.appendChild(inp);
-      var tx = el('span');
-      tx.appendChild(el('b', null, t.label));
-      tx.appendChild(el('span', 'pl-detail', t.detail || ''));
-      lab.appendChild(tx);
-      trackBox.appendChild(lab);
-    });
-    root.appendChild(trackBox);
-
-    var transfers = el('div', 'pl-transfers');
-    function numField(label, key, max) {
-      var lab = el('label', 'pl-transfer');
-      lab.appendChild(el('span', null, label));
-      var inp = document.createElement('input');
-      inp.type = 'number'; inp.min = '0'; inp.max = String(max); inp.step = '1';
-      inp.value = String(plan[key]);
-      inp.addEventListener('change', function () {
-        plan[key] = Math.max(0, Math.min(max, parseInt(inp.value, 10) || 0));
-        inp.value = String(plan[key]);
-        persist(); render();
-      });
-      lab.appendChild(inp);
-      lab.appendChild(el('span', 'pl-sub', '0–' + max + ', not in CGPA'));
-      return lab;
-    }
-    transfers.appendChild(numField('NPTEL credits', 'nptel', RULES.nptel_max || 8));
-    transfers.appendChild(numField('Apprenticeship credits', 'apprenticeship', RULES.apprenticeship_max || 12));
-    root.appendChild(transfers);
-
     function rows(codes, noteFor) {
       var box = el('div', 'pl-courses');
       (codes || []).forEach(function (code) { box.appendChild(courseRow(code, noteFor ? noteFor(code) : '')); });
       return box;
     }
-
-    var active = nxt.label;
-    function stageTitle(name, codes) {
-      return name + '  ' + passedCount(codes) + '/' + (codes || []).length;
+    function group(label, node) {
+      var g = el('div', 'pl-group');
+      if (label) g.appendChild(el('span', 'pl-k', label));
+      g.appendChild(node);
+      return g;
     }
-    root.appendChild(section('foundation', stageTitle('Foundation', RULES.foundation),
-      '32 credits. Both diplomas open once these are passed.',
-      [rows(RULES.foundation)], active === 'Foundation' || !model.gradedCount));
-    root.appendChild(section('dip-prog', stageTitle('Diploma in Programming', RULES.diploma_programming),
-      '27 credits.',
-      [rows(RULES.diploma_programming)], active === 'Diploma in Programming'));
-    var dsCodes = RULES.diploma_ds.mandatory.concat(model.dsTrack.courses);
-    root.appendChild(section('dip-ds', stageTitle('Diploma in Data Science', dsCodes),
-      '21 credits required, plus the 6-credit track above.',
-      [rows(RULES.diploma_ds.mandatory), rows(model.dsTrack.courses)],
-      active === 'Diploma in Data Science'));
-    root.appendChild(section('core', stageTitle('Degree core', RULES.degree_core),
-      '20 credits inside the BSc. Needs both diplomas.',
-      [rows(RULES.degree_core)], active === 'Degree core'));
-
-    var elNote = 'The first ' + RULES.bsc_elective_credits + ' credits count toward the BSc (' + model.bscEl.got + ' so far), the next ' +
-      RULES.bs_elective_credits + ' toward the BS (' + model.bsEl.got + ' so far).';
-    var electiveCodes = model.electivePool.slice();
-    var electiveRows = rows(electiveCodes);
-    var filter = document.createElement('input');
-    filter.type = 'search'; filter.className = 'pl-filter'; filter.placeholder = 'Filter electives';
-    filter.value = electiveQuery;
-    filter.addEventListener('input', function () {
-      electiveQuery = filter.value;
-      var q = electiveQuery.trim().toLowerCase();
-      [].forEach.call(electiveRows.children, function (row) {
-        row.hidden = q && row.textContent.toLowerCase().indexOf(q) < 0;
+    function trackPicker() {
+      var trackBox = el('div', 'pl-tracks');
+      trackBox.appendChild(el('span', 'pl-k', 'Diploma in Data Science track'));
+      (RULES.diploma_ds.tracks || []).forEach(function (t) {
+        var lab = el('label', 'pl-track' + (plan.track === t.id ? ' is-on' : ''));
+        var inp = document.createElement('input');
+        inp.type = 'radio'; inp.name = 'ds-track'; inp.value = t.id; inp.checked = plan.track === t.id;
+        inp.addEventListener('change', function () { plan.track = t.id; persist(); render(); });
+        lab.appendChild(inp);
+        var tx = el('span');
+        tx.appendChild(el('b', null, t.label));
+        tx.appendChild(el('span', 'pl-detail', t.detail || ''));
+        lab.appendChild(tx);
+        trackBox.appendChild(lab);
       });
-    });
-    if (electiveQuery) filter.dispatchEvent(new Event('input'));
-    root.appendChild(section('electives', 'Degree electives  ' + model.bscEl.got + '+' + model.bsEl.got + ' cr',
-      elNote, [filter, electiveRows], active === 'BSc electives' || active === 'BS electives'));
+      return trackBox;
+    }
+    function transferFields() {
+      var transfers = el('div', 'pl-transfers');
+      function numField(label, key, max) {
+        var lab = el('label', 'pl-transfer');
+        lab.appendChild(el('span', null, label));
+        var inp = document.createElement('input');
+        inp.type = 'number'; inp.min = '0'; inp.max = String(max); inp.step = '1';
+        inp.value = String(plan[key]);
+        inp.addEventListener('change', function () {
+          plan[key] = Math.max(0, Math.min(max, parseInt(inp.value, 10) || 0));
+          inp.value = String(plan[key]);
+          persist(); render();
+        });
+        lab.appendChild(inp);
+        lab.appendChild(el('span', 'pl-sub', '0–' + max + ', not in CGPA'));
+        return lab;
+      }
+      transfers.appendChild(numField('NPTEL credits', 'nptel', RULES.nptel_max || 8));
+      transfers.appendChild(numField('Apprenticeship credits', 'apprenticeship', RULES.apprenticeship_max || 12));
+      return transfers;
+    }
+    function electivesBody() {
+      var elNote = 'The first ' + RULES.bsc_elective_credits + ' credits count toward the BSc (' + model.bscEl.got + ' so far), the next ' +
+        RULES.bs_elective_credits + ' toward the BS (' + model.bsEl.got + ' so far).';
+      var electiveRows = rows(model.electivePool);
+      var filter = document.createElement('input');
+      filter.type = 'search'; filter.className = 'pl-filter'; filter.placeholder = 'Filter electives';
+      filter.setAttribute('aria-label', 'Filter electives');
+      filter.value = electiveQuery;
+      filter.addEventListener('input', function () {
+        electiveQuery = filter.value;
+        var q = electiveQuery.trim().toLowerCase();
+        [].forEach.call(electiveRows.children, function (row) {
+          row.hidden = q && row.textContent.toLowerCase().indexOf(q) < 0;
+        });
+      });
+      if (electiveQuery) filter.dispatchEvent(new Event('input'));
+      return [el('p', 'pl-detail', elNote), group('Transferred credits', transferFields()), filter, electiveRows];
+    }
 
+    /* ---- Levels: pick one from the dropdown, see only its courses ---- */
+    var dsCodes = RULES.diploma_ds.mandatory.concat(model.dsTrack.courses);
     var pgCodes = (RULES.pg_core || []).concat(RULES.pg_electives || []);
-    root.appendChild(section('pg', stageTitle('PG Diploma', pgCodes),
-      'After the BS. A course already counted above is not added again.',
-      [rows(RULES.pg_core), rows(RULES.pg_electives)],
-      active === 'PG Diploma core' || active === 'PG Diploma electives'));
-    root.appendChild(section('mtech', stageTitle('MTech', RULES.mtech),
-      '20-credit project, after the PG Diploma.',
-      [rows(RULES.mtech)], active === 'MTech project'));
+    var LEVELS = [
+      { id: 'foundation', label: 'Foundation', stage: ['Foundation'], codes: RULES.foundation,
+        detail: '32 credits. Both diplomas open once these are passed.',
+        body: function () { return [rows(RULES.foundation)]; } },
+      { id: 'dip-prog', label: 'Diploma in Programming', stage: ['Diploma in Programming'], codes: RULES.diploma_programming,
+        detail: '27 credits.',
+        body: function () { return [rows(RULES.diploma_programming)]; } },
+      { id: 'dip-ds', label: 'Diploma in Data Science', stage: ['Diploma in Data Science'], codes: dsCodes,
+        detail: '21 credits required, plus the 6-credit track.',
+        body: function () {
+          return [trackPicker(), group('Required', rows(RULES.diploma_ds.mandatory)), group('Your track', rows(model.dsTrack.courses))];
+        } },
+      { id: 'core', label: 'BSc degree core', stage: ['Degree core'], codes: RULES.degree_core,
+        detail: '20 credits inside the BSc. Needs both diplomas.',
+        body: function () { return [rows(RULES.degree_core)]; } },
+      { id: 'electives', label: 'Degree electives (BSc and BS)', stage: ['BSc electives', 'BS electives'], codes: model.electivePool,
+        detail: '', body: electivesBody },
+      { id: 'pg', label: 'PG Diploma', stage: ['PG Diploma core', 'PG Diploma electives'], codes: pgCodes,
+        detail: 'After the BS. A course already counted above is not added again.',
+        body: function () { return [group('Core', rows(RULES.pg_core)), group('Electives', rows(RULES.pg_electives))]; } },
+      { id: 'mtech', label: 'MTech', stage: ['MTech project'], codes: RULES.mtech,
+        detail: '20-credit project, after the PG Diploma.',
+        body: function () { return [rows(RULES.mtech)]; } }
+    ];
+    function levelById(id) {
+      for (var i = 0; i < LEVELS.length; i++) if (LEVELS[i].id === id) return LEVELS[i];
+      return null;
+    }
+    function levelForStage(label) {
+      for (var i = 0; i < LEVELS.length; i++) if (LEVELS[i].stage.indexOf(label) >= 0) return LEVELS[i];
+      return null;
+    }
+    function creditsOf(codes, passedOnly) {
+      return (codes || []).reduce(function (n, code) { return n + (!passedOnly || isPass(code) ? credits(code) : 0); }, 0);
+    }
+    if (!levelById(level)) { var firstOpen = levelForStage(nxt.label); level = (firstOpen || LEVELS[0]).id; }
+    var cur = levelById(level);
+    var idx = LEVELS.indexOf(cur);
+
+    var bar = el('div', 'pl-bar');
+    var lv = el('label', 'pl-lv');
+    lv.appendChild(el('span', 'pl-k', 'Level'));
+    var sel = document.createElement('select');
+    sel.className = 'pl-select';
+    LEVELS.forEach(function (L) {
+      var o = document.createElement('option');
+      o.value = L.id;
+      var pc = passedCount(L.codes);
+      o.textContent = L.label + (L.id === 'electives' ? '  ·  ' + (model.bscEl.got + model.bsEl.got) + ' cr' : '  ·  ' + pc + '/' + (L.codes || []).length);
+      sel.appendChild(o);
+    });
+    sel.value = level;
+    sel.addEventListener('change', function () { level = sel.value; try { localStorage.setItem(LKEY, level); } catch (e) {} render(); });
+    lv.appendChild(sel);
+    bar.appendChild(lv);
+    var steps = el('div', 'pl-steps');
+    function stepBtn(text, target) {
+      var b = el('button', 'pl-step', text);
+      b.type = 'button';
+      b.disabled = !target;
+      if (target) b.addEventListener('click', function () { level = target.id; try { localStorage.setItem(LKEY, level); } catch (e) {} render(); });
+      return b;
+    }
+    steps.appendChild(stepBtn('← Previous', LEVELS[idx - 1]));
+    steps.appendChild(stepBtn('Next →', LEVELS[idx + 1]));
+    bar.appendChild(steps);
+    root.appendChild(bar);
+
+    var panel = el('section', 'pl-panel');
+    panel.appendChild(el('h2', 'pl-panel-t', cur.label));
+    var total = (cur.codes || []).length;
+    var done = passedCount(cur.codes);
+    if (cur.id === 'electives') {
+      var cap = RULES.bsc_elective_credits + RULES.bs_elective_credits;
+      var got = model.bscEl.got + model.bsEl.got + model.nptelBsc + model.nptelBs + model.appBs;
+      panel.appendChild(el('p', 'pl-prog-t', got + ' of ' + cap + ' elective credits placed'));
+      var pb0 = el('div', 'pl-prog'); var pf0 = el('span');
+      pf0.style.width = Math.min(100, Math.round(got / cap * 100)) + '%';
+      pb0.appendChild(pf0); panel.appendChild(pb0);
+    } else {
+      panel.appendChild(el('p', 'pl-prog-t', done + ' of ' + total + ' courses passed · ' + creditsOf(cur.codes, true) + ' of ' + creditsOf(cur.codes, false) + ' credits'));
+      var pb = el('div', 'pl-prog'); var pf = el('span');
+      pf.style.width = (total ? Math.round(done / total * 100) : 0) + '%';
+      pb.appendChild(pf); panel.appendChild(pb);
+    }
+    if (cur.detail) panel.appendChild(el('p', 'pl-detail', cur.detail));
+    cur.body().forEach(function (n) { panel.appendChild(n); });
+    root.appendChild(panel);
 
     var clear = el('p', 'pl-clear');
     var btn = el('button', 'sb-link', 'Clear grades in this browser');
