@@ -24,8 +24,41 @@
     MENU.links.items.map(function (i) { return item(BASE + 'links.html#links-' + i.id, '', i.title, i.count); }).join('');
 
 
-  // phones: the second top-bar row scrolls sideways; keep the current page's link in view
-  var more = document.querySelector('.tb-more'), cur = more && more.querySelector('.current');
+  /* Daily tools stay in the bar. Scam alert, Contributors and Updates fold into More
+     so the bar is one quiet row instead of a second strip of equal links. */
+  var more = document.querySelector('.tb-more');
+  if (more) {
+    var KEEP = { 'my-term.html': 1, 'planner.html': 1, 'calculator.html': 1 };
+    var extra = [];
+    [].slice.call(more.querySelectorAll(':scope > a.tb-link')).forEach(function (a) {
+      var file = (a.getAttribute('href') || '').split('/').pop().split('?')[0];
+      if (KEEP[file] || a.classList.contains('current')) return;
+      extra.push(a);
+    });
+    if (extra.length > 1) {
+      var item = document.createElement('div');
+      item.className = 'nav-item tb-overflow';
+      var main = document.createElement('button');
+      main.type = 'button'; main.className = 'nav-main'; main.textContent = 'More';
+      var caret = document.createElement('button');
+      caret.type = 'button'; caret.className = 'nav-caret'; caret.innerHTML = '&#9662;';
+      caret.setAttribute('aria-expanded', 'false');
+      caret.setAttribute('aria-label', 'More pages');
+      var menu = document.createElement('div');
+      menu.className = 'menu'; menu.id = 'menu-more';
+      caret.setAttribute('aria-controls', 'menu-more');
+      extra.forEach(function (a) {
+        var link = document.createElement('a');
+        link.href = a.getAttribute('href');
+        link.innerHTML = '<span class="mi-title">' + esc(a.textContent.trim()) + '</span>';
+        menu.appendChild(link);
+        a.remove();
+      });
+      item.appendChild(main); item.appendChild(caret); item.appendChild(menu);
+      more.appendChild(item);
+    }
+  }
+  var cur = more && more.querySelector('.current');
   if (more && cur && more.scrollWidth > more.clientWidth) more.scrollLeft = cur.offsetLeft - more.clientWidth / 2 + cur.offsetWidth / 2;
 
   var jump = document.getElementById('level-jump');
@@ -43,7 +76,8 @@
       if (n !== el) { n.classList.remove('open'); n.querySelector('.nav-caret').setAttribute('aria-expanded', 'false'); }
     });
     el.classList.toggle('open', open);
-    el.querySelector('.nav-caret').setAttribute('aria-expanded', open ? 'true' : 'false');
+    var caret = el.querySelector('.nav-caret');
+    if (caret) caret.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
   navItems.forEach(function (el) {
     el.querySelector('.nav-caret').addEventListener('click', function (e) {
@@ -51,7 +85,11 @@
       setOpen(el, canHover ? true : !el.classList.contains('open'));
     });
     el.querySelector('.menu').addEventListener('click', function () { setOpen(el, false); });
-    el.querySelector('.nav-main').addEventListener('click', function () { setOpen(el, false); });
+    el.querySelector('.nav-main').addEventListener('click', function (e) {
+      if (!el.classList.contains('tb-overflow')) { setOpen(el, false); return; }
+      e.stopPropagation();
+      setOpen(el, !el.classList.contains('open'));
+    });
     if (canHover) {
       el.addEventListener('mouseenter', function () { clearTimeout(closeTimer); setOpen(el, true); });
       el.addEventListener('mouseleave', function () { closeTimer = setTimeout(function () { setOpen(el, false); }, 160); });

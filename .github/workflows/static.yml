@@ -2,9 +2,10 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # The live site tracks Beta. main is still listed so an old
+  # push there does not silently stop deploying.
   push:
-    branches: ["main"]
+    branches: ["Beta", "main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

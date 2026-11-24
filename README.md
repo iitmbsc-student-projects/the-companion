@@ -8,15 +8,13 @@ Live site: https://iitmbsc-student-projects.github.io/the-companion/
 
 Study material for the IIT Madras BS programme is spread across the student portal, YouTube playlists, Discourse threads and many Drive folders. The aim of The Companion is to put the useful parts in one place, so a student can find what they need for a course without hunting for it, and avoid the common traps along the way.
 
-## What we have done so far
+## What it does
 
-- A page for each Foundation, Diploma and Degree course, with its syllabus, week-by-week lectures, past papers and student-made resources.
-- Project pages with answers to the problems students ask about most.
-- A collected set of important links for the programme.
-- The list of NPTEL courses that count for credit.
-- A scam alert page, kept up to date with what students report.
-- A grade calculator for estimating a course score.
-- Search across all of it, and a page listing what has been added recently.
+- Course pages: syllabus, week-by-week lectures, resources, past papers, and a Common problems section on the project pages
+- Grade calculator, a reverse calculator on [My Term](my-term.html), and a [degree planner](planner.html) (credits toward each exit, and CGPA)
+- Home lecture search across every course, and a "Your term" card once you pick courses
+- A list of the NPTEL courses that count for credit, and a scam alert page kept up to date with what students report
+- Optional Google sign-in (Supabase) to sync watched lectures and term picks across devices, plus a community suggestion queue, see `supabase/README.md`. Leave `assets/config.js` empty and the site stays fully static.
 
 ## Working on it
 

@@ -135,6 +135,8 @@
   .wbar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;pointer-events:none;
     background:color-mix(in srgb,var(--accent) 20%,transparent);transition:width .25s}
   .week-title > span{position:relative;z-index:1}
+  .week-title .wdur{font-style:normal;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0;
+    text-transform:none;font-family:'IBM Plex Sans',sans-serif;font-size:11px}
   .week-group.complete .wbar{background:color-mix(in srgb,var(--accent) 30%,transparent)}
   .wk-actions{display:flex;justify-content:flex-end;padding:4px 20px 2px}
   .lecture-item.novid .ltitle{color:var(--ink-2);font-style:italic}
@@ -280,7 +282,8 @@
   .novideo-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     padding:20px;text-align:center;font-family:'Spectral',serif;font-style:italic;
     color:var(--ink-2);background:var(--paper-2)}
-  .current-eyebrow{font-size:13px;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
+  .current-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--ink-2);margin:18px 0 6px;max-width:1000px}
   .current-title{font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 14px;
     max-width:1000px}
   .current-actions{display:flex;gap:18px;flex-wrap:wrap;max-width:1000px}
@@ -707,5 +710,9 @@
 <script>window.COURSE = {code: {{ code|tojson }}, weeks: {{ weeks_data|tojson }}, item: {{ (item_word or "lecture")|tojson }}};</script>
 <script src="../assets/course.js"></script>
 <script src="../assets/theme.js"></script>
+<script src="../assets/config.js"></script>
+<script src="../assets/account.js"></script>
+<script src="../assets/sync.js"></script>
+<script src="../assets/suggest.js"></script>
 </body>
 </html>

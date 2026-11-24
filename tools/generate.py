@@ -16,6 +16,7 @@ Layout this expects (site root = the folder holding index.html):
   tools/templates/*.j2
 """
 import json
+import time
 import urllib.parse, os, glob, re
 from urllib.parse import urlparse
 import html as html_lib
@@ -110,8 +111,39 @@ def load(stem):
 
 
 def save(stem, data):
+    """Concurrency-safe: the JSON is written to a temp file and atomically
+    renamed into place under a lock file, so two dashboard saves (or a save
+    racing a generate) can never interleave into a half-written file or lose
+    each other's update."""
     os.makedirs(DATA_DIR, exist_ok=True)
-    json.dump(data, open(data_path(stem), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    path = data_path(stem)
+    lock = path + ".lock"
+    deadline = time.monotonic() + 10
+    fd = None
+    while fd is None:
+        try:
+            fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        except FileExistsError:
+            if time.monotonic() > deadline:   # a crashed writer left it behind
+                try:
+                    os.remove(lock)
+                except OSError:
+                    pass
+            else:
+                time.sleep(0.05)
+    try:
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=1, ensure_ascii=False)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    finally:
+        os.close(fd)
+        try:
+            os.remove(lock)
+        except OSError:
+            pass
 
 
 def all_stems():
@@ -125,7 +157,8 @@ def load_all():
 
 # Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
 # stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
-ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js|nptel\.js|nptel-index\.js|scam\.js))(?:\?v=[0-9a-f]+)?')
+ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js'
+                      r'|config\.js|account\.js|sync\.js|search\.js|grading-engine\.js|my-term\.js|suggest\.js|moderate\.js|account-page\.js|planner\.js))(?:\?v=[0-9a-f]+)?')
 
 
 def _asset_ver(rel):
@@ -141,7 +174,8 @@ def stamp_assets(html):
 
 def restamp_pages():
     """Refresh the ?v= stamps on the three top-level pages (index, courses, links)."""
-    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html", "nptel.html", "updates.html", "404.html"):
+    for name in ("index.html", "courses.html", "links.html", "contributors.html", "scam-alert.html", "calculator.html", "nptel.html", "updates.html", "404.html",
+                 "my-term.html", "planner.html", "account.html", "moderate.html"):
         path = os.path.join(SITE_ROOT, name)
         if os.path.exists(path):
             old = open(path, encoding="utf-8").read()
@@ -387,7 +421,9 @@ def _platform(url):
 
 def _footer_nav(current):
     items = (("index.html", "Home", "home"), ("courses.html", "Courses", "courses"),
-             ("links.html", "Important links", "links"), ("scam-alert.html", "Scam alert", "scam"),
+             ("links.html", "Important links", "links"), ("my-term.html", "My Term", "myterm"),
+             ("planner.html", "Planner", "planner"),
+             ("scam-alert.html", "Scam alert", "scam"),
              ("calculator.html", "Grade calculator", "calculator"), ("nptel.html", "NPTEL", "nptel"),
              ("contributors.html", "Contributors", "contributors"),
              ("updates.html", "Updates", "updates"))
@@ -420,7 +456,7 @@ def generate_contributors():
             acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
             if cd.get("url2"):
                 mail = cd["url2"].startswith("mailto:")
-                acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else "")
+                acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else " &#8599;")
             cc.append('<li class="lk-card cta-card"><h3 class="lk-title">%s</h3><p class="lk-desc">%s</p><div class="cta-row">%s</div></li>'
                       % (esc(cd["title"]), esc(cd["text"]), acts))
         jump.append('<a href="#%s">%s</a>' % (c["id"], esc(c["title"])))
@@ -686,11 +722,11 @@ def collect_updates():
 def _update_html(e):
     esc = html_lib.escape
     if e["kind"] == "site":
-        return ('          <li class="up-item" data-kind="site"><div class="up-top"><h3 class="up-title">%s</h3><span class="up-tag site">Site</span></div>'
-                '<p class="up-desc">%s</p></li>' % (esc(e["title"]), esc(e["desc"])))
-    head = (('<div class="up-top"><h3 class="up-title"><a href="%s" target="_blank" rel="noopener">%s</a></h3><span class="up-tag">Resource</span></div>'
+        return ('          <li class="up-item" data-kind="site"><span class="up-tag site">Site</span>'
+                '<h3 class="up-title">%s</h3><p class="up-desc">%s</p></li>' % (esc(e["title"]), esc(e["desc"])))
+    head = (('<span class="up-tag">New resource</span><h3 class="up-title"><a href="%s" target="_blank" rel="noopener">%s</a></h3>'
              % (esc(e["url"], quote=True), esc(e["title"]))) if e.get("url") else
-            '<div class="up-top"><h3 class="up-title">%s</h3><span class="up-tag">Resources</span></div>' % esc(e["title"]))
+            '<span class="up-tag">New resources</span><h3 class="up-title">%s</h3>' % esc(e["title"]))
     desc = ('<p class="up-desc">%s%s</p>' % (esc(e["desc"]), (' <span class="up-by">By %s.</span>' % esc(e["by"])) if e["by"] and e["by"] not in e["desc"] else "")) if (e["desc"] or e["by"]) else ""
     where = ""
     cs = sorted(e["courses"], key=lambda c: c[1])
@@ -725,17 +761,14 @@ def generate_updates():
         if not days or days[-1][0] != e["date"]:
             days.append((e["date"], []))
         days[-1][1].append(e)
-    for i, (date, es) in enumerate(days):
-        n = len(es)
-        body.append('  <details class="up-day" id="u-%s"%s>\n    <summary class="up-date"><h2 class="ud-d">%s</h2><span class="ud-n" data-total="%d">%d %s</span></summary>\n    <ul class="up-list">\n%s\n    </ul>\n  </details>'
-                    % (date, " open" if i == 0 else "", _long_date(date), n, n, "update" if n == 1 else "updates", "\n".join(_update_html(e) for e in es)))
+    for date, es in days:
+        body.append('  <section class="up-day" id="u-%s">\n    <h2 class="up-date">%s</h2>\n    <ul class="up-list">\n%s\n    </ul>\n  </section>'
+                    % (date, _long_date(date), "\n".join(_update_html(e) for e in es)))
     if not body:
         body.append('  <p class="tbd-note">Nothing here yet.</p>')
     tpl = open(UPDATES_TEMPLATE_PATH, encoding="utf-8").read()
     page = tpl.replace("{{TITLE}}", esc(d.get("title", "Updates"))).replace("{{SUB}}", esc(d.get("sub", ""))) \
-        .replace("{{BODY}}", "\n".join(body)).replace("{{FOOTNAV}}", _footer_nav("updates")) \
-        .replace("{{N_ALL}}", str(len(items))).replace("{{N_RES}}", str(sum(1 for e in items if e["kind"] != "site"))) \
-        .replace("{{N_SITE}}", str(sum(1 for e in items if e["kind"] == "site")))
+        .replace("{{BODY}}", "\n".join(body)).replace("{{FOOTNAV}}", _footer_nav("updates"))
     open(UPDATES_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
     # the newest three, on the front page
     if os.path.exists(INDEX_PAGE):
@@ -777,10 +810,10 @@ def _home_share():
     """Slim 'Share a resource' band for the home page, from the first card in data/contributors.json."""
     esc = html_lib.escape
     cd = json.load(open(CONTRIB_PATH, encoding="utf-8"))["contribute"]["cards"][0]
-    acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
+    acts = '<a class="cta-btn" href="%s" target="_blank" rel="noopener">%s &#8599;</a>' % (esc(cd["url"], quote=True), esc(cd["label"]))
     if cd.get("url2"):
         mail = cd["url2"].startswith("mailto:")
-        acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else "")
+        acts += '<a class="cta-btn ghost" href="%s"%s>%s%s</a>' % (esc(cd["url2"], quote=True), "" if mail else ' target="_blank" rel="noopener"', esc(cd["label2"]), "" if mail else " &#8599;")
     return ('  <section class="hm-share" aria-labelledby="hm-share-h">\n    <div class="hs-text"><h2 class="hm-h" id="hm-share-h">%s</h2><p>%s</p></div>\n'
             '    <div class="cta-row">%s</div>\n  </section>' % (esc(cd["title"]), esc(cd["text"]), acts))
 
@@ -792,9 +825,8 @@ def generate_home():
     catalog = open(os.path.join(SITE_ROOT, "courses.html"), encoding="utf-8").read()
     li_re = re.compile(r'<li( class="project")?><span class="code">([^<]+)</span><span class="name"><a href="([^"]+)">(.*?)</a></span>', re.S)
     cards, home, groups = [], {}, {}
-    for m in re.finditer(r'<section id="([^"]+)" class="level">\s*<div class="level-head">\s*(?:<span class="roman">(.*?)</span>\s*)?<h2>(.*?)</h2>(.*?)</section>', catalog, re.S):
+    for m in re.finditer(r'<section id="([^"]+)" class="level">\s*<div class="level-head">\s*<span class="roman">(.*?)</span>\s*<h2>(.*?)</h2>(.*?)</section>', catalog, re.S):
         sid, roman, title, body = m.groups()
-        roman = roman or ""
         chips = []
         rows = li_re.findall(body)
         groups[sid] = {re.search(r"courses/(.*?)\.html", r[2]).group(1) for r in rows}
@@ -810,9 +842,9 @@ def generate_home():
                     item = "session" if d.get("kind") == "project" else "lecture"
                 home[code] = {"t": html_lib.unescape(name), "u": href, "n": n, "i": item}
         cards.append('      <section class="hl-card" id="lv-%s" aria-labelledby="lv-%s-h">\n'
-                     '        <div class="hl-head"><h3 id="lv-%s-h">%s</h3><span class="hl-n">%d</span></div>\n'
+                     '        <div class="hl-head"><span class="hl-roman">%s</span><h3 id="lv-%s-h">%s</h3><span class="hl-n">%d</span></div>\n'
                      '        <ul class="chips">\n%s\n        </ul>\n      </section>'
-                     % (sid, sid, sid, title, len(rows), "\n".join(chips)))
+                     % (sid, sid, roman, sid, title, len(rows), "\n".join(chips)))
     tiles = []
     for label, kicker, desc, ids in (
             ("Foundation", "Part I", "Maths, statistics, computational thinking, Python and English", ("foundation",)),
@@ -820,9 +852,9 @@ def generate_home():
             ("Degree", "Part III", "The core courses and electives across data, AI and business", ("bsc", "bs")),
             ("Postgraduate", "Parts IV and V", "The PG Diploma in AI and ML, and the MTech project", ("pgd", "mtech"))):
         stems = set().union(*(groups.get(i, set()) for i in ids))
-        tiles.append('      <a class="hm-tile" href="courses.html#%s"><span class="ht-t">%s</span>'
+        tiles.append('      <a class="hm-tile" href="courses.html#%s"><span class="ht-k">%s</span><span class="ht-t">%s</span>'
                      '<span class="ht-d">%s</span><span class="ht-n">%d courses</span></a>'
-                     % (ids[0], label, esc(desc), len(stems)))
+                     % (ids[0], kicker, label, esc(desc), len(stems)))
     links = json.load(open(LINKS_PATH, encoding="utf-8"))
     quick = sorted((it for grp in links["groups"] for it in grp["items"] if it.get("home")), key=lambda it: it["home"].get("order", 99))
     quick_html = "\n".join('        <a class="quick-card" href="%s" target="_blank" rel="noopener"><span class="qc-title">%s</span><span class="qc-tag">%s</span></a>'
@@ -846,6 +878,115 @@ def generate_home():
     return INDEX_PAGE
 
 
+# ------------------------------------------------- search index and My Term
+
+SEARCH_INDEX_PATH = os.path.join(SITE_ROOT, "assets", "search-index.json")
+MYTERM_TEMPLATE_PATH = os.path.join(TEMPLATES_DIR, "my_term.html.tpl")
+MYTERM_PAGE = os.path.join(SITE_ROOT, "my-term.html")
+
+
+def _lecture_keys(weeks_data):
+    """(key, slug, item, week_label) for every lecture, with the exact key and
+    hash-slug that assets/course.js builds, so search deep links land on the
+    right lecture (duplicate numbers in a week get a #k suffix)."""
+    out = []
+    flat = []
+    for w in weeks_data or []:
+        for it in w.get("items", []):
+            flat.append((w["w"], it))
+    for i, (wlabel, it) in enumerate(flat):
+        seen = sum(1 for (w2, it2) in flat[:i] if w2 == wlabel and it2.get("n") == it.get("n"))
+        key = f"{wlabel}|{it.get('n', '')}" + (f"#{seen}" if seen else "")
+        slug = re.sub(r"\s+", "-", key.lower()).replace("|", "/").replace("#", "~")
+        out.append((key, slug, it, wlabel))
+    return out
+
+
+def generate_search_index():
+    """assets/search-index.json: every lecture of every course, for the lecture
+    search on the home page (assets/search.js). Fetched lazily, never inlined."""
+    index = []
+    for stem in all_stems():
+        data = load(stem)
+        items = []
+        for _key, slug, it, wlabel in _lecture_keys(data.get("weeks_data")):
+            title = it.get("t") or ""
+            if title == PLACEHOLDER_LECTURE:
+                continue
+            items.append([it.get("n", ""), html_lib.unescape(title), slug, wlabel])
+        if not items:
+            continue
+        index.append({"c": data["code"], "t": html_lib.unescape(data["title"]),
+                      "u": f"courses/{stem}.html", "i": items})
+    with open(SEARCH_INDEX_PATH, "w", encoding="utf-8") as f:
+        json.dump(index, f, ensure_ascii=False, separators=(",", ":"))
+    return SEARCH_INDEX_PATH
+
+
+def generate_my_term():
+    """my-term.html: the per-student term dashboard (assets/my-term.js). The
+    embedded data is per-course week structure (label, lecture count, total
+    seconds if known), the grading formulas and the term's exam dates."""
+    myterm = {}
+    for stem in all_stems():
+        data = load(stem)
+        weeks = []
+        for w in data.get("weeks_data") or []:
+            items = w.get("items", [])
+            if not items:
+                continue
+            if all(it.get("t") == PLACEHOLDER_LECTURE and not (it.get("v") or it.get("s")) for it in items):
+                continue
+            weeks.append({"w": w["w"], "n": len(items),
+                          "d": sum(it.get("d") or 0 for it in items)})
+        myterm[data["code"]] = {"t": html_lib.unescape(data["title"]),
+                                "u": f"courses/{stem}.html", "weeks": weeks}
+    grading = json.load(open(CALC_PATH, encoding="utf-8"))
+    dates = json.load(open(DATES_PATH, encoding="utf-8"))
+    tpl = open(MYTERM_TEMPLATE_PATH, encoding="utf-8").read()
+    j = lambda d: json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    page = (tpl.replace("{{TERM}}", html_lib.escape(dates["term"]))
+            .replace("{{MYTERM_DATA}}", j(myterm))
+            .replace("{{GRADING}}", j(grading))
+            .replace("{{DATES}}", j(dates))
+            .replace("{{FOOTNAV}}", _footer_nav("myterm")))
+    open(MYTERM_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    return MYTERM_PAGE
+
+
+DEGREE_PATH = os.path.join(SITE_ROOT, "data", "degree.json")
+PLANNER_TEMPLATE_PATH = os.path.join(TEMPLATES_DIR, "planner.html.tpl")
+PLANNER_PAGE = os.path.join(SITE_ROOT, "planner.html")
+
+
+def generate_planner():
+    """planner.html: credit milestones, next courses and CGPA from letter grades."""
+    rules = json.load(open(DEGREE_PATH, encoding="utf-8"))
+    catalog = []
+    for stem in all_stems():
+        data = load(stem)
+        catalog.append({
+            "c": data["code"],
+            "t": html_lib.unescape(data["title"]),
+            "cr": data.get("credits") or 0,
+            "program": data.get("program") or "",
+            "q": html_lib.unescape(data.get("prereq") or ""),
+            "u": "courses/%s.html" % stem,
+        })
+    grading = json.load(open(CALC_PATH, encoding="utf-8"))
+    bands = {"bands": grading.get("bands") or [], "fail": grading.get("fail") or {"grade": "U", "gp": 0}}
+    tpl = open(PLANNER_TEMPLATE_PATH, encoding="utf-8").read()
+    def dump(obj):
+        return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    page = (tpl.replace("{{SOURCE}}", html_lib.escape(rules.get("source") or "", quote=True))
+            .replace("{{RULES}}", dump(rules))
+            .replace("{{CATALOG}}", dump(catalog))
+            .replace("{{BANDS}}", dump(bands))
+            .replace("{{FOOTNAV}}", _footer_nav("planner")))
+    open(PLANNER_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
+    return PLANNER_PAGE
+
+
 SITE_URL = "https://iitmbsc-student-projects.github.io/the-companion/"
 NOTFOUND_PAGE = os.path.join(SITE_ROOT, "404.html")
 NOTFOUND_TEMPLATE_PATH = os.path.join(TEMPLATES_DIR, "404.html.tpl")
@@ -861,7 +1002,7 @@ def generate_404():
 
 def generate_sitemap():
     """sitemap.xml: every public page, for search engines (submit it once in Google Search Console)."""
-    pages = ["", "courses.html", "links.html", "updates.html", "contributors.html", "scam-alert.html", "calculator.html", "nptel.html"]
+    pages = ["", "courses.html", "links.html", "updates.html", "contributors.html", "scam-alert.html", "calculator.html", "nptel.html", "my-term.html", "planner.html"]
     pages += ["courses/%s.html" % s for s in all_stems()]
     urls = "".join("  <url><loc>%s%s</loc></url>\n" % (SITE_URL, p) for p in pages)
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls
@@ -873,7 +1014,10 @@ if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
         for stem in sys.argv[1:]:
-            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_nptel() if stem == "nptel" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_home() if stem == "home" else generate_404() if stem == "404" else generate_sitemap() if stem == "sitemap" else generate_course(stem))
+            print(generate_links() if stem == "links" else generate_contributors() if stem == "contributors" else generate_scam_alert() if stem == "scam" else generate_nptel() if stem == "nptel" else generate_calculator() if stem == "calculator" else generate_updates() if stem == "updates" else generate_home() if stem == "home" else generate_404() if stem == "404" else generate_sitemap() if stem == "sitemap" else generate_my_term() if stem == "myterm" else generate_planner() if stem == "planner" else generate_search_index() if stem == "search" else generate_course(stem))
+            if stem not in ("links", "contributors", "scam", "nptel", "calculator", "updates", "home", "404", "sitemap", "myterm", "planner", "search"):
+                generate_search_index()   # a course changed: keep the lecture search in step
+                generate_my_term()
     else:
         # the shared pages first: they rewrite assets/menu-data.js, whose ?v= stamp the course pages then pick up
         generate_links()
@@ -883,6 +1027,9 @@ if __name__ == "__main__":
         generate_calculator()
         generate_home()   # also rewrites updates.html
         generate_404()
+        generate_search_index()
+        generate_my_term()
+        generate_planner()
         generate_sitemap()
         paths = generate_all()
         print(f"generated {len(paths)} pages into {COURSES_DIR}")

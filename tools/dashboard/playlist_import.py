@@ -53,12 +53,21 @@ def extract_youtube_id(s):
 
 
 def weeks_data_to_text(weeks_data):
+    """number | title | video | slide [| duration_seconds]
+
+    The optional 5th field is written only when a lecture already has a `d`
+    (filled by tools/fetch_durations.py), so a dashboard save does not wipe
+    previously fetched watch times.
+    """
     lines = []
     for week in weeks_data:
         lines.append(week["w"])
         for item in week.get("items", []):
-            lines.append(f'{item.get("n","")} | {item.get("t","")} | '
-                          f'{item.get("v") or ""} | {item.get("s") or ""}')
+            line = (f'{item.get("n","")} | {item.get("t","")} | '
+                    f'{item.get("v") or ""} | {item.get("s") or ""}')
+            if item.get("d"):
+                line += f' | {int(item["d"])}'
+            lines.append(line)
     return "\n".join(lines)
 
 
@@ -80,8 +89,13 @@ def text_to_weeks_data(text):
         n, t, v_raw, s_raw = parts[0], parts[1], parts[2], parts[3]
         v = extract_youtube_id(v_raw) or (v_raw or None)
         s = s_raw or None
-        weeks[-1]["items"].append({"n": n, "t": t or "No lecture linked yet",
-                                    "v": v, "s": s})
+        item = {"n": n, "t": t or "No lecture linked yet", "v": v, "s": s}
+        if len(parts) >= 5 and parts[4]:
+            try:
+                item["d"] = int(float(parts[4]))
+            except ValueError:
+                pass
+        weeks[-1]["items"].append(item)
     return weeks
 
 
