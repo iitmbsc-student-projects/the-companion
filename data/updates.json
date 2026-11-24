@@ -3,6 +3,15 @@
  "sub": "New resources and changes to the site, newest first.",
  "notes": [
   {
+   "date": "2026-11-24",
+   "kind": "site",
+   "title": "MLOps lectures, week by week",
+   "text": "The 55 MLOps lectures are now grouped into weeks 1 to 12 and follow the order of the course videos.",
+   "courses": [
+    "da5014"
+   ]
+  },
+  {
    "date": "2026-11-23",
    "kind": "site",
    "title": "Lectures for 13 more electives",
