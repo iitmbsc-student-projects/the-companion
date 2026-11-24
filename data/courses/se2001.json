@@ -5,7 +5,7 @@
  "title": "System Commands",
  "program": "Diploma / Programming",
  "credits": 3,
- "standfirst": "The Unix command line — shells, files, processes, pipes, and the small tools that compose into large ones.",
+ "standfirst": "The Unix command line: shells, files, processes, pipes, and the small tools that compose into large ones.",
  "instructor": "Prof. Gandham Phanikumar",
  "term": "Every term",
  "prereq": "none",
@@ -87,6 +87,14 @@
    "by_url": "https://github.com/cheriangeorge"
   },
   {
+   "label": "System Commands book",
+   "url": "https://ammar-iitm.github.io/system-commands-book/",
+   "group": "Notes",
+   "desc": "A course book on Linux and shell commands, for System Commands and Linux and Programming.",
+   "by": "Ammar Hashmi",
+   "added": "2026-11-23"
+  },
+  {
    "label": "Navigating Linux, in-house reference book",
    "url": "https://drive.google.com/drive/folders/1NZBmJYwtCreV-HCminQGxUZTYxa6zRKv?usp=drive_link",
    "group": "Books",
@@ -153,6 +161,14 @@
    "url": "https://www.explainshell.com",
    "group": "Tools and references",
    "desc": "Paste a command and see what each part does."
+  },
+  {
+   "label": "Diploma question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1MNgNju8Lr7Nbuy2TMDTxBcFREEqFSHInLWQ3hhJgXlU/edit?gid=17317205#gid=17317205",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers (forenoon and afternoon), one tab for each term from Sep 2021. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "added": "2026-11-23"
   },
   {
    "label": "PYQ papers, with errors corrected",
@@ -223,6 +239,43 @@
    "group": "Previous year questions",
    "desc": "Discussion of the Quiz 1 paper from 24T1.",
    "by": "Sayan Ghosh"
+  },
+  {
+   "label": "Quiz Space question papers",
+   "url": "https://quizspacee.com/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers for this course. A third-party site, not run by IITM.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Custodia OPPE practice",
+   "url": "https://custodia-beta.vercel.app/",
+   "desc": "Browser-based OPPE practice with testcases and instant grading. Needs Google sign-in. A student-run site, not run by IITM.",
+   "group": "Practice",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub course videos",
+   "url": "https://mauryahub.onrender.com/course/15",
+   "group": "Video solutions",
+   "desc": "Weekly theory and practical videos, plus past quiz solutions.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",

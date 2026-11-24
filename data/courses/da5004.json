@@ -5,11 +5,44 @@
  "title": "Large Language Models",
  "program": "BS elective",
  "credits": 4,
- "standfirst": "How transformers scaled into today's LLMs — pre-training, fine-tuning, alignment, and the practical realities.",
+ "standfirst": "How transformers scaled into today's LLMs: pre-training, fine-tuning, alignment, and the practical realities.",
  "instructor": "Prof. Mitesh Khapra",
  "term": "As offered",
  "prereq": "CS3004",
  "resources": [
+  {
+   "label": "Degree question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1ndm0pg3620crYW1yyUigW6NPE5cvHLk65IvHErEv7f4/edit?gid=1189182592#gid=1189182592",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Fetch PYQs",
+   "url": "https://script.google.com/a/macros/ds.study.iitm.ac.in/s/AKfycbzs7K5NYNosmnKhjI4nZMbS3_ZWLd0b6ZFIk5wZTNwxF9mBndt5cIZuCK9JG0i2ldA/exec",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/15Uym7DC2f3BB66P_pP33w0u42j9l8UTQ?usp=sharing",
    "label": "Drive folder",
@@ -35,6 +68,22 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=7",
+   "group": "Notes",
+   "desc": "Week-wise notes, an e-book and Quiz 1 PYQ notes. Shared on MauryaHub. Notes by Anmol Kansal and others.",
+   "by": "Anmol Kansal and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "LLM notes (PDF)",
+   "url": "https://github.com/Risdorn/Learning-Archive/blob/main/IITM-Programming-Data-Science/Large%20Language%20Models/LLM.pdf",
+   "group": "Notes",
+   "desc": "A student's full course notes, written in LaTeX.",
+   "by": "Rishabh Indoria",
+   "by_url": "https://github.com/Risdorn"
   }
  ],
  "resources_note": "",

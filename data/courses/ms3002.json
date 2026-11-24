@@ -5,11 +5,44 @@
  "title": "Market Research",
  "program": "BS elective",
  "credits": 4,
- "standfirst": "The methods and analytics of understanding a market — survey design, sampling, segmentation, and insight.",
+ "standfirst": "The methods and analytics of understanding a market: survey design, sampling, segmentation, and insight.",
  "instructor": "Mr. Ashok Sankethi",
  "term": "As offered",
  "prereq": "MS2001",
  "resources": [
+  {
+   "label": "Degree question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1ndm0pg3620crYW1yyUigW6NPE5cvHLk65IvHErEv7f4/edit?gid=1189182592#gid=1189182592",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Fetch PYQs",
+   "url": "https://script.google.com/a/macros/ds.study.iitm.ac.in/s/AKfycbzs7K5NYNosmnKhjI4nZMbS3_ZWLd0b6ZFIk5wZTNwxF9mBndt5cIZuCK9JG0i2ldA/exec",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/1wTi1LEhfrwnwITzm2smjUS915yLq9Lyv?usp=drive_link",
    "label": "Drive folder",
@@ -35,6 +68,14 @@
    "desc": "Notes for several degree courses collected on one page. Look for this course's section.",
    "by": "Pratham Bhalla",
    "by_url": "https://medium.com/@prathambhalla7"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=14",
+   "group": "Notes",
+   "desc": "Quiz 2 and end term guides. Shared on MauryaHub. Notes by Priyanshu Tiwari.",
+   "by": "Priyanshu Tiwari",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",
@@ -102,133 +143,414 @@
  },
  "weeks_data": [
   {
-   "w": "Week 1",
+   "w": "Lectures",
    "items": [
     {
      "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Introduction to MR - Part 1",
+     "v": "Y1KwPE1FUps",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 2",
-   "items": [
+    },
     {
      "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Introduction to MR - Part 2",
+     "v": "YtE_BYr88VY",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 3",
-   "items": [
+    },
     {
      "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "About the industry",
+     "v": "8tRgjdUCvE0",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 4",
-   "items": [
+    },
     {
      "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "The MR study process",
+     "v": "yRwbhy1pjWU",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 5",
-   "items": [
+    },
     {
      "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "The Topics covered in the course",
+     "v": "OpK1NSUlUmE",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 6",
-   "items": [
+    },
     {
      "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Sampling Methods - Part 1",
+     "v": "LO8omd3yYKc",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 7",
-   "items": [
+    },
     {
      "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Sampling Methods - Part 2",
+     "v": "AucYt468wRE",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 8",
-   "items": [
+    },
     {
      "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Sampling Methods - Part 3",
+     "v": "BXzoOOqjqhI",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 9",
-   "items": [
+    },
     {
      "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "How to decide the sample size",
+     "v": "lHmI8Uac6m0",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 10",
-   "items": [
+    },
     {
      "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Basic Stats for MR - Part 1",
+     "v": "d2W_Eh4D3qo",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 11",
-   "items": [
+    },
     {
      "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Basic Stats for MR - Part 2",
+     "v": "C3QP3R5MBn0",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 12",
-   "items": [
+    },
     {
      "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Basic Stats for MR - Part 3",
+     "v": "xNOUTvloS_Y",
+     "s": null
+    },
+    {
+     "n": "13",
+     "t": "Key MR terms",
+     "v": "HMZ2snlU55E",
+     "s": null
+    },
+    {
+     "n": "14",
+     "t": "Questionnaire Design - Part 1",
+     "v": "RhWWMNrfMX0",
+     "s": null
+    },
+    {
+     "n": "15",
+     "t": "Questionnaire Design - Part 2",
+     "v": "dgZF4npJZq4",
+     "s": null
+    },
+    {
+     "n": "16",
+     "t": "Questionnaire Design - Part 3",
+     "v": "GBeQbtGEhPU",
+     "s": null
+    },
+    {
+     "n": "17",
+     "t": "Questionnaire Design - Part 4",
+     "v": "QSu-p7CG2g4",
+     "s": null
+    },
+    {
+     "n": "18",
+     "t": "Questionnaire Design - Part 5",
+     "v": "IOSL7SAproQ",
+     "s": null
+    },
+    {
+     "n": "19",
+     "t": "Questionnaire Design - Part 6",
+     "v": "txqj3pC5E5s",
+     "s": null
+    },
+    {
+     "n": "20",
+     "t": "Qualitative Research - Part 1",
+     "v": "6jCCTE3JESA",
+     "s": null
+    },
+    {
+     "n": "21",
+     "t": "Qualitative Research - Part 2",
+     "v": "_mNuf_utOWE",
+     "s": null
+    },
+    {
+     "n": "22",
+     "t": "Qualitative Research - Part 3",
+     "v": "DW8kmcp7jL4",
+     "s": null
+    },
+    {
+     "n": "23",
+     "t": "Sample discussion guide",
+     "v": "GxP9vONauXY",
+     "s": null
+    },
+    {
+     "n": "24",
+     "t": "Intro to sample depth interview",
+     "v": "bbH-B_PwYHY",
+     "s": null
+    },
+    {
+     "n": "25",
+     "t": "Data Collection Methods",
+     "v": "1rJZkpEchbQ",
+     "s": null
+    },
+    {
+     "n": "26",
+     "t": "Sample depth interview",
+     "v": "kRdalRZ-Pgk",
+     "s": null
+    },
+    {
+     "n": "27",
+     "t": "Sample techniques",
+     "v": "6XWbM7vm1X4",
+     "s": null
+    },
+    {
+     "n": "28",
+     "t": "Various topics under Applied MR",
+     "v": "RBFXXWi0tDs",
+     "s": null
+    },
+    {
+     "n": "29",
+     "t": "Assessment of brand health - Part 1",
+     "v": "UWlrHJilmHE",
+     "s": null
+    },
+    {
+     "n": "30",
+     "t": "Assessment of brand health - Part 2",
+     "v": "MFG82GL8CU4",
+     "s": null
+    },
+    {
+     "n": "31",
+     "t": "Assessment of brand health - Part 3",
+     "v": "b4AmFvMey9E",
+     "s": null
+    },
+    {
+     "n": "32",
+     "t": "Customer Satisfaction Measurement",
+     "v": "2kbb018BfJE",
+     "s": null
+    },
+    {
+     "n": "33",
+     "t": "Ad Pre-testing - Part 1",
+     "v": "zC8innDWIEw",
+     "s": null
+    },
+    {
+     "n": "34",
+     "t": "Ad Pre-testing - Part 2",
+     "v": "K2YvS7BvMh8",
+     "s": null
+    },
+    {
+     "n": "35",
+     "t": "Ad Pre-testing - Part 3",
+     "v": "uXA_7c92iZg",
+     "s": null
+    },
+    {
+     "n": "36",
+     "t": "Trial Questionnaire",
+     "v": "Q0wtWbpXaX8",
+     "s": null
+    },
+    {
+     "n": "37",
+     "t": "Employee Satisfaction",
+     "v": "iu2VmOts5_w",
+     "s": null
+    },
+    {
+     "n": "38",
+     "t": "Concept Testing",
+     "v": "1-RkB45Ub4Q",
+     "s": null
+    },
+    {
+     "n": "39",
+     "t": "Product Testing - Part 1",
+     "v": "JbttJPtd1G8",
+     "s": null
+    },
+    {
+     "n": "40",
+     "t": "Product Testing - Part 2",
+     "v": "i_mrRlhxrlM",
+     "s": null
+    },
+    {
+     "n": "41",
+     "t": "Channel Satisfaction - Part 1",
+     "v": "bg5LgmdMbIM",
+     "s": null
+    },
+    {
+     "n": "42",
+     "t": "Channel Satisfaction - Part 2",
+     "v": "IAfjIqvN8IQ",
+     "s": null
+    },
+    {
+     "n": "43",
+     "t": "Introduction to Prof Poornima Bhaskaran",
+     "v": "JzPd50LVHH4",
+     "s": null
+    },
+    {
+     "n": "44",
+     "t": "Corporate Brand Health Assessment - Part 2",
+     "v": "7iLcs_Rd_pk",
+     "s": null
+    },
+    {
+     "n": "45",
+     "t": "Celebrity Brand Standing - Part 1",
+     "v": "ZiYZA0xqysM",
+     "s": null
+    },
+    {
+     "n": "46",
+     "t": "Celebrity Brand Standing - Part 2",
+     "v": "BxULdooOOBg",
+     "s": null
+    },
+    {
+     "n": "47",
+     "t": "Corporate Brand Health Assessment - Part 1",
+     "v": "RRm8rDXGr30",
+     "s": null
+    },
+    {
+     "n": "48",
+     "t": "Profiling and Segmentation - Part 1",
+     "v": "VObUd457jrE",
+     "s": null
+    },
+    {
+     "n": "49",
+     "t": "Profiling and Segmentation - Part 2",
+     "v": "2ecmsSyo4fo",
+     "s": null
+    },
+    {
+     "n": "50",
+     "t": "Consumer Decision Journey (CDJ)",
+     "v": "godsxHp_I0w",
+     "s": null
+    },
+    {
+     "n": "51",
+     "t": "CDJ Example interview",
+     "v": "k-I0AMGesX4",
+     "s": null
+    },
+    {
+     "n": "52",
+     "t": "Sources of market macro info in India - part 1",
+     "v": "r5K0abaes6M",
+     "s": null
+    },
+    {
+     "n": "53",
+     "t": "Sources of market macro info in India - part 2",
+     "v": "hl0ymh4BGes",
+     "s": null
+    },
+    {
+     "n": "54",
+     "t": "Data Analysis Concepts - Part 1",
+     "v": "PUZe0NgMpmY",
+     "s": null
+    },
+    {
+     "n": "55",
+     "t": "Data Analysis Concepts - Part 2",
+     "v": "Abob6T-PeAE",
+     "s": null
+    },
+    {
+     "n": "56",
+     "t": "Data Analysis Concepts - Part 3",
+     "v": "ACpPfSWbrOU",
+     "s": null
+    },
+    {
+     "n": "57",
+     "t": "Data Analysis Concepts - Part 4",
+     "v": "ixF3EzlZ4PE",
+     "s": null
+    },
+    {
+     "n": "58",
+     "t": "Round up of concepts Part 1",
+     "v": "4zTtRgmgbGE",
+     "s": null
+    },
+    {
+     "n": "59",
+     "t": "Round up of concepts Part 2",
+     "v": "EKQuFPFbBh8",
+     "s": null
+    },
+    {
+     "n": "60",
+     "t": "Round up of concepts Part 3",
+     "v": "T1f80GKYAjM",
+     "s": null
+    },
+    {
+     "n": "61",
+     "t": "Round up of concepts Part 4",
+     "v": "U5xb2hI0Y-M",
+     "s": null
+    },
+    {
+     "n": "62",
+     "t": "Round up of concepts Part 5",
+     "v": "6e8lf6ryNmU",
+     "s": null
+    },
+    {
+     "n": "63",
+     "t": "Round up of concepts Part 6",
+     "v": "qPFaMxT4vSU",
+     "s": null
+    },
+    {
+     "n": "64",
+     "t": "Round up of concepts Part 7",
+     "v": "n5cfqQIoQFY",
+     "s": null
+    },
+    {
+     "n": "65",
+     "t": "Round up of concepts Part 8",
+     "v": "WFSd62yfuVI",
+     "s": null
+    },
+    {
+     "n": "66",
+     "t": "SPSS Exposure Part 1",
+     "v": "vxH6WlTUzT0",
+     "s": null
+    },
+    {
+     "n": "67",
+     "t": "SPSS Exposure Part 2",
+     "v": "EnezK0sNkd0",
+     "s": null
+    },
+    {
+     "n": "68",
+     "t": "SPSS Exposure Part 3",
+     "v": "yiyuN5IOmQM",
      "s": null
     }
    ]

@@ -5,11 +5,44 @@
  "title": "Machine Learning Operations (MLOps)",
  "program": "BS elective",
  "credits": 4,
- "standfirst": "Taking machine-learning models from notebook to production — CI, serving, monitoring and lifecycle.",
+ "standfirst": "Taking machine-learning models from notebook to production: CI, serving, monitoring and lifecycle.",
  "instructor": "Dr. Rangarajan Vasudevan",
  "term": "As offered",
  "prereq": "CS2008",
  "resources": [
+  {
+   "label": "Degree question paper repository",
+   "url": "https://docs.google.com/spreadsheets/d/1ndm0pg3620crYW1yyUigW6NPE5cvHLk65IvHErEv7f4/edit?gid=1189182592#gid=1189182592",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Past quiz and end term papers, one tab for each term from Sep 2022. Open a term and find this course in the list. A sheet kept by IITM BS students.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "Fetch PYQs",
+   "url": "https://script.google.com/a/macros/ds.study.iitm.ac.in/s/AKfycbzs7K5NYNosmnKhjI4nZMbS3_ZWLd0b6ZFIk5wZTNwxF9mBndt5cIZuCK9JG0i2ldA/exec",
+   "group": "Previous year questions",
+   "auth": "iitm",
+   "desc": "Pick this course from the dropdown to see every paper on file for it across all terms. You can also upload a paper that is missing.",
+   "by": "Vikash, Anupam Chandra and others",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "QuizPractice papers",
+   "url": "https://quizpractice.space/",
+   "group": "Previous year questions",
+   "desc": "Past quiz, end term and OPPE papers in a timed, exam-like mode. A third-party site, not run by IITM. Some features may need a paid plan.",
+   "added": "2026-11-23"
+  },
+  {
+   "label": "MauryaHub papers",
+   "url": "https://www.mauryahub.in/",
+   "group": "Previous year questions",
+   "desc": "Quiz 1, Quiz 2, end term and OPPE papers to practise online, with published solutions. A student-run site, not run by IITM.",
+   "by": "Ashish Maurya",
+   "added": "2026-11-23"
+  },
   {
    "url": "https://drive.google.com/drive/folders/1fiXTCj7JIRNrktL3hkIm0pkmEZ1zj_fh?usp=sharing",
    "label": "Drive folder",
@@ -32,6 +65,14 @@
    "by": "ML Study Hub",
    "by_url": "https://degreedost.com/",
    "group": "Notes"
+  },
+  {
+   "label": "MauryaHub student notes",
+   "url": "https://mauryahub.onrender.com/resources?program=degree&subject_id=15",
+   "group": "Notes",
+   "desc": "An MLOps prep kit. Shared on MauryaHub.",
+   "by": "Ashish Maurya and other students",
+   "added": "2026-11-23"
   }
  ],
  "resources_note": "",
@@ -99,133 +140,336 @@
  },
  "weeks_data": [
   {
-   "w": "Week 1",
+   "w": "Lectures",
    "items": [
     {
      "n": "1",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Introduction to MLOps",
+     "v": "LNtSRp1reos",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 2",
-   "items": [
+    },
     {
      "n": "2",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "DevOps vs MLOps",
+     "v": "c8HdgyG4Shg",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 3",
-   "items": [
+    },
     {
      "n": "3",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Landscape of MLOps",
+     "v": "5k485C-KPVQ",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 4",
-   "items": [
+    },
     {
      "n": "4",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Hands-on: Introduction to Google Cloud, Vertex AI",
+     "v": "68YxDKlAdP4",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 5",
-   "items": [
+    },
     {
      "n": "5",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Data Management for ML",
+     "v": "r2_bgMgP580",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 6",
-   "items": [
+    },
     {
      "n": "6",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Data Versioning",
+     "v": "7rW5OejBA28",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 7",
-   "items": [
+    },
     {
      "n": "7",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Hands-on: DVC",
+     "v": "uweHNLtgxKg",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 8",
-   "items": [
+    },
     {
      "n": "8",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Motivation for Feature Store",
+     "v": "bBztTeXW3ME",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 9",
-   "items": [
+    },
     {
      "n": "9",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Feature Store: Overview, Use Cases",
+     "v": "87owqZ481nc",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 10",
-   "items": [
+    },
     {
      "n": "10",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Feast: Overview",
+     "v": "JtyLLJgvQKA",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 11",
-   "items": [
+    },
     {
      "n": "11",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "Hands-on: Feast",
+     "v": "fl6LKNr8gb4",
      "s": null
-    }
-   ]
-  },
-  {
-   "w": "Week 12",
-   "items": [
+    },
     {
      "n": "12",
-     "t": "No lecture linked yet",
-     "v": null,
+     "t": "CI/CD for ML",
+     "v": "1PFfzJk2qCc",
+     "s": null
+    },
+    {
+     "n": "13",
+     "t": "Git 101 for ML",
+     "v": "h-4IH6-qJWY",
+     "s": null
+    },
+    {
+     "n": "14",
+     "t": "Github and best practices",
+     "v": "9EtdVdkdce8",
+     "s": null
+    },
+    {
+     "n": "15",
+     "t": "Hands-on: CI for ML using CML",
+     "v": "sKWA2PGmg90",
+     "s": null
+    },
+    {
+     "n": "16",
+     "t": "Model Lifecycle Patterns",
+     "v": "_Kg-a7iOK8g",
+     "s": null
+    },
+    {
+     "n": "17",
+     "t": "Execution Environments",
+     "v": "DILHZrfJYzs",
+     "s": null
+    },
+    {
+     "n": "18",
+     "t": "Introduction to MLflow",
+     "v": "aSKi2_DixX4",
+     "s": null
+    },
+    {
+     "n": "19",
+     "t": "Hyperparameter Tuning",
+     "v": "aTUsX2_GttA",
+     "s": null
+    },
+    {
+     "n": "20",
+     "t": "HandsOn: MLflow on GCP",
+     "v": "35Pv2OJ1QxU",
+     "s": null
+    },
+    {
+     "n": "21",
+     "t": "Model Serving using FastAPI",
+     "v": "Qor7iGXVKOA",
+     "s": null
+    },
+    {
+     "n": "22",
+     "t": "HandsOn: FastAPI",
+     "v": "LJNEr8XtU-s",
+     "s": null
+    },
+    {
+     "n": "23",
+     "t": "Model Serving using Containers",
+     "v": "w3SabCLrkzM",
+     "s": null
+    },
+    {
+     "n": "24",
+     "t": "HandsOn: Docker",
+     "v": "kV47H5b71Z8",
+     "s": null
+    },
+    {
+     "n": "25",
+     "t": "Introduction to Kubernetes",
+     "v": "H_pMolfm6s4",
+     "s": null
+    },
+    {
+     "n": "26",
+     "t": "HandsOn: Kubernetes",
+     "v": "J3dWDVG_YJc",
+     "s": null
+    },
+    {
+     "n": "27",
+     "t": "Model Deployment, CI/CD for ML",
+     "v": "RJHQRKGixnY",
+     "s": null
+    },
+    {
+     "n": "28",
+     "t": "ML Systems Monitoring & Performance Tools",
+     "v": "83BSH01jWFw",
+     "s": null
+    },
+    {
+     "n": "29",
+     "t": "Modern Observability Stack for ML",
+     "v": "IZsyl8wHrmQ",
+     "s": null
+    },
+    {
+     "n": "30",
+     "t": "Response Options for ML Systems",
+     "v": "zafCZIDM9EM",
+     "s": null
+    },
+    {
+     "n": "31",
+     "t": "Logging for ML Systems",
+     "v": "yYkQNSTISaA",
+     "s": null
+    },
+    {
+     "n": "32",
+     "t": "HandsOn: Logging, Monitoring, Scaling using GCP-native tools",
+     "v": "Ixi12t0VKOw",
+     "s": null
+    },
+    {
+     "n": "33",
+     "t": "Introduction to ML Security with Examples",
+     "v": "WJSTDenIqgs",
+     "s": null
+    },
+    {
+     "n": "34",
+     "t": "Challenges in securing ML",
+     "v": "c_3s_QWonfs",
+     "s": null
+    },
+    {
+     "n": "35",
+     "t": "MLsecOps",
+     "v": "4abLOEKaUn4",
+     "s": null
+    },
+    {
+     "n": "36",
+     "t": "HandsOn: Security Demonstration",
+     "v": "TrnP2RnlWXc",
+     "s": null
+    },
+    {
+     "n": "37",
+     "t": "ML Governance and Regulation",
+     "v": "73bGDGzMtQw",
+     "s": null
+    },
+    {
+     "n": "38",
+     "t": "Governance Failures and How to Mitigate them",
+     "v": "R_dMiAjAdAM",
+     "s": null
+    },
+    {
+     "n": "39",
+     "t": "Drift Monitoring",
+     "v": "vL1XiVK9VPI",
+     "s": null
+    },
+    {
+     "n": "40",
+     "t": "Detecting Bias in ML",
+     "v": "bV9cjMkkzc8",
+     "s": null
+    },
+    {
+     "n": "41",
+     "t": "Explaining ML models",
+     "v": "DRe02jFW2FU",
+     "s": null
+    },
+    {
+     "n": "42",
+     "t": "HandsOn: Governance Tools",
+     "v": "ab1hl2SH7q4",
+     "s": null
+    },
+    {
+     "n": "43",
+     "t": "LLMOps",
+     "v": "A3jFXa88a2k",
+     "s": null
+    },
+    {
+     "n": "44",
+     "t": "LLMOps during Pretraining",
+     "v": "N50zCNg1aAs",
+     "s": null
+    },
+    {
+     "n": "45",
+     "t": "Versioning & Testing in LLMs",
+     "v": "6RmfAyeAoYs",
+     "s": null
+    },
+    {
+     "n": "46",
+     "t": "CI&CD for LLMs",
+     "v": "twJ7gRs7Dnc",
+     "s": null
+    },
+    {
+     "n": "47",
+     "t": "HandsOn: LLM Finetuning",
+     "v": "rCNNbpyULf0",
+     "s": null
+    },
+    {
+     "n": "48",
+     "t": "LLM Accuracy",
+     "v": "b7SQViYCcII",
+     "s": null
+    },
+    {
+     "n": "49",
+     "t": "Proprietary LLMs",
+     "v": "xkOFdcnZcuE",
+     "s": null
+    },
+    {
+     "n": "50",
+     "t": "LLM Serving, Cost Control",
+     "v": "wNM4Y39D__U",
+     "s": null
+    },
+    {
+     "n": "51",
+     "t": "LLM Observability, Security, Governance & Best Practices",
+     "v": "I-Ju8sCARqo",
+     "s": null
+    },
+    {
+     "n": "52",
+     "t": "HandsOn: LLM Usage and Security",
+     "v": "mEcY-CdAX1A",
+     "s": null
+    },
+    {
+     "n": "53",
+     "t": "MLOps Course Summary",
+     "v": "Ub9pCxSFfgQ",
+     "s": null
+    },
+    {
+     "n": "54",
+     "t": "Additional Topics in MLOps",
+     "v": "vEBahj6fOjE",
+     "s": null
+    },
+    {
+     "n": "55",
+     "t": "Closing Thoughts",
+     "v": "Eog1ssY-eLs",
      "s": null
     }
    ]
