@@ -4,6 +4,8 @@
 // (title, YouTube video id, direct slide link) — not the generic autoplay playlist.
 const WEEKS_DATA = window.COURSE.weeks;
 
+const ITEM = (window.COURSE && window.COURSE.item) || 'lecture';   // projects list recorded "session"s
+const UNIT = ITEM === 'session' ? 'term' : 'week';
 const navSection = document.getElementById('lecture-nav');
 const navDashboard = document.getElementById('nav-dashboard');
 const panelDashboard = document.getElementById('panel-dashboard');
@@ -37,7 +39,7 @@ const actions = document.getElementById('current-actions');
       whatEl.textContent = label;
       whenEl.textContent = 'Not held this term';
     } else {
-      whatEl.textContent = `${label} — covers ${part.weeks}`;
+      whatEl.textContent = `${label}: ${part.weeks}`;
       whenEl.textContent = part.mode;
     }
   }
@@ -45,9 +47,10 @@ const actions = document.getElementById('current-actions');
     fill('cal-q1-what','cal-q1-when','Quiz 1', d.quiz1);
     fill('cal-q2-what','cal-q2-when','Quiz 2', d.quiz2);
     fill('cal-et-what','cal-et-when','End-term examination', d.endterm);
+    const list = document.getElementById('cal-list'); if (list) list.hidden = false;
     if (noteEl) noteEl.textContent = `Coverage per the ${T.term} term quiz-syllabus circular.`;
   } else if (noteEl) {
-    noteEl.textContent = 'Quiz/end-term coverage not published yet for this course.';
+    noteEl.textContent = 'Quiz and end term dates for this course are not published yet. Check the academic calendar on the Important links page.';
   }
 })();
 
@@ -62,7 +65,7 @@ WEEKS_DATA.forEach((week, wi) => {
   group.className = 'week-group accordion-item';
   group.dataset.w = wi;
 
-  const h = document.createElement('h2');
+  const h = document.createElement('div');
   h.className = 'accordion-header';
   const btn = document.createElement('button');
   btn.type = 'button';
@@ -71,7 +74,13 @@ WEEKS_DATA.forEach((week, wi) => {
   btn.setAttribute('data-bs-target', `#${collapseId}`);
   btn.setAttribute('aria-expanded', isFirst ? 'true' : 'false');
   btn.setAttribute('aria-controls', collapseId);
-  btn.innerHTML = `<span>${week.w}</span><span class="chev">›</span><i class="wbar"></i>`;
+  const weekSecs = (week.items || []).reduce((s, it) => s + (it.d || 0), 0);
+  const weekDur = weekSecs
+    ? (weekSecs >= 3600
+        ? `${Math.round(weekSecs / 360) / 10} h`
+        : `${Math.max(1, Math.round(weekSecs / 60))} min`)
+    : '';
+  btn.innerHTML = `<span>${week.w}${weekDur ? ` <em class="wdur">${weekDur}</em>` : ''}</span><span class="chev" aria-hidden="true">›</span><i class="wbar"></i>`;
   h.appendChild(btn);
   group.appendChild(h);
 
@@ -86,7 +95,8 @@ WEEKS_DATA.forEach((week, wi) => {
     const row = document.createElement('div');
     row.className = 'lecture-item' + (item.v ? '' : ' novid');
     row.dataset.w = wi; row.dataset.i = ii;
-    row.innerHTML = `<span class="lnum">${item.n}</span><span class="ltitle">${item.t}</span><button type="button" class="lcheck" role="checkbox" aria-checked="false" aria-label="Watched" title="Mark as watched or not watched"></button>`;
+    row.innerHTML = `<span class="lnum">${item.n}</span><button type="button" class="ltitle">${item.t}</button><button type="button" class="lcheck" role="checkbox" aria-checked="false" aria-label="Watched" title="Mark as watched or not watched"></button>`;
+    row.querySelector('.lcheck').setAttribute('aria-label', 'Watched: ' + item.n + ' ' + row.querySelector('.ltitle').textContent);
     body.appendChild(row);
   });
   collapseWrap.appendChild(body);
@@ -110,7 +120,16 @@ function closeOthers(wi){
   if (multiOpen || isFiltering()) return;
   WEEKS_DATA.forEach((_, w) => { if (w !== wi) setWeek(w, false); });
 }
-const openWeek = wi => { closeOthers(wi); setWeek(wi, true); };
+// A week that has just opened is scrolled so its heading, and with it the first lecture, sits at the top of the list.
+function alignWeek(wi){
+  const g = navSection.querySelector('.week-group[data-w="' + wi + '"]'); if (!g) return;
+  navSection.scrollTop += g.getBoundingClientRect().top - navSection.getBoundingClientRect().top;
+}
+const openWeek = wi => {
+  const was = isOpen(wi);
+  closeOthers(wi); setWeek(wi, true);
+  if (!was && !multiOpen && !isFiltering()) alignWeek(wi);
+};
 const isOpen = wi => { const el = document.getElementById('week-collapse-' + wi); return !!el && el.classList.contains('show'); };
 function revealRow(wi, ii){
   const row = navSection.querySelector('.lecture-item[data-w="' + wi + '"][data-i="' + ii + '"]');
@@ -175,11 +194,28 @@ function showExtra(id){
   window.scrollTo(0, 0);
 }
 
-// ---- progress: watched lectures are remembered in this browser only ----
+// ---- progress: watched lectures live in this browser; signed in, assets/sync.js mirrors them ----
 const PKEY = 'companion-progress-' + window.COURSE.code;
 let prog = { done: {}, last: null };
 try { const r = JSON.parse(localStorage.getItem(PKEY) || 'null'); if (r && r.done) prog = r; } catch (e) {}
-function saveProg(){ try { localStorage.setItem(PKEY, JSON.stringify(prog)); } catch (e) {} }
+function saveProg(){
+  try { localStorage.setItem(PKEY, JSON.stringify(prog)); } catch (e) {}
+  if (window.CompanionSync) window.CompanionSync.push(window.COURSE.code, prog);
+}
+// when the server pull finishes (sync.js), fold any newly-synced ticks into the view
+document.addEventListener('companion-sync-ready', () => {
+  try {
+    const r = JSON.parse(localStorage.getItem(PKEY) || 'null');
+    if (r && r.done) { prog.done = Object.assign({}, r.done, prog.done); renderProgress(); }
+  } catch (e) {}
+});
+// remember which courses were opened, for "Continue where you left off" on the home page (this browser only)
+try {
+  const R = JSON.parse(localStorage.getItem('companion-recent') || '[]'), cc = window.COURSE.code;
+  localStorage.setItem('companion-recent', JSON.stringify([cc].concat((Array.isArray(R) ? R : []).filter(x => x !== cc)).slice(0, 6)));
+  const H = JSON.parse(localStorage.getItem('companion-home-hide') || '[]');   // opening a course brings it back to the home page
+  if (Array.isArray(H) && H.indexOf(cc) !== -1) localStorage.setItem('companion-home-hide', JSON.stringify(H.filter(x => x !== cc)));
+} catch (e) {}
 // previous / next lecture, across weeks
 const FLAT = [];
 WEEKS_DATA.forEach((wk, wi) => wk.items.forEach((it, ii) => FLAT.push({ wi: wi, ii: ii, t: it.t, n: it.n })));
@@ -212,7 +248,7 @@ function renderProgress(){
     g.querySelector('.week-title').title = n ? n + ' of ' + items.length + ' watched' : '';   // the heading's fill shows progress; the count is a tooltip
     g.querySelector('.wbar').style.width = items.length ? (n / items.length * 100) + '%' : '0';
     g.classList.toggle('complete', n > 0 && n === items.length);
-    g.querySelector('.wk-act').textContent = n === items.length ? 'Clear this week' : 'Mark week watched';
+    g.querySelector('.wk-act').textContent = n === items.length ? 'Clear this ' + UNIT : 'Mark ' + UNIT + ' watched';
   });
   if (curLec) {
     const on = isDone(POS[curLec.wi + '.' + curLec.ii]);
@@ -231,16 +267,16 @@ function renderProgress(){
   const fresh = !last && count === 0;
   resumeFresh = fresh;
   document.getElementById('rs-k').textContent = fresh ? 'Start here' : count === total ? 'All done' : 'Continue where you left off';
-  document.getElementById('rs-title').textContent = target ? WEEKS_DATA[target.wi].w + ' · ' + target.n + '  ' + target.t : 'You have watched every lecture.';
+  document.getElementById('rs-title').textContent = target ? WEEKS_DATA[target.wi].w + ' · ' + target.n + '  ' + target.t : 'You have watched every ' + ITEM + '.';
   document.getElementById('rs-fill').style.width = (count / total * 100) + '%';
-  document.getElementById('rs-n').textContent = count + ' of ' + total + ' lectures watched';
+  document.getElementById('rs-n').textContent = count + ' of ' + total + ' ' + ITEM + 's watched';
   rsReset.hidden = count === 0 && !last;
   rsGo.hidden = !target;
   rsGo.innerHTML = '<span>' + (fresh ? 'Start' : 'Continue') + '</span>' + ARROW.right;
   // sidebar card
   sbCont.hidden = false;
   document.getElementById('sc-k').textContent = fresh ? 'Start here' : count === total ? 'All done' : 'Continue';
-  document.getElementById('sc-t').textContent = target ? target.n + '  ' + target.t : 'You have watched every lecture';
+  document.getElementById('sc-t').textContent = target ? target.n + '  ' + target.t : 'You have watched every ' + ITEM;
   document.getElementById('sc-fill').style.width = (count / total * 100) + '%';
   document.getElementById('sc-n').textContent = count + ' of ' + total + ' watched';
   sbCont.disabled = !target;
@@ -279,7 +315,21 @@ onlyBtn.addEventListener('click', () => { onlyBtn.setAttribute('aria-pressed', o
 document.getElementById('wk-expand').addEventListener('click', () => { multiOpen = true; WEEKS_DATA.forEach((_, wi) => { if (!navSection.querySelector('.week-group[data-w="' + wi + '"]').classList.contains('is-hid')) setWeek(wi, true); }); });
 document.getElementById('wk-collapse').addEventListener('click', () => { multiOpen = false; WEEKS_DATA.forEach((_, wi) => setWeek(wi, false)); });
 // A click on a week heading is opened by Bootstrap; just before it shows, close the other weeks.
-navSection.addEventListener('show.bs.collapse', e => closeOthers(+e.target.id.replace('week-collapse-', '')));
+// While Bootstrap grows the week, keep its heading at the top of the list (the list is too short to scroll
+// that far until the week has opened, so a single scroll at the start would be clamped).
+let alignRun = 0;
+navSection.addEventListener('show.bs.collapse', e => {
+  const wi = +e.target.id.replace('week-collapse-', '');
+  closeOthers(wi);
+  if (multiOpen || isFiltering()) return;
+  const run = ++alignRun, t0 = performance.now();
+  (function step(){
+    if (run !== alignRun || performance.now() - t0 > 900) return;
+    alignWeek(wi);
+    requestAnimationFrame(step);
+  })();
+});
+navSection.addEventListener('shown.bs.collapse', e => { alignRun++; if (!multiOpen && !isFiltering()) alignWeek(+e.target.id.replace('week-collapse-', '')); });
 let resetTimer;
 rsReset.addEventListener('click', () => {
   if (rsReset.dataset.sure) {
@@ -314,7 +364,7 @@ function updateStep() {
   if (goal) {
     mNext.hidden = false;
     mNext.innerHTML = (idx >= 0 ? 'Next' : resumeFresh ? 'Start' : 'Continue') + ARROW.right;
-    mNext.setAttribute('aria-label', (idx >= 0 ? 'Next lecture: ' : resumeFresh ? 'Start with ' : 'Continue with ') + goal.t);
+    mNext.setAttribute('aria-label', (idx >= 0 ? 'Next ' + ITEM + ': ' : resumeFresh ? 'Start with ' : 'Continue with ') + goal.t);
   } else mNext.hidden = true;
 }
 function goStep(d) {
@@ -344,7 +394,9 @@ function selectLecture(wi, ii){
   navSyllabus.classList.remove('active');
   panelSyllabus.classList.remove('active');
   navSection.querySelectorAll('.lecture-item').forEach(el => {
-    el.classList.toggle('active', +el.dataset.w === wi && +el.dataset.i === ii);
+    const on = +el.dataset.w === wi && +el.dataset.i === ii;
+    el.classList.toggle('active', on);
+    const lt = el.querySelector('.ltitle'); if (on) lt.setAttribute('aria-current', 'true'); else lt.removeAttribute('aria-current');
   });
   applyFilter();
   openWeek(wi);
@@ -353,9 +405,10 @@ function selectLecture(wi, ii){
   panelLecture.classList.add('active');
   window.scrollTo(0, 0);
 
-  eyebrow.textContent = `${WEEKS_DATA[wi].w} · Lecture ${item.n}`;
+  eyebrow.textContent = `${WEEKS_DATA[wi].w} · ${ITEM[0].toUpperCase() + ITEM.slice(1)} ${item.n}`;
   mHere.textContent = `${WEEKS_DATA[wi].w} · ${item.n}`;
   titleEl.textContent = item.t;
+  frame.title = ITEM[0].toUpperCase() + ITEM.slice(1) + ' video: ' + titleEl.textContent;
   if (item.v){
     frame.src = `https://www.youtube.com/embed/${item.v}`;
     frame.style.display = '';
@@ -454,4 +507,12 @@ navSection.addEventListener('click', e => {
     window.addEventListener('pointermove', move); window.addEventListener('pointerup', stop); window.addEventListener('pointercancel', stop);
   });
   grip.addEventListener('dblclick', () => { document.documentElement.style.removeProperty('--sb-w'); try { localStorage.removeItem('companion-sb-w'); } catch (err) {} });
+})();
+
+// sync tab aria-current: the Dashboard / Syllabus / extra tabs are buttons; screen readers hear which one is open
+(function(){
+  const tabs = Array.from(document.querySelectorAll('.sb-tabs .nav-item'));
+  const sync = () => tabs.forEach(t => { if (t.classList.contains('active')) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current'); });
+  tabs.forEach(t => new MutationObserver(sync).observe(t, { attributes: true, attributeFilter: ['class'] }));
+  sync();
 })();
