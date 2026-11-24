@@ -836,13 +836,32 @@ body[data-page="calculator"] .ph-title{font-weight:700}
 .mt-stat-k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .mt-stat-v{font-family:'Spectral',serif;font-weight:600;font-size:21px;line-height:1.2}
 .mt-stat-s{font-size:12.5px;color:var(--ink-2);overflow-wrap:anywhere}
-.mt-pick{margin:0 0 12px;padding:9px 14px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2)}
-.mt-pick summary{cursor:pointer;font:600 13.5px 'IBM Plex Sans',sans-serif}
-.mt-filter{width:100%;max-width:260px;margin:8px 0 0;padding:6px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);font:500 13.5px 'IBM Plex Sans',sans-serif}
-.mt-pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2px 16px;margin-top:8px}
-.mt-pick label{display:flex;gap:8px;align-items:baseline;font-size:13.5px;padding:2px 0;cursor:pointer}
-.mt-pick label .code{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--accent);min-width:64px}
-.mt-level-h{grid-column:1/-1;margin:8px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.mt-pick{margin:0 0 12px;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2)}
+.mt-chosen{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mt-pill{display:inline-flex;align-items:center;gap:2px;padding:2px 3px 2px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--paper)}
+.mt-pill-c{font:600 12px 'IBM Plex Mono',monospace;color:var(--accent)}
+.mt-pill-x{width:22px;height:22px;padding:0;border:0;border-radius:50%;background:none;color:var(--ink-2);font-size:16px;line-height:1;cursor:pointer}
+.mt-pill-x:hover{background:var(--tint-2);color:var(--ink)}
+.mt-add{padding:5px 12px;border:1px dashed var(--accent);border-radius:999px;background:none;color:var(--accent);font:600 13px 'IBM Plex Sans',sans-serif;cursor:pointer}
+.mt-add:hover{background:var(--tint)}
+.mt-pill-x:focus-visible,.mt-add:focus-visible,.mt-lv:focus-visible,.mt-res:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mt-panel{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
+.mt-panel-top{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:0 0 8px}
+.mt-filter{flex:1 1 220px;min-width:0;max-width:320px;padding:6px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);font:500 13.5px 'IBM Plex Sans',sans-serif}
+.mt-levels{display:flex;flex-wrap:wrap;gap:4px}
+.mt-lv{padding:4px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--ink-2);font:600 12px 'IBM Plex Sans',sans-serif;cursor:pointer}
+.mt-lv:hover{border-color:var(--accent);color:var(--ink)}
+.mt-lv.is-on{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-fill)}
+.mt-results{max-height:232px;overflow-y:auto;border:1px solid var(--rule);border-radius:8px;background:var(--paper)}
+.mt-res{display:flex;gap:10px;align-items:baseline;width:100%;padding:6px 10px;border:0;border-bottom:1px solid var(--rule);background:none;color:var(--ink);text-align:left;font:500 13.5px 'IBM Plex Sans',sans-serif;cursor:pointer}
+.mt-res:last-child{border-bottom:0}
+.mt-res:hover{background:var(--tint)}
+.mt-res .code{flex:none;min-width:64px;font:600 11.5px 'IBM Plex Mono',monospace;color:var(--accent)}
+.mt-res .nm{flex:1;min-width:0}
+.mt-res .st{flex:none;font-size:12px;color:var(--ink-2)}
+.mt-res.is-on{background:var(--tint)}
+.mt-res.is-on .st{color:var(--accent);font-weight:600}
+.mt-none{margin:0;padding:10px;font-size:13px;color:var(--ink-2)}
 .mt-list{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2);overflow:hidden}
 .mt-row{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:4px 18px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--rule)}
 .mt-row:last-child{border-bottom:0}
