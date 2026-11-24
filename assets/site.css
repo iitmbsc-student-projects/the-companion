@@ -650,7 +650,10 @@ body[data-page="notfound"] .nf-cards{margin-top:4px}
 .np-panel ol.courses li .code a{color:var(--accent);border:none}
 .np-panel ol.courses li .name{display:block;line-height:1.3}
 .np-panel .name>span{display:block}
-.np-by,.np-info{font-size:12.5px;font-weight:400;color:var(--ink-2)}
+.np-panel ol.courses li{grid-template-columns:78px minmax(0,1fr) 300px 46px}
+.np-by{font-size:12.5px;font-weight:400;color:var(--ink-2)}
+.np-info{font-size:12.5px;font-weight:400;color:var(--ink-2);text-align:right;padding-top:2px;white-space:nowrap}
+@media(max-width:760px){.np-panel ol.courses li{grid-template-columns:70px minmax(0,1fr) auto}.np-panel ol.courses li .np-info{grid-column:2;grid-row:2;text-align:left;padding:0;white-space:normal}.np-panel ol.courses li .credits{grid-column:3;grid-row:1}}
 .np-limit{font-size:12.5px;font-weight:600;color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:3px;padding:1px 7px;margin-top:3px;width:fit-content}
 .np-panel ol.courses li .name a.np-join{color:var(--accent);font-weight:700}
 .np-closed{color:var(--ink-2);font-weight:400}
