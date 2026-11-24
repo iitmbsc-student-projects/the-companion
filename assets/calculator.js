@@ -70,18 +70,10 @@
     return (Math.round(n * 100) / 100).toString();
   }
 
-  function compile(expr, names) {
-    return new Function(names.join(','), 'max', 'min', 'return (' + expr + ');');
-  }
-  function run(fn, names, vals) {
-    var args = names.map(function (n) { return vals[n] || 0; });
-    return fn.apply(null, args.concat([Math.max, Math.min]));
-  }
-
-  function gradeFor(t) {
-    for (var i = 0; i < data.bands.length; i++) { if (t >= data.bands[i].min) return data.bands[i]; }
-    return { grade: data.fail.grade, gp: data.fail.gp };
-  }
+  /* the maths lives in assets/grading-engine.js, shared with My Term */
+  var compile = window.GradingEngine.compile;
+  var run = window.GradingEngine.run;
+  function gradeFor(t) { return window.GradingEngine.gradeFor(data.bands, data.fail, t); }
 
   var course = null, state = null;
 
