@@ -686,11 +686,11 @@ def collect_updates():
 def _update_html(e):
     esc = html_lib.escape
     if e["kind"] == "site":
-        return ('          <li class="up-item" data-kind="site"><span class="up-tag site">Site</span>'
-                '<h3 class="up-title">%s</h3><p class="up-desc">%s</p></li>' % (esc(e["title"]), esc(e["desc"])))
-    head = (('<span class="up-tag">New resource</span><h3 class="up-title"><a href="%s" target="_blank" rel="noopener">%s</a></h3>'
+        return ('          <li class="up-item" data-kind="site"><div class="up-top"><h3 class="up-title">%s</h3><span class="up-tag site">Site</span></div>'
+                '<p class="up-desc">%s</p></li>' % (esc(e["title"]), esc(e["desc"])))
+    head = (('<div class="up-top"><h3 class="up-title"><a href="%s" target="_blank" rel="noopener">%s</a></h3><span class="up-tag">Resource</span></div>'
              % (esc(e["url"], quote=True), esc(e["title"]))) if e.get("url") else
-            '<span class="up-tag">New resources</span><h3 class="up-title">%s</h3>' % esc(e["title"]))
+            '<div class="up-top"><h3 class="up-title">%s</h3><span class="up-tag">Resources</span></div>' % esc(e["title"]))
     desc = ('<p class="up-desc">%s%s</p>' % (esc(e["desc"]), (' <span class="up-by">By %s.</span>' % esc(e["by"])) if e["by"] and e["by"] not in e["desc"] else "")) if (e["desc"] or e["by"]) else ""
     where = ""
     cs = sorted(e["courses"], key=lambda c: c[1])
@@ -732,7 +732,9 @@ def generate_updates():
         body.append('  <p class="tbd-note">Nothing here yet.</p>')
     tpl = open(UPDATES_TEMPLATE_PATH, encoding="utf-8").read()
     page = tpl.replace("{{TITLE}}", esc(d.get("title", "Updates"))).replace("{{SUB}}", esc(d.get("sub", ""))) \
-        .replace("{{BODY}}", "\n".join(body)).replace("{{FOOTNAV}}", _footer_nav("updates"))
+        .replace("{{BODY}}", "\n".join(body)).replace("{{FOOTNAV}}", _footer_nav("updates")) \
+        .replace("{{N_ALL}}", str(len(items))).replace("{{N_RES}}", str(sum(1 for e in items if e["kind"] != "site"))) \
+        .replace("{{N_SITE}}", str(sum(1 for e in items if e["kind"] == "site")))
     open(UPDATES_PAGE, "w", encoding="utf-8").write(stamp_assets(page))
     # the newest three, on the front page
     if os.path.exists(INDEX_PAGE):

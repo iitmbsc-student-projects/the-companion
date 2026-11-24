@@ -798,3 +798,58 @@ ol.scam-steps li::before{content:counter(st);position:absolute;left:0;top:7px;wi
   .pv-table td,.pv-table tbody th{border:none;padding:1px 0;background:none}
   .pv-row[hidden]{display:none}
 }
+
+/* Updates and Grade calculator: tighter and bolder */
+.up-filter{gap:0;margin:14px 0 0;border-bottom:2px solid var(--rule)}
+.up-filter button{padding:9px 18px 9px 0;margin:0 18px -2px 0;border:0;border-bottom:2px solid transparent;border-radius:0;background:none;color:var(--ink-2);
+  font:700 13px 'IBM Plex Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+.up-filter button span{margin-left:6px;padding:1px 8px;border-radius:99px;background:var(--tint);color:var(--accent);font:600 11.5px 'IBM Plex Mono',monospace;letter-spacing:0}
+.up-filter button:hover{border-color:var(--rule);color:var(--ink)}
+.up-filter button[aria-pressed="true"]{background:none;color:var(--ink);border-color:var(--accent)}
+.up-filter button[aria-pressed="true"] span{background:var(--accent);color:var(--paper)}
+.up-filter button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.up-day{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 24px;margin:0;padding:18px 0;border-bottom:1px solid var(--rule)}
+.up-date{display:block;margin:2px 0 0;font:700 15px 'IBM Plex Sans',sans-serif;color:var(--ink);position:sticky;top:76px;align-self:start}
+.up-date::after{display:none}
+.up-list{display:block}
+.up-item{padding:11px 0;border:0;border-radius:0;background:none}
+.up-item[data-kind="site"]{border:0}
+.up-item:first-child{padding-top:0}
+.up-item:last-child{padding-bottom:0}
+.up-item+.up-item{border-top:1px dotted var(--rule)}
+.up-top{display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
+.up-title{font:700 17px/1.3 'Spectral',serif}
+.up-tag{margin:0;padding:1px 8px;border-radius:99px;background:var(--tint);font:600 11px 'IBM Plex Sans',sans-serif;letter-spacing:.03em;text-transform:none;color:var(--accent)}
+.up-tag.site{color:var(--ink-2);background:var(--paper-2)}
+.up-desc{margin:3px 0 0;font-size:14px;line-height:1.5}
+.up-where{margin:6px 0 0}
+@media(max-width:700px){
+  .up-day{display:block;padding:14px 0}
+  .up-date{position:static;margin:0 0 8px;font-size:14px}
+  .up-filter button{padding-right:10px;margin-right:10px;font-size:12px}
+}
+
+/* calculator */
+body[data-page="calculator"] .ph-title{font-weight:700}
+.calc-note{padding:0 0 12px;border:0;border-bottom:1px solid var(--rule);border-radius:0;background:none;font-size:13px;color:var(--ink-2)}
+.calc-note strong{font:700 13px 'IBM Plex Sans',sans-serif;color:var(--ink)}
+.calc-pick{margin:16px 0 4px;gap:12px 26px}
+.cp-label,.calc-pick label{font:700 12px 'IBM Plex Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.calc-levels{gap:0;border-bottom:2px solid var(--rule)}
+.calc-level{padding:7px 16px 8px;margin-bottom:-2px;border:0;border-bottom:2px solid transparent;border-radius:0;background:none;color:var(--ink-2);font:700 14px 'IBM Plex Sans',sans-serif}
+.calc-level:hover{border-color:var(--rule);color:var(--ink)}
+.calc-level.is-on{background:none;border-color:var(--accent);color:var(--ink)}
+.calc-pick select{font-weight:600;border-width:1.5px}
+.calc-head{margin:16px 0 10px;padding-top:14px;border-top:1px solid var(--rule)}
+.calc-title{font-weight:700;font-size:clamp(22px,3.6vw,27px)}
+.calc-code{padding:1px 9px;border-radius:99px;background:var(--tint);color:var(--accent);font:600 11.5px 'IBM Plex Mono',monospace;letter-spacing:.04em}
+.calc-card{padding:12px 14px;border-radius:6px}
+.calc-h{font-weight:700;font-size:15.5px}
+.calc-field label,.calc-field>span{font-weight:600}
+.calc-result{border:1.5px solid var(--accent);border-top-width:3px;background:var(--paper)}
+.calc-big{font-weight:700}
+.calc-formula{border:1px solid var(--rule);border-radius:6px;background:var(--paper)}
+.calc-formula summary{padding:10px 14px;color:var(--ink);font-weight:700;font-size:13.5px}
+.calc-formula[open] summary{border-bottom:1px solid var(--rule)}
+.calc-formula code,.calc-formula .calc-table{margin:10px 14px 12px}
+.calc-formula .calc-table{display:flex}

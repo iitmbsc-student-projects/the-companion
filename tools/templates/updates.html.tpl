@@ -61,7 +61,7 @@
     <h1 class="ph-title">{{TITLE}}</h1>
     <p class="ph-sub">{{SUB}}</p>
     <div class="up-filter" role="group" aria-label="Show">
-      <button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="res" aria-pressed="false">New resources</button><button type="button" data-f="site" aria-pressed="false">Site changes</button>
+      <button type="button" data-f="all" aria-pressed="true">All <span>{{N_ALL}}</span></button><button type="button" data-f="res" aria-pressed="false">New resources <span>{{N_RES}}</span></button><button type="button" data-f="site" aria-pressed="false">Site changes <span>{{N_SITE}}</span></button>
     </div>
   </div>
 </header>
