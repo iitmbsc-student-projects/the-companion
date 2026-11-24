@@ -4,27 +4,64 @@
 
   /* ---------- Top-bar menus (built from assets/menu-data.js) ---------- */
   var MENU = window.COMPANION_MENU || { courses: { total: 0, items: [] }, links: { total: 0, items: [] } };
+  var BASE = document.body.getAttribute('data-base') || '';   // "../" on pages inside courses/
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function item(href, roman, title, count) {
     return '<a href="' + href + '">' + (roman ? '<span class="mi-roman">' + esc(roman) + '</span>' : '') +
       '<span class="mi-title">' + esc(title) + '</span><span class="mi-count">' + count + '</span></a>';
   }
   var mc = document.getElementById('menu-courses');
-  if (mc) mc.innerHTML = '<a class="menu-all" href="courses.html"><span class="mi-title">All courses</span><span class="mi-count">' +
+  if (mc) mc.innerHTML = '<a class="menu-all" href="' + BASE + 'courses.html"><span class="mi-title">All courses</span><span class="mi-count">' +
     MENU.courses.total + '</span></a>' +
-    MENU.courses.items.map(function (i) { return item('courses.html#' + i.id, i.roman, i.title, i.count); }).join('');
+    MENU.courses.items.map(function (i) { return item(BASE + 'courses.html#' + i.id, i.roman, i.title, i.count); }).join('');
   var ml = document.getElementById('menu-links');
-  if (ml) ml.innerHTML = '<a class="menu-all" href="links.html"><span class="mi-title">All links</span><span class="mi-count">' +
+  if (ml) ml.innerHTML = '<a class="menu-all" href="' + BASE + 'links.html"><span class="mi-title">All links</span><span class="mi-count">' +
     MENU.links.total + '</span></a>' +
-    MENU.links.items.map(function (i) { return item('links.html#links-' + i.id, '', i.title, i.count); }).join('');
+    MENU.links.items.map(function (i) { return item(BASE + 'links.html#links-' + i.id, '', i.title, i.count); }).join('');
 
-  if (ml) ml.innerHTML += '<a class="menu-more menu-more-first" href="calculator.html"><span class="mi-title">Grade calculator</span></a>' +
-    '<a class="menu-more" href="contributors.html"><span class="mi-title">Contributors</span></a>' +
-    '<a class="menu-more" href="scam-alert.html"><span class="mi-title">Scam alert</span></a>';
+
+  /* Daily tools stay in the bar. Scam alert, Contributors and Updates fold into More
+     so the bar is one quiet row instead of a second strip of equal links. */
+  var more = document.querySelector('.tb-more');
+  if (more) {
+    var KEEP = { 'my-term.html': 1, 'planner.html': 1, 'calculator.html': 1 };
+    var extra = [];
+    [].slice.call(more.querySelectorAll(':scope > a.tb-link')).forEach(function (a) {
+      var file = (a.getAttribute('href') || '').split('/').pop().split('?')[0];
+      if (KEEP[file] || a.classList.contains('current')) return;
+      extra.push(a);
+    });
+    if (extra.length > 1) {
+      var item = document.createElement('div');
+      item.className = 'nav-item tb-overflow';
+      var main = document.createElement('button');
+      main.type = 'button'; main.className = 'nav-main'; main.textContent = 'More';
+      var caret = document.createElement('button');
+      caret.type = 'button'; caret.className = 'nav-caret'; caret.innerHTML = '&#9662;';
+      caret.setAttribute('aria-expanded', 'false');
+      caret.setAttribute('aria-label', 'More pages');
+      var menu = document.createElement('div');
+      menu.className = 'menu'; menu.id = 'menu-more';
+      caret.setAttribute('aria-controls', 'menu-more');
+      extra.forEach(function (a) {
+        var link = document.createElement('a');
+        link.href = a.getAttribute('href');
+        link.innerHTML = '<span class="mi-title">' + esc(a.textContent.trim()) + '</span>';
+        menu.appendChild(link);
+        a.remove();
+      });
+      item.appendChild(main); item.appendChild(caret); item.appendChild(menu);
+      more.appendChild(item);
+    }
+  }
+  var cur = more && more.querySelector('.current');
+  if (more && cur && more.scrollWidth > more.clientWidth) more.scrollLeft = cur.offsetLeft - more.clientWidth / 2 + cur.offsetWidth / 2;
 
   var jump = document.getElementById('level-jump');
+  var SHORT = { foundation: 'Foundation', 'diploma-p': 'Diploma: Programming', 'diploma-ds': 'Diploma: Data Science',
+    bsc: 'BSc Degree', bs: 'Electives', pgd: 'PG Diploma' };
   if (jump) jump.innerHTML = MENU.courses.items.map(function (i) {
-    return '<a href="#' + i.id + '">' + esc(i.title) + ' <span class="jump-n">' + i.count + '</span></a>';
+    return '<a href="#' + i.id + '" title="' + esc(i.title) + '">' + esc(SHORT[i.id] || i.title) + '</a>';
   }).join('');
 
   var navItems = document.querySelectorAll('.nav-item');
@@ -35,7 +72,8 @@
       if (n !== el) { n.classList.remove('open'); n.querySelector('.nav-caret').setAttribute('aria-expanded', 'false'); }
     });
     el.classList.toggle('open', open);
-    el.querySelector('.nav-caret').setAttribute('aria-expanded', open ? 'true' : 'false');
+    var caret = el.querySelector('.nav-caret');
+    if (caret) caret.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
   navItems.forEach(function (el) {
     el.querySelector('.nav-caret').addEventListener('click', function (e) {
@@ -43,7 +81,11 @@
       setOpen(el, canHover ? true : !el.classList.contains('open'));
     });
     el.querySelector('.menu').addEventListener('click', function () { setOpen(el, false); });
-    el.querySelector('.nav-main').addEventListener('click', function () { setOpen(el, false); });
+    el.querySelector('.nav-main').addEventListener('click', function (e) {
+      if (!el.classList.contains('tb-overflow')) { setOpen(el, false); return; }
+      e.stopPropagation();
+      setOpen(el, !el.classList.contains('open'));
+    });
     if (canHover) {
       el.addEventListener('mouseenter', function () { clearTimeout(closeTimer); setOpen(el, true); });
       el.addEventListener('mouseleave', function () { closeTimer = setTimeout(function () { setOpen(el, false); }, 160); });
@@ -90,7 +132,7 @@
       while ((n = w.nextNode())) out.push(n.nodeValue);
       return out.join(' ');
     }
-    var rows = Array.prototype.slice.call(document.querySelectorAll('ol.courses li, ul.links-grid li'));
+    var rows = Array.prototype.slice.call(document.querySelectorAll('ol.courses li, ul.links-grid li, ul.chips li'));
     var index = rows.map(function (li) {
       var text = norm(textOf(li)), words = text.split(' ');
       return {
@@ -131,8 +173,8 @@
         ix.li.style.display = ok ? '' : 'none';
         if (ok) shown++;
       });
-      document.querySelectorAll('section.level').forEach(function (sec) {
-        var lis = sec.querySelectorAll('ol.courses li');
+      document.querySelectorAll('section.level, section.hl-card').forEach(function (sec) {
+        var lis = sec.querySelectorAll('ol.courses li, ul.chips li');
         if (!lis.length) return;
         sec.style.display = Array.prototype.some.call(lis, function (li) { return li.style.display !== 'none'; }) ? '' : 'none';
       });
@@ -144,6 +186,43 @@
     box.addEventListener('input', function () { filter(box.value); });
     filter('');
   }
+
+  /* ---------- top bar height, for things that stick just below it ---------- */
+  var bar = document.querySelector('.topbar');
+  function setBar() { if (bar) document.documentElement.style.setProperty('--tbh', bar.offsetHeight + 'px'); }
+  setBar(); window.addEventListener('resize', setBar);
+
+  /* ---------- Important links: highlight the group in view in the side list ---------- */
+  function spy(side, groups) {
+    if (!side || !groups.length) return;
+    var marks = Array.prototype.slice.call(side.querySelectorAll('a')), ticking = false;
+    function update() {
+      ticking = false;
+      // the group whose top has passed just below the top bar and the sticky chips is the one you are reading
+      var line = (bar ? bar.offsetHeight : 0) + (getComputedStyle(side).position === 'sticky' ? side.offsetHeight : 0) + 24;
+      var cur = null;
+      Array.prototype.forEach.call(groups, function (g) { if (g.offsetParent !== null && g.getBoundingClientRect().top <= line) cur = g; });
+      if (!cur) cur = groups[0];
+      // at the very bottom the last groups can never reach the line: trust the chip you clicked, else the last group
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        var h = location.hash && document.getElementById(location.hash.slice(1));
+        cur = (h && Array.prototype.indexOf.call(groups, h) !== -1) ? h : groups[groups.length - 1];
+      }
+      marks.forEach(function (a) {
+        if (a.getAttribute('href') === '#' + cur.id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('hashchange', update);
+    // how tall the sticky chip row is, so a group you jump to lands just below it
+    function setJump() { document.documentElement.style.setProperty('--jh', (getComputedStyle(side).position === 'sticky' ? side.offsetHeight : 0) + 'px'); }
+    setJump(); window.addEventListener('resize', setJump);
+    update();
+  }
+  spy(document.querySelector('.links-layout .links-jump'), document.querySelectorAll('.links-groups .link-group'));
+  spy(document.getElementById('level-jump'), document.querySelectorAll('main section.level'));
+  spy(document.getElementById('proj-jump'), document.querySelectorAll('main section.chapter'));
 
   /* ---------- Back to top ---------- */
   var up = document.getElementById('back-to-top');
