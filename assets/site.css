@@ -870,3 +870,6 @@ body[data-page="calculator"] .ph-title{font-weight:700}
 .up-day[hidden]{display:none}
 @media(max-width:700px){.up-day .up-list{padding-left:2px}.up-day>summary.up-date{font-size:15px}}
 .up-day .ud-d{margin:0;font:inherit;color:inherit}
+
+/* five colour swatches: keep the top bar on one line */
+@media(min-width:1101px){ .tb-link{padding:9px 11px} .tb-brand{margin-right:8px} #theme-slot{margin-right:0} .theme-switch button{padding:4px} }

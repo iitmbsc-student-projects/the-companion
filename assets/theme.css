@@ -1,4 +1,4 @@
-/* Colour themes: Paper (warm paper, default; data-theme key "current"), Light, Dark, Pink.
+/* Colour themes: Paper (warm paper, default; data-theme key "current"), Light, Dark, Pink, Sky.
    The pages use the variables below; html[data-theme] swaps them. Set by assets/theme.js. */
 :root{--surface:#fbf8f1;--topbar:rgba(244,239,230,.92);--tint:rgba(122,30,40,.08);--tint-2:rgba(122,30,40,.12);
   --link-ul:rgba(122,30,40,.25);--accent-line:rgba(122,30,40,.4);--shadow:rgba(28,26,23,.14);--shadow-soft:rgba(28,26,23,.04);
@@ -79,6 +79,33 @@ html[data-theme="pink"]{--paper:#fff3f7;
   --on-accent-2:#f7d4e1;
   color-scheme:light}
 
+html[data-theme="sky"]{--paper:#f3f9fe;
+  --paper-2:#ddeefa;
+  --ink:#0c2232;
+  --ink-2:#3d5a70;
+  --rule:#bfdaee;
+  --accent:#0a6aa1;
+  --accent-2:#0b7a9a;
+  --accent-fill:#87CEEB;
+  --on-fill:#05263a;
+  --on-fill-2:#1d4b68;
+  --surface:#fafdff;
+  --topbar:rgba(243,249,254,.9);
+  --tint:rgba(135,206,235,.26);
+  --tint-2:rgba(135,206,235,.38);
+  --link-ul:rgba(10,106,161,.3);
+  --accent-line:rgba(10,106,161,.4);
+  --shadow:rgba(12,50,80,.16);
+  --shadow-soft:rgba(12,50,80,.06);
+  --warn-bg:rgba(194,87,26,.1);
+  --warn-line:rgba(194,87,26,.4);
+  --warn-ink:#7a3a0c;
+  --muted-bg:rgba(61,90,112,.1);
+  --muted-line:rgba(61,90,112,.35);
+  --on-accent:#fff;
+  --on-accent-2:#d6ecf8;
+  color-scheme:light}
+
 /* ---- Theme switcher: one swatch per theme ---- */
 .theme-switch{display:inline-flex;align-items:center;gap:2px;padding:1px 3px;border:1px solid var(--rule);
   border-radius:999px;background:var(--paper-2)}
@@ -93,6 +120,7 @@ html[data-theme="pink"]{--paper:#fff3f7;
 .theme-switch button[data-theme-set="light"] .sw{background:#ffffff}
 .theme-switch button[data-theme-set="dark"] .sw{background:#14151a}
 .theme-switch button[data-theme-set="pink"] .sw{background:#FA9EBC}
+.theme-switch button[data-theme-set="sky"] .sw{background:#87CEEB}
 .theme-switch.floating{position:fixed;top:12px;right:14px;z-index:80;box-shadow:0 2px 10px var(--shadow)}
 #theme-slot{display:flex;margin-right:8px}
 .sidebar-theme{margin-right:0 !important}
