@@ -121,6 +121,7 @@
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
+<script src="assets/counter.js" defer></script>
 <script src="assets/config.js"></script>
 <script src="assets/account.js"></script>
 <script src="assets/sync.js"></script>

@@ -84,6 +84,7 @@
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
+<script src="assets/counter.js" defer></script>
 <script>
 (function () {
   var btns = document.querySelectorAll('.up-filter button');
