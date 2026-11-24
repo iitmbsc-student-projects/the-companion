@@ -23,7 +23,7 @@
     v.className = 'se-views';
     v.textContent = text;
     foot.appendChild(v);
-    var note = document.querySelector('.site-end .se-note, .colophon .co-note span:last-child');
+    var note = document.querySelector('.site-end .se-note span:last-child, .colophon .co-note span:last-child');
     if (note && !note.querySelector('.se-privacy')) {
       var p = document.createElement('span');
       p.className = 'se-privacy';
