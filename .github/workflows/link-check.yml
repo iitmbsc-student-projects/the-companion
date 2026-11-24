@@ -1,0 +1,43 @@
+# Weekly (and on-demand) check of every course resource URL and YouTube
+# video id. Updates a single GitHub issue titled "Link health".
+name: Link health
+
+on:
+  schedule:
+    # Mondays at 06:30 UTC — early evening IST, after the weekend.
+    - cron: "30 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-health
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        # generate.py needs jinja2; check_links itself only uses the stdlib
+        # plus generate/playlist_import helpers.
+        run: pip install jinja2
+
+      - name: Run link check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+        # Always update the issue; exit 0 so a few dead links don't red-badge
+        # the workflow. The issue body is the real report.
+        run: |
+          python tools/check_links.py || true
