@@ -36,6 +36,7 @@
   "degree_core": ["CS3001", "CS3002", "CS3003", "CS3004", "GN3001"],
   "bsc_elective_credits": 8,
   "bs_elective_credits": 28,
+  "extra_courses": [{"c": "MA3015", "t": "Linear Models with Applications", "cr": 4, "program": "BS elective", "q": "none"}],
   "pg_core": ["DA5014", "DA5002", "DA5003"],
   "pg_elective_credits": 8,
   "pg_electives": ["DA5004", "DA5005", "DA5006", "DA5007", "DA6001", "DA6002", "DA6003", "DA6004", "DA6005", "EE4001", "DA6006"],
