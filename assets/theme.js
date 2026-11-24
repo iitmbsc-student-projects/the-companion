@@ -1,7 +1,7 @@
 /* The Companion: colour theme switcher (Paper / Light / Dark / Pink / Sky), remembered in localStorage */
 (function () {
   'use strict';
-  var KEY = 'companion-theme', NAMES = { current: 'Paper', light: 'Light', dark: 'Dark', pink: 'Pink', sky: 'Sky' };
+  var KEY = 'companion-theme', NAMES = { current: 'Paper', light: 'Light', dark: 'Dark', pink: 'Pink', sky: 'Blue' };
   function saved() { try { var t = localStorage.getItem(KEY); return NAMES[t] ? t : 'current'; } catch (e) { return 'current'; } }
   function apply(t) {
     if (t === 'current') document.documentElement.removeAttribute('data-theme');
