@@ -27,7 +27,7 @@
 <nav class="topbar" aria-label="Main">
   <div class="wrap topbar-in">
     <a class="tb-brand" href="index.html" aria-label="The Companion, home">
-      <span class="tb-mark" aria-hidden="true">C</span><span class="tb-name">The Companion</span>
+      <img class="tb-logo" src="assets/logo.png" alt="">
     </a>
     <div class="tb-nav">
       <div class="nav-item" data-tab="courses">
