@@ -1103,7 +1103,6 @@ body.home .qc-title{padding-right:0}
 .site-end .se-nav{order:3;flex:1 1 100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 16px;margin-top:2px;letter-spacing:.08em}
 .site-end .se-nav a{padding:6px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .site-end .se-note{order:4}
-.se-views{font:400 12px 'IBM Plex Sans',sans-serif;letter-spacing:0;text-transform:none;color:var(--ink-2);padding-left:12px;border-left:1px solid var(--rule)}
 @media(max-width:720px){.site-end .se-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---- footer disclaimer: the same callout card as on course pages ---- */
@@ -1112,3 +1111,8 @@ body.home .qc-title{padding-right:0}
   font:400 13.5px/1.55 'IBM Plex Sans',sans-serif;letter-spacing:0;text-transform:none;color:var(--ink-2)}
 .site-end .se-note .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
   background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
+
+/* view counter: a small pill, number only */
+.se-views{display:inline-flex;align-items:center;gap:5px;align-self:center;padding:2px 9px;border:1px solid var(--rule);border-radius:999px;
+  background:var(--paper);font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:0;text-transform:none;color:var(--ink-2)}
+.se-views svg{flex:none}
