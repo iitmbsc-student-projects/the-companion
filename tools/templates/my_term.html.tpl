@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/theme.css">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body data-page="my-term">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -117,6 +117,7 @@
 <script src="assets/term-syllabus.js"></script>
 <script src="assets/config.js"></script>
 <script src="assets/account.js"></script>
+<script src="assets/stats.js"></script>
 <script src="assets/sync.js"></script>
 <script src="assets/grading-engine.js"></script>
 <script src="assets/my-term.js"></script>
