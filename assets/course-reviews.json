@@ -1,0 +1,217 @@
+{
+  "BT4001": {
+    "id": "BSBT4001",
+    "rating": null,
+    "reviews": 2
+  },
+  "BT4002": {
+    "id": "BSBT4002",
+    "rating": null,
+    "reviews": 1
+  },
+  "CS2001": {
+    "id": "BSCS2001",
+    "rating": 4.0,
+    "reviews": 7
+  },
+  "CS2002": {
+    "id": "BSCS2002",
+    "rating": null,
+    "reviews": 11
+  },
+  "CS2003": {
+    "id": "BSCS2003",
+    "rating": 5.0,
+    "reviews": 7
+  },
+  "CS2003P": {
+    "id": "BSCS2003P",
+    "rating": 4.5,
+    "reviews": 8
+  },
+  "CS2004": {
+    "id": "BSCS2004",
+    "rating": 5.0,
+    "reviews": 13
+  },
+  "CS2005": {
+    "id": "BSCS2005",
+    "rating": null,
+    "reviews": 4
+  },
+  "CS2006P": {
+    "id": "BSCS2006P",
+    "rating": null,
+    "reviews": 6
+  },
+  "CS2007": {
+    "id": "BSCS2007",
+    "rating": null,
+    "reviews": 7
+  },
+  "CS2008": {
+    "id": "BSCS2008",
+    "rating": null,
+    "reviews": 3
+  },
+  "CS2008P": {
+    "id": "BSCS2008P",
+    "rating": null,
+    "reviews": 6
+  },
+  "CS3001": {
+    "id": "BSCS3001",
+    "rating": 5.0,
+    "reviews": 13
+  },
+  "CS3002": {
+    "id": "BSCS3002",
+    "rating": 4.7,
+    "reviews": 11
+  },
+  "CS3003": {
+    "id": "BSCS3003",
+    "rating": null,
+    "reviews": 19
+  },
+  "CS3004": {
+    "id": "BSCS3004",
+    "rating": 5.0,
+    "reviews": 22
+  },
+  "CS3005": {
+    "id": "BSCS3005",
+    "rating": null,
+    "reviews": 2
+  },
+  "CS3007": {
+    "id": "BSCS3007",
+    "rating": 2.0,
+    "reviews": 5
+  },
+  "CS3031": {
+    "id": "BSCS3031",
+    "rating": null,
+    "reviews": 1
+  },
+  "CS4001": {
+    "id": "BSCS4001",
+    "rating": 5.0,
+    "reviews": 2
+  },
+  "CS4002": {
+    "id": "BSCS4002",
+    "rating": null,
+    "reviews": 1
+  },
+  "CS4021": {
+    "id": "BSCS4021",
+    "rating": null,
+    "reviews": 2
+  },
+  "CS5001": {
+    "id": "BSCS5001",
+    "rating": null,
+    "reviews": 3
+  },
+  "CS5003": {
+    "id": "BSCS5003",
+    "rating": null,
+    "reviews": 1
+  },
+  "DA5001": {
+    "id": "BSDA5001",
+    "rating": null,
+    "reviews": 6
+  },
+  "DA5013": {
+    "id": "BSDA5013",
+    "rating": 5.0,
+    "reviews": 4
+  },
+  "DA5014": {
+    "id": "BSDA5014",
+    "rating": 5.0,
+    "reviews": 1
+  },
+  "EE4001": {
+    "id": "BSEE4001",
+    "rating": null,
+    "reviews": 1
+  },
+  "GN3001": {
+    "id": "BSGN3001",
+    "rating": 5.0,
+    "reviews": 25
+  },
+  "GN3002": {
+    "id": "BSGN3002",
+    "rating": null,
+    "reviews": 3
+  },
+  "MA2001": {
+    "id": "BSMA2001",
+    "rating": null,
+    "reviews": 3
+  },
+  "MA3014": {
+    "id": "BSMA3014",
+    "rating": null,
+    "reviews": 5
+  },
+  "MS2001": {
+    "id": "BSMS2001",
+    "rating": 5.0,
+    "reviews": 7
+  },
+  "MS2001P": {
+    "id": "BSMS2001P",
+    "rating": null,
+    "reviews": 9
+  },
+  "MS2002": {
+    "id": "BSMS2002",
+    "rating": null,
+    "reviews": 3
+  },
+  "MS3002": {
+    "id": "BSMS3002",
+    "rating": null,
+    "reviews": 3
+  },
+  "MS3033": {
+    "id": "BSMS3033",
+    "rating": 5.0,
+    "reviews": 4
+  },
+  "MS3034": {
+    "id": "BSMS3034",
+    "rating": null,
+    "reviews": 3
+  },
+  "MS4001": {
+    "id": "BSMS4001",
+    "rating": 5.0,
+    "reviews": 6
+  },
+  "MS4002": {
+    "id": "BSMS4002",
+    "rating": null,
+    "reviews": 2
+  },
+  "MS4023": {
+    "id": "BSMS4023",
+    "rating": 5.0,
+    "reviews": 3
+  },
+  "SE2001": {
+    "id": "BSSE2001",
+    "rating": null,
+    "reviews": 8
+  },
+  "SE2002": {
+    "id": "BSSE2002",
+    "rating": 1.0,
+    "reviews": 10
+  }
+}

@@ -117,6 +117,7 @@
 <script src="assets/theme.js"></script>
 <script src="assets/config.js"></script>
 <script src="assets/account.js"></script>
+<script src="assets/stats.js"></script>
 <script src="assets/sync.js"></script>
 <script src="assets/term-syllabus.js"></script>
 <script src="assets/nptel-index.js"></script>

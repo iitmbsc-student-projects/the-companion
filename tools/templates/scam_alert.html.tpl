@@ -85,5 +85,8 @@
 <script src="assets/site.js"></script>
 <script src="assets/scam.js"></script>
 <script src="assets/theme.js"></script>
+<script src="assets/config.js"></script>
+<script src="assets/account.js"></script>
+<script src="assets/stats.js"></script>
 </body>
 </html>
