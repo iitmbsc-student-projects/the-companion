@@ -82,6 +82,9 @@
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
 <script src="assets/counter.js" defer></script>
+<script src="assets/config.js"></script>
+<script src="assets/account.js"></script>
+<script src="assets/sync.js"></script>
 <script>
 (function () {
   // an old link to a course page: point to the course list with the code from the address
