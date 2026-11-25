@@ -15,3 +15,8 @@
   footer.colophon .co-nav a{display:inline-block;padding:7px 0;color:var(--ink-2);border:none}
   footer.colophon .theme-foot{margin-top:14px}
   footer.colophon .co-nav a:hover{color:var(--accent)}
+  footer.colophon .co-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 16px;flex:1 1 100%;letter-spacing:.08em}
+  footer.colophon .co-nav a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  footer.colophon .co-row .co-brand{flex:1 1 auto}
+  @media(max-width:720px){footer.colophon .co-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  footer.colophon .se-views{display:inline-flex;align-items:center;gap:5px;align-self:center;padding:2px 9px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:0;text-transform:none;color:var(--ink-2)}

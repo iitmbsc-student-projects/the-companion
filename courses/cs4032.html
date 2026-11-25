@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/cs4032.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=f1b314a8">
+<link rel="stylesheet" href="../assets/theme.css?v=c79368c8">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -404,6 +404,11 @@
   footer.colophon .co-nav a{display:inline-block;padding:7px 0;color:var(--ink-2);border:none}
   footer.colophon .theme-foot{margin-top:14px}
   footer.colophon .co-nav a:hover{color:var(--accent)}
+  footer.colophon .co-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 16px;flex:1 1 100%;letter-spacing:.08em}
+  footer.colophon .co-nav a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  footer.colophon .co-row .co-brand{flex:1 1 auto}
+  @media(max-width:720px){footer.colophon .co-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  footer.colophon .se-views{display:inline-flex;align-items:center;gap:5px;align-self:center;padding:2px 9px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:0;text-transform:none;color:var(--ink-2)}
   footer.colophon .co-in{max-width:none;padding-left:56px;padding-right:56px}
   @media(max-width:900px){ footer.colophon .co-in{padding-left:28px;padding-right:28px} }
 
@@ -662,7 +667,7 @@
 
 <footer class="colophon">
   <div class="co-in">
-    <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
+    <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span><b>Disclaimer.</b> The Companion is an unofficial student project, not affiliated with or endorsed by IIT Madras. Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
       <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
@@ -675,11 +680,12 @@
 <script src="../assets/term-syllabus.js?v=82d5d032"></script>
 <script>window.COURSE = {code: "CS4032", weeks: [{"w":"Lectures","items":[{"n":"1","t":"Introduction to Compilers","v":"plHDNr3gbNQ","s":null},{"n":"2","t":"Phases of a Compiler (Front End)","v":"9yjkJ8BC0r0","s":null},{"n":"3","t":"Phases of a Compiler (Back End)","v":"0E6NdsmSVfw","s":null},{"n":"4","t":"Compilation Environment, Build Pipeline and Compiler Cousins","v":"FX3nDYiHiMY","s":null},{"n":"5","t":"Runtime Environment and Function Call","v":"d4ANUybHk_E","s":null},{"n":"6","t":"Lexical Analysis","v":"LnXRozAC-2s","s":null},{"n":"7","t":"Token Specification by Regular Expression","v":"O2tR1HecL9Q","s":null},{"n":"8","t":"Token Recognition by Transition Diagram","v":"Vj3YVvPsMgg","s":null},{"n":"9","t":"Finite Automata: DFA and NFA","v":"z6Pra_Cmvbg","s":null},{"n":"10","t":"Lex: The Lexical Analyzer Generator","v":"ERQXSX--Pes","s":null},{"n":"11","t":"Formal Languages 1","v":"G-TAvwjaSao","s":null},{"n":"12","t":"Formal Languages 2","v":"T0pTz_gsrJU","s":null},{"n":"13","t":"Recursive Descent Parser","v":"QK3ElMaEbUg","s":null},{"n":"14","t":"LL(1) Parser","v":"D-Ib7Q-2mlc","s":null},{"n":"15","t":"Operator Precedence Parser","v":"rMfADCYT3Kw","s":null},{"n":"16","t":"SR Parsers","v":"nRlaWo-9yNU","s":null},{"n":"17","t":"LR Theory","v":"k27QtuALtrM","s":null},{"n":"18","t":"SLR Parser","v":"i5T9rgOwIJA","s":null},{"n":"19","t":"LR(1) and LALR(1) Parsers","v":"g2AqzW9rio4","s":null},{"n":"20","t":"Bison","v":"umTzZWoWTbE","s":null},{"n":"21","t":"Syntax Directed Translation","v":"Qf4esbYGx5o","s":null},{"n":"22","t":"S-Attributed and L-Attributed Definitions","v":"bQ9C3WapWS8","s":null},{"n":"23","t":"Type Checking in Compiler","v":"Aq900TZZWkE","s":null},{"n":"24","t":"Type Systems and Type Checkers","v":"sRPaQIlk890","s":null},{"n":"25","t":"Desktop Calculator Using Flex and Bison","v":"WMETsu23HrE","s":null},{"n":"26","t":"Intermediate Representation (IR)","v":"8WtlnEYC-pg","s":null},{"n":"27","t":"Translating Arithmetic Expressions","v":"GbMiriVPCrE","s":null},{"n":"28","t":"Translating Arrays in Expressions","v":"TfRBsCzwtDc","s":null},{"n":"29","t":"Translating Variable Declarations","v":"8uFMuZjTy3o","s":null},{"n":"30","t":"Translating Boolean Expressions","v":"GKuMeK6rS5c","s":null},{"n":"31","t":"Translating Branch Control","v":"-K-B6WpVDhY","s":null},{"n":"32","t":"Translating Loop Control","v":"oBL_MlcqyFk","s":null},{"n":"33","t":"Translating Functions","v":"ahMilCK1JnY","s":null},{"n":"34","t":"Lexical Scope Management: Basic Notions","v":"ntM0b_GQMu0","s":null},{"n":"35","t":"Lexical Scope Management: Algorithms","v":"pmmoKRnPb8Q","s":null},{"n":"36","t":"NanoC Specification, Part 1: Language and Lexical Grammar","v":"XkOdWz9S_DY","s":null},{"n":"37","t":"NanoC Specification, Part 2: Syntax and Programming Environment","v":"cVnOSuhPvYU","s":null},{"n":"38","t":"MIC Optimization Overview","v":"43wI9cUpvTU","s":null},{"n":"39","t":"MIC Optimization CFG","v":"T2psVvlj1VI","s":null}]}], item: "lecture"};</script>
 <script src="../assets/course.js?v=78a486b4"></script>
-<script src="../assets/theme.js?v=e2fe9978"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
+<script src="../assets/theme.js?v=14e6b155"></script>
+<script src="../assets/counter.js?v=3e1c0c5c" defer></script>
+<script src="../assets/config.js?v=a3083c92"></script>
+<script src="../assets/account.js?v=d001c6ca"></script>
 <script src="../assets/stats.js?v=cd2cac2b"></script>
 <script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script src="../assets/suggest.js?v=da36925c"></script>
 </body>
 </html>

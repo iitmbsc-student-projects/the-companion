@@ -158,7 +158,7 @@ def load_all():
 # Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
 # stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
 ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js'
-                      r'|config\.js|account\.js|sync\.js|search\.js|grading-engine\.js|my-term\.js|suggest\.js|moderate\.js|account-page\.js|planner\.js|stats\.js|logo\.png))(?:\?v=[0-9a-f]+)?')
+                      r'|config\.js|account\.js|sync\.js|search\.js|grading-engine\.js|my-term\.js|suggest\.js|moderate\.js|account-page\.js|planner\.js|stats\.js|counter\.js|logo\.png))(?:\?v=[0-9a-f]+)?')
 
 
 def _asset_ver(rel):
@@ -940,7 +940,8 @@ def generate_my_term():
             weeks.append({"w": w["w"], "n": len(items),
                           "d": sum(it.get("d") or 0 for it in items)})
         myterm[data["code"]] = {"t": html_lib.unescape(data["title"]),
-                                "u": f"courses/{stem}.html", "weeks": weeks}
+                                "u": f"courses/{stem}.html", "weeks": weeks,
+                                "p": data.get("program") or ""}
     grading = json.load(open(CALC_PATH, encoding="utf-8"))
     dates = json.load(open(DATES_PATH, encoding="utf-8"))
     tpl = open(MYTERM_TEMPLATE_PATH, encoding="utf-8").read()
@@ -973,6 +974,11 @@ def generate_planner():
             "q": html_lib.unescape(data.get("prereq") or ""),
             "u": "courses/%s.html" % stem,
         })
+    have = {c["c"] for c in catalog}
+    for ex in rules.get("extra_courses") or []:   # degree electives that have no course page yet
+        if ex["c"] not in have:
+            catalog.append({"c": ex["c"], "t": ex["t"], "cr": ex.get("cr") or 0, "program": ex.get("program") or "",
+                            "q": ex.get("q") or "", "u": ""})
     grading = json.load(open(CALC_PATH, encoding="utf-8"))
     bands = {"bands": grading.get("bands") or [], "fail": grading.get("fail") or {"grade": "U", "gp": 0}}
     tpl = open(PLANNER_TEMPLATE_PATH, encoding="utf-8").read()
