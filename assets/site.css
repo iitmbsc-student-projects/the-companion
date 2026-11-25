@@ -61,7 +61,7 @@
     .nav-item.current::after{display:none}
     .nav-item.current .nav-main{color:var(--accent);font-weight:600}
     .tb-more{order:5;flex:0 0 100%;gap:2px;margin:0 -10px;padding:0 0 4px;overflow-x:auto;scrollbar-width:none}
-    .tb-overflow .menu{position:fixed;top:108px;left:16px;right:16px}
+    .tb-overflow .menu{position:fixed;top:calc(var(--tbh,104px) + 2px);left:16px;right:16px}
     .tb-more::-webkit-scrollbar{display:none}
     .tb-link{padding:8px 9px;font-size:13.5px}
     .tb-link.current::after{left:10px;right:10px;bottom:3px}
@@ -518,7 +518,8 @@ details .up-chips{margin:8px 0 0;display:flex}
   font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.02em}
 .up-chips a:hover{border-color:var(--accent);color:var(--accent)}
 
-@media(max-width:420px){ .tb-more{-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent)} }
+/* the edge fade would clip an open dropdown, so it is off while a menu is open */
+@media(max-width:420px){ .tb-more:not(:has(.nav-item.open)){-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent)} }
 
 /* ---- Important links: compact pills (same look as course resources) ---- */
 ul.links-grid.compact{gap:10px;grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}
