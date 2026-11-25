@@ -1134,3 +1134,17 @@ li.cta-card{padding:14px 16px}
 ul.people-grid{grid-template-columns:repeat(auto-fill,minmax(142px,1fr))}
 li.pp-card{padding:6px 10px}
 li.pp-card .lk-title{font-size:14px}
+
+/* phones: Sign in sits on the logo row, so the top bar stays two rows tall */
+@media(max-width:640px){
+  .topbar-in > .tb-brand{order:1}
+  .topbar-in > .acct-ctl{order:2;margin-left:auto}
+  .topbar-in > .tb-nav{order:3;flex:0 0 100%}
+}
+/* touch screens: slightly larger tap targets for the small filter chips and the menu carets */
+@media(pointer:coarse){
+  .mt-lv,.np-cr{min-height:32px}
+  .hm-quiet,.mt-add{min-height:32px}
+  .nav-caret{min-width:34px}
+  .acct-btn:not(.is-in){min-height:34px}
+}
