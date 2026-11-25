@@ -28,7 +28,6 @@
 
 <main class="wrap" id="main" tabindex="-1">
   <header class="hm-hero">
-    <p class="hm-kicker">By students, for students</p>
     <h1 class="hm-title">The Companion</h1>
     <p class="hm-sub">A study companion for the IIT Madras BS in Data Science &amp; Applications.</p>
     <div class="search hm-search">
