@@ -10,8 +10,6 @@
   var CFG = window.COMPANION_CONFIG || {};
   if (!CFG.supabaseUrl || !CFG.supabaseAnonKey) return;
 
-  var BASE = document.body.getAttribute('data-base') ||
-    (/\/courses\/[^/]+$/.test(location.pathname) ? '../' : '');
   var COURSE = (window.COURSE && /^[A-Z]{2,3}[0-9]{4}P?$/.test(window.COURSE.code))
     ? window.COURSE.code : null;
   var FULL = document.body.getAttribute('data-page') === 'courses';
@@ -25,8 +23,6 @@
     '.cs-stars button.on{color:var(--accent,#7a1e28)}',
     '.cs-stars button:focus-visible{outline:2px solid var(--accent,#7a1e28);outline-offset:1px}',
     '.cs-level{font-family:"IBM Plex Mono",monospace;letter-spacing:.04em}',
-    '.cs-ext{margin:8px 0 0;font-size:13px;color:var(--ink-2,#4a453d)}',
-    '.cs-ext a{color:var(--accent,#7a1e28)}',
     '.res-rate{display:flex;align-items:center;gap:6px;margin-top:8px}',
     '.res-rate .cs-stars button{width:16px;height:16px;font-size:13px}',
     '.res-rate .cs-avg{font-size:11px}',
@@ -51,7 +47,7 @@
         var s = document.createElement('span');
         s.className = 'cs-level';
         s.textContent = 'Level ' + n;
-        s.title = (LEVEL_NAME[n] || 'Course level') + '. Course Reviews reads this from the course code.';
+        s.title = (LEVEL_NAME[n] || 'Course level') + '. Taken from the first digit of the course code.';
         kick.appendChild(document.createTextNode(' · '));
         kick.appendChild(s);
       }
@@ -66,28 +62,6 @@
       s.title = 'Level ' + n + (LEVEL_NAME[n] ? ' · ' + LEVEL_NAME[n] : '');
       codeEl.appendChild(s);
     });
-    if (COURSE && !document.querySelector('.cs-ext')) {
-      fetch(BASE + 'assets/course-reviews.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (all) {
-        if (!all || !all[COURSE] || document.querySelector('.cs-ext')) return;
-        var row = all[COURSE];
-        var box = document.querySelector('.course-head');
-        if (!box) return;
-        var p = document.createElement('p');
-        p.className = 'cs-ext';
-        var a = document.createElement('a');
-        a.href = 'https://www.coursereview.space/course/' + row.id;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        var bits = [];
-        if (row.rating) bits.push(row.rating + ' stars');
-        bits.push(people(row.reviews, 'review', 'reviews'));
-        a.textContent = bits.join(' · ') + ' on Course Reviews';
-        p.appendChild(a);
-        var meta = box.querySelector('.meta-line');
-        if (meta) box.insertBefore(p, meta);
-        else box.appendChild(p);
-      }).catch(function () {});
-    }
   }
 
   function starButtons(host, aria, onPick) {
