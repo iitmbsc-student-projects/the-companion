@@ -1116,3 +1116,22 @@ body.home .qc-title{padding-right:0}
 .se-views{display:inline-flex;align-items:center;gap:5px;align-self:center;padding:2px 9px;border:1px solid var(--rule);border-radius:999px;
   background:var(--paper);font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:0;text-transform:none;color:var(--ink-2)}
 .se-views svg{flex:none}
+
+/* ---- Contributors and Updates: tighter ---- */
+ul.people-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+li.pp-card{padding:7px 12px;gap:0}
+li.pp-card .lk-title{font-size:14.5px;line-height:1.35;padding-right:0}
+li.pp-card:not(.plain){border-left-width:2px}
+li.cta-card{padding:14px 16px}
+.missing-note{margin:24px 0 0;padding:12px 14px}
+.up-day{margin:20px 0 0}
+.up-date{margin:0 0 8px;font-size:18px}
+.up-list{gap:7px}
+.up-item{padding:9px 14px 9px 16px}
+.up-tag{margin-bottom:1px;font-size:10.5px}
+.up-title{font-size:16.5px;line-height:1.3}
+.up-desc{margin:3px 0 0;font-size:14px;line-height:1.45}
+@media(max-width:640px){ ul.people-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+ul.people-grid{grid-template-columns:repeat(auto-fill,minmax(142px,1fr))}
+li.pp-card{padding:6px 10px}
+li.pp-card .lk-title{font-size:14px}

@@ -3,6 +3,27 @@
  "sub": "New resources and changes to the site, newest first.",
  "notes": [
   {
+   "date": "2026-11-25",
+   "kind": "site",
+   "title": "Planner by level, and a My Term dashboard",
+   "text": "The Planner now has a level dropdown (Foundation, Diploma, Degree, electives, PG) with your courses in two columns, and MA3015 Linear Models with Applications is in the electives. My Term is a dashboard: pick your courses from a searchable list, see the next exam first, and work out what you need in the end term.",
+   "courses": []
+  },
+  {
+   "date": "2026-11-25",
+   "kind": "site",
+   "title": "Cleaner top bar, and Sign in on every page",
+   "text": "The top bar is a single row with Scam alert one click away and the Grade calculator under More. The Sign in button now appears on every page, so your progress and plans sync wherever you are.",
+   "courses": []
+  },
+  {
+   "date": "2026-11-25",
+   "kind": "site",
+   "title": "Disclaimer on every page",
+   "text": "Every page now ends with a short note that The Companion is an unofficial student project, so always check the official handbook and grading document for the final word.",
+   "courses": []
+  },
+  {
    "date": "2026-11-24",
    "kind": "site",
    "title": "Common problems on the project pages",
