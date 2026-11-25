@@ -158,7 +158,7 @@ def load_all():
 # Asset links carry ?v=<hash of the file>, so a browser never pairs a new page with a stale cached
 # stylesheet or script (that mismatch is how a dark theme ends up with a light top bar).
 ASSET_RE = re.compile(r'(assets/(?:site\.css|site\.js|theme\.css|theme\.js|menu-data\.js|term-syllabus\.js|calculator\.js|course\.js|home\.js'
-                      r'|config\.js|account\.js|sync\.js|search\.js|grading-engine\.js|my-term\.js|suggest\.js|moderate\.js|account-page\.js|planner\.js|logo\.png))(?:\?v=[0-9a-f]+)?')
+                      r'|config\.js|account\.js|sync\.js|search\.js|grading-engine\.js|my-term\.js|suggest\.js|moderate\.js|account-page\.js|planner\.js|stats\.js|course-reviews\.json|logo\.png))(?:\?v=[0-9a-f]+)?')
 
 
 def _asset_ver(rel):
