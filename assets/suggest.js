@@ -35,22 +35,24 @@
 
   function field(label, input) {
     var w = el('label', 'calc-field');
-    w.style.marginBottom = '8px';
-    w.appendChild(el('span', 'cf-label', label));
+    w.style.cssText = 'display:flex;flex-direction:column;gap:3px;margin:0 0 9px';
+    var l = el('span', 'cf-label', label);
+    l.style.cssText = 'font:600 12.5px "IBM Plex Sans",sans-serif;color:var(--ink)';
+    w.appendChild(l);
     w.appendChild(input);
     return w;
   }
   function text(placeholder) {
     var i = document.createElement('input');
     i.type = 'text'; i.placeholder = placeholder || ''; i.autocomplete = 'off';
-    i.style.cssText = 'width:100%;padding:7px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);font:500 13.5px "IBM Plex Sans",sans-serif';
+    i.style.cssText = 'width:100%;box-sizing:border-box;padding:6px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);font:500 13.5px "IBM Plex Sans",sans-serif';
     return i;
   }
 
   function openForm(kind) {
     closeForm();
     form = el('div', 'sug-form');
-    form.style.cssText = 'margin:10px 0 14px;padding:14px 16px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2);max-width:560px';
+    form.style.cssText = 'margin:8px 0 12px;padding:12px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2);max-width:560px;font-family:"IBM Plex Sans",sans-serif;font-weight:400';
     form.appendChild(el('h3', null, kind === 'new_resource' ? 'Suggest a resource for ' + COURSE.code : 'Report a broken link in ' + COURSE.code));
 
     var fUrl = text('https://…');
@@ -58,7 +60,7 @@
     var fDesc = text(kind === 'new_resource' ? 'One line on why it helps (optional)' : 'What happens when you open it? (optional)');
     var fBy = text('Who made it? (optional)');
     var fGroup = document.createElement('select');
-    fGroup.style.cssText = 'width:100%;padding:7px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);font:500 13.5px "IBM Plex Sans",sans-serif';
+    fGroup.style.cssText = 'width:100%;box-sizing:border-box;padding:6px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);font:500 13.5px "IBM Plex Sans",sans-serif';
     ['Notes', 'Previous year questions', 'Course material', 'Practice', 'Other'].forEach(function (g) {
       var o = document.createElement('option'); o.value = o.textContent = g; fGroup.appendChild(o);
     });
@@ -72,6 +74,7 @@
     }
 
     var msg = el('p', 'acct-note', '');
+    msg.style.cssText = 'margin:10px 0 0;font:400 12.5px/1.5 "IBM Plex Sans",sans-serif;color:var(--ink-2)';
     var actions = el('div', null);
     actions.style.cssText = 'display:flex;gap:10px;margin-top:10px;flex-wrap:wrap';
     var send = el('button', 'sb-chip', 'Send for review');

@@ -20,12 +20,15 @@
     return { grade: fail.grade, gp: fail.gp };
   }
 
-  /* the id of the end-term input of a course ("F" by convention) */
+  /* the id of the end-term input of a course ("F" by convention); for courses with no end-term exam, the last scored input (a viva, say) */
   function endTermId(course) {
     var ids = course.inputs.map(function (i) { return i.id; });
     if (ids.indexOf('F') >= 0) return 'F';
     var byLabel = course.inputs.filter(function (i) { return /end\s*term/i.test(i.label || ''); })[0];
-    return byLabel ? byLabel.id : null;
+    if (byLabel) return byLabel.id;
+    /* lab / viva courses have no end-term exam: solve for the last scored input instead */
+    var scored = course.inputs.filter(function (i) { return !i.bonus; });
+    return scored.length ? scored[scored.length - 1].id : null;
   }
 
   /* Reverse solver: the lowest end-term score that reaches `target` (a band's

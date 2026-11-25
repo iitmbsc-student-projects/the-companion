@@ -73,6 +73,7 @@
   <span class="se-brand"><span class="se-name">The Companion</span><span class="se-by">Built and kept by Vikash</span></span>
   <nav class="se-nav" aria-label="Site">{{FOOTNAV}}</nav>
   <div class="theme-foot" id="theme-foot"></div>
+  <p class="se-note"><span class="co-i" aria-hidden="true">i</span><span><b>Disclaimer.</b> The Companion is an unofficial student project, not affiliated with or endorsed by IIT Madras. Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
 </footer>
 
 <button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
@@ -83,6 +84,8 @@
 <script src="assets/config.js"></script>
 <script src="assets/account.js"></script>
 <script src="assets/stats.js"></script>
+<script src="assets/sync.js"></script>
+<script src="assets/counter.js" defer></script>
 <script>
 (function () {
   // an old link to a course page: point to the course list with the code from the address

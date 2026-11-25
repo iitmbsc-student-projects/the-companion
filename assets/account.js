@@ -38,6 +38,12 @@
 
   function emit() { listeners.forEach(function (fn) { try { fn(A.user); } catch (e) {} }); }
 
+  /* "Sign in to keep this on another device" hints only make sense when signed out. */
+  listeners.push(function (u) {
+    var hs = document.querySelectorAll('.signin-hint');
+    for (var i = 0; i < hs.length; i++) hs[i].hidden = !!u;
+  });
+
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');

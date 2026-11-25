@@ -11,6 +11,7 @@
   var DATES = JSON.parse((document.getElementById('dates-data') || { textContent: '{}' }).textContent);
   var ENGINE = window.GradingEngine;
   var S = window.CompanionSync;
+  var soonestEx = null;
   var term = TS.term || (DATES && DATES.term) || '';
 
   var $ = function (id) { return document.getElementById(id); };
@@ -71,59 +72,118 @@
     return (p && p.done) || {};
   }
 
-  /* ---------------------------- the course picker ---------------------------- */
+  /* ---------------------------- the course picker ----------------------------
+     Picked courses show as chips. "Add course" opens a small panel: search by
+     code or name, narrow by level, click a course to add or remove it. */
   var picked = [];
-  var LEVELS = ['Foundation', 'Diploma', 'Degree', 'BSc', 'BS', 'PG Diploma'];
+  var LEVELS = ['Foundation', 'Diploma', 'Degree', 'BSc', 'BS', 'PG Diploma', 'MTech'];
+  /* a course page's "program" -> the level shown in the picker (for courses outside the quiz circular) */
+  var PROGRAM_LEVEL = { 'Foundation': 'Foundation', 'Diploma / Programming': 'Diploma', 'Diploma / Data Science': 'Diploma',
+    'BSc / BS': 'Degree', 'BS elective': 'Degree', 'PG Diploma': 'PG Diploma', 'MTech': 'MTech' };
+  /* every course a student here could pick: each course page, plus circular courses that have grading data.
+     (The circular also lists Electronic Systems, Aerospace and Management courses with no page here: left out.) */
+  function pickable() {
+    var seen = {};
+    Object.keys(MT).forEach(function (c) { seen[c] = 1; });
+    Object.keys(TS.courses).forEach(function (c) { if (GC[c]) seen[c] = 1; });
+    return Object.keys(seen);
+  }
+  function levelOf(code) {
+    var c = TS.courses[code];
+    if (c && c.level && !/^(ES|AE|MG) /.test(c.level)) return c.level;
+    if (MT[code] && PROGRAM_LEVEL[MT[code].p]) return PROGRAM_LEVEL[MT[code].p];
+    return GC[code] ? 'Degree' : 'Other';
+  }
   function levelRank(l) { var i = LEVELS.indexOf(l); return i < 0 ? LEVELS.length : i; }
+  var panelOpen = false, query = '', levelFilter = 'All';
 
-  function buildPicker() {
-    var grid = $('mt-pick-grid');
-    var pick = $('mt-pick');
-    if (pick && !pick.querySelector('.mt-filter')) {
-      var f = document.createElement('input');
-      f.type = 'search'; f.className = 'mt-filter'; f.placeholder = 'Filter courses';
-      f.setAttribute('aria-label', 'Filter courses');
-      f.addEventListener('input', function () {
-        var q = f.value.trim().toLowerCase();
-        [].forEach.call(grid.querySelectorAll('label'), function (lab) {
-          lab.hidden = !!(q && lab.textContent.toLowerCase().indexOf(q) < 0);
-        });
-        [].forEach.call(grid.querySelectorAll('.mt-level-h'), function (h) {
-          var n = h.nextElementSibling, any = false;
-          while (n && !n.classList.contains('mt-level-h')) {
-            if (n.tagName === 'LABEL' && !n.hidden) any = true;
-            n = n.nextElementSibling;
-          }
-          h.hidden = !any;
-        });
-      });
-      grid.parentNode.insertBefore(f, grid);
-    }
-    grid.textContent = '';
-    var codes = Object.keys(TS.courses).sort(function (a, b) {
-      var la = levelRank(TS.courses[a].level), lb = levelRank(TS.courses[b].level);
+  function courseName(code) {
+    var c = TS.courses[code];
+    return (c && c.name) || (MT[code] && MT[code].t) || (GC[code] && GC[code].title) || code;
+  }
+  function togglePick(code) {
+    var i = picked.indexOf(code);
+    if (i >= 0) picked.splice(i, 1); else picked.push(code);
+    save(); render(); buildResults();
+  }
+
+  function refreshChosen() {
+    var box = $('mt-chosen');
+    box.textContent = '';
+    picked.forEach(function (code) {
+      var chip = el('span', 'mt-pill');
+      chip.title = courseName(code);
+      chip.appendChild(el('span', 'mt-pill-c', code));
+      var x = el('button', 'mt-pill-x', '×');
+      x.type = 'button';
+      x.setAttribute('aria-label', 'Remove ' + code + ' ' + courseName(code));
+      x.addEventListener('click', function () { togglePick(code); });
+      chip.appendChild(x);
+      box.appendChild(chip);
+    });
+    var add = el('button', 'mt-add', panelOpen ? (picked.length ? 'Done' : 'Hide list') : (picked.length ? '+ Add or remove' : '+ Add your courses'));
+    add.type = 'button';
+    add.setAttribute('aria-expanded', panelOpen ? 'true' : 'false');
+    add.setAttribute('aria-controls', 'mt-panel');
+    add.addEventListener('click', function () {
+      panelOpen = !panelOpen;
+      $('mt-panel').hidden = !panelOpen;
+      refreshChosen();
+      if (panelOpen) $('mt-q').focus();
+    });
+    box.appendChild(add);
+  }
+
+  function buildLevels() {
+    var wrap = $('mt-levels');
+    wrap.textContent = '';
+    var seen = {};
+    pickable().forEach(function (c) { seen[levelOf(c)] = 1; });
+    ['All'].concat(Object.keys(seen).sort(function (a, b) { return levelRank(a) - levelRank(b); })).forEach(function (l) {
+      var b = el('button', 'mt-lv' + (l === levelFilter ? ' is-on' : ''), l);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', l === levelFilter ? 'true' : 'false');
+      b.addEventListener('click', function () { levelFilter = l; buildLevels(); buildResults(); });
+      wrap.appendChild(b);
+    });
+  }
+
+  function buildResults() {
+    var box = $('mt-pick-grid');
+    var top = box.scrollTop;
+    box.textContent = '';
+    var q = query.trim().toLowerCase();
+    var codes = pickable().filter(function (code) {
+      if (levelFilter !== 'All' && levelOf(code) !== levelFilter) return false;
+      return !q || (code + ' ' + courseName(code)).toLowerCase().indexOf(q) >= 0;
+    }).sort(function (a, b) {
+      var la = levelRank(levelOf(a)), lb = levelRank(levelOf(b));
       return la - lb || a.localeCompare(b);
     });
-    var lastLevel = null;
+    if (!codes.length) box.appendChild(el('p', 'mt-none', 'No course matches that.'));
     codes.forEach(function (code) {
-      var c = TS.courses[code];
-      if (c.level !== lastLevel) {
-        lastLevel = c.level;
-        grid.appendChild(el('span', 'mt-level-h', c.level));
-      }
-      var lab = el('label');
-      var cb = document.createElement('input');
-      cb.type = 'checkbox'; cb.value = code; cb.checked = picked.indexOf(code) >= 0;
-      cb.addEventListener('change', function () {
-        if (cb.checked) { if (picked.indexOf(code) < 0) picked.push(code); }
-        else picked = picked.filter(function (x) { return x !== code; });
-        save(); render();
-      });
-      lab.appendChild(cb);
-      lab.appendChild(el('span', 'code', code));
-      lab.appendChild(el('span', null, c.name || (MT[code] && MT[code].t) || code));
-      grid.appendChild(lab);
+      var on = picked.indexOf(code) >= 0;
+      var b = el('button', 'mt-res' + (on ? ' is-on' : ''));
+      b.type = 'button';
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.appendChild(el('span', 'code', code));
+      b.appendChild(el('span', 'nm', courseName(code)));
+      b.appendChild(el('span', 'st', on ? '✓ Added' : '+ Add'));
+      b.addEventListener('click', function () { togglePick(code); });
+      box.appendChild(b);
     });
+    box.scrollTop = top;
+  }
+
+  function buildPicker() {
+    var q = $('mt-q');
+    if (!q.dataset.bound) {
+      q.dataset.bound = '1';
+      q.addEventListener('input', function () { query = q.value; buildResults(); });
+    }
+    buildLevels();
+    buildResults();
+    refreshChosen();
   }
 
   function save() {
@@ -131,32 +191,32 @@
     else try { localStorage.setItem('companion-enroll-' + term, JSON.stringify(picked)); } catch (e) {}
   }
 
-  /* ------------------------------- the cards ------------------------------- */
+  /* ------------------------------- the course rows ------------------------------- */
+  function daysUntil(iso) { return Math.round((parseDay(iso) - today) / 86400000); }
+  function inDays(n) { return n <= 0 ? 'today' : n === 1 ? 'tomorrow' : 'in ' + n + ' days'; }
+
+  function stat(k, v, sub) {
+    var t = el('div', 'mt-stat');
+    t.appendChild(el('span', 'mt-stat-k', k));
+    t.appendChild(el('span', 'mt-stat-v', v));
+    if (sub) t.appendChild(el('span', 'mt-stat-s', sub));
+    return t;
+  }
+
   function render() {
     var grid = $('mt-grid');
     grid.textContent = '';
     $('mt-empty').hidden = picked.length > 0;
-    if (picked.length) $('mt-pick').open = false;
-    $('mt-pick-sum').textContent = picked.length
-      ? 'Your courses (' + picked.length + ') — change'
-      : 'Choose your courses';
+    refreshChosen();
+
+    var rowsData = [];
+    var soonest = null, soonestCodes = [], leftAll = 0, watchedAll = 0, totalAll = 0;
 
     picked.forEach(function (code) {
       var mt = MT[code], ts = TS.courses[code];
-      var card = el('div', 'mt-card');
-      card.appendChild(el('span', 'mt-code', code));
-      var title = el('span', 'mt-title');
-      if (mt && mt.u) {
-        var a = document.createElement('a'); a.href = mt.u;
-        a.textContent = (mt && mt.t) || (ts && ts.name) || code;
-        title.appendChild(a);
-      } else title.textContent = (ts && ts.name) || code;
-      card.appendChild(title);
-
       var done = progressOf(code);
       var weeks = (mt && mt.weeks) || [];
-      var total = 0, watched = 0;
-      var byWeek = {};
+      var total = 0, watched = 0, byWeek = {};
       weeks.forEach(function (w) {
         total += w.n;
         var dn = Object.keys(done).filter(function (k) { return k.indexOf(w.w + '|') === 0; }).length;
@@ -165,57 +225,99 @@
         var num = weekNum(w.w);
         if (num != null) byWeek[num] = { n: w.n, done: dn, d: w.d || 0 };
       });
-      if (total) {
+      totalAll += total; watchedAll += watched;
+      var ex = nextExam(code);
+      var days = ex ? Math.max(0, daysUntil(ex.date)) : null;
+      var left = null, covTotal = 0, secLeft = 0, cov = ex ? parseCoverage(ex.weeks) : null;
+      if (cov && total) {
+        left = 0;
+        for (var wnum = cov[0]; wnum <= cov[1]; wnum++) {
+          var w = byWeek[wnum];
+          if (!w) continue;
+          covTotal += w.n; left += w.n - w.done;
+          if (w.d && w.n) secLeft += (w.n - w.done) * (w.d / w.n);
+        }
+        leftAll += left;
+      }
+      if (ex) {
+        if (soonest == null || days < soonest) { soonest = days; soonestCodes = [code]; soonestEx = ex; }
+        else if (days === soonest) soonestCodes.push(code);
+      }
+      rowsData.push({ code: code, mt: mt, ts: ts, total: total, watched: watched, ex: ex, days: days,
+        left: left, covTotal: covTotal, secLeft: secLeft });
+    });
+
+    rowsData.sort(function (a, b) {
+      var da = a.days == null ? 9999 : a.days, db = b.days == null ? 9999 : b.days;
+      return da - db;
+    });
+
+    /* summary tiles */
+    var sum = $('mt-summary');
+    sum.textContent = '';
+    sum.hidden = picked.length === 0;
+    if (picked.length) {
+      sum.appendChild(stat('Courses', String(picked.length), term + ' term'));
+      if (soonest != null) {
+        sum.appendChild(stat('Next exam', soonestEx.label + ' · ' + fmtDate(soonestEx.date),
+          inDays(soonest) + ' · ' + (soonestCodes.length > 2 ? soonestCodes.slice(0, 2).join(', ') + ' +' + (soonestCodes.length - 2) + ' more' : soonestCodes.join(', '))));
+        sum.appendChild(stat('Lectures to catch up', String(leftAll), 'before the next exams'));
+      } else {
+        sum.appendChild(stat('Next exam', 'None left', 'for these courses this term'));
+      }
+      sum.appendChild(stat('Watched', totalAll ? Math.round(watchedAll * 100 / totalAll) + '%' : '—',
+        totalAll ? watchedAll + ' of ' + totalAll + ' lectures' : 'no lecture lists yet'));
+    }
+
+    rowsData.forEach(function (r) {
+      var row = el('div', 'mt-row');
+      var main = el('div', 'mt-r-main');
+      main.appendChild(el('span', 'mt-code', r.code));
+      var title = el('span', 'mt-title');
+      if (r.mt && r.mt.u) {
+        var a = document.createElement('a'); a.href = r.mt.u;
+        a.textContent = (r.mt && r.mt.t) || (r.ts && r.ts.name) || r.code;
+        title.appendChild(a);
+      } else title.textContent = (r.ts && r.ts.name) || r.code;
+      main.appendChild(title);
+      row.appendChild(main);
+
+      var prog = el('div', 'mt-r-prog');
+      if (r.total) {
         var bar = el('span', 'mt-bar');
         var fill = document.createElement('i');
-        fill.style.width = Math.min(100, Math.round(watched * 100 / total)) + '%';
+        fill.style.width = Math.min(100, Math.round(r.watched * 100 / r.total)) + '%';
         bar.appendChild(fill);
-        card.appendChild(bar);
-        card.appendChild(el('span', 'mt-meta', watched + ' of ' + total + ' lectures watched'));
-      } else {
-        card.appendChild(el('span', 'mt-meta', 'No lecture list on the site yet.'));
-      }
+        prog.appendChild(bar);
+        prog.appendChild(el('span', 'mt-meta', r.watched + ' of ' + r.total + ' lectures watched'));
+      } else prog.appendChild(el('span', 'mt-meta', 'No lecture list on the site yet.'));
+      row.appendChild(prog);
 
-      var ex = nextExam(code);
-      if (ex) {
-        var exLine = el('span', 'mt-exam');
-        var b = el('b', null, ex.label + ' · ' + fmtDate(ex.date));
-        exLine.appendChild(b);
-        if (ex.weeks) exLine.appendChild(document.createTextNode(' · covers ' + ex.weeks));
-        card.appendChild(exLine);
+      var exBox = el('div', 'mt-r-exam');
+      if (r.ex) {
+        exBox.appendChild(el('b', null, r.ex.label + ' · ' + fmtDate(r.ex.date)));
+        exBox.appendChild(el('span', 'mt-meta', inDays(r.days) + (r.ex.weeks ? ' · ' + r.ex.weeks : '')));
+      } else if (r.ts) exBox.appendChild(el('span', 'mt-meta', 'No exam left this term.'));
+      else exBox.appendChild(el('span', 'mt-meta', 'Not in the ' + term + ' quiz circular.'));
+      row.appendChild(exBox);
 
-        var cov = parseCoverage(ex.weeks);
-        if (cov && total) {
-          var left = 0, covTotal = 0, secLeft = 0;
-          for (var wnum = cov[0]; wnum <= cov[1]; wnum++) {
-            var w = byWeek[wnum];
-            if (!w) continue;
-            covTotal += w.n;
-            left += w.n - w.done;
-            if (w.d && w.n) secLeft += (w.n - w.done) * (w.d / w.n);
-          }
-          var days = Math.max(1, Math.round((parseDay(ex.date) - today) / 86400000));
-          var pace = el('span', 'mt-pace');
-          if (!covTotal) {
-            pace.textContent = 'Covered weeks are not in the lecture list yet.';
-          } else if (!left) {
-            pace.textContent = 'All ' + covTotal + ' covered lectures watched. Revision time.';
-          } else {
-            var perDay = left / days;
-            var hrs = secLeft ? ', about ' + (Math.round(secLeft / 360) / 10) + ' h' : '';
-            pace.textContent = left + ' of ' + covTotal + ' covered lectures left' + hrs +
-              ' · ' + days + (days === 1 ? ' day' : ' days') + ' to go · ' +
-              (perDay <= 1 ? 'about 1 a day' : 'about ' + Math.ceil(perDay) + ' a day');
-            if (perDay > 3 || days <= 3) pace.className = 'mt-pace soon';
-          }
-          card.appendChild(pace);
+      if (r.ex && r.total) {
+        var pace = el('span', 'mt-pace');
+        if (r.left == null || !r.covTotal) {
+          pace.textContent = 'Covered weeks are not in the lecture list yet.';
+        } else if (!r.left) {
+          pace.textContent = 'All ' + r.covTotal + ' covered lectures watched. Revision time.';
+        } else {
+          var days = Math.max(1, r.days);
+          var perDay = r.left / days;
+          var hrs = r.secLeft ? ', about ' + (Math.round(r.secLeft / 360) / 10) + ' h' : '';
+          pace.textContent = r.left + ' of ' + r.covTotal + ' covered lectures left' + hrs + ' · ' +
+            (perDay <= 1 ? 'about 1 a day' : 'about ' + Math.ceil(perDay) + ' a day');
+          if (perDay > 3 || days <= 3) pace.className = 'mt-pace soon';
         }
-      } else if (ts) {
-        card.appendChild(el('span', 'mt-pace', 'No exam left this term for this course.'));
-      } else {
-        card.appendChild(el('span', 'mt-pace', 'Not in the ' + term + ' quiz circular.'));
+        row.appendChild(pace);
       }
-      grid.appendChild(card);
+      grid.appendChild(row);
     });
 
     renderReverse();
@@ -225,9 +327,22 @@
   var revState = { code: null, vals: {}, timer: null };
 
   function renderReverse() {
-    var sec = $('mt-rev'), sel = $('mt-rev-course');
+    var sec = $('mt-rev'), sel = $('mt-rev-course'), miss = $('mt-rev-miss');
     var codes = picked.filter(function (c) { return GC[c]; });
-    sec.hidden = codes.length === 0;
+    var missing = picked.filter(function (c) { return !GC[c]; });
+    sec.hidden = picked.length === 0;
+    sec.classList.toggle('no-calc', codes.length === 0);
+    miss.textContent = '';
+    miss.hidden = missing.length === 0;
+    if (missing.length) {
+      miss.appendChild(document.createTextNode('No grading formula on this site yet for ' + missing.join(', ') +
+        ' (project and lab courses are often graded separately). Check the '));
+      var a = document.createElement('a');
+      a.href = (G.source && G.source.url) || '#'; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = 'official grading document';
+      miss.appendChild(a);
+      miss.appendChild(document.createTextNode(' for how it is graded.'));
+    }
     if (!codes.length) return;
     var keep = revState.code && codes.indexOf(revState.code) >= 0 ? revState.code : codes[0];
     sel.innerHTML = '';
@@ -246,6 +361,9 @@
     revState.vals = {};
     var course = GC[code];
     var endId = ENGINE.endTermId(course);
+    var endIn = course.inputs.filter(function (i) { return i.id === endId; })[0];
+    var isEnd = endIn && (endIn.id === 'F' || /end\s*term/i.test(endIn.label || ''));
+    $('mt-rev-h').textContent = isEnd || !endIn ? 'What does the end term need?' : 'What do you need in ' + endIn.label + '?';
     var box = $('mt-rev-inputs');
     box.innerHTML = '';
     var fields = {};
@@ -283,30 +401,32 @@
   }
 
   function solve(course, endId) {
-    var table = $('mt-rev-table'), body = table.querySelector('tbody');
+    var chips = $('mt-rev-table');
     var note = $('mt-rev-note');
-    body.innerHTML = '';
+    chips.textContent = '';
     if (!endId) {
-      table.hidden = true;
+      chips.hidden = true;
       note.textContent = 'This course has no single end-term input, so it cannot be worked backwards here.';
       return;
     }
-    table.hidden = false;
+    chips.hidden = false;
     (G.bands || []).forEach(function (band) {
       var need = ENGINE.neededFinal(course, revState.vals, band.min, endId);
-      var tr = document.createElement('tr');
-      tr.appendChild(el('td', null, band.grade));
+      var chip = el('div', 'mt-chip');
+      chip.appendChild(el('span', 'mt-chip-g', band.grade));
       if (need == null) {
-        tr.appendChild(el('td', 'no', 'Not reachable'));
-        tr.appendChild(el('td', 'no', 'even with 100 in the end term'));
+        chip.classList.add('is-no');
+        chip.appendChild(el('span', 'mt-chip-v', '—'));
+        chip.appendChild(el('span', 'mt-chip-s', 'not reachable'));
       } else if (need === 0) {
-        tr.appendChild(el('td', 'ok', 'Already secured'));
-        tr.appendChild(el('td', null, 'any end-term score keeps it'));
+        chip.classList.add('is-ok');
+        chip.appendChild(el('span', 'mt-chip-v', 'Secured'));
+        chip.appendChild(el('span', 'mt-chip-s', 'any score'));
       } else {
-        tr.appendChild(el('td', 'ok', String(Math.round(need * 10) / 10)));
-        tr.appendChild(el('td', null, 'or more in the end term'));
+        chip.appendChild(el('span', 'mt-chip-v', String(Math.round(need * 10) / 10)));
+        chip.appendChild(el('span', 'mt-chip-s', 'or more'));
       }
-      body.appendChild(tr);
+      chips.appendChild(chip);
     });
     var notes = (course.notes || []).slice();
     if (course.elig) notes.unshift('Eligibility: average of your best ' + course.elig.best + ' of ' + course.elig.of + ' ' + (course.elig.label || 'weekly assignments') + ' must be 40 or more to sit the end term.');
@@ -319,6 +439,8 @@
                 : Promise.resolve(lsGet('companion-enroll-' + term, []));
   start.then(function (codes) {
     picked = Array.isArray(codes) ? codes.slice() : [];
+    panelOpen = picked.length === 0;
+    $('mt-panel').hidden = !panelOpen;
     buildPicker(); render();
   });
   document.addEventListener('companion-sync-ready', function () { render(); });

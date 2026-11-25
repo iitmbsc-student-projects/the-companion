@@ -66,7 +66,7 @@
 
 <main class="wrap" id="main" tabindex="-1">
   <section class="pl-wrap">
-    <p class="pl-intro">Set a letter grade for each course you have finished. Credits and CGPA update as you go. <a href="account.html">Sign in</a> to keep them on another device. Rules follow the <a href="{{SOURCE}}" target="_blank" rel="noopener">academics page</a>; check the handbook before an exit.</p>
+    <p class="pl-intro">Set a letter grade for each course you have finished. Credits and CGPA update as you go. <span class="signin-hint"><a href="account.html">Sign in</a> to keep them on another device.</span> Rules follow the <a href="{{SOURCE}}" target="_blank" rel="noopener">academics page</a>; check the handbook before an exit.</p>
     <div id="pl-root"></div>
   </section>
 </main>
@@ -75,6 +75,7 @@
   <span class="se-brand"><span class="se-name">The Companion</span><span class="se-by">Built and kept by Vikash</span></span>
   <nav class="se-nav" aria-label="Site">{{FOOTNAV}}</nav>
   <div class="theme-foot" id="theme-foot"></div>
+  <p class="se-note"><span class="co-i" aria-hidden="true">i</span><span><b>Disclaimer.</b> The Companion is an unofficial student project, not affiliated with or endorsed by IIT Madras. Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
 </footer>
 
 <button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
@@ -85,6 +86,7 @@
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
+<script src="assets/counter.js" defer></script>
 <script src="assets/config.js"></script>
 <script src="assets/account.js"></script>
 <script src="assets/stats.js"></script>

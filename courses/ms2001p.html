@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://iitmbsc-student-projects.github.io/the-companion/courses/ms2001p.html">
 <meta property="og:image" content="https://iitmbsc-student-projects.github.io/the-companion/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/theme.css?v=f1b314a8">
+<link rel="stylesheet" href="../assets/theme.css?v=c79368c8">
 <script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -404,6 +404,11 @@
   footer.colophon .co-nav a{display:inline-block;padding:7px 0;color:var(--ink-2);border:none}
   footer.colophon .theme-foot{margin-top:14px}
   footer.colophon .co-nav a:hover{color:var(--accent)}
+  footer.colophon .co-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 16px;flex:1 1 100%;letter-spacing:.08em}
+  footer.colophon .co-nav a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  footer.colophon .co-row .co-brand{flex:1 1 auto}
+  @media(max-width:720px){footer.colophon .co-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  footer.colophon .se-views{display:inline-flex;align-items:center;gap:5px;align-self:center;padding:2px 9px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:0;text-transform:none;color:var(--ink-2)}
   footer.colophon .co-in{max-width:none;padding-left:56px;padding-right:56px}
   @media(max-width:900px){ footer.colophon .co-in{padding-left:28px;padding-right:28px} }
 
@@ -635,7 +640,7 @@
 
 <footer class="colophon">
   <div class="co-in">
-    <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span>Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
+    <p class="co-note"><span class="co-i" aria-hidden="true">i</span><span><b>Disclaimer.</b> The Companion is an unofficial student project, not affiliated with or endorsed by IIT Madras. Course details here may be outdated or incorrect. Always check the official handbook and grading document on the IITM study portal for up-to-date, accurate information.</span></p>
     <div class="co-row">
       <span class="co-brand"><span class="co-name">The Companion</span><span class="co-by">Built and kept by Vikash</span></span>
       <nav class="co-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../courses.html">All courses</a><a href="../links.html">Important links</a><a href="../scam-alert.html">Scam alert</a><a href="../calculator.html">Grade calculator</a><a href="../nptel.html">NPTEL</a><a href="../contributors.html">Contributors</a><a href="../updates.html">Updates</a></nav>
@@ -648,11 +653,12 @@
 <script src="../assets/term-syllabus.js?v=82d5d032"></script>
 <script>window.COURSE = {code: "MS2001P", weeks: [{"w":"Sep 2026 term","items":[{"n":"1","t":"Orientation","v":"FYkTbWfyNJA","s":null},{"n":"2","t":"Sunday session 1","v":"sywD1K6f4pE","s":null},{"n":"3","t":"Sunday session 2","v":"TERro9cCy3o","s":null},{"n":"4","t":"Sunday session 3","v":"q0BmEg1hFGM","s":null}]},{"w":"May 2026 term","items":[{"n":"1","t":"Orientation","v":"Ul8xwAYEwsU","s":null},{"n":"2","t":"Sunday session","v":"e0hfEDzbu74","s":null}]},{"w":"Jan 2026 term","items":[{"n":"1","t":"Sunday session (16 Feb)","v":"epN62cis_Nk","s":null},{"n":"2","t":"Sunday session (22 Feb)","v":"oISeIQC9tgY","s":null}]},{"w":"Sep 2025 term","items":[{"n":"1","t":"Preparatory bootcamp introduction","v":"1JV1cnfIqCs","s":null},{"n":"2","t":"Sunday session","v":"YFVNhmzca6o","s":null},{"n":"3","t":"Orientation","v":"evr2t4zd1Lg","s":null},{"n":"4","t":"Sunday session (5 Oct)","v":"WBaOGnISnpU","s":null},{"n":"5","t":"Best project awardee talk 1","v":"x5XUS2oEZpo","s":null},{"n":"6","t":"Best project awardee talk 2","v":"LIoplM4k2Uc","s":null}]},{"w":"May 2025 term","items":[{"n":"1","t":"Session 1","v":"B_NcpDMRc4c","s":null},{"n":"2","t":"Weekend session","v":"sHrwrIJy3JM","s":null},{"n":"3","t":"Testimonial from a business owner","v":"702yoEn7Yr8","s":null}]},{"w":"Jan 2025 term","items":[{"n":"1","t":"Session 1","v":"kzoiuhyxyGU","s":null}]},{"w":"Sep 2024 term","items":[{"n":"1","t":"Orientation","v":"pQIrI1pC464","s":null},{"n":"2","t":"Session 2","v":"K69jMOX0Ge4","s":null},{"n":"3","t":"Session 3","v":"EcALcxhVo94","s":null},{"n":"4","t":"Submission timeline and portal changes","v":"5dGkcPwEnhE","s":null},{"n":"5","t":"Business problems and metadata","v":"gKgynSDHuq0","s":null}]},{"w":"May 2024 term","items":[{"n":"1","t":"Orientation","v":"gq5WRA-bn-4","s":null},{"n":"2","t":"Live session (15 July)","v":"qFlN40JAURI","s":null}]},{"w":"Jan 2024 term","items":[{"n":"1","t":"Orientation, part 1","v":"mf_feZUwDeU","s":null},{"n":"2","t":"Orientation, part 2","v":"OmtzRmdQH5w","s":null},{"n":"3","t":"Project discussion","v":"2WdXiDA8Ob4","s":null}]},{"w":"Sep 2023 term","items":[{"n":"1","t":"Orientation","v":"EAZDIrKYGy0","s":null},{"n":"2","t":"Project discussion","v":"Q-FQa0dVq04","s":null},{"n":"3","t":"Best project awardee talk 1","v":"CsbfQ3TRlqs","s":null},{"n":"4","t":"Best project awardee talk 2","v":"QFrB3eogOCk","s":null}]},{"w":"May 2023 term","items":[{"n":"1","t":"Project discussion","v":"r3ZdRvg-Gx4","s":null}]},{"w":"Jan 2023 term","items":[{"n":"1","t":"Capstone talks 1","v":"GfphksjSJN8","s":null},{"n":"2","t":"Capstone discussion 1","v":"RPGFybqNL1Q","s":null},{"n":"3","t":"Capstone talks 2","v":"5CmIAEJY8us","s":null},{"n":"4","t":"Capstone discussion 2","v":"xKwBQLlP9sk","s":null},{"n":"5","t":"Capstone discussion 3","v":"N7PQRuXKCdY","s":null},{"n":"6","t":"Capstone discussion 4","v":"zV-PGq715lw","s":null},{"n":"7","t":"Capstone discussion 5","v":"HSVXWbXoDW8","s":null}]},{"w":"Sep 2022 term","items":[{"n":"1","t":"Live session on the capstone project","v":"hhNwTI8fObs","s":null}]}], item: "session"};</script>
 <script src="../assets/course.js?v=78a486b4"></script>
-<script src="../assets/theme.js?v=e2fe9978"></script>
-<script src="../assets/config.js?v=54927162"></script>
-<script src="../assets/account.js?v=56115e17"></script>
+<script src="../assets/theme.js?v=14e6b155"></script>
+<script src="../assets/counter.js?v=3e1c0c5c" defer></script>
+<script src="../assets/config.js?v=a3083c92"></script>
+<script src="../assets/account.js?v=d001c6ca"></script>
 <script src="../assets/stats.js?v=cd2cac2b"></script>
 <script src="../assets/sync.js?v=4fcd88f9"></script>
-<script src="../assets/suggest.js?v=516b3cad"></script>
+<script src="../assets/suggest.js?v=da36925c"></script>
 </body>
 </html>
