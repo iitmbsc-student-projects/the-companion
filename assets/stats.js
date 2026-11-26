@@ -23,9 +23,24 @@
     '.cs-stars button.on{color:var(--accent,#7a1e28)}',
     '.cs-stars button:focus-visible{outline:2px solid var(--accent,#7a1e28);outline-offset:1px}',
     '.cs-level{font-family:"IBM Plex Mono",monospace;letter-spacing:.04em}',
-    '.res-rate{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px;margin-top:8px;min-width:0}',
-    '.res-rate .cs-stars button{width:16px;height:16px;font-size:13px}',
-    '.res-rate .cs-avg{font-size:11px;min-width:0;overflow-wrap:anywhere}',
+    '.res-foot .res-rate{position:relative;z-index:2;flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:4px;min-height:22px;padding:0 8px;',
+    'border:1px solid var(--rule,#c9c1b0);border-radius:999px;background:transparent;color:var(--ink-2,#4a453d);',
+    'font:500 11px/1 "IBM Plex Mono",monospace;letter-spacing:.02em;white-space:nowrap;cursor:pointer}',
+    '.res-foot .res-badge ~ .res-rate{margin-left:0}',
+    '.res-foot .res-badge{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}',
+    '.res-rate .rr-s{color:var(--accent,#7a1e28);font-size:12px}',
+    '.res-foot .res-rate:hover,.res-foot .res-rate[aria-expanded="true"]{border-color:var(--accent,#7a1e28);color:var(--accent,#7a1e28)}',
+    '.res-foot .res-rate.mine{background:var(--tint,#f3e6e8);border-color:var(--accent-line,#d9b3b8)}',
+    '.res-foot .res-rate:focus-visible{outline:2px solid var(--accent,#7a1e28);outline-offset:1px}',
+    '.res-card.rating-open{z-index:6}',
+    '.res-pop{position:absolute;z-index:6;right:8px;bottom:36px;padding:3px 6px;border:1px solid var(--accent-line,#d9b3b8);border-radius:8px;',
+    'background:var(--paper,#fbf8f1);box-shadow:0 6px 16px var(--shadow,rgba(0,0,0,.15))}',
+    '.res-pop[hidden]{display:none}',
+    '@media(pointer:coarse){.res-foot .res-rate{min-height:28px}.res-pop .cs-stars button{width:34px;height:34px;font-size:20px}}',
+    '@media(max-width:640px){.res-foot .res-rate{padding:0 7px;gap:3px}.res-rate .rr-c,.res-rate .rr-t.empty{display:none}',
+    '.res-foot .res-badge{font-size:9px;padding:0 5px}',
+    '.res-pop{left:4px;right:4px;padding:2px 4px}.res-pop .cs-stars{display:flex;width:100%}',
+    '.res-pop .cs-stars button{flex:1 1 0;min-width:0;width:auto;height:32px;font-size:20px}}',
     'ol.courses li .cs-level{margin-left:6px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.04em;color:var(--ink-2,#4a453d)}',
     '.tk{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-family:"IBM Plex Mono",monospace;color:var(--ink-2,#4a453d)}',
     '.tk-g{display:inline-flex;align-items:center;gap:7px}',
@@ -111,6 +126,13 @@
     });
   }
 
+  function closeAllPops() {
+    document.querySelectorAll('.res-pop').forEach(function (p) { if (!p.hidden && p.closeNow) p.closeNow(); });
+  }
+  document.addEventListener('click', function (ev) {
+    if (!ev.target.closest || !ev.target.closest('.res-pop, .res-rate')) closeAllPops();
+  });
+
   function mountResources(client) {
     if (!COURSE) return;
     if (resourceRows) { refreshResources(client); return; }
@@ -121,37 +143,86 @@
       if (!link || card.querySelector('.res-rate')) return;
       var url = link.href;
       if (!/^https?:\/\//.test(url) || url.length > 500) return;
-      var line = document.createElement('div');
-      line.className = 'res-rate';
-      var avg = document.createElement('span');
-      avg.className = 'cs-avg';
-      avg.textContent = 'Sign in to rate';
-      var stars = starButtons(line, 'Rate this resource from 1 to 5', function (n) {
+      var foot = card.querySelector('.res-foot');
+      if (!foot) { foot = document.createElement('div'); foot.className = 'res-foot'; card.appendChild(foot); }
+      var chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'res-rate';
+      chip.setAttribute('aria-haspopup', 'true');
+      chip.setAttribute('aria-expanded', 'false');
+      var rs = document.createElement('span');
+      rs.className = 'rr-s';
+      rs.setAttribute('aria-hidden', 'true');
+      var rt = document.createElement('span');
+      rt.className = 'rr-t';
+      var rc = document.createElement('span');
+      rc.className = 'rr-c';
+      chip.appendChild(rs);
+      chip.appendChild(rt);
+      chip.appendChild(rc);
+      var pop = document.createElement('div');
+      pop.className = 'res-pop';
+      pop.hidden = true;
+      var last = null;
+      function closePop() {
+        pop.hidden = true;
+        chip.setAttribute('aria-expanded', 'false');
+        card.classList.remove('rating-open');
+      }
+      pop.closeNow = closePop;
+      var stars = starButtons(pop, 'Rate this resource from 1 to 5', function (n) {
         var auth = window.CompanionAuth;
         if (!auth || !auth.user) { if (auth) auth.signIn(); return; }
         stars.set(n);
         client.rpc('rate_resource', { p_course: COURSE, p_url: url, p_stars: n }).then(function (r) {
+          closePop();
           if (r.error || !r.data) {
             if (window.console && r.error) console.warn('rate_resource failed:', r.error.message);
-            stars.set(0);
-            avg.textContent = 'Could not save, try again';
+            apply(last);
+            rt.textContent = 'Not saved'; rt.classList.remove('empty'); rc.textContent = '';
+            setTimeout(function () { apply(last); }, 2500);
             return;
           }
           apply(r.data);
         });
       });
-      line.appendChild(avg);
-      card.appendChild(line);
+      chip.addEventListener('click', function () {
+        var auth = window.CompanionAuth;
+        if (!auth || !auth.user) { if (auth) auth.signIn(); return; }
+        var open = pop.hidden;
+        closeAllPops();
+        if (open) {
+          pop.hidden = false;
+          chip.setAttribute('aria-expanded', 'true');
+          card.classList.add('rating-open');
+          var first = pop.querySelector('button');
+          if (first) first.focus();
+        }
+      });
+      pop.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') { closePop(); chip.focus(); }
+      });
+      foot.appendChild(chip);
+      card.appendChild(pop);
       function apply(data) {
-        stars.set((data && data.my_stars) || 0);
+        last = data;
         var signed = window.CompanionAuth && CompanionAuth.user;
-        Array.prototype.forEach.call(stars.buttons(), function (b) {
-          b.title = signed ? 'Rate ' + b.getAttribute('data-n') : 'Sign in to rate';
-        });
-        avg.textContent = data && data.rating_count
-          ? data.rating_avg + ' · ' + people(data.rating_count, 'rating', 'ratings')
-          : (signed ? 'Rate this' : 'Sign in to rate');
+        var n = (data && data.rating_count) || 0;
+        var mine = (data && data.my_stars) || 0;
+        stars.set(mine);
+        chip.classList.toggle('mine', !!mine);
+        rs.textContent = (n || mine) ? '★' : '☆';
+        rt.textContent = n ? String(data.rating_avg) : 'Rate';
+        rt.classList.toggle('empty', !n);
+        rc.textContent = n ? '(' + num(n) + ')' : '';
+        var tip = n ? data.rating_avg + ' out of 5 from ' + people(n, 'rating', 'ratings') : 'No ratings yet';
+        if (mine) tip += '. You gave ' + mine;
+        tip += signed ? '. Click to rate.' : '. Sign in to rate.';
+        chip.title = tip;
+        chip.setAttribute('aria-label', tip);
+        Array.prototype.forEach.call(stars.buttons(), function (b) { b.title = 'Rate ' + b.getAttribute('data-n'); });
       }
+      apply(null);
       urls.push(url);
       rows.push({ url: url, apply: apply });
     });
