@@ -328,7 +328,6 @@ main.wrap{padding-bottom:12px}
 .site-end .se-name{font-family:'Spectral',serif;font-weight:600;font-size:15px;letter-spacing:0;text-transform:none;color:var(--ink)}
 .site-end .se-brand{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 12px}
 .site-end .se-by{font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;letter-spacing:0;text-transform:none;color:var(--ink-2)}
-.site-end .se-stats{margin:8px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--ink-2)}
 .hm-pop{margin:10px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.03em;color:var(--ink-2)}
 .hm-pop a{color:var(--ink);border:none}
 .hm-pop a:hover{color:var(--accent)}
@@ -1118,10 +1117,6 @@ body.home .qc-title{padding-right:0}
 .site-end .se-note .co-i{flex:none;display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border-radius:50%;
   background:var(--tint-2);color:var(--accent);font:italic 700 12px/1 'Spectral',serif}
 
-/* view counter: a small pill, number only */
-.se-views{display:inline-flex;align-items:center;gap:5px;align-self:center;padding:2px 9px;border:1px solid var(--rule);border-radius:999px;
-  background:var(--paper);font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:0;text-transform:none;color:var(--ink-2)}
-.se-views svg{flex:none}
 
 /* ---- Contributors and Updates: tighter ---- */
 ul.people-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}

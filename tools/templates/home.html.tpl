@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/theme.css">
-<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink'||t==='sky')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('companion-theme');if(t==='light'||t==='dark'||t==='pink')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body class="home" data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -60,13 +60,6 @@
 
   <p class="no-results" id="no-results" role="status" hidden>No course matches that. Try a code such as CS1001, or a word such as “maths”.</p>
 
-  <section class="hm-term hm-resume" id="hm-term" aria-labelledby="hm-term-h" hidden>
-    <div class="hm-head">
-      <h2 class="hm-h" id="hm-term-h">Your term</h2>
-      <a class="hm-quiet" href="my-term.html">Open My Term</a>
-    </div>
-    <div class="hm-rc-grid" id="hm-term-list"></div>
-  </section>
 
   <section class="hm-resume" id="hm-resume" aria-labelledby="hm-resume-h" hidden>
     <div class="hm-head">
@@ -127,12 +120,10 @@
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/theme.js"></script>
-<script src="assets/counter.js" defer></script>
 <script src="assets/config.js"></script>
 <script src="assets/account.js"></script>
 <script src="assets/stats.js"></script>
 <script src="assets/sync.js"></script>
-<script src="assets/term-syllabus.js"></script>
 <script src="assets/nptel-index.js"></script>
 <script src="assets/home.js"></script>
 <script src="assets/search.js"></script>

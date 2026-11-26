@@ -27,7 +27,13 @@
     '.res-rate .cs-stars button{width:16px;height:16px;font-size:13px}',
     '.res-rate .cs-avg{font-size:11px}',
     'ol.courses li .cs-level{margin-left:6px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.04em;color:var(--ink-2,#4a453d)}',
-    '.co-stats{margin:0 0 8px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;color:var(--ink-2,#4a453d)}'
+    '.tk{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-family:"IBM Plex Mono",monospace;color:var(--ink-2,#4a453d)}',
+    '.tk-g{display:inline-flex;align-items:center;gap:7px}',
+    '.tk-l{font-size:10px;letter-spacing:.12em;text-transform:uppercase}',
+    '.tk-d{display:inline-flex;gap:2px}',
+    '.tk-n{display:inline-block;min-width:13px;padding:2px 2px;border:1px solid var(--rule,#c9c1b0);border-radius:3px;background:var(--paper,#fbf8f1);',
+    'color:var(--ink,#1c1a17);font-size:12px;font-weight:500;line-height:1.25;text-align:center;font-variant-numeric:tabular-nums}',
+    '.tk-n.z{color:var(--rule,#c9c1b0)}'
   ].join('');
   document.head.appendChild(css);
 
@@ -250,25 +256,59 @@
     });
   }
 
+  /* A small odometer: each number is a row of digit tiles that count up once. */
+  function digits(el, n, len) {
+    var str = String(n);
+    while (str.length < len) str = '0' + str;
+    el.textContent = '';
+    var lead = true;
+    for (var i = 0; i < str.length; i++) {
+      var t = document.createElement('span');
+      var zero = str.charAt(i) === '0' && lead && i < str.length - 1;
+      if (str.charAt(i) !== '0') lead = false;
+      t.className = 'tk-n' + (zero ? ' z' : '');
+      t.textContent = str.charAt(i);
+      el.appendChild(t);
+    }
+  }
+  function roll(el, n) {
+    var len = String(n).length;
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (calm || n < 10 || !window.requestAnimationFrame) { digits(el, n, len); return; }
+    var t0 = null;
+    (function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / 1100);
+      digits(el, Math.round(n * (1 - Math.pow(1 - k, 3))), len);
+      if (k < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  function ticker(data) {
+    var wrap = document.createElement('span');
+    wrap.className = 'tk se-stats';
+    wrap.setAttribute('role', 'group');
+    wrap.setAttribute('aria-label', people(data.visitors, 'visitor', 'visitors') + ', ' + people(data.visits, 'visit', 'visits'));
+    [['Visitors', data.visitors], ['Visits', data.visits]].forEach(function (pair) {
+      var g = document.createElement('span');
+      g.className = 'tk-g';
+      var l = document.createElement('span');
+      l.className = 'tk-l';
+      l.textContent = pair[0];
+      var d = document.createElement('span');
+      d.className = 'tk-d';
+      d.setAttribute('aria-hidden', 'true');
+      g.appendChild(l);
+      g.appendChild(d);
+      wrap.appendChild(g);
+      roll(d, pair[1] || 0);
+    });
+    return wrap;
+  }
+
   function paintTotals(data) {
     if (!data) return;
-    var text = people(data.visitors, 'visitor', 'visitors') + ' · ' +
-      people(data.visits, 'visit', 'visits');
-    var end = document.querySelector('.site-end');
-    if (end && !end.querySelector('.se-stats')) {
-      var p = document.createElement('p');
-      p.className = 'se-stats';
-      p.textContent = text;
-      var nav = end.querySelector('.se-nav');
-      end.insertBefore(p, nav ? nav.nextSibling : null);
-    }
-    var col = document.querySelector('.colophon .co-in');
-    if (col && !col.querySelector('.co-stats')) {
-      var c = document.createElement('p');
-      c.className = 'co-stats';
-      c.textContent = text;
-      col.insertBefore(c, col.firstChild);
-    }
+    var brand = document.querySelector('.site-end .se-brand, .colophon .co-brand');
+    if (brand && !brand.querySelector('.se-stats')) brand.appendChild(ticker(data));
     var hint = document.querySelector('.hm-hint');
     if (hint && data.popular && data.popular.length && !document.getElementById('hm-pop')) {
       var pop = document.createElement('p');
