@@ -23,7 +23,7 @@
     '.cs-stars button.on{color:var(--accent,#7a1e28)}',
     '.cs-stars button:focus-visible{outline:2px solid var(--accent,#7a1e28);outline-offset:1px}',
     '.cs-level{font-family:"IBM Plex Mono",monospace;letter-spacing:.04em}',
-    '.res-rate{display:flex;align-items:center;gap:6px;margin-top:8px}',
+    '.res-rate{position:relative;z-index:2;display:flex;align-items:center;gap:6px;margin-top:8px}',
     '.res-rate .cs-stars button{width:16px;height:16px;font-size:13px}',
     '.res-rate .cs-avg{font-size:11px}',
     'ol.courses li .cs-level{margin-left:6px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.04em;color:var(--ink-2,#4a453d)}',
@@ -131,7 +131,12 @@
         if (!auth || !auth.user) { if (auth) auth.signIn(); return; }
         stars.set(n);
         client.rpc('rate_resource', { p_course: COURSE, p_url: url, p_stars: n }).then(function (r) {
-          if (r.error || !r.data) return;
+          if (r.error || !r.data) {
+            if (window.console && r.error) console.warn('rate_resource failed:', r.error.message);
+            stars.set(0);
+            avg.textContent = 'Could not save, try again';
+            return;
+          }
           apply(r.data);
         });
       });
